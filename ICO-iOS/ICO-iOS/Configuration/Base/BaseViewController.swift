@@ -23,6 +23,16 @@ class BaseViewController: UIViewController {
         guard let tabbar = self.tabBarController?.tabBar else{
             return
         }
+        
+        tabbar.barTintColor = .white
+        tabbar.tintColor = .tabBarGreen
+        tabbar.unselectedItemTintColor = .tabBarGray
+        tabbar.layer.shadowColor = UIColor.black.cgColor
+        tabbar.layer.shadowOffset = CGSize(width: 0   , height: -3);
+        tabbar.layer.shadowOpacity = 0.2
+        tabbar.layer.shadowRadius = 20
+        tabbar.selectedItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        
         tabbar.layer.cornerRadius = 20
         tabbar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         tabbar.layer.masksToBounds = true

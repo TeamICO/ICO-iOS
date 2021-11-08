@@ -19,6 +19,7 @@ class HomeVC: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackViewWidth: NSLayoutConstraint!
     
+    @IBOutlet weak var topView: UIView!
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     
     // 버튼 클릭시 폰트 색상 변경을 위한 상태 변수
@@ -48,6 +49,7 @@ class HomeVC: BaseViewController {
         lifeStyleButton.addTarget(self, action: #selector(didTapLifeStyleButton), for: .touchUpInside)
 
         stackViewWidth.constant = viewSizeWidth
+        
     }
     
     // MARK: - Selectors

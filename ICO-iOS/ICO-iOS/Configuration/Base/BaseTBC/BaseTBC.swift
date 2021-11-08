@@ -41,17 +41,13 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate{
     
         self.viewControllers = [homeNVC,mystyleNVC,mypageNVC]
         self.delegate = self
-        
+
         homeNVC.tabBarItem = homeTabBarItem
         mystyleNVC.tabBarItem = mystyleTabBarItem
         mypageNVC.tabBarItem = mypageTabBarItem
     
-        UITabBar.appearance().barTintColor = .white
-        UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().tintColor = .tabBarGreen
-        UITabBar.appearance().unselectedItemTintColor = .tabBarGray
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-
+       
+        
        
     }
         
