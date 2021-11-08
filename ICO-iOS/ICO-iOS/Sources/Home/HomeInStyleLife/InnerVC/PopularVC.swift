@@ -27,14 +27,14 @@ class PopularVC: UIViewController {
     
     func registerXib(){
         postTV.register(UINib(nibName: "RecentTVC", bundle: nil), forCellReuseIdentifier: "RecentTVC")
-        //popularIcoCV.register(UINib(nibName: "PopularIcoCVC", bundle: nil), forCellWithReuseIdentifier: "PopularIcoCVC")
+        popularIcoCV.register(UINib(nibName: "PopularIcoCVC", bundle: nil), forCellWithReuseIdentifier: "PopularIcoCVC")
     }
     
     func setTVCV(){
         postTV.delegate = self
         postTV.dataSource = self
-        //popularIcoCV.delegate = self
-        //popularIcoCV.dataSource = self
+        popularIcoCV.delegate = self
+        popularIcoCV.dataSource = self
     }
     
     
@@ -67,7 +67,6 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
 
 }
 
-/*
 extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
@@ -79,7 +78,25 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = UIScreen.main.bounds.width
+        
+        let cellWidth = width * (96/375)
+        let cellHeight = cellWidth * (125/96)
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
-*/
