@@ -47,7 +47,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate{
         mypageNVC.tabBarItem = mypageTabBarItem
     
         UITabBar.appearance().barTintColor = .white
-//        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().tintColor = .tabBarGreen
         UITabBar.appearance().unselectedItemTintColor = .tabBarGray
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)

@@ -31,8 +31,8 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cjh-SV-6Dr">
-                                <rect key="frame" x="129" y="450" width="156" height="26"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cjh-SV-6Dr">
+                                <rect key="frame" x="121" y="422" width="172.5" height="26"/>
                                 <color key="pageIndicatorTintColor" red="0.75294117647058822" green="0.89411764705882346" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -47,7 +47,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="네이버로 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlv-pE-Nev">
-                                        <rect key="frame" x="131" y="13" width="120.5" height="23"/>
+                                        <rect key="frame" x="131" y="15.5" width="120.5" height="23"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -55,16 +55,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843137254902" green="0.83921568627450982" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="qlv-pE-Nev" firstAttribute="centerY" secondItem="m3h-iW-Diu" secondAttribute="centerY" id="enn-7J-vOI"/>
                                     <constraint firstAttribute="bottom" secondItem="NGb-jS-awq" secondAttribute="bottom" constant="15" id="kfz-hk-xhZ"/>
                                     <constraint firstItem="qlv-pE-Nev" firstAttribute="centerX" secondItem="m3h-iW-Diu" secondAttribute="centerX" id="rvF-nT-K9g"/>
                                     <constraint firstItem="NGb-jS-awq" firstAttribute="leading" secondItem="m3h-iW-Diu" secondAttribute="leading" constant="16" id="tuq-CH-Azc"/>
-                                    <constraint firstItem="qlv-pE-Nev" firstAttribute="top" secondItem="m3h-iW-Diu" secondAttribute="top" constant="13" id="vUp-Jv-SdW"/>
                                     <constraint firstAttribute="height" constant="54" id="zed-QD-Sf2"/>
                                     <constraint firstItem="NGb-jS-awq" firstAttribute="top" secondItem="m3h-iW-Diu" secondAttribute="top" constant="15" id="zll-tC-Wa9"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -79,7 +79,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오톡으로 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUL-hO-kzp">
-                                        <rect key="frame" x="114.5" y="17" width="153" height="23"/>
+                                        <rect key="frame" x="114.5" y="15.5" width="153" height="23"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="19"/>
                                         <color key="textColor" red="0.0039215686274509803" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="cUL-hO-kzp" firstAttribute="top" secondItem="6F0-bT-K1h" secondAttribute="top" constant="17" id="0Wu-VL-bui"/>
+                                    <constraint firstItem="cUL-hO-kzp" firstAttribute="centerY" secondItem="6F0-bT-K1h" secondAttribute="centerY" id="4G0-PH-Gnv"/>
                                     <constraint firstItem="cUL-hO-kzp" firstAttribute="centerX" secondItem="6F0-bT-K1h" secondAttribute="centerX" id="De8-l0-sIC"/>
                                     <constraint firstItem="j2f-8R-chd" firstAttribute="leading" secondItem="6F0-bT-K1h" secondAttribute="leading" constant="15" id="EO0-k9-iTg"/>
                                     <constraint firstAttribute="height" constant="54" id="N8i-TB-5yI"/>
@@ -96,7 +96,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -109,7 +109,7 @@
                             <constraint firstItem="cjh-SV-6Dr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Ohr-AD-qk3"/>
                             <constraint firstItem="m3h-iW-Diu" firstAttribute="top" secondItem="ypW-iA-iAx" secondAttribute="bottom" constant="52" id="S6D-xU-acd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ypW-iA-iAx" secondAttribute="trailing" id="UQT-wo-00G"/>
-                            <constraint firstItem="cjh-SV-6Dr" firstAttribute="top" secondItem="ypW-iA-iAx" secondAttribute="bottom" constant="8" symbolic="YES" id="Z4K-sz-E52"/>
+                            <constraint firstItem="cjh-SV-6Dr" firstAttribute="top" secondItem="ypW-iA-iAx" secondAttribute="bottom" constant="-20" id="Z4K-sz-E52"/>
                             <constraint firstItem="6F0-bT-K1h" firstAttribute="top" secondItem="m3h-iW-Diu" secondAttribute="bottom" constant="16" id="bgU-0L-fwU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="m3h-iW-Diu" secondAttribute="trailing" constant="16" id="cQk-r3-2CH"/>
                             <constraint firstItem="m3h-iW-Diu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="dOt-eQ-RdD"/>

@@ -84,8 +84,8 @@
                                     <constraint firstItem="SN4-5k-RW5" firstAttribute="top" secondItem="vZE-CB-iZR" secondAttribute="top" id="ZjV-gD-xzK"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-ke-dME">
-                                <rect key="frame" x="0.0" y="45" width="414" height="53"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-ke-dME">
+                                <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwX-Zq-VKr">
                                         <rect key="frame" x="16" y="9" width="41.5" height="35"/>
@@ -117,7 +117,7 @@
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="J6n-mY-KAK" secondAttribute="bottom" constant="13" id="4Ko-Re-LhV"/>
                                     <constraint firstAttribute="height" constant="53" id="DuS-fO-MOd"/>

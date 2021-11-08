@@ -9,6 +9,14 @@ import UIKit
 
 class LoginCVC: UICollectionViewCell {
     static let identifier = "LoginCVC"
+    
+ 
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

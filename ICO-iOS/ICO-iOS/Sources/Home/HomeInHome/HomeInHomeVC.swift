@@ -128,7 +128,10 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
         }
        
     }
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offset = scrollView.contentOffset.y
+//        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+    }
  
     
 }
