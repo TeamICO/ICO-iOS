@@ -10,6 +10,8 @@ import AuthenticationServices
 
 @available(iOS 13.0,*)
 class LoginVC: UIViewController {
+    var nowPage = 0
+    
     // MARK: - Properties
     private let titleLabels = [
         "당신의\n에코 라이프스타일을\n공유해보세요.",
@@ -53,6 +55,7 @@ class LoginVC: UIViewController {
         setAppleLoginCofigure()
         setNaverViewTapGesture()
         setKakaoViewTapGesture()
+        bannerTimer()
     }
     
   
@@ -198,3 +201,27 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
 
     
 }
+
+// MARK: - Banner Scolling
+extension LoginVC {
+    func bannerTimer() {
+        let _: Timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (Timer) in
+            self.bannerMove()
+        }
+    }
+    // 배너 움직이는 매서드
+    func bannerMove() {
+        // 현재페이지가 마지막 페이지일 경우
+        if nowPage == colors.count-1 {
+            // 맨 처음 페이지로 돌아감
+            collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
+            nowPage = 0
+            return
+        }
+        // 다음 페이지로 전환
+        nowPage += 1
+        collectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
+    }
+    
+}
+
