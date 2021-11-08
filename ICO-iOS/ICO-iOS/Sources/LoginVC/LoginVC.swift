@@ -212,7 +212,7 @@ extension LoginVC {
     // 배너 움직이는 매서드
     func bannerMove() {
         // 현재페이지가 마지막 페이지일 경우
-        if nowPage == colors.count-1 {
+        if nowPage == titleLabels.count-1 {
             // 맨 처음 페이지로 돌아감
             collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
             nowPage = 0
