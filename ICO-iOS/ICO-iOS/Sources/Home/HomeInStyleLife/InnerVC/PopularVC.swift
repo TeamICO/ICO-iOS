@@ -14,6 +14,7 @@ class PopularVC: UIViewController {
     @IBOutlet weak var popularLabel: UILabel!
     
     @IBOutlet weak var postTV: UITableView!
+    @IBOutlet weak var popularIcoCV: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,14 @@ class PopularVC: UIViewController {
     
     func registerXib(){
         postTV.register(UINib(nibName: "RecentTVC", bundle: nil), forCellReuseIdentifier: "RecentTVC")
+        popularIcoCV.register(UINib(nibName: "PopularIcoCVC", bundle: nil), forCellWithReuseIdentifier: "PopularIcoCVC")
     }
     
     func setTVCV(){
         postTV.delegate = self
         postTV.dataSource = self
+        popularIcoCV.delegate = self
+        popularIcoCV.dataSource = self
     }
     
     
@@ -61,4 +65,20 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
         return 616
     }
 
+}
+
+
+extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularIcoCVC", for: indexPath)as? PopularIcoCVC else {return UICollectionViewCell()}
+        
+        return cell
+    }
+    
+    
+    
 }
