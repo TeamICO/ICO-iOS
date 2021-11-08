@@ -12,13 +12,13 @@
         <!--Home In Style LifeVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="HomeInStyleLifeVC" id="Y6W-OH-hqX" customClass="HomeInStyleLifeVC" customModule="ICO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeInStyleLifeVC" id="Y6W-OH-hqX" customClass="HomeInStyleLifeVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-DA-sxv">
-                                <rect key="frame" x="16" y="56" width="383" height="60"/>
+                                <rect key="frame" x="16" y="94" width="383" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="slt-D3-Rbv">
                                         <rect key="frame" x="0.0" y="0.0" width="383" height="60"/>
@@ -60,19 +60,19 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKO-wk-eUS">
-                                <rect key="frame" x="0.0" y="116" width="414" height="746"/>
+                                <rect key="frame" x="0.0" y="154" width="414" height="708"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcp-XQ-6g2">
-                                        <rect key="frame" x="0.0" y="0.0" width="1242" height="746"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1242" height="708"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yyp-J1-ehR">
-                                                <rect key="frame" x="0.0" y="0.0" width="1242" height="746"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1242" height="708"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-CK-9wM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
                                                         <subviews>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fa5-vG-P25">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
                                                                 <connections>
                                                                     <segue destination="fCB-sG-GV0" kind="embed" id="h90-Ap-0uB"/>
                                                                 </connections>
@@ -87,10 +87,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7J-H5-0Cd">
-                                                        <rect key="frame" x="414" y="0.0" width="414" height="746"/>
+                                                        <rect key="frame" x="414" y="0.0" width="414" height="708"/>
                                                         <subviews>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-C8-9jz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
                                                                 <connections>
                                                                     <segue destination="U6h-Z8-sqh" kind="embed" id="SFD-bn-rUE"/>
                                                                 </connections>
@@ -105,10 +105,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyM-qD-c68">
-                                                        <rect key="frame" x="828" y="0.0" width="414" height="746"/>
+                                                        <rect key="frame" x="828" y="0.0" width="414" height="708"/>
                                                         <subviews>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjX-GY-1UK">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
                                                                 <connections>
                                                                     <segue destination="srw-sQ-mkp" kind="embed" id="7Xt-Ha-Qud"/>
                                                                 </connections>
@@ -155,7 +155,7 @@
                             <constraint firstItem="6sj-DA-sxv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="chl-wB-MlM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nKO-wk-eUS" secondAttribute="bottom" id="dhf-Iw-3Mz"/>
                             <constraint firstItem="nKO-wk-eUS" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="bottom" id="lhl-LG-4U8"/>
-                            <constraint firstItem="6sj-DA-sxv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="12" id="zU5-uP-CLG"/>
+                            <constraint firstItem="6sj-DA-sxv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="zU5-uP-CLG"/>
                         </constraints>
                     </view>
                     <connections>
