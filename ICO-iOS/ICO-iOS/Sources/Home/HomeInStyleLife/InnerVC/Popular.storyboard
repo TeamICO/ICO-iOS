@@ -13,7 +13,7 @@
         <!--PopularVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Popular" id="Y6W-OH-hqX" customClass="PopularVC" customModule="ICO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Popular" id="Y6W-OH-hqX" customClass="PopularVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +132,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="popularIcoCV" destination="6yE-pF-VGc" id="4GI-Yf-LTW"/>
                         <outlet property="popularLabel" destination="Moy-Te-mvd" id="iuh-x5-3M5"/>
                         <outlet property="postTV" destination="2wc-rA-JcA" id="IsI-ph-eEs"/>
                         <outlet property="stackView" destination="Pci-cJ-LCJ" id="8Vi-j0-gLY"/>
