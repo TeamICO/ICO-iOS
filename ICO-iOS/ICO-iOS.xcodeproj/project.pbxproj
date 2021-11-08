@@ -15,8 +15,6 @@
 		7190EA49273816FA008BA6C0 /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA48273816FA008BA6C0 /* Recent.storyboard */; };
 		7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4A273819D6008BA6C0 /* Popular.storyboard */; };
 		7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4C27381A54008BA6C0 /* Keyword.storyboard */; };
-		71DF366727392A4C00F36D38 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DF366527392A4C00F36D38 /* PopularIcoCVC.swift */; };
-		71DF366827392A4C00F36D38 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DF366627392A4C00F36D38 /* PopularIcoCVC.xib */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -101,8 +99,6 @@
 		7190EA48273816FA008BA6C0 /* Recent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recent.storyboard; sourceTree = "<group>"; };
 		7190EA4A273819D6008BA6C0 /* Popular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popular.storyboard; sourceTree = "<group>"; };
 		7190EA4C27381A54008BA6C0 /* Keyword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyword.storyboard; sourceTree = "<group>"; };
-		71DF366527392A4C00F36D38 /* PopularIcoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopularIcoCVC.swift; path = ../../../../../../../../../../Documents/PopularIcoCVC.swift; sourceTree = "<group>"; };
-		71DF366627392A4C00F36D38 /* PopularIcoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PopularIcoCVC.xib; path = ../../../../../../../../../../Documents/PopularIcoCVC.xib; sourceTree = "<group>"; };
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
@@ -198,8 +194,6 @@
 			children = (
 				714F5A152733C06E00692A13 /* RecentTVC.swift */,
 				714F5A162733C06E00692A13 /* RecentTVC.xib */,
-				71DF366527392A4C00F36D38 /* PopularIcoCVC.swift */,
-				71DF366627392A4C00F36D38 /* PopularIcoCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -739,7 +733,6 @@
 				E9CAF1C527316C39008F749B /* HomeInHomeSB.storyboard in Resources */,
 				E998C25C2732955A00E1F8D0 /* EcoTopicCVC.xib in Resources */,
 				E9378D7F2737FCD000C589A1 /* BestTagTVC.xib in Resources */,
-				71DF366827392A4C00F36D38 /* PopularIcoCVC.xib in Resources */,
 				E9CAF1CB27316C73008F749B /* HomeInStyleLifeSB.storyboard in Resources */,
 				E9378D8F2738032500C589A1 /* ResponsiveStyleShotTVC.xib in Resources */,
 				E9CAF1CD27317295008F749B /* README.md in Resources */,
@@ -807,7 +800,6 @@
 				E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */,
 				E9CAF1C927316C6B008F749B /* HomeInStyleLifeVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
-				71DF366727392A4C00F36D38 /* PopularIcoCVC.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,

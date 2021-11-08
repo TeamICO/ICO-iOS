@@ -27,14 +27,14 @@ class PopularVC: UIViewController {
     
     func registerXib(){
         postTV.register(UINib(nibName: "RecentTVC", bundle: nil), forCellReuseIdentifier: "RecentTVC")
-        popularIcoCV.register(UINib(nibName: "PopularIcoCVC", bundle: nil), forCellWithReuseIdentifier: "PopularIcoCVC")
+        //popularIcoCV.register(UINib(nibName: "PopularIcoCVC", bundle: nil), forCellWithReuseIdentifier: "PopularIcoCVC")
     }
     
     func setTVCV(){
         postTV.delegate = self
         postTV.dataSource = self
-        popularIcoCV.delegate = self
-        popularIcoCV.dataSource = self
+        //popularIcoCV.delegate = self
+        //popularIcoCV.dataSource = self
     }
     
     
@@ -67,7 +67,7 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
 
 }
 
-
+/*
 extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
@@ -82,3 +82,4 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     
 }
+*/
