@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         let vc : UIViewController
-        if jwtToken != nil{
+        if jwtToken == nil{
             vc = BaseTBC()
         }else{
             let splashStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
