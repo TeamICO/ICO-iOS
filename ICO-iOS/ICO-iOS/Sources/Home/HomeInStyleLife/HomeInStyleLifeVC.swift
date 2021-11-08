@@ -21,10 +21,7 @@ class HomeInStyleLifeVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("ddddd")
-        print("ddddd")
-        print("ddddd")
-        print("ddddd")
+   
         
         setUI()
     }
