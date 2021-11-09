@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularIcoCVC" id="gTV-IL-0wX" customClass="PopularIcoCVC" customModule="ICO_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="96" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="96" height="137"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_styleshot_sample03" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-eU-ID6">
+                        <rect key="frame" x="16" y="0.0" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="1PZ-cy-xKW"/>
+                            <constraint firstAttribute="width" constant="80" id="63b-DR-LQ5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mU-ME-PVR">
+                        <rect key="frame" x="38.5" y="90" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66g-dC-jft">
+                        <rect key="frame" x="76" y="58" width="20" height="20"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-styleshot-zerowaste" translatesAutoresizingMaskIntoConstraints="NO" id="gzq-9k-yNn">
+                                <rect key="frame" x="2" y="2" width="16" height="16"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gzq-9k-yNn" firstAttribute="leading" secondItem="66g-dC-jft" secondAttribute="leading" constant="2" id="4T8-Sr-37m"/>
+                            <constraint firstAttribute="height" constant="20" id="4iw-fO-Izc"/>
+                            <constraint firstAttribute="width" constant="20" id="8Hh-G0-Mq2"/>
+                            <constraint firstItem="gzq-9k-yNn" firstAttribute="top" secondItem="66g-dC-jft" secondAttribute="top" constant="2" id="ZBa-zR-mAi"/>
+                            <constraint firstAttribute="trailing" secondItem="gzq-9k-yNn" secondAttribute="trailing" constant="2" id="tSz-5n-dfX"/>
+                            <constraint firstAttribute="bottom" secondItem="gzq-9k-yNn" secondAttribute="bottom" constant="2" id="una-RX-EcB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="8mU-ME-PVR" firstAttribute="top" secondItem="SPi-eU-ID6" secondAttribute="bottom" constant="10" id="3oh-q2-gwT"/>
+                <constraint firstAttribute="trailing" secondItem="66g-dC-jft" secondAttribute="trailing" id="L8i-t5-NHC"/>
+                <constraint firstAttribute="bottom" secondItem="66g-dC-jft" secondAttribute="bottom" constant="59" id="Vg9-fh-ciT"/>
+                <constraint firstItem="8mU-ME-PVR" firstAttribute="centerX" secondItem="SPi-eU-ID6" secondAttribute="centerX" id="WnB-vG-5G4"/>
+                <constraint firstAttribute="trailing" secondItem="SPi-eU-ID6" secondAttribute="trailing" id="Xns-f1-rDT"/>
+                <constraint firstItem="SPi-eU-ID6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YPu-KU-HgL"/>
+                <constraint firstItem="SPi-eU-ID6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="n30-3x-ger"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundIcon" destination="66g-dC-jft" id="e1H-En-D59"/>
+                <outlet property="icoImage" destination="SPi-eU-ID6" id="eQX-P7-oWZ"/>
+                <outlet property="icoName" destination="8mU-ME-PVR" id="5za-fE-BbZ"/>
+                <outlet property="iconImage" destination="gzq-9k-yNn" id="nTS-xs-eVU"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="93.415178571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="illust-styleshot-zerowaste" width="120" height="120"/>
+        <image name="img_styleshot_sample03" width="1440" height="1440"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
