@@ -21,7 +21,13 @@
 		E92FB4D9273A1A3600FBB420 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */; };
 		E92FB4DD273A232200FBB420 /* RecentSearchWordsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4DB273A232200FBB420 /* RecentSearchWordsCVC.swift */; };
 		E92FB4DE273A232200FBB420 /* RecentSearchWordsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4DC273A232200FBB420 /* RecentSearchWordsCVC.xib */; };
-		E92FB4E1273A30ED00FBB420 /* HotKeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4E0273A30ED00FBB420 /* HotKeywordSV.swift */; };
+		E92FB4E5273A47EB00FBB420 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4E3273A47EB00FBB420 /* SearchTVC.swift */; };
+		E92FB4E6273A47EB00FBB420 /* SearchTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4E4273A47EB00FBB420 /* SearchTVC.xib */; };
+		E92FB4EC273A4D3500FBB420 /* SearchResultCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4EA273A4D3500FBB420 /* SearchResultCVC.swift */; };
+		E92FB4ED273A4D3500FBB420 /* SearchResultCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4EB273A4D3500FBB420 /* SearchResultCVC.xib */; };
+		E92FB4F0273A4D4600FBB420 /* SearchSortCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4EE273A4D4600FBB420 /* SearchSortCVC.swift */; };
+		E92FB4F1273A4D4600FBB420 /* SearchSortCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4EF273A4D4600FBB420 /* SearchSortCVC.xib */; };
+		E92FB4F3273A562900FBB420 /* HotKeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4F2273A562900FBB420 /* HotKeywordSV.swift */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -114,7 +120,13 @@
 		E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCustomTB.swift; path = ../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/BaseCustomTB.swift; sourceTree = "<group>"; };
 		E92FB4DB273A232200FBB420 /* RecentSearchWordsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentSearchWordsCVC.swift; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/RecentSearchWordsCVC.swift; sourceTree = "<group>"; };
 		E92FB4DC273A232200FBB420 /* RecentSearchWordsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentSearchWordsCVC.xib; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/RecentSearchWordsCVC.xib; sourceTree = "<group>"; };
-		E92FB4E0273A30ED00FBB420 /* HotKeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotKeywordSV.swift; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/HotKeywordSV.swift; sourceTree = "<group>"; };
+		E92FB4E3273A47EB00FBB420 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchTVC.swift; path = ../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchTVC.swift; sourceTree = "<group>"; };
+		E92FB4E4273A47EB00FBB420 /* SearchTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchTVC.xib; path = ../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchTVC.xib; sourceTree = "<group>"; };
+		E92FB4EA273A4D3500FBB420 /* SearchResultCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResultCVC.swift; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchResultCVC.swift; sourceTree = "<group>"; };
+		E92FB4EB273A4D3500FBB420 /* SearchResultCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchResultCVC.xib; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchResultCVC.xib; sourceTree = "<group>"; };
+		E92FB4EE273A4D4600FBB420 /* SearchSortCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchSortCVC.swift; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchSortCVC.swift; sourceTree = "<group>"; };
+		E92FB4EF273A4D4600FBB420 /* SearchSortCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchSortCVC.xib; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchSortCVC.xib; sourceTree = "<group>"; };
+		E92FB4F2273A562900FBB420 /* HotKeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotKeywordSV.swift; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/HotKeywordSV.swift; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchSB.storyboard; sourceTree = "<group>"; };
@@ -261,9 +273,46 @@
 		E92FB4DF273A30A800FBB420 /* HotKeywordSV */ = {
 			isa = PBXGroup;
 			children = (
-				E92FB4E0273A30ED00FBB420 /* HotKeywordSV.swift */,
+				E92FB4F2273A562900FBB420 /* HotKeywordSV.swift */,
 			);
 			path = HotKeywordSV;
+			sourceTree = "<group>";
+		};
+		E92FB4E2273A47C700FBB420 /* SearchTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E92FB4E3273A47EB00FBB420 /* SearchTVC.swift */,
+				E92FB4E4273A47EB00FBB420 /* SearchTVC.xib */,
+				E92FB4E7273A4CEB00FBB420 /* SearchCVC */,
+			);
+			path = SearchTVC;
+			sourceTree = "<group>";
+		};
+		E92FB4E7273A4CEB00FBB420 /* SearchCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E92FB4E8273A4CF800FBB420 /* SearchResultCVC */,
+				E92FB4E9273A4D0400FBB420 /* SearchSortCVC */,
+			);
+			path = SearchCVC;
+			sourceTree = "<group>";
+		};
+		E92FB4E8273A4CF800FBB420 /* SearchResultCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E92FB4EA273A4D3500FBB420 /* SearchResultCVC.swift */,
+				E92FB4EB273A4D3500FBB420 /* SearchResultCVC.xib */,
+			);
+			path = SearchResultCVC;
+			sourceTree = "<group>";
+		};
+		E92FB4E9273A4D0400FBB420 /* SearchSortCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E92FB4EE273A4D4600FBB420 /* SearchSortCVC.swift */,
+				E92FB4EF273A4D4600FBB420 /* SearchSortCVC.xib */,
+			);
+			path = SearchSortCVC;
 			sourceTree = "<group>";
 		};
 		E9378D652737ACED00C589A1 /* UserRatingsSV */ = {
@@ -277,6 +326,7 @@
 		E9378D90273808AD00C589A1 /* SearchTVC */ = {
 			isa = PBXGroup;
 			children = (
+				E92FB4E2273A47C700FBB420 /* SearchTVC */,
 				E9378D9B2738095000C589A1 /* RecentSearchWordsTVC */,
 				E9378D9A2738092B00C589A1 /* HotKeywordTVC */,
 			);
@@ -747,6 +797,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E92FB4ED273A4D3500FBB420 /* SearchResultCVC.xib in Resources */,
 				E9378D9F2738098700C589A1 /* RecentSearchWordsTVC.xib in Resources */,
 				E998C25727328A8700E1F8D0 /* BrandCVC.xib in Resources */,
 				E9CAF19C27316441008F749B /* MyPageSB.storyboard in Resources */,
@@ -754,6 +805,8 @@
 				E9378D832737FE0400C589A1 /* SensibleStyleShotTVC.xib in Resources */,
 				E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */,
 				E998C252273283E800E1F8D0 /* BrandRecommendTVC.xib in Resources */,
+				E92FB4F1273A4D4600FBB420 /* SearchSortCVC.xib in Resources */,
+				E92FB4E6273A47EB00FBB420 /* SearchTVC.xib in Resources */,
 				E9378D872737FE9F00C589A1 /* SensibleCVC.xib in Resources */,
 				E9944BD02735746200DB9279 /* ResponsiveCVC.xib in Resources */,
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
@@ -832,6 +885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E92FB4F3273A562900FBB420 /* HotKeywordSV.swift in Sources */,
 				E9944BCF2735746200DB9279 /* ResponsiveCVC.swift in Sources */,
 				E9CAF1772731635B008F749B /* ViewController.swift in Sources */,
 				E9CAF1B727316987008F749B /* UIButton.swift in Sources */,
@@ -844,12 +898,12 @@
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
-				E92FB4E1273A30ED00FBB420 /* HotKeywordSV.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
 				E9378D9E2738098700C589A1 /* RecentSearchWordsTVC.swift in Sources */,
 				E9CAF19827316404008F749B /* MyPageVC.swift in Sources */,
 				E998C249273275D500E1F8D0 /* BasePaddingLabel.swift in Sources */,
 				E998C25627328A8700E1F8D0 /* BrandCVC.swift in Sources */,
+				E92FB4EC273A4D3500FBB420 /* SearchResultCVC.swift in Sources */,
 				E9CAF194273163EC008F749B /* HomeVC.swift in Sources */,
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
@@ -873,11 +927,13 @@
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
 				E92FB4D9273A1A3600FBB420 /* BaseCustomTB.swift in Sources */,
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
+				E92FB4E5273A47EB00FBB420 /* SearchTVC.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
 				E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */,
 				E943BC602738FB6400619C74 /* LoginCVC.swift in Sources */,
 				E9378D862737FE9F00C589A1 /* SensibleCVC.swift in Sources */,
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
+				E92FB4F0273A4D4600FBB420 /* SearchSortCVC.swift in Sources */,
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
 				E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */,
 				E9378D8A2738017400C589A1 /* EcoTopicTVC.swift in Sources */,
