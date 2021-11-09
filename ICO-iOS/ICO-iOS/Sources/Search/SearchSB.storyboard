@@ -12,7 +12,7 @@
         <!--SearchVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SearchVC" id="Y6W-OH-hqX" customClass="SearchVC" customModule="ICO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="Y6W-OH-hqX" customClass="SearchVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,31 +36,37 @@
                                 <rect key="frame" x="48" y="44" width="350" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="검색할 스타일샷의 키워드를 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ls-53-Rfb">
-                                        <rect key="frame" x="12" y="0.0" width="298" height="48"/>
+                                        <rect key="frame" x="12" y="0.0" width="299" height="48"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0039215686274509803" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearchGreen1" translatesAutoresizingMaskIntoConstraints="NO" id="uta-VC-pce">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blB-mf-GiD">
                                         <rect key="frame" x="316" y="14" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="3PV-fQ-f8t"/>
-                                            <constraint firstAttribute="width" constant="20" id="VB8-87-JAs"/>
+                                            <constraint firstAttribute="height" constant="20" id="dyl-DP-55X"/>
+                                            <constraint firstAttribute="width" constant="20" id="rFX-Su-LEM"/>
                                         </constraints>
-                                    </imageView>
+                                        <color key="tintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icSearchGreen2"/>
+                                        <connections>
+                                            <action selector="didTapSearchButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WDY-fc-ouu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.97254901960784312" blue="0.96862745098039216" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="uta-VC-pce" firstAttribute="top" secondItem="ecC-An-jIS" secondAttribute="top" constant="14" id="HqV-wu-7sB"/>
+                                    <constraint firstAttribute="trailing" secondItem="blB-mf-GiD" secondAttribute="trailing" constant="14" id="Ng9-eA-kvI"/>
                                     <constraint firstItem="7ls-53-Rfb" firstAttribute="top" secondItem="ecC-An-jIS" secondAttribute="top" id="Phd-Kl-ecY"/>
-                                    <constraint firstItem="uta-VC-pce" firstAttribute="leading" secondItem="7ls-53-Rfb" secondAttribute="trailing" constant="6" id="X1O-xT-E2Z"/>
                                     <constraint firstAttribute="bottom" secondItem="7ls-53-Rfb" secondAttribute="bottom" id="bfn-h0-VId"/>
                                     <constraint firstAttribute="height" constant="48" id="c1Y-kf-WVd"/>
-                                    <constraint firstAttribute="trailing" secondItem="uta-VC-pce" secondAttribute="trailing" constant="14" id="cAO-SS-BZz"/>
                                     <constraint firstItem="7ls-53-Rfb" firstAttribute="leading" secondItem="ecC-An-jIS" secondAttribute="leading" constant="12" id="sfi-Jf-1Cq"/>
-                                    <constraint firstAttribute="bottom" secondItem="uta-VC-pce" secondAttribute="bottom" constant="14" id="tMS-mo-1Lf"/>
+                                    <constraint firstItem="blB-mf-GiD" firstAttribute="leading" secondItem="7ls-53-Rfb" secondAttribute="trailing" constant="5" id="vBV-Gg-32b"/>
+                                    <constraint firstItem="blB-mf-GiD" firstAttribute="top" secondItem="ecC-An-jIS" secondAttribute="top" constant="14" id="wQk-dH-pMJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="blB-mf-GiD" secondAttribute="bottom" constant="14" id="wb5-qA-APg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -100,7 +106,7 @@
     </scenes>
     <resources>
         <image name="icArrowLeft" width="24" height="24"/>
-        <image name="icSearchGreen1" width="20" height="20"/>
+        <image name="icSearchGreen2" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

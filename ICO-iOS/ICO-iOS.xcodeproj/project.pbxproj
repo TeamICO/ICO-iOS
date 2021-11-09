@@ -19,6 +19,8 @@
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
 		E92FB4D5273A116400FBB420 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4D4273A116400FBB420 /* MainStoryboard.storyboard */; };
 		E92FB4D9273A1A3600FBB420 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */; };
+		E92FB4DD273A232200FBB420 /* RecentSearchWordsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4DB273A232200FBB420 /* RecentSearchWordsCVC.swift */; };
+		E92FB4DE273A232200FBB420 /* RecentSearchWordsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4DC273A232200FBB420 /* RecentSearchWordsCVC.xib */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -109,6 +111,8 @@
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E92FB4D4273A116400FBB420 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../../../../../../../Documents/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCustomTB.swift; path = ../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/BaseCustomTB.swift; sourceTree = "<group>"; };
+		E92FB4DB273A232200FBB420 /* RecentSearchWordsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentSearchWordsCVC.swift; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/RecentSearchWordsCVC.swift; sourceTree = "<group>"; };
+		E92FB4DC273A232200FBB420 /* RecentSearchWordsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentSearchWordsCVC.xib; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/RecentSearchWordsCVC.xib; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchSB.storyboard; sourceTree = "<group>"; };
@@ -243,6 +247,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E92FB4DA273A22D400FBB420 /* RecentSearchWordsCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E92FB4DB273A232200FBB420 /* RecentSearchWordsCVC.swift */,
+				E92FB4DC273A232200FBB420 /* RecentSearchWordsCVC.xib */,
+			);
+			path = RecentSearchWordsCVC;
+			sourceTree = "<group>";
+		};
 		E9378D652737ACED00C589A1 /* UserRatingsSV */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +287,7 @@
 			children = (
 				E9378D9C2738098700C589A1 /* RecentSearchWordsTVC.swift */,
 				E9378D9D2738098700C589A1 /* RecentSearchWordsTVC.xib */,
+				E92FB4DA273A22D400FBB420 /* RecentSearchWordsCVC */,
 			);
 			path = RecentSearchWordsTVC;
 			sourceTree = "<group>";
@@ -754,6 +768,7 @@
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				E92FB4D5273A116400FBB420 /* MainStoryboard.storyboard in Resources */,
 				E9CAF19A27316427008F749B /* MyStyleSB.storyboard in Resources */,
+				E92FB4DE273A232200FBB420 /* RecentSearchWordsCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +828,7 @@
 				E9CAF1C727316C48008F749B /* HomeInHomeVC.swift in Sources */,
 				E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */,
 				E9CAF1C927316C6B008F749B /* HomeInStyleLifeVC.swift in Sources */,
+				E92FB4DD273A232200FBB420 /* RecentSearchWordsCVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
