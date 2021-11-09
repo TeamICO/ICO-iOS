@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class SearchVC: BaseViewController {
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
@@ -16,6 +16,7 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
 
         self.tableviewConfigure()
+        searchTextField.delegate = self
     }
     
     @IBAction func didTapBackButton(_ sender: Any) {
@@ -23,6 +24,10 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func didTapSearchButton(_ sender: Any) {
+        guard let text = searchTextField.text, text.isExists else{
+            self.presentAlert(title: "검색어를 입력해주세요.")
+            return
+        }
     }
     
 
@@ -74,7 +79,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 1 : return 264
-        case 2 : return 24
+        case 2 : return 24 // 배너 패딩 값
         default:
             return UITableView.automaticDimension
         }
@@ -110,4 +115,17 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     
  
     
+}
+// MARK: - TextField Delegate
+extension SearchVC : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text{
+            if text == ""{
+                self.presentAlert(title: "검색어를 입력해주세요.")
+            }
+            
+        }
+        
+        return true
+    }
 }
