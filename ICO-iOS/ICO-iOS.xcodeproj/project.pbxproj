@@ -18,7 +18,6 @@
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
 		E92FB4D5273A116400FBB420 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4D4273A116400FBB420 /* MainStoryboard.storyboard */; };
-		E92FB4D9273A1A3600FBB420 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */; };
 		E92FB4DD273A232200FBB420 /* RecentSearchWordsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4DB273A232200FBB420 /* RecentSearchWordsCVC.swift */; };
 		E92FB4DE273A232200FBB420 /* RecentSearchWordsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4DC273A232200FBB420 /* RecentSearchWordsCVC.xib */; };
 		E92FB4E5273A47EB00FBB420 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4E3273A47EB00FBB420 /* SearchTVC.swift */; };
@@ -27,7 +26,8 @@
 		E92FB4ED273A4D3500FBB420 /* SearchResultCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4EB273A4D3500FBB420 /* SearchResultCVC.xib */; };
 		E92FB4F0273A4D4600FBB420 /* SearchSortCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4EE273A4D4600FBB420 /* SearchSortCVC.swift */; };
 		E92FB4F1273A4D4600FBB420 /* SearchSortCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4EF273A4D4600FBB420 /* SearchSortCVC.xib */; };
-		E92FB4F3273A562900FBB420 /* HotKeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4F2273A562900FBB420 /* HotKeywordSV.swift */; };
+		E92FB4F8273A56F600FBB420 /* HotkeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4F7273A56F600FBB420 /* HotkeywordSV.swift */; };
+		E92FB4FC273A574A00FBB420 /* CustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4FB273A574A00FBB420 /* CustomTB.swift */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -117,7 +117,6 @@
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E92FB4D4273A116400FBB420 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../../../../../../../Documents/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCustomTB.swift; path = ../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/BaseCustomTB.swift; sourceTree = "<group>"; };
 		E92FB4DB273A232200FBB420 /* RecentSearchWordsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentSearchWordsCVC.swift; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/RecentSearchWordsCVC.swift; sourceTree = "<group>"; };
 		E92FB4DC273A232200FBB420 /* RecentSearchWordsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentSearchWordsCVC.xib; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/RecentSearchWordsCVC.xib; sourceTree = "<group>"; };
 		E92FB4E3273A47EB00FBB420 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchTVC.swift; path = ../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchTVC.swift; sourceTree = "<group>"; };
@@ -126,7 +125,8 @@
 		E92FB4EB273A4D3500FBB420 /* SearchResultCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchResultCVC.xib; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchResultCVC.xib; sourceTree = "<group>"; };
 		E92FB4EE273A4D4600FBB420 /* SearchSortCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchSortCVC.swift; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchSortCVC.swift; sourceTree = "<group>"; };
 		E92FB4EF273A4D4600FBB420 /* SearchSortCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchSortCVC.xib; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchSortCVC.xib; sourceTree = "<group>"; };
-		E92FB4F2273A562900FBB420 /* HotKeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotKeywordSV.swift; path = ../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/HotKeywordSV.swift; sourceTree = "<group>"; };
+		E92FB4F7273A56F600FBB420 /* HotkeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotkeywordSV.swift; path = ../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/HotkeywordSV.swift; sourceTree = "<group>"; };
+		E92FB4FB273A574A00FBB420 /* CustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTB.swift; path = ../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/CustomTB.swift; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchSB.storyboard; sourceTree = "<group>"; };
@@ -270,14 +270,6 @@
 			path = RecentSearchWordsCVC;
 			sourceTree = "<group>";
 		};
-		E92FB4DF273A30A800FBB420 /* HotKeywordSV */ = {
-			isa = PBXGroup;
-			children = (
-				E92FB4F2273A562900FBB420 /* HotKeywordSV.swift */,
-			);
-			path = HotKeywordSV;
-			sourceTree = "<group>";
-		};
 		E92FB4E2273A47C700FBB420 /* SearchTVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +330,7 @@
 			children = (
 				E9378DA02738099B00C589A1 /* HotKeywordTVC.swift */,
 				E9378DA12738099B00C589A1 /* HotKeywordTVC.xib */,
-				E92FB4DF273A30A800FBB420 /* HotKeywordSV */,
+				E92FB4F7273A56F600FBB420 /* HotkeywordSV.swift */,
 			);
 			path = HotKeywordTVC;
 			sourceTree = "<group>";
@@ -525,7 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				E9CAF19F2731646F008F749B /* BaseTBC.swift */,
-				E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */,
+				E92FB4FB273A574A00FBB420 /* CustomTB.swift */,
 			);
 			path = BaseTBC;
 			sourceTree = "<group>";
@@ -885,7 +877,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92FB4F3273A562900FBB420 /* HotKeywordSV.swift in Sources */,
+				E92FB4F8273A56F600FBB420 /* HotkeywordSV.swift in Sources */,
 				E9944BCF2735746200DB9279 /* ResponsiveCVC.swift in Sources */,
 				E9CAF1772731635B008F749B /* ViewController.swift in Sources */,
 				E9CAF1B727316987008F749B /* UIButton.swift in Sources */,
@@ -893,6 +885,7 @@
 				E9CAF1C727316C48008F749B /* HomeInHomeVC.swift in Sources */,
 				E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */,
 				E9CAF1C927316C6B008F749B /* HomeInStyleLifeVC.swift in Sources */,
+				E92FB4FC273A574A00FBB420 /* CustomTB.swift in Sources */,
 				E92FB4DD273A232200FBB420 /* RecentSearchWordsCVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
@@ -925,7 +918,6 @@
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E998C24727326C0E00E1F8D0 /* SensibleSV.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
-				E92FB4D9273A1A3600FBB420 /* BaseCustomTB.swift in Sources */,
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
 				E92FB4E5273A47EB00FBB420 /* SearchTVC.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
