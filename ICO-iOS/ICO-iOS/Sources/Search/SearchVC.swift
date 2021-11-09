@@ -14,7 +14,7 @@ class SearchVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.dismissKeyboardWhenTappedAround()
         self.tableviewConfigure()
         searchTextField.delegate = self
     }
@@ -72,6 +72,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
             return cell
 
         default:
+
             return UITableViewCell()
         }
 
@@ -79,7 +80,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 1 : return 264
-        case 2 : return 24 // 배너 패딩 값
+       
         default:
             return UITableView.automaticDimension
         }
@@ -102,7 +103,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
         switch section {
         case 2 :
             // 광고 배너 높이 조절
-            let footer = UIImageView(frame: CGRect(x: 0, y: 0, width: view.width, height: 70))
+            let footer = UIImageView(frame: CGRect(x: 0, y: 24, width: view.width, height: 70))
             footer.image = UIImage(named: "img_search_banner")
             return footer
         default:
