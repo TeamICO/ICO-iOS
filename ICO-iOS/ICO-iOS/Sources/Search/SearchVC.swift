@@ -22,7 +22,9 @@ class SearchVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
- 
+    @IBAction func didTapSearchButton(_ sender: Any) {
+    }
+    
 
 }
 // MARK: - TableView Configure
