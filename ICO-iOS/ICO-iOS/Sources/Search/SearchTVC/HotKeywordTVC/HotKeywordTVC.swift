@@ -18,15 +18,15 @@ class HotKeywordTVC: UITableViewCell {
         
         for i in 1...5{
             let stack = HokeywordSV()
-//            stack.rankNumLabel.text = "\(i)"
-//            stack.rankTitleLabel.text = "비건 스킨"
+            stack.rankLabel.text = "\(i)"
+            stack.rankTitleLabel.text = "비건 스킨"
             leftStackView.addArrangedSubview(stack)
             
         }
         for i in 1...5{
             let stack = HokeywordSV()
-//            stack.rankNumLabel.text = "\(i+5)"
-//            stack.rankTitleLabel.text = "비건 스킨"
+            stack.rankLabel.text = "\(i+5)"
+            stack.rankTitleLabel.text = "비건 스킨"
             rightStackView.addArrangedSubview(stack)
             
         }
