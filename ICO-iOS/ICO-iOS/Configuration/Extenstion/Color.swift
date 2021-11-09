@@ -68,6 +68,8 @@ extension UIColor {
             return #colorLiteral(red: 0.4196078431, green: 0.7647058824, blue: 0.5882352941, alpha: 1)
         case .hotKeywordStringBlack :
             return #colorLiteral(red: 0.003921568627, green: 0.01176470588, blue: 0.01176470588, alpha: 1)
+        case .alertGreen :
+            return #colorLiteral(red: 0.01960784314, green: 0.537254902, blue: 0.3294117647, alpha: 1)
         }
     }
     
@@ -87,4 +89,5 @@ enum Colors {
     case tabBarTitleUnSeletedColor
     case hotKeywordNumGreen
     case hotKeywordStringBlack
+    case alertGreen
 }
