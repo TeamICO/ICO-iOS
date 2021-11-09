@@ -46,8 +46,8 @@ extension SearchVC {
         let sensitiveNib = UINib(nibName: HotKeywordTVC.identifier, bundle: nil)
         tableView.register(sensitiveNib, forCellReuseIdentifier: HotKeywordTVC.identifier)
         
-        let searchNib = UINib(nibName: SearchTVC.identifier, bundle: nil)
-        tableView.register(searchNib, forCellReuseIdentifier: SearchTVC.identifier)
+        let searchNib = UINib(nibName: SearchResultTVC.identifier, bundle: nil)
+        tableView.register(searchNib, forCellReuseIdentifier: SearchResultTVC.identifier)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -74,7 +74,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // isSearched true 일 때 검색된 화면 보여주고 false 검색하지 않았을 때 기존 화면
         if isSearched{
-            let cell = tableView.dequeueReusableCell(withIdentifier: SearchTVC.identifier, for: indexPath) as! SearchTVC
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTVC.identifier, for: indexPath) as! SearchResultTVC
             cell.selectionStyle = .none
             return cell
         }else{
