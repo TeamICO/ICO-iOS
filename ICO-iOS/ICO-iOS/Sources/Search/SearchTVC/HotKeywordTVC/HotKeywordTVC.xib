@@ -51,7 +51,7 @@
                     <constraint firstItem="ba5-VR-NHa" firstAttribute="top" secondItem="PZx-E2-w4G" secondAttribute="bottom" constant="16" id="inZ-Y1-VaO"/>
                     <constraint firstItem="3wi-Wu-i8k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="ize-1d-jHI"/>
                     <constraint firstItem="3wi-Wu-i8k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="neL-IA-ul4"/>
-                    <constraint firstItem="8p1-F2-g5a" firstAttribute="top" secondItem="PZx-E2-w4G" secondAttribute="bottom" constant="16" id="nk4-Pa-Uaj"/>
+                    <constraint firstItem="8p1-F2-g5a" firstAttribute="top" secondItem="3wi-Wu-i8k" secondAttribute="bottom" constant="20" id="nk4-Pa-Uaj"/>
                     <constraint firstAttribute="trailing" secondItem="8p1-F2-g5a" secondAttribute="trailing" id="yqe-50-mwN"/>
                 </constraints>
             </tableViewCellContentView>
