@@ -17,14 +17,14 @@ class HotKeywordTVC: UITableViewCell {
     
         
         for i in 1...5{
-            let stack = HotKeywordSV()
+            let stack = HotkeywordSV()
             stack.rankNumLabel.text = "\(i)"
             stack.rankTitleLabel.text = "비건 스킨"
             leftStackView.addArrangedSubview(stack)
             
         }
         for i in 1...5{
-            let stack = HotKeywordSV()
+            let stack = HotkeywordSV()
             stack.rankNumLabel.text = "\(i+5)"
             stack.rankTitleLabel.text = "비건 스킨"
             rightStackView.addArrangedSubview(stack)
