@@ -33,8 +33,8 @@ extension RecentSearchWordsTVC {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.delegate = self
         collectionView.dataSource = self
-        let nib = UINib(nibName: RecentSearchWordsCVC.identifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: RecentSearchWordsCVC.identifier)
+        let nib = UINib(nibName: RecentCVC.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: RecentCVC.identifier)
         
     }
 }
@@ -44,7 +44,7 @@ extension RecentSearchWordsTVC : UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentSearchWordsCVC.identifier, for: indexPath) as! RecentSearchWordsCVC
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentCVC.identifier, for: indexPath) as! RecentCVC
         
         return cell
     }

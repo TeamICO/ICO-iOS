@@ -47,6 +47,8 @@
 		E951CE63273A67F5002799D6 /* SearchResultTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE61273A67F5002799D6 /* SearchResultTVC.swift */; };
 		E951CE64273A67F5002799D6 /* SearchResultTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E951CE62273A67F5002799D6 /* SearchResultTVC.xib */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
+		E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE68273A6BBB002799D6 /* RecentCVC.swift */; };
+		E951CE6B273A6BBB002799D6 /* RecentCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E951CE69273A6BBB002799D6 /* RecentCVC.xib */; };
 		E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */; };
 		E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */; };
 		E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BCA2735550A00DB9279 /* BasePageControl.swift */; };
@@ -140,6 +142,8 @@
 		E951CE61273A67F5002799D6 /* SearchResultTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTVC.swift; sourceTree = "<group>"; };
 		E951CE62273A67F5002799D6 /* SearchResultTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTVC.xib; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
+		E951CE68273A6BBB002799D6 /* RecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCVC.swift; sourceTree = "<group>"; };
+		E951CE69273A6BBB002799D6 /* RecentCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCVC.xib; sourceTree = "<group>"; };
 		E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCVC.swift; sourceTree = "<group>"; };
 		E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBannerCVC.xib; sourceTree = "<group>"; };
 		E9944BCA2735550A00DB9279 /* BasePageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageControl.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 			children = (
 				E9378D9C2738098700C589A1 /* RecentSearchWordsTVC.swift */,
 				E9378D9D2738098700C589A1 /* RecentSearchWordsTVC.xib */,
+				E951CE67273A6B98002799D6 /* RecentCVC */,
 			);
 			path = RecentSearchWordsTVC;
 			sourceTree = "<group>";
@@ -302,6 +307,15 @@
 				E951CE62273A67F5002799D6 /* SearchResultTVC.xib */,
 			);
 			path = SearchResultTVC;
+			sourceTree = "<group>";
+		};
+		E951CE67273A6B98002799D6 /* RecentCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E951CE68273A6BBB002799D6 /* RecentCVC.swift */,
+				E951CE69273A6BBB002799D6 /* RecentCVC.xib */,
+			);
+			path = RecentCVC;
 			sourceTree = "<group>";
 		};
 		E9944BCC2735743B00DB9279 /* ResponsiveStyleShotCVC */ = {
@@ -760,6 +774,7 @@
 				7190EA49273816FA008BA6C0 /* Recent.storyboard in Resources */,
 				E998C24D2732813C00E1F8D0 /* BestTagCVC.xib in Resources */,
 				714F5A182733C06E00692A13 /* RecentTVC.xib in Resources */,
+				E951CE6B273A6BBB002799D6 /* RecentCVC.xib in Resources */,
 				E9CAF1C527316C39008F749B /* HomeInHomeSB.storyboard in Resources */,
 				E998C25C2732955A00E1F8D0 /* EcoTopicCVC.xib in Resources */,
 				E9378D7F2737FCD000C589A1 /* BestTagTVC.xib in Resources */,
@@ -851,6 +866,7 @@
 				E943BC5A2738F4E000619C74 /* LoginVC.swift in Sources */,
 				E9378D822737FE0400C589A1 /* SensibleStyleShotTVC.swift in Sources */,
 				E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */,
+				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,
