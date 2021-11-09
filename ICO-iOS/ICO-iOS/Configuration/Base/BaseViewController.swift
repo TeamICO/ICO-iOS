@@ -25,8 +25,10 @@ class BaseViewController: UIViewController {
         }
         
         tabbar.tintColor = .tabBarGreen
-        tabbar.unselectedItemTintColor = .tabBarGray
-        tabbar.selectedItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        tabbar.unselectedItemTintColor = UIColor.appColor(.tabBarTitleUnSeletedColor)
+        
+        tabbar.selectedItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.appColor(.tabBarTitleSeletedColor)], for: .selected)
+        
     }
    
 }

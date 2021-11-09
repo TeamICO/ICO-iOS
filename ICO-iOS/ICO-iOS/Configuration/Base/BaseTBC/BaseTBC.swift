@@ -45,7 +45,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate{
         mystyleNVC.tabBarItem = mystyleTabBarItem
         mypageNVC.tabBarItem = mypageTabBarItem
     
-  
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .medium)], for: .normal)
         
        
     }
