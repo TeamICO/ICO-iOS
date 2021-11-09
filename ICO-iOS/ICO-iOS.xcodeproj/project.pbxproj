@@ -42,6 +42,11 @@
 		E943BC5C2738F58100619C74 /* LoginSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E943BC5B2738F58100619C74 /* LoginSB.storyboard */; };
 		E943BC602738FB6400619C74 /* LoginCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E943BC5E2738FB6400619C74 /* LoginCVC.swift */; };
 		E943BC612738FB6400619C74 /* LoginCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E943BC5F2738FB6400619C74 /* LoginCVC.xib */; };
+		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
+		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
+		E951CE63273A67F5002799D6 /* SearchResultTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE61273A67F5002799D6 /* SearchResultTVC.swift */; };
+		E951CE64273A67F5002799D6 /* SearchResultTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E951CE62273A67F5002799D6 /* SearchResultTVC.xib */; };
+		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
 		E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */; };
 		E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */; };
 		E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BCA2735550A00DB9279 /* BasePageControl.swift */; };
@@ -130,6 +135,11 @@
 		E943BC5B2738F58100619C74 /* LoginSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginSB.storyboard; sourceTree = "<group>"; };
 		E943BC5E2738FB6400619C74 /* LoginCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCVC.swift; sourceTree = "<group>"; };
 		E943BC5F2738FB6400619C74 /* LoginCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCVC.xib; sourceTree = "<group>"; };
+		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
+		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
+		E951CE61273A67F5002799D6 /* SearchResultTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTVC.swift; sourceTree = "<group>"; };
+		E951CE62273A67F5002799D6 /* SearchResultTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTVC.xib; sourceTree = "<group>"; };
+		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
 		E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCVC.swift; sourceTree = "<group>"; };
 		E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBannerCVC.xib; sourceTree = "<group>"; };
 		E9944BCA2735550A00DB9279 /* BasePageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageControl.swift; sourceTree = "<group>"; };
@@ -250,6 +260,7 @@
 		E9378D90273808AD00C589A1 /* SearchTVC */ = {
 			isa = PBXGroup;
 			children = (
+				E951CE60273A67BF002799D6 /* SearchResultTVC */,
 				E9378D9B2738095000C589A1 /* RecentSearchWordsTVC */,
 				E9378D9A2738092B00C589A1 /* HotKeywordTVC */,
 			);
@@ -261,6 +272,7 @@
 			children = (
 				E9378DA02738099B00C589A1 /* HotKeywordTVC.swift */,
 				E9378DA12738099B00C589A1 /* HotKeywordTVC.xib */,
+				E951CE65273A68C6002799D6 /* HokeywordSV.swift */,
 			);
 			path = HotKeywordTVC;
 			sourceTree = "<group>";
@@ -281,6 +293,15 @@
 				E943BC5F2738FB6400619C74 /* LoginCVC.xib */,
 			);
 			path = LoginCVC;
+			sourceTree = "<group>";
+		};
+		E951CE60273A67BF002799D6 /* SearchResultTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E951CE61273A67F5002799D6 /* SearchResultTVC.swift */,
+				E951CE62273A67F5002799D6 /* SearchResultTVC.xib */,
+			);
+			path = SearchResultTVC;
 			sourceTree = "<group>";
 		};
 		E9944BCC2735743B00DB9279 /* ResponsiveStyleShotCVC */ = {
@@ -388,6 +409,7 @@
 		E9CAF1872731636A008F749B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E951CE5C273A65D4002799D6 /* MainSB.storyboard */,
 				E9CAF188273163A5008F749B /* Home */,
 				E9CAF189273163A9008F749B /* MyStyle */,
 				E9CAF18A273163B0008F749B /* MyPage */,
@@ -445,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				E9CAF19F2731646F008F749B /* BaseTBC.swift */,
+				E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */,
 			);
 			path = BaseTBC;
 			sourceTree = "<group>";
@@ -718,6 +741,7 @@
 			files = (
 				E9378D9F2738098700C589A1 /* RecentSearchWordsTVC.xib in Resources */,
 				E998C25727328A8700E1F8D0 /* BrandCVC.xib in Resources */,
+				E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */,
 				E9CAF19C27316441008F749B /* MyPageSB.storyboard in Resources */,
 				E9CAF18C273163C2008F749B /* HomeSB.storyboard in Resources */,
 				E9378D832737FE0400C589A1 /* SensibleStyleShotTVC.xib in Resources */,
@@ -740,6 +764,7 @@
 				E998C25C2732955A00E1F8D0 /* EcoTopicCVC.xib in Resources */,
 				E9378D7F2737FCD000C589A1 /* BestTagTVC.xib in Resources */,
 				71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */,
+				E951CE64273A67F5002799D6 /* SearchResultTVC.xib in Resources */,
 				E9CAF1CB27316C73008F749B /* HomeInStyleLifeSB.storyboard in Resources */,
 				E9378D8F2738032500C589A1 /* ResponsiveStyleShotTVC.xib in Resources */,
 				E9CAF1CD27317295008F749B /* README.md in Resources */,
@@ -808,6 +833,7 @@
 				E9CAF1C927316C6B008F749B /* HomeInStyleLifeVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
+				E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
@@ -831,11 +857,13 @@
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
 				E9CAF1C127316A10008F749B /* Constant.swift in Sources */,
 				E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */,
+				E951CE63273A67F5002799D6 /* SearchResultTVC.swift in Sources */,
 				717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */,
 				E9378D8E2738032500C589A1 /* ResponsiveStyleShotTVC.swift in Sources */,
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E998C24727326C0E00E1F8D0 /* SensibleSV.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
+				E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */,
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
 				E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */,
