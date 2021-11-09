@@ -78,6 +78,14 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let popularIcoSB = UIStoryboard(name: "PopularIco", bundle: nil)
+        
+        guard let popularIcoVC = popularIcoSB.instantiateViewController(withIdentifier: "PopularIco") as? PopularIcoVC else {return}
+        
+        self.navigationController?.pushViewController(popularIcoVC, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = UIScreen.main.bounds.width
