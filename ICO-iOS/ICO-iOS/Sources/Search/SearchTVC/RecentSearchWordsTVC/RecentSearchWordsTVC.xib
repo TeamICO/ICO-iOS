@@ -40,7 +40,7 @@
                             <attributedString key="attributedTitle">
                                 <fragment content="전체삭제">
                                     <attributes>
-                                        <font key="NSFont" size="10" name="AppleSDGothicNeo-Regular"/>
+                                        <font key="NSFont" size="12" name="AppleSDGothicNeo-Regular"/>
                                     </attributes>
                                 </fragment>
                             </attributedString>
