@@ -17,6 +17,8 @@
 		7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4C27381A54008BA6C0 /* Keyword.storyboard */; };
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
+		E92FB4D5273A116400FBB420 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4D4273A116400FBB420 /* MainStoryboard.storyboard */; };
+		E92FB4D9273A1A3600FBB420 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -105,6 +107,8 @@
 		71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularIcoCVC.xib; sourceTree = "<group>"; };
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
+		E92FB4D4273A116400FBB420 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../../../../../../../Documents/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCustomTB.swift; path = ../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/BaseCustomTB.swift; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchSB.storyboard; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 		E9CAF1872731636A008F749B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E92FB4D4273A116400FBB420 /* MainStoryboard.storyboard */,
 				E9CAF188273163A5008F749B /* Home */,
 				E9CAF189273163A9008F749B /* MyStyle */,
 				E9CAF18A273163B0008F749B /* MyPage */,
@@ -445,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				E9CAF19F2731646F008F749B /* BaseTBC.swift */,
+				E92FB4D8273A1A3600FBB420 /* BaseCustomTB.swift */,
 			);
 			path = BaseTBC;
 			sourceTree = "<group>";
@@ -746,6 +752,7 @@
 				E9378D8B2738017400C589A1 /* EcoTopicTVC.xib in Resources */,
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
+				E92FB4D5273A116400FBB420 /* MainStoryboard.storyboard in Resources */,
 				E9CAF19A27316427008F749B /* MyStyleSB.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,6 +843,7 @@
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E998C24727326C0E00E1F8D0 /* SensibleSV.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
+				E92FB4D9273A1A3600FBB420 /* BaseCustomTB.swift in Sources */,
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
 				E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */,

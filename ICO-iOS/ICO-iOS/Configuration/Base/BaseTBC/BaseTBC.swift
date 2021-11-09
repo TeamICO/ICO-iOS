@@ -22,7 +22,6 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let homesb = UIStoryboard(name: "HomeSB", bundle: nil)
         let mystlyesb = UIStoryboard(name: "MyStyleSB", bundle: nil)
         let mypagesb = UIStoryboard(name: "MyPageSB", bundle: nil)
@@ -46,10 +45,9 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate{
         mystyleNVC.tabBarItem = mystyleTabBarItem
         mypageNVC.tabBarItem = mypageTabBarItem
     
-       
+  
         
        
     }
-        
-    
+
 }
