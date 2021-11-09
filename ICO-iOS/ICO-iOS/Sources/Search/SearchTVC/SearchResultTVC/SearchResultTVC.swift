@@ -9,6 +9,8 @@ import UIKit
 
 class SearchResultTVC: UITableViewCell {
     static let identifier = "SearchResultTVC"
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
