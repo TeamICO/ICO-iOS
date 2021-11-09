@@ -73,9 +73,8 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 2 :
-            
-            return 24
+        case 1 : return 264
+        case 2 : return 24
         default:
             return UITableView.automaticDimension
         }
