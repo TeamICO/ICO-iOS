@@ -27,7 +27,7 @@
 		E92FB4F0273A4D4600FBB420 /* SearchSortCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4EE273A4D4600FBB420 /* SearchSortCVC.swift */; };
 		E92FB4F1273A4D4600FBB420 /* SearchSortCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92FB4EF273A4D4600FBB420 /* SearchSortCVC.xib */; };
 		E92FB4F8273A56F600FBB420 /* HotkeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4F7273A56F600FBB420 /* HotkeywordSV.swift */; };
-		E92FB4FC273A574A00FBB420 /* CustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4FB273A574A00FBB420 /* CustomTB.swift */; };
+		E92FB500273A58A600FBB420 /* BaseTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FB4FF273A58A600FBB420 /* BaseTB.swift */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -126,7 +126,7 @@
 		E92FB4EE273A4D4600FBB420 /* SearchSortCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchSortCVC.swift; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchSortCVC.swift; sourceTree = "<group>"; };
 		E92FB4EF273A4D4600FBB420 /* SearchSortCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchSortCVC.xib; path = ../../../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/SearchSortCVC.xib; sourceTree = "<group>"; };
 		E92FB4F7273A56F600FBB420 /* HotkeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotkeywordSV.swift; path = ../../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/HotkeywordSV.swift; sourceTree = "<group>"; };
-		E92FB4FB273A574A00FBB420 /* CustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTB.swift; path = ../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/CustomTB.swift; sourceTree = "<group>"; };
+		E92FB4FF273A58A600FBB420 /* BaseTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseTB.swift; path = ../../../../../../SoftEduTamplet/SoftEduTamplet/Configuration/Base/BaseTB.swift; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchSB.storyboard; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				E9CAF19F2731646F008F749B /* BaseTBC.swift */,
-				E92FB4FB273A574A00FBB420 /* CustomTB.swift */,
+				E92FB4FF273A58A600FBB420 /* BaseTB.swift */,
 			);
 			path = BaseTBC;
 			sourceTree = "<group>";
@@ -879,13 +879,13 @@
 			files = (
 				E92FB4F8273A56F600FBB420 /* HotkeywordSV.swift in Sources */,
 				E9944BCF2735746200DB9279 /* ResponsiveCVC.swift in Sources */,
+				E92FB500273A58A600FBB420 /* BaseTB.swift in Sources */,
 				E9CAF1772731635B008F749B /* ViewController.swift in Sources */,
 				E9CAF1B727316987008F749B /* UIButton.swift in Sources */,
 				E9CAF1B32731697A008F749B /* String.swift in Sources */,
 				E9CAF1C727316C48008F749B /* HomeInHomeVC.swift in Sources */,
 				E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */,
 				E9CAF1C927316C6B008F749B /* HomeInStyleLifeVC.swift in Sources */,
-				E92FB4FC273A574A00FBB420 /* CustomTB.swift in Sources */,
 				E92FB4DD273A232200FBB420 /* RecentSearchWordsCVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
