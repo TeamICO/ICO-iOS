@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		714F32AF273BA635007324BC /* StyleCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F32AD273BA634007324BC /* StyleCVC.swift */; };
 		714F32B0273BA635007324BC /* StyleCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714F32AE273BA635007324BC /* StyleCVC.xib */; };
+		714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F32B3273BE775007324BC /* ProfileSettingVC.swift */; };
+		714F32B6273BE788007324BC /* ProfileSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714F32B5273BE788007324BC /* ProfileSetting.storyboard */; };
+		714F32B9273BE7C0007324BC /* StyleUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F32B8273BE7C0007324BC /* StyleUploadVC.swift */; };
+		714F32BB273BE7D0007324BC /* StyleUpload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714F32BA273BE7D0007324BC /* StyleUpload.storyboard */; };
+		714F32BE273BE840007324BC /* SurveyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F32BD273BE840007324BC /* SurveyVC.swift */; };
+		714F32C0273BE84D007324BC /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714F32BF273BE84D007324BC /* Survey.storyboard */; };
 		714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F5A152733C06E00692A13 /* RecentTVC.swift */; };
 		714F5A182733C06E00692A13 /* RecentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714F5A162733C06E00692A13 /* RecentTVC.xib */; };
 		717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76D42732CC3300FBA1AF /* RecentVC.swift */; };
@@ -147,6 +153,12 @@
 		6A72A8927A341C9DF5C0BD48 /* Pods-ICO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO.debug.xcconfig"; path = "Target Support Files/Pods-ICO/Pods-ICO.debug.xcconfig"; sourceTree = "<group>"; };
 		714F32AD273BA634007324BC /* StyleCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCVC.swift; sourceTree = "<group>"; };
 		714F32AE273BA635007324BC /* StyleCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StyleCVC.xib; sourceTree = "<group>"; };
+		714F32B3273BE775007324BC /* ProfileSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
+		714F32B5273BE788007324BC /* ProfileSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileSetting.storyboard; sourceTree = "<group>"; };
+		714F32B8273BE7C0007324BC /* StyleUploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleUploadVC.swift; sourceTree = "<group>"; };
+		714F32BA273BE7D0007324BC /* StyleUpload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StyleUpload.storyboard; sourceTree = "<group>"; };
+		714F32BD273BE840007324BC /* SurveyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyVC.swift; sourceTree = "<group>"; };
+		714F32BF273BE84D007324BC /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		714F5A152733C06E00692A13 /* RecentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTVC.swift; sourceTree = "<group>"; };
 		714F5A162733C06E00692A13 /* RecentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTVC.xib; sourceTree = "<group>"; };
 		717B76D42732CC3300FBA1AF /* RecentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentVC.swift; sourceTree = "<group>"; };
@@ -297,6 +309,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		714F32B1273BE739007324BC /* ProfileSetting */ = {
+			isa = PBXGroup;
+			children = (
+				714F32B3273BE775007324BC /* ProfileSettingVC.swift */,
+				714F32B5273BE788007324BC /* ProfileSetting.storyboard */,
+			);
+			path = ProfileSetting;
+			sourceTree = "<group>";
+		};
+		714F32B7273BE79B007324BC /* StyleUpload */ = {
+			isa = PBXGroup;
+			children = (
+				714F32B8273BE7C0007324BC /* StyleUploadVC.swift */,
+				714F32BA273BE7D0007324BC /* StyleUpload.storyboard */,
+			);
+			path = StyleUpload;
+			sourceTree = "<group>";
+		};
+		714F32BC273BE7F3007324BC /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				714F32BD273BE840007324BC /* SurveyVC.swift */,
+				714F32BF273BE84D007324BC /* Survey.storyboard */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
 		714F5A142733C04700692A13 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +665,7 @@
 				E9CAF18A273163B0008F749B /* MyPage */,
 				E9CAF1A927316768008F749B /* Search */,
 				E9CAF1A827316764008F749B /* Alarm */,
+				714F32BC273BE7F3007324BC /* Survey */,
 				E9CAF1A72731675D008F749B /* keyword */,
 				E9CAF1A627316757008F749B /* LoginVC */,
 			);
@@ -648,6 +688,8 @@
 		E9CAF189273163A9008F749B /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				714F32B7273BE79B007324BC /* StyleUpload */,
+				714F32B1273BE739007324BC /* ProfileSetting */,
 				E9CAF19927316427008F749B /* MyStyleSB.storyboard */,
 				E9CAF195273163FB008F749B /* MyStyleVC.swift */,
 			);
@@ -1063,12 +1105,15 @@
 				E998C252273283E800E1F8D0 /* BrandRecommendTVC.xib in Resources */,
 				E9378D872737FE9F00C589A1 /* SensibleCVC.xib in Resources */,
 				E9944BD02735746200DB9279 /* ResponsiveCVC.xib in Resources */,
+				714F32BB273BE7D0007324BC /* StyleUpload.storyboard in Resources */,
 				E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */,
 				71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */,
+				714F32B6273BE788007324BC /* ProfileSetting.storyboard in Resources */,
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
 				E9CAF17C2731635D008F749B /* Assets.xcassets in Resources */,
 				E9378DA32738099B00C589A1 /* HotKeywordTVC.xib in Resources */,
 				E9AF8404273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib in Resources */,
+				714F32C0273BE84D007324BC /* Survey.storyboard in Resources */,
 				E9AF83ED273B60F600D77D5F /* ResultSortCVC.xib in Resources */,
 				E9E49938273BD50B0001ACFB /* ServiceTermsTVC.xib in Resources */,
 				7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */,
@@ -1170,6 +1215,7 @@
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
 				E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */,
+				714F32BE273BE840007324BC /* SurveyVC.swift in Sources */,
 				E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
@@ -1185,6 +1231,7 @@
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
 				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
+				714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
 				71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */,
@@ -1200,6 +1247,7 @@
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
 				E9AF8407273B82DE00D77D5F /* MyPageUserInfoTVC.swift in Sources */,
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
+				714F32B9273BE7C0007324BC /* StyleUploadVC.swift in Sources */,
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,
 				E9AF83EC273B60F600D77D5F /* ResultSortCVC.swift in Sources */,
