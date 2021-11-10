@@ -72,7 +72,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         case 0 :
             let cell = tableView.dequeueReusableCell(withIdentifier: MyPageUserInfoTVC.identifier, for: indexPath) as! MyPageUserInfoTVC
             cell.selectionStyle = .none
-            
+            cell.delegate = self
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: MypageMyRecentStyleShotTVC.identifier, for: indexPath) as! MypageMyRecentStyleShotTVC
@@ -96,6 +96,18 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.section {
+        case 2:
+            // 서비스 이용 약관
+            self.navigationPushViewController(storyboard: "ServiceTermsSB", identifier: "ServiceTermsVC")
+            break
+        case 3:
+            // 알림 설정
+            self.navigationPushViewController(storyboard: "SettingAlarmSB", identifier: "SettingAlarmVC")
+            break
+        case 4:
+            // 의견 보내기
+            self.navigationPushViewController(storyboard: "FeedbackSB", identifier: "FeedbackVC")
+            break
         case 5:
             // 로그아웃
             UserDefaults.standard.set(nil, forKey: "jwtToken")
@@ -155,3 +167,12 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
  
     
 }
+//MARK : MyPageUserInfoTVC Delegate
+extension MyPageVC : MyPageUserInfoTVCDelegate{
+    func didTapIcoButton() {
+        self.navigationPushViewController(storyboard: "IcoLevelSB", identifier: "IcoLevelVC")
+    }
+    
+    
+}
+
