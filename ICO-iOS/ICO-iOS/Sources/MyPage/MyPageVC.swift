@@ -17,7 +17,8 @@ class MyPageVC: BaseViewController {
                 "알림 설정",
                 "의견 보내기",
                 "로그아웃",
-                "앱 버전",
+                ""
+            
     ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -45,7 +46,9 @@ extension MyPageVC {
         
         let mypageTVCNib = UINib(nibName: MypageTVC.identifier, bundle: nil)
         tableView.register(mypageTVCNib, forCellReuseIdentifier: MypageTVC.identifier)
-    
+        
+        let icoVerTVCNib = UINib(nibName: IcoVerTVC.identifier, bundle: nil)
+        tableView.register(icoVerTVCNib, forCellReuseIdentifier: IcoVerTVC.identifier)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -76,7 +79,11 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
           
             return cell
-  
+        case 6 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: IcoVerTVC.identifier, for: indexPath) as! IcoVerTVC
+            cell.selectionStyle = .none
+          
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: MypageTVC.identifier, for: indexPath) as! MypageTVC
             

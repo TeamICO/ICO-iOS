@@ -84,6 +84,8 @@
 		E9AF8408273B82DE00D77D5F /* MyPageUserInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF8406273B82DE00D77D5F /* MyPageUserInfoTVC.xib */; };
 		E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF840A273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift */; };
 		E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */; };
+		E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF840F273B9AE400D77D5F /* IcoVerTVC.swift */; };
+		E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -198,6 +200,8 @@
 		E9AF8406273B82DE00D77D5F /* MyPageUserInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageUserInfoTVC.xib; sourceTree = "<group>"; };
 		E9AF840A273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMyRecentStyleShotCVC.swift; sourceTree = "<group>"; };
 		E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageMyRecentStyleShotCVC.xib; sourceTree = "<group>"; };
+		E9AF840F273B9AE400D77D5F /* IcoVerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcoVerTVC.swift; sourceTree = "<group>"; };
+		E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IcoVerTVC.xib; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -463,6 +467,7 @@
 				E9AF83FC273B825500D77D5F /* MyPageUserInfoTVC */,
 				E9AF83FB273B825300D77D5F /* MypageMyRecentStyleShotTVC */,
 				E9AF83FA273B825100D77D5F /* MypageTVC */,
+				E9AF840E273B9AB100D77D5F /* IcoVerTVC */,
 			);
 			path = MyPageTVC;
 			sourceTree = "<group>";
@@ -502,6 +507,15 @@
 				E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */,
 			);
 			path = MypageMyRecentStyleShotCVC;
+			sourceTree = "<group>";
+		};
+		E9AF840E273B9AB100D77D5F /* IcoVerTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF840F273B9AE400D77D5F /* IcoVerTVC.swift */,
+				E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */,
+			);
+			path = IcoVerTVC;
 			sourceTree = "<group>";
 		};
 		E9CAF1662731635B008F749B = {
@@ -929,6 +943,7 @@
 				E9378D8F2738032500C589A1 /* ResponsiveStyleShotTVC.xib in Resources */,
 				E9CAF1CD27317295008F749B /* README.md in Resources */,
 				E9378D8B2738017400C589A1 /* EcoTopicTVC.xib in Resources */,
+				E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */,
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				E9CAF19A27316427008F749B /* MyStyleSB.storyboard in Resources */,
@@ -996,6 +1011,7 @@
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
 				E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */,
+				E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
