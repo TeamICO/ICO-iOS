@@ -1,28 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FeedbackVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedbackVC" id="Y6W-OH-hqX" customClass="FeedbackVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-XC-96s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sn9-ND-efc">
+                                        <rect key="frame" x="16" y="11" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="R3C-hH-e39"/>
+                                            <constraint firstAttribute="width" constant="32" id="V6U-P9-cpE"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icArrowLeft">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTabpBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qge-yg-GJm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의견 보내기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8E-hq-jwj">
+                                        <rect key="frame" x="161" y="13" width="92" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="sSh-Ps-pWE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-ky-LHE">
+                                        <rect key="frame" x="64" y="11" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="69m-7n-F03"/>
+                                            <constraint firstAttribute="height" constant="32" id="EVO-Up-8J0"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icNavigationHomeClick1">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapHomeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gbp-4M-ZoO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="1QE-Ut-nSv"/>
+                                    <constraint firstItem="U8E-hq-jwj" firstAttribute="centerX" secondItem="ezR-XC-96s" secondAttribute="centerX" id="DVv-RV-j0H"/>
+                                    <constraint firstItem="U8E-hq-jwj" firstAttribute="centerY" secondItem="ezR-XC-96s" secondAttribute="centerY" id="X5D-JH-9Za"/>
+                                    <constraint firstItem="b6v-ky-LHE" firstAttribute="centerY" secondItem="ezR-XC-96s" secondAttribute="centerY" id="aWy-1c-pD0"/>
+                                    <constraint firstItem="b6v-ky-LHE" firstAttribute="leading" secondItem="Sn9-ND-efc" secondAttribute="trailing" constant="16" id="cfa-Pb-prT"/>
+                                    <constraint firstItem="Sn9-ND-efc" firstAttribute="centerY" secondItem="ezR-XC-96s" secondAttribute="centerY" id="h6Z-UN-wmE"/>
+                                    <constraint firstItem="Sn9-ND-efc" firstAttribute="leading" secondItem="ezR-XC-96s" secondAttribute="leading" constant="16" id="odG-CN-dkx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ezR-XC-96s" secondAttribute="trailing" id="Jzf-vH-noY"/>
+                            <constraint firstItem="ezR-XC-96s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Val-m2-6VC"/>
+                            <constraint firstItem="ezR-XC-96s" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="m8n-HC-X8y"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="52"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icArrowLeft" width="24" height="24"/>
+        <image name="icNavigationHomeClick1" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

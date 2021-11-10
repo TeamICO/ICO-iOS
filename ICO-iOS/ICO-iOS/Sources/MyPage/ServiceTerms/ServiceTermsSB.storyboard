@@ -1,28 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Service TermsVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServiceTermsVC" id="Y6W-OH-hqX" customClass="ServiceTermsVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-0x-V26">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1b-qB-k40">
+                                        <rect key="frame" x="16" y="11" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="GxQ-hW-rYC"/>
+                                            <constraint firstAttribute="width" constant="32" id="PsG-6b-n3i"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icArrowLeft">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTabpBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1T0-Ak-Lyf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용 약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0v-fE-wMF">
+                                        <rect key="frame" x="141" y="13" width="132" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="s6M-tB-SGf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aa-PZ-9z5">
+                                        <rect key="frame" x="64" y="11" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="aKB-MH-LVU"/>
+                                            <constraint firstAttribute="height" constant="32" id="eOC-Lr-X9y"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icNavigationHomeClick1">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapHomeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e1V-hQ-uLt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="p1b-qB-k40" firstAttribute="centerY" secondItem="cQh-0x-V26" secondAttribute="centerY" id="4pE-Dg-U4T"/>
+                                    <constraint firstItem="g0v-fE-wMF" firstAttribute="centerX" secondItem="cQh-0x-V26" secondAttribute="centerX" id="A1Q-uy-2xN"/>
+                                    <constraint firstItem="5aa-PZ-9z5" firstAttribute="centerY" secondItem="cQh-0x-V26" secondAttribute="centerY" id="SHh-Ml-f6W"/>
+                                    <constraint firstItem="5aa-PZ-9z5" firstAttribute="leading" secondItem="p1b-qB-k40" secondAttribute="trailing" constant="16" id="Ymj-lN-1c0"/>
+                                    <constraint firstItem="g0v-fE-wMF" firstAttribute="centerY" secondItem="cQh-0x-V26" secondAttribute="centerY" id="ioh-fn-GXd"/>
+                                    <constraint firstItem="p1b-qB-k40" firstAttribute="leading" secondItem="cQh-0x-V26" secondAttribute="leading" constant="16" id="nC9-iS-WG1"/>
+                                    <constraint firstAttribute="height" constant="54" id="oYI-M7-lti"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cQh-0x-V26" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7HR-s4-evp"/>
+                            <constraint firstItem="cQh-0x-V26" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DWq-dC-o7P"/>
+                            <constraint firstItem="cQh-0x-V26" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="SsY-T9-zfN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="52"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icArrowLeft" width="24" height="24"/>
+        <image name="icNavigationHomeClick1" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

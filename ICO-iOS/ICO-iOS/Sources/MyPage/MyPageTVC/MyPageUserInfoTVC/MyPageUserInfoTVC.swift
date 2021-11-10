@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol MyPageUserInfoTVCDelegate : AnyObject{
+    func didTapIcoButton()
+}
+
 class MyPageUserInfoTVC: UITableViewCell {
     static let identifier = "MyPageUserInfoTVC"
+    
+    weak var delegate : MyPageUserInfoTVCDelegate?
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userIcoLevelImage: UIImageView!
@@ -24,6 +30,10 @@ class MyPageUserInfoTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
        
+    }
+    
+    @IBAction func didTapIcoButton(_ sender: Any) {
+        delegate?.didTapIcoButton()
     }
     
 }
