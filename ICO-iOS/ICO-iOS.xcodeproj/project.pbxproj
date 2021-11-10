@@ -76,6 +76,14 @@
 		E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83F3273B769600D77D5F /* SortCVC.swift */; };
 		E9AF83F6273B769600D77D5F /* SortCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83F4273B769600D77D5F /* SortCVC.xib */; };
 		E9AF83F8273B78C100D77D5F /* SearchResultsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */; };
+		E9AF83FF273B82C000D77D5F /* MypageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83FD273B82C000D77D5F /* MypageTVC.swift */; };
+		E9AF8400273B82C000D77D5F /* MypageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83FE273B82C000D77D5F /* MypageTVC.xib */; };
+		E9AF8403273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF8401273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift */; };
+		E9AF8404273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF8402273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib */; };
+		E9AF8407273B82DE00D77D5F /* MyPageUserInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF8405273B82DE00D77D5F /* MyPageUserInfoTVC.swift */; };
+		E9AF8408273B82DE00D77D5F /* MyPageUserInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF8406273B82DE00D77D5F /* MyPageUserInfoTVC.xib */; };
+		E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF840A273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift */; };
+		E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -182,6 +190,14 @@
 		E9AF83F3273B769600D77D5F /* SortCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCVC.swift; sourceTree = "<group>"; };
 		E9AF83F4273B769600D77D5F /* SortCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortCVC.xib; sourceTree = "<group>"; };
 		E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsSV.swift; sourceTree = "<group>"; };
+		E9AF83FD273B82C000D77D5F /* MypageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTVC.swift; sourceTree = "<group>"; };
+		E9AF83FE273B82C000D77D5F /* MypageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageTVC.xib; sourceTree = "<group>"; };
+		E9AF8401273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMyRecentStyleShotTVC.swift; sourceTree = "<group>"; };
+		E9AF8402273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageMyRecentStyleShotTVC.xib; sourceTree = "<group>"; };
+		E9AF8405273B82DE00D77D5F /* MyPageUserInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUserInfoTVC.swift; sourceTree = "<group>"; };
+		E9AF8406273B82DE00D77D5F /* MyPageUserInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageUserInfoTVC.xib; sourceTree = "<group>"; };
+		E9AF840A273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMyRecentStyleShotCVC.swift; sourceTree = "<group>"; };
+		E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageMyRecentStyleShotCVC.xib; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -441,6 +457,53 @@
 			path = SortCVC;
 			sourceTree = "<group>";
 		};
+		E9AF83F9273B824300D77D5F /* MyPageTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF83FC273B825500D77D5F /* MyPageUserInfoTVC */,
+				E9AF83FB273B825300D77D5F /* MypageMyRecentStyleShotTVC */,
+				E9AF83FA273B825100D77D5F /* MypageTVC */,
+			);
+			path = MyPageTVC;
+			sourceTree = "<group>";
+		};
+		E9AF83FA273B825100D77D5F /* MypageTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF83FD273B82C000D77D5F /* MypageTVC.swift */,
+				E9AF83FE273B82C000D77D5F /* MypageTVC.xib */,
+			);
+			path = MypageTVC;
+			sourceTree = "<group>";
+		};
+		E9AF83FB273B825300D77D5F /* MypageMyRecentStyleShotTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF8401273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift */,
+				E9AF8402273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib */,
+				E9AF8409273B82E800D77D5F /* MypageMyRecentStyleShotCVC */,
+			);
+			path = MypageMyRecentStyleShotTVC;
+			sourceTree = "<group>";
+		};
+		E9AF83FC273B825500D77D5F /* MyPageUserInfoTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF8405273B82DE00D77D5F /* MyPageUserInfoTVC.swift */,
+				E9AF8406273B82DE00D77D5F /* MyPageUserInfoTVC.xib */,
+			);
+			path = MyPageUserInfoTVC;
+			sourceTree = "<group>";
+		};
+		E9AF8409273B82E800D77D5F /* MypageMyRecentStyleShotCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF840A273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift */,
+				E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */,
+			);
+			path = MypageMyRecentStyleShotCVC;
+			sourceTree = "<group>";
+		};
 		E9CAF1662731635B008F749B = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +595,7 @@
 			children = (
 				E9CAF19B27316441008F749B /* MyPageSB.storyboard */,
 				E9CAF19727316404008F749B /* MyPageVC.swift */,
+				E9AF83F9273B824300D77D5F /* MyPageTVC */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -841,6 +905,7 @@
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
 				E9CAF17C2731635D008F749B /* Assets.xcassets in Resources */,
 				E9378DA32738099B00C589A1 /* HotKeywordTVC.xib in Resources */,
+				E9AF8404273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib in Resources */,
 				E9AF83ED273B60F600D77D5F /* ResultSortCVC.xib in Resources */,
 				7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */,
 				E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */,
@@ -848,6 +913,7 @@
 				E9AF83F1273B610F00D77D5F /* SearchResultsCVC.xib in Resources */,
 				7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */,
 				E943BC5C2738F58100619C74 /* LoginSB.storyboard in Resources */,
+				E9AF8400273B82C000D77D5F /* MypageTVC.xib in Resources */,
 				7190EA49273816FA008BA6C0 /* Recent.storyboard in Resources */,
 				E998C24D2732813C00E1F8D0 /* BestTagCVC.xib in Resources */,
 				714F5A182733C06E00692A13 /* RecentTVC.xib in Resources */,
@@ -856,6 +922,7 @@
 				E998C25C2732955A00E1F8D0 /* EcoTopicCVC.xib in Resources */,
 				E9AF83F6273B769600D77D5F /* SortCVC.xib in Resources */,
 				E9378D7F2737FCD000C589A1 /* BestTagTVC.xib in Resources */,
+				E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */,
 				E9AF83E9273B60DC00D77D5F /* ResultCountCVC.xib in Resources */,
 				71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */,
 				E9CAF1CB27316C73008F749B /* HomeInStyleLifeSB.storyboard in Resources */,
@@ -865,6 +932,7 @@
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				E9CAF19A27316427008F749B /* MyStyleSB.storyboard in Resources */,
+				E9AF8408273B82DE00D77D5F /* MyPageUserInfoTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,6 +987,7 @@
 			files = (
 				E9944BCF2735746200DB9279 /* ResponsiveCVC.swift in Sources */,
 				E9CAF1772731635B008F749B /* ViewController.swift in Sources */,
+				E9AF8403273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift in Sources */,
 				E9CAF1B727316987008F749B /* UIButton.swift in Sources */,
 				E9CAF1B32731697A008F749B /* String.swift in Sources */,
 				E9CAF1C727316C48008F749B /* HomeInHomeVC.swift in Sources */,
@@ -950,6 +1019,7 @@
 				E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */,
 				E9AF83DF273B5C9000D77D5F /* SearchResultVC.swift in Sources */,
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
+				E9AF8407273B82DE00D77D5F /* MyPageUserInfoTVC.swift in Sources */,
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,
@@ -959,6 +1029,7 @@
 				E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */,
 				717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */,
 				E9378D8E2738032500C589A1 /* ResponsiveStyleShotTVC.swift in Sources */,
+				E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */,
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E998C24727326C0E00E1F8D0 /* SensibleSV.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
@@ -966,6 +1037,7 @@
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
 				E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */,
+				E9AF83FF273B82C000D77D5F /* MypageTVC.swift in Sources */,
 				E943BC602738FB6400619C74 /* LoginCVC.swift in Sources */,
 				E9378D862737FE9F00C589A1 /* SensibleCVC.swift in Sources */,
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
