@@ -8,7 +8,8 @@
 import UIKit
 
 class UserAlarmSettingTVC: UITableViewCell {
-
+    static let identifier = "UserAlarmSettingTVC"
+    @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
