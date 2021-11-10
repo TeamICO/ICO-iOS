@@ -8,7 +8,7 @@
 import UIKit
 
 class MyPageUserInfoTVC: UITableViewCell {
-
+    static let identifier = "MyPageUserInfoTVC"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

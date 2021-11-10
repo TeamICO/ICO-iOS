@@ -8,7 +8,7 @@
 import UIKit
 
 class MypageMyRecentStyleShotTVC: UITableViewCell {
-
+    static let identifier = "MypageMyRecentStyleShotTVC"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
