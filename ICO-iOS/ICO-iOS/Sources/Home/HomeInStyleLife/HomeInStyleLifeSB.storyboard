@@ -20,42 +20,52 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-DA-sxv">
                                 <rect key="frame" x="16" y="94" width="383" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="slt-D3-Rbv">
-                                        <rect key="frame" x="0.0" y="0.0" width="383" height="60"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc4-Sa-MHA">
+                                        <rect key="frame" x="6" y="6" width="141" height="48"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCR-Dm-aRs">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6V-HH-P9q">
+                                                <rect key="frame" x="36" y="10" width="48.5" height="28"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="최신"/>
                                                 <connections>
-                                                    <action selector="recentBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Tv-K5-Bxx"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOX-eB-yGF">
-                                                <rect key="frame" x="127.5" y="0.0" width="128" height="60"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                <connections>
-                                                    <action selector="popularBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SIP-CM-MU4"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVa-fB-8mi">
-                                                <rect key="frame" x="255.5" y="0.0" width="127.5" height="60"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                <connections>
-                                                    <action selector="keywordBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7tP-tJ-Vmo"/>
+                                                    <action selector="recentBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y4I-TS-ZIT"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtF-pC-bBS">
+                                        <rect key="frame" x="167.5" y="16" width="48.5" height="28"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="인기"/>
+                                        <connections>
+                                            <action selector="popularBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MMy-wO-JZ4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-bd-VjM">
+                                        <rect key="frame" x="286.5" y="16" width="72.5" height="28"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="키워드별"/>
+                                        <connections>
+                                            <action selector="keywordBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yoJ-ru-61t"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
-                                    <constraint firstItem="slt-D3-Rbv" firstAttribute="leading" secondItem="6sj-DA-sxv" secondAttribute="leading" id="87p-uN-DoR"/>
-                                    <constraint firstAttribute="bottom" secondItem="slt-D3-Rbv" secondAttribute="bottom" id="OzO-3C-HK1"/>
-                                    <constraint firstAttribute="trailing" secondItem="slt-D3-Rbv" secondAttribute="trailing" id="b0t-RB-Ovg"/>
-                                    <constraint firstItem="slt-D3-Rbv" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" id="lGm-Y8-WSi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cc4-Sa-MHA" secondAttribute="trailing" constant="236" id="0zF-EJ-21C"/>
+                                    <constraint firstAttribute="trailing" secondItem="WPm-bd-VjM" secondAttribute="trailing" constant="24" id="2YM-01-DfT"/>
+                                    <constraint firstAttribute="bottom" secondItem="OtF-pC-bBS" secondAttribute="bottom" constant="16" id="6ZP-8m-2aU"/>
+                                    <constraint firstItem="Cc4-Sa-MHA" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="6" id="At1-eo-E29"/>
+                                    <constraint firstAttribute="bottom" secondItem="WPm-bd-VjM" secondAttribute="bottom" constant="16" id="GgM-lZ-8HW"/>
+                                    <constraint firstItem="OtF-pC-bBS" firstAttribute="centerX" secondItem="6sj-DA-sxv" secondAttribute="centerX" id="MNj-cQ-i4R"/>
+                                    <constraint firstItem="Cc4-Sa-MHA" firstAttribute="leading" secondItem="6sj-DA-sxv" secondAttribute="leading" constant="6" id="S1K-t8-3bB"/>
+                                    <constraint firstItem="OtF-pC-bBS" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="16" id="WBR-ej-khh"/>
+                                    <constraint firstItem="u6V-HH-P9q" firstAttribute="leading" secondItem="6sj-DA-sxv" secondAttribute="leading" constant="42" id="cv6-Ia-9rV"/>
+                                    <constraint firstItem="u6V-HH-P9q" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="16" id="gkJ-RL-hYD"/>
+                                    <constraint firstAttribute="bottom" secondItem="u6V-HH-P9q" secondAttribute="bottom" constant="16" id="i0s-YZ-lhG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cc4-Sa-MHA" secondAttribute="bottom" constant="6" id="jq4-E1-wu2"/>
+                                    <constraint firstItem="WPm-bd-VjM" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="16" id="mWS-KE-h0L"/>
                                     <constraint firstAttribute="height" constant="60" id="sbu-xf-aGW"/>
                                 </constraints>
                             </view>
@@ -159,12 +169,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animateView" destination="Cc4-Sa-MHA" id="ae3-Fp-6Mk"/>
+                        <outlet property="left" destination="S1K-t8-3bB" id="zfj-sy-uPg"/>
+                        <outlet property="right" destination="0zF-EJ-21C" id="VBB-6P-WB4"/>
                         <outlet property="scrollView" destination="nKO-wk-eUS" id="b3c-2t-HOI"/>
                         <outlet property="segmentView" destination="6sj-DA-sxv" id="Efz-aw-Sgz"/>
                         <outlet property="stackViewWidth" destination="3bs-st-uV7" id="Vwg-Ql-6PZ"/>
-                        <outletCollection property="categoryBtn" destination="aCR-Dm-aRs" collectionClass="NSMutableArray" id="LhV-QY-GD1"/>
-                        <outletCollection property="categoryBtn" destination="IOX-eB-yGF" collectionClass="NSMutableArray" id="vur-Ac-JfI"/>
-                        <outletCollection property="categoryBtn" destination="cVa-fB-8mi" collectionClass="NSMutableArray" id="15v-lk-XIb"/>
+                        <outletCollection property="categoryBtn" destination="u6V-HH-P9q" collectionClass="NSMutableArray" id="uuj-K6-ecR"/>
+                        <outletCollection property="categoryBtn" destination="OtF-pC-bBS" collectionClass="NSMutableArray" id="d3G-Jn-epd"/>
+                        <outletCollection property="categoryBtn" destination="WPm-bd-VjM" collectionClass="NSMutableArray" id="9Ew-Fq-VOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,6 +212,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
