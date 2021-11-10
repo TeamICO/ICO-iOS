@@ -8,10 +8,21 @@
 import UIKit
 
 class StyleCVC: UICollectionViewCell {
+    
+    
+    @IBOutlet weak var styleImage: UIImageView!
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setUI()
+        
+    }
+    
+    func setUI(){
+        styleImage.cornerRadius = 12
     }
 
 }

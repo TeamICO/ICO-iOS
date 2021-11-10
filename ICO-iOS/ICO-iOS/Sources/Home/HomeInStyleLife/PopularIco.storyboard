@@ -324,9 +324,9 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g2c-59-Gzq">
-                                                <rect key="frame" x="0.0" y="311" width="414" height="489"/>
+                                                <rect key="frame" x="16" y="327" width="382" height="473"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GMl-a2-P12">
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GMl-a2-P12">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -346,14 +346,14 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="g2c-59-Gzq" secondAttribute="trailing" id="5E0-3t-1GZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="g2c-59-Gzq" secondAttribute="trailing" constant="16" id="5E0-3t-1GZ"/>
                                             <constraint firstItem="QLN-2u-lCQ" firstAttribute="leading" secondItem="xcY-o0-q4R" secondAttribute="leading" id="5fI-Mr-UG1"/>
                                             <constraint firstItem="QLN-2u-lCQ" firstAttribute="top" secondItem="xcY-o0-q4R" secondAttribute="top" id="A5n-tJ-0nq"/>
                                             <constraint firstAttribute="trailing" secondItem="QLN-2u-lCQ" secondAttribute="trailing" id="FZb-gz-e8z"/>
-                                            <constraint firstItem="g2c-59-Gzq" firstAttribute="top" secondItem="QLN-2u-lCQ" secondAttribute="bottom" id="Fs4-f3-Nzo"/>
+                                            <constraint firstItem="g2c-59-Gzq" firstAttribute="top" secondItem="QLN-2u-lCQ" secondAttribute="bottom" constant="16" id="Fs4-f3-Nzo"/>
                                             <constraint firstAttribute="bottom" secondItem="g2c-59-Gzq" secondAttribute="bottom" id="OAe-Rx-R2n"/>
                                             <constraint firstAttribute="height" constant="800" id="RxL-RX-MI7"/>
-                                            <constraint firstItem="g2c-59-Gzq" firstAttribute="leading" secondItem="xcY-o0-q4R" secondAttribute="leading" id="q0M-Hm-kko"/>
+                                            <constraint firstItem="g2c-59-Gzq" firstAttribute="leading" secondItem="xcY-o0-q4R" secondAttribute="leading" constant="16" id="q0M-Hm-kko"/>
                                         </constraints>
                                     </view>
                                 </subviews>
