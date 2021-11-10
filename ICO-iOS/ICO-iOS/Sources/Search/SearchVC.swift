@@ -13,7 +13,6 @@ class SearchVC: BaseViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    var isSearched = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +30,12 @@ class SearchVC: BaseViewController {
             self.presentAlert(title: "검색어를 입력해주세요.")
             return
         }
-        self.isSearched = true
-        self.tableView.reloadData()
+   
+        let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "SearchResultVC")
+ 
+        vc.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 
@@ -45,9 +48,7 @@ extension SearchVC {
         
         let sensitiveNib = UINib(nibName: HotKeywordTVC.identifier, bundle: nil)
         tableView.register(sensitiveNib, forCellReuseIdentifier: HotKeywordTVC.identifier)
-        
-        let searchNib = UINib(nibName: SearchResultTVC.identifier, bundle: nil)
-        tableView.register(searchNib, forCellReuseIdentifier: SearchResultTVC.identifier)
+   
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -60,11 +61,10 @@ extension SearchVC {
 // MARK: - TableView Delegate, DataSource
 extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if isSearched{
-            return 1
-        }else{
+
+
             return 3
-        }
+        
     
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,11 +73,6 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // isSearched true 일 때 검색된 화면 보여주고 false 검색하지 않았을 때 기존 화면
-        if isSearched{
-            let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTVC.identifier, for: indexPath) as! SearchResultTVC
-            cell.selectionStyle = .none
-            return cell
-        }else{
             switch indexPath.section{
             case 0 :
                 let cell = tableView.dequeueReusableCell(withIdentifier: RecentSearchWordsTVC.identifier, for: indexPath) as! RecentSearchWordsTVC
@@ -93,26 +88,22 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
                 
                 return UITableViewCell()
             }
-        }
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if isSearched{
-            return 1000
-        }else{
+
             
             switch indexPath.section {
             case 1 :  return 264
             default:
                 return UITableView.automaticDimension
             }
-        }
+        
         
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if isSearched{
-            return 0
-        }else{
+
             switch section {
             case 2 :
                 // 광고 배너 높이 조절
@@ -121,12 +112,10 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
                 return 12
             }
           
-        }
+        
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if isSearched{
-            return UIView()
-        }else{
+   
             
             switch section {
             case 2 :
@@ -139,7 +128,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
                 footer.backgroundColor = UIColor.appColor(.tableViewFooterColor)
                 return footer
             }
-        }
+        
         
     }
     
@@ -153,8 +142,11 @@ extension SearchVC : UITextFieldDelegate {
             if text == ""{
                 self.presentAlert(title: "검색어를 입력해주세요.")
             }else{
-                self.isSearched = true
-                self.tableView.reloadData()
+                let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "SearchResultVC")
+         
+                vc.navigationItem.largeTitleDisplayMode = .never
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
         
