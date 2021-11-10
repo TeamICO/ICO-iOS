@@ -1,28 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search ResultVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchResultVC" id="Y6W-OH-hqX" customClass="SearchResultVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIu-4I-t4i">
+                                <rect key="frame" x="10" y="52" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="89p-6T-frx"/>
+                                    <constraint firstAttribute="width" constant="32" id="kl3-gw-CJ4"/>
+                                </constraints>
+                                <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icArrowLeft">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rGq-5y-TxT"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rj5-0n-l3d">
+                                <rect key="frame" x="48" y="44" width="360" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="검색할 스타일샷의 키워드를 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vvh-DK-xXB">
+                                        <rect key="frame" x="12" y="0.0" width="309" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.090196078430000007" green="0.66666666669999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0039215686269999999" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77a-QE-wWU">
+                                        <rect key="frame" x="326" y="14" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="FTE-Ci-a8f"/>
+                                            <constraint firstAttribute="height" constant="20" id="Fq3-rW-jMj"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.090196078430000007" green="0.66666666669999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icSearchGreen2"/>
+                                        <connections>
+                                            <action selector="didTapSearchButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rAl-3p-83Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.97254901959999995" blue="0.96862745100000003" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="IFP-nm-rPW"/>
+                                    <constraint firstAttribute="trailing" secondItem="77a-QE-wWU" secondAttribute="trailing" constant="14" id="KQ6-Af-yHv"/>
+                                    <constraint firstItem="Vvh-DK-xXB" firstAttribute="leading" secondItem="rj5-0n-l3d" secondAttribute="leading" constant="12" id="Qcb-P5-dWi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vvh-DK-xXB" secondAttribute="bottom" id="dLT-W6-ZA9"/>
+                                    <constraint firstItem="Vvh-DK-xXB" firstAttribute="top" secondItem="rj5-0n-l3d" secondAttribute="top" id="jNT-XF-PIR"/>
+                                    <constraint firstAttribute="bottom" secondItem="77a-QE-wWU" secondAttribute="bottom" constant="14" id="lnL-cY-VQ5"/>
+                                    <constraint firstItem="77a-QE-wWU" firstAttribute="top" secondItem="rj5-0n-l3d" secondAttribute="top" constant="14" id="vhm-Zx-kEP"/>
+                                    <constraint firstItem="77a-QE-wWU" firstAttribute="leading" secondItem="Vvh-DK-xXB" secondAttribute="trailing" constant="5" id="xcf-Ff-7Jm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wvA-hp-sma">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEE-mN-T1R">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="wvA-hp-sma" secondAttribute="bottom" id="3Rm-vd-pMU"/>
+                            <constraint firstItem="dIu-4I-t4i" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="XTp-jD-9XC"/>
+                            <constraint firstItem="wvA-hp-sma" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="d0F-iA-kV9"/>
+                            <constraint firstItem="rj5-0n-l3d" firstAttribute="leading" secondItem="dIu-4I-t4i" secondAttribute="trailing" constant="6" id="jfn-He-2Gh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wvA-hp-sma" secondAttribute="trailing" id="k18-42-JE0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rj5-0n-l3d" secondAttribute="trailing" constant="6" id="mk1-Xv-STh"/>
+                            <constraint firstItem="dIu-4I-t4i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="oat-9Q-SC2"/>
+                            <constraint firstItem="rj5-0n-l3d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wIB-aP-9bX"/>
+                            <constraint firstItem="wvA-hp-sma" firstAttribute="top" secondItem="rj5-0n-l3d" secondAttribute="bottom" id="yK9-7I-jud"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="dIu-4I-t4i" id="Ab9-3k-uuH"/>
+                        <outlet property="collectionView" destination="wvA-hp-sma" id="K6Y-DS-sRF"/>
+                        <outlet property="searchTextField" destination="Vvh-DK-xXB" id="v2q-HF-qqd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icArrowLeft" width="24" height="24"/>
+        <image name="icSearchGreen2" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
