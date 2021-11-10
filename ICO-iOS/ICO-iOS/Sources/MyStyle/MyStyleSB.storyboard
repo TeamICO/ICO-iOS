@@ -325,9 +325,9 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-O5-OVU">
-                                                <rect key="frame" x="0.0" y="311" width="414" height="489"/>
+                                                <rect key="frame" x="16" y="327" width="382" height="473"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kQa-i1-pyQ">
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kQa-i1-pyQ">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -347,14 +347,14 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="qxw-O5-OVU" firstAttribute="top" secondItem="tJh-xH-N7E" secondAttribute="bottom" id="6Ld-Jq-AAp"/>
-                                            <constraint firstItem="qxw-O5-OVU" firstAttribute="leading" secondItem="Xht-Oq-9EB" secondAttribute="leading" id="7bF-k7-2HV"/>
+                                            <constraint firstItem="qxw-O5-OVU" firstAttribute="top" secondItem="tJh-xH-N7E" secondAttribute="bottom" constant="16" id="6Ld-Jq-AAp"/>
+                                            <constraint firstItem="qxw-O5-OVU" firstAttribute="leading" secondItem="Xht-Oq-9EB" secondAttribute="leading" constant="16" id="7bF-k7-2HV"/>
                                             <constraint firstAttribute="trailing" secondItem="tJh-xH-N7E" secondAttribute="trailing" id="AD4-8M-8nw"/>
                                             <constraint firstAttribute="height" constant="800" id="HYD-Hy-CKc"/>
                                             <constraint firstItem="tJh-xH-N7E" firstAttribute="leading" secondItem="Xht-Oq-9EB" secondAttribute="leading" id="d3u-Yu-0Z7"/>
                                             <constraint firstAttribute="bottom" secondItem="qxw-O5-OVU" secondAttribute="bottom" id="f1A-CE-d3j"/>
                                             <constraint firstItem="tJh-xH-N7E" firstAttribute="top" secondItem="Xht-Oq-9EB" secondAttribute="top" id="ftz-9d-GbQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="qxw-O5-OVU" secondAttribute="trailing" id="ntC-2H-Skx"/>
+                                            <constraint firstAttribute="trailing" secondItem="qxw-O5-OVU" secondAttribute="trailing" constant="16" id="ntC-2H-Skx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -394,6 +394,7 @@
                         <outlet property="profileImage" destination="Ha8-eq-cRY" id="abx-9V-px4"/>
                         <outlet property="profileline" destination="pjW-xY-noW" id="43d-zB-WnA"/>
                         <outlet property="shadowView" destination="fh8-dj-90E" id="AjS-5s-LmC"/>
+                        <outlet property="styleCV" destination="qxw-O5-OVU" id="QbI-IU-gnJ"/>
                         <outlet property="styleLabel" destination="Mc3-Ws-PJY" id="cTe-cS-cNC"/>
                         <outlet property="styleNum" destination="1Dm-yH-8OC" id="2Dh-3G-yBa"/>
                         <outletCollection property="keywordView" destination="Kwn-pm-OE1" collectionClass="NSMutableArray" id="EKw-md-qhg"/>

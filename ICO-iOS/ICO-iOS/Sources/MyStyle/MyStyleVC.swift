@@ -9,6 +9,10 @@ import UIKit
 
 class MyStyleVC: BaseViewController {
     
+    
+    
+    @IBOutlet weak var styleCV: UICollectionView!
+    
     @IBOutlet weak var navigationTitle: UILabel!
     
     @IBOutlet weak var backView: UIView!
@@ -39,7 +43,18 @@ class MyStyleVC: BaseViewController {
         super.viewDidLoad()
 
         setUI()
+        setCV()
+        registerNib()
         // Do any additional setup after loading the view.
+    }
+    
+    func setCV(){
+        styleCV.delegate = self
+        styleCV.dataSource = self
+    }
+    
+    func registerNib(){
+        styleCV.register(UINib(nibName: "StyleCVC", bundle: nil), forCellWithReuseIdentifier: "StyleCVC")
     }
     
     func setUI(){
@@ -90,4 +105,33 @@ class MyStyleVC: BaseViewController {
         
     }
 
+}
+
+extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+        
+        return styleCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellWidth = 164
+        let cellHeight = 164
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
 }
