@@ -97,7 +97,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if isSearched{
-            return UITableView.automaticDimension
+            return 1000
         }else{
             
             switch indexPath.section {
