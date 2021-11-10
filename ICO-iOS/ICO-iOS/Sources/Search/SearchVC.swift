@@ -8,19 +8,19 @@
 import UIKit
 
 class SearchVC: BaseViewController {
-
+    // MARK: - Properties
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedAround()
         self.tableviewConfigure()
         searchTextField.delegate = self
     }
-    
+    // MARK: - Selectors
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
