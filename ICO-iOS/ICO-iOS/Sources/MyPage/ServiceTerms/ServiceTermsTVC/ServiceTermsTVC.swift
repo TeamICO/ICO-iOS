@@ -8,7 +8,9 @@
 import UIKit
 
 class ServiceTermsTVC: UITableViewCell {
+    static let identifier = "ServiceTermsTVC"
 
+    @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
