@@ -9,21 +9,118 @@ import UIKit
 
 class SettingAlarmVC: UIViewController {
 
+    private let models = [
+                "",
+                "마케팅 수신 알림",
+                "나의 스타일샷 알림"
+    ]
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableviewConfigure()
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTabpBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-    */
+    
+    @IBAction func didTapHomeButton(_ sender: Any) {
+    }
+    
+}
 
+// MARK: - TableView Configure
+extension SettingAlarmVC {
+    func tableviewConfigure(){
+        let userAlarmSettingTVCNib = UINib(nibName: UserAlarmSettingTVC.identifier, bundle: nil)
+        tableView.register(userAlarmSettingTVCNib, forCellReuseIdentifier: UserAlarmSettingTVC.identifier)
+        
+        let settingAlarmTVCNib = UINib(nibName: SettingAlarmTVC.identifier, bundle: nil)
+        tableView.register(settingAlarmTVCNib, forCellReuseIdentifier: SettingAlarmTVC.identifier)
+
+
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = nil
+        tableView.sectionFooterHeight = 0
+        tableView.separatorStyle = .none
+
+    }
+}
+// MARK: - TableView Delegate, DataSource
+extension SettingAlarmVC : UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return models.count
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0 :
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingAlarmTVC.identifier, for: indexPath) as! SettingAlarmTVC
+            cell.selectionStyle = .none
+            cell.delegate = self
+            return cell
+           
+        
+        default :
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserAlarmSettingTVC.identifier, for: indexPath) as! UserAlarmSettingTVC
+            cell.titleLabel.text = models[indexPath.section]
+            
+            return cell
+           
+        }
+      
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.section {
+        case 0 :
+
+            break
+        default : break
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0 : return 110 // 앱 알림 설정 높이 78 + 탑 바텀 패딩 32
+        default : return 70
+        }
+     
+        
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0{
+            return UIView()
+        }
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
+        footer.backgroundColor = UIColor.appColor(.tableViewFooterColor)
+        return footer
+       
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0{
+            return 0
+        }
+        return 12
+    }
+    
+    
+}
+//MARK : SettingAlarmTVC Delegate
+extension SettingAlarmVC : SettingAlarmTVCDelegate{
+    func setUserAlarm() {
+      print("알람설정")
+    }
+    
+    
 }

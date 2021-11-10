@@ -128,6 +128,16 @@
 		E9E49924273BAC140001ACFB /* FeedbackSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E49923273BAC140001ACFB /* FeedbackSB.storyboard */; };
 		E9E49926273BAC220001ACFB /* LevelUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E49925273BAC220001ACFB /* LevelUpVC.swift */; };
 		E9E49928273BAC290001ACFB /* LevelUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E49927273BAC290001ACFB /* LevelUpSB.storyboard */; };
+		E9E4992C273BC83F0001ACFB /* IcoLevelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4992A273BC83F0001ACFB /* IcoLevelTVC.swift */; };
+		E9E4992D273BC83F0001ACFB /* IcoLevelTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E4992B273BC83F0001ACFB /* IcoLevelTVC.xib */; };
+		E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4992E273BCB350001ACFB /* IcoLevelTopTVC.swift */; };
+		E9E49931273BCB350001ACFB /* IcoLevelTopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E4992F273BCB350001ACFB /* IcoLevelTopTVC.xib */; };
+		E9E49937273BD50B0001ACFB /* ServiceTermsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E49935273BD50B0001ACFB /* ServiceTermsTVC.swift */; };
+		E9E49938273BD50B0001ACFB /* ServiceTermsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E49936273BD50B0001ACFB /* ServiceTermsTVC.xib */; };
+		E9E4993D273BD5530001ACFB /* SettingAlarmTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4993B273BD5530001ACFB /* SettingAlarmTVC.swift */; };
+		E9E4993E273BD5530001ACFB /* SettingAlarmTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E4993C273BD5530001ACFB /* SettingAlarmTVC.xib */; };
+		E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4993F273BD5920001ACFB /* UserAlarmSettingTVC.swift */; };
+		E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E49940273BD5920001ACFB /* UserAlarmSettingTVC.xib */; };
 		FFC18CD75DFBE3EC9DC15E91 /* Pods_ICO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -260,6 +270,16 @@
 		E9E49923273BAC140001ACFB /* FeedbackSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackSB.storyboard; sourceTree = "<group>"; };
 		E9E49925273BAC220001ACFB /* LevelUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpVC.swift; sourceTree = "<group>"; };
 		E9E49927273BAC290001ACFB /* LevelUpSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelUpSB.storyboard; sourceTree = "<group>"; };
+		E9E4992A273BC83F0001ACFB /* IcoLevelTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcoLevelTVC.swift; sourceTree = "<group>"; };
+		E9E4992B273BC83F0001ACFB /* IcoLevelTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IcoLevelTVC.xib; sourceTree = "<group>"; };
+		E9E4992E273BCB350001ACFB /* IcoLevelTopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcoLevelTopTVC.swift; sourceTree = "<group>"; };
+		E9E4992F273BCB350001ACFB /* IcoLevelTopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IcoLevelTopTVC.xib; sourceTree = "<group>"; };
+		E9E49935273BD50B0001ACFB /* ServiceTermsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermsTVC.swift; sourceTree = "<group>"; };
+		E9E49936273BD50B0001ACFB /* ServiceTermsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceTermsTVC.xib; sourceTree = "<group>"; };
+		E9E4993B273BD5530001ACFB /* SettingAlarmTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlarmTVC.swift; sourceTree = "<group>"; };
+		E9E4993C273BD5530001ACFB /* SettingAlarmTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAlarmTVC.xib; sourceTree = "<group>"; };
+		E9E4993F273BD5920001ACFB /* UserAlarmSettingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlarmSettingTVC.swift; sourceTree = "<group>"; };
+		E9E49940273BD5920001ACFB /* UserAlarmSettingTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAlarmSettingTVC.xib; sourceTree = "<group>"; };
 		EDC49EEA6B3B2D2042155EA1 /* Pods-ICO-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO-iOS.release.xcconfig"; path = "Target Support Files/Pods-ICO-iOS/Pods-ICO-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		F6EEB41943D2FE2EA154A6F6 /* Pods-ICO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO.release.xcconfig"; path = "Target Support Files/Pods-ICO/Pods-ICO.release.xcconfig"; sourceTree = "<group>"; };
 		FD30DB705D8ECE28814C57A1 /* Pods-ICO_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO_iOS.release.xcconfig"; path = "Target Support Files/Pods-ICO_iOS/Pods-ICO_iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -885,6 +905,7 @@
 			children = (
 				E9E49911273BAB9C0001ACFB /* IcoLevelVC.swift */,
 				E9E49913273BABAC0001ACFB /* IcoLevelSB.storyboard */,
+				E9E49929273BC8200001ACFB /* IcoLevelTVC */,
 			);
 			path = IcoLevel;
 			sourceTree = "<group>";
@@ -892,8 +913,9 @@
 		E9E4990C273BAAE10001ACFB /* ServiceTerms */ = {
 			isa = PBXGroup;
 			children = (
-				E9E49915273BABCB0001ACFB /* ServiceTermsSB.storyboard */,
 				E9E49917273BABDC0001ACFB /* ServiceTermsVC.swift */,
+				E9E49915273BABCB0001ACFB /* ServiceTermsSB.storyboard */,
+				E9E49932273BD49A0001ACFB /* ServiceTermsTVC */,
 			);
 			path = ServiceTerms;
 			sourceTree = "<group>";
@@ -910,8 +932,9 @@
 		E9E4990E273BAB420001ACFB /* SettingAlarm */ = {
 			isa = PBXGroup;
 			children = (
-				E9E4991D273BABFA0001ACFB /* SettingAlarmSB.storyboard */,
 				E9E4991F273BAC020001ACFB /* SettingAlarmVC.swift */,
+				E9E4991D273BABFA0001ACFB /* SettingAlarmSB.storyboard */,
+				E9E49939273BD51E0001ACFB /* SettingAlarmTVC */,
 			);
 			path = SettingAlarm;
 			sourceTree = "<group>";
@@ -932,6 +955,37 @@
 				E9E49927273BAC290001ACFB /* LevelUpSB.storyboard */,
 			);
 			path = LevelUp;
+			sourceTree = "<group>";
+		};
+		E9E49929273BC8200001ACFB /* IcoLevelTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9E4992A273BC83F0001ACFB /* IcoLevelTVC.swift */,
+				E9E4992B273BC83F0001ACFB /* IcoLevelTVC.xib */,
+				E9E4992E273BCB350001ACFB /* IcoLevelTopTVC.swift */,
+				E9E4992F273BCB350001ACFB /* IcoLevelTopTVC.xib */,
+			);
+			path = IcoLevelTVC;
+			sourceTree = "<group>";
+		};
+		E9E49932273BD49A0001ACFB /* ServiceTermsTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9E49935273BD50B0001ACFB /* ServiceTermsTVC.swift */,
+				E9E49936273BD50B0001ACFB /* ServiceTermsTVC.xib */,
+			);
+			path = ServiceTermsTVC;
+			sourceTree = "<group>";
+		};
+		E9E49939273BD51E0001ACFB /* SettingAlarmTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9E4993B273BD5530001ACFB /* SettingAlarmTVC.swift */,
+				E9E4993C273BD5530001ACFB /* SettingAlarmTVC.xib */,
+				E9E4993F273BD5920001ACFB /* UserAlarmSettingTVC.swift */,
+				E9E49940273BD5920001ACFB /* UserAlarmSettingTVC.xib */,
+			);
+			path = SettingAlarmTVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1009,12 +1063,14 @@
 				E998C252273283E800E1F8D0 /* BrandRecommendTVC.xib in Resources */,
 				E9378D872737FE9F00C589A1 /* SensibleCVC.xib in Resources */,
 				E9944BD02735746200DB9279 /* ResponsiveCVC.xib in Resources */,
+				E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */,
 				71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */,
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
 				E9CAF17C2731635D008F749B /* Assets.xcassets in Resources */,
 				E9378DA32738099B00C589A1 /* HotKeywordTVC.xib in Resources */,
 				E9AF8404273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib in Resources */,
 				E9AF83ED273B60F600D77D5F /* ResultSortCVC.xib in Resources */,
+				E9E49938273BD50B0001ACFB /* ServiceTermsTVC.xib in Resources */,
 				7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */,
 				E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */,
 				E943BC612738FB6400619C74 /* LoginCVC.xib in Resources */,
@@ -1028,6 +1084,7 @@
 				E951CE6B273A6BBB002799D6 /* RecentCVC.xib in Resources */,
 				E9CAF1C527316C39008F749B /* HomeInHomeSB.storyboard in Resources */,
 				E998C25C2732955A00E1F8D0 /* EcoTopicCVC.xib in Resources */,
+				E9E4993E273BD5530001ACFB /* SettingAlarmTVC.xib in Resources */,
 				E9AF83F6273B769600D77D5F /* SortCVC.xib in Resources */,
 				E9378D7F2737FCD000C589A1 /* BestTagTVC.xib in Resources */,
 				E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */,
@@ -1042,6 +1099,8 @@
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				E9E49916273BABCB0001ACFB /* ServiceTermsSB.storyboard in Resources */,
+				E9E49931273BCB350001ACFB /* IcoLevelTopTVC.xib in Resources */,
+				E9E4992D273BC83F0001ACFB /* IcoLevelTVC.xib in Resources */,
 				E9CAF19A27316427008F749B /* MyStyleSB.storyboard in Resources */,
 				E9AF8408273B82DE00D77D5F /* MyPageUserInfoTVC.xib in Resources */,
 				714F32B0273BA635007324BC /* StyleCVC.xib in Resources */,
@@ -1103,9 +1162,11 @@
 				E9CAF1B727316987008F749B /* UIButton.swift in Sources */,
 				E9CAF1B32731697A008F749B /* String.swift in Sources */,
 				E9CAF1C727316C48008F749B /* HomeInHomeVC.swift in Sources */,
+				E9E4992C273BC83F0001ACFB /* IcoLevelTVC.swift in Sources */,
 				E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */,
 				E9CAF1C927316C6B008F749B /* HomeInStyleLifeVC.swift in Sources */,
 				E9E49922273BAC090001ACFB /* FeedbackVC.swift in Sources */,
+				E9E49937273BD50B0001ACFB /* ServiceTermsTVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
 				E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */,
@@ -1122,6 +1183,7 @@
 				E9CAF194273163EC008F749B /* HomeVC.swift in Sources */,
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
+				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
@@ -1151,6 +1213,7 @@
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E998C24727326C0E00E1F8D0 /* SensibleSV.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
+				E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */,
 				E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */,
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
@@ -1162,6 +1225,7 @@
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
 				E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */,
+				E9E4993D273BD5530001ACFB /* SettingAlarmTVC.swift in Sources */,
 				E9378D8A2738017400C589A1 /* EcoTopicTVC.swift in Sources */,
 				E9AF83F0273B610F00D77D5F /* SearchResultsCVC.swift in Sources */,
 				E9CAF1A02731646F008F749B /* BaseTBC.swift in Sources */,
