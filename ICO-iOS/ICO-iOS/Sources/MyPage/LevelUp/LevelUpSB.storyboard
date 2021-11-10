@@ -54,15 +54,76 @@
                                     <constraint firstItem="TSX-gx-cHI" firstAttribute="centerY" secondItem="y4w-Ab-YFG" secondAttribute="centerY" id="v1e-Dt-rki"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfB-Sd-9PR">
+                                <rect key="frame" x="16" y="802" width="381" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Eqh-j7-wWg"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="나의 레벨 확인하기">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-SemiBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapCheckMyLevelButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gYC-fm-HpK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이코" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dl-9m-7H3">
+                                <rect key="frame" x="16" y="122" width="84" height="39"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="32"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이코 Level Up!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DO-Td-eLg">
+                                <rect key="frame" x="105" y="122" width="221" height="39"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="32"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.78039215689999997" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o44-Jq-t9i">
+                                <rect key="frame" x="16" y="169" width="45" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-levelup-congratulation" translatesAutoresizingMaskIntoConstraints="NO" id="gBw-TV-zss">
+                                <rect key="frame" x="114" y="433" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="HAc-Vl-XxG"/>
+                                    <constraint firstAttribute="width" constant="300" id="i5j-7W-Uia"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0DO-Td-eLg" firstAttribute="top" secondItem="y4w-Ab-YFG" secondAttribute="bottom" constant="24" id="336-ak-qK7"/>
                             <constraint firstItem="y4w-Ab-YFG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3rv-X1-JfY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="LfB-Sd-9PR" secondAttribute="bottom" id="7cA-vm-epO"/>
                             <constraint firstAttribute="trailing" secondItem="y4w-Ab-YFG" secondAttribute="trailing" id="9sb-lA-RmY"/>
+                            <constraint firstItem="LfB-Sd-9PR" firstAttribute="top" secondItem="gBw-TV-zss" secondAttribute="bottom" constant="69" id="H86-1k-X4m"/>
+                            <constraint firstItem="o44-Jq-t9i" firstAttribute="top" secondItem="7dl-9m-7H3" secondAttribute="bottom" constant="8" id="HGo-us-SGN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LfB-Sd-9PR" secondAttribute="trailing" constant="17" id="IiK-Ia-hzL"/>
+                            <constraint firstItem="0DO-Td-eLg" firstAttribute="leading" secondItem="7dl-9m-7H3" secondAttribute="trailing" constant="5" id="Oem-ZX-K7W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gBw-TV-zss" secondAttribute="trailing" id="Uz1-DQ-tUQ"/>
+                            <constraint firstItem="7dl-9m-7H3" firstAttribute="top" secondItem="y4w-Ab-YFG" secondAttribute="bottom" constant="24" id="Yyl-tz-aF3"/>
+                            <constraint firstItem="LfB-Sd-9PR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="a2J-gl-hJu"/>
+                            <constraint firstItem="o44-Jq-t9i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="aAg-rC-16d"/>
+                            <constraint firstItem="7dl-9m-7H3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="iXB-Y1-RLP"/>
                             <constraint firstItem="y4w-Ab-YFG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tga-BJ-sth"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkMyLevelButton" destination="LfB-Sd-9PR" id="Ixq-X4-Y3Q"/>
+                        <outlet property="subTitleLabel" destination="o44-Jq-t9i" id="gR1-7r-P40"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,6 +132,7 @@
     </scenes>
     <resources>
         <image name="icArrowLeft" width="24" height="24"/>
+        <image name="illust-levelup-congratulation" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

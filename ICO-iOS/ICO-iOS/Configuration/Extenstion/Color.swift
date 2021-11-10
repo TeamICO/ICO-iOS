@@ -74,7 +74,25 @@ extension UIColor {
             return #colorLiteral(red: 0.003921568627, green: 0.01176470588, blue: 0.01176470588, alpha: 1)
         case .alertGreen :
             return #colorLiteral(red: 0.01960784314, green: 0.537254902, blue: 0.3294117647, alpha: 1)
+        case .feedbackButtoncolor1 :
+            return #colorLiteral(red: 0.4196078431, green: 0.7647058824, blue: 0.5882352941, alpha: 1)
+        case .feedbackButtoncolor2 :
+            return #colorLiteral(red: 0.3921568627, green: 0.8823529412, blue: 0.1490196078, alpha: 1)
+        case .feedbackTextColor :
+            return #colorLiteral(red: 0.6196078431, green: 0.6235294118, blue: 0.6274509804, alpha: 1)
+        case .feedbackinpuTextColor :
+            return #colorLiteral(red: 0.003921568627, green: 0.01176470588, blue: 0.01176470588, alpha: 1)
+        case .feedbackBackgroundColor :
+            return #colorLiteral(red: 0.9529411765, green: 0.9725490196, blue: 0.968627451, alpha: 0.6)
+        case .feedbackTintColor :
+            return #colorLiteral(red: 0.09019607843, green: 0.6666666667, blue: 0.4196078431, alpha: 1)
+        case .alertRed:
+            return #colorLiteral(red: 0.937254902, green: 0.3529411765, blue: 0.3529411765, alpha: 1)
+        case .alertBlack:
+            return #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.3411764706, alpha: 1)
         }
+        
+        
     }
     
 }
@@ -94,4 +112,15 @@ enum Colors {
     case hotKeywordNumGreen
     case hotKeywordStringBlack
     case alertGreen
+    case alertRed
+    case alertBlack
+    case feedbackButtoncolor1
+    case feedbackButtoncolor2
+    case feedbackTextColor
+    case feedbackinpuTextColor
+    case feedbackBackgroundColor
+    case feedbackTintColor
+    
+    
+ 
 }
