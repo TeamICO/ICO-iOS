@@ -73,6 +73,9 @@
 		E9AF83ED273B60F600D77D5F /* ResultSortCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83EB273B60F600D77D5F /* ResultSortCVC.xib */; };
 		E9AF83F0273B610F00D77D5F /* SearchResultsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83EE273B610E00D77D5F /* SearchResultsCVC.swift */; };
 		E9AF83F1273B610F00D77D5F /* SearchResultsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83EF273B610E00D77D5F /* SearchResultsCVC.xib */; };
+		E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83F3273B769600D77D5F /* SortCVC.swift */; };
+		E9AF83F6273B769600D77D5F /* SortCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83F4273B769600D77D5F /* SortCVC.xib */; };
+		E9AF83F8273B78C100D77D5F /* SearchResultsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -176,6 +179,9 @@
 		E9AF83EB273B60F600D77D5F /* ResultSortCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultSortCVC.xib; sourceTree = "<group>"; };
 		E9AF83EE273B610E00D77D5F /* SearchResultsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCVC.swift; sourceTree = "<group>"; };
 		E9AF83EF273B610E00D77D5F /* SearchResultsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCVC.xib; sourceTree = "<group>"; };
+		E9AF83F3273B769600D77D5F /* SortCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCVC.swift; sourceTree = "<group>"; };
+		E9AF83F4273B769600D77D5F /* SortCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortCVC.xib; sourceTree = "<group>"; };
+		E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsSV.swift; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -411,6 +417,7 @@
 			children = (
 				E9AF83EA273B60F600D77D5F /* ResultSortCVC.swift */,
 				E9AF83EB273B60F600D77D5F /* ResultSortCVC.xib */,
+				E9AF83F2273B767C00D77D5F /* SortCVC */,
 			);
 			path = ResultSortCVC;
 			sourceTree = "<group>";
@@ -420,8 +427,18 @@
 			children = (
 				E9AF83EE273B610E00D77D5F /* SearchResultsCVC.swift */,
 				E9AF83EF273B610E00D77D5F /* SearchResultsCVC.xib */,
+				E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */,
 			);
 			path = SearchResultsCVC;
+			sourceTree = "<group>";
+		};
+		E9AF83F2273B767C00D77D5F /* SortCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF83F3273B769600D77D5F /* SortCVC.swift */,
+				E9AF83F4273B769600D77D5F /* SortCVC.xib */,
+			);
+			path = SortCVC;
 			sourceTree = "<group>";
 		};
 		E9CAF1662731635B008F749B = {
@@ -837,6 +854,7 @@
 				E951CE6B273A6BBB002799D6 /* RecentCVC.xib in Resources */,
 				E9CAF1C527316C39008F749B /* HomeInHomeSB.storyboard in Resources */,
 				E998C25C2732955A00E1F8D0 /* EcoTopicCVC.xib in Resources */,
+				E9AF83F6273B769600D77D5F /* SortCVC.xib in Resources */,
 				E9378D7F2737FCD000C589A1 /* BestTagTVC.xib in Resources */,
 				E9AF83E9273B60DC00D77D5F /* ResultCountCVC.xib in Resources */,
 				71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */,
@@ -920,9 +938,11 @@
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
+				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
 				71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */,
 				E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */,
 				717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */,
+				E9AF83F8273B78C100D77D5F /* SearchResultsSV.swift in Sources */,
 				E9CAF196273163FB008F749B /* MyStyleVC.swift in Sources */,
 				E9378D762737FAE200C589A1 /* TopTVC.swift in Sources */,
 				E943BC5A2738F4E000619C74 /* LoginVC.swift in Sources */,
