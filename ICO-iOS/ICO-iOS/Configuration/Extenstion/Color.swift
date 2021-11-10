@@ -30,6 +30,7 @@ extension UIColor {
     
     class var backGround1: UIColor {UIColor(hex: 0x99F2F8F7)}
     class var backGround2: UIColor {UIColor(hex: 0xFFFFFF)}
+    class var primaryBlack10: UIColor {UIColor(hex: 0xF4F6F6)}
     class var primaryBlack40: UIColor {UIColor(hex: 0xC4C5C6)}
     class var primaryBlack50 :UIColor {UIColor(hex: 0x9E9FA0)}
     class var primaryBlack60: UIColor {UIColor(hex: 0x7C7D7D)}

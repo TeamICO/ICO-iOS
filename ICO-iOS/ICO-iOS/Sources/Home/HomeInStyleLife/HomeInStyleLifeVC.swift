@@ -13,6 +13,11 @@ class HomeInStyleLifeVC: BaseViewController {
     @IBOutlet weak var stackViewWidth: NSLayoutConstraint!
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet var categoryBtn: [UIButton]!
+    @IBOutlet weak var animateView: UIView!
+    
+    
+    @IBOutlet weak var left: NSLayoutConstraint!
+    @IBOutlet weak var right: NSLayoutConstraint!
     
     
     let viewSizeWidth : CGFloat = 414
@@ -20,39 +25,71 @@ class HomeInStyleLifeVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-   
         
         setUI()
     }
     
     func setUI(){
-        segmentView.backgroundColor = UIColor.lightShadow
+        segmentView.backgroundColor = UIColor.primaryBlack10
         segmentView.cornerRadius = 16
+        
+        animateView.cornerRadius = 16
+        animateView.layer.shadowOpacity = 1
+        animateView.layer.shadowColor = UIColor.init(red: 0.288, green: 0.288, blue: 0.288, alpha: 0.1).cgColor
+        animateView.layer.shadowRadius = 13
+        animateView.layer.shadowOffset = CGSize(width: 8, height: 8)
+        
         categoryBtn[0].setTitle("최신", for: .normal)
+        categoryBtn[0].setTitleColor(UIColor.black, for: .normal)
         categoryBtn[1].setTitle("인기", for: .normal)
-        categoryBtn[2].setTitle("키워드", for: .normal)
+        categoryBtn[1].setTitleColor(UIColor.tabBarGray, for: .normal)
+        categoryBtn[2].setTitle("키워드별", for: .normal)
+        categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
       
         for i in 0...2{
-            categoryBtn[i].setTitleColor(UIColor.tabBarGray, for: .normal)
-            categoryBtn[i].setTitleColor(UIColor.black, for: .selected)
+            categoryBtn[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
         }
     }
     
     
     @IBAction func recentBtn(_ sender: Any) {
         scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+        categoryBtn[0].setTitleColor(UIColor.black, for: .normal)
+        categoryBtn[1].setTitleColor(UIColor.tabBarGray, for: .normal)
+        categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
+        UIView.animate(withDuration: 1){
+            self.left.constant = 6
+            self.right.constant = 236
+        }
     }
     
     
     @IBAction func popularBtn(_ sender: Any) {
         scrollView.setContentOffset(CGPoint(x: viewSizeWidth, y: 0.0), animated: true)
+        categoryBtn[1].setTitleColor(UIColor.black, for: .normal)
+        categoryBtn[0].setTitleColor(UIColor.tabBarGray, for: .normal)
+        categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
+        UIView.animate(withDuration: 1){
+            self.left.constant = 119
+            self.right.constant = 119
+        }
     }
     
     
     @IBAction func keywordBtn(_ sender: Any) {
         scrollView.setContentOffset(CGPoint(x: viewSizeWidth2, y: 0.0), animated: true)
+        categoryBtn[2].setTitleColor(UIColor.black, for: .normal)
+        categoryBtn[0].setTitleColor(UIColor.tabBarGray, for: .normal)
+        categoryBtn[1].setTitleColor(UIColor.tabBarGray, for: .normal)
+        UIView.animate(withDuration: 1){
+            self.left.constant = 240
+            self.right.constant = 6
+            //self.animateView.bringSubviewToFront(self.categoryBtn[2])
+            self.categoryBtn[2].bringSubviewToFront(self.animateView)
+        }
     }
+    
+    
     
 
 }
