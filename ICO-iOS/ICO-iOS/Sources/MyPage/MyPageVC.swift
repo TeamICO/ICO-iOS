@@ -24,6 +24,11 @@ class MyPageVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,6 +100,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
         switch indexPath.section {
         case 2:
             // 서비스 이용 약관
@@ -110,13 +116,31 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             break
         case 5:
             // 로그아웃
-            UserDefaults.standard.set(nil, forKey: "jwtToken")
-            let loginStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
-            let loginVC = loginStoryboard.instantiateViewController(identifier: "LoginVC")
-            loginVC.navigationItem.largeTitleDisplayMode = .never
-            let vc = UINavigationController(rootViewController: loginVC)
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            
+            let action = UIAlertAction(title: "로그아웃", style: .default, handler:{_ in
+                
+                UserDefaults.standard.set(nil, forKey: "jwtToken")
+                let loginStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
+                let loginVC = loginStoryboard.instantiateViewController(identifier: "LoginVC")
+                loginVC.navigationItem.largeTitleDisplayMode = .never
+                let vc = UINavigationController(rootViewController: loginVC)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            })
+            action.setValue(UIColor.appColor(.alertRed), forKey: "titleTextColor")
+            actionSheet.addAction(action)
+     
+            let cancel = UIAlertAction(title: "취소", style: .cancel,handler: nil)
+            cancel.setValue(UIColor.appColor(.alertBlack), forKey: "titleTextColor")
+            actionSheet.addAction(cancel)
+            
+            actionSheet.popoverPresentationController?.sourceView = view
+            actionSheet.popoverPresentationController?.sourceRect = view.bounds
+            
+            self.present(actionSheet, animated: true)
+    
+
             break
         default : break
         }

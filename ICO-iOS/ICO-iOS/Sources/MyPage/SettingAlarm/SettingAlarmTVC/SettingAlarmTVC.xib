@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wuj-vJ-Agp">
                         <rect key="frame" x="0.0" y="16" width="320" height="78"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji-search-star" translatesAutoresizingMaskIntoConstraints="NO" id="hxt-bA-MxZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji-alarm" translatesAutoresizingMaskIntoConstraints="NO" id="hxt-bA-MxZ">
                                 <rect key="frame" x="16" y="12" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="kPe-qa-agP"/>
@@ -79,7 +79,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="emoji-search-star" width="56" height="57"/>
+        <image name="emoji-alarm" width="80" height="81"/>
         <image name="ic-arrow-right" width="96" height="96"/>
     </resources>
 </document>

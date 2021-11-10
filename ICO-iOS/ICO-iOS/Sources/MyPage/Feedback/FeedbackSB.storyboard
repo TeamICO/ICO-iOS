@@ -71,15 +71,51 @@
                                     <constraint firstItem="Sn9-ND-efc" firstAttribute="leading" secondItem="ezR-XC-96s" secondAttribute="leading" constant="16" id="odG-CN-dkx"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqv-a1-8jl">
+                                <rect key="frame" x="16" y="110" width="304" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNA-VO-TUI">
+                                <rect key="frame" x="16" y="802" width="381" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Bw4-I3-d2i"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="의견보내기">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-SemiBold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapFeedbackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="x2y-k3-03W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bNA-VO-TUI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Ioy-vQ-C55"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ezR-XC-96s" secondAttribute="trailing" id="Jzf-vH-noY"/>
+                            <constraint firstItem="gqv-a1-8jl" firstAttribute="top" secondItem="ezR-XC-96s" secondAttribute="bottom" constant="12" id="K2j-cr-Wec"/>
                             <constraint firstItem="ezR-XC-96s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Val-m2-6VC"/>
+                            <constraint firstItem="bNA-VO-TUI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ypb-oF-U3W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bNA-VO-TUI" secondAttribute="trailing" constant="17" id="eUn-5b-pZq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gqv-a1-8jl" secondAttribute="trailing" constant="94" id="iqH-UW-5gK"/>
+                            <constraint firstItem="gqv-a1-8jl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ixS-IB-ufU"/>
                             <constraint firstItem="ezR-XC-96s" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="m8n-HC-X8y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="FeedbackButton" destination="bNA-VO-TUI" id="GXO-HD-ZCD"/>
+                        <outlet property="titleLabel" destination="gqv-a1-8jl" id="7Uh-le-7KQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
