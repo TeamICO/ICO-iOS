@@ -215,12 +215,22 @@
                                                                 <viewLayoutGuide key="contentLayoutGuide" id="tCX-u3-gC9"/>
                                                                 <viewLayoutGuide key="frameLayoutGuide" id="YDQ-NW-U5a"/>
                                                             </scrollView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkJ-dC-PKE">
+                                                                <rect key="frame" x="163" y="19" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="JlX-z3-Dem"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="TTF-eR-DfE"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="icProfileSetting1"/>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="Ha8-eq-cRY" firstAttribute="leading" secondItem="fh8-dj-90E" secondAttribute="leading" constant="12" id="2TM-K8-jHb"/>
                                                             <constraint firstAttribute="trailing" secondItem="Prb-tn-JU2" secondAttribute="trailing" id="45S-9t-1IW"/>
                                                             <constraint firstItem="Ha8-eq-cRY" firstAttribute="top" secondItem="fh8-dj-90E" secondAttribute="top" constant="14" id="4S0-sN-Qfy"/>
+                                                            <constraint firstItem="BkJ-dC-PKE" firstAttribute="top" secondItem="fh8-dj-90E" secondAttribute="top" constant="19" id="Q03-A1-9mz"/>
                                                             <constraint firstItem="jrW-K8-git" firstAttribute="top" secondItem="luo-L3-Q4f" secondAttribute="bottom" constant="2.5" id="SJO-9a-lMa"/>
                                                             <constraint firstItem="jrW-K8-git" firstAttribute="leading" secondItem="Ha8-eq-cRY" secondAttribute="trailing" constant="12" id="Tp9-0k-nnO"/>
                                                             <constraint firstItem="luo-L3-Q4f" firstAttribute="leading" secondItem="Ha8-eq-cRY" secondAttribute="trailing" constant="10" id="VYD-47-iUc"/>
@@ -228,6 +238,7 @@
                                                             <constraint firstAttribute="height" constant="166" id="cUF-tE-NNl"/>
                                                             <constraint firstAttribute="trailing" secondItem="pjW-xY-noW" secondAttribute="trailing" constant="12" id="eUa-wn-wJT"/>
                                                             <constraint firstItem="rbc-3F-Veh" firstAttribute="leading" secondItem="jrW-K8-git" secondAttribute="trailing" constant="4" id="fSQ-lu-6xb"/>
+                                                            <constraint firstItem="BkJ-dC-PKE" firstAttribute="leading" secondItem="luo-L3-Q4f" secondAttribute="trailing" constant="11" id="hn7-Yq-Ojo"/>
                                                             <constraint firstItem="pjW-xY-noW" firstAttribute="leading" secondItem="fh8-dj-90E" secondAttribute="leading" constant="12" id="lId-yZ-sDl"/>
                                                             <constraint firstItem="pjW-xY-noW" firstAttribute="top" secondItem="Ha8-eq-cRY" secondAttribute="bottom" constant="13.5" id="luT-jF-V0Q"/>
                                                             <constraint firstItem="rbc-3F-Veh" firstAttribute="top" secondItem="luo-L3-Q4f" secondAttribute="bottom" constant="2" id="sOd-ID-qiO"/>
@@ -344,9 +355,19 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6h-2M-hOq">
+                                                <rect key="frame" x="318" y="526" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="4gc-89-VBh"/>
+                                                    <constraint firstAttribute="width" constant="80" id="rcG-o9-YDQ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btn-mystyle-upload"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="x6h-2M-hOq" secondAttribute="trailing" constant="16" id="0zh-th-Ruv"/>
                                             <constraint firstItem="qxw-O5-OVU" firstAttribute="top" secondItem="tJh-xH-N7E" secondAttribute="bottom" constant="16" id="6Ld-Jq-AAp"/>
                                             <constraint firstItem="qxw-O5-OVU" firstAttribute="leading" secondItem="Xht-Oq-9EB" secondAttribute="leading" constant="16" id="7bF-k7-2HV"/>
                                             <constraint firstAttribute="trailing" secondItem="tJh-xH-N7E" secondAttribute="trailing" id="AD4-8M-8nw"/>
@@ -355,6 +376,7 @@
                                             <constraint firstAttribute="bottom" secondItem="qxw-O5-OVU" secondAttribute="bottom" id="f1A-CE-d3j"/>
                                             <constraint firstItem="tJh-xH-N7E" firstAttribute="top" secondItem="Xht-Oq-9EB" secondAttribute="top" id="ftz-9d-GbQ"/>
                                             <constraint firstAttribute="trailing" secondItem="qxw-O5-OVU" secondAttribute="trailing" constant="16" id="ntC-2H-Skx"/>
+                                            <constraint firstItem="x6h-2M-hOq" firstAttribute="top" secondItem="tJh-xH-N7E" secondAttribute="bottom" constant="215" id="z2f-VY-Uxa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -431,9 +453,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn-mystyle-upload" width="160" height="160"/>
         <image name="emoji-profile-gliter" width="24" height="24.5"/>
         <image name="icAlram1" width="24" height="24"/>
         <image name="icHeart1" width="24" height="24"/>
+        <image name="icProfileSetting1" width="20" height="20"/>
         <image name="illust-product-chemical" width="80" height="80"/>
         <image name="illust-product-donation" width="80.5" height="80"/>
         <image name="illust-product-upcycling" width="80" height="80"/>
