@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		714F32AF273BA635007324BC /* StyleCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F32AD273BA634007324BC /* StyleCVC.swift */; };
+		714F32B0273BA635007324BC /* StyleCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714F32AE273BA635007324BC /* StyleCVC.xib */; };
 		714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F5A152733C06E00692A13 /* RecentTVC.swift */; };
 		714F5A182733C06E00692A13 /* RecentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714F5A162733C06E00692A13 /* RecentTVC.xib */; };
 		717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76D42732CC3300FBA1AF /* RecentVC.swift */; };
@@ -121,6 +123,8 @@
 		32B3B3D2CAD1AFBDEA9615E4 /* Pods-ICO-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ICO-iOS/Pods-ICO-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		46783D072573FDEF48465096 /* Pods-ICO_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO_iOS.debug.xcconfig"; path = "Target Support Files/Pods-ICO_iOS/Pods-ICO_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6A72A8927A341C9DF5C0BD48 /* Pods-ICO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO.debug.xcconfig"; path = "Target Support Files/Pods-ICO/Pods-ICO.debug.xcconfig"; sourceTree = "<group>"; };
+		714F32AD273BA634007324BC /* StyleCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCVC.swift; sourceTree = "<group>"; };
+		714F32AE273BA635007324BC /* StyleCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StyleCVC.xib; sourceTree = "<group>"; };
 		714F5A152733C06E00692A13 /* RecentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTVC.swift; sourceTree = "<group>"; };
 		714F5A162733C06E00692A13 /* RecentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTVC.xib; sourceTree = "<group>"; };
 		717B76D42732CC3300FBA1AF /* RecentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentVC.swift; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				714F5A162733C06E00692A13 /* RecentTVC.xib */,
 				71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */,
 				71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */,
+				714F32AD273BA634007324BC /* StyleCVC.swift */,
+				714F32AE273BA635007324BC /* StyleCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -948,6 +954,7 @@
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				E9CAF19A27316427008F749B /* MyStyleSB.storyboard in Resources */,
 				E9AF8408273B82DE00D77D5F /* MyPageUserInfoTVC.xib in Resources */,
+				714F32B0273BA635007324BC /* StyleCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,6 +1029,7 @@
 				E9CAF194273163EC008F749B /* HomeVC.swift in Sources */,
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
+				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
 				71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */,
