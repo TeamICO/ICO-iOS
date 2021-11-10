@@ -104,6 +104,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // 각 섹션 별 높이
         switch indexPath.section {
         case 0 :
             return 309
@@ -116,8 +117,11 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section {
-
+        case 0 :
+            // 첫 번째 섹션과 두 번째 섹션 사이 값 0
+            return 0
         case 6:
+            // 마지막 섹션 값 130
             return 130
         default:
             return 12
@@ -127,9 +131,17 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
-        footer.backgroundColor = UIColor.appColor(.tableViewFooterColor)
-        return footer
+        switch section {
+
+        case 0:
+            // 첫 번째 섹션과 두 번째 섹션 사이 값 0
+            return UIView()
+        default:
+            let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
+            footer.backgroundColor = UIColor.appColor(.tableViewFooterColor)
+            return footer
+        }
+
        
     }
 
