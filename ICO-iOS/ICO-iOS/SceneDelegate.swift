@@ -27,9 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let baseTBC = splashStoryboard.instantiateViewController(identifier: "BaseTBC")
             vc = baseTBC
         }else{
-            let splashStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
+            let loginStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
      
-            let loginVC = splashStoryboard.instantiateViewController(identifier: "LoginVC")
+            let loginVC = loginStoryboard.instantiateViewController(identifier: "LoginVC")
             loginVC.navigationItem.largeTitleDisplayMode = .never
             vc = UINavigationController(rootViewController: loginVC)
         }

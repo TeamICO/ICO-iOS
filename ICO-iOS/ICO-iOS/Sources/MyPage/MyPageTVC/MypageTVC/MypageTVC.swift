@@ -8,7 +8,11 @@
 import UIKit
 
 class MypageTVC: UITableViewCell {
-
+    static let identifier = "MypageTVC"
+    
+    @IBOutlet weak var featureLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -8,7 +8,7 @@
 import UIKit
 
 class MypageMyRecentStyleShotCVC: UICollectionViewCell {
-
+    static let identifier = "MypageMyRecentStyleShotCVC"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
