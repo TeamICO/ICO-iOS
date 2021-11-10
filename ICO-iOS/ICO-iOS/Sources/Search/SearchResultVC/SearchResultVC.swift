@@ -8,18 +8,18 @@
 import UIKit
 
 class SearchResultVC: UIViewController {
-
+    // MARK: - Properties
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewConfigure()
         searchTextField.delegate = self
     }
-    
+    // MARK: - Selectors
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

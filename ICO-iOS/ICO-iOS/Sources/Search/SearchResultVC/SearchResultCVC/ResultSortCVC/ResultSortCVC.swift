@@ -10,7 +10,7 @@ import UIKit
 class ResultSortCVC: UICollectionViewCell {
     static let identifier = "ResultSortCVC"
     
-    
+    private var emojis = ["emoji-search-accuracy","emoji-search-like","emoji-search-star"]
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
@@ -33,12 +33,12 @@ extension ResultSortCVC {
 }
 extension ResultSortCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SortCVC.identifier, for: indexPath) as! SortCVC
-       
+        cell.sortIcon.image = UIImage(named: emojis[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
