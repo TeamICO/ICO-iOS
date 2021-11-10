@@ -12,10 +12,10 @@ class IcoLevelVC: UIViewController {
     
     private let levelLabels = [
                     "Lev.1 새싹 아이코",
-                    "Lev.2 새싹 아이코",
-                    "Lev.3 새싹 아이코",
-                    "Lev.4 새싹 아이코",
-                    "Lev.5 새싹 아이코"
+                    "Lev.2 가치 아이코",
+                    "Lev.3 열정가득 아이코",
+                    "Lev.4 존경하는 아이코",
+                    "Lev.5 없어서는 안 될 아이코"
     ]
     private let levelDescriptions = [
                     "열정가득한 새싹 아이코, 환경을 위해 첫 걸음을 딛어봐요!",
