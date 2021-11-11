@@ -18,6 +18,8 @@ class HomeVC: BaseViewController {
     @IBOutlet weak var lifeStyleButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var likeView: UIView!
+    @IBOutlet weak var alarmView: UIView!
     
     @IBOutlet weak var topView: UIView!
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
@@ -45,11 +47,19 @@ class HomeVC: BaseViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        configure()
+        setLikeViewTapGesture()
+        setAlarmViewTapGesture()
+    }
+    
+    
+    // MARK: - configure
+    func configure(){
         homeButton.addTarget(self, action: #selector(didTapHomeButton), for: .touchUpInside)
         lifeStyleButton.addTarget(self, action: #selector(didTapLifeStyleButton), for: .touchUpInside)
 
         stackViewWidth.constant = viewSizeWidth
-        
     }
     
     // MARK: - Selectors
@@ -63,4 +73,27 @@ class HomeVC: BaseViewController {
     }
 
 
+}
+//MARK : 좋아요 뷰
+extension HomeVC {
+    func setLikeViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLikeView))
+        viewTap.cancelsTouchesInView = false
+        likeView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapLikeView(){
+   
+    }
+}
+
+//MARK : 알림 뷰
+extension HomeVC {
+    func setAlarmViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapAlarmView))
+        viewTap.cancelsTouchesInView = false
+        alarmView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapAlarmView(){
+     
+    }
 }
