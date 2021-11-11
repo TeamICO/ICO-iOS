@@ -21,6 +21,8 @@ class MyPageVC: BaseViewController {
             
     ]
     
+    @IBOutlet weak var alarmView: UIView!
+    @IBOutlet weak var likeView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Life Cycle
@@ -33,6 +35,8 @@ class MyPageVC: BaseViewController {
         super.viewDidLoad()
 
         tableviewConfigure()
+        setLikeViewTapGesture()
+        setAlarmViewTapGesture()
     }
     
 
@@ -73,6 +77,8 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.appColor(.tableViewCellColor)
         switch indexPath.section{
         case 0 :
             let cell = tableView.dequeueReusableCell(withIdentifier: MyPageUserInfoTVC.identifier, for: indexPath) as! MyPageUserInfoTVC
@@ -91,7 +97,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: MypageTVC.identifier, for: indexPath) as! MypageTVC
-            
+            cell.selectedBackgroundView =  bgColorView
             cell.featureLabel.text = featureModels[indexPath.section]
             return cell
      
@@ -203,3 +209,26 @@ extension MyPageVC : MyPageUserInfoTVCDelegate{
     
 }
 
+//MARK : 좋아요 뷰
+extension MyPageVC {
+    func setLikeViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLikeView))
+        viewTap.cancelsTouchesInView = false
+        likeView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapLikeView(){
+        self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
+    }
+}
+
+//MARK : 알림 뷰
+extension MyPageVC {
+    func setAlarmViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapAlarmView))
+        viewTap.cancelsTouchesInView = false
+        alarmView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapAlarmView(){
+        self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
+    }
+}
