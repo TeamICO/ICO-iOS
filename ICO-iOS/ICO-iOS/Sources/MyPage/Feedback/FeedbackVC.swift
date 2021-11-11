@@ -108,7 +108,7 @@ extension FeedbackVC : UITextViewDelegate {
         
         textView.constraints.forEach{(constraint) in
             if constraint.firstAttribute == .height {
-                if estimatedSize.height > 111 && estimatedSize.height < 400  {
+                if estimatedSize.height > 111 && estimatedSize.height < 340  {
                     constraint.constant = estimatedSize.height
                 
                 }
