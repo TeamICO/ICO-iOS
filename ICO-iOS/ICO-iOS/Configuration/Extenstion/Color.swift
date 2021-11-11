@@ -27,7 +27,12 @@ extension UIColor {
 
     class var iGreen: UIColor {UIColor(hex: 0x4CE126)}
     class var coGreen: UIColor {UIColor(hex: 0x058954)}
-    
+    class var coGreen5: UIColor {UIColor(hex: 0xEDFCF4)}
+    class var coGreen10: UIColor {UIColor(hex: 0xC0E4D1)}
+    class var coGreen30: UIColor {UIColor(hex: 0x6BC396)}
+    class var coGreen60: UIColor {UIColor(hex: 0x17AA6B)}
+    class var coGreen90: UIColor {UIColor(hex: 0x005834)}
+
     class var backGround1: UIColor {UIColor(hex: 0x99F2F8F7)}
     class var backGround2: UIColor {UIColor(hex: 0xFFFFFF)}
     class var primaryBlack10: UIColor {UIColor(hex: 0xF4F6F6)}
