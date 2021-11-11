@@ -423,7 +423,7 @@
                                             <constraint firstItem="WBu-Es-Jx6" firstAttribute="leading" secondItem="QoW-GC-jy2" secondAttribute="leading" id="Ijm-Da-VI5"/>
                                             <constraint firstAttribute="trailing" secondItem="RcA-k3-7dH" secondAttribute="trailing" id="JAV-3M-orx"/>
                                             <constraint firstItem="VEh-pc-1kj" firstAttribute="leading" secondItem="BnK-Ub-dN0" secondAttribute="trailing" constant="4" id="JhX-8m-2hD"/>
-                                            <constraint firstAttribute="trailing" secondItem="edU-lp-qEU" secondAttribute="trailing" constant="16" id="KNT-2z-T3b"/>
+                                            <constraint firstAttribute="trailing" secondItem="edU-lp-qEU" secondAttribute="trailing" constant="16" id="KDI-9O-mSi"/>
                                             <constraint firstAttribute="trailing" secondItem="SSJ-22-F1f" secondAttribute="trailing" id="ME3-F1-qMo"/>
                                             <constraint firstItem="Q2D-17-IpV" firstAttribute="leading" secondItem="bOk-TT-O06" secondAttribute="trailing" constant="12" id="Nrb-qq-PCn"/>
                                             <constraint firstItem="yKf-r3-h30" firstAttribute="leading" secondItem="3o9-oF-NpD" secondAttribute="trailing" constant="32" id="Ovm-Za-sFm"/>
@@ -514,6 +514,7 @@
                         <outlet property="navigationTitle" destination="3yg-rT-yuS" id="6k0-r6-Zgn"/>
                         <outlet property="newImageView" destination="ZRb-PF-6pI" id="Tgw-va-mmP"/>
                         <outlet property="plusBtn" destination="enc-q3-CPK" id="6pD-cs-vbg"/>
+                        <outlet property="uploadBtn" destination="edU-lp-qEU" id="K4I-Is-K7f"/>
                         <outletCollection property="levelTitle" destination="dBm-Bb-9Nh" collectionClass="NSMutableArray" id="ROe-Jo-3tF"/>
                         <outletCollection property="levelTitle" destination="bWn-r3-mfw" collectionClass="NSMutableArray" id="hh2-mZ-SMu"/>
                         <outletCollection property="levelTitle" destination="js2-W5-a3k" collectionClass="NSMutableArray" id="aK6-Do-tjW"/>

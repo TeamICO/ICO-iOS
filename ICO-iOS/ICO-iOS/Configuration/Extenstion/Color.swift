@@ -31,6 +31,7 @@ extension UIColor {
     class var coGreen10: UIColor {UIColor(hex: 0xC0E4D1)}
     class var coGreen30: UIColor {UIColor(hex: 0x6BC396)}
     class var coGreen60: UIColor {UIColor(hex: 0x17AA6B)}
+    class var coGreen70: UIColor {UIColor(hex: 0x00BB0F)}
     class var coGreen90: UIColor {UIColor(hex: 0x005834)}
     
     class var gradient01: UIColor {UIColor(hex: 0x6BC396)}

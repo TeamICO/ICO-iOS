@@ -17,6 +17,8 @@ class SurveyVC: UIViewController {
     
     @IBOutlet var emojiView: [UIView]!
     
+    @IBOutlet var uploadBtn: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +53,19 @@ class SurveyVC: UIViewController {
             emojiView[j].backgroundColor = UIColor.lightShadow
         }
         
+        for i in 0...1{
+            uploadBtn[i].clipsToBounds = true
+            uploadBtn[i].cornerRadius = 12
+            uploadBtn[i].titleLabel?.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 20)
+        }
+        
+        uploadBtn[0].setTitleColor(UIColor.black, for: .normal)
+        uploadBtn[1].setTitleColor(UIColor.white, for: .normal)
+        
+        uploadBtn[1].setGradient(color1: UIColor.gradient01, color2: UIColor.gradient012)
+        uploadBtn[0].backgroundColor = UIColor.white
+        uploadBtn[0].borderWidth = 1
+        uploadBtn[0].borderColor = UIColor.coGreen70
     }
 
 }

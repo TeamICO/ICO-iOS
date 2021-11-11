@@ -556,6 +556,24 @@
                                                     <constraint firstAttribute="height" constant="92" id="h74-uY-gnk"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-mu-s3c">
+                                                <rect key="frame" x="16" y="728" width="382" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ma-23-aTd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="182.5" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="나중에"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGg-eJ-SAQ">
+                                                        <rect key="frame" x="199.5" y="0.0" width="182.5" height="60"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="완료!"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="GDs-S3-Ms8"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -579,7 +597,9 @@
                                             <constraint firstItem="4M7-Wt-f4R" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="jU9-5i-Rka"/>
                                             <constraint firstItem="PWF-h4-BLu" firstAttribute="top" secondItem="KCp-e9-U85" secondAttribute="top" constant="96" id="kaK-cc-zb7"/>
                                             <constraint firstItem="PWF-h4-BLu" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="sG5-Jw-TAx"/>
+                                            <constraint firstItem="Dft-mu-s3c" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="sKy-tB-dJh"/>
                                             <constraint firstItem="ghz-9P-mG8" firstAttribute="top" secondItem="4M7-Wt-f4R" secondAttribute="bottom" constant="24" id="sbZ-f0-sLt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dft-mu-s3c" secondAttribute="trailing" constant="16" id="uYg-Yh-ecz"/>
                                             <constraint firstItem="eQp-xE-Fvk" firstAttribute="top" secondItem="KCp-e9-U85" secondAttribute="top" constant="12" id="ydK-Eh-vyB"/>
                                             <constraint firstItem="y0E-Vt-QnZ" firstAttribute="top" secondItem="mym-MJ-tTf" secondAttribute="bottom" constant="12" id="zoE-No-DsC"/>
                                         </constraints>
@@ -599,6 +619,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Dft-mu-s3c" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="12" id="4kD-9G-TDd"/>
                             <constraint firstItem="ASm-Lh-Qko" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="86c-Hf-i6U"/>
                             <constraint firstItem="FyS-Wb-KnY" firstAttribute="top" secondItem="ASm-Lh-Qko" secondAttribute="bottom" id="ESk-ap-Wul"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ASm-Lh-Qko" secondAttribute="trailing" id="bbb-tT-JiF"/>
@@ -643,6 +664,8 @@
                         <outletCollection property="emojiView" destination="fiM-Y4-umf" collectionClass="NSMutableArray" id="nSL-9V-phZ"/>
                         <outletCollection property="emojiView" destination="uI8-eG-650" collectionClass="NSMutableArray" id="fHi-uU-LXM"/>
                         <outletCollection property="emojiView" destination="emQ-Vr-gvJ" collectionClass="NSMutableArray" id="hFt-Bv-25y"/>
+                        <outletCollection property="uploadBtn" destination="4ma-23-aTd" collectionClass="NSMutableArray" id="B2S-u2-had"/>
+                        <outletCollection property="uploadBtn" destination="BGg-eJ-SAQ" collectionClass="NSMutableArray" id="97H-Od-zs7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
