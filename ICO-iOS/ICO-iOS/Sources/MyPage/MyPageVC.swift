@@ -131,7 +131,10 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             action.setValue(UIColor.appColor(.alertRed), forKey: "titleTextColor")
             actionSheet.addAction(action)
      
-            let cancel = UIAlertAction(title: "취소", style: .cancel,handler: nil)
+            let cancel = UIAlertAction(title: "취소", style: .cancel,handler: {_ in
+                self.tabBarController?.tabBar.isHidden = false
+                
+            })
             cancel.setValue(UIColor.appColor(.alertBlack), forKey: "titleTextColor")
             actionSheet.addAction(cancel)
             

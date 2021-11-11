@@ -683,7 +683,6 @@
 			children = (
 				E9CAF18B273163C2008F749B /* HomeSB.storyboard */,
 				E9CAF193273163EC008F749B /* HomeVC.swift */,
-				E9CAF1AA27316776008F749B /* Cells */,
 				E9CAF1AB2731677B008F749B /* Entity */,
 				E9CAF1C227316C09008F749B /* HomeInHome */,
 				E9CAF1C327316C14008F749B /* HomeInStyleLife */,
@@ -815,13 +814,6 @@
 				E9AF83DD273B5C6D00D77D5F /* SearchResultVC */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		E9CAF1AA27316776008F749B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		E9CAF1AB2731677B008F749B /* Entity */ = {
