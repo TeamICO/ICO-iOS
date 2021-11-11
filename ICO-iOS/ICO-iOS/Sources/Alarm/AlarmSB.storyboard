@@ -16,8 +16,60 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bOc-fF-BmW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpy-B5-1fu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-pR-ZBx">
+                                        <rect key="frame" x="16" y="11" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="GIT-tV-1Qd"/>
+                                            <constraint firstAttribute="width" constant="32" id="uyF-uy-2Ie"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icArrowLeft">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ka6-ex-XuP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vf0-YQ-fxk">
+                                        <rect key="frame" x="189.5" y="13" width="35" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="lxW-Xn-qGF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fOr-pR-ZBx" firstAttribute="leading" secondItem="vpy-B5-1fu" secondAttribute="leading" constant="16" id="6eo-52-uiQ"/>
+                                    <constraint firstItem="fOr-pR-ZBx" firstAttribute="centerY" secondItem="vpy-B5-1fu" secondAttribute="centerY" id="7tM-0N-lNU"/>
+                                    <constraint firstItem="vf0-YQ-fxk" firstAttribute="centerX" secondItem="vpy-B5-1fu" secondAttribute="centerX" id="FN9-d7-gU6"/>
+                                    <constraint firstItem="vf0-YQ-fxk" firstAttribute="centerY" secondItem="vpy-B5-1fu" secondAttribute="centerY" id="ae1-eV-boN"/>
+                                    <constraint firstAttribute="height" constant="54" id="rFe-MC-46r"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bOc-fF-BmW" secondAttribute="trailing" id="Edf-sp-DkB"/>
+                            <constraint firstItem="bOc-fF-BmW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="F23-pb-GMp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vpy-B5-1fu" secondAttribute="trailing" id="J3l-hO-rd0"/>
+                            <constraint firstItem="vpy-B5-1fu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YGP-AK-sbT"/>
+                            <constraint firstItem="vpy-B5-1fu" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="chc-wU-q1M"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bOc-fF-BmW" secondAttribute="bottom" id="nfZ-yI-Mtw"/>
+                            <constraint firstItem="bOc-fF-BmW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="skk-GY-r28"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +78,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icArrowLeft" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

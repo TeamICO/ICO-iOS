@@ -82,7 +82,7 @@ extension HomeVC {
         likeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapLikeView(){
-   
+        self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
     }
 }
 
@@ -94,6 +94,6 @@ extension HomeVC {
         alarmView.addGestureRecognizer(viewTap)
     }
     @objc func didTapAlarmView(){
-     
+        self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
     }
 }

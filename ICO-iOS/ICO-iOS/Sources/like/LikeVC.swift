@@ -14,6 +14,9 @@ class LikeVC: UIViewController {
 
     }
     
-
+    @IBAction func didTapBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
 }
