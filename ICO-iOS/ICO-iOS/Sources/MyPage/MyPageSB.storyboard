@@ -26,30 +26,54 @@
                                         <color key="textColor" red="0.0039215686274509803" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAlram1" translatesAutoresizingMaskIntoConstraints="NO" id="OtC-uf-yk7">
-                                        <rect key="frame" x="368" y="15" width="24" height="24"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7K-HF-lGx">
+                                        <rect key="frame" x="360" y="7" width="40" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAlram1" translatesAutoresizingMaskIntoConstraints="NO" id="ocX-b1-DUw">
+                                                <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="XsH-fD-Hhh"/>
+                                                    <constraint firstAttribute="height" constant="24" id="llt-yI-kiy"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="Fo5-Vb-gAr"/>
-                                            <constraint firstAttribute="height" constant="24" id="GDL-j0-oMA"/>
+                                            <constraint firstAttribute="height" constant="40" id="7Yx-u8-JTf"/>
+                                            <constraint firstItem="ocX-b1-DUw" firstAttribute="centerX" secondItem="q7K-HF-lGx" secondAttribute="centerX" id="ZJn-Wx-bP7"/>
+                                            <constraint firstItem="ocX-b1-DUw" firstAttribute="centerY" secondItem="q7K-HF-lGx" secondAttribute="centerY" id="aQ4-Cn-sl2"/>
+                                            <constraint firstAttribute="width" constant="40" id="bla-FM-NfH"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icHeart1" translatesAutoresizingMaskIntoConstraints="NO" id="IP3-1W-Plf">
-                                        <rect key="frame" x="322" y="15" width="24" height="24"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ed-hr-dAT">
+                                        <rect key="frame" x="314" y="7" width="40" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icHeart1" translatesAutoresizingMaskIntoConstraints="NO" id="OmL-H7-6cF">
+                                                <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="ZUx-RI-87a"/>
+                                                    <constraint firstAttribute="width" constant="24" id="pPQ-iX-TQe"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="CgL-Vt-4aA"/>
-                                            <constraint firstAttribute="width" constant="24" id="Sy0-yK-xvb"/>
+                                            <constraint firstAttribute="height" constant="40" id="6Eg-jr-5qE"/>
+                                            <constraint firstItem="OmL-H7-6cF" firstAttribute="centerX" secondItem="9Ed-hr-dAT" secondAttribute="centerX" id="dog-6y-1Kn"/>
+                                            <constraint firstItem="OmL-H7-6cF" firstAttribute="centerY" secondItem="9Ed-hr-dAT" secondAttribute="centerY" id="tVX-rA-46Q"/>
+                                            <constraint firstAttribute="width" constant="40" id="vuh-d6-ryy"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="efl-0W-u2e" firstAttribute="leading" secondItem="Jtw-Dl-xPJ" secondAttribute="leading" constant="26" id="Ayp-jW-Bi3"/>
-                                    <constraint firstItem="OtC-uf-yk7" firstAttribute="top" secondItem="Jtw-Dl-xPJ" secondAttribute="top" constant="15" id="FCm-pM-opG"/>
-                                    <constraint firstItem="OtC-uf-yk7" firstAttribute="leading" secondItem="IP3-1W-Plf" secondAttribute="trailing" constant="22" id="Nho-pv-Mpo"/>
+                                    <constraint firstItem="q7K-HF-lGx" firstAttribute="centerY" secondItem="Jtw-Dl-xPJ" secondAttribute="centerY" id="IwB-Sa-J5s"/>
+                                    <constraint firstAttribute="trailing" secondItem="q7K-HF-lGx" secondAttribute="trailing" constant="14" id="ShX-6b-EmO"/>
+                                    <constraint firstItem="9Ed-hr-dAT" firstAttribute="centerY" secondItem="Jtw-Dl-xPJ" secondAttribute="centerY" id="aLz-n8-C3O"/>
                                     <constraint firstAttribute="height" constant="54" id="g8d-5n-ajj"/>
-                                    <constraint firstAttribute="trailing" secondItem="OtC-uf-yk7" secondAttribute="trailing" constant="22" id="mY9-Lx-pFi"/>
                                     <constraint firstItem="efl-0W-u2e" firstAttribute="top" secondItem="Jtw-Dl-xPJ" secondAttribute="top" constant="13" id="oU4-83-J6R"/>
-                                    <constraint firstItem="IP3-1W-Plf" firstAttribute="top" secondItem="Jtw-Dl-xPJ" secondAttribute="top" constant="15" id="p8U-LR-FcW"/>
+                                    <constraint firstItem="q7K-HF-lGx" firstAttribute="leading" secondItem="9Ed-hr-dAT" secondAttribute="trailing" constant="6" id="pZS-HA-dMA"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vh3-lP-iPk">
@@ -71,6 +95,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ToN-Gp-zAf"/>
                     <connections>
+                        <outlet property="alarmView" destination="q7K-HF-lGx" id="D7W-M7-d4Y"/>
+                        <outlet property="likeView" destination="9Ed-hr-dAT" id="7Lv-CZ-Ozb"/>
                         <outlet property="tableView" destination="vh3-lP-iPk" id="MEU-6T-0X6"/>
                     </connections>
                 </viewController>

@@ -33,6 +33,10 @@
 		E9161CF9273CB95A009A9CA7 /* AlarmSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */; };
 		E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */; };
 		E9161CFD273CB96E009A9CA7 /* LikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161CFC273CB96E009A9CA7 /* LikeVC.swift */; };
+		E9161D03273CF28D009A9CA7 /* TodayAlarmTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D01273CF28D009A9CA7 /* TodayAlarmTVC.swift */; };
+		E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D02273CF28D009A9CA7 /* TodayAlarmTVC.xib */; };
+		E9161D0C273CF74E009A9CA7 /* BeforeAlarmTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D0A273CF74E009A9CA7 /* BeforeAlarmTVC.swift */; };
+		E9161D0D273CF74E009A9CA7 /* BeforeAlarmTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D0B273CF74E009A9CA7 /* BeforeAlarmTVC.xib */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -184,6 +188,10 @@
 		E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmSB.storyboard; sourceTree = "<group>"; };
 		E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
 		E9161CFC273CB96E009A9CA7 /* LikeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeVC.swift; sourceTree = "<group>"; };
+		E9161D01273CF28D009A9CA7 /* TodayAlarmTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAlarmTVC.swift; sourceTree = "<group>"; };
+		E9161D02273CF28D009A9CA7 /* TodayAlarmTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayAlarmTVC.xib; sourceTree = "<group>"; };
+		E9161D0A273CF74E009A9CA7 /* BeforeAlarmTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAlarmTVC.swift; sourceTree = "<group>"; };
+		E9161D0B273CF74E009A9CA7 /* BeforeAlarmTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeforeAlarmTVC.xib; sourceTree = "<group>"; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -403,6 +411,7 @@
 			children = (
 				E9161CF6273CB953009A9CA7 /* AlarmVC.swift */,
 				E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */,
+				E9161CFE273CF242009A9CA7 /* AlarmTVC */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -414,6 +423,33 @@
 				E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */,
 			);
 			path = like;
+			sourceTree = "<group>";
+		};
+		E9161CFE273CF242009A9CA7 /* AlarmTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9161CFF273CF251009A9CA7 /* TodayAlarmTVC */,
+				E9161D09273CF731009A9CA7 /* BeforeAlarmTVC */,
+			);
+			path = AlarmTVC;
+			sourceTree = "<group>";
+		};
+		E9161CFF273CF251009A9CA7 /* TodayAlarmTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9161D01273CF28D009A9CA7 /* TodayAlarmTVC.swift */,
+				E9161D02273CF28D009A9CA7 /* TodayAlarmTVC.xib */,
+			);
+			path = TodayAlarmTVC;
+			sourceTree = "<group>";
+		};
+		E9161D09273CF731009A9CA7 /* BeforeAlarmTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9161D0A273CF74E009A9CA7 /* BeforeAlarmTVC.swift */,
+				E9161D0B273CF74E009A9CA7 /* BeforeAlarmTVC.xib */,
+			);
+			path = BeforeAlarmTVC;
 			sourceTree = "<group>";
 		};
 		E9378D652737ACED00C589A1 /* UserRatingsSV */ = {
@@ -1143,10 +1179,12 @@
 				E9378D8F2738032500C589A1 /* ResponsiveStyleShotTVC.xib in Resources */,
 				71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */,
 				E9CAF1CD27317295008F749B /* README.md in Resources */,
+				E9161D0D273CF74E009A9CA7 /* BeforeAlarmTVC.xib in Resources */,
 				E9378D8B2738017400C589A1 /* EcoTopicTVC.xib in Resources */,
 				E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */,
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
+				E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */,
 				E9E49916273BABCB0001ACFB /* ServiceTermsSB.storyboard in Resources */,
 				E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */,
 				E9E49931273BCB350001ACFB /* IcoLevelTopTVC.xib in Resources */,
@@ -1261,6 +1299,7 @@
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
 				E9CAF1C127316A10008F749B /* Constant.swift in Sources */,
 				E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */,
+				E9161D0C273CF74E009A9CA7 /* BeforeAlarmTVC.swift in Sources */,
 				717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */,
 				E9378D8E2738032500C589A1 /* ResponsiveStyleShotTVC.swift in Sources */,
 				E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */,
@@ -1269,6 +1308,7 @@
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
 				E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */,
 				E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */,
+				E9161D03273CF28D009A9CA7 /* TodayAlarmTVC.swift in Sources */,
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
 				E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */,
