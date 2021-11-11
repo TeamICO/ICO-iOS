@@ -24,7 +24,7 @@ extension UIColor {
     class var mainOrange: UIColor { UIColor(hex: 0xF5663F) }
     class var tabBarGray: UIColor {UIColor(hex: 0x8d8e8f) }
     class var tabBarGreen: UIColor {UIColor(hex: 0x81ec62)}
-
+    class var upcyclingGreen: UIColor {UIColor(hex: 0x005834)}
     class var iGreen: UIColor {UIColor(hex: 0x4CE126)}
     class var coGreen: UIColor {UIColor(hex: 0x058954)}
     class var coGreen5: UIColor {UIColor(hex: 0xEDFCF4)}
@@ -32,13 +32,21 @@ extension UIColor {
     class var coGreen30: UIColor {UIColor(hex: 0x6BC396)}
     class var coGreen60: UIColor {UIColor(hex: 0x17AA6B)}
     class var coGreen90: UIColor {UIColor(hex: 0x005834)}
+    
+    class var gradient01: UIColor {UIColor(hex: 0x6BC396)}
+    class var gradient012: UIColor {UIColor(hex: 0x64E126)}
 
     class var backGround1: UIColor {UIColor(hex: 0x99F2F8F7)}
     class var backGround2: UIColor {UIColor(hex: 0xFFFFFF)}
     class var primaryBlack10: UIColor {UIColor(hex: 0xF4F6F6)}
+    class var primaryBlack20: UIColor {UIColor(hex: 0xE8EAEA)}
+    class var primaryBlack30: UIColor {UIColor(hex: 0xD9DADB)}
     class var primaryBlack40: UIColor {UIColor(hex: 0xC4C5C6)}
     class var primaryBlack50 :UIColor {UIColor(hex: 0x9E9FA0)}
     class var primaryBlack60: UIColor {UIColor(hex: 0x7C7D7D)}
+    class var primaryBlack70: UIColor {UIColor(hex: 0x555757)}
+    class var primaryBlack80: UIColor {UIColor(hex: 0x434545)}
+    class var primaryBlack90: UIColor {UIColor(hex: 0x262828)}
     class var primaryigreen5: UIColor {UIColor(hex: 0xEDFCE8)}
     class var lightBackground: UIColor {UIColor(hex: 0xF9F9F9)}
     class var lightShadow: UIColor {UIColor(hex: 0xF3F8F7)}

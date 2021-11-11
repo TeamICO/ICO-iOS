@@ -57,7 +57,7 @@
                 <outlet property="keywordImg" destination="hqR-eJ-Fwd" id="nS1-NM-N6m"/>
                 <outlet property="keywordTitle" destination="jWw-ES-uuR" id="X4X-ue-9o7"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="130.91517857142856"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.24553571428572"/>
         </collectionViewCell>
     </objects>
     <resources>
