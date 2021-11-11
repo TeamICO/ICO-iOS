@@ -37,6 +37,12 @@
 		E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D02273CF28D009A9CA7 /* TodayAlarmTVC.xib */; };
 		E9161D0C273CF74E009A9CA7 /* BeforeAlarmTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D0A273CF74E009A9CA7 /* BeforeAlarmTVC.swift */; };
 		E9161D0D273CF74E009A9CA7 /* BeforeAlarmTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D0B273CF74E009A9CA7 /* BeforeAlarmTVC.xib */; };
+		E9161D11273CFFDF009A9CA7 /* NoneAlarmTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D0F273CFFDF009A9CA7 /* NoneAlarmTVC.swift */; };
+		E9161D12273CFFDF009A9CA7 /* NoneAlarmTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D10273CFFDF009A9CA7 /* NoneAlarmTVC.xib */; };
+		E9161D18273D0126009A9CA7 /* NoneLikeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D16273D0126009A9CA7 /* NoneLikeCVC.swift */; };
+		E9161D19273D0126009A9CA7 /* NoneLikeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D17273D0126009A9CA7 /* NoneLikeCVC.xib */; };
+		E9161D1C273D0134009A9CA7 /* LikeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D1A273D0134009A9CA7 /* LikeCVC.swift */; };
+		E9161D1D273D0134009A9CA7 /* LikeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D1B273D0134009A9CA7 /* LikeCVC.xib */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -192,6 +198,12 @@
 		E9161D02273CF28D009A9CA7 /* TodayAlarmTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayAlarmTVC.xib; sourceTree = "<group>"; };
 		E9161D0A273CF74E009A9CA7 /* BeforeAlarmTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAlarmTVC.swift; sourceTree = "<group>"; };
 		E9161D0B273CF74E009A9CA7 /* BeforeAlarmTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeforeAlarmTVC.xib; sourceTree = "<group>"; };
+		E9161D0F273CFFDF009A9CA7 /* NoneAlarmTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAlarmTVC.swift; sourceTree = "<group>"; };
+		E9161D10273CFFDF009A9CA7 /* NoneAlarmTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneAlarmTVC.xib; sourceTree = "<group>"; };
+		E9161D16273D0126009A9CA7 /* NoneLikeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneLikeCVC.swift; sourceTree = "<group>"; };
+		E9161D17273D0126009A9CA7 /* NoneLikeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneLikeCVC.xib; sourceTree = "<group>"; };
+		E9161D1A273D0134009A9CA7 /* LikeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCVC.swift; sourceTree = "<group>"; };
+		E9161D1B273D0134009A9CA7 /* LikeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCVC.xib; sourceTree = "<group>"; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -421,6 +433,7 @@
 			children = (
 				E9161CFC273CB96E009A9CA7 /* LikeVC.swift */,
 				E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */,
+				E9161D13273D00D3009A9CA7 /* LikeCVC */,
 			);
 			path = like;
 			sourceTree = "<group>";
@@ -428,6 +441,7 @@
 		E9161CFE273CF242009A9CA7 /* AlarmTVC */ = {
 			isa = PBXGroup;
 			children = (
+				E9161D0E273CFFC7009A9CA7 /* NoneAlarmTVC */,
 				E9161CFF273CF251009A9CA7 /* TodayAlarmTVC */,
 				E9161D09273CF731009A9CA7 /* BeforeAlarmTVC */,
 			);
@@ -450,6 +464,42 @@
 				E9161D0B273CF74E009A9CA7 /* BeforeAlarmTVC.xib */,
 			);
 			path = BeforeAlarmTVC;
+			sourceTree = "<group>";
+		};
+		E9161D0E273CFFC7009A9CA7 /* NoneAlarmTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9161D0F273CFFDF009A9CA7 /* NoneAlarmTVC.swift */,
+				E9161D10273CFFDF009A9CA7 /* NoneAlarmTVC.xib */,
+			);
+			path = NoneAlarmTVC;
+			sourceTree = "<group>";
+		};
+		E9161D13273D00D3009A9CA7 /* LikeCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9161D14273D00EE009A9CA7 /* NoneLikeCVC */,
+				E9161D15273D0100009A9CA7 /* LikeCVC */,
+			);
+			path = LikeCVC;
+			sourceTree = "<group>";
+		};
+		E9161D14273D00EE009A9CA7 /* NoneLikeCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9161D16273D0126009A9CA7 /* NoneLikeCVC.swift */,
+				E9161D17273D0126009A9CA7 /* NoneLikeCVC.xib */,
+			);
+			path = NoneLikeCVC;
+			sourceTree = "<group>";
+		};
+		E9161D15273D0100009A9CA7 /* LikeCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9161D1A273D0134009A9CA7 /* LikeCVC.swift */,
+				E9161D1B273D0134009A9CA7 /* LikeCVC.xib */,
+			);
+			path = LikeCVC;
 			sourceTree = "<group>";
 		};
 		E9378D652737ACED00C589A1 /* UserRatingsSV */ = {
@@ -1139,10 +1189,12 @@
 				E9CAF19C27316441008F749B /* MyPageSB.storyboard in Resources */,
 				E9CAF18C273163C2008F749B /* HomeSB.storyboard in Resources */,
 				E9378D832737FE0400C589A1 /* SensibleStyleShotTVC.xib in Resources */,
+				E9161D1D273D0134009A9CA7 /* LikeCVC.xib in Resources */,
 				E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */,
 				E998C252273283E800E1F8D0 /* BrandRecommendTVC.xib in Resources */,
 				E9378D872737FE9F00C589A1 /* SensibleCVC.xib in Resources */,
 				E9944BD02735746200DB9279 /* ResponsiveCVC.xib in Resources */,
+				E9161D19273D0126009A9CA7 /* NoneLikeCVC.xib in Resources */,
 				714F32BB273BE7D0007324BC /* StyleUpload.storyboard in Resources */,
 				E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */,
 				71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */,
@@ -1154,6 +1206,7 @@
 				714F32C0273BE84D007324BC /* Survey.storyboard in Resources */,
 				E9AF83ED273B60F600D77D5F /* ResultSortCVC.xib in Resources */,
 				E9E49938273BD50B0001ACFB /* ServiceTermsTVC.xib in Resources */,
+				E9161D12273CFFDF009A9CA7 /* NoneAlarmTVC.xib in Resources */,
 				7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */,
 				E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */,
 				E943BC612738FB6400619C74 /* LoginCVC.xib in Resources */,
@@ -1294,6 +1347,7 @@
 				714F32B9273BE7C0007324BC /* StyleUploadVC.swift in Sources */,
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,
+				E9161D18273D0126009A9CA7 /* NoneLikeCVC.swift in Sources */,
 				E9AF83EC273B60F600D77D5F /* ResultSortCVC.swift in Sources */,
 				E9E49926273BAC220001ACFB /* LevelUpVC.swift in Sources */,
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
@@ -1311,6 +1365,7 @@
 				E9161D03273CF28D009A9CA7 /* TodayAlarmTVC.swift in Sources */,
 				E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */,
 				E9CAF1BF273169AB008F749B /* UIView.swift in Sources */,
+				E9161D11273CFFDF009A9CA7 /* NoneAlarmTVC.swift in Sources */,
 				E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */,
 				E9AF83FF273B82C000D77D5F /* MypageTVC.swift in Sources */,
 				E9E49912273BAB9C0001ACFB /* IcoLevelVC.swift in Sources */,
@@ -1323,6 +1378,7 @@
 				E9E4993D273BD5530001ACFB /* SettingAlarmTVC.swift in Sources */,
 				E9378D8A2738017400C589A1 /* EcoTopicTVC.swift in Sources */,
 				E9AF83F0273B610F00D77D5F /* SearchResultsCVC.swift in Sources */,
+				E9161D1C273D0134009A9CA7 /* LikeCVC.swift in Sources */,
 				E9CAF1A02731646F008F749B /* BaseTBC.swift in Sources */,
 				E9E4991A273BABEA0001ACFB /* PersonalInfoTermsVC.swift in Sources */,
 				E9161CF7273CB953009A9CA7 /* AlarmVC.swift in Sources */,
