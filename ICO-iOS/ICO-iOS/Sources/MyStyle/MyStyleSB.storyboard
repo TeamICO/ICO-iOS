@@ -223,6 +223,9 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="icProfileSetting1"/>
+                                                                <connections>
+                                                                    <action selector="toProfileSetting:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="n8h-Jm-2qn"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
