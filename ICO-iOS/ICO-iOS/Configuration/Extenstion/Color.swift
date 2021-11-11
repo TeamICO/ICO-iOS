@@ -36,7 +36,7 @@ extension UIColor {
     class var gradient01: UIColor {UIColor(hex: 0x6BC396)}
     class var gradient012: UIColor {UIColor(hex: 0x64E126)}
 
-    class var backGround1: UIColor {UIColor(hex: 0x99F2F8F7)}
+    class var backGround1: UIColor {UIColor(hex: 0x99F3F8F7)}
     class var backGround2: UIColor {UIColor(hex: 0xFFFFFF)}
     class var primaryBlack10: UIColor {UIColor(hex: 0xF4F6F6)}
     class var primaryBlack20: UIColor {UIColor(hex: 0xE8EAEA)}

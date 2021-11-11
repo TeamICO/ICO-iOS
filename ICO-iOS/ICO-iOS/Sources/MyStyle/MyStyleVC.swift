@@ -116,7 +116,15 @@ class MyStyleVC: BaseViewController {
         self.navigationController?.pushViewController(ProfileSettingVC, animated: true)
     }
     
-
+    
+    @IBAction func toStyleUpload(_ sender: Any) {
+        let styleUploadSB = UIStoryboard(name: "StyleUpload", bundle: nil)
+        
+        guard let styleUploadVC = styleUploadSB.instantiateViewController(withIdentifier: "StyleUploadVC")as? StyleUploadVC else {return}
+        
+        self.navigationController?.pushViewController(styleUploadVC, animated: true)
+    }
+    
 }
 
 extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
