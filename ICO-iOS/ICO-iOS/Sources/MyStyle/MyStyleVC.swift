@@ -101,9 +101,17 @@ class MyStyleVC: BaseViewController {
             styleNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
             styleLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
             styleLabel.textColor = UIColor.primaryBlack60
-            
-        
     }
+    
+    
+    @IBAction func toProfileSetting(_ sender: Any) {
+        let SettingSB = UIStoryboard(name: "ProfileSetting", bundle: nil)
+        
+        guard let ProfileSettingVC = SettingSB.instantiateViewController(withIdentifier: "ProfileSetting")as? ProfileSettingVC else {return}
+        
+        self.navigationController?.pushViewController(ProfileSettingVC, animated: true)
+    }
+    
 
 }
 
