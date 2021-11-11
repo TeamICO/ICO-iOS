@@ -1,5 +1,5 @@
 //
-//  ProfileEcoKeyword.swift
+//  ProfileMyEcoKeywordTVC.swift
 //  ICO-iOS
 //
 //  Created by do_yun on 2021/11/11.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ProfileEcoKeyword: UITableViewCell {
-    static let identifier = "ProfileEcoKeyword"
+class ProfileMyEcoKeywordTVC: UITableViewCell {
+    static let identifier = "ProfileMyEcoKeywordTVC"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

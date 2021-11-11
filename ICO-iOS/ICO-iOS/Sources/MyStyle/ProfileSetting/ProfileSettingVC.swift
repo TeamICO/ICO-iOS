@@ -45,8 +45,8 @@ extension ProfileSettingVC {
         tableView.register(beforeNib, forCellReuseIdentifier: ProfileUserIntroductionTVC.identifier)
         
         
-        let noneAlarmNib = UINib(nibName: ProfileEcoKeyword.identifier, bundle: nil)
-        tableView.register(noneAlarmNib, forCellReuseIdentifier: ProfileEcoKeyword.identifier)
+        let noneAlarmNib = UINib(nibName: ProfileMyEcoKeywordTVC.identifier, bundle: nil)
+        tableView.register(noneAlarmNib, forCellReuseIdentifier: ProfileMyEcoKeywordTVC.identifier)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -79,7 +79,7 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
             
             return cell
         case 2 :
-            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileEcoKeyword.identifier, for: indexPath) as! ProfileEcoKeyword
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileMyEcoKeywordTVC.identifier, for: indexPath) as! ProfileMyEcoKeywordTVC
             cell.selectionStyle = .none
             
             return cell
