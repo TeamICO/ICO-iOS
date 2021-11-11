@@ -38,7 +38,10 @@ class MyStyleVC: BaseViewController {
     @IBOutlet weak var styleLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -105,10 +108,11 @@ class MyStyleVC: BaseViewController {
     
     
     @IBAction func toProfileSetting(_ sender: Any) {
+        
         let SettingSB = UIStoryboard(name: "ProfileSetting", bundle: nil)
         
         guard let ProfileSettingVC = SettingSB.instantiateViewController(withIdentifier: "ProfileSetting")as? ProfileSettingVC else {return}
-        
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(ProfileSettingVC, animated: true)
     }
     

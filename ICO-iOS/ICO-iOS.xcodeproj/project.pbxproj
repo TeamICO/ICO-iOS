@@ -73,6 +73,12 @@
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
 		E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE68273A6BBB002799D6 /* RecentCVC.swift */; };
 		E951CE6B273A6BBB002799D6 /* RecentCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E951CE69273A6BBB002799D6 /* RecentCVC.xib */; };
+		E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */; };
+		E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */; };
+		E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */; };
+		E97D4372273D2C8200BB374F /* ProfileUserIntroductionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D4370273D2C8200BB374F /* ProfileUserIntroductionTVC.xib */; };
+		E97D4375273D2C8B00BB374F /* ProfileEcoKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D4373273D2C8B00BB374F /* ProfileEcoKeyword.swift */; };
+		E97D4376273D2C8B00BB374F /* ProfileEcoKeyword.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D4374273D2C8B00BB374F /* ProfileEcoKeyword.xib */; };
 		E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */; };
 		E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */; };
 		E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BCA2735550A00DB9279 /* BasePageControl.swift */; };
@@ -235,6 +241,12 @@
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
 		E951CE68273A6BBB002799D6 /* RecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCVC.swift; sourceTree = "<group>"; };
 		E951CE69273A6BBB002799D6 /* RecentCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCVC.xib; sourceTree = "<group>"; };
+		E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserInfoTVC.swift; sourceTree = "<group>"; };
+		E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserInfoTVC.xib; sourceTree = "<group>"; };
+		E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserIntroductionTVC.swift; sourceTree = "<group>"; };
+		E97D4370273D2C8200BB374F /* ProfileUserIntroductionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserIntroductionTVC.xib; sourceTree = "<group>"; };
+		E97D4373273D2C8B00BB374F /* ProfileEcoKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEcoKeyword.swift; sourceTree = "<group>"; };
+		E97D4374273D2C8B00BB374F /* ProfileEcoKeyword.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEcoKeyword.xib; sourceTree = "<group>"; };
 		E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCVC.swift; sourceTree = "<group>"; };
 		E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBannerCVC.xib; sourceTree = "<group>"; };
 		E9944BCA2735550A00DB9279 /* BasePageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageControl.swift; sourceTree = "<group>"; };
@@ -346,6 +358,7 @@
 			children = (
 				714F32B3273BE775007324BC /* ProfileSettingVC.swift */,
 				714F32B5273BE788007324BC /* ProfileSetting.storyboard */,
+				E97D4367273D2B4700BB374F /* ProfileSettingTVC */,
 			);
 			path = ProfileSetting;
 			sourceTree = "<group>";
@@ -555,6 +568,43 @@
 				E951CE69273A6BBB002799D6 /* RecentCVC.xib */,
 			);
 			path = RecentCVC;
+			sourceTree = "<group>";
+		};
+		E97D4367273D2B4700BB374F /* ProfileSettingTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E97D4368273D2B6700BB374F /* ProfileUserInfoTVC */,
+				E97D4369273D2BE200BB374F /* ProfileUserIntroductionTVC */,
+				E97D436A273D2C1F00BB374F /* ProfileEcoKeyword */,
+			);
+			path = ProfileSettingTVC;
+			sourceTree = "<group>";
+		};
+		E97D4368273D2B6700BB374F /* ProfileUserInfoTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */,
+				E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */,
+			);
+			path = ProfileUserInfoTVC;
+			sourceTree = "<group>";
+		};
+		E97D4369273D2BE200BB374F /* ProfileUserIntroductionTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */,
+				E97D4370273D2C8200BB374F /* ProfileUserIntroductionTVC.xib */,
+			);
+			path = ProfileUserIntroductionTVC;
+			sourceTree = "<group>";
+		};
+		E97D436A273D2C1F00BB374F /* ProfileEcoKeyword */ = {
+			isa = PBXGroup;
+			children = (
+				E97D4373273D2C8B00BB374F /* ProfileEcoKeyword.swift */,
+				E97D4374273D2C8B00BB374F /* ProfileEcoKeyword.xib */,
+			);
+			path = ProfileEcoKeyword;
 			sourceTree = "<group>";
 		};
 		E9944BCC2735743B00DB9279 /* ResponsiveStyleShotCVC */ = {
@@ -804,10 +854,10 @@
 		E9CAF189273163A9008F749B /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				E9CAF195273163FB008F749B /* MyStyleVC.swift */,
+				E9CAF19927316427008F749B /* MyStyleSB.storyboard */,
 				714F32B7273BE79B007324BC /* StyleUpload */,
 				714F32B1273BE739007324BC /* ProfileSetting */,
-				E9CAF19927316427008F749B /* MyStyleSB.storyboard */,
-				E9CAF195273163FB008F749B /* MyStyleVC.swift */,
 			);
 			path = MyStyle;
 			sourceTree = "<group>";
@@ -1196,8 +1246,11 @@
 				E9944BD02735746200DB9279 /* ResponsiveCVC.xib in Resources */,
 				E9161D19273D0126009A9CA7 /* NoneLikeCVC.xib in Resources */,
 				714F32BB273BE7D0007324BC /* StyleUpload.storyboard in Resources */,
+				E97D4372273D2C8200BB374F /* ProfileUserIntroductionTVC.xib in Resources */,
 				E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */,
 				71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */,
+				E97D4376273D2C8B00BB374F /* ProfileEcoKeyword.xib in Resources */,
+				E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */,
 				714F32B6273BE788007324BC /* ProfileSetting.storyboard in Resources */,
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
 				E9CAF17C2731635D008F749B /* Assets.xcassets in Resources */,
@@ -1333,6 +1386,7 @@
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
 				71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */,
 				E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */,
+				E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */,
 				717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */,
 				E9AF83F8273B78C100D77D5F /* SearchResultsSV.swift in Sources */,
 				E9CAF196273163FB008F749B /* MyStyleVC.swift in Sources */,
@@ -1348,6 +1402,7 @@
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,
 				E9161D18273D0126009A9CA7 /* NoneLikeCVC.swift in Sources */,
+				E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */,
 				E9AF83EC273B60F600D77D5F /* ResultSortCVC.swift in Sources */,
 				E9E49926273BAC220001ACFB /* LevelUpVC.swift in Sources */,
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
@@ -1375,6 +1430,7 @@
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
 				E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */,
+				E97D4375273D2C8B00BB374F /* ProfileEcoKeyword.swift in Sources */,
 				E9E4993D273BD5530001ACFB /* SettingAlarmTVC.swift in Sources */,
 				E9378D8A2738017400C589A1 /* EcoTopicTVC.swift in Sources */,
 				E9AF83F0273B610F00D77D5F /* SearchResultsCVC.swift in Sources */,
