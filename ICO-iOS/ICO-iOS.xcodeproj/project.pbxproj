@@ -77,8 +77,8 @@
 		E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */; };
 		E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */; };
 		E97D4372273D2C8200BB374F /* ProfileUserIntroductionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D4370273D2C8200BB374F /* ProfileUserIntroductionTVC.xib */; };
-		E97D4375273D2C8B00BB374F /* ProfileEcoKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D4373273D2C8B00BB374F /* ProfileEcoKeyword.swift */; };
-		E97D4376273D2C8B00BB374F /* ProfileEcoKeyword.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D4374273D2C8B00BB374F /* ProfileEcoKeyword.xib */; };
+		E97D437E273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D437C273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift */; };
+		E97D437F273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D437D273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib */; };
 		E9944BC827353E0D00DB9279 /* TopBannerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */; };
 		E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */; };
 		E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BCA2735550A00DB9279 /* BasePageControl.swift */; };
@@ -245,8 +245,8 @@
 		E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserInfoTVC.xib; sourceTree = "<group>"; };
 		E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserIntroductionTVC.swift; sourceTree = "<group>"; };
 		E97D4370273D2C8200BB374F /* ProfileUserIntroductionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserIntroductionTVC.xib; sourceTree = "<group>"; };
-		E97D4373273D2C8B00BB374F /* ProfileEcoKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEcoKeyword.swift; sourceTree = "<group>"; };
-		E97D4374273D2C8B00BB374F /* ProfileEcoKeyword.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEcoKeyword.xib; sourceTree = "<group>"; };
+		E97D437C273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMyEcoKeywordTVC.swift; sourceTree = "<group>"; };
+		E97D437D273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMyEcoKeywordTVC.xib; sourceTree = "<group>"; };
 		E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCVC.swift; sourceTree = "<group>"; };
 		E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBannerCVC.xib; sourceTree = "<group>"; };
 		E9944BCA2735550A00DB9279 /* BasePageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageControl.swift; sourceTree = "<group>"; };
@@ -575,7 +575,7 @@
 			children = (
 				E97D4368273D2B6700BB374F /* ProfileUserInfoTVC */,
 				E97D4369273D2BE200BB374F /* ProfileUserIntroductionTVC */,
-				E97D436A273D2C1F00BB374F /* ProfileEcoKeyword */,
+				E97D437B273D2DCE00BB374F /* ProfileMyEcoKeywordTVC */,
 			);
 			path = ProfileSettingTVC;
 			sourceTree = "<group>";
@@ -598,13 +598,13 @@
 			path = ProfileUserIntroductionTVC;
 			sourceTree = "<group>";
 		};
-		E97D436A273D2C1F00BB374F /* ProfileEcoKeyword */ = {
+		E97D437B273D2DCE00BB374F /* ProfileMyEcoKeywordTVC */ = {
 			isa = PBXGroup;
 			children = (
-				E97D4373273D2C8B00BB374F /* ProfileEcoKeyword.swift */,
-				E97D4374273D2C8B00BB374F /* ProfileEcoKeyword.xib */,
+				E97D437C273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift */,
+				E97D437D273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib */,
 			);
-			path = ProfileEcoKeyword;
+			path = ProfileMyEcoKeywordTVC;
 			sourceTree = "<group>";
 		};
 		E9944BCC2735743B00DB9279 /* ResponsiveStyleShotCVC */ = {
@@ -1249,7 +1249,6 @@
 				E97D4372273D2C8200BB374F /* ProfileUserIntroductionTVC.xib in Resources */,
 				E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */,
 				71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */,
-				E97D4376273D2C8B00BB374F /* ProfileEcoKeyword.xib in Resources */,
 				E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */,
 				714F32B6273BE788007324BC /* ProfileSetting.storyboard in Resources */,
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
@@ -1288,6 +1287,7 @@
 				E9161D0D273CF74E009A9CA7 /* BeforeAlarmTVC.xib in Resources */,
 				E9378D8B2738017400C589A1 /* EcoTopicTVC.xib in Resources */,
 				E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */,
+				E97D437F273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib in Resources */,
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */,
@@ -1393,6 +1393,7 @@
 				E9378D762737FAE200C589A1 /* TopTVC.swift in Sources */,
 				E943BC5A2738F4E000619C74 /* LoginVC.swift in Sources */,
 				E9378D822737FE0400C589A1 /* SensibleStyleShotTVC.swift in Sources */,
+				E97D437E273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift in Sources */,
 				E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */,
 				E9AF83DF273B5C9000D77D5F /* SearchResultVC.swift in Sources */,
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
@@ -1430,7 +1431,6 @@
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
 				E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */,
-				E97D4375273D2C8B00BB374F /* ProfileEcoKeyword.swift in Sources */,
 				E9E4993D273BD5530001ACFB /* SettingAlarmTVC.swift in Sources */,
 				E9378D8A2738017400C589A1 /* EcoTopicTVC.swift in Sources */,
 				E9AF83F0273B610F00D77D5F /* SearchResultsCVC.swift in Sources */,
