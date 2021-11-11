@@ -33,6 +33,9 @@ class StyleUploadVC: UIViewController {
     @IBOutlet weak var memoTextView: UITextView!
     
     
+    @IBOutlet weak var uploadBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -102,6 +105,12 @@ class StyleUploadVC: UIViewController {
         
 
         plusBtn.setImage(UIImage(named: "icPlus1"), for: .normal)
+    
+        uploadBtn.setGradient(color1: UIColor.gradient01, color2: UIColor.gradient012)
+        uploadBtn.setTitleColor(UIColor.white, for: .normal)
+        uploadBtn.layer.cornerRadius = 12
+        uploadBtn.clipsToBounds = true
+        uploadBtn.titleLabel?.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 20)
         
         memoView.backgroundColor = UIColor.white
         memoView.cornerRadius = 8
