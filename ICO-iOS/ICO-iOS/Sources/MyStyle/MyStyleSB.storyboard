@@ -255,7 +255,7 @@
                                                         <rect key="frame" x="0.0" y="213" width="414" height="74"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOU-gL-V7i">
-                                                                <rect key="frame" x="206.5" y="1" width="1" height="57.5"/>
+                                                                <rect key="frame" x="206.5" y="8" width="1" height="57.5"/>
                                                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="57.5" id="T0r-f2-wei"/>
@@ -317,7 +317,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="zRU-uQ-Jcm" secondAttribute="bottom" id="ENn-wQ-MM1"/>
                                                             <constraint firstItem="dsT-Az-ZyQ" firstAttribute="top" secondItem="2Wc-co-xa8" secondAttribute="top" id="Kwn-ce-Rbz"/>
                                                             <constraint firstAttribute="bottom" secondItem="dsT-Az-ZyQ" secondAttribute="bottom" id="OLT-JP-UpF"/>
-                                                            <constraint firstItem="nOU-gL-V7i" firstAttribute="top" secondItem="2Wc-co-xa8" secondAttribute="top" constant="1" id="TXm-2z-Pu6"/>
+                                                            <constraint firstItem="nOU-gL-V7i" firstAttribute="top" secondItem="2Wc-co-xa8" secondAttribute="top" constant="8" id="TXm-2z-Pu6"/>
                                                             <constraint firstItem="zRU-uQ-Jcm" firstAttribute="top" secondItem="2Wc-co-xa8" secondAttribute="top" id="emW-Yn-AdQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="zRU-uQ-Jcm" secondAttribute="trailing" id="pwd-WY-YT4"/>
                                                             <constraint firstAttribute="height" constant="74" id="rSg-Wa-aG4"/>
@@ -366,20 +366,22 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btn-mystyle-upload"/>
+                                                <connections>
+                                                    <action selector="toStyleUpload:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ou5-ut-WAG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="x6h-2M-hOq" secondAttribute="trailing" constant="16" id="0zh-th-Ruv"/>
                                             <constraint firstItem="qxw-O5-OVU" firstAttribute="top" secondItem="tJh-xH-N7E" secondAttribute="bottom" constant="16" id="6Ld-Jq-AAp"/>
                                             <constraint firstItem="qxw-O5-OVU" firstAttribute="leading" secondItem="Xht-Oq-9EB" secondAttribute="leading" constant="16" id="7bF-k7-2HV"/>
                                             <constraint firstAttribute="trailing" secondItem="tJh-xH-N7E" secondAttribute="trailing" id="AD4-8M-8nw"/>
                                             <constraint firstAttribute="height" constant="800" id="HYD-Hy-CKc"/>
                                             <constraint firstItem="tJh-xH-N7E" firstAttribute="leading" secondItem="Xht-Oq-9EB" secondAttribute="leading" id="d3u-Yu-0Z7"/>
+                                            <constraint firstAttribute="trailing" secondItem="x6h-2M-hOq" secondAttribute="trailing" constant="16" id="eiQ-qS-azd"/>
                                             <constraint firstAttribute="bottom" secondItem="qxw-O5-OVU" secondAttribute="bottom" id="f1A-CE-d3j"/>
                                             <constraint firstItem="tJh-xH-N7E" firstAttribute="top" secondItem="Xht-Oq-9EB" secondAttribute="top" id="ftz-9d-GbQ"/>
                                             <constraint firstAttribute="trailing" secondItem="qxw-O5-OVU" secondAttribute="trailing" constant="16" id="ntC-2H-Skx"/>
-                                            <constraint firstItem="x6h-2M-hOq" firstAttribute="top" secondItem="tJh-xH-N7E" secondAttribute="bottom" constant="215" id="z2f-VY-Uxa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -402,6 +404,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Y0K-fL-sif" secondAttribute="bottom" id="dB9-u8-p9d"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Y0K-fL-sif" secondAttribute="trailing" id="dGL-eL-EKL"/>
                             <constraint firstItem="Ma9-z1-Cjb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fl7-P0-HpB"/>
+                            <constraint firstItem="x6h-2M-hOq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="580" id="na6-Ns-cFK"/>
                             <constraint firstItem="Ma9-z1-Cjb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="p5Q-jr-r74"/>
                             <constraint firstItem="Ma9-z1-Cjb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rgx-Dx-SuO"/>
                         </constraints>
