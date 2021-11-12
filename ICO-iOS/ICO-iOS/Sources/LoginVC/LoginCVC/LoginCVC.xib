@@ -23,8 +23,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7g-eF-uGV">
-                        <rect key="frame" x="16" y="41" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7g-eF-uGV">
+                        <rect key="frame" x="16" y="41" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,6 +40,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E7g-eF-uGV" secondAttribute="trailing" constant="16" id="30k-mu-DFp"/>
                 <constraint firstAttribute="bottom" secondItem="dIF-Kk-B01" secondAttribute="bottom" constant="24" id="Zzi-dN-Dc3"/>
                 <constraint firstAttribute="trailing" secondItem="dIF-Kk-B01" secondAttribute="trailing" constant="20" id="c7o-2W-Qx3"/>
                 <constraint firstItem="E7g-eF-uGV" firstAttribute="top" secondItem="Hda-p4-gVO" secondAttribute="bottom" constant="12" id="dDk-6l-vpF"/>
