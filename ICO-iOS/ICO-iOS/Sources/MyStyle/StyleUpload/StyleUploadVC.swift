@@ -10,6 +10,8 @@ import UIKit
 class StyleUploadVC: UIViewController {
     
     var photoNum : Int = 0
+    var urlNum1: Int = 0
+    var urlNum2: Int = 0
     
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet var levelTitle: [UILabel]!
@@ -20,6 +22,10 @@ class StyleUploadVC: UIViewController {
     @IBOutlet var urlTextField: [UITextField]!
     
     @IBOutlet weak var imageView: UIView!
+    @IBOutlet weak var imgNumLabel: UILabel!
+    
+    @IBOutlet var keywordView: [UIView]!
+    @IBOutlet var keywordName: [UILabel]!
     
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var newImageView: UIImageView!
@@ -28,6 +34,8 @@ class StyleUploadVC: UIViewController {
     @IBOutlet var essentialView: [UIView]!
     @IBOutlet var essentialLabel: [UILabel]!
     
+    @IBOutlet weak var urlLabel1: UILabel!
+    @IBOutlet weak var urlLabel2: UILabel!
     
     @IBOutlet weak var memoView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
@@ -61,6 +69,27 @@ class StyleUploadVC: UIViewController {
             urlTextField[i].backgroundColor = UIColor.backGround1
             urlTextField[i].cornerRadius = 8
         }
+        
+        for i in 0...6{
+            keywordView[i].cornerRadius = 8
+            keywordName[i].font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
+        }
+        
+        keywordView[0].backgroundColor = UIColor.lightWarning
+        keywordName[0].textColor = UIColor.alertWarning
+        keywordView[1].backgroundColor = UIColor.lightSuccess
+        keywordName[1].textColor = UIColor.alertsSuccess
+        keywordView[2].backgroundColor = UIColor.lightInfo
+        keywordName[2].textColor = UIColor.alertsInfo
+        keywordView[3].backgroundColor = UIColor.lightPoint
+        keywordName[3].textColor = UIColor.point
+        keywordView[4].backgroundColor = UIColor.primaryigreen5
+        keywordName[4].textColor = UIColor.coGreen60
+        
+        keywordView[6].backgroundColor = UIColor.lightShadow
+        keywordName[5].textColor = UIColor.primaryBlack80
+        keywordView[5].backgroundColor = UIColor.lightError
+        keywordName[6].textColor = UIColor.alertsError
         
         for i in 0...3{
             essentialView[i].cornerRadius = 8
@@ -103,8 +132,10 @@ class StyleUploadVC: UIViewController {
         "어울리는 해시태그"))
         mainTitle[5].attributedText = attributedStr6
         
-
         plusBtn.setImage(UIImage(named: "icPlus1"), for: .normal)
+        imgNumLabel.text = "\(photoNum)/1"
+        imgNumLabel.textColor = UIColor.white
+        imgNumLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
     
         uploadBtn.setGradient(color1: UIColor.gradient01, color2: UIColor.gradient012)
         uploadBtn.setTitleColor(UIColor.white, for: .normal)
@@ -116,6 +147,10 @@ class StyleUploadVC: UIViewController {
         memoView.cornerRadius = 8
         memoView.borderWidth = 0.5
         memoView.borderColor = UIColor.primaryBlack50
+        
+        
+        urlLabel1.text = "\(urlNum1)/20"
+        urlLabel2.text = "\(urlNum2)/20"
     }
     
 
