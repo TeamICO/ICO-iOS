@@ -133,10 +133,8 @@ extension LoginVC {
     }
     @objc func didTapNaverView(){
         print("네이버")
-        UserDefaults.standard.set("qwewqe",forKey: "jwtToken")
-        let vc = BaseTBC()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+     
+
     }
 }
 
@@ -149,10 +147,7 @@ extension LoginVC {
     }
     @objc func didTapKakaoView(){
         print("카카오")
-        UserDefaults.standard.set("qwewqe",forKey: "jwtToken")
-        let vc = BaseTBC()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+
     }
 }
 

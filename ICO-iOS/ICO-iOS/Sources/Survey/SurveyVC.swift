@@ -18,11 +18,11 @@ class SurveyVC: UIViewController {
     @IBOutlet var emojiView: [UIView]!
     
     @IBOutlet var uploadBtn: [UIButton]!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
        setUI()
+        
         // Do any additional setup after loading the view.
     }
     
