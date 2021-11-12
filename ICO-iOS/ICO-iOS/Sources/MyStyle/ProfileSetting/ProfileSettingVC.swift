@@ -17,16 +17,11 @@ class ProfileSettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        tableviewConfigure()
         configure()
+        
     }
-    // MARK: - Configure
-    func configure(){
-        updateView.setVerticalGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
-        updateButton.layer.cornerRadius = 12
-        updateButton.layer.masksToBounds = true
-        updateButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
-    }
+   
     
     // MARK: - Selectors
     @IBAction func didTapBackButton(_ sender: Any) {
@@ -34,19 +29,27 @@ class ProfileSettingVC: UIViewController {
     }
     
 }
-
+extension ProfileSettingVC{
+    // MARK: - Configure
+    func configure(){
+        updateView.setVerticalGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
+        updateButton.layer.cornerRadius = 12
+        updateButton.layer.masksToBounds = true
+        updateButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+    }
+}
 // MARK: - TableView Configure
 extension ProfileSettingVC {
     func tableviewConfigure(){
-        let todayNib = UINib(nibName: ProfileUserInfoTVC.identifier, bundle: nil)
-        tableView.register(todayNib, forCellReuseIdentifier: ProfileUserInfoTVC.identifier)
+        let userInfoNib = UINib(nibName: ProfileUserInfoTVC.identifier, bundle: nil)
+        tableView.register(userInfoNib, forCellReuseIdentifier: ProfileUserInfoTVC.identifier)
         
-        let beforeNib = UINib(nibName: ProfileUserIntroductionTVC.identifier, bundle: nil)
-        tableView.register(beforeNib, forCellReuseIdentifier: ProfileUserIntroductionTVC.identifier)
+        let userIntroNib = UINib(nibName: ProfileUserIntroductionTVC.identifier, bundle: nil)
+        tableView.register(userIntroNib, forCellReuseIdentifier: ProfileUserIntroductionTVC.identifier)
         
         
-        let noneAlarmNib = UINib(nibName: ProfileMyEcoKeywordTVC.identifier, bundle: nil)
-        tableView.register(noneAlarmNib, forCellReuseIdentifier: ProfileMyEcoKeywordTVC.identifier)
+        let ecoKeywordNib = UINib(nibName: ProfileMyEcoKeywordTVC.identifier, bundle: nil)
+        tableView.register(ecoKeywordNib, forCellReuseIdentifier: ProfileMyEcoKeywordTVC.identifier)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -89,17 +92,31 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
 
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch indexPath.section {
+        case 0 : return 192
+        case 1 : return 157
+        case 2 : return 342
+        default : return 0
+        }
+       
     }
 
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
-        footer.backgroundColor = .white
-        return footer
+        
+        switch section {
+        case 2 : return UIView()
+        default :
+            let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
+            footer.backgroundColor = UIColor.appColor(.tableViewFooterColor)
+            return footer
+        }
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 12
+        switch section {
+        case 2 : return 0
+        default : return 12
+        }
     }
 
     
