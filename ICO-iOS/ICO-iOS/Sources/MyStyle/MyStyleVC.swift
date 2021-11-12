@@ -121,7 +121,7 @@ class MyStyleVC: BaseViewController {
         let styleUploadSB = UIStoryboard(name: "StyleUpload", bundle: nil)
         
         guard let styleUploadVC = styleUploadSB.instantiateViewController(withIdentifier: "StyleUploadVC")as? StyleUploadVC else {return}
-        
+     
         self.navigationController?.pushViewController(styleUploadVC, animated: true)
     }
     
