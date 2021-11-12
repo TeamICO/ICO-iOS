@@ -46,7 +46,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCp-e9-U85">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQp-xE-Fvk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQp-xE-Fvk">
                                                 <rect key="frame" x="16" y="12" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -126,7 +126,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2P-CT-qeh">
                                                         <rect key="frame" x="224" y="0.0" width="96" height="92"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-product-trade-1" translatesAutoresizingMaskIntoConstraints="NO" id="pSo-jY-TZs">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-product-trade" translatesAutoresizingMaskIntoConstraints="NO" id="pSo-jY-TZs">
                                                                 <rect key="frame" x="28" y="16" width="40" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="Gd5-YR-moS"/>
@@ -171,7 +171,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="cuf-Qn-Ttf"/>
                                                 </constraints>
                                             </stackView>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oX9-BT-YrV">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX9-BT-YrV">
                                                 <rect key="frame" x="16" y="280" width="398" height="92"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMc-dn-MzU">
@@ -322,7 +322,7 @@
                                                     <constraint firstAttribute="width" constant="244" id="OVQ-GU-VO3"/>
                                                 </constraints>
                                             </stackView>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0E-Vt-QnZ">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0E-Vt-QnZ">
                                                 <rect key="frame" x="16" y="430" width="398" height="92"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ua4-DZ-kaa">
@@ -334,7 +334,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p50-ZK-pyG">
                                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="92"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-product-plastic-1" translatesAutoresizingMaskIntoConstraints="NO" id="NfC-Jq-0wu">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-product-plastic" translatesAutoresizingMaskIntoConstraints="NO" id="NfC-Jq-0wu">
                                                                                 <rect key="frame" x="28" y="16" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="eBl-kA-ZzD"/>
@@ -479,7 +479,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiM-Y4-umf">
                                                         <rect key="frame" x="0.0" y="0.0" width="96" height="92"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-product-gmo-1" translatesAutoresizingMaskIntoConstraints="NO" id="CYh-KL-OBl">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-product-gmo" translatesAutoresizingMaskIntoConstraints="NO" id="CYh-KL-OBl">
                                                                 <rect key="frame" x="28" y="16" width="40" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="d9Q-kW-E7Q"/>
@@ -557,7 +557,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-mu-s3c">
-                                                <rect key="frame" x="16" y="716" width="382" height="60"/>
+                                                <rect key="frame" x="16" y="682" width="382" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ma-23-aTd">
                                                         <rect key="frame" x="0.0" y="0.0" width="182.5" height="60"/>
@@ -568,10 +568,13 @@
                                                         <rect key="frame" x="199.5" y="0.0" width="182.5" height="60"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="완료!"/>
+                                                        <connections>
+                                                            <action selector="toHome:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jAl-Hx-OTD"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="GDs-S3-Ms8"/>
+                                                    <constraint firstAttribute="height" constant="60" id="zrr-wH-3Jh"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -589,6 +592,7 @@
                                             <constraint firstAttribute="trailing" secondItem="4M7-Wt-f4R" secondAttribute="trailing" constant="78" id="UMb-Di-Urq"/>
                                             <constraint firstItem="oX9-BT-YrV" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="UnB-LK-OWs"/>
                                             <constraint firstAttribute="trailing" secondItem="oX9-BT-YrV" secondAttribute="trailing" id="XNb-gQ-6jS"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dft-mu-s3c" secondAttribute="trailing" constant="16" id="YNn-qS-go7"/>
                                             <constraint firstItem="LwY-F9-pfb" firstAttribute="top" secondItem="NCe-mi-x6F" secondAttribute="bottom" constant="12" id="ZpG-D9-SqE"/>
                                             <constraint firstItem="eQp-xE-Fvk" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="Zt4-Sb-bNz"/>
                                             <constraint firstItem="LwY-F9-pfb" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="aKL-Ac-Ltr"/>
@@ -597,9 +601,8 @@
                                             <constraint firstItem="4M7-Wt-f4R" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="jU9-5i-Rka"/>
                                             <constraint firstItem="PWF-h4-BLu" firstAttribute="top" secondItem="KCp-e9-U85" secondAttribute="top" constant="96" id="kaK-cc-zb7"/>
                                             <constraint firstItem="PWF-h4-BLu" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="sG5-Jw-TAx"/>
-                                            <constraint firstItem="Dft-mu-s3c" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="sKy-tB-dJh"/>
+                                            <constraint firstItem="Dft-mu-s3c" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="sQy-Ow-mI8"/>
                                             <constraint firstItem="ghz-9P-mG8" firstAttribute="top" secondItem="4M7-Wt-f4R" secondAttribute="bottom" constant="24" id="sbZ-f0-sLt"/>
-                                            <constraint firstAttribute="trailing" secondItem="Dft-mu-s3c" secondAttribute="trailing" constant="16" id="uYg-Yh-ecz"/>
                                             <constraint firstItem="eQp-xE-Fvk" firstAttribute="top" secondItem="KCp-e9-U85" secondAttribute="top" constant="12" id="ydK-Eh-vyB"/>
                                             <constraint firstItem="y0E-Vt-QnZ" firstAttribute="top" secondItem="mym-MJ-tTf" secondAttribute="bottom" constant="12" id="zoE-No-DsC"/>
                                         </constraints>
@@ -619,9 +622,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Dft-mu-s3c" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="12" id="4kD-9G-TDd"/>
                             <constraint firstItem="ASm-Lh-Qko" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="86c-Hf-i6U"/>
                             <constraint firstItem="FyS-Wb-KnY" firstAttribute="top" secondItem="ASm-Lh-Qko" secondAttribute="bottom" id="ESk-ap-Wul"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Dft-mu-s3c" secondAttribute="bottom" constant="22" id="SZp-9e-rgY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ASm-Lh-Qko" secondAttribute="trailing" id="bbb-tT-JiF"/>
                             <constraint firstItem="FyS-Wb-KnY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ghE-h1-QLD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FyS-Wb-KnY" secondAttribute="bottom" id="j39-Be-wHg"/>
@@ -631,7 +634,6 @@
                     </view>
                     <connections>
                         <outlet property="mainLabel" destination="eQp-xE-Fvk" id="Ki6-Ue-OeK"/>
-                        <outletCollection property="title" destination="kjy-gS-jK4" collectionClass="NSMutableArray" id="zPR-Uf-h3K"/>
                         <outletCollection property="titleLabel" destination="qzS-ub-Kmd" collectionClass="NSMutableArray" id="Ysk-0f-RcB"/>
                         <outletCollection property="titleLabel" destination="kjy-gS-jK4" collectionClass="NSMutableArray" id="25h-zi-NfY"/>
                         <outletCollection property="titleLabel" destination="Vo9-Fz-Mvr" collectionClass="NSMutableArray" id="yhN-3f-dJ6"/>
@@ -686,12 +688,12 @@
         <image name="illust-product-eco" width="80" height="80"/>
         <image name="illust-product-fda" width="80" height="80"/>
         <image name="illust-product-fesco" width="80.5" height="80"/>
-        <image name="illust-product-gmo-1" width="80" height="80"/>
+        <image name="illust-product-gmo" width="80" height="80"/>
         <image name="illust-product-lacto" width="80.5" height="80"/>
         <image name="illust-product-lactovo" width="80.5" height="80"/>
         <image name="illust-product-package" width="80" height="80"/>
-        <image name="illust-product-plastic-1" width="80" height="80"/>
-        <image name="illust-product-trade-1" width="80" height="80"/>
+        <image name="illust-product-plastic" width="80" height="80"/>
+        <image name="illust-product-trade" width="80" height="80"/>
         <image name="illust-product-upcycling" width="80" height="80"/>
         <image name="illust-product-vegan" width="161" height="160"/>
         <systemColor name="systemBackgroundColor">

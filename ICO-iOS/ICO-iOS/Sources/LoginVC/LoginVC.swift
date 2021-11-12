@@ -133,7 +133,9 @@ extension LoginVC {
     }
     @objc func didTapNaverView(){
         print("네이버")
-     
+        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+        self.navigationController?.pushViewController(surveyVC, animated: true)
 
     }
 }
@@ -147,6 +149,9 @@ extension LoginVC {
     }
     @objc func didTapKakaoView(){
         print("카카오")
+        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+        self.navigationController?.pushViewController(surveyVC, animated: true)
 
     }
 }
