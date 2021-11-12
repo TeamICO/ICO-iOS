@@ -10,6 +10,7 @@ import UIKit
 class TopBannerCVC: UICollectionViewCell {
     static let identifier = "TopBannerCVC"
     
+    @IBOutlet weak var bannerImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
