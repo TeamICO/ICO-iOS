@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-Tv-Ys4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-CB-8CS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
@@ -125,7 +125,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JLI-Tv-Ys4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="HTK-a8-lGP"/>
+                            <constraint firstItem="JLI-Tv-Ys4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="HTK-a8-lGP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JLI-Tv-Ys4" secondAttribute="bottom" id="ax8-hY-MF2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JLI-Tv-Ys4" secondAttribute="trailing" id="hqU-Ta-4Og"/>
                             <constraint firstItem="JLI-Tv-Ys4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jzL-uF-uN1"/>
