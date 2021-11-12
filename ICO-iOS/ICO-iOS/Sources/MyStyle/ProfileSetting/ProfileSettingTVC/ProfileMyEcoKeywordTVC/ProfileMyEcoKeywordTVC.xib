@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,9 +17,88 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="342"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji-profile-check" translatesAutoresizingMaskIntoConstraints="NO" id="kWW-eC-66f">
+                        <rect key="frame" x="16" y="18" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="6Nf-Kp-ytc"/>
+                            <constraint firstAttribute="width" constant="16" id="fxN-AJ-i9H"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 에코 관심키워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI5-67-adq">
+                        <rect key="frame" x="40" y="18" width="133" height="19.5"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                        <color key="textColor" red="0.48627450980392156" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1M-DF-8dd">
+                        <rect key="frame" x="182" y="18" width="33" height="19"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tb-cR-Qdh">
+                                <rect key="frame" x="6" y="2.5" width="21" height="14.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.35294117650000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.97254901959999995" blue="0.96862745100000003" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Tb-cR-Qdh" firstAttribute="centerX" secondItem="E1M-DF-8dd" secondAttribute="centerX" id="3g4-M7-OcR"/>
+                            <constraint firstAttribute="height" constant="19" id="V0u-nB-aoH"/>
+                            <constraint firstAttribute="width" constant="33" id="Yak-Wb-oLe"/>
+                            <constraint firstItem="9Tb-cR-Qdh" firstAttribute="centerY" secondItem="E1M-DF-8dd" secondAttribute="centerY" id="d8C-eP-iGV"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기업 에코 기워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHW-Mk-3N5">
+                        <rect key="frame" x="16" y="53.5" width="105.5" height="19.5"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                        <color key="textColor" red="0.2627450980392157" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xw7-kc-hgb">
+                        <rect key="frame" x="0.0" y="83" width="320" height="32"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Tlu-M2-9BB"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Env-TC-Ka0">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="E1M-DF-8dd" firstAttribute="leading" secondItem="iI5-67-adq" secondAttribute="trailing" constant="9" id="Hnj-6B-4e4"/>
+                    <constraint firstItem="aHW-Mk-3N5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="KkM-2Z-aYT"/>
+                    <constraint firstItem="Xw7-kc-hgb" firstAttribute="top" secondItem="aHW-Mk-3N5" secondAttribute="bottom" constant="10" id="MDB-kx-EeF"/>
+                    <constraint firstItem="kWW-eC-66f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="T8u-is-4oY"/>
+                    <constraint firstItem="kWW-eC-66f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="USZ-yp-tqp"/>
+                    <constraint firstItem="E1M-DF-8dd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="Wh9-Uo-DcX"/>
+                    <constraint firstItem="iI5-67-adq" firstAttribute="leading" secondItem="kWW-eC-66f" secondAttribute="trailing" constant="8" id="XLR-la-Cma"/>
+                    <constraint firstItem="Xw7-kc-hgb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="c27-Xz-yh5"/>
+                    <constraint firstAttribute="trailing" secondItem="Xw7-kc-hgb" secondAttribute="trailing" id="c9g-ze-1pM"/>
+                    <constraint firstItem="iI5-67-adq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="psD-PT-R0j"/>
+                    <constraint firstItem="aHW-Mk-3N5" firstAttribute="top" secondItem="iI5-67-adq" secondAttribute="bottom" constant="16" id="up6-OC-Peu"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="companyCollectionView" destination="Xw7-kc-hgb" id="0ol-kr-LvK"/>
+            </connections>
             <point key="canvasLocation" x="130.43478260869566" y="195.53571428571428"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="emoji-profile-check" width="64" height="65"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

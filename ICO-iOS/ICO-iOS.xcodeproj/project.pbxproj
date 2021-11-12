@@ -73,6 +73,7 @@
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
 		E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE68273A6BBB002799D6 /* RecentCVC.swift */; };
 		E951CE6B273A6BBB002799D6 /* RecentCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E951CE69273A6BBB002799D6 /* RecentCVC.xib */; };
+		E96C02B1273E351600507FB3 /* CompanyKeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C02AF273E351600507FB3 /* CompanyKeywordCVC.swift */; };
 		E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */; };
 		E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */; };
 		E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */; };
@@ -241,6 +242,7 @@
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
 		E951CE68273A6BBB002799D6 /* RecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCVC.swift; sourceTree = "<group>"; };
 		E951CE69273A6BBB002799D6 /* RecentCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCVC.xib; sourceTree = "<group>"; };
+		E96C02AF273E351600507FB3 /* CompanyKeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyKeywordCVC.swift; sourceTree = "<group>"; };
 		E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserInfoTVC.swift; sourceTree = "<group>"; };
 		E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserInfoTVC.xib; sourceTree = "<group>"; };
 		E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserIntroductionTVC.swift; sourceTree = "<group>"; };
@@ -570,6 +572,14 @@
 			path = RecentCVC;
 			sourceTree = "<group>";
 		};
+		E96C02AE273E34BC00507FB3 /* ProfileMyEcoKeywordCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E96C02AF273E351600507FB3 /* CompanyKeywordCVC.swift */,
+			);
+			path = ProfileMyEcoKeywordCVC;
+			sourceTree = "<group>";
+		};
 		E97D4367273D2B4700BB374F /* ProfileSettingTVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +613,7 @@
 			children = (
 				E97D437C273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift */,
 				E97D437D273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib */,
+				E96C02AE273E34BC00507FB3 /* ProfileMyEcoKeywordCVC */,
 			);
 			path = ProfileMyEcoKeywordTVC;
 			sourceTree = "<group>";
@@ -1364,6 +1375,7 @@
 				E9E49937273BD50B0001ACFB /* ServiceTermsTVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
+				E96C02B1273E351600507FB3 /* CompanyKeywordCVC.swift in Sources */,
 				E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */,
 				714F32BE273BE840007324BC /* SurveyVC.swift in Sources */,
 				E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */,

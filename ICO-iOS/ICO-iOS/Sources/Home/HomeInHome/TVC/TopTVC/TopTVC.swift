@@ -13,15 +13,12 @@ protocol TopTVCDelegate : AnyObject {
 
 class TopTVC: UITableViewCell {
     
-    
+    let images = ["img_home_banner01","img_home_banner02","img_home_banner03"]
     
     // MARK: - Properties
     static let identifier = "TopTVC"
     
     weak var delegate : TopTVCDelegate?
-    
-    let colors : [UIColor] = [.black
-                              , .blue, .purple]
     
     var nowPage: Int = 0
     
@@ -101,7 +98,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             return cell
         case self.bannerCollectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCVC.identifier, for: indexPath) as! TopBannerCVC
-            cell.backgroundColor = colors[indexPath.row]
+            cell.bannerImage.image = UIImage(named: images[indexPath.row])
             return cell
         default : return UICollectionViewCell()
         }
@@ -147,8 +144,8 @@ extension TopTVC {
     func pageControlConfigure(){
         contentView.addSubview(pageControl)
         
-        pageControl.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        pageControl.bottomAnchor.constraint(equalTo: searchView.topAnchor,constant: -35).isActive = true
+        pageControl.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: -5).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: searchView.topAnchor,constant: -25).isActive = true
         
     }
 }
@@ -164,7 +161,7 @@ extension TopTVC {
     // 배너 움직이는 매서드
     func bannerMove() {
         // 현재페이지가 마지막 페이지일 경우
-        if nowPage == colors.count-1 {
+        if nowPage == images.count-1 {
             // 맨 처음 페이지로 돌아감
             bannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
             nowPage = 0
