@@ -10,6 +10,7 @@ import UIKit
 class SurveyVC: UIViewController {
     
     var name: String = "경서"
+  
     @IBOutlet weak var mainLabel: UILabel!
     
     @IBOutlet var titleLabel: [UILabel]!
@@ -35,11 +36,13 @@ class SurveyVC: UIViewController {
     func setUI(){
         mainLabel.text = "\(name)님의 관심 키워드를\n선택해주세요."
         mainLabel.font = UIFont.init(name: "AppleSDGothicNeo-Light", size: 24)
+        
         /*
+        let font = UIFont.init(name: "AppleSDGothicNeo-SemiBol", size: 24)
         let attributedStr = NSMutableAttributedString(string: mainLabel.text!)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
-        attributedStr.addAttribute(.font, value: UIFont.init(name: "AppleSDGothicNeo-SemiBol", size: 24), range: (mainLabel.text! as NSString).range(of: "\(name)"))
+        //let paragraphStyle = NSMutableParagraphStyle()
+        //paragraphStyle.lineSpacing = 8
+        attributedStr.addAttribute(.font, value: font, range: (mainLabel.text! as NSString).range(of: "\(name)"))
        // attributedStr.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMaxRange(0, attributedStr.length))
         mainLabel.attributedText = attributedStr*/
         
