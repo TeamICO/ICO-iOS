@@ -22,7 +22,7 @@ class SurveyVC: UIViewController {
         super.viewDidLoad()
 
        setUI()
-        
+        self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -34,12 +34,13 @@ class SurveyVC: UIViewController {
     func setUI(){
         mainLabel.text = "\(name)님의 관심 키워드를\n선택해주세요."
         mainLabel.font = UIFont.init(name: "AppleSDGothicNeo-Light", size: 24)
+        /*
         let attributedStr = NSMutableAttributedString(string: mainLabel.text!)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 8
         attributedStr.addAttribute(.font, value: UIFont.init(name: "AppleSDGothicNeo-SemiBol", size: 24), range: (mainLabel.text! as NSString).range(of: "\(name)"))
        // attributedStr.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMaxRange(0, attributedStr.length))
-        mainLabel.attributedText = attributedStr
+        mainLabel.attributedText = attributedStr*/
         
         
         for i in 0...3{
@@ -61,11 +62,20 @@ class SurveyVC: UIViewController {
         
         uploadBtn[0].setTitleColor(UIColor.black, for: .normal)
         uploadBtn[1].setTitleColor(UIColor.white, for: .normal)
+        uploadBtn[1].setTitle("완료!", for: .normal)
         
         uploadBtn[1].setGradient(color1: UIColor.gradient01, color2: UIColor.gradient012)
         uploadBtn[0].backgroundColor = UIColor.white
         uploadBtn[0].borderWidth = 1
         uploadBtn[0].borderColor = UIColor.coGreen70
     }
+    
+    
+    @IBAction func toHome(_ sender: Any) {
+        let vc = BaseTBC()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 
 }
