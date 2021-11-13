@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1b-qB-k40">
-                                        <rect key="frame" x="16" y="11" width="32" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="GxQ-hW-rYC"/>
-                                            <constraint firstAttribute="width" constant="32" id="PsG-6b-n3i"/>
+                                            <constraint firstAttribute="height" constant="54" id="GxQ-hW-rYC"/>
+                                            <constraint firstAttribute="width" constant="60" id="PsG-6b-n3i"/>
                                         </constraints>
                                         <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -45,7 +45,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aa-PZ-9z5">
-                                        <rect key="frame" x="58" y="11" width="32" height="32"/>
+                                        <rect key="frame" x="70" y="11" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="aKB-MH-LVU"/>
                                             <constraint firstAttribute="height" constant="32" id="eOC-Lr-X9y"/>
@@ -67,7 +67,7 @@
                                     <constraint firstItem="5aa-PZ-9z5" firstAttribute="centerY" secondItem="cQh-0x-V26" secondAttribute="centerY" id="SHh-Ml-f6W"/>
                                     <constraint firstItem="5aa-PZ-9z5" firstAttribute="leading" secondItem="p1b-qB-k40" secondAttribute="trailing" constant="10" id="Ymj-lN-1c0"/>
                                     <constraint firstItem="g0v-fE-wMF" firstAttribute="centerY" secondItem="cQh-0x-V26" secondAttribute="centerY" id="ioh-fn-GXd"/>
-                                    <constraint firstItem="p1b-qB-k40" firstAttribute="leading" secondItem="cQh-0x-V26" secondAttribute="leading" constant="16" id="nC9-iS-WG1"/>
+                                    <constraint firstItem="p1b-qB-k40" firstAttribute="leading" secondItem="cQh-0x-V26" secondAttribute="leading" id="nC9-iS-WG1"/>
                                     <constraint firstAttribute="height" constant="54" id="oYI-M7-lti"/>
                                 </constraints>
                             </view>

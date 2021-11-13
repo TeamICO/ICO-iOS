@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49q-5V-tzf">
-                                <rect key="frame" x="10" y="52" width="32" height="32"/>
+                                <rect key="frame" x="0.0" y="44" width="60" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="DOt-f3-AE0"/>
-                                    <constraint firstAttribute="width" constant="32" id="qIS-8T-7Dd"/>
+                                    <constraint firstAttribute="height" constant="54" id="DOt-f3-AE0"/>
+                                    <constraint firstAttribute="width" constant="60" id="qIS-8T-7Dd"/>
                                 </constraints>
                                 <color key="tintColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -33,10 +33,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-An-jIS">
-                                <rect key="frame" x="48" y="44" width="350" height="48"/>
+                                <rect key="frame" x="66" y="44" width="332" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="검색할 스타일샷의 키워드를 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ls-53-Rfb">
-                                        <rect key="frame" x="12" y="0.0" width="299" height="48"/>
+                                        <rect key="frame" x="12" y="0.0" width="281" height="48"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0039215686274509803" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,7 +44,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blB-mf-GiD">
-                                        <rect key="frame" x="316" y="14" width="20" height="20"/>
+                                        <rect key="frame" x="298" y="14" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="dyl-DP-55X"/>
                                             <constraint firstAttribute="width" constant="20" id="rFX-Su-LEM"/>
@@ -81,13 +81,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="49q-5V-tzf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="91n-oA-GZv"/>
+                            <constraint firstItem="49q-5V-tzf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="91n-oA-GZv"/>
                             <constraint firstItem="ecC-An-jIS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="HhU-vg-San"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ecC-An-jIS" secondAttribute="trailing" constant="16" id="NBb-IQ-XoG"/>
                             <constraint firstItem="IO7-CM-IMi" firstAttribute="top" secondItem="ecC-An-jIS" secondAttribute="bottom" id="TO2-mK-AQx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IO7-CM-IMi" secondAttribute="bottom" id="UnC-9A-iUS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IO7-CM-IMi" secondAttribute="trailing" id="WdG-GK-TcE"/>
-                            <constraint firstItem="49q-5V-tzf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="YSZ-mW-kTu"/>
+                            <constraint firstItem="49q-5V-tzf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YSZ-mW-kTu"/>
                             <constraint firstItem="ecC-An-jIS" firstAttribute="leading" secondItem="49q-5V-tzf" secondAttribute="trailing" constant="6" id="Zzm-Fd-4Cg"/>
                             <constraint firstItem="IO7-CM-IMi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="u7J-NJ-Nes"/>
                         </constraints>
