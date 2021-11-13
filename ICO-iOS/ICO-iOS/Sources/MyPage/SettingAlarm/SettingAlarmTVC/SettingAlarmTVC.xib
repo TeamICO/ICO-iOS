@@ -42,7 +42,7 @@
                                 <color key="textColor" red="0.14901960784313725" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-arrow-right" translatesAutoresizingMaskIntoConstraints="NO" id="rhf-id-D7X">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-alarm-setting-arrow-left" translatesAutoresizingMaskIntoConstraints="NO" id="rhf-id-D7X">
                                 <rect key="frame" x="218.5" y="46" width="15" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="MmW-oc-kcN"/>
@@ -80,6 +80,6 @@
     </objects>
     <resources>
         <image name="emoji-alarm" width="80" height="81"/>
-        <image name="ic-arrow-right" width="96" height="96"/>
+        <image name="ic-alarm-setting-arrow-left" width="64" height="64"/>
     </resources>
 </document>

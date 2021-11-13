@@ -25,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhJ-DR-jm0">
-                                        <rect key="frame" x="16" y="11" width="32" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="abW-Pq-nkc"/>
-                                            <constraint firstAttribute="height" constant="32" id="vld-wG-D5b"/>
+                                            <constraint firstAttribute="width" constant="60" id="abW-Pq-nkc"/>
+                                            <constraint firstAttribute="height" constant="54" id="vld-wG-D5b"/>
                                         </constraints>
                                         <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -53,7 +53,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="fbN-bE-fEW"/>
                                     <constraint firstItem="XpD-TB-EgB" firstAttribute="centerX" secondItem="isn-X0-v05" secondAttribute="centerX" id="kgM-Pd-YFK"/>
-                                    <constraint firstItem="nhJ-DR-jm0" firstAttribute="leading" secondItem="isn-X0-v05" secondAttribute="leading" constant="16" id="nFI-Gb-78N"/>
+                                    <constraint firstItem="nhJ-DR-jm0" firstAttribute="leading" secondItem="isn-X0-v05" secondAttribute="leading" id="nFI-Gb-78N"/>
                                     <constraint firstItem="XpD-TB-EgB" firstAttribute="centerY" secondItem="isn-X0-v05" secondAttribute="centerY" id="x1y-o2-BuE"/>
                                     <constraint firstItem="nhJ-DR-jm0" firstAttribute="centerY" secondItem="isn-X0-v05" secondAttribute="centerY" id="zYR-kW-0nx"/>
                                 </constraints>
