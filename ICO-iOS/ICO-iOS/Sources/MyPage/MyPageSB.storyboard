@@ -25,8 +25,8 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hU-ca-U0F">
-                                        <rect key="frame" x="16" y="15" width="86.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="26" y="15" width="86.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -71,7 +71,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="4hU-ca-U0F" firstAttribute="leading" secondItem="EAq-iB-fbD" secondAttribute="leading" constant="16" id="2jc-dg-KTz"/>
+                                    <constraint firstItem="4hU-ca-U0F" firstAttribute="leading" secondItem="EAq-iB-fbD" secondAttribute="leading" constant="26" id="2jc-dg-KTz"/>
                                     <constraint firstItem="KqV-ZT-KWh" firstAttribute="centerY" secondItem="EAq-iB-fbD" secondAttribute="centerY" id="6TM-vY-yVS"/>
                                     <constraint firstItem="vUz-m6-xYi" firstAttribute="centerY" secondItem="EAq-iB-fbD" secondAttribute="centerY" id="ACg-ad-Kmq"/>
                                     <constraint firstAttribute="trailing" secondItem="vUz-m6-xYi" secondAttribute="trailing" constant="16" id="Srz-26-eEm"/>
