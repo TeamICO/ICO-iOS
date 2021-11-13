@@ -534,7 +534,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-mu-s3c">
-                                                <rect key="frame" x="16" y="736" width="382" height="60"/>
+                                                <rect key="frame" x="16" y="768" width="382" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ma-23-aTd">
                                                         <rect key="frame" x="0.0" y="0.0" width="182.5" height="60"/>
@@ -614,7 +614,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icArrowLeft"/>
                                         <connections>
-                                            <action selector="toBack:" destination="238-ns-Wc5" eventType="touchUpInside" id="mx2-Xq-Bhz"/>
+                                            <action selector="toBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IiT-n6-Ehr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -678,7 +678,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="238-ns-Wc5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="105.79710144927537" y="114.50892857142857"/>
         </scene>
