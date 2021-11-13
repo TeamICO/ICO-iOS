@@ -68,3 +68,7 @@ class CompanyKeywordCVC: UICollectionViewCell {
           titleLabel.text = name
       }
 }
+//func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//    return CompanyKeywordCVC.fittingSize(availableHeight: 32, name: arr[indexPath.row])
+//   }
