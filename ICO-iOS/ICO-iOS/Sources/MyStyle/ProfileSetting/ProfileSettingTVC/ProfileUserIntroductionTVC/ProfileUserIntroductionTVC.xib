@@ -54,8 +54,21 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOC-YQ-tKU">
+                        <rect key="frame" x="276" y="94" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="bip-il-4it"/>
+                            <constraint firstAttribute="height" constant="20" id="fLs-7U-4NU"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="icXBtnLightgreen1"/>
+                        <connections>
+                            <action selector="didTapRemoveNicNameButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fpv-g7-FTe"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="KOC-YQ-tKU" firstAttribute="bottom" secondItem="4SC-ZZ-3IA" secondAttribute="bottom" constant="-8" id="4r9-xS-nMu"/>
                     <constraint firstItem="4SC-ZZ-3IA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="FmJ-1f-Gv2"/>
                     <constraint firstItem="Re3-5Q-iPW" firstAttribute="leading" secondItem="5bj-9D-hea" secondAttribute="trailing" id="GtV-ob-aW9"/>
                     <constraint firstItem="4SC-ZZ-3IA" firstAttribute="leading" secondItem="3f9-83-uw9" secondAttribute="trailing" constant="26" id="Q8J-Xs-RFX"/>
@@ -65,6 +78,7 @@
                     <constraint firstAttribute="trailing" secondItem="4SC-ZZ-3IA" secondAttribute="trailing" constant="16" id="hRF-Kc-C5d"/>
                     <constraint firstItem="Re3-5Q-iPW" firstAttribute="top" secondItem="4SC-ZZ-3IA" secondAttribute="bottom" id="ozB-xM-hkL"/>
                     <constraint firstItem="5bj-9D-hea" firstAttribute="top" secondItem="4SC-ZZ-3IA" secondAttribute="bottom" id="smA-Nn-4Td"/>
+                    <constraint firstItem="KOC-YQ-tKU" firstAttribute="trailing" secondItem="4SC-ZZ-3IA" secondAttribute="trailing" constant="-8" id="v4B-sR-ksj"/>
                     <constraint firstItem="3f9-83-uw9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="xKM-II-EWK"/>
                 </constraints>
             </tableViewCellContentView>
@@ -76,4 +90,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="162.38839285714286"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icXBtnLightgreen1" width="20" height="20"/>
+    </resources>
 </document>

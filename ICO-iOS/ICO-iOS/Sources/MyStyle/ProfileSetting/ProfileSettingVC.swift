@@ -84,7 +84,7 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
         case 2 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileMyEcoKeywordTVC.identifier, for: indexPath) as! ProfileMyEcoKeywordTVC
             cell.selectionStyle = .none
-            
+            cell.delegate = self
             return cell
         default:
             return UITableViewCell()
@@ -93,9 +93,9 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0 : return 192
+        case 0 : return 246
         case 1 : return 157
-        case 2 : return 342
+        case 2 : return 420
         default : return 0
         }
        
@@ -119,6 +119,21 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
         }
     }
 
+    
+    
+}
+extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
+    func tapDonationView() {
+        
+    }
+    
+    func tapAnimalView() {
+        
+    }
+    
+    func tapTradeView() {
+        
+    }
     
     
 }

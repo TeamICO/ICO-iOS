@@ -21,12 +21,14 @@ class ProfileUserIntroductionTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    @IBAction func didTapRemoveNicNameButton(_ sender: Any) {
+        profileTextView.text = ""
+    }
 }
 // MARK: - TextView Delegate
 extension ProfileUserIntroductionTVC : UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print(profileTextView.text.count)
+        
         if !textView.text.isEmpty{
             textView.text = ""
             textView.tintColor = UIColor.appColor(.feedbackTintColor)
