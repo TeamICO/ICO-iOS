@@ -109,6 +109,10 @@ extension UIColor {
             return #colorLiteral(red: 0.9294117647, green: 0.9882352941, blue: 0.9098039216, alpha: 1)
         case .keywordBackgroundGray:
             return #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
+        case .ecokeywordLabelColor:
+            return #colorLiteral(red: 0.01960784314, green: 0.537254902, blue: 0.3294117647, alpha: 1)
+        case .ecokeywordBackgroundColor:
+            return #colorLiteral(red: 0.9294117647, green: 0.9882352941, blue: 0.9568627451, alpha: 1)
         }
         
         
@@ -141,6 +145,7 @@ enum Colors {
     case feedbackTintColor
     case tableViewCellColor
     case keywordBackgroundGray
-    
+    case ecokeywordBackgroundColor
+    case ecokeywordLabelColor
  
 }
