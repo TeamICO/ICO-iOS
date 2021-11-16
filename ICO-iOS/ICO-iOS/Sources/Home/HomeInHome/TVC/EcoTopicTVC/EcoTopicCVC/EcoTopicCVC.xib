@@ -5,12 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EcoTopicCVC" customModule="ICO" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EcoTopicCVC" customModule="ICO_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="120" height="187"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -50,24 +51,59 @@
                         <color key="textColor" red="0.2627450980392157" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UTz-5Z-9hs">
+                        <rect key="frame" x="0.0" y="162" width="120" height="25"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="bUp-gM-0Vy"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aqr-wW-S0L">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BK-oi-DA2">
+                        <rect key="frame" x="80" y="162" width="40" height="25"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="f7B-A3-wJl"/>
+                            <constraint firstAttribute="height" constant="25" id="huS-CP-LWP"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="NGY-Ak-Cob" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4hR-pc-KJB"/>
                 <constraint firstAttribute="trailing" secondItem="Tad-uj-JIg" secondAttribute="trailing" id="7Yd-qO-3ZB"/>
+                <constraint firstAttribute="bottom" secondItem="UTz-5Z-9hs" secondAttribute="bottom" id="Hz0-AS-Ypp"/>
+                <constraint firstAttribute="bottom" secondItem="8BK-oi-DA2" secondAttribute="bottom" id="IHC-cs-947"/>
                 <constraint firstItem="QBf-lb-w8j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Zpm-yq-4fZ"/>
                 <constraint firstAttribute="trailing" secondItem="NGY-Ak-Cob" secondAttribute="trailing" id="dtq-xS-t8A"/>
                 <constraint firstItem="Tad-uj-JIg" firstAttribute="leading" secondItem="QBf-lb-w8j" secondAttribute="trailing" constant="8" id="hUy-cK-0rM"/>
+                <constraint firstAttribute="trailing" secondItem="UTz-5Z-9hs" secondAttribute="trailing" id="hco-4W-i9R"/>
+                <constraint firstAttribute="trailing" secondItem="8BK-oi-DA2" secondAttribute="trailing" id="kSe-ur-S7I"/>
                 <constraint firstItem="QBf-lb-w8j" firstAttribute="top" secondItem="NGY-Ak-Cob" secondAttribute="bottom" constant="8" id="n71-Fy-fJR"/>
+                <constraint firstItem="UTz-5Z-9hs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="s4T-dT-TJA"/>
                 <constraint firstItem="Tad-uj-JIg" firstAttribute="top" secondItem="NGY-Ak-Cob" secondAttribute="bottom" constant="12" id="u9u-nT-OtX"/>
                 <constraint firstItem="NGY-Ak-Cob" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="z0G-i2-AWW"/>
             </constraints>
             <size key="customSize" width="120" height="187"/>
+            <connections>
+                <outlet property="collectionView" destination="UTz-5Z-9hs" id="ZVx-y7-ZKC"/>
+                <outlet property="gradientView" destination="8BK-oi-DA2" id="TWC-kS-HgX"/>
+                <outlet property="userContentImage" destination="NGY-Ak-Cob" id="Ct8-gL-WCo"/>
+                <outlet property="userImage" destination="QBf-lb-w8j" id="fsa-PB-pAt"/>
+            </connections>
             <point key="canvasLocation" x="182.60869565217394" y="170.42410714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="img_styleshot_sample03" width="1440" height="1440"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -70,6 +70,10 @@
 		E943BC612738FB6400619C74 /* LoginCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E943BC5F2738FB6400619C74 /* LoginCVC.xib */; };
 		E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946137927434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift */; };
 		E946137C27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946137A27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib */; };
+		E946137F2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946137D2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift */; };
+		E94613802743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946137E2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib */; };
+		E946138327435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946138127435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift */; };
+		E946138427435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946138227435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib */; };
 		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
 		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
@@ -241,6 +245,10 @@
 		E943BC5F2738FB6400619C74 /* LoginCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCVC.xib; sourceTree = "<group>"; };
 		E946137927434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensibleCollectionViewCellCVC.swift; sourceTree = "<group>"; };
 		E946137A27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SensibleCollectionViewCellCVC.xib; sourceTree = "<group>"; };
+		E946137D2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveCollectionViewCellCVC.swift; sourceTree = "<group>"; };
+		E946137E2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponsiveCollectionViewCellCVC.xib; sourceTree = "<group>"; };
+		E946138127435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoTopicCollectionViewCellCVC.swift; sourceTree = "<group>"; };
+		E946138227435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EcoTopicCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
 		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
@@ -627,6 +635,8 @@
 			children = (
 				E9944BCD2735746200DB9279 /* ResponsiveCVC.swift */,
 				E9944BCE2735746200DB9279 /* ResponsiveCVC.xib */,
+				E946137D2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift */,
+				E946137E2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib */,
 			);
 			path = ResponsiveStyleShotCVC;
 			sourceTree = "<group>";
@@ -655,6 +665,8 @@
 			children = (
 				E998C2592732955A00E1F8D0 /* EcoTopicCVC.swift */,
 				E998C25A2732955A00E1F8D0 /* EcoTopicCVC.xib */,
+				E946138127435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift */,
+				E946138227435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib */,
 			);
 			path = EcoTopicCVC;
 			sourceTree = "<group>";
@@ -1264,6 +1276,7 @@
 				E9CAF17C2731635D008F749B /* Assets.xcassets in Resources */,
 				E9378DA32738099B00C589A1 /* HotKeywordTVC.xib in Resources */,
 				E9AF8404273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib in Resources */,
+				E946138427435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib in Resources */,
 				714F32C0273BE84D007324BC /* Survey.storyboard in Resources */,
 				E9AF83ED273B60F600D77D5F /* ResultSortCVC.xib in Resources */,
 				E9E49938273BD50B0001ACFB /* ServiceTermsTVC.xib in Resources */,
@@ -1274,6 +1287,7 @@
 				E9AF83F1273B610F00D77D5F /* SearchResultsCVC.xib in Resources */,
 				7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */,
 				E943BC5C2738F58100619C74 /* LoginSB.storyboard in Resources */,
+				E94613802743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib in Resources */,
 				E9AF8400273B82C000D77D5F /* MypageTVC.xib in Resources */,
 				7190EA49273816FA008BA6C0 /* Recent.storyboard in Resources */,
 				E998C24D2732813C00E1F8D0 /* BestTagCVC.xib in Resources */,
@@ -1389,6 +1403,7 @@
 				E998C25627328A8700E1F8D0 /* BrandCVC.swift in Sources */,
 				E9CAF194273163EC008F749B /* HomeVC.swift in Sources */,
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
+				E946137F2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift in Sources */,
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
 				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
 				E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */,
@@ -1412,6 +1427,7 @@
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
 				E9AF8407273B82DE00D77D5F /* MyPageUserInfoTVC.swift in Sources */,
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
+				E946138327435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift in Sources */,
 				714F32B9273BE7C0007324BC /* StyleUploadVC.swift in Sources */,
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,

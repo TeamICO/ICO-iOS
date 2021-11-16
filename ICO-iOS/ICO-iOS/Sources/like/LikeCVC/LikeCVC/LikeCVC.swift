@@ -26,16 +26,7 @@ class LikeCVC: UICollectionViewCell {
         gradientView.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
         
         
-        setStackView()
+        
     }
-    //MARK : StackView Configure
-    func setStackView(){
-        for i in 0...1{
-            let stack = SensibleSV()
-            stack.categoryLabel.text = cartegoryModels[i]
-            stack.categoryLabel.textColor = cartegoryFontColors[i]
-            stack.categoryLabel.backgroundColor = cartegoryBackColors[i]
-            stackView.addArrangedSubview(stack)
-        }
-    }
+   
 }
