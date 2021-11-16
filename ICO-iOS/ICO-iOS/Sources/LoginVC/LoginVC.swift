@@ -158,7 +158,7 @@ extension LoginVC {
                       guard let jwt = response?.jwt else{
                           return
                       }
-                      UserDefaults.standard.set(jwt, forKey: "jwtToken")
+//                      UserDefaults.standard.set(jwt, forKey: "jwtToken")
                         DispatchQueue.main.async {
                             let surveySB = UIStoryboard(name: "Survey", bundle: nil)
                             guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
@@ -232,7 +232,7 @@ extension LoginVC {
                 guard let jwt = response?.jwt else{
                     return
                 }
-                UserDefaults.standard.set(jwt, forKey: "jwtToken")
+//                UserDefaults.standard.set(jwt, forKey: "jwtToken")
                 print(jwt)
 
             }
