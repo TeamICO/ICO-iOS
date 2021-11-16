@@ -2,7 +2,40 @@ PODS:
   - Alamofire (5.4.3)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
+  - KakaoSDK (2.5.3):
+    - KakaoSDKAuth (= 2.5.3)
+    - KakaoSDKCommon (= 2.5.3)
+    - KakaoSDKLink (= 2.5.3)
+    - KakaoSDKNavi (= 2.5.3)
+    - KakaoSDKStory (= 2.5.3)
+    - KakaoSDKTalk (= 2.5.3)
+    - KakaoSDKTemplate (= 2.5.3)
+    - KakaoSDKUser (= 2.5.3)
+  - KakaoSDKAuth (2.5.3):
+    - KakaoSDKCommon (= 2.5.3)
+  - KakaoSDKCommon (2.5.3):
+    - KakaoSDKCommon/Common (= 2.5.3)
+    - KakaoSDKCommon/Network (= 2.5.3)
+  - KakaoSDKCommon/Common (2.5.3)
+  - KakaoSDKCommon/Network (2.5.3):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.5.3)
+  - KakaoSDKLink (2.5.3):
+    - KakaoSDKCommon (= 2.5.3)
+    - KakaoSDKTemplate (= 2.5.3)
+  - KakaoSDKNavi (2.5.3):
+    - KakaoSDKCommon/Common (= 2.5.3)
+  - KakaoSDKStory (2.5.3):
+    - KakaoSDKUser (= 2.5.3)
+  - KakaoSDKTalk (2.5.3):
+    - KakaoSDKTemplate (= 2.5.3)
+    - KakaoSDKUser (= 2.5.3)
+  - KakaoSDKTemplate (2.5.3):
+    - KakaoSDKCommon/Common (= 2.5.3)
+  - KakaoSDKUser (2.5.3):
+    - KakaoSDKAuth (= 2.5.3)
   - Kingfisher (7.1.1)
+  - naveridlogin-sdk-ios (4.1.3)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
@@ -14,7 +47,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
+  - KakaoSDK
   - Kingfisher (~> 7.0)
+  - naveridlogin-sdk-ios
   - RxCocoa (= 6.2.0)
   - RxSwift (= 6.2.0)
   - SnapKit
@@ -23,7 +58,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireNetworkActivityIndicator
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
     - Kingfisher
+    - naveridlogin-sdk-ios
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -32,12 +77,22 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
+  KakaoSDK: 61f5d72d4c90188bf3d6567ffeef42d2827e9f77
+  KakaoSDKAuth: b1a0b9a84c21c967c4139d221edce83a7f15cdfe
+  KakaoSDKCommon: 08548932f6f570215ea038241a98157c0b3f7a8b
+  KakaoSDKLink: 4d35879b0abd90fbd0bc0de56dbb06097e9b31d3
+  KakaoSDKNavi: 31fd6ad030cf7200d546202cbe22f7a8b38eb983
+  KakaoSDKStory: 6d666f665fbe4b8453ce19959b9bb9e3bf38a5df
+  KakaoSDKTalk: 58cf9c530cc8024ae2ed3839d40acd992ecaf909
+  KakaoSDKTemplate: 5939681de6c24fd81e93bf824982e979e794f87e
+  KakaoSDKUser: 5d2de71fe070455bbaaad6a37af3eb500fbc8972
   Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
+  naveridlogin-sdk-ios: b9d7c20677981177ed994ecb1c8c2b49f223277d
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 7cfcd918c0d815286e35c69d8db9471ec7288c3e
+PODFILE CHECKSUM: da4c1d142085ced6b9f3582dce1c38098fb596ac
 
 COCOAPODS: 1.10.1
