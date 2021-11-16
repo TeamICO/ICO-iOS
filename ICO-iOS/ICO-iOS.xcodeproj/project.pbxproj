@@ -20,6 +20,8 @@
 		717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76D42732CC3300FBA1AF /* RecentVC.swift */; };
 		717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76D82732CC5C00FBA1AF /* PopularVC.swift */; };
 		717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76DC2732CC7500FBA1AF /* KeywordVC.swift */; };
+		717CB5142743B57C0044E227 /* StyleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717CB5132743B57C0044E227 /* StyleDetailVC.swift */; };
+		717CB5162743B5900044E227 /* StyleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717CB5152743B5900044E227 /* StyleDetail.storyboard */; };
 		7190EA49273816FA008BA6C0 /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA48273816FA008BA6C0 /* Recent.storyboard */; };
 		7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4A273819D6008BA6C0 /* Popular.storyboard */; };
 		7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4C27381A54008BA6C0 /* Keyword.storyboard */; };
@@ -200,6 +202,8 @@
 		717B76D42732CC3300FBA1AF /* RecentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentVC.swift; sourceTree = "<group>"; };
 		717B76D82732CC5C00FBA1AF /* PopularVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularVC.swift; sourceTree = "<group>"; };
 		717B76DC2732CC7500FBA1AF /* KeywordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordVC.swift; sourceTree = "<group>"; };
+		717CB5132743B57C0044E227 /* StyleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailVC.swift; sourceTree = "<group>"; };
+		717CB5152743B5900044E227 /* StyleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StyleDetail.storyboard; sourceTree = "<group>"; };
 		7190EA48273816FA008BA6C0 /* Recent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recent.storyboard; sourceTree = "<group>"; };
 		7190EA4A273819D6008BA6C0 /* Popular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popular.storyboard; sourceTree = "<group>"; };
 		7190EA4C27381A54008BA6C0 /* Keyword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyword.storyboard; sourceTree = "<group>"; };
@@ -436,6 +440,15 @@
 				7190EA4C27381A54008BA6C0 /* Keyword.storyboard */,
 			);
 			path = InnerVC;
+			sourceTree = "<group>";
+		};
+		717CB5122743B5470044E227 /* StyleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				717CB5132743B57C0044E227 /* StyleDetailVC.swift */,
+				717CB5152743B5900044E227 /* StyleDetail.storyboard */,
+			);
+			path = StyleDetail;
 			sourceTree = "<group>";
 		};
 		987DBBFFEBB377EE19EFB9A7 /* Pods */ = {
@@ -916,6 +929,7 @@
 			children = (
 				E9CAF195273163FB008F749B /* MyStyleVC.swift */,
 				E9CAF19927316427008F749B /* MyStyleSB.storyboard */,
+				717CB5122743B5470044E227 /* StyleDetail */,
 				714F32B7273BE79B007324BC /* StyleUpload */,
 				714F32B1273BE739007324BC /* ProfileSetting */,
 			);
@@ -1319,6 +1333,7 @@
 				714F32B6273BE788007324BC /* ProfileSetting.storyboard in Resources */,
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
 				E9CAF17C2731635D008F749B /* Assets.xcassets in Resources */,
+				717CB5162743B5900044E227 /* StyleDetail.storyboard in Resources */,
 				E9378DA32738099B00C589A1 /* HotKeywordTVC.xib in Resources */,
 				E9AF8404273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib in Resources */,
 				E946138427435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib in Resources */,
@@ -1488,6 +1503,7 @@
 				E9E49926273BAC220001ACFB /* LevelUpVC.swift in Sources */,
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
 				E9CAF1C127316A10008F749B /* Constant.swift in Sources */,
+				717CB5142743B57C0044E227 /* StyleDetailVC.swift in Sources */,
 				E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */,
 				E9161D0C273CF74E009A9CA7 /* BeforeAlarmTVC.swift in Sources */,
 				717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */,
