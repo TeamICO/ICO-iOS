@@ -15,5 +15,8 @@ class EcoTopicCollectionViewCellCVC: UICollectionViewCell {
         categoryLabel.layer.cornerRadius = 8
         categoryLabel.layer.masksToBounds = true
     }
-
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        categoryLabel.text = nil
+    }
 }

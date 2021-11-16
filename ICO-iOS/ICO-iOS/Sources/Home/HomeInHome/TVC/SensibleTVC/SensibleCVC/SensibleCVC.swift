@@ -10,10 +10,7 @@ import UIKit
 class SensibleCVC: UICollectionViewCell {
     static let identifier = "SensibleCVC"
     
-    let cartegoryModels = ["유기농", "클린뷰티"]
-    let cartegoryFontColors : [UIColor] = [UIColor.appColor(.categoryFontRed),UIColor.appColor(.categoryFontGreen)]
-    let cartegoryBackColors : [UIColor] = [UIColor.appColor(.categoryBackgroundRed),UIColor.appColor(.categoryBackgroundGreen)]
-    
+    var category = [String]()
     
     @IBOutlet weak var styleShotImage: UIImageView!
     
@@ -41,8 +38,13 @@ class SensibleCVC: UICollectionViewCell {
         userImage.image = nil
         userId.text = nil
     }
-    
+    func getData(data : [String]){
+        self.category = data
+        
+        collectionView.reloadData()
+    }
     func configure(with viewModel : SensibleCVCViewModel){
+        
         self.userId.text = viewModel.nicName
 
         guard let styleShotUrl = URL(string: viewModel.styleShotImage), let userImageUrl = URL(string: viewModel.userImage) else{
@@ -80,29 +82,32 @@ extension SensibleCVC {
 }
 extension SensibleCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SensibleCollectionViewCellCVC.identifier, for: indexPath) as! SensibleCollectionViewCellCVC
-        cell.categoryLabel.text = cartegoryModels[indexPath.row]
-        cell.categoryLabel.backgroundColor = cartegoryBackColors[indexPath.row]
-        cell.categoryLabel.textColor = cartegoryFontColors[indexPath.row]
+        cell.categoryLabel.text = category[indexPath.row]
+        cell.categoryLabel.setLabelConfigure(label: cell.categoryLabel, styleShotCategoryType: category[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cartegoryModels[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
+        return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
 }
 
 struct SensibleCVCViewModel {
     let styleShotImage : String
     let userImage : String
     let nicName : String
+    
     init(with model : HomeInHomeSenseStyleshot){
         self.styleShotImage = model.imageURL
         self.userImage = model.profileURL
         self.nicName = model.nickname
+    
     }
 }

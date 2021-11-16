@@ -78,6 +78,7 @@ extension EcoTopicTVC : UICollectionViewDelegate, UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EcoTopicCVC.identifier, for: indexPath) as! EcoTopicCVC
         if let product = ecoTopicModel?.product{
+            cell.getData(data: product[indexPath.row].category)
             cell.configure(with: EcoTopicCVCViewModel(with: product[indexPath.row]))
         }
         return cell

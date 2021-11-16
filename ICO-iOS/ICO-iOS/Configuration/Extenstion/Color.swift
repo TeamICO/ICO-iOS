@@ -61,6 +61,7 @@ extension UIColor {
     class var lightWarning: UIColor {UIColor(hex: 0xFFF7EF)}
     class var lightInfo: UIColor {UIColor(hex: 0xF1FBFF)}
     class var lightPoint: UIColor {UIColor(hex: 0xFFFBE3)}
+    class var dirtGreen: UIColor {UIColor(hex: 0x436A6A)}
     static func appColor(_ name: Colors) -> UIColor {
         switch name {
         case .customGreen :

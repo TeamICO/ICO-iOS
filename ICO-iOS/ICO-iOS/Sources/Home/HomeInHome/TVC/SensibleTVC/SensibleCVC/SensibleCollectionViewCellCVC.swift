@@ -10,6 +10,10 @@ import UIKit
 class SensibleCollectionViewCellCVC: UICollectionViewCell {
     static let identifier = "SensibleCollectionViewCellCVC"
     @IBOutlet weak var categoryLabel: UILabel!
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        categoryLabel.text = nil
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         categoryLabel.layer.cornerRadius = 8
