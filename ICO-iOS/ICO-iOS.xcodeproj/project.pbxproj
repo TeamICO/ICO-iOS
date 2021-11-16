@@ -68,6 +68,8 @@
 		E943BC5C2738F58100619C74 /* LoginSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E943BC5B2738F58100619C74 /* LoginSB.storyboard */; };
 		E943BC602738FB6400619C74 /* LoginCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E943BC5E2738FB6400619C74 /* LoginCVC.swift */; };
 		E943BC612738FB6400619C74 /* LoginCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E943BC5F2738FB6400619C74 /* LoginCVC.xib */; };
+		E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946137927434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift */; };
+		E946137C27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946137A27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib */; };
 		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
 		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
@@ -85,7 +87,6 @@
 		E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BCA2735550A00DB9279 /* BasePageControl.swift */; };
 		E9944BCF2735746200DB9279 /* ResponsiveCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9944BCD2735746200DB9279 /* ResponsiveCVC.swift */; };
 		E9944BD02735746200DB9279 /* ResponsiveCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9944BCE2735746200DB9279 /* ResponsiveCVC.xib */; };
-		E998C24727326C0E00E1F8D0 /* SensibleSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998C24627326C0E00E1F8D0 /* SensibleSV.swift */; };
 		E998C249273275D500E1F8D0 /* BasePaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998C248273275D500E1F8D0 /* BasePaddingLabel.swift */; };
 		E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998C24A2732813C00E1F8D0 /* BestTagCVC.swift */; };
 		E998C24D2732813C00E1F8D0 /* BestTagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E998C24B2732813C00E1F8D0 /* BestTagCVC.xib */; };
@@ -238,6 +239,8 @@
 		E943BC5B2738F58100619C74 /* LoginSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginSB.storyboard; sourceTree = "<group>"; };
 		E943BC5E2738FB6400619C74 /* LoginCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCVC.swift; sourceTree = "<group>"; };
 		E943BC5F2738FB6400619C74 /* LoginCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCVC.xib; sourceTree = "<group>"; };
+		E946137927434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensibleCollectionViewCellCVC.swift; sourceTree = "<group>"; };
+		E946137A27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SensibleCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
 		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
@@ -255,7 +258,6 @@
 		E9944BCA2735550A00DB9279 /* BasePageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageControl.swift; sourceTree = "<group>"; };
 		E9944BCD2735746200DB9279 /* ResponsiveCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveCVC.swift; sourceTree = "<group>"; };
 		E9944BCE2735746200DB9279 /* ResponsiveCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponsiveCVC.xib; sourceTree = "<group>"; };
-		E998C24627326C0E00E1F8D0 /* SensibleSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensibleSV.swift; sourceTree = "<group>"; };
 		E998C248273275D500E1F8D0 /* BasePaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddingLabel.swift; sourceTree = "<group>"; };
 		E998C24A2732813C00E1F8D0 /* BestTagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTagCVC.swift; sourceTree = "<group>"; };
 		E998C24B2732813C00E1F8D0 /* BestTagCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestTagCVC.xib; sourceTree = "<group>"; };
@@ -627,14 +629,6 @@
 				E9944BCE2735746200DB9279 /* ResponsiveCVC.xib */,
 			);
 			path = ResponsiveStyleShotCVC;
-			sourceTree = "<group>";
-		};
-		E998C24527326BEB00E1F8D0 /* SensibleSV */ = {
-			isa = PBXGroup;
-			children = (
-				E998C24627326C0E00E1F8D0 /* SensibleSV.swift */,
-			);
-			path = SensibleSV;
 			sourceTree = "<group>";
 		};
 		E998C24E273283A500E1F8D0 /* BrandRecommendTVC */ = {
@@ -1071,7 +1065,6 @@
 				E9378D802737FE0400C589A1 /* SensibleStyleShotTVC.swift */,
 				E9378D812737FE0400C589A1 /* SensibleStyleShotTVC.xib */,
 				E9CAF22B27325C1C008F749B /* SensibleCVC */,
-				E998C24527326BEB00E1F8D0 /* SensibleSV */,
 			);
 			path = SensibleTVC;
 			sourceTree = "<group>";
@@ -1081,6 +1074,8 @@
 			children = (
 				E9378D842737FE9F00C589A1 /* SensibleCVC.swift */,
 				E9378D852737FE9F00C589A1 /* SensibleCVC.xib */,
+				E946137927434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift */,
+				E946137A27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib */,
 			);
 			path = SensibleCVC;
 			sourceTree = "<group>";
@@ -1291,6 +1286,7 @@
 				E9AF83F6273B769600D77D5F /* SortCVC.xib in Resources */,
 				E9378D7F2737FCD000C589A1 /* BestTagTVC.xib in Resources */,
 				E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */,
+				E946137C27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib in Resources */,
 				E9AF83E9273B60DC00D77D5F /* ResultCountCVC.xib in Resources */,
 				71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */,
 				E9CAF1CB27316C73008F749B /* HomeInStyleLifeSB.storyboard in Resources */,
@@ -1398,6 +1394,7 @@
 				E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
 				714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */,
+				E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
 				71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */,
@@ -1430,7 +1427,6 @@
 				E9378D8E2738032500C589A1 /* ResponsiveStyleShotTVC.swift in Sources */,
 				E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */,
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
-				E998C24727326C0E00E1F8D0 /* SensibleSV.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
 				E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */,
 				E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */,

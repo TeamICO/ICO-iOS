@@ -19,29 +19,50 @@ class SensibleCVC: UICollectionViewCell {
     
     @IBOutlet weak var userId: UILabel!
     
-    @IBOutlet weak var stackView: UIStackView!
+
     @IBOutlet weak var userImage: UIImageView!
     
     @IBOutlet weak var gradientView: UIView!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     
     // MARK : Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         gradientView.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
         
-        
-        setStackView()
+        collectionViewConfigure()
     }
-    //MARK : StackView Configure
-    func setStackView(){
-        for i in 0...1{
-            let stack = SensibleSV()
-            stack.categoryLabel.text = cartegoryModels[i]
-            stack.categoryLabel.textColor = cartegoryFontColors[i]
-            stack.categoryLabel.backgroundColor = cartegoryBackColors[i]
-            stackView.addArrangedSubview(stack)
-        }
-    }
+ 
   
+    
+}
+// MARK: - CollectionView Configure
+extension SensibleCVC {
+    func collectionViewConfigure(){
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib = UINib(nibName: SensibleCollectionViewCellCVC.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: SensibleCollectionViewCellCVC.identifier)
+        
+    }
+}
+extension SensibleCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SensibleCollectionViewCellCVC.identifier, for: indexPath) as! SensibleCollectionViewCellCVC
+        cell.categoryLabel.text = cartegoryModels[indexPath.row]
+        cell.categoryLabel.backgroundColor = cartegoryBackColors[indexPath.row]
+        cell.categoryLabel.textColor = cartegoryFontColors[indexPath.row]
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: cartegoryModels[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
+    }
     
 }
