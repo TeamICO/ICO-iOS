@@ -138,6 +138,12 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
         return styleCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        self.navigationController?.pushViewController(styleDetailVC, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cellWidth = 164
