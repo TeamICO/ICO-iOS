@@ -22,6 +22,8 @@
 		717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76DC2732CC7500FBA1AF /* KeywordVC.swift */; };
 		717CB5142743B57C0044E227 /* StyleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717CB5132743B57C0044E227 /* StyleDetailVC.swift */; };
 		717CB5162743B5900044E227 /* StyleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717CB5152743B5900044E227 /* StyleDetail.storyboard */; };
+		717CB5192743DD9B0044E227 /* StyleLifeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717CB5182743DD9B0044E227 /* StyleLifeDataManager.swift */; };
+		717CB51B2743DDAF0044E227 /* StyleLifeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717CB51A2743DDAF0044E227 /* StyleLifeResponse.swift */; };
 		7190EA49273816FA008BA6C0 /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA48273816FA008BA6C0 /* Recent.storyboard */; };
 		7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4A273819D6008BA6C0 /* Popular.storyboard */; };
 		7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4C27381A54008BA6C0 /* Keyword.storyboard */; };
@@ -207,6 +209,8 @@
 		717B76DC2732CC7500FBA1AF /* KeywordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordVC.swift; sourceTree = "<group>"; };
 		717CB5132743B57C0044E227 /* StyleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailVC.swift; sourceTree = "<group>"; };
 		717CB5152743B5900044E227 /* StyleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StyleDetail.storyboard; sourceTree = "<group>"; };
+		717CB5182743DD9B0044E227 /* StyleLifeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLifeDataManager.swift; sourceTree = "<group>"; };
+		717CB51A2743DDAF0044E227 /* StyleLifeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLifeResponse.swift; sourceTree = "<group>"; };
 		7190EA48273816FA008BA6C0 /* Recent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recent.storyboard; sourceTree = "<group>"; };
 		7190EA4A273819D6008BA6C0 /* Popular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popular.storyboard; sourceTree = "<group>"; };
 		7190EA4C27381A54008BA6C0 /* Keyword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyword.storyboard; sourceTree = "<group>"; };
@@ -455,6 +459,15 @@
 				717CB5152743B5900044E227 /* StyleDetail.storyboard */,
 			);
 			path = StyleDetail;
+			sourceTree = "<group>";
+		};
+		717CB5172743DD6E0044E227 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				717CB5182743DD9B0044E227 /* StyleLifeDataManager.swift */,
+				717CB51A2743DDAF0044E227 /* StyleLifeResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		987DBBFFEBB377EE19EFB9A7 /* Pods */ = {
@@ -1071,6 +1084,7 @@
 		E9CAF1C327316C14008F749B /* HomeInStyleLife */ = {
 			isa = PBXGroup;
 			children = (
+				717CB5172743DD6E0044E227 /* Entity */,
 				717B76D32732AE8E00FBA1AF /* InnerVC */,
 				E9CAF1CA27316C73008F749B /* HomeInStyleLifeSB.storyboard */,
 				E9CAF1C827316C6B008F749B /* HomeInStyleLifeVC.swift */,
@@ -1476,6 +1490,7 @@
 				E946139F2743B07000A5F7C2 /* FeedbackResponse.swift in Sources */,
 				E94613A42743B7A700A5F7C2 /* CommonResponse.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
+				717CB5192743DD9B0044E227 /* StyleLifeDataManager.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
 				E9378D9E2738098700C589A1 /* RecentSearchWordsTVC.swift in Sources */,
 				E9E49918273BABDC0001ACFB /* ServiceTermsVC.swift in Sources */,
@@ -1490,6 +1505,7 @@
 				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
 				E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
+				717CB51B2743DDAF0044E227 /* StyleLifeResponse.swift in Sources */,
 				E94613A62743B7CF00A5F7C2 /* LoginResponse.swift in Sources */,
 				714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */,
 				E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */,
