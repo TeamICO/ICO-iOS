@@ -18,10 +18,10 @@ class ResponsiveCVC: UICollectionViewCell {
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var gradientView2: UIView!
-    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var userSatisfactionStack: UIStackView!
     
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         gradientView.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
@@ -29,19 +29,10 @@ class ResponsiveCVC: UICollectionViewCell {
         
         
         setCellShadow()
-        setStackView()
         setUserSatisfactionStack()
+        collectionViewConfigure()
     }
-    //MARK : StackView Configure
-    func setStackView(){
-        for i in 0...2{
-            let stack = SensibleSV()
-            stack.categoryLabel.text = cartegoryModels[i]
-            stack.categoryLabel.textColor = cartegoryFontColors[i]
-            stack.categoryLabel.backgroundColor = cartegoryBackColors[i]
-            stackView.addArrangedSubview(stack)
-        }
-    }
+
     func setUserSatisfactionStack(){
         for i in 0...4{
             let stack = UserRatingsSV()
@@ -59,3 +50,31 @@ class ResponsiveCVC: UICollectionViewCell {
     }
 }
 
+// MARK: - CollectionView Configure
+extension ResponsiveCVC {
+    func collectionViewConfigure(){
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib = UINib(nibName: ResponsiveCollectionViewCellCVC.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: ResponsiveCollectionViewCellCVC.identifier)
+        
+    }
+}
+extension ResponsiveCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResponsiveCollectionViewCellCVC.identifier, for: indexPath) as! ResponsiveCollectionViewCellCVC
+        cell.categoryLabel.text = cartegoryModels[indexPath.row]
+        cell.categoryLabel.backgroundColor = cartegoryBackColors[indexPath.row]
+        cell.categoryLabel.textColor = cartegoryFontColors[indexPath.row]
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: cartegoryModels[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
+    }
+    
+}
