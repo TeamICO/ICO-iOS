@@ -10,9 +10,7 @@ import UIKit
 class EcoTopicCVC: UICollectionViewCell {
     static let identifier = "EcoTopicCVC"
     
-    let cartegoryModels = ["유기농", "클린뷰티","ㅁㄴㅇㅁ"]
-    let cartegoryFontColors : [UIColor] = [UIColor.appColor(.categoryFontRed),UIColor.appColor(.categoryFontGreen),UIColor.appColor(.categoryFontGreen)]
-    let cartegoryBackColors : [UIColor] = [UIColor.appColor(.categoryBackgroundRed),UIColor.appColor(.categoryBackgroundGreen),UIColor.appColor(.categoryBackgroundGreen)]
+    var category = [String]()
     
     @IBOutlet weak var userContentImage: UIImageView!
     
@@ -34,7 +32,11 @@ class EcoTopicCVC: UICollectionViewCell {
         userImage.image = nil
         nicName.text = nil
     }
-
+    func getData(data : [String]){
+        self.category = data
+        
+        collectionView.reloadData()
+    }
 }
 
 // MARK: - CollectionView Configure
@@ -75,20 +77,21 @@ extension EcoTopicCVC {
 }
 extension EcoTopicCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EcoTopicCollectionViewCellCVC.identifier, for: indexPath) as! EcoTopicCollectionViewCellCVC
-        cell.categoryLabel.text = cartegoryModels[indexPath.row]
-        cell.categoryLabel.backgroundColor = cartegoryBackColors[indexPath.row]
-        cell.categoryLabel.textColor = cartegoryFontColors[indexPath.row]
+        cell.categoryLabel.text = category[indexPath.row]
+        cell.categoryLabel.setLabelConfigure(label: cell.categoryLabel, styleShotCategoryType: category[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cartegoryModels[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
+        return CGSize(width: category[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
 }
 struct EcoTopicCVCViewModel {
     let userContentImage : String

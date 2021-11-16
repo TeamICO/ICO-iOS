@@ -10,9 +10,7 @@ import UIKit
 class ResponsiveCVC: UICollectionViewCell {
     static let identifier = "ResponsiveCVC"
         
-    let cartegoryModels = ["유기농", "클린뷰티","ㅁㄴㅇㅁ"]
-    let cartegoryFontColors : [UIColor] = [UIColor.appColor(.categoryFontRed),UIColor.appColor(.categoryFontGreen),UIColor.appColor(.categoryFontGreen)]
-    let cartegoryBackColors : [UIColor] = [UIColor.appColor(.categoryBackgroundRed),UIColor.appColor(.categoryBackgroundGreen),UIColor.appColor(.categoryBackgroundGreen)]
+    var category = [String]()
     
     
     @IBOutlet weak var userContentImage: UIImageView!
@@ -47,7 +45,11 @@ class ResponsiveCVC: UICollectionViewCell {
         self.productNameLabel.text = nil
         self.userRatingLabel.text = nil
     }
-
+    func getData(data : [String]){
+        self.category = data
+        
+        collectionView.reloadData()
+    }
     func setUserSatisfactionStack(){
         for _ in 0...4{
             let stack = UserRatingsSV()
@@ -105,20 +107,21 @@ extension ResponsiveCVC {
 }
 extension ResponsiveCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResponsiveCollectionViewCellCVC.identifier, for: indexPath) as! ResponsiveCollectionViewCellCVC
-        cell.categoryLabel.text = cartegoryModels[indexPath.row]
-        cell.categoryLabel.backgroundColor = cartegoryBackColors[indexPath.row]
-        cell.categoryLabel.textColor = cartegoryFontColors[indexPath.row]
+        cell.categoryLabel.text = category[indexPath.row]
+        cell.categoryLabel.setLabelConfigure(label: cell.categoryLabel, styleShotCategoryType: category[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cartegoryModels[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
+        return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
 }
 struct ResponsiveCVCViewModel {
     let userContentImage : String

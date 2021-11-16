@@ -10,10 +10,15 @@ import UIKit
 class ResponsiveCollectionViewCellCVC: UICollectionViewCell {
     static let identifier = "ResponsiveCollectionViewCellCVC"
     @IBOutlet weak var categoryLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         categoryLabel.layer.cornerRadius = 8
         categoryLabel.layer.masksToBounds = true
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        categoryLabel.text = nil
     }
 
 }

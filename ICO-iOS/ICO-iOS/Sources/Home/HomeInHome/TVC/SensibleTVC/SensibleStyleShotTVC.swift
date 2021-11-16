@@ -46,6 +46,7 @@ extension SensibleStyleShotTVC : UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SensibleCVC.identifier, for: indexPath) as! SensibleCVC
+        cell.getData(data: senseStyleShotModel[indexPath.row].category)
         cell.configure(with: SensibleCVCViewModel(with: senseStyleShotModel[indexPath.row]))
         return cell
     }
