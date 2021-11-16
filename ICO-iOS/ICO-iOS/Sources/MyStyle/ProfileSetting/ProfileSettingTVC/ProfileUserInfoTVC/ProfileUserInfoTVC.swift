@@ -6,9 +6,15 @@
 //
 
 import UIKit
+protocol ProfileUserInfoTVCDelegate: AnyObject {
+    func didTapUserImageView()
+}
 
 class ProfileUserInfoTVC: UITableViewCell {
     static let identifier = "ProfileUserInfoTVC"
+    
+    weak var delegate : ProfileUserInfoTVCDelegate?
+    
     @IBOutlet weak var userImageView: UIView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nicNameTextField: UITextField!
@@ -17,10 +23,8 @@ class ProfileUserInfoTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nicNameTextField.leftViewMode = .always
-        nicNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
-        nicNameTextField.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.appColor(.feedbackTextColor)])
-        nicNameTextField.delegate = self
+        textfieldConfigure()
+        setUserImageViewTapGesture()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,7 +32,22 @@ class ProfileUserInfoTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-   
+    
+    func textfieldConfigure(){
+        nicNameTextField.leftViewMode = .always
+        nicNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+        nicNameTextField.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.appColor(.feedbackTextColor)])
+        nicNameTextField.delegate = self
+    }
+    func setUserImageViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapUserImageView))
+        viewTap.cancelsTouchesInView = false
+        userImageView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapUserImageView(){
+        delegate?.didTapUserImageView()
+    }
+
     @IBAction func didTapRemoveNicNameButton(_ sender: Any) {
         nicNameTextField.text = ""
     }

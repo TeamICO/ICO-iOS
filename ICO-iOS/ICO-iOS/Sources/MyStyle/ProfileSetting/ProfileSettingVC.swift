@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileSettingVC: UIViewController {
     // MARK: - Properties
+    private var selectedContentImage : UIImage?
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -74,7 +75,7 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
         case 0 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserInfoTVC.identifier, for: indexPath) as! ProfileUserInfoTVC
             cell.selectionStyle = .none
-           
+            cell.delegate = self
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserIntroductionTVC.identifier, for: indexPath) as! ProfileUserIntroductionTVC
@@ -137,3 +138,30 @@ extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
     
     
 }
+//MARK : Iamge PIcker
+extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
+    func didTapUserImageView() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+}
+//MARK : Iamge PIcker Delegate
+extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[.editedImage] as? UIImage else{
+            return
+        }
+        self.selectedContentImage = image
+       
+    }
+    
+    
+}
+
