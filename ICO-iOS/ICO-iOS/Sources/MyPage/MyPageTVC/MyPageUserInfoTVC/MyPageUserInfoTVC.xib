@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_styleshot_sample03" translatesAutoresizingMaskIntoConstraints="NO" id="Cns-dp-ty8">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cns-dp-ty8">
                         <rect key="frame" x="16" y="16" width="54" height="54"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="54" id="3qO-MA-jN6"/>
@@ -33,7 +33,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g9-Ge-2Hx">
                         <rect key="frame" x="80" y="22" width="40" height="40"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-ico01" translatesAutoresizingMaskIntoConstraints="NO" id="imF-mW-tlq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imF-mW-tlq">
                                 <rect key="frame" x="8" y="8" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Kd3-sE-eje"/>
@@ -54,8 +54,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이경서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-ve-9k6">
-                        <rect key="frame" x="128" y="28" width="52" height="28"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-ve-9k6">
+                        <rect key="frame" x="128" y="28" width="40.5" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="4RK-CB-NYQ"/>
                         </constraints>
@@ -99,8 +99,8 @@
                                     <constraint firstAttribute="width" constant="50" id="vWS-j6-q3o"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나무를 지킬 수 있는 행동을 5번 실천했어요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crK-pG-MWZ">
-                                <rect key="frame" x="63" y="51.5" width="170" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crK-pG-MWZ">
+                                <rect key="frame" x="63" y="51.5" width="175" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UjR-sS-kib"/>
                                 </constraints>
@@ -108,8 +108,8 @@
                                 <color key="textColor" red="0.2627450980392157" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지속가능한 지구를 위한 실천을 위해 2번 노력하였어요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ks3-YA-AzP">
-                                <rect key="frame" x="63" y="100.5" width="170" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ks3-YA-AzP">
+                                <rect key="frame" x="63" y="100.5" width="175" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Bj4-k6-BaJ"/>
                                 </constraints>
@@ -117,8 +117,8 @@
                                 <color key="textColor" red="0.26274509800000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나와 환경 모두를 지킬 수 있는 행동을 6번째 지속하고 있어요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylU-VN-NJr">
-                                <rect key="frame" x="63" y="149.5" width="170" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylU-VN-NJr">
+                                <rect key="frame" x="63" y="149.5" width="175" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sgc-SI-LzE"/>
                                 </constraints>
@@ -152,10 +152,10 @@
                             <constraint firstItem="ylU-VN-NJr" firstAttribute="leading" secondItem="yzB-3C-Wk9" secondAttribute="trailing" constant="3" id="Uee-bU-E37"/>
                             <constraint firstItem="xAN-Yk-bu5" firstAttribute="top" secondItem="6Tq-VY-UmU" secondAttribute="bottom" constant="3" id="Z3F-9n-Wvy"/>
                             <constraint firstItem="RgR-oO-6E4" firstAttribute="top" secondItem="4Nb-Ti-jwd" secondAttribute="top" constant="-35" id="c7V-1N-B1z"/>
-                            <constraint firstAttribute="trailing" secondItem="crK-pG-MWZ" secondAttribute="trailing" constant="55" id="eGq-Kt-6uF"/>
+                            <constraint firstAttribute="trailing" secondItem="crK-pG-MWZ" secondAttribute="trailing" constant="50" id="eGq-Kt-6uF"/>
                             <constraint firstItem="ylU-VN-NJr" firstAttribute="top" secondItem="ks3-YA-AzP" secondAttribute="bottom" constant="9" id="iMT-P5-W7R"/>
-                            <constraint firstAttribute="trailing" secondItem="ylU-VN-NJr" secondAttribute="trailing" constant="55" id="iog-HW-hPv"/>
-                            <constraint firstAttribute="trailing" secondItem="ks3-YA-AzP" secondAttribute="trailing" constant="55" id="ppd-Aj-R5t"/>
+                            <constraint firstAttribute="trailing" secondItem="ylU-VN-NJr" secondAttribute="trailing" constant="50" id="iog-HW-hPv"/>
+                            <constraint firstAttribute="trailing" secondItem="ks3-YA-AzP" secondAttribute="trailing" constant="50" id="ppd-Aj-R5t"/>
                             <constraint firstItem="PO8-dw-P8k" firstAttribute="leading" secondItem="SUO-hk-mvI" secondAttribute="trailing" constant="3" id="rSI-xA-QcZ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -200,7 +200,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" red="0.95294117647058818" green="0.97254901960784312" blue="0.96862745098039216" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="earthLabel" destination="ks3-YA-AzP" id="igR-8W-bW2"/>
                 <outlet property="secondUserNameLabel" destination="SUO-hk-mvI" id="3OR-7w-LzV"/>
+                <outlet property="togetherLabel" destination="ylU-VN-NJr" id="Ov1-cF-i0Y"/>
+                <outlet property="treeLabel" destination="crK-pG-MWZ" id="oAZ-uA-Ce1"/>
                 <outlet property="userIcoLevelImage" destination="imF-mW-tlq" id="9c9-gt-lqc"/>
                 <outlet property="userImage" destination="Cns-dp-ty8" id="h2D-FN-i2L"/>
                 <outlet property="userNameLabel" destination="E6l-ve-9k6" id="9Jg-Yw-4aS"/>
@@ -213,8 +216,6 @@
         <image name="emoji-mypage-earth" width="165" height="165"/>
         <image name="emoji-mypage-tree" width="165" height="165"/>
         <image name="illust-character" width="400" height="400"/>
-        <image name="illust-ico01" width="240" height="240"/>
-        <image name="img_styleshot_sample03" width="1440" height="1440"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

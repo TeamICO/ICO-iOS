@@ -12,6 +12,8 @@ class MypageMyRecentStyleShotTVC: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var myPageStyleshotModel = [MyPageStyleshot]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionViewConfigure()
@@ -21,6 +23,10 @@ class MypageMyRecentStyleShotTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func getData(data : [MyPageStyleshot]){
+        self.myPageStyleshotModel = data
+        collectionView.reloadData()
     }
     
 }
@@ -38,12 +44,12 @@ extension MypageMyRecentStyleShotTVC {
 }
 extension MypageMyRecentStyleShotTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return myPageStyleshotModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MypageMyRecentStyleShotCVC.identifier, for: indexPath) as! MypageMyRecentStyleShotCVC
-       
+        cell.setImage(url: myPageStyleshotModel[indexPath.row].imageURL)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
