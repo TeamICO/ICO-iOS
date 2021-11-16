@@ -79,6 +79,8 @@
 		E9461394274380B300A5F7C2 /* MypageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9461393274380B300A5F7C2 /* MypageManager.swift */; };
 		E9461396274380BD00A5F7C2 /* MypageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9461395274380BD00A5F7C2 /* MypageResponse.swift */; };
 		E946139A27438E0A00A5F7C2 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139927438E0A00A5F7C2 /* UILabel.swift */; };
+		E946139D2743B00100A5F7C2 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139C2743B00100A5F7C2 /* FeedbackManager.swift */; };
+		E946139F2743B07000A5F7C2 /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139E2743B07000A5F7C2 /* FeedbackResponse.swift */; };
 		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
 		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
@@ -259,6 +261,8 @@
 		E9461393274380B300A5F7C2 /* MypageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageManager.swift; sourceTree = "<group>"; };
 		E9461395274380BD00A5F7C2 /* MypageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageResponse.swift; sourceTree = "<group>"; };
 		E946139927438E0A00A5F7C2 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		E946139C2743B00100A5F7C2 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
+		E946139E2743B07000A5F7C2 /* FeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
 		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
 		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
@@ -599,6 +603,15 @@
 			children = (
 				E9461393274380B300A5F7C2 /* MypageManager.swift */,
 				E9461395274380BD00A5F7C2 /* MypageResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E946139B2743AFEA00A5F7C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E946139C2743B00100A5F7C2 /* FeedbackManager.swift */,
+				E946139E2743B07000A5F7C2 /* FeedbackResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1176,6 +1189,7 @@
 			children = (
 				E9E49921273BAC090001ACFB /* FeedbackVC.swift */,
 				E9E49923273BAC140001ACFB /* FeedbackSB.storyboard */,
+				E946139B2743AFEA00A5F7C2 /* Entity */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -1426,6 +1440,7 @@
 				714F32BE273BE840007324BC /* SurveyVC.swift in Sources */,
 				E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
+				E946139F2743B07000A5F7C2 /* FeedbackResponse.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
 				E9378D9E2738098700C589A1 /* RecentSearchWordsTVC.swift in Sources */,
@@ -1496,6 +1511,7 @@
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
 				E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */,
 				E9E4993D273BD5530001ACFB /* SettingAlarmTVC.swift in Sources */,
+				E946139D2743B00100A5F7C2 /* FeedbackManager.swift in Sources */,
 				E9378D8A2738017400C589A1 /* EcoTopicTVC.swift in Sources */,
 				E9AF83F0273B610F00D77D5F /* SearchResultsCVC.swift in Sources */,
 				E9161D1C273D0134009A9CA7 /* LikeCVC.swift in Sources */,

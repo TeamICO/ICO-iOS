@@ -15,6 +15,10 @@ class TopBannerCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bannerImage.image = nil
+    }
     func setImage(url : String){
         DispatchQueue.global().async {
             guard let url = URL(string: url)  else{

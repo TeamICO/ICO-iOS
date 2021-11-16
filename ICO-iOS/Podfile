@@ -13,4 +13,6 @@ target 'ICO-iOS' do
   pod 'Kingfisher', '~> 7.0'
   pod 'SnapKit'
 
+  pod 'KakaoSDK'
+  pod 'naveridlogin-sdk-ios'
 end

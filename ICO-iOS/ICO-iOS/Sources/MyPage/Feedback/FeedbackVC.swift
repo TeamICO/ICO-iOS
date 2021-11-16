@@ -83,6 +83,16 @@ class FeedbackVC: UIViewController {
     }
     
     @IBAction func didTapFeedbackButton(_ sender: Any) {
+        guard let feedback = self.contentTextView.text, feedback.isExists else{
+            return
+        }
+        FeedbackManager.shared.sendFeedback(feedbackText: feedback) { success in
+            guard success else{
+                return
+            }
+            self.presentAlert(title: "소중한 의견 보내주셔서 감사드립니다.")
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 // MARK: - TextView Delegate
