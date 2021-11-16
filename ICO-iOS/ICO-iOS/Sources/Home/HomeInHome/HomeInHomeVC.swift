@@ -9,6 +9,7 @@ import UIKit
 
 class HomeInHomeVC: BaseViewController {
     // MARK: - Properties
+
     @IBOutlet weak var tableView: UITableView!
     
     private var topBannerModel = [HomeInHomeTopBanner]()
@@ -30,7 +31,10 @@ class HomeInHomeVC: BaseViewController {
 // MARK: - FetchData
 extension HomeInHomeVC{
     func fetchData(){
-        HomeInHomeManager.shared.getHomeInHomeData { [weak self] response in
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        HomeInHomeManager.shared.getHomeInHomeData(jwtToken: jwtToken) { [weak self] response in
             guard let topBanner = response.topBanner,
                   let senseStyleShot = response.senseStyleshot,
                   let brandRco = response.brand,

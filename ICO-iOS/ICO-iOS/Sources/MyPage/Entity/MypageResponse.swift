@@ -17,8 +17,8 @@ struct MypageResponse: Codable {
 
 // MARK: - Result
 struct MypageResult: Codable {
-    let name, nickname: String
-    let profileURL: String
+    let name, nickname: String?
+    let profileURL: String?
     let level, tree, earth, together: Int
     let marketingAgree, styleshotAgree: Int
     let styleshot: [MyPageStyleshot]

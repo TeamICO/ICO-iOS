@@ -83,6 +83,9 @@
 		E946139A27438E0A00A5F7C2 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139927438E0A00A5F7C2 /* UILabel.swift */; };
 		E946139D2743B00100A5F7C2 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139C2743B00100A5F7C2 /* FeedbackManager.swift */; };
 		E946139F2743B07000A5F7C2 /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139E2743B07000A5F7C2 /* FeedbackResponse.swift */; };
+		E94613A22743B4AC00A5F7C2 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613A12743B4AC00A5F7C2 /* LoginManager.swift */; };
+		E94613A42743B7A700A5F7C2 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613A32743B7A700A5F7C2 /* CommonResponse.swift */; };
+		E94613A62743B7CF00A5F7C2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613A52743B7CF00A5F7C2 /* LoginResponse.swift */; };
 		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
 		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
@@ -267,6 +270,9 @@
 		E946139927438E0A00A5F7C2 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		E946139C2743B00100A5F7C2 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		E946139E2743B07000A5F7C2 /* FeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
+		E94613A12743B4AC00A5F7C2 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		E94613A32743B7A700A5F7C2 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
+		E94613A52743B7CF00A5F7C2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
 		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
@@ -625,6 +631,15 @@
 			children = (
 				E946139C2743B00100A5F7C2 /* FeedbackManager.swift */,
 				E946139E2743B07000A5F7C2 /* FeedbackResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E94613A02743B49800A5F7C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E94613A12743B4AC00A5F7C2 /* LoginManager.swift */,
+				E94613A52743B7CF00A5F7C2 /* LoginResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1015,6 +1030,7 @@
 			children = (
 				E9CAF1AC273167F3008F749B /* IndicatorView.swift */,
 				E99A3B70274147410073ED09 /* EcoKeyWordType.swift */,
+				E94613A32743B7A700A5F7C2 /* CommonResponse.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -1024,6 +1040,7 @@
 			children = (
 				E943BC592738F4E000619C74 /* LoginVC.swift */,
 				E943BC5B2738F58100619C74 /* LoginSB.storyboard */,
+				E94613A02743B49800A5F7C2 /* Entity */,
 				E943BC5D2738FB4100619C74 /* LoginCVC */,
 			);
 			path = LoginVC;
@@ -1441,6 +1458,7 @@
 				E946139127435EAE00A5F7C2 /* HomeInHomeResponse.swift in Sources */,
 				E9CAF1B32731697A008F749B /* String.swift in Sources */,
 				E9CAF1C727316C48008F749B /* HomeInHomeVC.swift in Sources */,
+				E94613A22743B4AC00A5F7C2 /* LoginManager.swift in Sources */,
 				E9E4992C273BC83F0001ACFB /* IcoLevelTVC.swift in Sources */,
 				E9944BCB2735550A00DB9279 /* BasePageControl.swift in Sources */,
 				71A9688D273C283C003AF0A9 /* KeywordCVC.swift in Sources */,
@@ -1456,6 +1474,7 @@
 				E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */,
 				E9CAF1BD273169A6008F749B /* UINavigationBar.swift in Sources */,
 				E946139F2743B07000A5F7C2 /* FeedbackResponse.swift in Sources */,
+				E94613A42743B7A700A5F7C2 /* CommonResponse.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
 				E9378D9E2738098700C589A1 /* RecentSearchWordsTVC.swift in Sources */,
@@ -1471,6 +1490,7 @@
 				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
 				E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
+				E94613A62743B7CF00A5F7C2 /* LoginResponse.swift in Sources */,
 				714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */,
 				E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,

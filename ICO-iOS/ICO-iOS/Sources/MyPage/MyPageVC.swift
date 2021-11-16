@@ -6,10 +6,11 @@
 //
 
 import UIKit
-
+import KakaoSDKAuth
+import NaverThirdPartyLogin
 class MyPageVC: BaseViewController {
     // MARK: - Properties
-    
+    let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     private var mypageModel : MypageResult?
     
     private var featureModels = [
@@ -48,7 +49,10 @@ class MyPageVC: BaseViewController {
 // MARK: - FetchData
 extension MyPageVC{
     func fetchData(){
-        MypageManager.shared.getMypageData { [weak self] response in
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        MypageManager.shared.getMypageData(jwtToken : jwtToken) { [weak self] response in
             guard let response = response else{
                 return
             }
@@ -145,15 +149,34 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             // 로그아웃
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
-            let action = UIAlertAction(title: "로그아웃", style: .default, handler:{_ in
+            let action = UIAlertAction(title: "로그아웃", style: .default, handler:{ [weak self]_ in
                 
                 UserDefaults.standard.set(nil, forKey: "jwtToken")
-                let loginStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
-                let loginVC = loginStoryboard.instantiateViewController(identifier: "LoginVC")
-                loginVC.navigationItem.largeTitleDisplayMode = .never
-                let vc = UINavigationController(rootViewController: loginVC)
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
+                if ((self?.loginInstance?.isValidAccessTokenExpireTimeNow()) != nil){
+                    self?.loginInstance?.requestDeleteToken()
+                    let loginStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
+                    let loginVC = loginStoryboard.instantiateViewController(identifier: "LoginVC")
+                    loginVC.navigationItem.largeTitleDisplayMode = .never
+                    let vc = UINavigationController(rootViewController: loginVC)
+                    vc.modalPresentationStyle = .fullScreen
+                    self?.present(vc, animated: true, completion: nil)
+                }
+                if AuthApi.hasToken(){
+                    LoginManager.shared.signOut { success in
+                        guard success else{
+                            return
+                        }
+                        DispatchQueue.main.async {
+                            let loginStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)
+                            let loginVC = loginStoryboard.instantiateViewController(identifier: "LoginVC")
+                            loginVC.navigationItem.largeTitleDisplayMode = .never
+                            let vc = UINavigationController(rootViewController: loginVC)
+                            vc.modalPresentationStyle = .fullScreen
+                            self?.present(vc, animated: true, completion: nil)
+                        }
+                    }
+                }
+          
             })
             action.setValue(UIColor.appColor(.alertRed), forKey: "titleTextColor")
             actionSheet.addAction(action)

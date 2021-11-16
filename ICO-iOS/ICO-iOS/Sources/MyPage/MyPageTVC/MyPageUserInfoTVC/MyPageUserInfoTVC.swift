@@ -47,17 +47,18 @@ class MyPageUserInfoTVC: UITableViewCell {
     
     func configure(with viewModel: MyPageUserInfoTVCViewModel){ 
         self.userNameLabel.text = viewModel.userName
-        var userName = viewModel.userName
-        userName.removeFirst()
-        self.secondUserNameLabel.text = userName
+ 
         self.treeLabel.text = "나무를 지킬 수 있는 행동을 \(viewModel.tree)번 실천했어요."
         self.earthLabel.text = "지속가능한 지구를 위한 실천을 위해 \(viewModel.earth)번 노력하였어요."
         self.togetherLabel.text = "나와 환경 모두를 지킬 수 있는 행동을 \(viewModel.together)번째 지속하고 있어요."
         self.userIcoLevelImage.image = UIImage(named: icolevleImages[viewModel.userIcoLevel-1])
         
-        guard let url = URL(string: viewModel.userImage) else{
+        guard let userimage = viewModel.userImage,let userName = viewModel.userName, let url = URL(string: userimage) else{
             return
         }
+        var name = userName
+        name.removeFirst()
+        self.secondUserNameLabel.text = name
         DispatchQueue.global().async {
                 let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
                     guard let data = data else{
@@ -81,8 +82,8 @@ class MyPageUserInfoTVC: UITableViewCell {
 }
 struct MyPageUserInfoTVCViewModel {
     let userIcoLevel : Int
-    let userImage : String
-    let userName : String
+    let userImage : String?
+    let userName : String?
     let tree : Int
     let earth : Int
     let together : Int
