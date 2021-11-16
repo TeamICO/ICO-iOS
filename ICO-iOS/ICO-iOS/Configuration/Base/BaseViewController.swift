@@ -8,6 +8,8 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    let jwtToken = UserDefaults.standard.string(forKey: "jwtToken")
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true

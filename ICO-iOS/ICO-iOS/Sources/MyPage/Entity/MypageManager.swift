@@ -12,13 +12,13 @@ final class MypageManager{
     private init() {}
     
     
-    func getMypageData( completion: @escaping (MypageResult?)->Void) {
+    func getMypageData(jwtToken: String, completion: @escaping (MypageResult?)->Void) {
 
         let url = "https://dev.chuckwagon.shop/app/mypage"
 
    
         let header : HTTPHeaders = [
-            "X-ACCESS-TOKEN" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoyLCJpYXQiOjE2MzYzODYwMDQsImV4cCI6MTY2NzkyMjAwNCwic3ViIjoidXNlckluZm8ifQ.0MwJnTpc2qf5ixJZ6MQPIE_gGqHGuMv-HAbD336-Ba4"
+            "X-ACCESS-TOKEN" : jwtToken
         ]
 
 

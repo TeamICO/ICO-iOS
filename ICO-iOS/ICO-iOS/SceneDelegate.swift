@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import KakaoSDKAuth
+import NaverThirdPartyLogin
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -14,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let jwtToken = UserDefaults.standard.string(forKey: "jwtToken")
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
+  
         //윈도우 씬을 가져온다.
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
@@ -43,7 +44,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //윈도우 씬 설정
         self.window = window
     }
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+       if let url = URLContexts.first?.url {
+         if (AuthApi.isKakaoTalkLoginUrl(url)) {
+           _ = AuthController.handleOpenUrl(url: url)
+         }
+       }
+        NaverThirdPartyLoginConnection
+          .getSharedInstance()?
+          .receiveAccessToken(URLContexts.first?.url)
 
+     }
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

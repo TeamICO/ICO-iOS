@@ -7,12 +7,17 @@
 
 import UIKit
 import AuthenticationServices
-
+import KakaoSDKAuth
+import KakaoSDKUser
+import NaverThirdPartyLogin
+import Alamofire
 @available(iOS 13.0,*)
 class LoginVC: UIViewController {
     var nowPage = 0
     
     // MARK: - Properties
+    let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    
     private let titleLabels = [
         "당신의\n에코 라이프스타일을\n공유해보세요.",
         "다양한 친환경 제품의\n솔직한 후기를\n찾아볼 수 있어요.",
@@ -124,23 +129,96 @@ extension LoginVC : UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     }
     
 }
-//MARK : 카카오 뷰
+//MARK : 네이버
 extension LoginVC {
     func setNaverViewTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapNaverView))
         viewTap.cancelsTouchesInView = false
         naverLoignView.addGestureRecognizer(viewTap)
+      
     }
     @objc func didTapNaverView(){
-        print("네이버")
-        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-        self.navigationController?.pushViewController(surveyVC, animated: true)
+        loginInstance?.delegate = self
+        loginInstance?.requestThirdPartyLogin()
+    }
+    private func getNaverInfo() {
+        
+        guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else{
+            return
+        }
+        
+           if !isValidAccessToken {
+               
+             return
+           }
+           
+           guard let tokenType = loginInstance?.tokenType else { return }
+           guard let accessToken = loginInstance?.accessToken else { return }
+            LoginManager.shared.registerID(snsToken: accessToken, snsType: "naver") { response in
+                      guard let jwt = response?.jwt else{
+                          return
+                      }
+                      UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                        DispatchQueue.main.async {
+                            let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                            guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                            self.navigationController?.pushViewController(surveyVC, animated: true)
 
+                
+                            
+                        }
+                  }
+           let urlStr = "https://openapi.naver.com/v1/nid/me"
+           let url = URL(string: urlStr)!
+        
+           let authorization = "\(tokenType) \(accessToken)"
+           
+           let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
+           
+            req.responseJSON { response in
+            
+             guard let result = response.value as? [String: Any] else { return }
+             guard let object = result["response"] as? [String: Any] else { return }
+             guard let name = object["name"] as? String else { return }
+             guard let email = object["email"] as? String else { return }
+             guard let nickname = object["nickname"] as? String else { return }
+             
+            print(result)
+           }
     }
 }
 
-//MARK : 네이버 뷰
+extension LoginVC: NaverThirdPartyLoginConnectionDelegate {
+  // 로그인 버튼을 눌렀을 경우 열게 될 브라우저
+  func oauth20ConnectionDidOpenInAppBrowser(forOAuth request: URLRequest!) {
+//     let naverSignInVC = NLoginThirdPartyOAuth20InAppBrowserViewController(request: request)!
+//     naverSignInVC.parentOrientation = UIInterfaceOrientation(rawValue: UIDevice.current.orientation.rawValue)!
+//     present(naverSignInVC, animated: false, completion: nil)
+  }
+  
+  // 로그인에 성공했을 경우 호출
+  func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+    print("[Success] : Success Naver Login")
+    getNaverInfo()
+  }
+  
+  // 접근 토큰 갱신
+  func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+    
+  }
+  
+  // 로그아웃 할 경우 호출(토큰 삭제)
+  func oauth20ConnectionDidFinishDeleteToken() {
+    loginInstance?.requestDeleteToken()
+  }
+  
+  // 모든 Error
+  func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+    print("[Error] :", error.localizedDescription)
+  }
+}
+
+//MARK : 카카오
 extension LoginVC {
     func setKakaoViewTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapKakaoView))
@@ -148,11 +226,40 @@ extension LoginVC {
         kakaoLoginView.addGestureRecognizer(viewTap)
     }
     @objc func didTapKakaoView(){
-        print("카카오")
-        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-        self.navigationController?.pushViewController(surveyVC, animated: true)
+        
+        LoginManager.shared.KakaoSignIn { response in
+            LoginManager.shared.registerID(snsToken: response, snsType: "kakao") { response in
+                guard let jwt = response?.jwt else{
+                    return
+                }
+                UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                print(jwt)
 
+            }
+            self.setUserInfo()
+        }
+        
+        
+       
+    }
+    func setUserInfo(){
+        UserApi.shared.me { user, error in
+            guard let user = user, error == nil else{
+                print("카카오톡 user 실패")
+                return
+            }
+            
+            let email = user.kakaoAccount?.email
+            let nickname = user.kakaoAccount?.profile?.nickname
+            DispatchQueue.main.async {
+                let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                self.navigationController?.pushViewController(surveyVC, animated: true)
+
+    
+                
+            }
+        }
     }
 }
 
@@ -186,11 +293,18 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
                 print("identityToken: \(identityToken)")
                 print("authString: \(authString)")
                 print("tokenString: \(tokenString)")
-                
+                LoginManager.shared.registerID(snsToken: tokenString, snsType: "apple") { response in
+                    guard let jwt = response?.jwt else{
+                        return
+                    }
+                    UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                    print(jwt)
+                }
             }
             print("useridentifier: \(userIdentifier)")
             print("fullName: \(fullName)")
             print("email: \(email)")
+           
         case let passwordCredential as ASPasswordCredential:
             // Sign in using an existing iCloud Keychain credential.
             let username = passwordCredential.user
