@@ -86,6 +86,8 @@
 		E94613A22743B4AC00A5F7C2 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613A12743B4AC00A5F7C2 /* LoginManager.swift */; };
 		E94613A42743B7A700A5F7C2 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613A32743B7A700A5F7C2 /* CommonResponse.swift */; };
 		E94613A62743B7CF00A5F7C2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613A52743B7CF00A5F7C2 /* LoginResponse.swift */; };
+		E94613A92743DDD200A5F7C2 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613A82743DDD200A5F7C2 /* ProfileManager.swift */; };
+		E94613AB2743DDDF00A5F7C2 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94613AA2743DDDF00A5F7C2 /* ProfileResponse.swift */; };
 		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
 		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
@@ -273,6 +275,8 @@
 		E94613A12743B4AC00A5F7C2 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		E94613A32743B7A700A5F7C2 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
 		E94613A52743B7CF00A5F7C2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		E94613A82743DDD200A5F7C2 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		E94613AA2743DDDF00A5F7C2 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
 		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
 		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
@@ -396,6 +400,7 @@
 			children = (
 				714F32B3273BE775007324BC /* ProfileSettingVC.swift */,
 				714F32B5273BE788007324BC /* ProfileSetting.storyboard */,
+				E94613A72743D6B100A5F7C2 /* Entity */,
 				E97D4367273D2B4700BB374F /* ProfileSettingTVC */,
 			);
 			path = ProfileSetting;
@@ -640,6 +645,15 @@
 			children = (
 				E94613A12743B4AC00A5F7C2 /* LoginManager.swift */,
 				E94613A52743B7CF00A5F7C2 /* LoginResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E94613A72743D6B100A5F7C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E94613A82743DDD200A5F7C2 /* ProfileManager.swift */,
+				E94613AA2743DDDF00A5F7C2 /* ProfileResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1482,6 +1496,7 @@
 				E9CAF19827316404008F749B /* MyPageVC.swift in Sources */,
 				E998C249273275D500E1F8D0 /* BasePaddingLabel.swift in Sources */,
 				E9E49920273BAC020001ACFB /* SettingAlarmVC.swift in Sources */,
+				E94613A92743DDD200A5F7C2 /* ProfileManager.swift in Sources */,
 				E998C25627328A8700E1F8D0 /* BrandCVC.swift in Sources */,
 				E9CAF194273163EC008F749B /* HomeVC.swift in Sources */,
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
@@ -1496,6 +1511,7 @@
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
 				71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */,
+				E94613AB2743DDDF00A5F7C2 /* ProfileResponse.swift in Sources */,
 				E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */,
 				E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */,
 				717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */,
