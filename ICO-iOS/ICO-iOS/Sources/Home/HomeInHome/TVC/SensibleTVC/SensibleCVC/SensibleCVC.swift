@@ -14,7 +14,7 @@ class SensibleCVC: UICollectionViewCell {
     let cartegoryFontColors : [UIColor] = [UIColor.appColor(.categoryFontRed),UIColor.appColor(.categoryFontGreen)]
     let cartegoryBackColors : [UIColor] = [UIColor.appColor(.categoryBackgroundRed),UIColor.appColor(.categoryBackgroundGreen)]
     
-    @IBOutlet weak var userStyleShotImage: UIImageView!
+    
     @IBOutlet weak var styleShotImage: UIImageView!
     
     @IBOutlet weak var userId: UILabel!
@@ -35,8 +35,37 @@ class SensibleCVC: UICollectionViewCell {
         collectionViewConfigure()
     }
  
-  
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        styleShotImage.image = nil
+        userImage.image = nil
+        userId.text = nil
+    }
     
+    func configure(with viewModel : SensibleCVCViewModel){
+        self.userId.text = viewModel.nicName
+
+        guard let styleShotUrl = URL(string: viewModel.styleShotImage), let userImageUrl = URL(string: viewModel.userImage) else{
+                return
+            }
+        setImage(url: styleShotUrl, imageV: self.styleShotImage)
+        setImage(url: userImageUrl, imageV: self.userImage)
+        
+    }
+    func setImage(url : URL,imageV : UIImageView){
+        DispatchQueue.global().async {
+                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+                    guard let data = data else{
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        imageV.image = UIImage(data: data)
+                    }
+                }
+                task.resume()
+        }
+    }
 }
 // MARK: - CollectionView Configure
 extension SensibleCVC {
@@ -65,4 +94,15 @@ extension SensibleCVC : UICollectionViewDelegate, UICollectionViewDataSource,UIC
         return CGSize(width: cartegoryModels[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
     }
     
+}
+
+struct SensibleCVCViewModel {
+    let styleShotImage : String
+    let userImage : String
+    let nicName : String
+    init(with model : HomeInHomeSenseStyleshot){
+        self.styleShotImage = model.imageURL
+        self.userImage = model.profileURL
+        self.nicName = model.nickname
+    }
 }

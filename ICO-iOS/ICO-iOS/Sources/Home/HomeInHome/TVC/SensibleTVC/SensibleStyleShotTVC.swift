@@ -7,6 +7,7 @@ import UIKit
 
 class SensibleStyleShotTVC: UITableViewCell {
     static let identifier = "SensibleStyleShotTVC"
+    private var senseStyleShotModel = [HomeInHomeSenseStyleshot]()
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,7 +21,11 @@ class SensibleStyleShotTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    func getData(data : [HomeInHomeSenseStyleshot]){
+        self.senseStyleShotModel = data
+        
+        collectionView.reloadData()
+    }
 }
 // MARK: - CollectionView Configure
 extension SensibleStyleShotTVC {
@@ -36,12 +41,12 @@ extension SensibleStyleShotTVC {
 }
 extension SensibleStyleShotTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return senseStyleShotModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SensibleCVC.identifier, for: indexPath) as! SensibleCVC
-       
+        cell.configure(with: SensibleCVCViewModel(with: senseStyleShotModel[indexPath.row]))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

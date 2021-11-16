@@ -74,6 +74,8 @@
 		E94613802743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946137E2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib */; };
 		E946138327435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946138127435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift */; };
 		E946138427435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946138227435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib */; };
+		E946138F27435E7C00A5F7C2 /* HomeInHomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946138E27435E7C00A5F7C2 /* HomeInHomeManager.swift */; };
+		E946139127435EAE00A5F7C2 /* HomeInHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139027435EAE00A5F7C2 /* HomeInHomeResponse.swift */; };
 		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
 		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
@@ -249,6 +251,8 @@
 		E946137E2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponsiveCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E946138127435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoTopicCollectionViewCellCVC.swift; sourceTree = "<group>"; };
 		E946138227435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EcoTopicCollectionViewCellCVC.xib; sourceTree = "<group>"; };
+		E946138E27435E7C00A5F7C2 /* HomeInHomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInHomeManager.swift; sourceTree = "<group>"; };
+		E946139027435EAE00A5F7C2 /* HomeInHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInHomeResponse.swift; sourceTree = "<group>"; };
 		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
 		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
@@ -573,6 +577,15 @@
 				E943BC5F2738FB6400619C74 /* LoginCVC.xib */,
 			);
 			path = LoginCVC;
+			sourceTree = "<group>";
+		};
+		E946138527435CCB00A5F7C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E946138E27435E7C00A5F7C2 /* HomeInHomeManager.swift */,
+				E946139027435EAE00A5F7C2 /* HomeInHomeResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		E951CE67273A6B98002799D6 /* RecentCVC */ = {
@@ -989,6 +1002,7 @@
 				E9CAF1C427316C39008F749B /* HomeInHomeSB.storyboard */,
 				E9CAF1C627316C47008F749B /* HomeInHomeVC.swift */,
 				E9CAF1CE27322B98008F749B /* TVC */,
+				E946138527435CCB00A5F7C2 /* Entity */,
 			);
 			path = HomeInHome;
 			sourceTree = "<group>";
@@ -1378,6 +1392,7 @@
 				E9CAF1772731635B008F749B /* ViewController.swift in Sources */,
 				E9AF8403273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift in Sources */,
 				E9CAF1B727316987008F749B /* UIButton.swift in Sources */,
+				E946139127435EAE00A5F7C2 /* HomeInHomeResponse.swift in Sources */,
 				E9CAF1B32731697A008F749B /* String.swift in Sources */,
 				E9CAF1C727316C48008F749B /* HomeInHomeVC.swift in Sources */,
 				E9E4992C273BC83F0001ACFB /* IcoLevelTVC.swift in Sources */,
@@ -1427,6 +1442,7 @@
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
 				E9AF8407273B82DE00D77D5F /* MyPageUserInfoTVC.swift in Sources */,
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
+				E946138F27435E7C00A5F7C2 /* HomeInHomeManager.swift in Sources */,
 				E946138327435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift in Sources */,
 				714F32B9273BE7C0007324BC /* StyleUploadVC.swift in Sources */,
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,

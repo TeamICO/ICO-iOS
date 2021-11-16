@@ -17,6 +17,9 @@ class EcoTopicCVC: UICollectionViewCell {
     @IBOutlet weak var userContentImage: UIImageView!
     
     @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var nicName: UILabel!
+    
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
@@ -24,6 +27,12 @@ class EcoTopicCVC: UICollectionViewCell {
         gradientView.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
         
         collectionViewConfigure()
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        userContentImage.image = nil
+        userImage.image = nil
+        nicName.text = nil
     }
 
 }
@@ -37,6 +46,31 @@ extension EcoTopicCVC {
         let nib = UINib(nibName: EcoTopicCollectionViewCellCVC.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: EcoTopicCollectionViewCellCVC.identifier)
         
+    }
+    func configure(with viewModel : EcoTopicCVCViewModel){
+        self.nicName.text = viewModel.nicName
+
+        guard let productUrl = URL(string: viewModel.userContentImage), let userUrl = URL(string: viewModel.userImage) else{
+                return
+            }
+        setImage(url: productUrl, imageV: self.userContentImage)
+        setImage(url: userUrl, imageV: self.userImage)
+        
+        
+    }
+    func setImage(url : URL,imageV : UIImageView){
+        DispatchQueue.global().async {
+                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+                    guard let data = data else{
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        imageV.image = UIImage(data: data)
+                    }
+                }
+                task.resume()
+        }
     }
 }
 extension EcoTopicCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -55,4 +89,16 @@ extension EcoTopicCVC : UICollectionViewDelegate, UICollectionViewDataSource,UIC
         return CGSize(width: cartegoryModels[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
     }
     
+}
+struct EcoTopicCVCViewModel {
+    let userContentImage : String
+    let userImage : String
+    let nicName : String
+    
+    init(with model : HomeInHomeSenseStyleshot){
+        self.userContentImage = model.imageURL
+        self.userImage = model.profileURL
+        self.nicName = model.nickname
+        
+    }
 }

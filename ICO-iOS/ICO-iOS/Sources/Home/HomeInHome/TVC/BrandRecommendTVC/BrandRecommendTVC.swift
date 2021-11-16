@@ -9,8 +9,11 @@ import UIKit
 
 class BrandRecommendTVC: UITableViewCell {
     static let identifier = "BrandRecommendTVC"
-
+    
+    private var brand : HomeInHomeBrand?
+    
     @IBOutlet weak var brandNameLabel: UILabel!
+    @IBOutlet weak var brandImage: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
@@ -23,7 +26,34 @@ class BrandRecommendTVC: UITableViewCell {
 
         
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        brandImage.image = nil
+        brandNameLabel.text = nil
+    }
     
+    func getData(data : HomeInHomeBrand){
+        self.brand = data
+        brandNameLabel.text = brand?.name
+        
+        guard let url = URL(string: data.imageURL) else{
+                return
+            }
+        DispatchQueue.global().async {
+                let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
+                    guard let data = data else{
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.brandImage.image = UIImage(data: data)
+                    }
+                }
+                task.resume()
+        }
+        
+        collectionView.reloadData()
+    }
 }
 // MARK: - CollectionView Configure
 extension BrandRecommendTVC {
@@ -39,11 +69,14 @@ extension BrandRecommendTVC {
 }
 extension BrandRecommendTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return brand?.product?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrandCVC.identifier, for: indexPath) as! BrandCVC
+        if let product = self.brand?.product{
+            cell.configure(with: BrandCVCViewModel(with: product[indexPath.row]))
+        }
         
         return cell
     }
