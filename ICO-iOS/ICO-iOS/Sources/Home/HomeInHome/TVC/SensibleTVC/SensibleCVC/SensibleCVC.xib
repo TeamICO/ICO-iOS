@@ -5,12 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SensibleCVC" customModule="ICO" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SensibleCVC" customModule="ICO_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="120" height="187"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -49,12 +50,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="aNf-aK-IGb">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BAX-d0-IJp">
                         <rect key="frame" x="0.0" y="162" width="120" height="25"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="jJ8-JC-J8r"/>
+                            <constraint firstAttribute="height" constant="25" id="tz8-tX-h3e"/>
                         </constraints>
-                    </stackView>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z84-QN-cIm">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLc-G3-ab3">
                         <rect key="frame" x="85" y="162" width="35" height="25"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,17 +75,17 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="aNf-aK-IGb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2O4-VE-b1Q"/>
-                <constraint firstItem="aNf-aK-IGb" firstAttribute="top" secondItem="Xi5-i6-Hah" secondAttribute="bottom" constant="7" id="6Tz-J6-kGk"/>
-                <constraint firstAttribute="bottom" secondItem="aNf-aK-IGb" secondAttribute="bottom" id="9Ix-fX-rg3"/>
+                <constraint firstAttribute="bottom" secondItem="BAX-d0-IJp" secondAttribute="bottom" id="2Sd-V7-voH"/>
+                <constraint firstItem="BAX-d0-IJp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="85Y-27-IK2"/>
                 <constraint firstItem="Xi5-i6-Hah" firstAttribute="top" secondItem="CFm-oY-eHW" secondAttribute="bottom" constant="18" id="Ftk-3x-lz5"/>
                 <constraint firstItem="rpD-4g-kHr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="L8b-9m-q2Q"/>
                 <constraint firstItem="CFm-oY-eHW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OaK-5Y-IpI"/>
                 <constraint firstAttribute="trailing" secondItem="Xi5-i6-Hah" secondAttribute="trailing" constant="8" id="PJ6-Rv-DTl"/>
                 <constraint firstItem="Xi5-i6-Hah" firstAttribute="leading" secondItem="rpD-4g-kHr" secondAttribute="trailing" constant="8" id="QW6-mn-6n8"/>
+                <constraint firstAttribute="trailing" secondItem="BAX-d0-IJp" secondAttribute="trailing" id="Uw0-de-P4q"/>
+                <constraint firstItem="BAX-d0-IJp" firstAttribute="top" secondItem="Xi5-i6-Hah" secondAttribute="bottom" constant="7" id="WY2-ZO-pZc"/>
                 <constraint firstItem="CFm-oY-eHW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YKZ-ic-My5"/>
                 <constraint firstItem="Xi5-i6-Hah" firstAttribute="leading" secondItem="rpD-4g-kHr" secondAttribute="trailing" constant="8" id="bVt-m9-tqo"/>
-                <constraint firstAttribute="trailing" secondItem="aNf-aK-IGb" secondAttribute="trailing" id="eDX-s2-GQz"/>
                 <constraint firstAttribute="trailing" secondItem="CFm-oY-eHW" secondAttribute="trailing" id="kFj-rh-bvI"/>
                 <constraint firstAttribute="bottom" secondItem="dLc-G3-ab3" secondAttribute="bottom" id="vvl-sR-C62"/>
                 <constraint firstItem="rpD-4g-kHr" firstAttribute="top" secondItem="CFm-oY-eHW" secondAttribute="bottom" constant="8" id="z36-E9-IgF"/>
@@ -85,8 +93,8 @@
             </constraints>
             <size key="customSize" width="120" height="187"/>
             <connections>
+                <outlet property="collectionView" destination="BAX-d0-IJp" id="uEB-a3-Rgz"/>
                 <outlet property="gradientView" destination="dLc-G3-ab3" id="lrj-45-7ZV"/>
-                <outlet property="stackView" destination="aNf-aK-IGb" id="pI5-KK-fji"/>
                 <outlet property="styleShotImage" destination="CFm-oY-eHW" id="4Qw-Si-zk0"/>
                 <outlet property="userId" destination="Xi5-i6-Hah" id="YqU-Mc-G1q"/>
                 <outlet property="userImage" destination="rpD-4g-kHr" id="tEy-H1-1m9"/>
@@ -96,5 +104,8 @@
     </objects>
     <resources>
         <image name="img_styleshot_sample04" width="1440" height="1440"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
