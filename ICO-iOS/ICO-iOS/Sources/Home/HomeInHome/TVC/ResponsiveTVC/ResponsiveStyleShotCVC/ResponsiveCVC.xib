@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1e-YG-ybY">
                         <rect key="frame" x="16" y="10" width="393" height="156"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_styleshot_sample04" translatesAutoresizingMaskIntoConstraints="NO" id="0kM-Xv-6Lh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0kM-Xv-6Lh">
                                 <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="KjI-qh-npI"/>
@@ -33,7 +33,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_styleshot_sample04" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-4X-Nay">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-4X-Nay">
                                 <rect key="frame" x="172" y="14" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="D7i-Zm-1u5"/>
@@ -45,21 +45,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라일리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb2-fw-Rpj">
-                                <rect key="frame" x="222" y="23" width="42" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb2-fw-Rpj">
+                                <rect key="frame" x="222" y="23" width="32.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" red="0.2627450980392157" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-Hz-MZb">
-                                <rect key="frame" x="170" y="99" width="31.5" height="14.5"/>
+                                <rect key="frame" x="170" y="99" width="32" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="kk9-ni-M4s"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                 <color key="textColor" red="0.48627450980392156" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="덕주방 리유저블 텀블러" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5x-t2-DKD">
-                                <rect key="frame" x="211.5" y="98" width="128.5" height="17"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5x-t2-DKD">
+                                <rect key="frame" x="212" y="98" width="28" height="17"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                                 <color key="textColor" red="0.0039215686274509803" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -77,14 +80,14 @@
                                 <color key="textColor" red="0.48627450980392156" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evv-KW-9am">
-                                <rect key="frame" x="211.5" y="122.5" width="17" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evv-KW-9am">
+                                <rect key="frame" x="211.5" y="122.5" width="26" height="14.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
                                 <color key="textColor" red="0.019607843137254902" green="0.53725490196078429" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="r34-dU-xlh">
-                                <rect key="frame" x="237.5" y="120.5" width="155.5" height="16"/>
+                                <rect key="frame" x="246.5" y="120.5" width="146.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="pqT-qY-sZK"/>
                                 </constraints>
@@ -121,6 +124,7 @@
                             <constraint firstAttribute="trailing" secondItem="rey-lP-neN" secondAttribute="trailing" id="HwK-i6-mhR"/>
                             <constraint firstItem="0kM-Xv-6Lh" firstAttribute="centerY" secondItem="a1e-YG-ybY" secondAttribute="centerY" id="IfG-8X-qHV"/>
                             <constraint firstItem="rey-lP-neN" firstAttribute="top" secondItem="kh0-SA-pcQ" secondAttribute="bottom" constant="5" id="Jou-jN-buF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q5x-t2-DKD" secondAttribute="trailing" constant="10" id="MDD-1q-09W"/>
                             <constraint firstItem="nG0-4X-Nay" firstAttribute="top" secondItem="a1e-YG-ybY" secondAttribute="top" constant="14" id="POP-lT-Hb0"/>
                             <constraint firstAttribute="trailing" secondItem="Upg-Ot-Exm" secondAttribute="trailing" id="SjV-fM-rE7"/>
                             <constraint firstItem="Upg-Ot-Exm" firstAttribute="leading" secondItem="0kM-Xv-6Lh" secondAttribute="trailing" constant="16" id="VDh-dB-lqq"/>
@@ -154,14 +158,17 @@
                 <outlet property="content" destination="a1e-YG-ybY" id="5Hn-mC-ST7"/>
                 <outlet property="gradientView" destination="kh0-SA-pcQ" id="awe-LX-gZQ"/>
                 <outlet property="gradientView2" destination="rey-lP-neN" id="DHn-Kf-DuY"/>
+                <outlet property="nicNameLabel" destination="wb2-fw-Rpj" id="2Be-aA-jxo"/>
+                <outlet property="productNameLabel" destination="Q5x-t2-DKD" id="Oho-8u-99s"/>
                 <outlet property="userContentImage" destination="0kM-Xv-6Lh" id="zzF-Gh-b7M"/>
+                <outlet property="userImage" destination="nG0-4X-Nay" id="6Xf-3K-2JV"/>
+                <outlet property="userRatingLabel" destination="evv-KW-9am" id="k3W-rh-lte"/>
                 <outlet property="userSatisfactionStack" destination="r34-dU-xlh" id="gCi-J8-xK4"/>
             </connections>
             <point key="canvasLocation" x="416.66666666666669" y="170.42410714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="img_styleshot_sample04" width="1440" height="1440"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

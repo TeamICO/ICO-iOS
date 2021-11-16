@@ -11,6 +11,8 @@ class ResponsiveStyleShotTVC: UITableViewCell {
     static let identifier = "ResponsiveStyleShotTVC"
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+
+    private var responsiveStyleShotModel = [HomeInHomePopularStyleshot]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +23,12 @@ class ResponsiveStyleShotTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func getData(data : [HomeInHomePopularStyleshot]){
+        self.responsiveStyleShotModel = data
+       
+        
+        collectionView.reloadData()
     }
     
 }
@@ -38,12 +46,12 @@ extension ResponsiveStyleShotTVC {
 }
 extension ResponsiveStyleShotTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return responsiveStyleShotModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResponsiveCVC.identifier, for: indexPath) as! ResponsiveCVC
-        
+        cell.configure(with: ResponsiveCVCViewModel(with: self.responsiveStyleShotModel[indexPath.row]))
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

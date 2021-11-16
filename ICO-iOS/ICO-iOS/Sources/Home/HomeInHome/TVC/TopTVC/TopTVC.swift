@@ -13,21 +13,20 @@ protocol TopTVCDelegate : AnyObject {
 
 class TopTVC: UITableViewCell {
     
-    let images = ["img_home_banner01","img_home_banner02","img_home_banner03"]
+    
     
     // MARK: - Properties
     static let identifier = "TopTVC"
     
     weak var delegate : TopTVCDelegate?
     
+    var topBannerModel = [HomeInHomeTopBanner]()
+    
     var nowPage: Int = 0
     
  
     @IBOutlet weak var searchView: UIView!
-    
-  
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     
     
@@ -39,14 +38,11 @@ class TopTVC: UITableViewCell {
     }()
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         pageControlConfigure()
         collectionViewConfigure()
         bannerTimer()
         setTapGesture()
-        
-    
-   
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,6 +51,12 @@ class TopTVC: UITableViewCell {
         
     }
 
+    func getData(data : [HomeInHomeTopBanner]){
+        self.topBannerModel = data
+        
+        bannerCollectionView.reloadData()
+    }
+    
     func setTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapSearchView))
         viewTap.cancelsTouchesInView = false
@@ -84,7 +86,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case self.collectionView : return 3
-        case self.bannerCollectionView : return 3
+        case self.bannerCollectionView : return topBannerModel.count
         default : return 0
         }
         
@@ -98,7 +100,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             return cell
         case self.bannerCollectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCVC.identifier, for: indexPath) as! TopBannerCVC
-            cell.bannerImage.image = UIImage(named: images[indexPath.row])
+            cell.setImage(url: topBannerModel[indexPath.row].imageURL)
             return cell
         default : return UICollectionViewCell()
         }
@@ -161,7 +163,7 @@ extension TopTVC {
     // 배너 움직이는 매서드
     func bannerMove() {
         // 현재페이지가 마지막 페이지일 경우
-        if nowPage == images.count-1 {
+        if nowPage == topBannerModel.count-1 {
             // 맨 처음 페이지로 돌아감
             bannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
             nowPage = 0

@@ -11,18 +11,41 @@ class HomeInHomeVC: BaseViewController {
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
+    private var topBannerModel = [HomeInHomeTopBanner]()
+    private var senseStyleShotModel = [HomeInHomeSenseStyleshot]()
+    private var brandModel : HomeInHomeBrand?
+    private var responsiveStyleShotModel = [HomeInHomePopularStyleshot]()
+    private var ecoTopicModel : HomeInHomeEcoTopic?
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.fetchData()
         self.tableviewConfigure()
     }
     
 
 
 
+}
+extension HomeInHomeVC{
+    func fetchData(){
+        HomeInHomeManager.shared.getHomeInHomeData { [weak self] response in
+            guard let topBanner = response.topBanner,
+                  let senseStyleShot = response.senseStyleshot,
+                  let brandRco = response.brand,
+                  let responsiveStyleShot = response.popularStyleshot,
+                  let ecotopic = response.ecoTopic else{
+                return
+            }
+            self?.topBannerModel = topBanner
+            self?.senseStyleShotModel = senseStyleShot
+            self?.brandModel = brandRco
+            self?.responsiveStyleShotModel = responsiveStyleShot
+            self?.ecoTopicModel = ecotopic
+            self?.tableView.reloadData()
+        }
+        
+    }
 }
 // MARK: - TableView Configure
 extension HomeInHomeVC {
@@ -68,10 +91,12 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: TopTVC.identifier, for: indexPath) as! TopTVC
             cell.selectionStyle = .none
             cell.delegate = self
+            cell.getData(data: self.topBannerModel)
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: SensibleStyleShotTVC.identifier, for: indexPath) as! SensibleStyleShotTVC
             cell.selectionStyle = .none
+            cell.getData(data: self.senseStyleShotModel)
             return cell
 //        case 2 :
 //            let cell = tableView.dequeueReusableCell(withIdentifier: BestTagTVC.identifier, for: indexPath) as! BestTagTVC
@@ -80,14 +105,23 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
         case 2 :
             let cell = tableView.dequeueReusableCell(withIdentifier: BrandRecommendTVC.identifier, for: indexPath) as! BrandRecommendTVC
             cell.selectionStyle = .none
+            if let brand = self.brandModel{
+                cell.getData(data: brand)
+            }
+            
             return cell
         case 3 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ResponsiveStyleShotTVC.identifier, for: indexPath) as! ResponsiveStyleShotTVC
+            cell.getData(data: self.responsiveStyleShotModel)
             cell.selectionStyle = .none
             return cell
         case 4 :
             let cell = tableView.dequeueReusableCell(withIdentifier: EcoTopicTVC.identifier, for: indexPath) as! EcoTopicTVC
             cell.selectionStyle = .none
+            if let ecoTopic = self.ecoTopicModel{
+                cell.getData(data: ecoTopic)
+            }
+            
             return cell
         default:
             return UITableViewCell()

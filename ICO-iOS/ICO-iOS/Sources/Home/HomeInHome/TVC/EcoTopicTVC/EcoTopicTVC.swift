@@ -9,7 +9,14 @@ import UIKit
 
 class EcoTopicTVC: UITableViewCell {
     static let identifier = "EcoTopicTVC"
+    
+    var ecoTopicModel : HomeInHomeEcoTopic?
+    
+    @IBOutlet weak var topicTitle: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +27,34 @@ class EcoTopicTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.topicTitle.text = nil
+        self.productImage.image = nil
+    }
+    
+    func getData(data : HomeInHomeEcoTopic){
+        self.ecoTopicModel = data
+        topicTitle.text = data.name
+        
+        guard let url = URL(string: data.imageURL) else{
+                return
+            }
+        DispatchQueue.global().async {
+                let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
+                    guard let data = data else{
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.productImage.image = UIImage(data: data)
+                    }
+                }
+                task.resume()
+        }
+        
+        collectionView.reloadData()
     }
     
 }
@@ -37,12 +72,14 @@ extension EcoTopicTVC {
 }
 extension EcoTopicTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return ecoTopicModel?.product.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EcoTopicCVC.identifier, for: indexPath) as! EcoTopicCVC
-    
+        if let product = ecoTopicModel?.product{
+            cell.configure(with: EcoTopicCVCViewModel(with: product[indexPath.row]))
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
