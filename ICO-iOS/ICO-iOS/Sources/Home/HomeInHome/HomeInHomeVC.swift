@@ -27,6 +27,7 @@ class HomeInHomeVC: BaseViewController {
 
 
 }
+// MARK: - FetchData
 extension HomeInHomeVC{
     func fetchData(){
         HomeInHomeManager.shared.getHomeInHomeData { [weak self] response in

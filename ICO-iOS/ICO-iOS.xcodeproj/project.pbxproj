@@ -76,6 +76,8 @@
 		E946138427435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946138227435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib */; };
 		E946138F27435E7C00A5F7C2 /* HomeInHomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946138E27435E7C00A5F7C2 /* HomeInHomeManager.swift */; };
 		E946139127435EAE00A5F7C2 /* HomeInHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946139027435EAE00A5F7C2 /* HomeInHomeResponse.swift */; };
+		E9461394274380B300A5F7C2 /* MypageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9461393274380B300A5F7C2 /* MypageManager.swift */; };
+		E9461396274380BD00A5F7C2 /* MypageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9461395274380BD00A5F7C2 /* MypageResponse.swift */; };
 		E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E951CE5C273A65D4002799D6 /* MainSB.storyboard */; };
 		E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */; };
 		E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951CE65273A68C6002799D6 /* HokeywordSV.swift */; };
@@ -253,6 +255,8 @@
 		E946138227435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EcoTopicCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E946138E27435E7C00A5F7C2 /* HomeInHomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInHomeManager.swift; sourceTree = "<group>"; };
 		E946139027435EAE00A5F7C2 /* HomeInHomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInHomeResponse.swift; sourceTree = "<group>"; };
+		E9461393274380B300A5F7C2 /* MypageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageManager.swift; sourceTree = "<group>"; };
+		E9461395274380BD00A5F7C2 /* MypageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageResponse.swift; sourceTree = "<group>"; };
 		E951CE5C273A65D4002799D6 /* MainSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainSB.storyboard; sourceTree = "<group>"; };
 		E951CE5E273A65EF002799D6 /* BaseCustomTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTB.swift; sourceTree = "<group>"; };
 		E951CE65273A68C6002799D6 /* HokeywordSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HokeywordSV.swift; sourceTree = "<group>"; };
@@ -588,6 +592,15 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		E9461392274380A000A5F7C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E9461393274380B300A5F7C2 /* MypageManager.swift */,
+				E9461395274380BD00A5F7C2 /* MypageResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		E951CE67273A6B98002799D6 /* RecentCVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +912,7 @@
 			children = (
 				E9CAF19B27316441008F749B /* MyPageSB.storyboard */,
 				E9CAF19727316404008F749B /* MyPageVC.swift */,
+				E9461392274380A000A5F7C2 /* Entity */,
 				E9AF83F9273B824300D77D5F /* MyPageTVC */,
 				E9E4990B273BAAB80001ACFB /* IcoLevel */,
 				E9E4990C273BAAE10001ACFB /* ServiceTerms */,
@@ -1001,8 +1015,8 @@
 			children = (
 				E9CAF1C427316C39008F749B /* HomeInHomeSB.storyboard */,
 				E9CAF1C627316C47008F749B /* HomeInHomeVC.swift */,
-				E9CAF1CE27322B98008F749B /* TVC */,
 				E946138527435CCB00A5F7C2 /* Entity */,
+				E9CAF1CE27322B98008F749B /* TVC */,
 			);
 			path = HomeInHome;
 			sourceTree = "<group>";
@@ -1400,6 +1414,7 @@
 				71A9688D273C283C003AF0A9 /* KeywordCVC.swift in Sources */,
 				E9CAF1C927316C6B008F749B /* HomeInStyleLifeVC.swift in Sources */,
 				E9E49922273BAC090001ACFB /* FeedbackVC.swift in Sources */,
+				E9461394274380B300A5F7C2 /* MypageManager.swift in Sources */,
 				E9E49937273BD50B0001ACFB /* ServiceTermsTVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
@@ -1444,6 +1459,7 @@
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
 				E946138F27435E7C00A5F7C2 /* HomeInHomeManager.swift in Sources */,
 				E946138327435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift in Sources */,
+				E9461396274380BD00A5F7C2 /* MypageResponse.swift in Sources */,
 				714F32B9273BE7C0007324BC /* StyleUploadVC.swift in Sources */,
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,

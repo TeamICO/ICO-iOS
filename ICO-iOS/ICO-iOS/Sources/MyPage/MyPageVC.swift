@@ -10,6 +10,8 @@ import UIKit
 class MyPageVC: BaseViewController {
     // MARK: - Properties
     
+    private var mypageModel : MypageResult?
+    
     private var featureModels = [
                 "",
                 "",
@@ -33,7 +35,7 @@ class MyPageVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchData()
         tableviewConfigure()
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
@@ -42,6 +44,18 @@ class MyPageVC: BaseViewController {
 
    
 
+}
+// MARK: - FetchData
+extension MyPageVC{
+    func fetchData(){
+        MypageManager.shared.getMypageData { [weak self] response in
+            guard let response = response else{
+                return
+            }
+            self?.mypageModel = response
+            self?.tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - TableView Configure
@@ -84,11 +98,18 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyPageUserInfoTVC.identifier, for: indexPath) as! MyPageUserInfoTVC
             cell.selectionStyle = .none
             cell.delegate = self
+            if let mypageModel = self.mypageModel{
+                cell.configure(with: MyPageUserInfoTVCViewModel(with: mypageModel))
+            }
+            
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: MypageMyRecentStyleShotTVC.identifier, for: indexPath) as! MypageMyRecentStyleShotTVC
             cell.selectionStyle = .none
-          
+            if let model = self.mypageModel?.styleshot{
+                cell.getData(data: model)
+            }
+            
             return cell
         case 6 :
             let cell = tableView.dequeueReusableCell(withIdentifier: IcoVerTVC.identifier, for: indexPath) as! IcoVerTVC
