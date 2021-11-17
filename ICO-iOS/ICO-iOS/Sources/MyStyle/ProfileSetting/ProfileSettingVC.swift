@@ -7,8 +7,11 @@
 
 import UIKit
 
-class ProfileSettingVC: UIViewController {
+class ProfileSettingVC: BaseViewController {
     // MARK: - Properties
+    private var profileModel : ProfileResult?
+    private var ecokeywords = [ProfileEcoKeyword]()
+    
     private var selectedContentImage : UIImage?
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var updateButton: UIButton!
@@ -20,6 +23,7 @@ class ProfileSettingVC: UIViewController {
 
         tableviewConfigure()
         configure()
+        fetchData()
         
     }
    
@@ -30,6 +34,23 @@ class ProfileSettingVC: UIViewController {
     }
     
 }
+// MARK: - FetchData
+extension ProfileSettingVC{
+    func fetchData(){
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        ProfileManager.shared.getUserProfile(userIdx: self.userIdx, jwtToken: jwtToken) { [weak self] response in
+            guard let response = response else {
+                return
+            }
+            self?.profileModel = response
+            self?.ecokeywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
+            self?.tableView.reloadData()
+        }
+    }
+}
+
 extension ProfileSettingVC{
     // MARK: - Configure
     func configure(){
@@ -76,16 +97,23 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserInfoTVC.identifier, for: indexPath) as! ProfileUserInfoTVC
             cell.selectionStyle = .none
             cell.delegate = self
+            if let profileModel = self.profileModel{
+                cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
+            }
+            
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserIntroductionTVC.identifier, for: indexPath) as! ProfileUserIntroductionTVC
             cell.selectionStyle = .none
-            
+            if let profileModel = self.profileModel{
+                cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
+            }
             return cell
         case 2 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileMyEcoKeywordTVC.identifier, for: indexPath) as! ProfileMyEcoKeywordTVC
             cell.selectionStyle = .none
             cell.delegate = self
+            cell.configure(keywords: self.ecokeywords)
             return cell
         default:
             return UITableViewCell()
