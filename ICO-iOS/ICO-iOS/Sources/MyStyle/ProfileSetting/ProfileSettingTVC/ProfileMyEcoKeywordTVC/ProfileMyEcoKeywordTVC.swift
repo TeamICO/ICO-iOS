@@ -76,7 +76,6 @@ class ProfileMyEcoKeywordTVC: UITableViewCell {
     }
     
     func configure(keywords : [ProfileEcoKeyword]){
-        print(keywords)
         for i in 0..<keywords.count {
             switch keywords[i].name {
             case "수익기부" :

@@ -7,7 +7,7 @@
 
 import Foundation
 struct CommonResponse: Codable {
-    let isSuccess: Bool?
-    let code: Int?
-    let message: String?
+    let isSuccess: Bool
+    let code: Int
+    let message: String
 }

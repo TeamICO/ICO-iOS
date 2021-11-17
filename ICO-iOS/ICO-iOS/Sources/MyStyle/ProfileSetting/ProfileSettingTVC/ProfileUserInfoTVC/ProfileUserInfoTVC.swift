@@ -8,6 +8,7 @@
 import UIKit
 protocol ProfileUserInfoTVCDelegate: AnyObject {
     func didTapUserImageView()
+    func checkName(nickname: String,textField : UITextField,label: UILabel)
 }
 
 class ProfileUserInfoTVC: UITableViewCell {
@@ -17,7 +18,8 @@ class ProfileUserInfoTVC: UITableViewCell {
     
     @IBOutlet weak var userImageView: UIView!
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var nicNameTextField: UITextField!
+    @IBOutlet weak var nickNameTextField: UITextField!
+    @IBOutlet weak var nicknameStateLabel: UILabel!
     @IBOutlet weak var removeNicNameButton: UIButton!
     @IBOutlet weak var nicNameCountLabel: UILabel!
     override func awakeFromNib() {
@@ -36,10 +38,10 @@ class ProfileUserInfoTVC: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         userImage.image = nil
-        nicNameTextField.text = nil
+        nickNameTextField.text = nil
     }
     func configure(with viewModel : ProfileUserInfoTVCViewModel){
-        self.nicNameTextField.text = viewModel.nicName
+        self.nickNameTextField.text = viewModel.nickName
         guard let url = URL(string: viewModel.profileImage) else{
                 return
             }
@@ -57,10 +59,10 @@ class ProfileUserInfoTVC: UITableViewCell {
         }
     }
     func textfieldConfigure(){
-        nicNameTextField.leftViewMode = .always
-        nicNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
-        nicNameTextField.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.appColor(.feedbackTextColor)])
-        nicNameTextField.delegate = self
+        nickNameTextField.leftViewMode = .always
+        nickNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+        nickNameTextField.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.appColor(.feedbackTextColor)])
+        nickNameTextField.delegate = self
     }
     func setUserImageViewTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapUserImageView))
@@ -72,7 +74,7 @@ class ProfileUserInfoTVC: UITableViewCell {
     }
 
     @IBAction func didTapRemoveNicNameButton(_ sender: Any) {
-        nicNameTextField.text = ""
+        nickNameTextField.text = ""
     }
     
 }
@@ -83,14 +85,20 @@ extension ProfileUserInfoTVC : UITextFieldDelegate {
         }
        
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nickname = textField.text {
+            delegate?.checkName(nickname: nickname,textField : self.nickNameTextField,label: self.nicknameStateLabel)
+        }
+        return true
+    }
 }
 struct ProfileUserInfoTVCViewModel {
     let profileImage : String
-    let nicName : String
+    let nickName : String
     let description : String
     init(with model : ProfileResult){
         self.profileImage = model.profileURL
-        self.nicName = model.nickname
+        self.nickName = model.nickname
         self.description = model.resultDescription
     }
 }

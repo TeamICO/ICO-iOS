@@ -168,6 +168,30 @@ extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
 }
 //MARK : Iamge PIcker
 extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
+    func checkName(nickname: String, textField: UITextField, label: UILabel) {
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        NickNameManager.shared.checkNickName(nickname: nickname, jwtToken: jwtToken) { result in
+            guard result.isSuccess else{
+                textField.layer.borderWidth = 0.5
+                textField.layer.borderColor = UIColor.alertsError.cgColor
+                label.textColor = UIColor.alertsError
+                label.text = result.message
+            
+                return
+            }
+            textField.layer.borderWidth = 0.5
+            textField.layer.borderColor = UIColor.alertsSuccess.cgColor
+            label.textColor = UIColor.alertsSuccess
+            label.text = result.message
+        }
+    }
+    
+
+    
+   
+    
     func didTapUserImageView() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
