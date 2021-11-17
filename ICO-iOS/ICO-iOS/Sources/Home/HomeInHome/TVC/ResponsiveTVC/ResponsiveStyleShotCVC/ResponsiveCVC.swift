@@ -11,6 +11,7 @@ class ResponsiveCVC: UICollectionViewCell {
     static let identifier = "ResponsiveCVC"
         
     var category = [String]()
+    var rating = 0
     
     
     @IBOutlet weak var userContentImage: UIImageView!
@@ -33,7 +34,7 @@ class ResponsiveCVC: UICollectionViewCell {
         
         
         setCellShadow()
-        setUserSatisfactionStack()
+        
         collectionViewConfigure()
     }
     
@@ -44,17 +45,21 @@ class ResponsiveCVC: UICollectionViewCell {
         self.nicNameLabel.text = nil
         self.productNameLabel.text = nil
         self.userRatingLabel.text = nil
+        rating = 0
     }
-    func getData(data : [String]){
+    func getData(data : [String],rating : Int){
         self.category = data
-        
+        self.rating = rating
         collectionView.reloadData()
-    }
-    func setUserSatisfactionStack(){
-        for _ in 0...4{
+        userSatisfactionStack.subviews.forEach{$0.removeFromSuperview()}
+        for _ in 0..<self.rating{
             let stack = UserRatingsSV()
             userSatisfactionStack.addArrangedSubview(stack)
         }
+        
+    }
+    func setUserSatisfactionStack(){
+        
     }
     //MARK : Cell Configure
     func setCellShadow(){
