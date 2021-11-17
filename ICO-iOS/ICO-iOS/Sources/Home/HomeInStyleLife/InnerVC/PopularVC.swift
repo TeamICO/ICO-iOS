@@ -78,6 +78,21 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         
         cell.icoName.text = serverData?.popularIco[indexPath.row].nickname
         cell.icoImage.download(url: serverData?.popularIco[indexPath.row].profileURL ?? "", rounded: true)
+        if serverData?.popularIco[indexPath.row].latestCategory == "업사이클링"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-upcycling")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "비건"{
+            cell.iconImage.image = UIImage(named: "illust-product-vegan")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "제로웨이스트"{
+            cell.iconImage.image = UIImage(named: "illust-product-package")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "가치"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-value")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "유기농"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-organic")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "클린뷰티"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-cleanbeauty")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "에너지 절약"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-energy")
+        }
         
         return cell
     }
