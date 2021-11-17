@@ -24,12 +24,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-CB-8CS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-lifestyle-banner" translatesAutoresizingMaskIntoConstraints="NO" id="x3a-9Q-qcn">
-                                                <rect key="frame" x="0.0" y="40" width="414" height="109"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="109" id="URH-j1-Z2J"/>
-                                                </constraints>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pci-cJ-LCJ">
                                                 <rect key="frame" x="0.0" y="161" width="414" height="12"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -84,15 +78,20 @@
                                                 <rect key="frame" x="0.0" y="392" width="414" height="1408"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-FM-LXC">
+                                                <rect key="frame" x="0.0" y="40" width="414" height="109"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="109" id="tFM-BZ-ibd"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="Pci-cJ-LCJ" firstAttribute="top" secondItem="x3a-9Q-qcn" secondAttribute="bottom" constant="12" id="4lw-Wd-0ND"/>
-                                            <constraint firstAttribute="trailing" secondItem="x3a-9Q-qcn" secondAttribute="trailing" id="4ru-IP-MSE"/>
+                                            <constraint firstItem="rWj-FM-LXC" firstAttribute="top" secondItem="O2p-CB-8CS" secondAttribute="top" constant="40" id="4y0-ay-XWA"/>
                                             <constraint firstItem="Pci-cJ-LCJ" firstAttribute="leading" secondItem="O2p-CB-8CS" secondAttribute="leading" id="5CB-1a-J29"/>
+                                            <constraint firstAttribute="trailing" secondItem="rWj-FM-LXC" secondAttribute="trailing" id="5FL-TC-zsQ"/>
                                             <constraint firstItem="6yE-pF-VGc" firstAttribute="top" secondItem="fA0-dy-noB" secondAttribute="bottom" constant="10" id="7rU-N4-ZR4"/>
                                             <constraint firstAttribute="trailing" secondItem="NtY-TD-QdB" secondAttribute="trailing" id="FTA-Gv-0tw"/>
-                                            <constraint firstItem="x3a-9Q-qcn" firstAttribute="top" secondItem="O2p-CB-8CS" secondAttribute="top" constant="40" id="HQ9-Ei-Hao"/>
                                             <constraint firstItem="NtY-TD-QdB" firstAttribute="top" secondItem="6yE-pF-VGc" secondAttribute="bottom" id="KHf-XO-w2n"/>
                                             <constraint firstItem="fA0-dy-noB" firstAttribute="top" secondItem="Pci-cJ-LCJ" secondAttribute="bottom" constant="17" id="Tyl-s5-Rdp"/>
                                             <constraint firstAttribute="trailing" secondItem="6yE-pF-VGc" secondAttribute="trailing" id="WGS-79-KDE"/>
@@ -100,13 +99,14 @@
                                             <constraint firstAttribute="height" constant="1800" id="XoD-T4-6lM"/>
                                             <constraint firstItem="2wc-rA-JcA" firstAttribute="top" secondItem="NtY-TD-QdB" secondAttribute="bottom" constant="16" id="ZAD-cm-gd8"/>
                                             <constraint firstItem="fA0-dy-noB" firstAttribute="leading" secondItem="O2p-CB-8CS" secondAttribute="leading" constant="16" id="a9R-qL-F6q"/>
-                                            <constraint firstItem="x3a-9Q-qcn" firstAttribute="leading" secondItem="O2p-CB-8CS" secondAttribute="leading" id="cNj-Dr-nS1"/>
+                                            <constraint firstItem="rWj-FM-LXC" firstAttribute="leading" secondItem="O2p-CB-8CS" secondAttribute="leading" id="abR-dG-ZyR"/>
                                             <constraint firstItem="Moy-Te-mvd" firstAttribute="leading" secondItem="fA0-dy-noB" secondAttribute="trailing" constant="6" id="dFZ-F4-KOc"/>
                                             <constraint firstItem="2wc-rA-JcA" firstAttribute="leading" secondItem="O2p-CB-8CS" secondAttribute="leading" id="eWJ-zD-uiC"/>
                                             <constraint firstItem="NtY-TD-QdB" firstAttribute="leading" secondItem="O2p-CB-8CS" secondAttribute="leading" id="fVI-DD-zFa"/>
                                             <constraint firstAttribute="bottom" secondItem="2wc-rA-JcA" secondAttribute="bottom" id="g5d-ke-BnE"/>
                                             <constraint firstItem="6yE-pF-VGc" firstAttribute="leading" secondItem="O2p-CB-8CS" secondAttribute="leading" id="mod-xu-Ppo"/>
                                             <constraint firstAttribute="trailing" secondItem="2wc-rA-JcA" secondAttribute="trailing" id="rnc-S7-H3T"/>
+                                            <constraint firstItem="Pci-cJ-LCJ" firstAttribute="top" secondItem="rWj-FM-LXC" secondAttribute="bottom" constant="12" id="xCo-vt-Cxb"/>
                                             <constraint firstAttribute="trailing" secondItem="Pci-cJ-LCJ" secondAttribute="trailing" id="zet-Wp-WWd"/>
                                         </constraints>
                                     </view>
@@ -137,6 +137,7 @@
                         <outlet property="postTV" destination="2wc-rA-JcA" id="IsI-ph-eEs"/>
                         <outlet property="stackView" destination="Pci-cJ-LCJ" id="8Vi-j0-gLY"/>
                         <outlet property="stackView2" destination="NtY-TD-QdB" id="jB3-A7-whC"/>
+                        <outlet property="topBanner" destination="rWj-FM-LXC" id="XxL-UK-w8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,7 +147,6 @@
     </scenes>
     <resources>
         <image name="emoji-profile-gliter" width="24" height="24.5"/>
-        <image name="img-lifestyle-banner" width="750" height="218"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

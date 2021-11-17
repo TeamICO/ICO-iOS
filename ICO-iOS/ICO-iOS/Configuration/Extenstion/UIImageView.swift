@@ -8,8 +8,8 @@
 import UIKit
 import Kingfisher
 
-
 extension UIImageView {
+    
     func setImage(with urlString: String) {
         let cache = ImageCache.default
         cache.retrieveImage(forKey: urlString, options: nil) { result in // 캐시에서 키를 통해 이미지를 가져온다.
@@ -25,6 +25,18 @@ extension UIImageView {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func download(url: String?, rounded: Bool = true) {
+        guard let _url = url else {
+            return
+        }
+        if rounded {
+            let processor = ResizingImageProcessor(referenceSize: self.frame.size) |> RoundCornerImageProcessor(cornerRadius: self.frame.size.width / 2)
+            self.kf.setImage(with: URL(string: _url), placeholder: nil, options: [.processor(processor)])
+        } else {
+            self.kf.setImage(with: URL(string: _url))
         }
     }
 }

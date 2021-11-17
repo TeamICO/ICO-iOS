@@ -16,6 +16,7 @@ class PopularVC: UIViewController {
     @IBOutlet weak var popularLabel: UILabel!
     @IBOutlet weak var postTV: UITableView!
     @IBOutlet weak var popularIcoCV: UICollectionView!
+    @IBOutlet weak var topBanner: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,22 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularIcoCVC", for: indexPath)as? PopularIcoCVC else {return UICollectionViewCell()}
         
         cell.icoName.text = serverData?.popularIco[indexPath.row].nickname
-        cell.icoImage.setImage(with: serverData?.popularIco[indexPath.row].profileURL ?? "")
+        cell.icoImage.download(url: serverData?.popularIco[indexPath.row].profileURL ?? "", rounded: true)
+        if serverData?.popularIco[indexPath.row].latestCategory == "업사이클링"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-upcycling")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "비건"{
+            cell.iconImage.image = UIImage(named: "illust-product-vegan")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "제로웨이스트"{
+            cell.iconImage.image = UIImage(named: "illust-product-package")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "가치"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-value")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "유기농"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-organic")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "클린뷰티"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-cleanbeauty")
+        }else if serverData?.popularIco[indexPath.row].latestCategory == "에너지 절약"{
+            cell.iconImage.image = UIImage(named: "illust-styleshot-energy")
+        }
         
         return cell
     }
@@ -119,6 +135,8 @@ extension PopularVC{
         popularIcoCV.delegate = self
         popularIcoCV.dataSource = self
         popularIcoCV.reloadData()
+        
+        topBanner.setImage(with: serverData?.topBanner.imageURL ?? "")
         
         print(message)
     }
