@@ -28,6 +28,8 @@
 		7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4A273819D6008BA6C0 /* Popular.storyboard */; };
 		7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4C27381A54008BA6C0 /* Keyword.storyboard */; };
 		71A870EA2744FCBB0069239A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A870E92744FCBB0069239A /* UIImageView.swift */; };
+		71A870ED274507830069239A /* MyStyleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A870EC274507830069239A /* MyStyleResponse.swift */; };
+		71A870EF2745079B0069239A /* MyStyleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A870EE2745079B0069239A /* MyStyleDataManager.swift */; };
 		71A9688D273C283C003AF0A9 /* KeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A9688B273C283C003AF0A9 /* KeywordCVC.swift */; };
 		71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71A9688C273C283C003AF0A9 /* KeywordCVC.xib */; };
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
@@ -221,6 +223,8 @@
 		7190EA4A273819D6008BA6C0 /* Popular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popular.storyboard; sourceTree = "<group>"; };
 		7190EA4C27381A54008BA6C0 /* Keyword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyword.storyboard; sourceTree = "<group>"; };
 		71A870E92744FCBB0069239A /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		71A870EC274507830069239A /* MyStyleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStyleResponse.swift; sourceTree = "<group>"; };
+		71A870EE2745079B0069239A /* MyStyleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStyleDataManager.swift; sourceTree = "<group>"; };
 		71A9688B273C283C003AF0A9 /* KeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCVC.swift; sourceTree = "<group>"; };
 		71A9688C273C283C003AF0A9 /* KeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCVC.xib; sourceTree = "<group>"; };
 		71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoCVC.swift; sourceTree = "<group>"; };
@@ -479,6 +483,15 @@
 			children = (
 				717CB5182743DD9B0044E227 /* StyleLifeDataManager.swift */,
 				717CB51A2743DDAF0044E227 /* StyleLifeResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		71A870EB274507630069239A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				71A870EC274507830069239A /* MyStyleResponse.swift */,
+				71A870EE2745079B0069239A /* MyStyleDataManager.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -987,6 +1000,7 @@
 		E9CAF189273163A9008F749B /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				71A870EB274507630069239A /* Entity */,
 				E9CAF195273163FB008F749B /* MyStyleVC.swift */,
 				E9CAF19927316427008F749B /* MyStyleSB.storyboard */,
 				717CB5122743B5470044E227 /* StyleDetail */,
@@ -1578,6 +1592,7 @@
 				E9AF83EC273B60F600D77D5F /* ResultSortCVC.swift in Sources */,
 				E9E49926273BAC220001ACFB /* LevelUpVC.swift in Sources */,
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
+				71A870ED274507830069239A /* MyStyleResponse.swift in Sources */,
 				E9CAF1C127316A10008F749B /* Constant.swift in Sources */,
 				717CB5142743B57C0044E227 /* StyleDetailVC.swift in Sources */,
 				E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */,
@@ -1599,6 +1614,7 @@
 				E9161CFD273CB96E009A9CA7 /* LikeVC.swift in Sources */,
 				E943BC602738FB6400619C74 /* LoginCVC.swift in Sources */,
 				E9378D862737FE9F00C589A1 /* SensibleCVC.swift in Sources */,
+				71A870EF2745079B0069239A /* MyStyleDataManager.swift in Sources */,
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
 				E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */,
