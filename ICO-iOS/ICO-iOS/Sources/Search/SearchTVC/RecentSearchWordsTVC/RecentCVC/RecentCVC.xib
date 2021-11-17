@@ -17,51 +17,41 @@
                 <rect key="frame" x="0.0" y="0.0" width="103" height="48"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6H-21-ZFp">
-                        <rect key="frame" x="0.0" y="0.0" width="103" height="28"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비건립밤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZw-zV-svL">
-                                <rect key="frame" x="8" y="4" width="49" height="20"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN4-Js-WlM">
-                                <rect key="frame" x="67" y="7" width="14" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="GfM-or-nFd"/>
-                                    <constraint firstAttribute="width" constant="14" id="NoJ-ds-6YR"/>
-                                </constraints>
-                                <color key="tintColor" red="0.090196078430000007" green="0.66666666669999997" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="icX1"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.92941176470588238" green="0.9882352941176471" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fno-oP-vVj">
+                        <rect key="frame" x="0.0" y="0.0" width="81" height="48"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                        <color key="textColor" red="0.090196078430000007" green="0.66666666669999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-WU-DTM">
+                        <rect key="frame" x="81" y="17" width="14" height="14"/>
                         <constraints>
-                            <constraint firstItem="fZw-zV-svL" firstAttribute="leading" secondItem="j6H-21-ZFp" secondAttribute="leading" constant="8" id="1At-1U-D3v"/>
-                            <constraint firstAttribute="height" constant="28" id="Hiu-CM-gJ7"/>
-                            <constraint firstItem="fZw-zV-svL" firstAttribute="top" secondItem="j6H-21-ZFp" secondAttribute="top" constant="4" id="QR7-wd-8Cf"/>
-                            <constraint firstItem="wN4-Js-WlM" firstAttribute="top" secondItem="j6H-21-ZFp" secondAttribute="top" constant="7" id="dEI-6X-txT"/>
-                            <constraint firstAttribute="bottom" secondItem="fZw-zV-svL" secondAttribute="bottom" constant="4" id="mGW-LO-J8l"/>
-                            <constraint firstItem="wN4-Js-WlM" firstAttribute="leading" secondItem="fZw-zV-svL" secondAttribute="trailing" constant="10" id="tJ5-Nh-LYo"/>
-                            <constraint firstAttribute="bottom" secondItem="wN4-Js-WlM" secondAttribute="bottom" constant="7" id="z0n-NZ-hQu"/>
+                            <constraint firstAttribute="height" constant="14" id="cB7-Bz-riK"/>
+                            <constraint firstAttribute="width" constant="14" id="tob-WG-w2d"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
+                        <color key="tintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="icX1"/>
+                        <connections>
+                            <action selector="didTapDeleteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="sb5-0v-iAr"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="j6H-21-ZFp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WDw-Pn-Ekl"/>
-                <constraint firstAttribute="trailing" secondItem="j6H-21-ZFp" secondAttribute="trailing" id="ckz-Vz-VF7"/>
-                <constraint firstItem="j6H-21-ZFp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lZf-uy-4rp"/>
+                <constraint firstAttribute="trailing" secondItem="Rde-WU-DTM" secondAttribute="trailing" constant="8" id="4eB-Fo-Hws"/>
+                <constraint firstItem="fno-oP-vVj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Kf-Ie-YDX"/>
+                <constraint firstItem="fno-oP-vVj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LrY-vP-sWC"/>
+                <constraint firstItem="Rde-WU-DTM" firstAttribute="leading" secondItem="fno-oP-vVj" secondAttribute="trailing" id="aXg-DK-SzO"/>
+                <constraint firstItem="Rde-WU-DTM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="brp-Hv-aYh"/>
+                <constraint firstAttribute="bottom" secondItem="fno-oP-vVj" secondAttribute="bottom" id="fKv-Dc-LV2"/>
             </constraints>
             <size key="customSize" width="103" height="48"/>
+            <connections>
+                <outlet property="deleteButton" destination="Rde-WU-DTM" id="imh-d9-SBr"/>
+                <outlet property="wordLabel" destination="fno-oP-vVj" id="Tyd-iQ-QnP"/>
+            </connections>
             <point key="canvasLocation" x="170.28985507246378" y="123.88392857142857"/>
         </collectionViewCell>
     </objects>

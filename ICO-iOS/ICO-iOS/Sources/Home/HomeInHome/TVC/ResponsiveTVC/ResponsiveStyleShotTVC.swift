@@ -51,7 +51,7 @@ extension ResponsiveStyleShotTVC : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResponsiveCVC.identifier, for: indexPath) as! ResponsiveCVC
-        cell.getData(data: self.responsiveStyleShotModel[indexPath.row].category)
+        cell.getData(data: self.responsiveStyleShotModel[indexPath.row].category,rating: self.responsiveStyleShotModel[indexPath.row].point)
         cell.configure(with: ResponsiveCVCViewModel(with: self.responsiveStyleShotModel[indexPath.row]))
         return cell
     }

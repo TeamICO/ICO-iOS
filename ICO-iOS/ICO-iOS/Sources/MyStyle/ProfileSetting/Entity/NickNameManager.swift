@@ -37,9 +37,7 @@ final class NickNameManager{
                 case .success(let response):
 
                     completion(response)
-                    
-                    
-                    
+
                 case .failure(let error):
                     print("DEBUG>> checkNicName Get Error : \(error.localizedDescription)")
                     

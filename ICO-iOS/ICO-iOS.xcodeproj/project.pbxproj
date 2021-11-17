@@ -103,6 +103,8 @@
 		E96DB3032744AA0200659256 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3022744AA0200659256 /* BaseResponse.swift */; };
 		E96DB3052744C7FA00659256 /* NickNameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3042744C7FA00659256 /* NickNameManager.swift */; };
 		E96DB3072744E93600659256 /* ProfileUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3062744E93600659256 /* ProfileUpdateManager.swift */; };
+		E96DB30A2745301000659256 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3092745301000659256 /* SearchManager.swift */; };
+		E96DB30C274530CB00659256 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB30B274530CB00659256 /* SearchResponse.swift */; };
 		E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */; };
 		E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */; };
 		E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */; };
@@ -301,6 +303,8 @@
 		E96DB3022744AA0200659256 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		E96DB3042744C7FA00659256 /* NickNameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameManager.swift; sourceTree = "<group>"; };
 		E96DB3062744E93600659256 /* ProfileUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateManager.swift; sourceTree = "<group>"; };
+		E96DB3092745301000659256 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		E96DB30B274530CB00659256 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserInfoTVC.swift; sourceTree = "<group>"; };
 		E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserInfoTVC.xib; sourceTree = "<group>"; };
 		E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserIntroductionTVC.swift; sourceTree = "<group>"; };
@@ -722,6 +726,15 @@
 			path = BaseEntity;
 			sourceTree = "<group>";
 		};
+		E96DB30827452FFE00659256 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E96DB3092745301000659256 /* SearchManager.swift */,
+				E96DB30B274530CB00659256 /* SearchResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		E97D4367273D2B4700BB374F /* ProfileSettingTVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1115,6 +1128,7 @@
 			children = (
 				E9378D682737BD4700C589A1 /* SearchVC.swift */,
 				E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */,
+				E96DB30827452FFE00659256 /* Entity */,
 				E9378D90273808AD00C589A1 /* SearchTVC */,
 				E9AF83DD273B5C6D00D77D5F /* SearchResultVC */,
 			);
@@ -1542,6 +1556,7 @@
 				E94613A42743B7A700A5F7C2 /* CommonResponse.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
 				717CB5192743DD9B0044E227 /* StyleLifeDataManager.swift in Sources */,
+				E96DB30C274530CB00659256 /* SearchResponse.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
 				E9378D9E2738098700C589A1 /* RecentSearchWordsTVC.swift in Sources */,
 				E9E49918273BABDC0001ACFB /* ServiceTermsVC.swift in Sources */,
@@ -1555,6 +1570,7 @@
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
 				E946137F2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift in Sources */,
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
+				E96DB30A2745301000659256 /* SearchManager.swift in Sources */,
 				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
 				E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
