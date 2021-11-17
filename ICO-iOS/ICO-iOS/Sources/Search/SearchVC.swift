@@ -9,6 +9,8 @@ import UIKit
 
 class SearchVC: BaseViewController {
     // MARK: - Properties
+    private var searchModel : SearchResult?
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +20,7 @@ class SearchVC: BaseViewController {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedAround()
         self.tableviewConfigure()
+        self.fetchData()
         searchTextField.delegate = self
     }
     // MARK: - Selectors
@@ -39,6 +42,21 @@ class SearchVC: BaseViewController {
     }
     
 
+}
+// MARK: - FetchData
+extension SearchVC {
+    func fetchData(){
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        SearchManager.shared.getSearchKeywordHistory(jwtToken: jwtToken) { [weak self] response in
+            guard let response = response else {
+                return
+            }
+            self?.searchModel = response
+            self?.tableView.reloadData()
+        }
+    }
 }
 // MARK: - TableView Configure
 extension SearchVC {
@@ -77,6 +95,10 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
             case 0 :
                 let cell = tableView.dequeueReusableCell(withIdentifier: RecentSearchWordsTVC.identifier, for: indexPath) as! RecentSearchWordsTVC
                 cell.selectionStyle = .none
+                if let model = self.searchModel{
+                    cell.getData(data: model.keywordHistory)
+                }
+                
                 return cell
                 
             case 1 :

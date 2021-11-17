@@ -51,9 +51,19 @@ class ProfileSettingVC: BaseViewController {
         guard let jwtToken = self.jwtToken else{
             return
         }
-        let ecokeywords = self.seletedKeywords.map{$0+1}
-        ProfileUpdateManager.shared.updateUserProfile(imageData: self.selectedContentImage, nickname: self.nickname, description: self.profileDescription, activatedEcoKeyword: ecokeywords, userIdx: self.userIdx, jwtToken: jwtToken) { CommonResponse in
-            
+        let ecokeywords = self.seletedKeywords.map{String($0+1)}
+        ProfileUpdateManager.shared.updateUserProfile(imageData: self.selectedContentImage,
+                                                      nickname: self.nickname,
+                                                      description: self.profileDescription,
+                                                      activatedEcoKeyword: ecokeywords,
+                                                      userIdx: self.userIdx,
+                                                      jwtToken: jwtToken) { response in
+            guard response.isSuccess else{
+                return
+            }
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

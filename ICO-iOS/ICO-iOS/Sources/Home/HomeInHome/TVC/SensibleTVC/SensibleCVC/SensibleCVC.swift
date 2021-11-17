@@ -46,7 +46,7 @@ class SensibleCVC: UICollectionViewCell {
     func configure(with viewModel : SensibleCVCViewModel){
         
         self.userId.text = viewModel.nicName
-
+        
         guard let styleShotUrl = URL(string: viewModel.styleShotImage), let userImageUrl = URL(string: viewModel.userImage) else{
                 return
             }

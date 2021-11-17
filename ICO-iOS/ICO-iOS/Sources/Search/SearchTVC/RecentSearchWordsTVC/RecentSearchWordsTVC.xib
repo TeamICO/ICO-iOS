@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="KGk-i7-Jjw" customClass="RecentSearchWordsTVC" customModule="ICO_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="RecentSearchWordsTVC" customModule="ICO_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvX-v3-Fks">
@@ -54,40 +54,36 @@
                             <action selector="didTapDeleteAllButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SWu-x5-Qnz"/>
                         </connections>
                     </button>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuK-OQ-nyn">
-                        <rect key="frame" x="0.0" y="49" width="320" height="28"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVt-rf-xjf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OfB-NR-rLh">
+                        <rect key="frame" x="0.0" y="51" width="320" height="28"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MVt-rf-xjf" firstAttribute="leading" secondItem="YkH-jh-4kg" secondAttribute="leading" id="2Nd-QK-D0o"/>
-                            <constraint firstItem="MVt-rf-xjf" firstAttribute="width" secondItem="NBW-bG-yiQ" secondAttribute="width" id="JwE-bO-M4d"/>
-                            <constraint firstItem="MVt-rf-xjf" firstAttribute="bottom" secondItem="YkH-jh-4kg" secondAttribute="bottom" id="M1F-VA-eFW"/>
-                            <constraint firstItem="MVt-rf-xjf" firstAttribute="top" secondItem="YkH-jh-4kg" secondAttribute="top" id="M2o-vr-0C5"/>
-                            <constraint firstItem="MVt-rf-xjf" firstAttribute="height" secondItem="NBW-bG-yiQ" secondAttribute="height" id="SwL-1b-QjD"/>
-                            <constraint firstItem="MVt-rf-xjf" firstAttribute="trailing" secondItem="YkH-jh-4kg" secondAttribute="trailing" id="bOp-20-r4h"/>
-                            <constraint firstAttribute="height" constant="28" id="epn-3Z-yWK"/>
+                            <constraint firstAttribute="height" constant="28" id="z1h-iB-4YE"/>
                         </constraints>
-                        <viewLayoutGuide key="contentLayoutGuide" id="YkH-jh-4kg"/>
-                        <viewLayoutGuide key="frameLayoutGuide" id="NBW-bG-yiQ"/>
-                    </scrollView>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FSW-79-GHO">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="AuK-OQ-nyn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2F8-C2-tpj"/>
+                    <constraint firstAttribute="bottom" secondItem="OfB-NR-rLh" secondAttribute="bottom" constant="16" id="0CD-qe-6fH"/>
                     <constraint firstItem="pvq-Xh-0x8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="8tK-q3-tHL"/>
-                    <constraint firstAttribute="bottom" secondItem="AuK-OQ-nyn" secondAttribute="bottom" constant="8" id="C8p-pT-P8P"/>
                     <constraint firstItem="yvX-v3-Fks" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="GND-oq-Ck5"/>
                     <constraint firstItem="yvX-v3-Fks" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Nh2-eh-sfh"/>
-                    <constraint firstAttribute="trailing" secondItem="AuK-OQ-nyn" secondAttribute="trailing" id="nU2-Of-8FI"/>
+                    <constraint firstAttribute="trailing" secondItem="OfB-NR-rLh" secondAttribute="trailing" id="lfF-MT-Fee"/>
+                    <constraint firstItem="OfB-NR-rLh" firstAttribute="top" secondItem="yvX-v3-Fks" secondAttribute="bottom" constant="12" id="oVg-7s-hYm"/>
                     <constraint firstAttribute="trailing" secondItem="pvq-Xh-0x8" secondAttribute="trailing" constant="16" id="sqg-mE-Fab"/>
-                    <constraint firstItem="AuK-OQ-nyn" firstAttribute="top" secondItem="yvX-v3-Fks" secondAttribute="bottom" constant="10" id="xYS-pl-gaO"/>
+                    <constraint firstItem="OfB-NR-rLh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tpH-9q-GbO"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="131.8840579710145" y="83.035714285714278"/>
+            <connections>
+                <outlet property="collectionView" destination="OfB-NR-rLh" id="yae-v1-aGh"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="84.375"/>
         </tableViewCell>
     </objects>
     <resources>
