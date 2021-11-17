@@ -31,6 +31,7 @@ class SearchResultsSV: UIView {
         self.addSubview(categoryLabel)
         
         categoryLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        
         categoryLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         categoryLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
 

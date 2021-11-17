@@ -40,6 +40,10 @@
                         <color key="textColor" red="0.26274509800000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjt-QE-OCb">
+                        <rect key="frame" x="0.0" y="163" width="320" height="250"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qrp-Yk-VBS">
                         <rect key="frame" x="0.0" y="163" width="320" height="250"/>
                         <constraints>
@@ -95,15 +99,19 @@
                     <constraint firstItem="F97-9u-gHZ" firstAttribute="top" secondItem="qrp-Yk-VBS" secondAttribute="bottom" constant="24" id="9vd-R6-XDE"/>
                     <constraint firstItem="dbS-OV-6mg" firstAttribute="top" secondItem="iFe-V5-Iqe" secondAttribute="bottom" constant="10" id="AMd-EW-FYD"/>
                     <constraint firstAttribute="bottom" secondItem="F97-9u-gHZ" secondAttribute="bottom" constant="16" id="AXK-6y-Ljq"/>
+                    <constraint firstAttribute="trailing" secondItem="hjt-QE-OCb" secondAttribute="trailing" id="Amq-5F-UQn"/>
+                    <constraint firstItem="hjt-QE-OCb" firstAttribute="top" secondItem="1hV-H6-K0K" secondAttribute="bottom" constant="16" id="Csb-UA-BRg"/>
+                    <constraint firstItem="qrp-Yk-VBS" firstAttribute="top" secondItem="1hV-H6-K0K" secondAttribute="bottom" constant="16" id="Efs-JQ-sJa"/>
                     <constraint firstItem="hth-U4-BZI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="F5v-oe-E1J"/>
                     <constraint firstItem="hth-U4-BZI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="L1q-3D-gNg"/>
                     <constraint firstItem="BPb-c4-qwH" firstAttribute="top" secondItem="hth-U4-BZI" secondAttribute="bottom" id="POb-gi-tUm"/>
                     <constraint firstItem="BPb-c4-qwH" firstAttribute="leading" secondItem="iFe-V5-Iqe" secondAttribute="trailing" constant="6" id="Uvs-NG-YZz"/>
+                    <constraint firstItem="hjt-QE-OCb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WpB-I6-HfB"/>
                     <constraint firstItem="qrp-Yk-VBS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YmS-uM-TsC"/>
                     <constraint firstItem="iFe-V5-Iqe" firstAttribute="top" secondItem="hth-U4-BZI" secondAttribute="bottom" constant="2" id="c5p-5y-7C0"/>
+                    <constraint firstItem="F97-9u-gHZ" firstAttribute="top" secondItem="hjt-QE-OCb" secondAttribute="bottom" constant="24" id="hD1-Mn-dnY"/>
                     <constraint firstAttribute="trailing" secondItem="dbS-OV-6mg" secondAttribute="trailing" id="k3f-zE-PZY"/>
                     <constraint firstAttribute="trailing" secondItem="F97-9u-gHZ" secondAttribute="trailing" id="nVS-he-jGJ"/>
-                    <constraint firstItem="qrp-Yk-VBS" firstAttribute="top" secondItem="dbS-OV-6mg" secondAttribute="bottom" id="q01-bb-XWA"/>
                     <constraint firstAttribute="trailing" secondItem="qrp-Yk-VBS" secondAttribute="trailing" id="vSB-su-HpU"/>
                 </constraints>
             </tableViewCellContentView>
@@ -111,6 +119,7 @@
             <connections>
                 <outlet property="brandImage" destination="qrp-Yk-VBS" id="6p0-qb-0vc"/>
                 <outlet property="brandNameLabel" destination="Wx4-xC-n9n" id="GCg-IW-weq"/>
+                <outlet property="brandView" destination="hjt-QE-OCb" id="bXB-9u-227"/>
                 <outlet property="collectionView" destination="F97-9u-gHZ" id="3Qg-hL-cl4"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="304.6875"/>

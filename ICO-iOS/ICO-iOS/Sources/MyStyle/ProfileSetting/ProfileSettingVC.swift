@@ -14,6 +14,7 @@ class ProfileSettingVC: BaseViewController {
     private var seletedKeywords = [Int]()
     private var nickname = ""
     private var isCheckedNickname = false
+    private var profileDescription = ""
     private var selectedContentImage : UIImage?
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var updateButton: UIButton!
@@ -47,7 +48,13 @@ class ProfileSettingVC: BaseViewController {
             self.presentAlert(title: "닉네임을 조건에 맞게입력해주세요.")
             return
         }
-        print("qwe")
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        let ecokeywords = self.seletedKeywords.map{$0+1}
+        ProfileUpdateManager.shared.updateUserProfile(imageData: self.selectedContentImage, nickname: self.nickname, description: self.profileDescription, activatedEcoKeyword: ecokeywords, userIdx: self.userIdx, jwtToken: jwtToken) { CommonResponse in
+            
+        }
     }
     
 }
@@ -63,6 +70,7 @@ extension ProfileSettingVC{
             }
             self?.profileModel = response
             self?.nickname = response.nickname
+            self?.profileDescription = response.resultDescription
             let keywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
             self?.ecokeywords = keywords
             for i in 0..<keywords.count{
