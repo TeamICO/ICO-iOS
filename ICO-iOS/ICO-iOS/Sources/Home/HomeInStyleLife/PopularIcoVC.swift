@@ -9,6 +9,8 @@ import UIKit
 
 class PopularIcoVC: UIViewController {
     
+    var serverData : MyStyleResult?
+    var id: Int = 0
     
     @IBOutlet weak var styleCV: UICollectionView!
     
@@ -38,9 +40,8 @@ class PopularIcoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        StyleLifeDataManager().getPopularIcoInfo(self, userIdx: id)
         setUI()
-        setCV()
         registerNib()
         // Do any additional setup after loading the view.
     }
@@ -67,14 +68,12 @@ class PopularIcoVC: UIViewController {
         shadowView.layer.shadowOffset = CGSize(width: 8, height: 8)
         
         profileImage.cornerRadius = 12
-        name.text = "이석"
         name.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 20)
         keywordLabel.text = "에코 관심 키워드"
         keywordLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         profileline.backgroundColor = UIColor.primaryBlack50
         detailLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         detailLabel.textColor = UIColor.primaryBlack60
-        detailLabel.text = "지구를 위해 지속가능한 패션 제품을 소비하려고 노력합니다."
         
         keywordName[0].text = "업사이클링"
         keywordName[1].text = "수익기부"
@@ -85,11 +84,8 @@ class PopularIcoVC: UIViewController {
             keywordName[i].textColor = UIColor.coGreen
         }
         
-        
         likeLabel.text = "누적 좋아요"
-        likeNum.text = "459"
         styleLabel.text = "누적 스타일 샷"
-        styleNum.text = "2"
         likeNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
         likeLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         likeLabel.textColor = UIColor.primaryBlack60
@@ -112,11 +108,13 @@ class PopularIcoVC: UIViewController {
 
 extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return serverData?.styleshotCnt ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+        
+        styleCell.styleImage.setImage(with: serverData?.profileURL ?? "")
         
         return styleCell
     }
@@ -145,3 +143,16 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
     }
 }
 
+extension PopularIcoVC{
+    func didSuccessGetPopularIco(message: String){
+        name.text = serverData?.nickname
+        detailLabel.text = serverData?.resultDescription
+        profileImage.setImage(with: serverData?.profileURL ?? "")
+        likeNum.text = "\(serverData?.likeCnt ?? 0)"
+        styleNum.text = "\(serverData?.styleshotCnt ?? 0) "
+        setCV()
+        styleCV.reloadData()
+        
+        print(message)
+    }
+}
