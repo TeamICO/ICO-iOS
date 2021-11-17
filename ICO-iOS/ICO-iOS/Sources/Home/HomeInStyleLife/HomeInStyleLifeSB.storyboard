@@ -102,42 +102,65 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Rfs-Qz-gCo"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="YCR-7t-X9R"/>
                             </scrollView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="194-wD-M78">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="194-wD-M78">
                                 <rect key="frame" x="0.0" y="109" width="414" height="76"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="SRR-8f-oWI"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-DA-sxv">
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-DA-sxv">
                                 <rect key="frame" x="16" y="109" width="383" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc4-Sa-MHA">
                                         <rect key="frame" x="6" y="6" width="141" height="48"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6V-HH-P9q">
-                                                <rect key="frame" x="36" y="10" width="48.5" height="28"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="최신"/>
-                                                <connections>
-                                                    <action selector="recentBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y4I-TS-ZIT"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtF-pC-bBS">
-                                        <rect key="frame" x="167.5" y="16" width="48.5" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6V-HH-P9q">
+                                        <rect key="frame" x="40" y="16" width="59" height="28"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="인기"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="최신">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="20" name="AppleSDGothicNeo-Medium"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="recentBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y4I-TS-ZIT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtF-pC-bBS">
+                                        <rect key="frame" x="162" y="16" width="59" height="28"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="인기">
+                                                    <attributes>
+                                                        <font key="NSFont" size="20" name="AppleSDGothicNeo-Medium"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="popularBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MMy-wO-JZ4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-bd-VjM">
-                                        <rect key="frame" x="286.5" y="16" width="72.5" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-bd-VjM">
+                                        <rect key="frame" x="265.5" y="16" width="93.5" height="28"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="키워드별"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="키워드별">
+                                                    <attributes>
+                                                        <font key="NSFont" size="20" name="AppleSDGothicNeo-Medium"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="keywordBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yoJ-ru-61t"/>
                                         </connections>
@@ -153,11 +176,11 @@
                                     <constraint firstItem="OtF-pC-bBS" firstAttribute="centerX" secondItem="6sj-DA-sxv" secondAttribute="centerX" id="MNj-cQ-i4R"/>
                                     <constraint firstItem="Cc4-Sa-MHA" firstAttribute="leading" secondItem="6sj-DA-sxv" secondAttribute="leading" constant="6" id="S1K-t8-3bB"/>
                                     <constraint firstItem="OtF-pC-bBS" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="16" id="WBR-ej-khh"/>
-                                    <constraint firstItem="u6V-HH-P9q" firstAttribute="leading" secondItem="6sj-DA-sxv" secondAttribute="leading" constant="42" id="cv6-Ia-9rV"/>
-                                    <constraint firstItem="u6V-HH-P9q" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="16" id="gkJ-RL-hYD"/>
-                                    <constraint firstAttribute="bottom" secondItem="u6V-HH-P9q" secondAttribute="bottom" constant="16" id="i0s-YZ-lhG"/>
+                                    <constraint firstItem="u6V-HH-P9q" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="16" id="dmw-wv-Pfe"/>
                                     <constraint firstAttribute="bottom" secondItem="Cc4-Sa-MHA" secondAttribute="bottom" constant="6" id="jq4-E1-wu2"/>
                                     <constraint firstItem="WPm-bd-VjM" firstAttribute="top" secondItem="6sj-DA-sxv" secondAttribute="top" constant="16" id="mWS-KE-h0L"/>
+                                    <constraint firstAttribute="bottom" secondItem="u6V-HH-P9q" secondAttribute="bottom" constant="16" id="o2q-MF-iPg"/>
+                                    <constraint firstItem="u6V-HH-P9q" firstAttribute="leading" secondItem="6sj-DA-sxv" secondAttribute="leading" constant="40" id="rau-7y-osc"/>
                                     <constraint firstAttribute="height" constant="60" id="sbu-xf-aGW"/>
                                 </constraints>
                             </view>
@@ -187,9 +210,9 @@
                         <outlet property="scrollView" destination="nKO-wk-eUS" id="b3c-2t-HOI"/>
                         <outlet property="segmentView" destination="6sj-DA-sxv" id="Efz-aw-Sgz"/>
                         <outlet property="stackViewWidth" destination="3bs-st-uV7" id="Vwg-Ql-6PZ"/>
-                        <outletCollection property="categoryBtn" destination="u6V-HH-P9q" collectionClass="NSMutableArray" id="uuj-K6-ecR"/>
-                        <outletCollection property="categoryBtn" destination="OtF-pC-bBS" collectionClass="NSMutableArray" id="d3G-Jn-epd"/>
-                        <outletCollection property="categoryBtn" destination="WPm-bd-VjM" collectionClass="NSMutableArray" id="9Ew-Fq-VOz"/>
+                        <outletCollection property="categoryBtn" destination="u6V-HH-P9q" collectionClass="NSMutableArray" id="6Kh-rU-ubz"/>
+                        <outletCollection property="categoryBtn" destination="OtF-pC-bBS" collectionClass="NSMutableArray" id="u3s-HD-bvp"/>
+                        <outletCollection property="categoryBtn" destination="WPm-bd-VjM" collectionClass="NSMutableArray" id="tgx-MO-nyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

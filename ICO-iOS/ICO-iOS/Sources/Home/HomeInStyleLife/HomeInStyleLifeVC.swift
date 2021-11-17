@@ -15,17 +15,16 @@ class HomeInStyleLifeVC: BaseViewController {
     @IBOutlet var categoryBtn: [UIButton]!
     @IBOutlet weak var animateView: UIView!
     
-    
     @IBOutlet weak var left: NSLayoutConstraint!
     @IBOutlet weak var right: NSLayoutConstraint!
     
-    
     let viewSizeWidth : CGFloat = 414
     let viewSizeWidth2 : CGFloat = 828
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(self.segmentView.width/3)
         setUI()
     }
     
@@ -46,9 +45,6 @@ class HomeInStyleLifeVC: BaseViewController {
         categoryBtn[2].setTitle("키워드별", for: .normal)
         categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
       
-        for i in 0...2{
-            categoryBtn[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
-        }
     }
     
     
@@ -59,7 +55,7 @@ class HomeInStyleLifeVC: BaseViewController {
         categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
         UIView.animate(withDuration: 1){
             self.left.constant = 6
-            self.right.constant = 236
+            self.right.constant = (self.segmentView.width/3)*2
         }
     }
     
@@ -70,8 +66,8 @@ class HomeInStyleLifeVC: BaseViewController {
         categoryBtn[0].setTitleColor(UIColor.tabBarGray, for: .normal)
         categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
         UIView.animate(withDuration: 1){
-            self.left.constant = 119
-            self.right.constant = 119
+            self.left.constant = self.segmentView.width/3
+            self.right.constant = self.segmentView.width/3
         }
     }
     
@@ -82,9 +78,8 @@ class HomeInStyleLifeVC: BaseViewController {
         categoryBtn[0].setTitleColor(UIColor.tabBarGray, for: .normal)
         categoryBtn[1].setTitleColor(UIColor.tabBarGray, for: .normal)
         UIView.animate(withDuration: 1){
-            self.left.constant = 240
+            self.left.constant = (self.segmentView.width/3)*2
             self.right.constant = 6
-            //self.animateView.bringSubviewToFront(self.categoryBtn[2])
             self.categoryBtn[2].bringSubviewToFront(self.animateView)
         }
     }
