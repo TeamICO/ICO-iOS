@@ -135,7 +135,6 @@ extension PopularVC{
         popularIcoCV.delegate = self
         popularIcoCV.dataSource = self
         popularIcoCV.reloadData()
-        
         topBanner.setImage(with: serverData?.topBanner.imageURL ?? "")
         
         print(message)
