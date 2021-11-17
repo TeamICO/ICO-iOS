@@ -9,28 +9,20 @@ import UIKit
 
 class MyStyleVC: BaseViewController {
     
-    
+    var serverData : MyStyleResult?
     
     @IBOutlet weak var styleCV: UICollectionView!
-    
     @IBOutlet weak var navigationTitle: UILabel!
-    
     @IBOutlet weak var backView: UIView!
-    
-
     @IBOutlet weak var shadowView: UIView!
-    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var keywordLabel: UILabel!
     @IBOutlet weak var profileline: UIView!
     @IBOutlet weak var detailLabel: UILabel!
     
-    
     @IBOutlet var keywordView: [UIView]!
-    
     @IBOutlet var keywordName: [UILabel]!
-    
     
     @IBOutlet weak var likeNum: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
@@ -45,8 +37,8 @@ class MyStyleVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        MyStyleDataManager().getMyStyleInfo(self, userIdx: 7)
         setUI()
-        setCV()
         registerNib()
         // Do any additional setup after loading the view.
     }
@@ -75,14 +67,12 @@ class MyStyleVC: BaseViewController {
         shadowView.layer.shadowOffset = CGSize(width: 8, height: 8)
             
         profileImage.cornerRadius = 12
-        name.text = "이석"
         name.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 20)
         keywordLabel.text = "에코 관심 키워드"
         keywordLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         profileline.backgroundColor = UIColor.primaryBlack50
         detailLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         detailLabel.textColor = UIColor.primaryBlack60
-        detailLabel.text = "지구를 위해 지속가능한 패션 제품을 소비하려고 노력합니다."
             
             keywordName[0].text = "업사이클링"
             keywordName[1].text = "수익기부"
@@ -93,11 +83,8 @@ class MyStyleVC: BaseViewController {
                 keywordName[i].textColor = UIColor.coGreen
             }
             
-            
             likeLabel.text = "누적 좋아요"
-            likeNum.text = "230"
             styleLabel.text = "누적 스타일 샷"
-            styleNum.text = "8"
             likeNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
             likeLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
             likeLabel.textColor = UIColor.primaryBlack60
@@ -129,11 +116,13 @@ class MyStyleVC: BaseViewController {
 
 extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return serverData?.styleshotCnt ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+        
+        styleCell.styleImage.setImage(with: serverData?.styleshot[indexPath.row].imageURL ?? "")
         
         return styleCell
     }
@@ -160,4 +149,19 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
+}
+
+
+extension MyStyleVC{
+    func didSuccessGetMyStyle(message: String){
+        name.text = serverData?.nickname
+        detailLabel.text = serverData?.resultDescription
+        likeNum.text = "\(serverData?.likeCnt ?? 0)"
+        styleNum.text = "\(serverData?.styleshotCnt ?? 0)"
+        setCV()
+        styleCV.reloadData()
+        
+        print(message)
+    }
+
 }
