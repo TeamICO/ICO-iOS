@@ -304,7 +304,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="2Wc-co-xa8" secondAttribute="trailing" id="xbD-aU-z6e"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-O5-OVU">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-O5-OVU">
                                                 <rect key="frame" x="16" y="381" width="382" height="419"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kQa-i1-pyQ">
@@ -414,6 +414,7 @@
                     <connections>
                         <outlet property="backView" destination="tJh-xH-N7E" id="mhh-bW-ZcK"/>
                         <outlet property="detailLabel" destination="xvk-or-xgV" id="nXv-wP-fXH"/>
+                        <outlet property="entireHeight" destination="HYD-Hy-CKc" id="AWd-bZ-PYf"/>
                         <outlet property="keywordLabel" destination="rbc-3F-Veh" id="DNk-9a-aNJ"/>
                         <outlet property="likeLabel" destination="z4O-Z2-573" id="9IT-BU-R6A"/>
                         <outlet property="likeNum" destination="1O9-SH-Ejz" id="m7V-FK-luO"/>

@@ -24,7 +24,6 @@ class HomeInStyleLifeVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.segmentView.width/3)
         setUI()
     }
     
