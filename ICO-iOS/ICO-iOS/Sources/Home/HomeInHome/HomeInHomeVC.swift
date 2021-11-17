@@ -110,6 +110,7 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
         case 2 :
             let cell = tableView.dequeueReusableCell(withIdentifier: BrandRecommendTVC.identifier, for: indexPath) as! BrandRecommendTVC
             cell.selectionStyle = .none
+            cell.delegate = self
             if let brand = self.brandModel{
                 cell.getData(data: brand)
             }
@@ -178,6 +179,16 @@ extension HomeInHomeVC : TopTVCDelegate {
     func didTapSearchView() {
         self.navigationPushViewController(storyboard: "SearchSB", identifier: "SearchVC")
 
+    }
+    
+    
+}
+extension HomeInHomeVC : BrandRecommendTVCDelegate{
+    func didTapBrandView() {
+        guard let brandModel = self.brandModel else{
+            return
+        }
+        UIApplication.shared.open(URL(string: brandModel.contentURL )! as URL, options: [:], completionHandler: nil)
     }
     
     

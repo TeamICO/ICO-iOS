@@ -6,12 +6,17 @@
 //
 
 import UIKit
+protocol BrandRecommendTVCDelegate : AnyObject{
+    func didTapBrandView()
+}
 
 class BrandRecommendTVC: UITableViewCell {
     static let identifier = "BrandRecommendTVC"
     
     private var brand : HomeInHomeBrand?
+    weak var delegate : BrandRecommendTVCDelegate?
     
+    @IBOutlet weak var brandView: UIView!
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var brandImage: UIImageView!
     
@@ -19,6 +24,7 @@ class BrandRecommendTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionViewConfigure()
+        setBrandViewTapGesture()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,6 +60,15 @@ class BrandRecommendTVC: UITableViewCell {
         
         collectionView.reloadData()
     }
+    
+    func setBrandViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapBrandView))
+        viewTap.cancelsTouchesInView = false
+        brandView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapBrandView(){
+        delegate?.didTapBrandView()
+    }
 }
 // MARK: - CollectionView Configure
 extension BrandRecommendTVC {
@@ -83,7 +98,10 @@ extension BrandRecommendTVC : UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         collectionView.deselectItem(at: indexPath, animated: true)
-      
+        if let product = self.brand?.product{
+            UIApplication.shared.open(URL(string: product[indexPath.row].contentURL )! as URL, options: [:], completionHandler: nil)
+        }
+        
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
