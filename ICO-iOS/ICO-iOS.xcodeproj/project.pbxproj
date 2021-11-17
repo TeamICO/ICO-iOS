@@ -27,6 +27,7 @@
 		7190EA49273816FA008BA6C0 /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA48273816FA008BA6C0 /* Recent.storyboard */; };
 		7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4A273819D6008BA6C0 /* Popular.storyboard */; };
 		7190EA4D27381A54008BA6C0 /* Keyword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7190EA4C27381A54008BA6C0 /* Keyword.storyboard */; };
+		71A870EA2744FCBB0069239A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A870E92744FCBB0069239A /* UIImageView.swift */; };
 		71A9688D273C283C003AF0A9 /* KeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A9688B273C283C003AF0A9 /* KeywordCVC.swift */; };
 		71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71A9688C273C283C003AF0A9 /* KeywordCVC.xib */; };
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
@@ -219,6 +220,7 @@
 		7190EA48273816FA008BA6C0 /* Recent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recent.storyboard; sourceTree = "<group>"; };
 		7190EA4A273819D6008BA6C0 /* Popular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popular.storyboard; sourceTree = "<group>"; };
 		7190EA4C27381A54008BA6C0 /* Keyword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyword.storyboard; sourceTree = "<group>"; };
+		71A870E92744FCBB0069239A /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		71A9688B273C283C003AF0A9 /* KeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCVC.swift; sourceTree = "<group>"; };
 		71A9688C273C283C003AF0A9 /* KeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCVC.xib; sourceTree = "<group>"; };
 		71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoCVC.swift; sourceTree = "<group>"; };
@@ -1065,6 +1067,7 @@
 				E9CAF1BC273169A6008F749B /* UINavigationBar.swift */,
 				E9CAF1BE273169AB008F749B /* UIView.swift */,
 				E946139927438E0A00A5F7C2 /* UILabel.swift */,
+				71A870E92744FCBB0069239A /* UIImageView.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -1568,6 +1571,7 @@
 				E9378D7E2737FCD000C589A1 /* BestTagTVC.swift in Sources */,
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,
 				E96DB3052744C7FA00659256 /* NickNameManager.swift in Sources */,
+				71A870EA2744FCBB0069239A /* UIImageView.swift in Sources */,
 				E96DB3032744AA0200659256 /* BaseResponse.swift in Sources */,
 				E9161D18273D0126009A9CA7 /* NoneLikeCVC.swift in Sources */,
 				E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PopularVC: UIViewController {
     
@@ -19,7 +20,6 @@ class PopularVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(serverData)
         StyleLifeDataManager().getStyleLifeTop(self)
         setUI()
         registerXib()
@@ -47,7 +47,6 @@ class PopularVC: UIViewController {
         
         popularLabel.text = "지금 인기있는 아이코"
         popularLabel.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 20)
-        
     }
 
 }
@@ -77,7 +76,9 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularIcoCVC", for: indexPath)as? PopularIcoCVC else {return UICollectionViewCell()}
         
-
+        cell.icoName.text = serverData?.popularIco[indexPath.row].nickname
+        cell.icoImage.setImage(with: serverData?.popularIco[indexPath.row].profileURL ?? "")
+        
         return cell
     }
     
@@ -119,7 +120,6 @@ extension PopularVC{
         popularIcoCV.dataSource = self
         popularIcoCV.reloadData()
         
-        print(serverData?.popularIco.count)
         print(message)
     }
 }
