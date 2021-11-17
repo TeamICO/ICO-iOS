@@ -77,7 +77,7 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularIcoCVC", for: indexPath)as? PopularIcoCVC else {return UICollectionViewCell()}
         
         cell.icoName.text = serverData?.popularIco[indexPath.row].nickname
-        cell.icoImage.setImage(with: serverData?.popularIco[indexPath.row].profileURL ?? "")
+        cell.icoImage.download(url: serverData?.popularIco[indexPath.row].profileURL ?? "", rounded: true)
         
         return cell
     }
