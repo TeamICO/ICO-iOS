@@ -6,3 +6,41 @@
 //
 
 import Foundation
+
+// MARK: - StyleLifeResponse
+struct StyleLifeResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: Result
+}
+
+// MARK: - Result
+struct Result: Codable {
+    let topBanner: TopBanner
+    let popularIco: [PopularIco]
+}
+
+// MARK: - PopularIco
+struct PopularIco: Codable {
+    let userIdx: Int
+    let profileURL: String
+    let nickname, latestCategory: String
+
+    enum CodingKeys: String, CodingKey {
+        case userIdx
+        case profileURL = "profileUrl"
+        case nickname, latestCategory
+    }
+}
+
+// MARK: - TopBanner
+struct TopBanner: Codable {
+    let imageURL: String
+    let type, content: String
+
+    enum CodingKeys: String, CodingKey {
+        case imageURL = "imageUrl"
+        case type, content
+    }
+}
