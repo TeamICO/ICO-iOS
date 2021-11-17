@@ -11,6 +11,7 @@ class MyStyleVC: BaseViewController {
     
     var serverData : MyStyleResult?
     
+    @IBOutlet weak var entireHeight: NSLayoutConstraint!
     @IBOutlet weak var styleCV: UICollectionView!
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet weak var backView: UIView!
@@ -135,8 +136,8 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellWidth = 164
-        let cellHeight = 164
+        let cellWidth = 166
+        let cellHeight = 166
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
@@ -155,9 +156,17 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
 extension MyStyleVC{
     func didSuccessGetMyStyle(message: String){
         name.text = serverData?.nickname
+        profileImage.setImage(with: serverData?.profileURL ?? "")
         detailLabel.text = serverData?.resultDescription
         likeNum.text = "\(serverData?.likeCnt ?? 0)"
         styleNum.text = "\(serverData?.styleshotCnt ?? 0)"
+        
+        var item = (serverData?.styleshotCnt)!
+        if item % 2 == 0 {
+            entireHeight.constant = CGFloat(389 + 180*(item/2))
+        }else{
+            entireHeight.constant = CGFloat(389 + 180*((item+1)/2))
+        }
         setCV()
         styleCV.reloadData()
         
