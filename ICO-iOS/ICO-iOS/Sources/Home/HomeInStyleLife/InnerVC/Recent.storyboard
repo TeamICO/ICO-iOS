@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="P29-GS-Glf">
-                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="753"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -26,7 +26,7 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="P29-GS-Glf" secondAttribute="bottom" id="h4I-aW-sRk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P29-GS-Glf" secondAttribute="trailing" id="oa9-MB-6OL"/>
-                            <constraint firstItem="P29-GS-Glf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="tBL-fO-HHd"/>
+                            <constraint firstItem="P29-GS-Glf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="65" id="tBL-fO-HHd"/>
                             <constraint firstItem="P29-GS-Glf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zFQ-8A-tI9"/>
                         </constraints>
                     </view>
