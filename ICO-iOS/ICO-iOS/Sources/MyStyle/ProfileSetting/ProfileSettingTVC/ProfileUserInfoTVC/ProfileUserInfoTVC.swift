@@ -9,6 +9,7 @@ import UIKit
 protocol ProfileUserInfoTVCDelegate: AnyObject {
     func didTapUserImageView()
     func checkName(nickname: String,textField : UITextField,label: UILabel)
+    func checkNicNameState(nickname : String)
 }
 
 class ProfileUserInfoTVC: UITableViewCell {
@@ -75,18 +76,34 @@ class ProfileUserInfoTVC: UITableViewCell {
 
     @IBAction func didTapRemoveNicNameButton(_ sender: Any) {
         nickNameTextField.text = ""
+        if let nickname = nickNameTextField.text {
+            delegate?.checkNicNameState(nickname: nickname)
+        }
     }
     
 }
 extension ProfileUserInfoTVC : UITextFieldDelegate {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if let nickname = textField.text {
+            delegate?.checkNicNameState(nickname: nickname)
+        }
+        return true
+        
+    }
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        
         if let textCount = textField.text?.count{
+            
             nicNameCountLabel.text = "\(textCount)"
+        }
+        if let nickname = textField.text {
+            delegate?.checkNicNameState(nickname: nickname)
         }
        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let nickname = textField.text {
+            
             delegate?.checkName(nickname: nickname,textField : self.nickNameTextField,label: self.nicknameStateLabel)
         }
         return true

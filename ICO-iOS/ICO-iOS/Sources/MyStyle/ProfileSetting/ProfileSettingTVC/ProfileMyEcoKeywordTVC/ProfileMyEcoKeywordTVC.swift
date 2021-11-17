@@ -7,9 +7,21 @@
 
 import UIKit
 protocol ProfileMyEcoKeywordTVCDelegate : AnyObject{
-    func tapDonationView()
-    func tapAnimalView()
-    func tapTradeView()
+    func tapDonationView(seletedKeywords : [Int])
+    func tapAnimalView(seletedKeywords : [Int])
+    func tapTradeView(seletedKeywords: [Int])
+    func tapVeganView(seletedKeywords : [Int])
+    func tapLactoView(seletedKeywords : [Int])
+    func tapLactovoView(seletedKeywords : [Int])
+    func tapFescoView(seletedKeywords : [Int])
+    func tapPlasticFreeView(seletedKeywords : [Int])
+    func tapEcoView(seletedKeywords : [Int])
+    func tapUpcyclingView(seletedKeywords : [Int])
+    func tapPackageView(seletedKeywords : [Int])
+    func tapGmoFreeView(seletedKeywords : [Int])
+    func tapChemicalView(seletedKeywords : [Int])
+    func tapFdaView(seletedKeywords : [Int])
+    
 }
 
 class ProfileMyEcoKeywordTVC: UITableViewCell {
@@ -48,21 +60,8 @@ class ProfileMyEcoKeywordTVC: UITableViewCell {
     
     @IBOutlet weak var chemicalLabel: UILabel!
     
-    var isDoantion = false
-    var isAnimal = false
-    var isTrade = false
-    var isVegan = false
-    var isLacto = false
-    var isLactovo = false
-    var isFesco = false
-    var isPlasticFree = false
-    var isEco = false
-    var isUpcycling = false
-    var isPackage = false
-    var isGmoFree = false
-    var isChemical = false
-    var isFda = false
-    
+    var isEcoKeywordState = Array(repeating: false, count: 14)
+    var seletedKeywords = [Int]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -76,55 +75,59 @@ class ProfileMyEcoKeywordTVC: UITableViewCell {
     }
     
     func configure(keywords : [ProfileEcoKeyword]){
+        
         for i in 0..<keywords.count {
+            seletedKeywords.append(keywords[i].ecoKeywordIdx-1)
+            
             switch keywords[i].name {
             case "수익기부" :
                 setColor(view: donationView, label: donationLabel)
-                isDoantion = true
+                isEcoKeywordState[0] = true
             case "동물실험 반대":
                 setColor(view: animalView, label: animalLabel)
-                isAnimal = true
+                isEcoKeywordState[1] = true
             case "공정무역":
                 setColor(view: tradeView, label: tradeLabel)
-                isTrade = true
+                isEcoKeywordState[2] = true
             case "비건":
                 setColor(view: veganView, label: veganLabel)
-                isVegan = true
+                isEcoKeywordState[3] = true
             case "락토":
                 setColor(view: lactoView, label: lactoLabel)
-                isLacto = true
+                isEcoKeywordState[4] = true
             case "락토오보":
                 setColor(view: lactovoView, label: lactovoLabel)
-                isLactovo = true
+                isEcoKeywordState[5] = true
             case "페스코":
                 setColor(view: fescoView, label: fescoLabel)
-                isFesco = true
+                isEcoKeywordState[6] = true
             case "플라스틱 프리":
                 setColor(view: plasticfreeView, label: plasticFreeLabel)
-                isPlasticFree = true
+                isEcoKeywordState[7] = true
             case "친환경":
                 setColor(view: ecoView, label: ecoLabel)
-                isEco = true
+                isEcoKeywordState[8] = true
             case "업사이클링":
                 setColor(view: upCyclingView, label: upCyclingLabel)
-                isUpcycling = true
+                isEcoKeywordState[9] = true
             case "비건을 위한 뷰티":
                 setColor(view: packageView, label: packageLabel)
-                isPackage = true
+                isEcoKeywordState[10] = true
             case "GMO프리":
                 setColor(view: gmoFreeView, label: gmoFreeLabel)
-                isGmoFree = true
+                isEcoKeywordState[11] = true
             case "무향료":
                 setColor(view: chemicalView, label: chemicalLabel)
-                isChemical = true
+                isEcoKeywordState[12] = true
             case "FDA승인":
                 setColor(view: fdaView, label: fdaLabel)
-                isFda = true
+                isEcoKeywordState[13] = true
 
             default:
                 break
             }
         }
+        
     }
     func setColor(view : UIView, label: UILabel){
         view.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
@@ -152,15 +155,17 @@ extension ProfileMyEcoKeywordTVC{
         setFdaViewTapGesture()
     
     }
-    func changeColorLabelAndView(value : inout Bool,view : UIView, label : UILabel){
-        if !value {
+    func changeColorLabelAndView(index : Int,view : UIView, label : UILabel){
+        if !isEcoKeywordState[index] {
             view.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
             label.textColor = UIColor.appColor(.ecokeywordLabelColor)
-        }else if value{
+            seletedKeywords.append(index)
+        }else if isEcoKeywordState[index] {
             view.backgroundColor = UIColor.lightBackground
             label.textColor = UIColor.primaryBlack80
+            seletedKeywords = seletedKeywords.filter{$0 != index}
         }
-        value = !value
+        isEcoKeywordState[index]  = !isEcoKeywordState[index]
     }
     // 수익기부
     func setDonationViewTapGesture(){
@@ -169,8 +174,8 @@ extension ProfileMyEcoKeywordTVC{
         donationView.addGestureRecognizer(viewTap)
     }
     @objc func didTapDonationView(){
-        changeColorLabelAndView(value: &isDoantion, view: donationView, label: donationLabel)
-        delegate?.tapDonationView()
+        changeColorLabelAndView(index: 0, view: donationView, label: donationLabel)
+        delegate?.tapDonationView(seletedKeywords: self.seletedKeywords)
     }
     // 동물실험 반대
     func setAnimalViewTapGesture(){
@@ -179,8 +184,8 @@ extension ProfileMyEcoKeywordTVC{
         animalView.addGestureRecognizer(viewTap)
     }
     @objc func didTapAnimalView(){
-        changeColorLabelAndView(value: &isAnimal, view: animalView, label: animalLabel)
-        delegate?.tapAnimalView()
+        changeColorLabelAndView(index: 1, view: animalView, label: animalLabel)
+        delegate?.tapAnimalView(seletedKeywords: self.seletedKeywords)
     }
     // 공정무역
     func setTradeViewTapGesture(){
@@ -189,8 +194,8 @@ extension ProfileMyEcoKeywordTVC{
         tradeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapTradeView(){
-        changeColorLabelAndView(value: &isTrade, view: tradeView, label: tradeLabel)
-        delegate?.tapTradeView()
+        changeColorLabelAndView(index: 2, view: tradeView, label: tradeLabel)
+        delegate?.tapTradeView(seletedKeywords: self.seletedKeywords)
     }
     // 비건
     func setVeganViewTapGesture(){
@@ -199,8 +204,8 @@ extension ProfileMyEcoKeywordTVC{
         veganView.addGestureRecognizer(viewTap)
     }
     @objc func didTapVeganView(){
-        changeColorLabelAndView(value: &isVegan, view: veganView, label: veganLabel)
-        
+        changeColorLabelAndView(index: 3, view: veganView, label: veganLabel)
+        delegate?.tapVeganView(seletedKeywords: self.seletedKeywords)
     }
     // 락토
     func setLactoViewTapGesture(){
@@ -209,8 +214,8 @@ extension ProfileMyEcoKeywordTVC{
         lactoView.addGestureRecognizer(viewTap)
     }
     @objc func didTapLactoView(){
-        changeColorLabelAndView(value: &isLacto, view: lactoView, label: lactoLabel)
-        
+        changeColorLabelAndView(index: 4, view: lactoView, label: lactoLabel)
+        delegate?.tapLactoView(seletedKeywords: self.seletedKeywords)
     }
     // 락토오보
     func setLactovoViewTapGesture(){
@@ -219,8 +224,8 @@ extension ProfileMyEcoKeywordTVC{
         lactovoView.addGestureRecognizer(viewTap)
     }
     @objc func didTapLactovoView(){
-        changeColorLabelAndView(value: &isLactovo, view: lactovoView, label: lactovoLabel)
-        
+        changeColorLabelAndView(index: 5, view: lactovoView, label: lactovoLabel)
+        delegate?.tapLactovoView(seletedKeywords: self.seletedKeywords)
     }
     // 페스코
     func setFescoViewTapGesture(){
@@ -229,8 +234,8 @@ extension ProfileMyEcoKeywordTVC{
         fescoView.addGestureRecognizer(viewTap)
     }
     @objc func didTapFescoView(){
-        changeColorLabelAndView(value: &isFesco, view: fescoView, label: fescoLabel)
-        
+        changeColorLabelAndView(index: 6, view: fescoView, label: fescoLabel)
+        delegate?.tapFescoView(seletedKeywords: self.seletedKeywords)
     }
     // 플라스틱 프리
     func setPlasticFreeViewTapGesture(){
@@ -239,8 +244,8 @@ extension ProfileMyEcoKeywordTVC{
         plasticfreeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapPlasticFreeView(){
-        changeColorLabelAndView(value: &isPlasticFree, view: plasticfreeView, label: plasticFreeLabel)
-        
+        changeColorLabelAndView(index: 7, view: plasticfreeView, label: plasticFreeLabel)
+        delegate?.tapPlasticFreeView(seletedKeywords: self.seletedKeywords)
     }
     //  친환경
     func setEcoViewTapGesture(){
@@ -249,8 +254,8 @@ extension ProfileMyEcoKeywordTVC{
         ecoView.addGestureRecognizer(viewTap)
     }
     @objc func didTapEcoView(){
-        changeColorLabelAndView(value: &isEco, view: ecoView, label: ecoLabel)
-        
+        changeColorLabelAndView(index: 8, view: ecoView, label: ecoLabel)
+        delegate?.tapEcoView(seletedKeywords: self.seletedKeywords)
     }
     //  업사이클링
     func setUpCyclingViewTapGesture(){
@@ -259,8 +264,8 @@ extension ProfileMyEcoKeywordTVC{
         upCyclingView.addGestureRecognizer(viewTap)
     }
     @objc func didTapUpCyclingView(){
-        changeColorLabelAndView(value: &isUpcycling, view: upCyclingView, label: upCyclingLabel)
-        
+        changeColorLabelAndView(index: 9, view: upCyclingView, label: upCyclingLabel)
+        delegate?.tapUpcyclingView(seletedKeywords: self.seletedKeywords)
     }
     //  비건을 위한 뷰티
     func setPackageViewTapGesture(){
@@ -269,8 +274,8 @@ extension ProfileMyEcoKeywordTVC{
         packageView.addGestureRecognizer(viewTap)
     }
     @objc func didTapPackageView(){
-        changeColorLabelAndView(value: &isPackage, view: packageView, label: packageLabel)
-        
+        changeColorLabelAndView(index: 10, view: packageView, label: packageLabel)
+        delegate?.tapPackageView(seletedKeywords: self.seletedKeywords)
     }
     //  GMO프리
     func setGmoFreeViewTapGesture(){
@@ -279,8 +284,8 @@ extension ProfileMyEcoKeywordTVC{
         gmoFreeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapGmoFreeView(){
-        changeColorLabelAndView(value: &isGmoFree, view: gmoFreeView, label: gmoFreeLabel)
-        
+        changeColorLabelAndView(index: 11, view: gmoFreeView, label: gmoFreeLabel)
+        delegate?.tapGmoFreeView(seletedKeywords: self.seletedKeywords)
     }
     //  무향료
     func setChemicalViewTapGesture(){
@@ -289,8 +294,8 @@ extension ProfileMyEcoKeywordTVC{
         chemicalView.addGestureRecognizer(viewTap)
     }
     @objc func didTapChemicalView(){
-        changeColorLabelAndView(value: &isChemical, view: chemicalView, label: chemicalLabel)
-        
+        changeColorLabelAndView(index: 12, view: chemicalView, label: chemicalLabel)
+        delegate?.tapChemicalView(seletedKeywords: self.seletedKeywords)
     }
     //  FDA
     func setFdaViewTapGesture(){
@@ -299,8 +304,8 @@ extension ProfileMyEcoKeywordTVC{
         fdaView.addGestureRecognizer(viewTap)
     }
     @objc func didTapFdaView(){
-        changeColorLabelAndView(value: &isFda, view: fdaView, label: fdaLabel)
-        
+        changeColorLabelAndView(index: 13, view: fdaView, label: fdaLabel)
+        delegate?.tapFdaView(seletedKeywords: self.seletedKeywords)
     }
 }
 

@@ -11,7 +11,9 @@ class ProfileSettingVC: BaseViewController {
     // MARK: - Properties
     private var profileModel : ProfileResult?
     private var ecokeywords = [ProfileEcoKeyword]()
-    
+    private var seletedKeywords = [Int]()
+    private var nickname = ""
+    private var isCheckedNickname = false
     private var selectedContentImage : UIImage?
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var updateButton: UIButton!
@@ -32,6 +34,21 @@ class ProfileSettingVC: BaseViewController {
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func didTapUpdateButton(_ sender: Any) {
+        guard !self.seletedKeywords.isEmpty else{
+            self.presentAlert(title: "관심 키워드를 선택해주세요.")
+            return
+        }
+        guard !self.nickname.isEmpty else{
+            self.presentAlert(title: "닉네임을 입력해주세요.")
+            return
+        }
+        guard isCheckedNickname else{
+            self.presentAlert(title: "닉네임을 조건에 맞게입력해주세요.")
+            return
+        }
+        print("qwe")
+    }
     
 }
 // MARK: - FetchData
@@ -45,7 +62,13 @@ extension ProfileSettingVC{
                 return
             }
             self?.profileModel = response
-            self?.ecokeywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
+            self?.nickname = response.nickname
+            let keywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
+            self?.ecokeywords = keywords
+            for i in 0..<keywords.count{
+                self?.seletedKeywords.append(keywords[i].ecoKeywordIdx-1)
+            }
+            
             self?.tableView.reloadData()
         }
     }
@@ -152,22 +175,71 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
     
 }
 extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
-    func tapDonationView() {
-        
+    func tapDonationView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
     }
     
-    func tapAnimalView() {
-        
+    func tapAnimalView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
     }
     
-    func tapTradeView() {
-        
+    func tapTradeView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
     }
+    
+    func tapVeganView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapLactoView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapLactovoView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapFescoView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapPlasticFreeView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapEcoView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapUpcyclingView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapPackageView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapGmoFreeView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapChemicalView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+    
+    func tapFdaView(seletedKeywords: [Int]) {
+        self.seletedKeywords = seletedKeywords
+    }
+
     
     
 }
 //MARK : Iamge PIcker
 extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
+    func checkNicNameState(nickname: String) {
+        self.nickname = nickname
+    }
+    
     func checkName(nickname: String, textField: UITextField, label: UILabel) {
         guard let jwtToken = self.jwtToken else{
             return
@@ -178,13 +250,15 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                 textField.layer.borderColor = UIColor.alertsError.cgColor
                 label.textColor = UIColor.alertsError
                 label.text = result.message
-            
+                self.nickname = nickname
                 return
             }
             textField.layer.borderWidth = 0.5
             textField.layer.borderColor = UIColor.alertsSuccess.cgColor
             label.textColor = UIColor.alertsSuccess
             label.text = result.message
+            self.nickname = nickname
+            self.isCheckedNickname = true
         }
     }
     
@@ -193,11 +267,34 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
    
     
     func didTapUserImageView() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        picker.allowsEditing = true
-        present(picker, animated: true, completion: nil)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let action = UIAlertAction(title: "프로필 사진 바꾸기", style: .default, handler:{ [weak self]_ in
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self?.present(picker, animated: true, completion: nil)
+        })
+        let action2 = UIAlertAction(title: "기본 이지미로 설정", style: .default, handler:nil)
+        action.setValue(UIColor.coGreen, forKey: "titleTextColor")
+        action2.setValue(UIColor.coGreen, forKey: "titleTextColor")
+        actionSheet.addAction(action)
+        actionSheet.addAction(action2)
+ 
+        let cancel = UIAlertAction(title: "취소", style: .cancel,handler: {_ in
+            self.tabBarController?.tabBar.isHidden = false
+            
+        })
+        cancel.setValue(UIColor.appColor(.alertBlack), forKey: "titleTextColor")
+        actionSheet.addAction(cancel)
+        
+        actionSheet.popoverPresentationController?.sourceView = view
+        actionSheet.popoverPresentationController?.sourceRect = view.bounds
+        
+        self.present(actionSheet, animated: true)
+
+       
     }
 }
 //MARK : Iamge PIcker Delegate
