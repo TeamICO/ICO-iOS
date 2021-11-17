@@ -46,9 +46,6 @@ class HomeInStyleLifeVC: BaseViewController {
         categoryBtn[2].setTitle("키워드별", for: .normal)
         categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
       
-        for i in 0...2{
-            categoryBtn[i].titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
-        }
     }
     
     
