@@ -102,6 +102,7 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         let popularIcoSB = UIStoryboard(name: "PopularIco", bundle: nil)
         
         guard let popularIcoVC = popularIcoSB.instantiateViewController(withIdentifier: "PopularIco") as? PopularIcoVC else {return}
+        popularIcoVC.id = serverData?.popularIco[indexPath.row].userIdx ?? 0
         
         self.navigationController?.pushViewController(popularIcoVC, animated: true)
     }

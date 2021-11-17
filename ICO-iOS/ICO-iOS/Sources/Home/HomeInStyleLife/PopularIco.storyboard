@@ -174,8 +174,8 @@
                                                                     <constraint firstAttribute="height" constant="0.5" id="gzm-ED-daw"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QC-Jp-gey">
-                                                                <rect key="frame" x="12" y="116" width="31" height="14.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QC-Jp-gey">
+                                                                <rect key="frame" x="12" y="116" width="358" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -198,6 +198,7 @@
                                                             <constraint firstItem="gni-rK-Kfb" firstAttribute="leading" secondItem="HbJ-yG-S2I" secondAttribute="trailing" constant="10" id="uCK-th-jAl"/>
                                                             <constraint firstItem="cbj-7m-SxM" firstAttribute="leading" secondItem="SKL-zo-5QU" secondAttribute="trailing" constant="4" id="vDr-Xj-l5c"/>
                                                             <constraint firstItem="WWv-mP-Fz8" firstAttribute="leading" secondItem="HbJ-yG-S2I" secondAttribute="trailing" constant="10" id="xDp-h1-FlV"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7QC-Jp-gey" secondAttribute="trailing" constant="12" id="xP5-Ty-YRi"/>
                                                             <constraint firstItem="SKL-zo-5QU" firstAttribute="top" secondItem="gni-rK-Kfb" secondAttribute="bottom" constant="2.5" id="y0d-xL-Zw0"/>
                                                             <constraint firstItem="7QC-Jp-gey" firstAttribute="top" secondItem="NBD-Ob-hAj" secondAttribute="bottom" constant="6" id="yn7-c2-fmK"/>
                                                         </constraints>
