@@ -54,35 +54,39 @@
                             <action selector="didTapDeleteAllButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SWu-x5-Qnz"/>
                         </connections>
                     </button>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mAd-H5-kHV">
-                        <rect key="frame" x="0.0" y="51" width="320" height="28"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuK-OQ-nyn">
+                        <rect key="frame" x="0.0" y="49" width="320" height="28"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVt-rf-xjf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="28" id="TIA-AW-X1b"/>
+                            <constraint firstItem="MVt-rf-xjf" firstAttribute="leading" secondItem="YkH-jh-4kg" secondAttribute="leading" id="2Nd-QK-D0o"/>
+                            <constraint firstItem="MVt-rf-xjf" firstAttribute="width" secondItem="NBW-bG-yiQ" secondAttribute="width" id="JwE-bO-M4d"/>
+                            <constraint firstItem="MVt-rf-xjf" firstAttribute="bottom" secondItem="YkH-jh-4kg" secondAttribute="bottom" id="M1F-VA-eFW"/>
+                            <constraint firstItem="MVt-rf-xjf" firstAttribute="top" secondItem="YkH-jh-4kg" secondAttribute="top" id="M2o-vr-0C5"/>
+                            <constraint firstItem="MVt-rf-xjf" firstAttribute="height" secondItem="NBW-bG-yiQ" secondAttribute="height" id="SwL-1b-QjD"/>
+                            <constraint firstItem="MVt-rf-xjf" firstAttribute="trailing" secondItem="YkH-jh-4kg" secondAttribute="trailing" id="bOp-20-r4h"/>
+                            <constraint firstAttribute="height" constant="28" id="epn-3Z-yWK"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OSk-pc-NCq">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                    </collectionView>
+                        <viewLayoutGuide key="contentLayoutGuide" id="YkH-jh-4kg"/>
+                        <viewLayoutGuide key="frameLayoutGuide" id="NBW-bG-yiQ"/>
+                    </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mAd-H5-kHV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8SX-w5-gns"/>
+                    <constraint firstItem="AuK-OQ-nyn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2F8-C2-tpj"/>
                     <constraint firstItem="pvq-Xh-0x8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="8tK-q3-tHL"/>
+                    <constraint firstAttribute="bottom" secondItem="AuK-OQ-nyn" secondAttribute="bottom" constant="8" id="C8p-pT-P8P"/>
                     <constraint firstItem="yvX-v3-Fks" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="GND-oq-Ck5"/>
-                    <constraint firstAttribute="trailing" secondItem="mAd-H5-kHV" secondAttribute="trailing" id="Gd3-an-Anf"/>
-                    <constraint firstAttribute="bottom" secondItem="mAd-H5-kHV" secondAttribute="bottom" constant="8" id="K2F-B3-7VA"/>
                     <constraint firstItem="yvX-v3-Fks" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Nh2-eh-sfh"/>
+                    <constraint firstAttribute="trailing" secondItem="AuK-OQ-nyn" secondAttribute="trailing" id="nU2-Of-8FI"/>
                     <constraint firstAttribute="trailing" secondItem="pvq-Xh-0x8" secondAttribute="trailing" constant="16" id="sqg-mE-Fab"/>
-                    <constraint firstItem="mAd-H5-kHV" firstAttribute="top" secondItem="yvX-v3-Fks" secondAttribute="bottom" constant="12" id="wwO-tD-ftv"/>
+                    <constraint firstItem="AuK-OQ-nyn" firstAttribute="top" secondItem="yvX-v3-Fks" secondAttribute="bottom" constant="10" id="xYS-pl-gaO"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="collectionView" destination="mAd-H5-kHV" id="yuM-A9-14l"/>
-            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="83.035714285714278"/>
         </tableViewCell>
     </objects>

@@ -102,6 +102,7 @@
 		E96DB3012744A9CF00659256 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3002744A9CF00659256 /* BaseManager.swift */; };
 		E96DB3032744AA0200659256 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3022744AA0200659256 /* BaseResponse.swift */; };
 		E96DB3052744C7FA00659256 /* NickNameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3042744C7FA00659256 /* NickNameManager.swift */; };
+		E96DB3072744E93600659256 /* ProfileUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96DB3062744E93600659256 /* ProfileUpdateManager.swift */; };
 		E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */; };
 		E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */; };
 		E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */; };
@@ -299,6 +300,7 @@
 		E96DB3002744A9CF00659256 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		E96DB3022744AA0200659256 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		E96DB3042744C7FA00659256 /* NickNameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameManager.swift; sourceTree = "<group>"; };
+		E96DB3062744E93600659256 /* ProfileUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateManager.swift; sourceTree = "<group>"; };
 		E97D436B273D2C7800BB374F /* ProfileUserInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserInfoTVC.swift; sourceTree = "<group>"; };
 		E97D436C273D2C7800BB374F /* ProfileUserInfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserInfoTVC.xib; sourceTree = "<group>"; };
 		E97D436F273D2C8200BB374F /* ProfileUserIntroductionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserIntroductionTVC.swift; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 				E94613A82743DDD200A5F7C2 /* ProfileManager.swift */,
 				E94613AA2743DDDF00A5F7C2 /* ProfileResponse.swift */,
 				E96DB3042744C7FA00659256 /* NickNameManager.swift */,
+				E96DB3062744E93600659256 /* ProfileUpdateManager.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1599,6 +1602,7 @@
 				E9161D0C273CF74E009A9CA7 /* BeforeAlarmTVC.swift in Sources */,
 				717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */,
 				E9378D8E2738032500C589A1 /* ResponsiveStyleShotTVC.swift in Sources */,
+				E96DB3072744E93600659256 /* ProfileUpdateManager.swift in Sources */,
 				E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */,
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
