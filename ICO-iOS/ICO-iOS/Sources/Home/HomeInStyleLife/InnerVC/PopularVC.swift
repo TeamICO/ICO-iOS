@@ -9,16 +9,18 @@ import UIKit
 
 class PopularVC: UIViewController {
     
+    var serverData : Result?
     @IBOutlet weak var stackView: UIView!
     @IBOutlet weak var stackView2: UIView!
     @IBOutlet weak var popularLabel: UILabel!
-    
     @IBOutlet weak var postTV: UITableView!
     @IBOutlet weak var popularIcoCV: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(serverData)
+        StyleLifeDataManager().getStyleLifeTop(self)
         setUI()
         registerXib()
         setTVCV()
@@ -33,8 +35,8 @@ class PopularVC: UIViewController {
     func setTVCV(){
         postTV.delegate = self
         postTV.dataSource = self
-        popularIcoCV.delegate = self
-        popularIcoCV.dataSource = self
+        //popularIcoCV.delegate = self
+        //popularIcoCV.dataSource = self
     }
     
     
@@ -69,12 +71,13 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
 
 extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return serverData?.popularIco.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularIcoCVC", for: indexPath)as? PopularIcoCVC else {return UICollectionViewCell()}
         
+
         return cell
     }
     
@@ -106,5 +109,17 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+
+extension PopularVC{
+    func didSuccessGetTop(message: String){
+        popularIcoCV.delegate = self
+        popularIcoCV.dataSource = self
+        popularIcoCV.reloadData()
+        
+        print(serverData?.popularIco.count)
+        print(message)
     }
 }
