@@ -16,6 +16,7 @@ class PopularVC: UIViewController {
     @IBOutlet weak var popularLabel: UILabel!
     @IBOutlet weak var postTV: UITableView!
     @IBOutlet weak var popularIcoCV: UICollectionView!
+    @IBOutlet weak var topBanner: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,6 +135,8 @@ extension PopularVC{
         popularIcoCV.delegate = self
         popularIcoCV.dataSource = self
         popularIcoCV.reloadData()
+        
+        topBanner.setImage(with: serverData?.topBanner.imageURL ?? "")
         
         print(message)
     }
