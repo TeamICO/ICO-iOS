@@ -33,6 +33,29 @@ class ProfileUserInfoTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        userImage.image = nil
+        nicNameTextField.text = nil
+    }
+    func configure(with viewModel : ProfileUserInfoTVCViewModel){
+        self.nicNameTextField.text = viewModel.nicName
+        guard let url = URL(string: viewModel.profileImage) else{
+                return
+            }
+        DispatchQueue.global().async {
+                let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
+                    guard let data = data else{
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.userImage.image = UIImage(data: data)
+                    }
+                }
+                task.resume()
+        }
+    }
     func textfieldConfigure(){
         nicNameTextField.leftViewMode = .always
         nicNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -59,5 +82,15 @@ extension ProfileUserInfoTVC : UITextFieldDelegate {
             nicNameCountLabel.text = "\(textCount)"
         }
        
+    }
+}
+struct ProfileUserInfoTVCViewModel {
+    let profileImage : String
+    let nicName : String
+    let description : String
+    init(with model : ProfileResult){
+        self.profileImage = model.profileURL
+        self.nicName = model.nickname
+        self.description = model.resultDescription
     }
 }

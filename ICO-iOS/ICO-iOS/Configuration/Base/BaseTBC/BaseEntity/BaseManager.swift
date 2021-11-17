@@ -1,20 +1,20 @@
 //
-//  ProfileManager.swift
+//  BaseManager.swift
 //  ICO-iOS
 //
-//  Created by do_yun on 2021/11/16.
+//  Created by do_yun on 2021/11/17.
 //
 
 import Foundation
 import Alamofire
-final class ProfileManager{
-    static let shared = ProfileManager()
+final class BaseManager{
+    static let shared = BaseManager()
     private init() {}
     
     
-    func getUserProfile(userIdx: Int,jwtToken: String, completion: @escaping (ProfileResult?)->Void) {
+    func getUserIdx(jwtToken: String, completion: @escaping (BaseResult)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/users/\(userIdx)"
+        let url = "https://dev.chuckwagon.shop/app/auto-login"
 
    
         let header : HTTPHeaders = [
@@ -27,7 +27,7 @@ final class ProfileManager{
                    parameters: nil,
                    encoding: JSONEncoding.default,
                    headers: header)
-            .responseDecodable(of: ProfileResponse.self) { response in
+            .responseDecodable(of: BaseResponse.self) { response in
                 
                 switch response.result {
                 
@@ -35,16 +35,18 @@ final class ProfileManager{
                     guard response.isSuccess == true else{
                         return
                     }
+                    print(response.result.userIdx)
                     completion(response.result)
                     
                     
                     
                 case .failure(let error):
-                    print("DEBUG>> getUserProfile Get Error : \(error.localizedDescription)")
+                    print("DEBUG>> getUserIdx Get Error : \(error.localizedDescription)")
                     
                 }
             }
         
     }
 }
+
 

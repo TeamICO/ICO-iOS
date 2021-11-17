@@ -48,77 +48,20 @@ class ProfileMyEcoKeywordTVC: UITableViewCell {
     
     @IBOutlet weak var chemicalLabel: UILabel!
     
-    
-    var isCompanyEcoType : CompanyEco = .donation{
-        didSet{
-            switch isCompanyEcoType{
-            case .donation :
-                donationView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                donationLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                animalView.backgroundColor = UIColor.lightBackground
-                animalLabel.textColor = UIColor.primaryBlack80
-                tradeView.backgroundColor = UIColor.lightBackground
-                tradeLabel.textColor = UIColor.primaryBlack80
-                break
-            case .animal :
-                animalView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                animalLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                donationView.backgroundColor = UIColor.lightBackground
-                donationLabel.textColor = UIColor.primaryBlack80
-                tradeView.backgroundColor = UIColor.lightBackground
-                tradeLabel.textColor = UIColor.primaryBlack80
-                break
-            case .trade :
-                tradeView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                tradeLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                animalView.backgroundColor = UIColor.lightBackground
-                animalLabel.textColor = UIColor.primaryBlack80
-                donationView.backgroundColor = UIColor.lightBackground
-                donationLabel.textColor = UIColor.primaryBlack80
-                break
-            }
-        }
-    }
-    var isSocialEcoType : SocialEco = .plasticfree{
-        didSet{
-            switch isSocialEcoType{
-            case .plasticfree :
-                plasticfreeView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                plasticFreeLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                break
-            case .eco :
-                ecoView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                ecoLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                break
-            case .upcycling :
-                upCyclingView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                upCyclingLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                break
-            case .package :
-                packageView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                packageLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                break
-            }
-        }
-    }
-    var isChemicalEcoType : ChemicalEco = .gmoFree{
-        didSet{
-            switch isChemicalEcoType{
-            case .gmoFree :
-                gmoFreeView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                gmoFreeLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                break
-            case .chemical :
-                chemicalView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                chemicalLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                break
-            case .fda :
-                fdaView.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
-                fdaLabel.textColor = UIColor.appColor(.ecokeywordLabelColor)
-                break
-            }
-        }
-    }
+    var isDoantion = false
+    var isAnimal = false
+    var isTrade = false
+    var isVegan = false
+    var isLacto = false
+    var isLactovo = false
+    var isFesco = false
+    var isPlasticFree = false
+    var isEco = false
+    var isUpcycling = false
+    var isPackage = false
+    var isGmoFree = false
+    var isChemical = false
+    var isFda = false
     
     
     override func awakeFromNib() {
@@ -132,6 +75,62 @@ class ProfileMyEcoKeywordTVC: UITableViewCell {
         
     }
     
+    func configure(keywords : [ProfileEcoKeyword]){
+        print(keywords)
+        for i in 0..<keywords.count {
+            switch keywords[i].name {
+            case "수익기부" :
+                setColor(view: donationView, label: donationLabel)
+                isDoantion = true
+            case "동물실험 반대":
+                setColor(view: animalView, label: animalLabel)
+                isAnimal = true
+            case "공정무역":
+                setColor(view: tradeView, label: tradeLabel)
+                isTrade = true
+            case "비건":
+                setColor(view: veganView, label: veganLabel)
+                isVegan = true
+            case "락토":
+                setColor(view: lactoView, label: lactoLabel)
+                isLacto = true
+            case "락토오보":
+                setColor(view: lactovoView, label: lactovoLabel)
+                isLactovo = true
+            case "페스코":
+                setColor(view: fescoView, label: fescoLabel)
+                isFesco = true
+            case "플라스틱 프리":
+                setColor(view: plasticfreeView, label: plasticFreeLabel)
+                isPlasticFree = true
+            case "친환경":
+                setColor(view: ecoView, label: ecoLabel)
+                isEco = true
+            case "업사이클링":
+                setColor(view: upCyclingView, label: upCyclingLabel)
+                isUpcycling = true
+            case "비건을 위한 뷰티":
+                setColor(view: packageView, label: packageLabel)
+                isPackage = true
+            case "GMO프리":
+                setColor(view: gmoFreeView, label: gmoFreeLabel)
+                isGmoFree = true
+            case "무향료":
+                setColor(view: chemicalView, label: chemicalLabel)
+                isChemical = true
+            case "FDA승인":
+                setColor(view: fdaView, label: fdaLabel)
+                isFda = true
+
+            default:
+                break
+            }
+        }
+    }
+    func setColor(view : UIView, label: UILabel){
+        view.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
+        label.textColor = UIColor.appColor(.ecokeywordLabelColor)
+    }
     
     
     
@@ -141,33 +140,168 @@ extension ProfileMyEcoKeywordTVC{
         setDonationViewTapGesture()
         setAnimalViewTapGesture()
         setTradeViewTapGesture()
+        setVeganViewTapGesture()
+        setLactoViewTapGesture()
+        setLactovoViewTapGesture()
+        setFescoViewTapGesture()
+        setPlasticFreeViewTapGesture()
+        setEcoViewTapGesture()
+        setUpCyclingViewTapGesture()
+        setPackageViewTapGesture()
+        setGmoFreeViewTapGesture()
+        setChemicalViewTapGesture()
+        setFdaViewTapGesture()
+    
     }
+    func changeColorLabelAndView(value : inout Bool,view : UIView, label : UILabel){
+        if !value {
+            view.backgroundColor = UIColor.appColor(.ecokeywordBackgroundColor)
+            label.textColor = UIColor.appColor(.ecokeywordLabelColor)
+        }else if value{
+            view.backgroundColor = UIColor.lightBackground
+            label.textColor = UIColor.primaryBlack80
+        }
+        value = !value
+    }
+    // 수익기부
     func setDonationViewTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapDonationView))
         viewTap.cancelsTouchesInView = false
         donationView.addGestureRecognizer(viewTap)
     }
     @objc func didTapDonationView(){
-        isCompanyEcoType = .donation
+        changeColorLabelAndView(value: &isDoantion, view: donationView, label: donationLabel)
         delegate?.tapDonationView()
     }
+    // 동물실험 반대
     func setAnimalViewTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapAnimalView))
         viewTap.cancelsTouchesInView = false
         animalView.addGestureRecognizer(viewTap)
     }
     @objc func didTapAnimalView(){
-        isCompanyEcoType = .animal
+        changeColorLabelAndView(value: &isAnimal, view: animalView, label: animalLabel)
         delegate?.tapAnimalView()
     }
+    // 공정무역
     func setTradeViewTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapTradeView))
         viewTap.cancelsTouchesInView = false
         tradeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapTradeView(){
-        isCompanyEcoType = .trade
+        changeColorLabelAndView(value: &isTrade, view: tradeView, label: tradeLabel)
         delegate?.tapTradeView()
+    }
+    // 비건
+    func setVeganViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapVeganView))
+        viewTap.cancelsTouchesInView = false
+        veganView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapVeganView(){
+        changeColorLabelAndView(value: &isVegan, view: veganView, label: veganLabel)
+        
+    }
+    // 락토
+    func setLactoViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLactoView))
+        viewTap.cancelsTouchesInView = false
+        lactoView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapLactoView(){
+        changeColorLabelAndView(value: &isLacto, view: lactoView, label: lactoLabel)
+        
+    }
+    // 락토오보
+    func setLactovoViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLactovoView))
+        viewTap.cancelsTouchesInView = false
+        lactovoView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapLactovoView(){
+        changeColorLabelAndView(value: &isLactovo, view: lactovoView, label: lactovoLabel)
+        
+    }
+    // 페스코
+    func setFescoViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapFescoView))
+        viewTap.cancelsTouchesInView = false
+        fescoView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapFescoView(){
+        changeColorLabelAndView(value: &isFesco, view: fescoView, label: fescoLabel)
+        
+    }
+    // 플라스틱 프리
+    func setPlasticFreeViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapPlasticFreeView))
+        viewTap.cancelsTouchesInView = false
+        plasticfreeView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapPlasticFreeView(){
+        changeColorLabelAndView(value: &isPlasticFree, view: plasticfreeView, label: plasticFreeLabel)
+        
+    }
+    //  친환경
+    func setEcoViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapEcoView))
+        viewTap.cancelsTouchesInView = false
+        ecoView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapEcoView(){
+        changeColorLabelAndView(value: &isEco, view: ecoView, label: ecoLabel)
+        
+    }
+    //  업사이클링
+    func setUpCyclingViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapUpCyclingView))
+        viewTap.cancelsTouchesInView = false
+        upCyclingView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapUpCyclingView(){
+        changeColorLabelAndView(value: &isUpcycling, view: upCyclingView, label: upCyclingLabel)
+        
+    }
+    //  비건을 위한 뷰티
+    func setPackageViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapPackageView))
+        viewTap.cancelsTouchesInView = false
+        packageView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapPackageView(){
+        changeColorLabelAndView(value: &isPackage, view: packageView, label: packageLabel)
+        
+    }
+    //  GMO프리
+    func setGmoFreeViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapGmoFreeView))
+        viewTap.cancelsTouchesInView = false
+        gmoFreeView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapGmoFreeView(){
+        changeColorLabelAndView(value: &isGmoFree, view: gmoFreeView, label: gmoFreeLabel)
+        
+    }
+    //  무향료
+    func setChemicalViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapChemicalView))
+        viewTap.cancelsTouchesInView = false
+        chemicalView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapChemicalView(){
+        changeColorLabelAndView(value: &isChemical, view: chemicalView, label: chemicalLabel)
+        
+    }
+    //  FDA
+    func setFdaViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapFdaView))
+        viewTap.cancelsTouchesInView = false
+        fdaView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapFdaView(){
+        changeColorLabelAndView(value: &isFda, view: fdaView, label: fdaLabel)
+        
     }
 }
 

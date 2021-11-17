@@ -33,7 +33,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="104" id="bMl-Hl-toQ"/>
                         </constraints>
-                        <color key="textColor" red="0.61960784313725492" green="0.62352941176470589" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.2627450980392157" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                         <userDefinedRuntimeAttributes>

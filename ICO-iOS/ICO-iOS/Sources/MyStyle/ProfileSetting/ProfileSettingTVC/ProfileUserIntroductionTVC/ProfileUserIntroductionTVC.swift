@@ -15,7 +15,15 @@ class ProfileUserIntroductionTVC: UITableViewCell {
         super.awakeFromNib()
         profileTextView.delegate = self
     }
-
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profileTextView.text = nil
+    }
+    func configure(with viewModel : ProfileUserInfoTVCViewModel){
+        self.profileTextView.text = viewModel.description
+        self.profileTextCountLabel.text = "\(viewModel.description.count)"
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -23,6 +31,8 @@ class ProfileUserIntroductionTVC: UITableViewCell {
     }
     @IBAction func didTapRemoveNicNameButton(_ sender: Any) {
         profileTextView.text = ""
+        
+        profileTextView.tintColor = UIColor.appColor(.feedbackTintColor)
     }
 }
 // MARK: - TextView Delegate
@@ -30,7 +40,9 @@ extension ProfileUserIntroductionTVC : UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         
         if !textView.text.isEmpty{
-            textView.text = ""
+            if textView.text == "프로필 소개 글을 입력해주세요."{
+                textView.text = ""
+            }
             textView.tintColor = UIColor.appColor(.feedbackTintColor)
             textView.textColor = UIColor.appColor(.feedbackinpuTextColor)
         }

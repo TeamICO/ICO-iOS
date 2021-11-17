@@ -16,9 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoyLCJpYXQiOjE2MzYzODYwMDQsImV4cCI6MTY2NzkyMjAwNCwic3ViIjoidXNlckluZm8ifQ.0MwJnTpc2qf5ixJZ6MQPIE_gGqHGuMv-HAbD336-Ba4", forKey: "jwtToken")
         setKakaoSDK()
         setNaverSDK()
+        checkUser()
+       
+        
+    
         return true
     }
 
@@ -40,7 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+    func checkUser(){
+        if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken"){
+            BaseManager.shared.getUserIdx(jwtToken: jwtToken) { response in
+                UserDefaults.standard.set(response.userIdx, forKey: "userIdx")
+            }
+        }
+    }
+    
     func setKakaoSDK(){
         KakaoSDKCommon.initSDK(appKey: "45a3f8115adddf6e9e9cb8193a5b1fb4")
         
