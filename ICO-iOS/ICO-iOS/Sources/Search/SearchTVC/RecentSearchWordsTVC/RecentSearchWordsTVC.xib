@@ -69,8 +69,8 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="OfB-NR-rLh" secondAttribute="bottom" constant="16" id="0CD-qe-6fH"/>
                     <constraint firstItem="pvq-Xh-0x8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="8tK-q3-tHL"/>
+                    <constraint firstAttribute="bottom" secondItem="OfB-NR-rLh" secondAttribute="bottom" constant="16" id="AU3-LO-hBV"/>
                     <constraint firstItem="yvX-v3-Fks" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="GND-oq-Ck5"/>
                     <constraint firstItem="yvX-v3-Fks" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Nh2-eh-sfh"/>
                     <constraint firstAttribute="trailing" secondItem="OfB-NR-rLh" secondAttribute="trailing" id="lfF-MT-Fee"/>

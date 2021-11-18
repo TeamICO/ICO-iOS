@@ -6,13 +6,18 @@
 //
 
 import UIKit
+protocol RecentSearchWordsTVCDelegate : AnyObject{
+    func didTapSearchKeyword(keyword : String)
+    
+}
 
 class RecentSearchWordsTVC: UITableViewCell {
     static let identifier = "RecentSearchWordsTVC"
+    
+    weak var delegate : RecentSearchWordsTVCDelegate?
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    var arr = ["사과","피자","핫도그","토스트","12342353"]
+
     private var keywordHistory = [KeywordHistory]()
     
     override func awakeFromNib() {
@@ -20,11 +25,7 @@ class RecentSearchWordsTVC: UITableViewCell {
         collectionViewConfigure()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+  
   
     func getData(data: [KeywordHistory]){
         self.keywordHistory = data
@@ -33,6 +34,22 @@ class RecentSearchWordsTVC: UITableViewCell {
     }
     
     @IBAction func didTapDeleteAllButton(_ sender: Any) {
+        guard let jwtToken = UserDefaults.standard.string(forKey: "jwtToken") else{
+            return
+        }
+        SearchManager.shared.removeAllKeywordHistory(jwtToken: jwtToken) { deleted in
+            guard deleted else{
+                print("삭제 실패")
+                return
+            }
+            SearchManager.shared.getKeywordHistory(jwtToken: jwtToken) { keywords in
+                guard let keywords = keywords else {
+                    return
+                }
+                self.keywordHistory = keywords
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 // MARK: - CollectionView Configure
@@ -60,6 +77,8 @@ extension RecentSearchWordsTVC : UICollectionViewDelegate, UICollectionViewDataS
         cell.delegate = self
         return cell
     }
+    
+   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: RecentCVC.identifier, for: indexPath) as! RecentCVC
         return CGSize(width: keywordHistory[indexPath.row].keyword.size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width+cell.deleteButton.frame.size.width + 28, height: 28)
@@ -67,6 +86,12 @@ extension RecentSearchWordsTVC : UICollectionViewDelegate, UICollectionViewDataS
    
 }
 extension RecentSearchWordsTVC : RecentCVCDelegate{
+    func didtapKeywordView(keyword: String) {
+        delegate?.didTapSearchKeyword(keyword: keyword)
+    }
+    
+
+    
     func didTapDeleteWordButton(keywordIdx: Int) {
         guard let jwtToken = UserDefaults.standard.string(forKey: "jwtToken") else{
             return
@@ -76,7 +101,13 @@ extension RecentSearchWordsTVC : RecentCVCDelegate{
                 print("삭제 실패")
                 return
             }
-            self.collectionView.reloadData()
+            SearchManager.shared.getKeywordHistory(jwtToken: jwtToken) { keywords in
+                guard let keywords = keywords else {
+                    return
+                }
+                self.keywordHistory = keywords
+                self.collectionView.reloadData()
+            }
         }
     }
     

@@ -19,7 +19,7 @@ extension UILabel{
             label.textColor = UIColor.coGreen90
             label.backgroundColor = UIColor.coGreen5
             break
-        case "에너지정약":
+        case "에너지절약":
             label.textColor = UIColor.alertsInfo
             label.backgroundColor = UIColor.lightInfo
             break

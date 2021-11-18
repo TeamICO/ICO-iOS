@@ -7,8 +7,10 @@
 
 import UIKit
 
-class SearchResultVC: UIViewController {
+class SearchResultVC: BaseViewController {
     // MARK: - Properties
+    var searchword = ""
+    private var searchResultModel : SearchResultResult?
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -16,8 +18,11 @@ class SearchResultVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.text = searchword
+        fetchData(sortedIdx: 1)
         collectionViewConfigure()
         searchTextField.delegate = self
+        
     }
     // MARK: - Selectors
     @IBAction func didTapBackButton(_ sender: Any) {
@@ -31,6 +36,21 @@ class SearchResultVC: UIViewController {
     }
     
 
+}
+// MARK: - FetchData
+extension SearchResultVC{
+    func fetchData(sortedIdx : Int){
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        SearchResultManager.shared.getSearchResult(keyword: self.searchword, filter: "\(sortedIdx)", jwtToken: jwtToken) { [weak self] response in
+            guard let response = response else {
+                return 
+            }
+            self?.searchResultModel = response
+            self?.collectionView.reloadData()
+        }
+    }
 }
 // MARK: - Configure CollecctionView
 extension SearchResultVC {
@@ -56,7 +76,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 2 {
-            return 10
+            return searchResultModel?.resultCnt ?? 0
         }
         return 1
     }
@@ -65,7 +85,9 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
         switch indexPath.section{
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCountCVC.identifier, for: indexPath) as! ResultCountCVC
-      
+            if let resultCount = self.searchResultModel?.resultCnt{
+                cell.searchResultCountLabel.text = "\(resultCount)건"
+            }
             return cell
             
         case 1:
@@ -75,7 +97,10 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultsCVC.identifier, for: indexPath) as! SearchResultsCVC
-            
+            if let searchResult = self.searchResultModel?.seachResult{
+                cell.getData(data: searchResult[indexPath.row].category)
+                cell.configure(with: SearchResultsCVCViewModel(with: searchResult[indexPath.row]))
+            }
             
             return cell
             
@@ -134,4 +159,11 @@ extension SearchResultVC : UITextFieldDelegate {
         
         return true
     }
+}
+extension SearchResultVC : ResultSortCVCDelegate{
+    func didTapSort(sortedIdx: Int) {
+        self.fetchData(sortedIdx: sortedIdx+1)
+    }
+    
+    
 }
