@@ -36,6 +36,8 @@
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
 		71DFD3962746730F003BEFE8 /* TagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFD3942746730F003BEFE8 /* TagCVC.swift */; };
 		71DFD3972746730F003BEFE8 /* TagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DFD3952746730F003BEFE8 /* TagCVC.xib */; };
+		71DFD39B2746A864003BEFE8 /* ecoKeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */; };
+		71DFD39C2746A864003BEFE8 /* ecoKeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */; };
 		71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */; };
 		71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */; };
 		E9161CF7273CB953009A9CA7 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161CF6273CB953009A9CA7 /* AlarmVC.swift */; };
@@ -245,6 +247,8 @@
 		71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularIcoCVC.xib; sourceTree = "<group>"; };
 		71DFD3942746730F003BEFE8 /* TagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCVC.swift; sourceTree = "<group>"; };
 		71DFD3952746730F003BEFE8 /* TagCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCVC.xib; sourceTree = "<group>"; };
+		71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoKeywordCVC.swift; sourceTree = "<group>"; };
+		71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ecoKeywordCVC.xib; sourceTree = "<group>"; };
 		71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoVC.swift; sourceTree = "<group>"; };
 		71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularIco.storyboard; sourceTree = "<group>"; };
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -524,6 +528,15 @@
 				71A870EE2745079B0069239A /* MyStyleDataManager.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		71DFD3982746A832003BEFE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */,
+				71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		987DBBFFEBB377EE19EFB9A7 /* Pods */ = {
@@ -1073,6 +1086,7 @@
 		E9CAF189273163A9008F749B /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				71DFD3982746A832003BEFE8 /* Cell */,
 				71A870EB274507630069239A /* Entity */,
 				E9CAF195273163FB008F749B /* MyStyleVC.swift */,
 				E9CAF19927316427008F749B /* MyStyleSB.storyboard */,
@@ -1529,6 +1543,7 @@
 				E97D437F273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib in Resources */,
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
+				71DFD39C2746A864003BEFE8 /* ecoKeywordCVC.xib in Resources */,
 				E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */,
 				E9E49916273BABCB0001ACFB /* ServiceTermsSB.storyboard in Resources */,
 				E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */,
@@ -1702,6 +1717,7 @@
 				E9C30E092746615D000B1592 /* AlarmManager.swift in Sources */,
 				E9378D862737FE9F00C589A1 /* SensibleCVC.swift in Sources */,
 				71A870EF2745079B0069239A /* MyStyleDataManager.swift in Sources */,
+				71DFD39B2746A864003BEFE8 /* ecoKeywordCVC.swift in Sources */,
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
 				E9C30E0527465A90000B1592 /* LikeCollectionViewCellCVC.swift in Sources */,
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
