@@ -12,6 +12,8 @@ class PopularVC: UIViewController {
     
     var serverData : Result?
     var popularServerData : [RecentResult] = []
+    
+    @IBOutlet weak var entireHeight: NSLayoutConstraint!
     @IBOutlet weak var stackView: UIView!
     @IBOutlet weak var stackView2: UIView!
     @IBOutlet weak var popularLabel: UILabel!
@@ -168,7 +170,8 @@ extension PopularVC{
         postTV.delegate = self
         postTV.dataSource = self
         postTV.reloadData()
-        
+        entireHeight.constant = CGFloat(443 + (616 * popularServerData.count))
+      
         print(message)
     }
 }

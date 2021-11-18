@@ -74,7 +74,7 @@
                                                     <constraint firstAttribute="height" constant="12" id="d2B-NB-zhY"/>
                                                 </constraints>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2wc-rA-JcA">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2wc-rA-JcA">
                                                 <rect key="frame" x="0.0" y="392" width="414" height="1408"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
@@ -132,6 +132,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="entireHeight" destination="XoD-T4-6lM" id="Ki4-he-IhO"/>
                         <outlet property="popularIcoCV" destination="6yE-pF-VGc" id="4GI-Yf-LTW"/>
                         <outlet property="popularLabel" destination="Moy-Te-mvd" id="iuh-x5-3M5"/>
                         <outlet property="postTV" destination="2wc-rA-JcA" id="IsI-ph-eEs"/>
