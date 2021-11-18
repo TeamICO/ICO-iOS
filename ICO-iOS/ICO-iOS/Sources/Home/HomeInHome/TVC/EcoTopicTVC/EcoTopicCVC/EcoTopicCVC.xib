@@ -94,7 +94,7 @@
             <connections>
                 <outlet property="collectionView" destination="UTz-5Z-9hs" id="ZVx-y7-ZKC"/>
                 <outlet property="gradientView" destination="8BK-oi-DA2" id="TWC-kS-HgX"/>
-                <outlet property="nicName" destination="Tad-uj-JIg" id="jAZ-6R-nAF"/>
+                <outlet property="nickName" destination="Tad-uj-JIg" id="RuJ-Lo-bYd"/>
                 <outlet property="userContentImage" destination="NGY-Ak-Cob" id="Ct8-gL-WCo"/>
                 <outlet property="userImage" destination="QBf-lb-w8j" id="fsa-PB-pAt"/>
             </connections>

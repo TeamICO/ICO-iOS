@@ -11,6 +11,8 @@ class SearchVC: BaseViewController {
     // MARK: - Properties
     private var searchModel : SearchResult?
     
+    
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -148,7 +150,24 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
             case 2 :
                 // 광고 배너 높이 조절
                 let footer = UIImageView(frame: CGRect(x: 0, y: 24, width: view.width, height: 70))
-                footer.image = UIImage(named: "img_search_banner")
+                if let url = self.searchModel?.bannerImageURL{
+                    DispatchQueue.global().async {
+                        guard let url = URL(string: url)  else{
+                            return
+                        }
+                            let task = URLSession.shared.dataTask(with: url) {data, _, _ in
+                                guard let data = data else{
+                                    return
+                                }
+                                
+                                DispatchQueue.main.async {
+                                    footer.image = UIImage(data: data)
+                                }
+                            }
+                            task.resume()
+                    }
+                }
+               
                 return footer
             default:
                 let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
