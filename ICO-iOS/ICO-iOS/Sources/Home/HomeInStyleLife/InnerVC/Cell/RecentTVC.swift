@@ -19,6 +19,9 @@ class RecentTVC: UITableViewCell {
     @IBOutlet weak var ecoLevelImg: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var gradientView2: UIView!
+    @IBOutlet weak var lineView: UIView!
     
     @IBOutlet weak var categoryCV: UICollectionView!
     
@@ -43,6 +46,10 @@ class RecentTVC: UITableViewCell {
     }
     
     func setUI(){
+        gradientView.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
+        gradientView2.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
+        
+        nameLabel.textColor = UIColor.primaryBlack80
         score.textColor = .coGreen
         time.textColor = UIColor.tabBarGray
         time.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
@@ -50,6 +57,7 @@ class RecentTVC: UITableViewCell {
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = 20
         userImage.translatesAutoresizingMaskIntoConstraints = false
+        lineView.backgroundColor = UIColor.backGround1
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
