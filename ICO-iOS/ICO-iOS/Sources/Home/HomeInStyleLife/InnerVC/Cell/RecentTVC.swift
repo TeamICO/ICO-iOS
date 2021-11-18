@@ -9,7 +9,7 @@ import UIKit
 
 class RecentTVC: UITableViewCell {
     
-    
+    var category: [String] = []
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mainImage: UIImageView!
@@ -19,34 +19,62 @@ class RecentTVC: UITableViewCell {
     @IBOutlet weak var ecoLevelImg: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var detailView: UIView!
-    @IBOutlet weak var detailText: UILabel!
+    
+    @IBOutlet weak var categoryCV: UICollectionView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nameLabel.text = "라일리"
-        heartNum.text = "11"
-        productName.text = "톤28 유기농 손 바를거리"
+        setUI()
+        setCV()
+    }
+    
+    func setData(category: [String]){
+        self.category = category
+        
+        categoryCV.reloadData()
+    }
+    
+    func setCV(){
+        categoryCV.delegate = self
+        categoryCV.dataSource = self
+        categoryCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")
+    }
+    
+    func setUI(){
         score.textColor = .coGreen
-        detailLabel.text = "너무 귀여운 거 아닌그..."
         time.textColor = UIColor.tabBarGray
-        time.text = "10분 전"
         time.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         userImage.contentMode = .scaleAspectFill
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = 20
         userImage.translatesAutoresizingMaskIntoConstraints = false
-        detailView.cornerRadius = 8
-        detailText.textColor = .alertWarning
-        detailView.backgroundColor = .lightWarning
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+    }
+    
+}
+
+extension RecentTVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCVC", for: indexPath)as? TagCVC else {return UICollectionViewCell()}
+        cell.categoryLabel.text = category[indexPath.row]
+        cell.categoryLabel.setLabelConfigure(label: cell.categoryLabel, styleShotCategoryType: category[indexPath.row])
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return category.count
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
     }
     
 }

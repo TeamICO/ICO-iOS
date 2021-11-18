@@ -24,6 +24,7 @@ class HomeInStyleLifeVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         setUI()
     }
     
