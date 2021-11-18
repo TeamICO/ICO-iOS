@@ -32,9 +32,11 @@ final class HomeInHomeManager{
                 switch response.result {
                 
                 case .success(let response):
+    
                     guard response.isSuccess == true else{
                         return
                     }
+                    
                     completion(response.result)
                     
                     

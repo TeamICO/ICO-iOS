@@ -17,14 +17,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="103" height="48"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHP-qf-Iyw">
+                        <rect key="frame" x="0.0" y="0.0" width="103" height="48"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fno-oP-vVj">
-                        <rect key="frame" x="0.0" y="0.0" width="81" height="48"/>
+                        <rect key="frame" x="10" y="15.5" width="32.5" height="17"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                         <color key="textColor" red="0.090196078430000007" green="0.66666666669999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-WU-DTM">
-                        <rect key="frame" x="81" y="17" width="14" height="14"/>
+                        <rect key="frame" x="50.5" y="17" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="cB7-Bz-riK"/>
                             <constraint firstAttribute="width" constant="14" id="tob-WG-w2d"/>
@@ -40,15 +48,18 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Rde-WU-DTM" secondAttribute="trailing" constant="8" id="4eB-Fo-Hws"/>
-                <constraint firstItem="fno-oP-vVj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Kf-Ie-YDX"/>
-                <constraint firstItem="fno-oP-vVj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LrY-vP-sWC"/>
-                <constraint firstItem="Rde-WU-DTM" firstAttribute="leading" secondItem="fno-oP-vVj" secondAttribute="trailing" id="aXg-DK-SzO"/>
-                <constraint firstItem="Rde-WU-DTM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="brp-Hv-aYh"/>
-                <constraint firstAttribute="bottom" secondItem="fno-oP-vVj" secondAttribute="bottom" id="fKv-Dc-LV2"/>
+                <constraint firstItem="Rde-WU-DTM" firstAttribute="leading" secondItem="fno-oP-vVj" secondAttribute="trailing" constant="8" id="3TS-1g-t8X"/>
+                <constraint firstItem="fno-oP-vVj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="6Kf-Ie-YDX"/>
+                <constraint firstAttribute="trailing" secondItem="NHP-qf-Iyw" secondAttribute="trailing" id="6Sr-a4-AXM"/>
+                <constraint firstItem="NHP-qf-Iyw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gu8-lS-ACs"/>
+                <constraint firstItem="Rde-WU-DTM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="dRL-FD-AKf"/>
+                <constraint firstAttribute="bottom" secondItem="NHP-qf-Iyw" secondAttribute="bottom" id="oRJ-nN-IvO"/>
+                <constraint firstItem="NHP-qf-Iyw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rwZ-U3-t2Z"/>
+                <constraint firstItem="fno-oP-vVj" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="tU5-8j-TIl"/>
             </constraints>
             <size key="customSize" width="103" height="48"/>
             <connections>
+                <outlet property="cellView" destination="NHP-qf-Iyw" id="kAb-Yd-Z10"/>
                 <outlet property="deleteButton" destination="Rde-WU-DTM" id="imh-d9-SBr"/>
                 <outlet property="wordLabel" destination="fno-oP-vVj" id="Tyd-iQ-QnP"/>
             </connections>

@@ -137,7 +137,6 @@
 		E9AF83F1273B610F00D77D5F /* SearchResultsCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83EF273B610E00D77D5F /* SearchResultsCVC.xib */; };
 		E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83F3273B769600D77D5F /* SortCVC.swift */; };
 		E9AF83F6273B769600D77D5F /* SortCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83F4273B769600D77D5F /* SortCVC.xib */; };
-		E9AF83F8273B78C100D77D5F /* SearchResultsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */; };
 		E9AF83FF273B82C000D77D5F /* MypageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83FD273B82C000D77D5F /* MypageTVC.swift */; };
 		E9AF8400273B82C000D77D5F /* MypageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83FE273B82C000D77D5F /* MypageTVC.xib */; };
 		E9AF8403273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF8401273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift */; };
@@ -148,6 +147,10 @@
 		E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */; };
 		E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF840F273B9AE400D77D5F /* IcoVerTVC.swift */; };
 		E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */; };
+		E9C30DF7274604A5000B1592 /* SearchResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DF6274604A5000B1592 /* SearchResultManager.swift */; };
+		E9C30DF9274604B3000B1592 /* SearchResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */; };
+		E9C30DFC27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DFA27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift */; };
+		E9C30DFD27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C30DFB27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -337,7 +340,6 @@
 		E9AF83EF273B610E00D77D5F /* SearchResultsCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCVC.xib; sourceTree = "<group>"; };
 		E9AF83F3273B769600D77D5F /* SortCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCVC.swift; sourceTree = "<group>"; };
 		E9AF83F4273B769600D77D5F /* SortCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortCVC.xib; sourceTree = "<group>"; };
-		E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsSV.swift; sourceTree = "<group>"; };
 		E9AF83FD273B82C000D77D5F /* MypageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTVC.swift; sourceTree = "<group>"; };
 		E9AF83FE273B82C000D77D5F /* MypageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageTVC.xib; sourceTree = "<group>"; };
 		E9AF8401273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMyRecentStyleShotTVC.swift; sourceTree = "<group>"; };
@@ -348,6 +350,10 @@
 		E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageMyRecentStyleShotCVC.xib; sourceTree = "<group>"; };
 		E9AF840F273B9AE400D77D5F /* IcoVerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcoVerTVC.swift; sourceTree = "<group>"; };
 		E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IcoVerTVC.xib; sourceTree = "<group>"; };
+		E9C30DF6274604A5000B1592 /* SearchResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultManager.swift; sourceTree = "<group>"; };
+		E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultResponse.swift; sourceTree = "<group>"; };
+		E9C30DFA27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCellCVC.swift; sourceTree = "<group>"; };
+		E9C30DFB27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -827,6 +833,7 @@
 			children = (
 				E9AF83DE273B5C9000D77D5F /* SearchResultVC.swift */,
 				E9AF83E0273B5CA300D77D5F /* SearchResultSB.storyboard */,
+				E9C30DF527460481000B1592 /* Entity */,
 				E9AF83E2273B606900D77D5F /* SearchResultCVC */,
 			);
 			path = SearchResultVC;
@@ -866,7 +873,8 @@
 			children = (
 				E9AF83EE273B610E00D77D5F /* SearchResultsCVC.swift */,
 				E9AF83EF273B610E00D77D5F /* SearchResultsCVC.xib */,
-				E9AF83F7273B78C100D77D5F /* SearchResultsSV.swift */,
+				E9C30DFA27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift */,
+				E9C30DFB27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib */,
 			);
 			path = SearchResultsCVC;
 			sourceTree = "<group>";
@@ -935,6 +943,15 @@
 				E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */,
 			);
 			path = IcoVerTVC;
+			sourceTree = "<group>";
+		};
+		E9C30DF527460481000B1592 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E9C30DF6274604A5000B1592 /* SearchResultManager.swift */,
+				E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		E9CAF1662731635B008F749B = {
@@ -1411,6 +1428,7 @@
 				E9AF83E1273B5CA300D77D5F /* SearchResultSB.storyboard in Resources */,
 				E998C25727328A8700E1F8D0 /* BrandCVC.xib in Resources */,
 				E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */,
+				E9C30DFD27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib in Resources */,
 				E9E4991C273BABF20001ACFB /* PersonalInfoTermsSB.storyboard in Resources */,
 				E9CAF19C27316441008F749B /* MyPageSB.storyboard in Resources */,
 				E9CAF18C273163C2008F749B /* HomeSB.storyboard in Resources */,
@@ -1564,6 +1582,7 @@
 				E998C249273275D500E1F8D0 /* BasePaddingLabel.swift in Sources */,
 				E9E49920273BAC020001ACFB /* SettingAlarmVC.swift in Sources */,
 				E94613A92743DDD200A5F7C2 /* ProfileManager.swift in Sources */,
+				E9C30DFC27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift in Sources */,
 				E96DB3012744A9CF00659256 /* BaseManager.swift in Sources */,
 				E998C25627328A8700E1F8D0 /* BrandCVC.swift in Sources */,
 				E9CAF194273163EC008F749B /* HomeVC.swift in Sources */,
@@ -1586,7 +1605,6 @@
 				E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */,
 				717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */,
 				E946139A27438E0A00A5F7C2 /* UILabel.swift in Sources */,
-				E9AF83F8273B78C100D77D5F /* SearchResultsSV.swift in Sources */,
 				E9CAF196273163FB008F749B /* MyStyleVC.swift in Sources */,
 				E9378D762737FAE200C589A1 /* TopTVC.swift in Sources */,
 				E943BC5A2738F4E000619C74 /* LoginVC.swift in Sources */,
@@ -1596,6 +1614,7 @@
 				E9AF83DF273B5C9000D77D5F /* SearchResultVC.swift in Sources */,
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
 				E9AF8407273B82DE00D77D5F /* MyPageUserInfoTVC.swift in Sources */,
+				E9C30DF7274604A5000B1592 /* SearchResultManager.swift in Sources */,
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
 				E946138F27435E7C00A5F7C2 /* HomeInHomeManager.swift in Sources */,
 				E946138327435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.swift in Sources */,
@@ -1605,6 +1624,7 @@
 				717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */,
 				E96DB3052744C7FA00659256 /* NickNameManager.swift in Sources */,
 				71A870EA2744FCBB0069239A /* UIImageView.swift in Sources */,
+				E9C30DF9274604B3000B1592 /* SearchResultResponse.swift in Sources */,
 				E96DB3032744AA0200659256 /* BaseResponse.swift in Sources */,
 				E9161D18273D0126009A9CA7 /* NoneLikeCVC.swift in Sources */,
 				E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */,

@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol ResultSortCVCDelegate : AnyObject{
+    func didTapSort(sortedIdx: Int)
+}
+
 class ResultSortCVC: UICollectionViewCell {
     static let identifier = "ResultSortCVC"
     
+    weak var delegate : ResultSortCVCDelegate?
+    
     private var emojis = ["emoji-search-accuracy","emoji-search-like","emoji-search-star"]
+    private var sortTitles = ["정확도순","좋아요순","아이코 만족도순"]
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
@@ -33,22 +40,32 @@ extension ResultSortCVC {
 }
 extension ResultSortCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return sortTitles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SortCVC.identifier, for: indexPath) as! SortCVC
+        cell.delegate = self
         cell.sortIcon.image = UIImage(named: emojis[indexPath.row])
+        cell.sortTitleLabel.text = sortTitles[indexPath.row]
+        cell.sortedIdx = indexPath.row
+        if indexPath.row == 0{
+            cell.isSelected = true
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .init())
+        }
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        collectionView.deselectItem(at: indexPath, animated: true)
-      
-        
-    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 28)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SortCVC.identifier, for: indexPath) as! SortCVC
+        return CGSize(width: sortTitles[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width+cell.sortIcon.frame.size.width + 26, height: 25)
     }
+    
+}
+extension ResultSortCVC : SortCVCDelagate{
+    func didTapSort(sortedIdx: Int) {
+        delegate?.didTapSort(sortedIdx: sortedIdx)
+    }
+    
     
 }

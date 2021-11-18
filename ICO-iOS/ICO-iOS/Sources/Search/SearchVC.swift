@@ -16,11 +16,15 @@ class SearchVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.fetchData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedAround()
         self.tableviewConfigure()
-        self.fetchData()
+        
         searchTextField.delegate = self
     }
     // MARK: - Selectors
@@ -35,10 +39,11 @@ class SearchVC: BaseViewController {
         }
    
         let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "SearchResultVC")
- 
+        let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
+        vc.searchword = text
         vc.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.pushViewController(vc, animated: true)
+        searchTextField.text = ""
     }
     
 
@@ -79,9 +84,7 @@ extension SearchVC {
 // MARK: - TableView Delegate, DataSource
 extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-
-
-            return 3
+        return 3
         
     
     }
@@ -90,11 +93,12 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // isSearched true 일 때 검색된 화면 보여주고 false 검색하지 않았을 때 기존 화면
+    
             switch indexPath.section{
             case 0 :
                 let cell = tableView.dequeueReusableCell(withIdentifier: RecentSearchWordsTVC.identifier, for: indexPath) as! RecentSearchWordsTVC
                 cell.selectionStyle = .none
+                cell.delegate = self
                 if let model = self.searchModel{
                     cell.getData(data: model.keywordHistory)
                 }
@@ -112,6 +116,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
             }
         
     }
+   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
             
@@ -165,10 +170,11 @@ extension SearchVC : UITextFieldDelegate {
                 self.presentAlert(title: "검색어를 입력해주세요.")
             }else{
                 let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "SearchResultVC")
-         
+                let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
+                vc.searchword = text
                 vc.navigationItem.largeTitleDisplayMode = .never
                 self.navigationController?.pushViewController(vc, animated: true)
+                searchTextField.text = ""
             }
         }
         
@@ -177,4 +183,15 @@ extension SearchVC : UITextFieldDelegate {
         
         return true
     }
+}
+extension SearchVC : RecentSearchWordsTVCDelegate{
+    
+    func didTapSearchKeyword(keyword: String) {
+        let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
+        vc.searchword = keyword
+        vc.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
