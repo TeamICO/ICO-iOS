@@ -11,6 +11,7 @@ import Kingfisher
 class PopularVC: UIViewController {
     
     var serverData : Result?
+    var popularServerData : [RecentResult] = []
     @IBOutlet weak var stackView: UIView!
     @IBOutlet weak var stackView2: UIView!
     @IBOutlet weak var popularLabel: UILabel!
@@ -22,9 +23,10 @@ class PopularVC: UIViewController {
         super.viewDidLoad()
 
         StyleLifeDataManager().getStyleLifeTop(self)
+        StyleLifeDataManager().getPopularInfo(self)
         setUI()
         registerXib()
-        setTVCV()
+        //setTVCV()
         // Do any additional setup after loading the view.
     }
     
@@ -54,13 +56,20 @@ class PopularVC: UIViewController {
 
 extension PopularVC: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return popularServerData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTVC", for: indexPath)as? RecentTVC else {return UITableViewCell()}
         
         cell.selectionStyle = .none
+        cell.mainImage.setImage(with: popularServerData[indexPath.row].imageURL)
+        cell.userImage.download(url: popularServerData[indexPath.row].profileURL, rounded: true)
+        cell.nameLabel.text = "\(popularServerData[indexPath.row].nickname)"
+        cell.productName.text = popularServerData[indexPath.row].productName
+        cell.detailLabel.text = popularServerData[indexPath.row].resultDescription
+        cell.heartNum.text = "\(popularServerData[indexPath.row].likeCnt)"
+        cell.time.text = popularServerData[indexPath.row].time
         
         return cell
     }
@@ -139,6 +148,14 @@ extension PopularVC{
         popularIcoCV.dataSource = self
         popularIcoCV.reloadData()
         topBanner.setImage(with: serverData?.topBanner.imageURL ?? "")
+        
+        print(message)
+    }
+    
+    func didSuccessGetPopularInfo(message: String){
+        postTV.delegate = self
+        postTV.dataSource = self
+        postTV.reloadData()
         
         print(message)
     }

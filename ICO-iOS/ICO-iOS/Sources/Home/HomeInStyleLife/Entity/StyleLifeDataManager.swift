@@ -59,6 +59,22 @@ class StyleLifeDataManager{
             }
     }
     
+    func getPopularInfo(_ viewcontroller: PopularVC){
+        AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=2",method: .get, parameters: nil,headers: Constant.header)
+            .validate()
+            .responseDecodable(of: StyleLifeRecent.self){ response in
+                switch response.result{
+                    case .success(let response):
+                        viewcontroller.popularServerData = response.result
+                        viewcontroller.didSuccessGetPopularInfo(message: response.message)
+                
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    
+                }
+            }
+    }
+    
     
     
     
