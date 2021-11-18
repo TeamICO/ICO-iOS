@@ -19,5 +19,21 @@ class TopCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configure(with viewModel : TopCVCViewModel){
+        self.ecoIcon.image = UIImage(named: viewModel.iconImage)
+        self.ecoLabel.text = viewModel.ecoTitle
+        self.ecoSubLabel.text = viewModel.ecoSubTitle
+    }
 
+}
+struct TopCVCViewModel{
+    let iconImage : String
+    let ecoTitle : String
+    let ecoSubTitle : String
+    init(iconImage : String, ecoTitle: String, ecoSubTitle: String){
+        self.iconImage = iconImage
+        self.ecoTitle = ecoTitle
+        self.ecoSubTitle = ecoSubTitle
+    }
 }

@@ -16,7 +16,7 @@ class EcoTopicCVC: UICollectionViewCell {
     
     @IBOutlet weak var userImage: UIImageView!
     
-    @IBOutlet weak var nicName: UILabel!
+    @IBOutlet weak var nickName: UILabel!
     
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -30,7 +30,7 @@ class EcoTopicCVC: UICollectionViewCell {
         super.prepareForReuse()
         userContentImage.image = nil
         userImage.image = nil
-        nicName.text = nil
+        nickName.text = nil
     }
     func getData(data : [String]){
         self.category = data
@@ -50,7 +50,7 @@ extension EcoTopicCVC {
         
     }
     func configure(with viewModel : EcoTopicCVCViewModel){
-        self.nicName.text = viewModel.nicName
+        self.nickName.text = viewModel.nickName
 
         guard let productUrl = URL(string: viewModel.userContentImage), let userUrl = URL(string: viewModel.userImage) else{
                 return
@@ -96,12 +96,12 @@ extension EcoTopicCVC : UICollectionViewDelegate, UICollectionViewDataSource,UIC
 struct EcoTopicCVCViewModel {
     let userContentImage : String
     let userImage : String
-    let nicName : String
+    let nickName : String
     
     init(with model : HomeInHomeSenseStyleshot){
         self.userContentImage = model.imageURL
         self.userImage = model.profileURL
-        self.nicName = model.nickname
+        self.nickName = model.nickname
         
     }
 }

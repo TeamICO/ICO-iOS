@@ -30,7 +30,7 @@ extension UIViewController {
         self.dismissIndicator()
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         let actionDone = UIAlertAction(title: "확인", style: .default, handler: handler)
-
+        actionDone.setValue(UIColor.coGreen, forKey: "titleTextColor")
         alert.addAction(actionDone)
         if isCancelActionIncluded {
             let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)

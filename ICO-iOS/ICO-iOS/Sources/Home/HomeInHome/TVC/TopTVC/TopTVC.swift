@@ -24,6 +24,13 @@ class TopTVC: UITableViewCell {
     
     var nowPage: Int = 0
     
+    let keywordContentsImages = ["illust-product-vegan",
+                                 "illust-styleshot-upcycling",
+                                 "illust-styleshot-zerowaste"]
+    let keywordContents = ["비건","업사이클링","지구를"]
+    let keywordContentsSub = ["을 위한 뷰티",
+                                 " 패션",
+                                 " 위한 패키지"]
  
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -85,7 +92,7 @@ extension TopTVC {
 extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case self.collectionView : return 3
+        case self.collectionView : return keywordContents.count
         case self.bannerCollectionView : return topBannerModel.count
         default : return 0
         }
@@ -96,7 +103,9 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         switch collectionView {
         case self.collectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCVC.identifier, for: indexPath) as! TopCVC
-            
+            cell.configure(with: TopCVCViewModel(iconImage: keywordContentsImages[indexPath.row],
+                                                 ecoTitle: keywordContents[indexPath.row],
+                                                 ecoSubTitle: keywordContentsSub[indexPath.row]))
             return cell
         case self.bannerCollectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCVC.identifier, for: indexPath) as! TopBannerCVC
@@ -114,8 +123,15 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
-        case self.collectionView : return CGSize(width: 137, height: 32)
-        case self.bannerCollectionView : return CGSize(width: self.frame.size.width, height: 118)
+        case self.collectionView :
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCVC.identifier, for: indexPath) as! TopCVC
+            
+           return CGSize(width: keywordContents[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
+                   keywordContentsSub[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
+                   cell.ecoIcon.frame.size.width + 26, height: 32)
+    
+        case self.bannerCollectionView :
+            return CGSize(width: self.frame.size.width, height: 118)
         default : return CGSize()
             
         }
