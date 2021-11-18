@@ -151,6 +151,10 @@
 		E9C30DF9274604B3000B1592 /* SearchResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */; };
 		E9C30DFC27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DFA27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift */; };
 		E9C30DFD27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C30DFB27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib */; };
+		E9C30E002746318F000B1592 /* LikeManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DFF2746318F000B1592 /* LikeManger.swift */; };
+		E9C30E022746319C000B1592 /* LikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E012746319C000B1592 /* LikeResponse.swift */; };
+		E9C30E0527465A90000B1592 /* LikeCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E0327465A90000B1592 /* LikeCollectionViewCellCVC.swift */; };
+		E9C30E0627465A90000B1592 /* LikeCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -354,6 +358,10 @@
 		E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultResponse.swift; sourceTree = "<group>"; };
 		E9C30DFA27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCellCVC.swift; sourceTree = "<group>"; };
 		E9C30DFB27460B54000B1592 /* SearchResultCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCollectionViewCellCVC.xib; sourceTree = "<group>"; };
+		E9C30DFF2746318F000B1592 /* LikeManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeManger.swift; sourceTree = "<group>"; };
+		E9C30E012746319C000B1592 /* LikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeResponse.swift; sourceTree = "<group>"; };
+		E9C30E0327465A90000B1592 /* LikeCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCellCVC.swift; sourceTree = "<group>"; };
+		E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -544,6 +552,7 @@
 			children = (
 				E9161CFC273CB96E009A9CA7 /* LikeVC.swift */,
 				E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */,
+				E9C30DFE27463182000B1592 /* Entity */,
 				E9161D13273D00D3009A9CA7 /* LikeCVC */,
 			);
 			path = like;
@@ -609,6 +618,8 @@
 			children = (
 				E9161D1A273D0134009A9CA7 /* LikeCVC.swift */,
 				E9161D1B273D0134009A9CA7 /* LikeCVC.xib */,
+				E9C30E0327465A90000B1592 /* LikeCollectionViewCellCVC.swift */,
+				E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */,
 			);
 			path = LikeCVC;
 			sourceTree = "<group>";
@@ -950,6 +961,15 @@
 			children = (
 				E9C30DF6274604A5000B1592 /* SearchResultManager.swift */,
 				E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E9C30DFE27463182000B1592 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E9C30DFF2746318F000B1592 /* LikeManger.swift */,
+				E9C30E012746319C000B1592 /* LikeResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1491,6 +1511,7 @@
 				E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */,
 				E9E49916273BABCB0001ACFB /* ServiceTermsSB.storyboard in Resources */,
 				E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */,
+				E9C30E0627465A90000B1592 /* LikeCollectionViewCellCVC.xib in Resources */,
 				E9E49931273BCB350001ACFB /* IcoLevelTopTVC.xib in Resources */,
 				E9E4992D273BC83F0001ACFB /* IcoLevelTVC.xib in Resources */,
 				E9CAF19A27316427008F749B /* MyStyleSB.storyboard in Resources */,
@@ -1575,6 +1596,7 @@
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
 				717CB5192743DD9B0044E227 /* StyleLifeDataManager.swift in Sources */,
 				E96DB30C274530CB00659256 /* SearchResponse.swift in Sources */,
+				E9C30E022746319C000B1592 /* LikeResponse.swift in Sources */,
 				E9378DA22738099B00C589A1 /* HotKeywordTVC.swift in Sources */,
 				E9378D9E2738098700C589A1 /* RecentSearchWordsTVC.swift in Sources */,
 				E9E49918273BABDC0001ACFB /* ServiceTermsVC.swift in Sources */,
@@ -1606,6 +1628,7 @@
 				717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */,
 				E946139A27438E0A00A5F7C2 /* UILabel.swift in Sources */,
 				E9CAF196273163FB008F749B /* MyStyleVC.swift in Sources */,
+				E9C30E002746318F000B1592 /* LikeManger.swift in Sources */,
 				E9378D762737FAE200C589A1 /* TopTVC.swift in Sources */,
 				E943BC5A2738F4E000619C74 /* LoginVC.swift in Sources */,
 				E9378D822737FE0400C589A1 /* SensibleStyleShotTVC.swift in Sources */,
@@ -1656,6 +1679,7 @@
 				E9378D862737FE9F00C589A1 /* SensibleCVC.swift in Sources */,
 				71A870EF2745079B0069239A /* MyStyleDataManager.swift in Sources */,
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
+				E9C30E0527465A90000B1592 /* LikeCollectionViewCellCVC.swift in Sources */,
 				E998C251273283E800E1F8D0 /* BrandRecommendTVC.swift in Sources */,
 				E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */,
 				E9E4993D273BD5530001ACFB /* SettingAlarmTVC.swift in Sources */,

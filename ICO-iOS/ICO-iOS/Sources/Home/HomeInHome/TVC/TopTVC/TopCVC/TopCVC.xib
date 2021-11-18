@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TopCVC" customModule="ICO" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TopCVC" customModule="ICO_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="137" height="32"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -47,7 +47,6 @@
                             <constraint firstItem="Pfk-za-Vuu" firstAttribute="leading" secondItem="6BP-Y1-x7R" secondAttribute="trailing" id="2dh-2Z-FPS"/>
                             <constraint firstItem="nWO-ax-3yT" firstAttribute="leading" secondItem="AXz-qm-CLu" secondAttribute="leading" constant="8" id="2eV-2Q-hPz"/>
                             <constraint firstItem="6BP-Y1-x7R" firstAttribute="leading" secondItem="nWO-ax-3yT" secondAttribute="trailing" constant="8" id="8MC-Ya-5eA"/>
-                            <constraint firstAttribute="width" constant="137" id="H4k-3o-jzo"/>
                             <constraint firstItem="Pfk-za-Vuu" firstAttribute="centerY" secondItem="AXz-qm-CLu" secondAttribute="centerY" id="VOK-3r-Y7I"/>
                             <constraint firstItem="6BP-Y1-x7R" firstAttribute="centerY" secondItem="AXz-qm-CLu" secondAttribute="centerY" id="kJp-Z4-h6d"/>
                             <constraint firstAttribute="height" constant="32" id="rfZ-qT-bWp"/>
@@ -83,7 +82,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="illust-product-vegan" width="161" height="160"/>
+        <image name="illust-product-vegan" width="80.5" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
