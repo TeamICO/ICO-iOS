@@ -34,6 +34,8 @@
 		71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71A9688C273C283C003AF0A9 /* KeywordCVC.xib */; };
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
+		71DFD3962746730F003BEFE8 /* TagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFD3942746730F003BEFE8 /* TagCVC.swift */; };
+		71DFD3972746730F003BEFE8 /* TagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DFD3952746730F003BEFE8 /* TagCVC.xib */; };
 		71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */; };
 		71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */; };
 		E9161CF7273CB953009A9CA7 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161CF6273CB953009A9CA7 /* AlarmVC.swift */; };
@@ -239,6 +241,8 @@
 		71A9688C273C283C003AF0A9 /* KeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCVC.xib; sourceTree = "<group>"; };
 		71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoCVC.swift; sourceTree = "<group>"; };
 		71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularIcoCVC.xib; sourceTree = "<group>"; };
+		71DFD3942746730F003BEFE8 /* TagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCVC.swift; sourceTree = "<group>"; };
+		71DFD3952746730F003BEFE8 /* TagCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCVC.xib; sourceTree = "<group>"; };
 		71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoVC.swift; sourceTree = "<group>"; };
 		71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularIco.storyboard; sourceTree = "<group>"; };
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -471,6 +475,8 @@
 				714F32AE273BA635007324BC /* StyleCVC.xib */,
 				71A9688B273C283C003AF0A9 /* KeywordCVC.swift */,
 				71A9688C273C283C003AF0A9 /* KeywordCVC.xib */,
+				71DFD3942746730F003BEFE8 /* TagCVC.swift */,
+				71DFD3952746730F003BEFE8 /* TagCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1496,6 +1502,7 @@
 				E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */,
 				E946137C27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.xib in Resources */,
 				E9AF83E9273B60DC00D77D5F /* ResultCountCVC.xib in Resources */,
+				71DFD3972746730F003BEFE8 /* TagCVC.xib in Resources */,
 				71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */,
 				E9CAF1CB27316C73008F749B /* HomeInStyleLifeSB.storyboard in Resources */,
 				E9E4991E273BABFA0001ACFB /* SettingAlarmSB.storyboard in Resources */,
@@ -1650,6 +1657,7 @@
 				E9C30DF9274604B3000B1592 /* SearchResultResponse.swift in Sources */,
 				E96DB3032744AA0200659256 /* BaseResponse.swift in Sources */,
 				E9161D18273D0126009A9CA7 /* NoneLikeCVC.swift in Sources */,
+				71DFD3962746730F003BEFE8 /* TagCVC.swift in Sources */,
 				E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */,
 				E9AF83EC273B60F600D77D5F /* ResultSortCVC.swift in Sources */,
 				E9E49926273BAC220001ACFB /* LevelUpVC.swift in Sources */,

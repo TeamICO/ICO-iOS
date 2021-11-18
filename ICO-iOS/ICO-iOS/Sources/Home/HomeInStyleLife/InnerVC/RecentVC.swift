@@ -17,7 +17,6 @@ class RecentVC: UIViewController {
 
         StyleLifeDataManager().getRecentInfo(self)
         registerXib()
-        //setTV()
     }
 
     func registerXib(){
@@ -59,7 +58,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         cell.heartNum.text = "\(serverData[indexPath.row].likeCnt)"
         cell.detailLabel.text = serverData[indexPath.row].resultDescription
         cell.time.text = serverData[indexPath.row].time
-        
+        cell.setData(category: serverData[indexPath.row].category)
         
         return cell
     }
