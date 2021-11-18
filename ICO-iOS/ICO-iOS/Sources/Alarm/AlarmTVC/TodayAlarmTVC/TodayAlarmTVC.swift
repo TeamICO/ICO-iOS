@@ -17,11 +17,51 @@ class TodayAlarmTVC: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        self.categoryIconImage.image = nil
+        self.categoryLabel.text = nil
+        self.contentLabel.text = nil
+        self.alarmedLabel.text = nil
+    }
+    
+    func configure(with viewModel : AlarmViewModel){
+        self.alarmedLabel.text = viewModel.time
+        self.contentLabel.text = viewModel.description
+        if viewModel.isNew == 1{
+            contentView.backgroundColor = UIColor.primaryigreen5
+        }else{
+            contentView.backgroundColor = .white
+        }
+        
+        switch viewModel.type{
+        case "url":
+            categoryLabel.text = "프로모션"
+            categoryIconImage.image = UIImage(named: "icAlramStyleshotRecent1")
+            
+            break
+        case "styleshotIdx":
+            categoryLabel.text = "나의 스타일"
+            categoryIconImage.image = UIImage(named: "ic-alram-styleshot-recent")
+        
+      
+            break
+        case "mypage" :
+            categoryLabel.text = "마이페이지"
+            categoryIconImage.image = UIImage(named: "ic-alram-mypage-recent")
+          
+            break
+            
+        case "like" :
+            categoryLabel.text = "마이페이지"
+            categoryIconImage.image = UIImage(named: "ic-alram-mypage-recent")
+          
+            break
+        default :
+            break
+            
+        }
+        
+        
     }
     
 }
