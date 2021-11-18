@@ -45,6 +45,17 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         cell.productName.text = serverData[indexPath.row].productName
         cell.nameLabel.text = "\(serverData[indexPath.row].nickname)"
         cell.score.text = "\(serverData[indexPath.row].point)"
+        if cell.score.text == "5"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-5")
+        }else if cell.score.text == "4"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-4")
+        }else if cell.score.text == "3"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-3")
+        }else if cell.score.text == "2"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-2")
+        }else if cell.score.text == "1"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
+        }
         cell.heartNum.text = "\(serverData[indexPath.row].likeCnt)"
         cell.detailLabel.text = serverData[indexPath.row].resultDescription
         cell.time.text = serverData[indexPath.row].time

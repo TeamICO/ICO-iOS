@@ -64,7 +64,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icEcolevel041" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-7p-o1V">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-7p-o1V">
                                 <rect key="frame" x="70" y="0.0" width="88" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="gLD-va-79s"/>
@@ -176,6 +176,7 @@
                 <outlet property="detailLabel" destination="WxK-gY-Upl" id="OiC-he-sq5"/>
                 <outlet property="detailText" destination="4OV-WY-Mor" id="yWS-Rj-JDv"/>
                 <outlet property="detailView" destination="PXg-7H-sME" id="0HH-iB-EaK"/>
+                <outlet property="ecoLevelImg" destination="l0n-7p-o1V" id="kBY-rH-lqa"/>
                 <outlet property="heartNum" destination="m0Y-pE-VhB" id="aNq-bn-ZLb"/>
                 <outlet property="mainImage" destination="1aS-8V-qOJ" id="DdT-LZ-5bK"/>
                 <outlet property="nameLabel" destination="YbY-Je-qaS" id="azB-ui-0bB"/>
@@ -189,7 +190,6 @@
     </objects>
     <resources>
         <image name="icClock" width="20" height="20"/>
-        <image name="icEcolevel041" width="88" height="16"/>
         <image name="icHeartUnclick1" width="24" height="24"/>
         <image name="img-profile02" width="320" height="320"/>
         <image name="img_styleshot_sample04" width="1440" height="1440"/>

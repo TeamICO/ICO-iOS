@@ -66,6 +66,18 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
         cell.mainImage.setImage(with: popularServerData[indexPath.row].imageURL)
         cell.userImage.download(url: popularServerData[indexPath.row].profileURL, rounded: true)
         cell.nameLabel.text = "\(popularServerData[indexPath.row].nickname)"
+        cell.score.text = "\(popularServerData[indexPath.row].point)"
+        if cell.score.text == "5"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-5")
+        }else if cell.score.text == "4"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-4")
+        }else if cell.score.text == "3"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-3")
+        }else if cell.score.text == "2"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-2")
+        }else if cell.score.text == "1"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
+        }
         cell.productName.text = popularServerData[indexPath.row].productName
         cell.detailLabel.text = popularServerData[indexPath.row].resultDescription
         cell.heartNum.text = "\(popularServerData[indexPath.row].likeCnt)"
