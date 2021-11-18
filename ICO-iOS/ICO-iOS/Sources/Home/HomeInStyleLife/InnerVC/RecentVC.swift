@@ -33,7 +33,7 @@ class RecentVC: UIViewController {
 
 extension RecentVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return serverData.count
+        return serverData.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +59,6 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         cell.heartNum.text = "\(serverData[indexPath.row].likeCnt)"
         cell.detailLabel.text = serverData[indexPath.row].resultDescription
         cell.time.text = serverData[indexPath.row].time
-        
         
         
         return cell

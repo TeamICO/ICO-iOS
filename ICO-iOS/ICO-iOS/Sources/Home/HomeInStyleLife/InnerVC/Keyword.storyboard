@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Lr-rL-qTo">
-                                                <rect key="frame" x="0.0" y="35" width="414" height="32"/>
+                                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="Iq1-Ky-3Hx"/>
@@ -48,20 +48,20 @@
                                                 </cells>
                                             </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uEr-Pw-USt">
-                                                <rect key="frame" x="0.0" y="91" width="414" height="909"/>
+                                                <rect key="frame" x="0.0" y="136" width="414" height="864"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="6Lr-rL-qTo" firstAttribute="top" secondItem="Xso-be-45W" secondAttribute="top" constant="35" id="49g-29-cap"/>
+                                            <constraint firstItem="6Lr-rL-qTo" firstAttribute="top" secondItem="Xso-be-45W" secondAttribute="top" constant="88" id="49g-29-cap"/>
                                             <constraint firstAttribute="trailing" secondItem="uEr-Pw-USt" secondAttribute="trailing" id="A4a-8T-y80"/>
                                             <constraint firstItem="6Lr-rL-qTo" firstAttribute="leading" secondItem="Xso-be-45W" secondAttribute="leading" id="MEa-dm-6sR"/>
                                             <constraint firstAttribute="bottom" secondItem="uEr-Pw-USt" secondAttribute="bottom" id="ULf-Fq-vQL"/>
                                             <constraint firstAttribute="trailing" secondItem="6Lr-rL-qTo" secondAttribute="trailing" id="c9X-Y6-nJk"/>
                                             <constraint firstAttribute="height" constant="1000" id="d2g-Zy-OK6"/>
                                             <constraint firstItem="uEr-Pw-USt" firstAttribute="leading" secondItem="Xso-be-45W" secondAttribute="leading" id="msF-NN-rrW"/>
-                                            <constraint firstItem="uEr-Pw-USt" firstAttribute="top" secondItem="6Lr-rL-qTo" secondAttribute="bottom" constant="24" id="uKm-nM-csj"/>
+                                            <constraint firstItem="uEr-Pw-USt" firstAttribute="top" secondItem="6Lr-rL-qTo" secondAttribute="bottom" constant="16" id="uKm-nM-csj"/>
                                         </constraints>
                                     </view>
                                 </subviews>
