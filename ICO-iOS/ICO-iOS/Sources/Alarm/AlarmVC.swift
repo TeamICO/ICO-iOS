@@ -7,9 +7,12 @@
 
 import UIKit
 
-class AlarmVC: UIViewController {
+class AlarmVC: BaseViewController {
     // MARK: - Propertices
-    private let sections = ["","오늘","이전 알림"]
+    private let sections = ["오늘","이전 알림"]
+    
+    private var todayAlarms = [Alarms]()
+    private var previouseAlarms = [Alarms]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +21,7 @@ class AlarmVC: UIViewController {
         super.viewDidLoad()
 
         tableviewConfigure()
+        fetchData()
     }
     
 
@@ -25,6 +29,22 @@ class AlarmVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+}
+// MARK: - FetchData
+extension AlarmVC{
+    func fetchData(){
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        AlarmManager.shared.getUserAlarms(jwtToken: jwtToken) { [weak self] response in
+            guard let today = response.today, let previouse = response.previous else {
+                return
+            }
+            self?.todayAlarms = today
+            self?.previouseAlarms = previouse
+            self?.tableView.reloadData()
+        }
+    }
 }
 // MARK: - TableView Configure
 extension AlarmVC {
@@ -50,56 +70,115 @@ extension AlarmVC {
 // MARK: - TableView Delegate, DataSource
 extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return sections.count
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if todayAlarms.isEmpty && previouseAlarms.isEmpty{
+            return 1
+        }else{
+            switch section{
+            case 0 : return todayAlarms.count
+            case 1 : return previouseAlarms.count
+            default :
+                return 0
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.appColor(.tableViewCellColor)
         
-        switch indexPath.section{
-        case 1 :
-            let cell = tableView.dequeueReusableCell(withIdentifier: TodayAlarmTVC.identifier, for: indexPath) as! TodayAlarmTVC
-            cell.selectedBackgroundView =  bgColorView
+        
+        if todayAlarms.isEmpty && previouseAlarms.isEmpty{
+            let cell = tableView.dequeueReusableCell(withIdentifier: NoneAlarmTVC.identifier, for: indexPath) as! NoneAlarmTVC
+            cell.selectionStyle = .none
            
             return cell
-        case 2 :
-            let cell = tableView.dequeueReusableCell(withIdentifier: BeforeAlarmTVC.identifier, for: indexPath) as! BeforeAlarmTVC
-            cell.selectedBackgroundView =  bgColorView
-            
-            return cell
+        }else{
+            switch indexPath.section{
+            case 0 :
+                let cell = tableView.dequeueReusableCell(withIdentifier: TodayAlarmTVC.identifier, for: indexPath) as! TodayAlarmTVC
+                cell.selectedBackgroundView =  bgColorView
+                cell.configure(with: AlarmViewModel(with: todayAlarms[indexPath.row]))
+                return cell
+            case 1 :
+                let cell = tableView.dequeueReusableCell(withIdentifier: BeforeAlarmTVC.identifier, for: indexPath) as! BeforeAlarmTVC
+                cell.selectedBackgroundView =  bgColorView
+                cell.configure(with: AlarmViewModel(with: previouseAlarms[indexPath.row]))
+                return cell
 
-        default:
-            return UITableViewCell()
+            default:
+                return UITableViewCell()
+            }
         }
-
+        
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0 : return 0 // 네비게이션 바 높이 조절을 위한 0번째 섹션 셀 높이
-        default : return 90 //  실제 테이블 셀 높이
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if !todayAlarms.isEmpty && !previouseAlarms.isEmpty{
+            guard let jwtToken = self.jwtToken else{
+                return
+            }
+            
+            switch indexPath.section{
+            case 0:
+                AlarmManager.shared.readAlarm(type: todayAlarms[indexPath.row].type,
+                                              notificationIdx: todayAlarms[indexPath.row].notificationIdx,
+                                              jwtToken: jwtToken) { success in
+                    guard success else{
+                        return
+                    }
+                }
+                break
+            case 1:
+                AlarmManager.shared.readAlarm(type: previouseAlarms[indexPath.row].type,
+                                              notificationIdx: previouseAlarms[indexPath.row].notificationIdx,
+                                              jwtToken: jwtToken) { success in
+                    guard success else{
+                        return
+                    }
+                }
+                break
+            default :
+                break
+            }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if todayAlarms.isEmpty && previouseAlarms.isEmpty{
+            return view.height
+        }else{
+            return 90
+        }
+       
         
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0 : return 54 // 네비게이션 바 높이 조절을 위한 0번째 섹션 값
-        default : return 52 //  실제 테이블 섹션 높이
+        if todayAlarms.isEmpty && previouseAlarms.isEmpty{
+            return 0
+        }else{
+            return 54
         }
+       
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        // 섹션 뷰 셋팅
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
-        let label = UILabel(frame: CGRect(x: 16, y: 12, width: view.width-32, height: 28))
-        label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
-        label.text = sections[section]
-        header.addSubview(label)
-        header.backgroundColor = .white
-        return header
+        if todayAlarms.isEmpty && previouseAlarms.isEmpty{
+            return UIView()
+        }else{
+            // 섹션 뷰 셋팅
+            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
+            let label = UILabel(frame: CGRect(x: 16, y: 16, width: view.width-32, height: 28))
+            label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
+            label.text = sections[section]
+            header.addSubview(label)
+            header.backgroundColor = .white
+            return header
+        }
+       
     }
 
 

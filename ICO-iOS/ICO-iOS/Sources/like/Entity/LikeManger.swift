@@ -41,7 +41,7 @@ final class LikeManger{
                     
                     
                 case .failure(let error):
-                    print("DEBUG>> getUserIdx Get Error : \(error.localizedDescription)")
+                    print("DEBUG>> getUserLikes Get Error : \(error.localizedDescription)")
                     
                 }
             }
