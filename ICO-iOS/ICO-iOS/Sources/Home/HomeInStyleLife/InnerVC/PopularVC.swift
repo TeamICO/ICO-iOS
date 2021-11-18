@@ -84,6 +84,7 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
         cell.detailLabel.text = popularServerData[indexPath.row].resultDescription
         cell.heartNum.text = "\(popularServerData[indexPath.row].likeCnt)"
         cell.time.text = popularServerData[indexPath.row].time
+        cell.setData(category: popularServerData[indexPath.row].category)
         
         return cell
     }
