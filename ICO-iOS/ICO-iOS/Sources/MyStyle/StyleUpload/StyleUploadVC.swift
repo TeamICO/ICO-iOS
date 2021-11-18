@@ -159,5 +159,31 @@ class StyleUploadVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBAction func uploadBtn(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+}
 
+extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            newImageView.contentMode = .scaleAspectFill
+            newImageView.image = pickedImage
+            photoNum = 1
+            imgNumLabel.text = "\(photoNum)/1"
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
