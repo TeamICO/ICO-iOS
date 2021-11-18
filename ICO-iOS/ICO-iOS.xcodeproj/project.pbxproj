@@ -155,6 +155,8 @@
 		E9C30E022746319C000B1592 /* LikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E012746319C000B1592 /* LikeResponse.swift */; };
 		E9C30E0527465A90000B1592 /* LikeCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E0327465A90000B1592 /* LikeCollectionViewCellCVC.swift */; };
 		E9C30E0627465A90000B1592 /* LikeCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */; };
+		E9C30E092746615D000B1592 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E082746615D000B1592 /* AlarmManager.swift */; };
+		E9C30E0B27466219000B1592 /* AlarmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E0A27466219000B1592 /* AlarmResponse.swift */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -362,6 +364,8 @@
 		E9C30E012746319C000B1592 /* LikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeResponse.swift; sourceTree = "<group>"; };
 		E9C30E0327465A90000B1592 /* LikeCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCellCVC.swift; sourceTree = "<group>"; };
 		E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCellCVC.xib; sourceTree = "<group>"; };
+		E9C30E082746615D000B1592 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
+		E9C30E0A27466219000B1592 /* AlarmResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmResponse.swift; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -542,6 +546,7 @@
 			children = (
 				E9161CF6273CB953009A9CA7 /* AlarmVC.swift */,
 				E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */,
+				E9C30E072746614A000B1592 /* Entity */,
 				E9161CFE273CF242009A9CA7 /* AlarmTVC */,
 			);
 			path = Alarm;
@@ -970,6 +975,15 @@
 			children = (
 				E9C30DFF2746318F000B1592 /* LikeManger.swift */,
 				E9C30E012746319C000B1592 /* LikeResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E9C30E072746614A000B1592 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E9C30E082746615D000B1592 /* AlarmManager.swift */,
+				E9C30E0A27466219000B1592 /* AlarmResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1675,7 +1689,9 @@
 				E9AF83FF273B82C000D77D5F /* MypageTVC.swift in Sources */,
 				E9E49912273BAB9C0001ACFB /* IcoLevelVC.swift in Sources */,
 				E9161CFD273CB96E009A9CA7 /* LikeVC.swift in Sources */,
+				E9C30E0B27466219000B1592 /* AlarmResponse.swift in Sources */,
 				E943BC602738FB6400619C74 /* LoginCVC.swift in Sources */,
+				E9C30E092746615D000B1592 /* AlarmManager.swift in Sources */,
 				E9378D862737FE9F00C589A1 /* SensibleCVC.swift in Sources */,
 				71A870EF2745079B0069239A /* MyStyleDataManager.swift in Sources */,
 				E9CAF1AD273167F3008F749B /* IndicatorView.swift in Sources */,
