@@ -293,7 +293,7 @@
                                                     <constraint firstItem="EiA-08-CmH" firstAttribute="top" secondItem="Ftq-gt-61R" secondAttribute="bottom" constant="24" id="rHA-lG-iRa"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g2c-59-Gzq">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g2c-59-Gzq">
                                                 <rect key="frame" x="16" y="381" width="382" height="419"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GMl-a2-P12">
@@ -384,6 +384,7 @@
                     <connections>
                         <outlet property="backView" destination="QLN-2u-lCQ" id="yHT-OZ-Bl1"/>
                         <outlet property="detailLabel" destination="7QC-Jp-gey" id="T6e-Ul-IFe"/>
+                        <outlet property="entireHeight" destination="RxL-RX-MI7" id="qWW-a1-1ze"/>
                         <outlet property="keywordLabel" destination="cbj-7m-SxM" id="AHN-X5-CqK"/>
                         <outlet property="likeLabel" destination="gMp-In-KxH" id="BJm-Q0-IfW"/>
                         <outlet property="likeNum" destination="V21-kq-WMJ" id="qnt-v6-LGy"/>

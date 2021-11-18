@@ -12,18 +12,17 @@ class PopularIcoVC: UIViewController {
     var serverData : MyStyleResult?
     var id: Int = 0
     
-    @IBOutlet weak var styleCV: UICollectionView!
+    @IBOutlet weak var entireHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var styleCV: UICollectionView!
 
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var shadowView: UIView!
     
-    
     @IBOutlet var keywordView: [UIView]!
     @IBOutlet var keywordImage: [UIImageView]!
     @IBOutlet var keywordName: [UILabel]!
-    
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -83,7 +82,6 @@ class PopularIcoVC: UIViewController {
             keywordView[i].cornerRadius = 8
             keywordName[i].textColor = UIColor.coGreen
         }
-        
         likeLabel.text = "누적 좋아요"
         styleLabel.text = "누적 스타일 샷"
         likeNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
@@ -92,17 +90,11 @@ class PopularIcoVC: UIViewController {
         styleNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
         styleLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         styleLabel.textColor = UIColor.primaryBlack60
-        
     }
-    
-    
-    
     
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-
 }
 
 
@@ -114,7 +106,7 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
         
-        styleCell.styleImage.setImage(with: serverData?.profileURL ?? "")
+        styleCell.styleImage.setImage(with: serverData?.styleshot[indexPath.row].imageURL ?? "")
         
         return styleCell
     }
@@ -127,8 +119,8 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellWidth = 164
-        let cellHeight = 164
+        let cellWidth = 166
+        let cellHeight = 166
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
@@ -150,6 +142,14 @@ extension PopularIcoVC{
         profileImage.setImage(with: serverData?.profileURL ?? "")
         likeNum.text = "\(serverData?.likeCnt ?? 0)"
         styleNum.text = "\(serverData?.styleshotCnt ?? 0) "
+        
+        var item = (serverData?.styleshotCnt)!
+        if item % 2 == 0 {
+            entireHeight.constant = CGFloat(389 + 180*(item/2))
+        }else{
+            entireHeight.constant = CGFloat(389 + 180*((item+1)/2))
+        }
+        
         setCV()
         styleCV.reloadData()
         
