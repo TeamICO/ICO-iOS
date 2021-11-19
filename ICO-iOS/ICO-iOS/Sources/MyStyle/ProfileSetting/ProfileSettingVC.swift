@@ -23,7 +23,7 @@ class ProfileSettingVC: BaseViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.dismissKeyboardWhenTappedAround()
         tableviewConfigure()
         configure()
         fetchData()
@@ -52,19 +52,37 @@ class ProfileSettingVC: BaseViewController {
             return
         }
         let ecokeywords = self.seletedKeywords.map{String($0+1)}
-        ProfileUpdateManager.shared.updateUserProfile(imageData: self.selectedContentImage,
-                                                      nickname: self.nickname,
-                                                      description: self.profileDescription,
-                                                      activatedEcoKeyword: ecokeywords,
-                                                      userIdx: self.userIdx,
-                                                      jwtToken: jwtToken) { response in
-            guard response.isSuccess else{
-                return
+        if let image = self.selectedContentImage{
+            print(image)
+            ProfileUpdateManager.shared.updateUserProfile(imageData: image,
+                                                          nickname: self.nickname,
+                                                          description: self.profileDescription,
+                                                          activatedEcoKeyword: ecokeywords,
+                                                          userIdx: self.userIdx,
+                                                          jwtToken: jwtToken) { response in
+                guard response.isSuccess else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
-            DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
+        }else{
+            ProfileUpdateManager.shared.updateUserProfile(imageData: nil,
+                                                          nickname: self.nickname,
+                                                          description: self.profileDescription,
+                                                          activatedEcoKeyword: ecokeywords,
+                                                          userIdx: self.userIdx,
+                                                          jwtToken: jwtToken) { response in
+                guard response.isSuccess else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
+ 
     }
     
 }
@@ -326,7 +344,18 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
             return
         }
         self.selectedContentImage = image
-       
+        let imageId = UUID().uuidString
+        BaseManager.shared.uploadImage(image: image, imageId: imageId) { success in
+            guard success else{
+                return
+            }
+            BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { url in
+                guard let url = url else{
+                    return
+                }
+                print(url)
+            }
+        }
     }
     
     
