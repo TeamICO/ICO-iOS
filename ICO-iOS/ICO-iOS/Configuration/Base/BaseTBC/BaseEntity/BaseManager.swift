@@ -35,7 +35,7 @@ final class BaseManager{
                     guard response.isSuccess == true else{
                         return
                     }
-                    print(response.result.userIdx)
+                    
                     completion(response.result)
                     
                     
