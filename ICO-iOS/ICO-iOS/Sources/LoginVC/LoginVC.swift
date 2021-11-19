@@ -54,6 +54,7 @@ class LoginVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.isTransparent = true
         
         collectionViewConfigure()
@@ -71,7 +72,7 @@ class LoginVC: UIViewController {
 extension LoginVC {
     func collectionViewConfigure(){
         
-        
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: LoginCVC.identifier, bundle: nil)
@@ -138,8 +139,12 @@ extension LoginVC {
       
     }
     @objc func didTapNaverView(){
-        loginInstance?.delegate = self
-        loginInstance?.requestThirdPartyLogin()
+        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+        surveyVC.name = "도윤"
+        self.navigationController?.pushViewController(surveyVC, animated: true)
+//        loginInstance?.delegate = self
+//        loginInstance?.requestThirdPartyLogin()
     }
     private func getNaverInfo() {
         
@@ -154,37 +159,33 @@ extension LoginVC {
            
            guard let tokenType = loginInstance?.tokenType else { return }
            guard let accessToken = loginInstance?.accessToken else { return }
-            LoginManager.shared.registerID(snsToken: accessToken, snsType: "naver") { response in
-                      guard let jwt = response?.jwt else{
+            LoginManager.shared.registerID(name: nil,snsToken: accessToken, snsType: "naver") { response in
+                guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.name else{
                           return
                       }
-//                      UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                      UserDefaults.standard.set(jwt, forKey: "jwtToken")
                         DispatchQueue.main.async {
-                            let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-                            guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-                            self.navigationController?.pushViewController(surveyVC, animated: true)
+                            if message == "회원가입 성공"{
+                                
+                                let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                                guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                                surveyVC.name = name
+                                self.navigationController?.pushViewController(surveyVC, animated: true)
+                            }else if message == "로그인 성공"{
+                                let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
+                         
+                                let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
+                                let vc = baseTBC
+                                vc.modalPresentationStyle = .fullScreen
+                                self.present(vc, animated: true, completion: nil)
+                            }
+                           
 
                 
                             
                         }
                   }
-           let urlStr = "https://openapi.naver.com/v1/nid/me"
-           let url = URL(string: urlStr)!
-        
-           let authorization = "\(tokenType) \(accessToken)"
-           
-           let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
-           
-            req.responseJSON { response in
-            
-             guard let result = response.value as? [String: Any] else { return }
-             guard let object = result["response"] as? [String: Any] else { return }
-             guard let name = object["name"] as? String else { return }
-             guard let email = object["email"] as? String else { return }
-             guard let nickname = object["nickname"] as? String else { return }
-             
-            print(result)
-           }
+         
     }
 }
 
@@ -228,12 +229,27 @@ extension LoginVC {
     @objc func didTapKakaoView(){
         
         LoginManager.shared.KakaoSignIn { response in
-            LoginManager.shared.registerID(snsToken: response, snsType: "kakao") { response in
-                guard let jwt = response?.jwt else{
+            LoginManager.shared.registerID(name : nil,snsToken: response, snsType: "kakao") { response in
+                guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.name  else{
                     return
                 }
-//                UserDefaults.standard.set(jwt, forKey: "jwtToken")
-                print(jwt)
+                UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                DispatchQueue.main.async {
+                    if message == "회원가입 성공"{
+                        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                        surveyVC.name = name
+                        self.navigationController?.pushViewController(surveyVC, animated: true)
+                    }else if message == "로그인 성공"{
+                        let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
+                 
+                        let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
+                        let vc = baseTBC
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                    
+                }
 
             }
             self.setUserInfo()
@@ -251,14 +267,7 @@ extension LoginVC {
             
             let email = user.kakaoAccount?.email
             let nickname = user.kakaoAccount?.profile?.nickname
-            DispatchQueue.main.async {
-                let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-                guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-                self.navigationController?.pushViewController(surveyVC, animated: true)
-
-    
-                
-            }
+            
         }
     }
 }
@@ -283,7 +292,7 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             // Create an account in your system.
             let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
+            let fullName = "\(appleIDCredential.fullName?.givenName)" + "\(appleIDCredential.fullName?.familyName)"
             let email = appleIDCredential.email
             if let authorizationCode = appleIDCredential.authorizationCode,
                 let identityToken = appleIDCredential.identityToken,
@@ -293,12 +302,27 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
                 print("identityToken: \(identityToken)")
                 print("authString: \(authString)")
                 print("tokenString: \(tokenString)")
-                LoginManager.shared.registerID(snsToken: tokenString, snsType: "apple") { response in
-                    guard let jwt = response?.jwt else{
+                LoginManager.shared.registerID(name :fullName ,snsToken: tokenString, snsType: "apple") { response in
+                    guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.name  else{
                         return
                     }
                     UserDefaults.standard.set(jwt, forKey: "jwtToken")
-                    print(jwt)
+                    DispatchQueue.main.async {
+                        if message == "회원가입 성공"{
+                            let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                            guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                            surveyVC.name = name
+                            self.navigationController?.pushViewController(surveyVC, animated: true)
+                        }else if message == "로그인 성공"{
+                            let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
+                     
+                            let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
+                            let vc = baseTBC
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: true, completion: nil)
+                        }
+
+                    }
                 }
             }
             print("useridentifier: \(userIdentifier)")

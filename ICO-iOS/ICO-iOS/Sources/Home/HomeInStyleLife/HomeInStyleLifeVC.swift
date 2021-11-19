@@ -61,7 +61,7 @@ class HomeInStyleLifeVC: BaseViewController {
     
     
     @IBAction func popularBtn(_ sender: Any) {
-        scrollView.setContentOffset(CGPoint(x: viewSizeWidth, y: 0.0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: view.width, y: 0.0), animated: true)
         categoryBtn[1].setTitleColor(UIColor.black, for: .normal)
         categoryBtn[0].setTitleColor(UIColor.tabBarGray, for: .normal)
         categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)

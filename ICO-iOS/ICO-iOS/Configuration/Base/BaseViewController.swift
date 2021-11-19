@@ -27,6 +27,7 @@ class BaseViewController: UIViewController {
             return
         }
         
+        
         tabbar.tintColor = .tabBarGreen
         tabbar.unselectedItemTintColor = UIColor.appColor(.tabBarTitleUnSeletedColor)
         

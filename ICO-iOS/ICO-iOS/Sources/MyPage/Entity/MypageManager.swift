@@ -35,6 +35,7 @@ final class MypageManager{
                     guard response.isSuccess == true else{
                         return
                     }
+                
                     completion(response.result)
                     
                     

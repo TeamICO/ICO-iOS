@@ -21,7 +21,7 @@ struct MypageResult: Codable {
     let profileURL: String?
     let level, tree, earth, together: Int
     let marketingAgree, styleshotAgree: Int
-    let styleshot: [MyPageStyleshot]
+    let styleshot: [MyPageStyleshot]?
 
     enum CodingKeys: String, CodingKey {
         case name, nickname

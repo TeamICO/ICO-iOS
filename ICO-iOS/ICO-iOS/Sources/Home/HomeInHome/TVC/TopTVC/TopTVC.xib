@@ -32,7 +32,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5k-dB-ihf">
-                        <rect key="frame" x="16" y="134" width="304" height="48"/>
+                        <rect key="frame" x="16" y="134" width="288" height="48"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearchGreen1" translatesAutoresizingMaskIntoConstraints="NO" id="gyg-oa-DkW">
                                 <rect key="frame" x="10" y="14" width="20" height="20"/>
@@ -80,20 +80,20 @@
                     <constraint firstItem="DJD-nk-yXz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CEe-tU-ymG"/>
                     <constraint firstItem="M5k-dB-ihf" firstAttribute="top" secondItem="DJD-nk-yXz" secondAttribute="bottom" constant="16" id="ISK-7l-sj9"/>
                     <constraint firstItem="DJD-nk-yXz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="N4v-BT-t6g"/>
-                    <constraint firstItem="M5k-dB-ihf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="16" id="PIc-KR-pco"/>
                     <constraint firstAttribute="trailing" secondItem="GRq-IP-IPU" secondAttribute="trailing" id="SWQ-Nc-sfw"/>
                     <constraint firstAttribute="bottom" secondItem="GRq-IP-IPU" secondAttribute="bottom" constant="16" id="Wcj-le-5Jk"/>
                     <constraint firstItem="GRq-IP-IPU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bvS-LX-0Um"/>
                     <constraint firstItem="GRq-IP-IPU" firstAttribute="top" secondItem="M5k-dB-ihf" secondAttribute="bottom" constant="16" id="esZ-Fg-M8w"/>
                     <constraint firstAttribute="trailing" secondItem="DJD-nk-yXz" secondAttribute="trailing" id="h6S-Uv-YFc"/>
                     <constraint firstItem="M5k-dB-ihf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nj3-xU-XKW"/>
+                    <constraint firstAttribute="trailing" secondItem="M5k-dB-ihf" secondAttribute="trailing" constant="16" id="qv0-nY-jks"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bannerCollectionView" destination="DJD-nk-yXz" id="62f-HE-I5k"/>
                 <outlet property="collectionView" destination="GRq-IP-IPU" id="udF-xK-6Ml"/>
-                <outlet property="searchView" destination="M5k-dB-ihf" id="eTu-3u-peh"/>
+                <outlet property="searchView" destination="M5k-dB-ihf" id="y2E-rh-BVq"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="141.62946428571428"/>
         </tableViewCell>

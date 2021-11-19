@@ -40,13 +40,17 @@ class LoginManager {
        
     }
    
-    public func registerID(snsToken : String,snsType: String, completion: @escaping (LoginResult?)->Void) {
+    public func registerID(name : String?,snsToken : String,snsType: String, completion: @escaping (LoginResponse?)->Void) {
 
         let url = "https://dev.chuckwagon.shop/app/login"
-
+        var userName = ""
+        if let name = name {
+            userName = name
+        }
         let param = [
             "snsToken" : snsToken,
-            "snsType" : snsType
+            "snsType" : snsType,
+            "name" : userName
         ]
        
 
@@ -60,10 +64,7 @@ class LoginManager {
                 switch response.result {
                 
                 case .success(let response):
-                    guard response.isSuccess else{
-                        return
-                    }
-                    completion(response.result)
+                    completion(response)
                     
                     
                     
