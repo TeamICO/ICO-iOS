@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZE-CB-iZR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-5k-RW5">
-                                        <rect key="frame" x="0.0" y="0.0" width="828" height="725"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="828" height="769"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1he-dM-Eqg">
-                                                <rect key="frame" x="0.0" y="0.0" width="828" height="725"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="828" height="769"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ba7-6S-dIJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                                                         <subviews>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57L-JQ-050">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                                                                 <connections>
                                                                     <segue destination="3Lz-PV-Jng" kind="embed" id="Wzh-af-QRa"/>
                                                                 </connections>
@@ -46,10 +46,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6El-jO-ecJ">
-                                                        <rect key="frame" x="414" y="0.0" width="414" height="725"/>
+                                                        <rect key="frame" x="414" y="0.0" width="414" height="769"/>
                                                         <subviews>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OC5-nl-Ii7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                                                                 <connections>
                                                                     <segue destination="J1Z-YJ-rbg" kind="embed" id="oCh-o3-Y87"/>
                                                                 </connections>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </scrollView>
                             <view clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-ke-dME">
-                                <rect key="frame" x="0.0" y="88" width="414" height="53"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwX-Zq-VKr">
                                         <rect key="frame" x="16" y="9" width="41.5" height="35"/>
@@ -217,12 +217,11 @@
         <!--홈-->
         <scene sceneID="Uuc-NH-cUz">
             <objects>
-                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="GUP-1I-bTp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GUP-1I-bTp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" id="UEf-d9-RG7"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6q3-n4-Ww8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="6q3-n4-Ww8">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

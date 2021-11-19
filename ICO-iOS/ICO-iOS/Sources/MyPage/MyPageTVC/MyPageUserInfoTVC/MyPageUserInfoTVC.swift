@@ -46,8 +46,8 @@ class MyPageUserInfoTVC: UITableViewCell {
     }
     
     func configure(with viewModel: MyPageUserInfoTVCViewModel){ 
-        self.userNameLabel.text = viewModel.userName
- 
+        
+        
         self.treeLabel.text = "나무를 지킬 수 있는 행동을 \(viewModel.tree)번 실천했어요."
         self.earthLabel.text = "지속가능한 지구를 위한 실천을 위해 \(viewModel.earth)번 노력하였어요."
         self.togetherLabel.text = "나와 환경 모두를 지킬 수 있는 행동을 \(viewModel.together)번째 지속하고 있어요."
@@ -56,6 +56,7 @@ class MyPageUserInfoTVC: UITableViewCell {
         guard let userimage = viewModel.userImage,let userName = viewModel.userName, let url = URL(string: userimage) else{
             return
         }
+        self.userNameLabel.text = userName
         var name = userName
         name.removeFirst()
         self.secondUserNameLabel.text = name

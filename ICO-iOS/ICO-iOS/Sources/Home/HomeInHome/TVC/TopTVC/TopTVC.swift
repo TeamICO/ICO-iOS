@@ -40,6 +40,8 @@ class TopTVC: UITableViewCell {
     private let pageControl : UIPageControl = {
        let page = UIPageControl()
         page.numberOfPages = 3
+        page.tintColor = .primaryBlack30
+        page.currentPageIndicatorTintColor = .primaryBlack50
         page.translatesAutoresizingMaskIntoConstraints = false
         return page
     }()
@@ -126,10 +128,8 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         case self.collectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCVC.identifier, for: indexPath) as! TopCVC
             
-           return CGSize(width: 150, height: 32)
-//            keywordContents[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
-//                    keywordContentsSub[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
-//                    cell.ecoIcon.frame.size.width +
+           return CGSize(width:  keywordContents[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width + keywordContentsSub[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width + cell.ecoIcon.frame.size.width + 26, height: 32)
+
     
         case self.bannerCollectionView :
             return CGSize(width: self.frame.size.width, height: 118)
@@ -168,7 +168,7 @@ extension TopTVC {
         contentView.addSubview(pageControl)
         
         pageControl.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: -5).isActive = true
-        pageControl.bottomAnchor.constraint(equalTo: searchView.topAnchor,constant: -25).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: searchView.topAnchor,constant: -20).isActive = true
         
     }
 }
