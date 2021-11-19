@@ -15,4 +15,10 @@ target 'ICO-iOS' do
 
   pod 'KakaoSDK'
   pod 'naveridlogin-sdk-ios'
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Crashlytics'
 end

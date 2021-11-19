@@ -7,8 +7,13 @@
 
 import Foundation
 import Alamofire
+import FirebaseStorage
+
 final class BaseManager{
     static let shared = BaseManager()
+    
+    private let container = Storage.storage()
+    
     private init() {}
     
     
@@ -16,6 +21,7 @@ final class BaseManager{
 
         let url = "https://dev.chuckwagon.shop/app/auto-login"
 
+        
    
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken
@@ -46,6 +52,33 @@ final class BaseManager{
                 }
             }
         
+    }
+    
+    public func uploadImage(image: UIImage?,imageId : String,completion: @escaping(Bool)->Void){
+        guard let pngData = image?.pngData() else{
+            return
+        }
+
+        container
+            .reference(withPath: "images/\(imageId)")
+            .putData(pngData, metadata: nil) { metadata, error in
+                guard metadata != nil, error == nil else{
+                    print(error)
+                    print("이미지 업로드 실패")
+                    completion(false)
+                    return
+                }
+                completion(true)
+            }
+    }
+
+    public func downloadUrlForPostImage(imageId: String,completion: @escaping(URL?)->Void){
+        container
+            .reference(withPath: "images/\(imageId)")
+            .downloadURL { url, error in
+                completion(url)
+            }
+
     }
 }
 

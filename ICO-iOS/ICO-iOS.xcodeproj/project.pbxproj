@@ -151,6 +151,7 @@
 		E9AF840D273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */; };
 		E9AF8411273B9AE400D77D5F /* IcoVerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF840F273B9AE400D77D5F /* IcoVerTVC.swift */; };
 		E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */; };
+		E9B835A12747D99200215FB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9B835A02747D99200215FB6 /* GoogleService-Info.plist */; };
 		E9C30DF7274604A5000B1592 /* SearchResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DF6274604A5000B1592 /* SearchResultManager.swift */; };
 		E9C30DF9274604B3000B1592 /* SearchResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */; };
 		E9C30DFC27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30DFA27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift */; };
@@ -364,6 +365,7 @@
 		E9AF840B273B831200D77D5F /* MypageMyRecentStyleShotCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageMyRecentStyleShotCVC.xib; sourceTree = "<group>"; };
 		E9AF840F273B9AE400D77D5F /* IcoVerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcoVerTVC.swift; sourceTree = "<group>"; };
 		E9AF8410273B9AE400D77D5F /* IcoVerTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IcoVerTVC.xib; sourceTree = "<group>"; };
+		E9B835A02747D99200215FB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9C30DF6274604A5000B1592 /* SearchResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultManager.swift; sourceTree = "<group>"; };
 		E9C30DF8274604B3000B1592 /* SearchResultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultResponse.swift; sourceTree = "<group>"; };
 		E9C30DFA27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCellCVC.swift; sourceTree = "<group>"; };
@@ -1033,6 +1035,7 @@
 				E9CAF1872731636A008F749B /* Sources */,
 				E9CAF1722731635B008F749B /* AppDelegate.swift */,
 				E9CAF1742731635B008F749B /* SceneDelegate.swift */,
+				E9B835A02747D99200215FB6 /* GoogleService-Info.plist */,
 				E9CAF1762731635B008F749B /* ViewController.swift */,
 				E9CAF17B2731635D008F749B /* Assets.xcassets */,
 				E9CAF17D2731635D008F749B /* LaunchScreen.storyboard */,
@@ -1427,6 +1430,7 @@
 				E9CAF16C2731635B008F749B /* Frameworks */,
 				E9CAF16D2731635B008F749B /* Resources */,
 				4FDFD824D57E5CC7353EE823 /* [CP] Embed Pods Frameworks */,
+				E9B835A22747DA1B00215FB6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1542,6 +1546,7 @@
 				E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */,
 				E97D437F273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib in Resources */,
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
+				E9B835A12747D99200215FB6 /* GoogleService-Info.plist in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				71DFD39C2746A864003BEFE8 /* ecoKeywordCVC.xib in Resources */,
 				E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */,
@@ -1597,6 +1602,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E9B835A22747DA1B00215FB6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1873,6 +1895,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ICO-iOS/ICO-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = KWX544766F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ICO-iOS/Info.plist";

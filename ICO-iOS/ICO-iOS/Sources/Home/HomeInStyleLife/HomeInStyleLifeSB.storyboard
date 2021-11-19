@@ -209,9 +209,9 @@
                         <outlet property="segmentView" destination="6sj-DA-sxv" id="Efz-aw-Sgz"/>
                         <outlet property="stackView" destination="yyp-J1-ehR" id="GmR-8N-VOa"/>
                         <outlet property="stackViewWidth" destination="THi-0Q-aZ5" id="3Ut-cX-bd9"/>
-                        <outletCollection property="categoryBtn" destination="u6V-HH-P9q" collectionClass="NSMutableArray" id="HOe-51-Enh"/>
-                        <outletCollection property="categoryBtn" destination="WPm-bd-VjM" collectionClass="NSMutableArray" id="DNn-5c-1JD"/>
-                        <outletCollection property="categoryBtn" destination="OtF-pC-bBS" collectionClass="NSMutableArray" id="OXF-rw-dbX"/>
+                        <outletCollection property="categoryBtn" destination="u6V-HH-P9q" collectionClass="NSMutableArray" id="AIq-hl-zcb"/>
+                        <outletCollection property="categoryBtn" destination="OtF-pC-bBS" collectionClass="NSMutableArray" id="lPO-Wl-CT8"/>
+                        <outletCollection property="categoryBtn" destination="WPm-bd-VjM" collectionClass="NSMutableArray" id="Bqh-G8-cnd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
