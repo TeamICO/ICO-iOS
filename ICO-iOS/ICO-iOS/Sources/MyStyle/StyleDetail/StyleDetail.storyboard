@@ -93,7 +93,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ij8-aK-oXF">
-                                                <rect key="frame" x="335.5" y="392" width="40" height="40"/>
+                                                <rect key="frame" x="335.5" y="390" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="4iv-0o-opT"/>
                                                     <constraint firstAttribute="height" constant="40" id="kdS-65-jNX"/>
@@ -130,23 +130,23 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PqT-UX-bKC">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="PqT-UX-bKC">
                                                 <rect key="frame" x="16" y="515.5" width="180" height="16"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="만족도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmr-D8-Q5c">
-                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="32.5" height="16"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iE-PO-jbf">
-                                                        <rect key="frame" x="46" y="0.0" width="20.5" height="16"/>
+                                                        <rect key="frame" x="51.5" y="0.0" width="18.5" height="16"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icEcolevel041" translatesAutoresizingMaskIntoConstraints="NO" id="y6O-QS-55K">
-                                                        <rect key="frame" x="76.5" y="0.0" width="103.5" height="16"/>
+                                                        <rect key="frame" x="89" y="0.0" width="91" height="16"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -268,7 +268,7 @@
                                             <constraint firstAttribute="trailing" secondItem="ZB8-yS-q7S" secondAttribute="trailing" id="hlD-Na-Dba"/>
                                             <constraint firstItem="PqT-UX-bKC" firstAttribute="leading" secondItem="2wJ-8k-eij" secondAttribute="leading" constant="16" id="ij8-t4-aZM"/>
                                             <constraint firstAttribute="trailing" secondItem="ZPt-34-1bg" secondAttribute="trailing" id="kCt-rA-fq8"/>
-                                            <constraint firstItem="ij8-aK-oXF" firstAttribute="top" secondItem="3NE-QP-Avy" secondAttribute="bottom" constant="17" id="lFC-2m-ewf"/>
+                                            <constraint firstItem="ij8-aK-oXF" firstAttribute="top" secondItem="3NE-QP-Avy" secondAttribute="bottom" constant="15" id="lFC-2m-ewf"/>
                                             <constraint firstAttribute="trailing" secondItem="MzY-NF-RHr" secondAttribute="trailing" constant="8" id="pT4-q2-ewu"/>
                                             <constraint firstItem="3NE-QP-Avy" firstAttribute="leading" secondItem="2wJ-8k-eij" secondAttribute="leading" id="qad-Vb-Lsj"/>
                                             <constraint firstItem="ZPt-34-1bg" firstAttribute="top" secondItem="GvH-8C-NFs" secondAttribute="bottom" constant="15" id="qui-x0-0Gr"/>
@@ -305,12 +305,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryCV" destination="ZPt-34-1bg" id="E0l-iD-X3r"/>
+                        <outlet property="ecoLevelImg" destination="y6O-QS-55K" id="zCo-YR-dRA"/>
+                        <outlet property="hashtagCV" destination="0Ug-nQ-ngT" id="vFz-ZW-vTl"/>
                         <outlet property="heartNum" destination="Oqy-we-hgU" id="iw3-ux-79Q"/>
                         <outlet property="lineView1" destination="bph-rA-XnV" id="kxh-a3-e0M"/>
                         <outlet property="lineView2" destination="ZB8-yS-q7S" id="fRb-oS-weM"/>
                         <outlet property="moveUrl" destination="Eey-mj-fnQ" id="YBl-dT-Cso"/>
                         <outlet property="navigationTitle" destination="uMn-AA-uRa" id="AhN-Ej-1jQ"/>
                         <outlet property="productDetail" destination="R83-N1-YoI" id="29i-OE-gMe"/>
+                        <outlet property="productImage" destination="3NE-QP-Avy" id="T83-lk-NK4"/>
                         <outlet property="productName" destination="jHF-7a-MhH" id="C8M-rX-6HC"/>
                         <outlet property="scoreLabel" destination="vmr-D8-Q5c" id="JGT-Q4-Hzh"/>
                         <outlet property="scoreNum" destination="1iE-PO-jbf" id="xZI-60-i8E"/>

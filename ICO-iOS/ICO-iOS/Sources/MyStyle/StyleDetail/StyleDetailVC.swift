@@ -10,12 +10,18 @@ import UIKit
 class StyleDetailVC: UIViewController {
 
     var isMine : Bool = true
+    var styleShotIdx: Int = 0
+    var StyleDetailData: StyleDetailResult?
+    
+    @IBOutlet weak var categoryCV: UICollectionView!
+    @IBOutlet weak var hashtagCV: UICollectionView!
     @IBOutlet weak var navigationTitle: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var heartNum: UILabel!
     @IBOutlet weak var productName: UILabel!
-    
+    @IBOutlet weak var ecoLevelImg: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var scoreNum: UILabel!
     
@@ -29,7 +35,7 @@ class StyleDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(true)
+        StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
         setUI()
         // Do any additional setup after loading the view.
     }
@@ -118,4 +124,30 @@ class StyleDetailVC: UIViewController {
         self.present(alert, animated: false, completion: nil)
     }
     
+}
+
+extension StyleDetailVC{
+    func didSuccessStyleDetail(message: String){
+        self.productImage.setImage(with: StyleDetailData?.imageURL ?? "")
+        self.userImage.setImage(with: StyleDetailData?.profileURL ?? "")
+        self.userName.text = StyleDetailData?.nickname
+        self.productName.text = StyleDetailData?.productName
+        self.heartNum.text = "\(StyleDetailData?.likeCnt ?? 0)"
+        self.scoreNum.text = "\(StyleDetailData?.point ?? 0)"
+        if scoreNum.text == "5"{
+           ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-5")
+        }else if scoreNum.text == "4"{
+           ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-4")
+        }else if scoreNum.text == "3"{
+           ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-3")
+        }else if scoreNum.text == "2"{
+           ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-2")
+        }else if scoreNum.text == "1"{
+           ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
+        }
+        self.productDetail.text = StyleDetailData?.resultDescription
+        self.urlProduct.text = StyleDetailData?.productName
+        
+        print(message)
+    }
 }

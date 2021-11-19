@@ -34,6 +34,8 @@
 		71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71A9688C273C283C003AF0A9 /* KeywordCVC.xib */; };
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
+		71DD7DF92747F95B00D64236 /* StyleDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */; };
+		71DD7DFB2747F96D00D64236 /* StyleDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */; };
 		71DFD3962746730F003BEFE8 /* TagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFD3942746730F003BEFE8 /* TagCVC.swift */; };
 		71DFD3972746730F003BEFE8 /* TagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DFD3952746730F003BEFE8 /* TagCVC.xib */; };
 		71DFD39B2746A864003BEFE8 /* ecoKeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */; };
@@ -246,6 +248,8 @@
 		71A9688C273C283C003AF0A9 /* KeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCVC.xib; sourceTree = "<group>"; };
 		71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoCVC.swift; sourceTree = "<group>"; };
 		71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularIcoCVC.xib; sourceTree = "<group>"; };
+		71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailResponse.swift; sourceTree = "<group>"; };
+		71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailDataManager.swift; sourceTree = "<group>"; };
 		71DFD3942746730F003BEFE8 /* TagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCVC.swift; sourceTree = "<group>"; };
 		71DFD3952746730F003BEFE8 /* TagCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCVC.xib; sourceTree = "<group>"; };
 		71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoKeywordCVC.swift; sourceTree = "<group>"; };
@@ -508,6 +512,7 @@
 		717CB5122743B5470044E227 /* StyleDetail */ = {
 			isa = PBXGroup;
 			children = (
+				71DD7DF72747F92D00D64236 /* Entity */,
 				717CB5132743B57C0044E227 /* StyleDetailVC.swift */,
 				717CB5152743B5900044E227 /* StyleDetail.storyboard */,
 			);
@@ -528,6 +533,15 @@
 			children = (
 				71A870EC274507830069239A /* MyStyleResponse.swift */,
 				71A870EE2745079B0069239A /* MyStyleDataManager.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		71DD7DF72747F92D00D64236 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */,
+				71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1643,6 +1657,7 @@
 				E9461394274380B300A5F7C2 /* MypageManager.swift in Sources */,
 				E9E49937273BD50B0001ACFB /* ServiceTermsTVC.swift in Sources */,
 				E998C25B2732955A00E1F8D0 /* EcoTopicCVC.swift in Sources */,
+				71DD7DFB2747F96D00D64236 /* StyleDetailDataManager.swift in Sources */,
 				71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */,
 				E96C02B1273E351600507FB3 /* CompanyKeywordCVC.swift in Sources */,
 				E951CE66273A68C6002799D6 /* HokeywordSV.swift in Sources */,
@@ -1715,6 +1730,7 @@
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
 				71A870ED274507830069239A /* MyStyleResponse.swift in Sources */,
 				E9CAF1C127316A10008F749B /* Constant.swift in Sources */,
+				71DD7DF92747F95B00D64236 /* StyleDetailResponse.swift in Sources */,
 				717CB5142743B57C0044E227 /* StyleDetailVC.swift in Sources */,
 				E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */,
 				E9161D0C273CF74E009A9CA7 /* BeforeAlarmTVC.swift in Sources */,
