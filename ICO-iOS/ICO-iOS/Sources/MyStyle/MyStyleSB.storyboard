@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0K-fL-sif">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xht-Oq-9EB">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
@@ -284,7 +284,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="E2d-op-bPc"/>
                             </scrollView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ma9-z1-Cjb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="54"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-Mh-qCm">
                                         <rect key="frame" x="26" y="13" width="48" height="24"/>
@@ -360,12 +360,11 @@
         <!--스타일-->
         <scene sceneID="pDV-bo-kNq">
             <objects>
-                <navigationController storyboardIdentifier="MyStyleNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="eaT-7s-ab3" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MyStyleNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eaT-7s-ab3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="스타일" id="c9T-cs-hBe"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xk1-az-fmq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
