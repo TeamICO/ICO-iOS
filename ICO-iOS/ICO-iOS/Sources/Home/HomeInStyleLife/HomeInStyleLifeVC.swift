@@ -11,6 +11,7 @@ class HomeInStyleLifeVC: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet var categoryBtn: [UIButton]!
     @IBOutlet weak var animateView: UIView!
@@ -18,12 +19,12 @@ class HomeInStyleLifeVC: BaseViewController {
     @IBOutlet weak var left: NSLayoutConstraint!
     @IBOutlet weak var right: NSLayoutConstraint!
     
-    let viewSizeWidth : CGFloat = 414
-    let viewSizeWidth2 : CGFloat = 828
+    let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        stackViewWidth.constant = viewSizeWidth
         setUI()
     }
     
@@ -48,7 +49,7 @@ class HomeInStyleLifeVC: BaseViewController {
     
     
     @IBAction func recentBtn(_ sender: Any) {
-        scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: .zero, y: 0.0), animated: true)
         categoryBtn[0].setTitleColor(UIColor.black, for: .normal)
         categoryBtn[1].setTitleColor(UIColor.tabBarGray, for: .normal)
         categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
@@ -60,7 +61,7 @@ class HomeInStyleLifeVC: BaseViewController {
     
     
     @IBAction func popularBtn(_ sender: Any) {
-        scrollView.setContentOffset(CGPoint(x: view.width, y: 0.0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: viewSizeWidth, y: 0.0), animated: true)
         categoryBtn[1].setTitleColor(UIColor.black, for: .normal)
         categoryBtn[0].setTitleColor(UIColor.tabBarGray, for: .normal)
         categoryBtn[2].setTitleColor(UIColor.tabBarGray, for: .normal)
@@ -72,7 +73,7 @@ class HomeInStyleLifeVC: BaseViewController {
     
     
     @IBAction func keywordBtn(_ sender: Any) {
-        scrollView.setContentOffset(CGPoint(x: viewSizeWidth2, y: 0.0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: viewSizeWidth*2, y: 0.0), animated: true)
         categoryBtn[2].setTitleColor(UIColor.black, for: .normal)
         categoryBtn[0].setTitleColor(UIColor.tabBarGray, for: .normal)
         categoryBtn[1].setTitleColor(UIColor.tabBarGray, for: .normal)

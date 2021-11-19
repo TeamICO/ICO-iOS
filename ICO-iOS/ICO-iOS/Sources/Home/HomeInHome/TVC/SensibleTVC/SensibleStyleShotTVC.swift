@@ -21,8 +21,11 @@ class SensibleStyleShotTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func getData(data : [HomeInHomeSenseStyleshot]){
+    func getData(data : [HomeInHomeSenseStyleshot],nickname : String){
         self.senseStyleShotModel = data
+        var name = nickname
+        
+        self.userNameLabel.text = "\(name) 님을 위한"
         
         collectionView.reloadData()
     }
@@ -46,6 +49,7 @@ extension SensibleStyleShotTVC : UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SensibleCVC.identifier, for: indexPath) as! SensibleCVC
+        
         cell.getData(data: senseStyleShotModel[indexPath.row].category)
         cell.configure(with: SensibleCVCViewModel(with: senseStyleShotModel[indexPath.row]))
         return cell

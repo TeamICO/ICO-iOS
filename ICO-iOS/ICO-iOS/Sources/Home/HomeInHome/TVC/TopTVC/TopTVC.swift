@@ -92,9 +92,9 @@ extension TopTVC {
 extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case self.collectionView : return keywordContents.count
+        case self.collectionView : return 3
         case self.bannerCollectionView : return topBannerModel.count
-        default : return 0
+        default : return 3
         }
         
     }
@@ -126,9 +126,10 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         case self.collectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopCVC.identifier, for: indexPath) as! TopCVC
             
-           return CGSize(width: keywordContents[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
-                   keywordContentsSub[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
-                   cell.ecoIcon.frame.size.width + 26, height: 32)
+           return CGSize(width: 150, height: 32)
+//            keywordContents[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
+//                    keywordContentsSub[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width +
+//                    cell.ecoIcon.frame.size.width +
     
         case self.bannerCollectionView :
             return CGSize(width: self.frame.size.width, height: 118)
@@ -140,15 +141,19 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == self.bannerCollectionView {
             return 0
+        }else{
+            return 8
         }
-        return 8
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == self.bannerCollectionView {
             return 0
+        }else{
+            return 8
         }
-        return 8
+        
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         

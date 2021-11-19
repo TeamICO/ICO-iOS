@@ -22,6 +22,7 @@ struct HomeInHomeResult: Codable {
     let bottomBanner: HomeInHomeBottomBanner?
     let brand: HomeInHomeBrand?
     let ecoTopic: HomeInHomeEcoTopic?
+    let nickname : String?
 }
 
 // MARK: - HomeInHomeBottomBanner

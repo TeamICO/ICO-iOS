@@ -16,6 +16,7 @@ class BrandRecommendTVC: UITableViewCell {
     private var brand : HomeInHomeBrand?
     weak var delegate : BrandRecommendTVCDelegate?
     
+    @IBOutlet weak var userNameLable: UILabel!
     @IBOutlet weak var brandView: UIView!
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var brandImage: UIImageView!
@@ -38,9 +39,12 @@ class BrandRecommendTVC: UITableViewCell {
         brandNameLabel.text = nil
     }
     
-    func getData(data : HomeInHomeBrand){
+    func getData(data : HomeInHomeBrand,nickname : String){
         self.brand = data
         brandNameLabel.text = brand?.name
+        var name = nickname
+        
+        self.userNameLable.text = "\(name) 님을 위한"
         
         guard let url = URL(string: data.imageURL) else{
                 return
