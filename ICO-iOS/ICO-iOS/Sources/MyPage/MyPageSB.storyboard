@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vh3-lP-iPk">
-                                <rect key="frame" x="0.0" y="101" width="414" height="712"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-iB-fbD">
-                                <rect key="frame" x="0.0" y="88" width="414" height="54"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hU-ca-U0F">
                                         <rect key="frame" x="26" y="15" width="86.5" height="24"/>
@@ -90,7 +90,7 @@
                             <constraint firstItem="EAq-iB-fbD" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="jao-do-8CP"/>
                             <constraint firstAttribute="trailing" secondItem="EAq-iB-fbD" secondAttribute="trailing" id="krJ-xU-sc1"/>
                             <constraint firstItem="EAq-iB-fbD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="rPi-Zk-lxg"/>
-                            <constraint firstItem="vh3-lP-iPk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="13" id="sKM-ma-szc"/>
+                            <constraint firstItem="vh3-lP-iPk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sKM-ma-szc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ToN-Gp-zAf"/>
@@ -107,12 +107,11 @@
         <!--마이페이지-->
         <scene sceneID="7oO-mn-ng5">
             <objects>
-                <navigationController storyboardIdentifier="MyPageNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ZCR-he-GHd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MyPageNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZCR-he-GHd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이페이지" id="4mf-hj-cAc"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IUR-B5-On8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
