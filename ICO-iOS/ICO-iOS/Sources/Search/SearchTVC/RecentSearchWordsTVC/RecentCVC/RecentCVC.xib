@@ -38,8 +38,8 @@
                             <constraint firstAttribute="width" constant="14" id="tob-WG-w2d"/>
                         </constraints>
                         <color key="tintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="icX1"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="icX1"/>
                         <connections>
                             <action selector="didTapDeleteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="sb5-0v-iAr"/>
                         </connections>
