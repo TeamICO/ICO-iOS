@@ -105,10 +105,10 @@
                                                 <rect key="frame" x="6" y="6" width="141" height="48"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6V-HH-P9q">
-                                                <rect key="frame" x="42" y="16" width="59" height="28"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6V-HH-P9q">
+                                                <rect key="frame" x="42" y="16" width="35" height="28"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="최신">
                                                             <attributes>
@@ -117,15 +117,15 @@
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
-                                                </buttonConfiguration>
+                                                </state>
                                                 <connections>
                                                     <action selector="recentBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y4I-TS-ZIT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtF-pC-bBS">
-                                                <rect key="frame" x="162" y="16" width="59" height="28"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OtF-pC-bBS">
+                                                <rect key="frame" x="174" y="16" width="35" height="28"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="인기">
                                                             <attributes>
@@ -133,15 +133,15 @@
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
-                                                </buttonConfiguration>
+                                                </state>
                                                 <connections>
                                                     <action selector="popularBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MMy-wO-JZ4"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-bd-VjM">
-                                                <rect key="frame" x="265.5" y="16" width="93.5" height="28"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-bd-VjM">
+                                                <rect key="frame" x="289" y="16" width="70" height="28"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="키워드별">
                                                             <attributes>
@@ -149,7 +149,7 @@
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
-                                                </buttonConfiguration>
+                                                </state>
                                                 <connections>
                                                     <action selector="keywordBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yoJ-ru-61t"/>
                                                 </connections>

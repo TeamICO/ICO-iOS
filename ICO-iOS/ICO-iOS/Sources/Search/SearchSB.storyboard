@@ -51,8 +51,8 @@
                                             <constraint firstAttribute="width" constant="20" id="rFX-Su-LEM"/>
                                         </constraints>
                                         <color key="tintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="icSearchGreen2"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icSearchGreen2"/>
                                         <connections>
                                             <action selector="didTapSearchButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WDY-fc-ouu"/>
                                         </connections>

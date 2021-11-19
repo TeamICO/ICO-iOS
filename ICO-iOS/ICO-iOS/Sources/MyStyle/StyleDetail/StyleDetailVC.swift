@@ -69,7 +69,9 @@ class StyleDetailVC: UIViewController {
         let alert = UIAlertController()
         
         let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default, handler: nil)
+        fixAction.setValue(UIColor.coGreen, forKey: "titleTextColor")
         let deleteAction = UIAlertAction(title: "스타일 삭제", style: UIAlertAction.Style.default, handler: nil)
+        deleteAction.setValue(UIColor.alertsError, forKey: "titleTextColor")
         let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
         
         alert.addAction(fixAction)

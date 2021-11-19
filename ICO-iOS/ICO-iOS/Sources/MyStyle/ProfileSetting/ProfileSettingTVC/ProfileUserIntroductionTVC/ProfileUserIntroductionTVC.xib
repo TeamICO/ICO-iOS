@@ -60,8 +60,8 @@
                             <constraint firstAttribute="width" constant="20" id="bip-il-4it"/>
                             <constraint firstAttribute="height" constant="20" id="fLs-7U-4NU"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="icXBtnLightgreen1"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="icXBtnLightgreen1"/>
                         <connections>
                             <action selector="didTapRemoveNicNameButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fpv-g7-FTe"/>
                         </connections>

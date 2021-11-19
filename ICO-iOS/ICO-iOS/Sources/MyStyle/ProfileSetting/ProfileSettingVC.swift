@@ -294,7 +294,7 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
             picker.allowsEditing = true
             self?.present(picker, animated: true, completion: nil)
         })
-        let action2 = UIAlertAction(title: "기본 이지미로 설정", style: .default, handler:nil)
+        let action2 = UIAlertAction(title: "기본 이미지로 설정", style: .default, handler:nil)
         action.setValue(UIColor.coGreen, forKey: "titleTextColor")
         action2.setValue(UIColor.coGreen, forKey: "titleTextColor")
         actionSheet.addAction(action)
