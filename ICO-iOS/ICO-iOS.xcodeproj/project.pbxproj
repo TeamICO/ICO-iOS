@@ -17,6 +17,8 @@
 		714F32C0273BE84D007324BC /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714F32BF273BE84D007324BC /* Survey.storyboard */; };
 		714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F5A152733C06E00692A13 /* RecentTVC.swift */; };
 		714F5A182733C06E00692A13 /* RecentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714F5A162733C06E00692A13 /* RecentTVC.xib */; };
+		71571EB727477357006DCA4F /* EmptyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71571EB527477357006DCA4F /* EmptyTVC.swift */; };
+		71571EB827477357006DCA4F /* EmptyTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71571EB627477357006DCA4F /* EmptyTVC.xib */; };
 		717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76D42732CC3300FBA1AF /* RecentVC.swift */; };
 		717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76D82732CC5C00FBA1AF /* PopularVC.swift */; };
 		717B76DE2732CC7500FBA1AF /* KeywordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717B76DC2732CC7500FBA1AF /* KeywordVC.swift */; };
@@ -228,6 +230,8 @@
 		714F32BF273BE84D007324BC /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		714F5A152733C06E00692A13 /* RecentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTVC.swift; sourceTree = "<group>"; };
 		714F5A162733C06E00692A13 /* RecentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTVC.xib; sourceTree = "<group>"; };
+		71571EB527477357006DCA4F /* EmptyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTVC.swift; sourceTree = "<group>"; };
+		71571EB627477357006DCA4F /* EmptyTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTVC.xib; sourceTree = "<group>"; };
 		717B76D42732CC3300FBA1AF /* RecentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentVC.swift; sourceTree = "<group>"; };
 		717B76D82732CC5C00FBA1AF /* PopularVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularVC.swift; sourceTree = "<group>"; };
 		717B76DC2732CC7500FBA1AF /* KeywordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordVC.swift; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 				71A9688C273C283C003AF0A9 /* KeywordCVC.xib */,
 				71DFD3942746730F003BEFE8 /* TagCVC.swift */,
 				71DFD3952746730F003BEFE8 /* TagCVC.xib */,
+				71571EB527477357006DCA4F /* EmptyTVC.swift */,
+				71571EB627477357006DCA4F /* EmptyTVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1479,6 +1485,7 @@
 				E9E49914273BABAC0001ACFB /* IcoLevelSB.storyboard in Resources */,
 				E9378D9F2738098700C589A1 /* RecentSearchWordsTVC.xib in Resources */,
 				E9E49928273BAC290001ACFB /* LevelUpSB.storyboard in Resources */,
+				71571EB827477357006DCA4F /* EmptyTVC.xib in Resources */,
 				E9AF83E1273B5CA300D77D5F /* SearchResultSB.storyboard in Resources */,
 				E998C25727328A8700E1F8D0 /* BrandCVC.xib in Resources */,
 				E951CE5D273A65D4002799D6 /* MainSB.storyboard in Resources */,
@@ -1663,6 +1670,7 @@
 				E97D4371273D2C8200BB374F /* ProfileUserIntroductionTVC.swift in Sources */,
 				717B76DA2732CC5D00FBA1AF /* PopularVC.swift in Sources */,
 				E946139A27438E0A00A5F7C2 /* UILabel.swift in Sources */,
+				71571EB727477357006DCA4F /* EmptyTVC.swift in Sources */,
 				E9CAF196273163FB008F749B /* MyStyleVC.swift in Sources */,
 				E9C30E002746318F000B1592 /* LikeManger.swift in Sources */,
 				E9378D762737FAE200C589A1 /* TopTVC.swift in Sources */,

@@ -39,7 +39,7 @@ class MyStyleVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        MyStyleDataManager().getMyStyleInfo(self, userIdx: 7)
+        MyStyleDataManager().getMyStyleInfo(self, userIdx: self.userIdx)
         setUI()
         registerNib()
         // Do any additional setup after loading the view.

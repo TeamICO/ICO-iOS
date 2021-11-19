@@ -11,16 +11,20 @@ class RecentVC: UIViewController {
     
     var serverData : [RecentResult] = []
     @IBOutlet weak var postingTV: UITableView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 68))
+        postingTV.tableHeaderView = header
         StyleLifeDataManager().getRecentInfo(self)
         registerXib()
     }
 
     func registerXib(){
         postingTV.register(UINib(nibName: "RecentTVC", bundle: nil), forCellReuseIdentifier: "RecentTVC")
+        postingTV.register(UINib(nibName: "EmptyTVC", bundle: nil), forCellReuseIdentifier: "EmptyTVC")
     }
     
     func setTV(){
@@ -31,8 +35,9 @@ class RecentVC: UIViewController {
 
 
 extension RecentVC: UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return serverData.count 
+        return serverData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

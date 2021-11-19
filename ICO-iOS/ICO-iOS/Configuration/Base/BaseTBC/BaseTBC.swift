@@ -15,7 +15,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate{
     var customTabBarView = UIView(frame: .zero)
     
     let homeTabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "icNavigationHomeClick1"),tag: 0)
-    let mystyleTabBarItem = UITabBarItem(title: "나의 스타일", image: UIImage(named: "icNavigationStyleshot1"),tag: 1)
+    let mystyleTabBarItem = UITabBarItem(title: "나의 스타일", image: UIImage(named: "ic-navigation-styleshot2222"),tag: 1)
     let mypageTabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(named: "icNavigationMypage1"),tag: 2)
 
     
