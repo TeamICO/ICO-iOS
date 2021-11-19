@@ -70,6 +70,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
         let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = false
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
     

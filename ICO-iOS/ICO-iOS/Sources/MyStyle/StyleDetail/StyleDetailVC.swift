@@ -9,6 +9,7 @@ import UIKit
 
 class StyleDetailVC: UIViewController {
 
+    var isMine : Bool = true
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -28,6 +29,7 @@ class StyleDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(true)
         setUI()
         // Do any additional setup after loading the view.
     }
@@ -68,16 +70,51 @@ class StyleDetailVC: UIViewController {
     @IBAction func detailBtn(_ sender: Any) {
         let alert = UIAlertController()
         
-        let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default, handler: nil)
-        fixAction.setValue(UIColor.coGreen, forKey: "titleTextColor")
-        let deleteAction = UIAlertAction(title: "스타일 삭제", style: UIAlertAction.Style.default, handler: nil)
-        deleteAction.setValue(UIColor.alertsError, forKey: "titleTextColor")
-        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
-        
-        alert.addAction(fixAction)
-        alert.addAction(deleteAction)
-        alert.addAction(cancelAction)
-        
+        if isMine == true{
+            let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default, handler: nil)
+            fixAction.setValue(UIColor.coGreen, forKey: "titleTextColor")
+            let deleteAction = UIAlertAction(title: "스타일 삭제", style: UIAlertAction.Style.default, handler: nil)
+            deleteAction.setValue(UIColor.alertsError, forKey: "titleTextColor")
+            let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
+            cancelAction.setValue(UIColor.primaryBlack70, forKey: "titleTextColor")
+            
+            alert.addAction(fixAction)
+            alert.addAction(deleteAction)
+            alert.addAction(cancelAction)
+        }else{
+            let reportAction = UIAlertAction(title: "신고하기", style: UIAlertAction.Style.default){ (_) in
+                let alertController = UIAlertController(title: nil, message: "신고사유를 선택해주세요",preferredStyle: .actionSheet)
+                
+                let reason1Action = UIAlertAction(title: "욕설 및 비하", style: UIAlertAction.Style.default, handler: nil)
+                reason1Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
+                let reason2Action = UIAlertAction(title: "음란물 및 성적 불쾌감", style: UIAlertAction.Style.default, handler: nil)
+                reason2Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
+                let reason3Action = UIAlertAction(title: "사기 및 거짓 정보", style: UIAlertAction.Style.default, handler: nil)
+                reason3Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
+                let reason4Action = UIAlertAction(title: "상업적 광고", style: UIAlertAction.Style.default, handler: nil)
+                reason4Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
+                let reason5Action = UIAlertAction(title: "지적재산권 및 저작권 침해", style: UIAlertAction.Style.default, handler: nil)
+                reason5Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
+                let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
+                cancelAction.setValue(UIColor.primaryBlack70, forKey: "titleTextColor")
+                
+                alertController.addAction(reason1Action)
+                alertController.addAction(reason2Action)
+                alertController.addAction(reason3Action)
+                alertController.addAction(reason4Action)
+                alertController.addAction(reason5Action)
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: false, completion: nil)
+            }
+            reportAction.setValue(UIColor.alertsError, forKey: "titleTextColor")
+            
+            let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
+            cancelAction.setValue(UIColor.primaryBlack70, forKey: "titleTextColor")
+            
+            alert.addAction(reportAction)
+            alert.addAction(cancelAction)
+        }
         self.present(alert, animated: false, completion: nil)
     }
     
