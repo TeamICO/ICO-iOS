@@ -24,7 +24,6 @@ class RecentVC: UIViewController {
 
     func registerXib(){
         postingTV.register(UINib(nibName: "RecentTVC", bundle: nil), forCellReuseIdentifier: "RecentTVC")
-        postingTV.register(UINib(nibName: "EmptyTVC", bundle: nil), forCellReuseIdentifier: "EmptyTVC")
     }
     
     func setTV(){
