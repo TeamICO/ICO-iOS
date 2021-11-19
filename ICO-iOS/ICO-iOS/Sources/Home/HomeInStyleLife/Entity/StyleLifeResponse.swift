@@ -56,9 +56,8 @@ struct StyleLifeRecent: Codable {
 // MARK: - Result
 struct RecentResult: Codable {
     let styleshotIdx: Int
-    let imageURL: String
-    let profileURL: String
-    let nickname: Nickname
+    let imageURL, profileURL: String
+    let nickname: String
     let category: [String]
     let likeCnt: Int
     let productName, resultDescription: String
@@ -74,10 +73,4 @@ struct RecentResult: Codable {
         case resultDescription = "description"
         case point, time, isLike
     }
-}
-
-enum Nickname: String, Codable {
-    case 라일리 = "라일리"
-    case 이안 = "이안"
-    case 장영욱 = "장영욱"
 }
