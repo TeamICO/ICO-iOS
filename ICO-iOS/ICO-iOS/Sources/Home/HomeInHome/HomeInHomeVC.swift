@@ -17,6 +17,7 @@ class HomeInHomeVC: BaseViewController {
     private var brandModel : HomeInHomeBrand?
     private var responsiveStyleShotModel = [HomeInHomePopularStyleshot]()
     private var ecoTopicModel : HomeInHomeEcoTopic?
+    private var nickname = ""
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,8 @@ extension HomeInHomeVC{
                   let senseStyleShot = response.senseStyleshot,
                   let brandRco = response.brand,
                   let responsiveStyleShot = response.popularStyleshot,
-                  let ecotopic = response.ecoTopic else{
+                  let ecotopic = response.ecoTopic,
+                  let nickname = response.nickname else{
                 return
             }
             self?.topBannerModel = topBanner
@@ -47,6 +49,7 @@ extension HomeInHomeVC{
             self?.brandModel = brandRco
             self?.responsiveStyleShotModel = responsiveStyleShot
             self?.ecoTopicModel = ecotopic
+            self?.nickname = nickname
             self?.tableView.reloadData()
         }
         
@@ -101,7 +104,7 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: SensibleStyleShotTVC.identifier, for: indexPath) as! SensibleStyleShotTVC
             cell.selectionStyle = .none
-            cell.getData(data: self.senseStyleShotModel)
+            cell.getData(data: self.senseStyleShotModel,nickname: self.nickname)
             return cell
 //        case 2 :
 //            let cell = tableView.dequeueReusableCell(withIdentifier: BestTagTVC.identifier, for: indexPath) as! BestTagTVC
@@ -112,7 +115,7 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             cell.delegate = self
             if let brand = self.brandModel{
-                cell.getData(data: brand)
+                cell.getData(data: brand,nickname : self.nickname)
             }
             
             return cell

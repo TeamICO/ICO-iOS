@@ -139,12 +139,9 @@ extension LoginVC {
       
     }
     @objc func didTapNaverView(){
-        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-        surveyVC.name = "도윤"
-        self.navigationController?.pushViewController(surveyVC, animated: true)
-//        loginInstance?.delegate = self
-//        loginInstance?.requestThirdPartyLogin()
+
+        loginInstance?.delegate = self
+        loginInstance?.requestThirdPartyLogin()
     }
     private func getNaverInfo() {
         
@@ -160,7 +157,7 @@ extension LoginVC {
            guard let tokenType = loginInstance?.tokenType else { return }
            guard let accessToken = loginInstance?.accessToken else { return }
             LoginManager.shared.registerID(name: nil,snsToken: accessToken, snsType: "naver") { response in
-                guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.name else{
+                guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.nickname else{
                           return
                       }
                       UserDefaults.standard.set(jwt, forKey: "jwtToken")
@@ -230,7 +227,7 @@ extension LoginVC {
         
         LoginManager.shared.KakaoSignIn { response in
             LoginManager.shared.registerID(name : nil,snsToken: response, snsType: "kakao") { response in
-                guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.name  else{
+                guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.nickname  else{
                     return
                 }
                 UserDefaults.standard.set(jwt, forKey: "jwtToken")
@@ -303,7 +300,7 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
                 print("authString: \(authString)")
                 print("tokenString: \(tokenString)")
                 LoginManager.shared.registerID(name :fullName ,snsToken: tokenString, snsType: "apple") { response in
-                    guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.name  else{
+                    guard let jwt = response?.result.jwt, let message = response?.message,let name = response?.result.nickname  else{
                         return
                     }
                     UserDefaults.standard.set(jwt, forKey: "jwtToken")

@@ -102,7 +102,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-mY-KAK">
-                                        <rect key="frame" x="71.5" y="13" width="128" height="27"/>
+                                        <rect key="frame" x="67.5" y="13" width="128" height="27"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -167,7 +167,7 @@
                                     <constraint firstItem="TwX-Zq-VKr" firstAttribute="leading" secondItem="WhN-ke-dME" secondAttribute="leading" constant="16" id="oy0-0g-4eA"/>
                                     <constraint firstItem="i2B-08-uKD" firstAttribute="centerY" secondItem="WhN-ke-dME" secondAttribute="centerY" id="p7U-Tb-ANV"/>
                                     <constraint firstItem="J6n-mY-KAK" firstAttribute="top" secondItem="WhN-ke-dME" secondAttribute="top" constant="13" id="rpz-fP-c0B"/>
-                                    <constraint firstItem="J6n-mY-KAK" firstAttribute="leading" secondItem="TwX-Zq-VKr" secondAttribute="trailing" constant="14" id="szM-t5-u5I"/>
+                                    <constraint firstItem="J6n-mY-KAK" firstAttribute="leading" secondItem="TwX-Zq-VKr" secondAttribute="trailing" constant="10" id="szM-t5-u5I"/>
                                 </constraints>
                             </view>
                         </subviews>

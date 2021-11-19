@@ -121,6 +121,7 @@
                 <outlet property="brandNameLabel" destination="Wx4-xC-n9n" id="GCg-IW-weq"/>
                 <outlet property="brandView" destination="hjt-QE-OCb" id="bXB-9u-227"/>
                 <outlet property="collectionView" destination="F97-9u-gHZ" id="3Qg-hL-cl4"/>
+                <outlet property="userNameLable" destination="hth-U4-BZI" id="WKa-vD-RFx"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="304.6875"/>
         </tableViewCell>
