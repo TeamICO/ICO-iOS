@@ -131,6 +131,35 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
             guard let ecoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath)as? ecoKeywordCVC else {return UICollectionViewCell()}
             
             ecoKeywordCell.ecoTitle.text = serverData?.ecoKeyword[indexPath.row]
+            if serverData?.ecoKeyword[indexPath.row] == "수익기부"{
+              ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-donation")
+            }else if serverData?.ecoKeyword[indexPath.row] == "동물실험 반대"{
+              ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-animal")
+            }else if serverData?.ecoKeyword[indexPath.row] == "공정무역"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-trade")
+            }else if serverData?.ecoKeyword[indexPath.row] == "비건"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-vegan")
+            }else if serverData?.ecoKeyword[indexPath.row] == "락토"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lacto")
+            }else if serverData?.ecoKeyword[indexPath.row] == "락토오보"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lactovo")
+            }else if serverData?.ecoKeyword[indexPath.row] == "페스코"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fesco")
+            }else if serverData?.ecoKeyword[indexPath.row] == "플라스틱 프리"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-plastic")
+            }else if serverData?.ecoKeyword[indexPath.row] == "친환경"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-eco")
+            }else if serverData?.ecoKeyword[indexPath.row] == "업사이클링"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-upcycling")
+            }else if serverData?.ecoKeyword[indexPath.row] == "비건을 위한 뷰티"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-package")
+            }else if serverData?.ecoKeyword[indexPath.row] == "GMO프리"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-gmo")
+            }else if serverData?.ecoKeyword[indexPath.row] == "무향료"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-chemical")
+            }else if serverData?.ecoKeyword[indexPath.row] == "FDA 승인"{
+                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fda")
+            }
             
             return ecoKeywordCell
         }
@@ -150,18 +179,28 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
             return CGSize(width: cellWidth, height: cellHeight)
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath) as! ecoKeywordCVC
-            return CGSize(width: serverData?.ecoKeyword[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 0+cell.ecoIcon.frame.size.width + 28, height: 25)
+            var size = serverData?.ecoKeyword[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 0
+            var totalWidth = size + cell.ecoIcon.frame.size.width + 16
+            return CGSize(width: totalWidth, height: 25)
         }
         
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
+        if collectionView == styleCV{
+            return 16
+        }else{
+            return 8
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
+        if collectionView == styleCV{
+            return 8
+        }else{
+            return 4
+        }
+    
     }
 }
 

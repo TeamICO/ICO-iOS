@@ -105,10 +105,10 @@
                                                                 </cells>
                                                             </collectionView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zk4-nx-kYm">
-                                                                <rect key="frame" x="329" y="60" width="53" height="25"/>
+                                                                <rect key="frame" x="329" y="60" width="53" height="35"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="25" id="2Xz-DT-ZRu"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="2Xz-DT-ZRu"/>
                                                                     <constraint firstAttribute="width" constant="53" id="qa8-OD-Rbv"/>
                                                                 </constraints>
                                                             </view>
