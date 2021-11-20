@@ -298,7 +298,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-18-t7o">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-18-t7o">
                                                 <rect key="frame" x="16" y="455" width="36" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="2ZN-Ik-Dcx"/>
@@ -720,6 +720,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailLabel" destination="iWq-At-ByL" id="Dca-eK-OOk"/>
                         <outlet property="imageNumView" destination="X1E-6l-1x0" id="6eK-hQ-cYV"/>
                         <outlet property="imageView" destination="tBC-yt-aXZ" id="dCO-vd-TlI"/>
                         <outlet property="imgNumLabel" destination="pnN-bJ-aWm" id="KSj-vi-inP"/>

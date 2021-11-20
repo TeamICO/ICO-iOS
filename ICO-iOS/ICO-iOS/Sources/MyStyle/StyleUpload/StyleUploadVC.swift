@@ -12,6 +12,7 @@ class StyleUploadVC: UIViewController {
     var photoNum : Int = 0
     var urlNum1: Int = 0
     var urlNum2: Int = 0
+    var detailNum: Int = 0
     
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet var levelTitle: [UILabel]!
@@ -38,6 +39,7 @@ class StyleUploadVC: UIViewController {
     
     @IBOutlet weak var urlLabel1: UILabel!
     @IBOutlet weak var urlLabel2: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     @IBOutlet weak var memoView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
@@ -52,6 +54,7 @@ class StyleUploadVC: UIViewController {
         setUI()
         urlTextField[0].delegate = self
         urlTextField[1].delegate = self
+        memoTextView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -151,9 +154,13 @@ class StyleUploadVC: UIViewController {
         memoView.cornerRadius = 8
         memoView.borderWidth = 0.5
         memoView.borderColor = UIColor.primaryBlack50
+        memoTextView.text = "스타일샷에 대한 무드,후기,느낀 점 모든 좋아요. 적절하지 않은 사진 혹은 글을 게시할 경우 앱 내에서 게시가 제한될 수 있습니다."
+        memoTextView.textColor = UIColor.primaryBlack50
+        memoTextView.font = UIFont.init(name: "AppleSDGothicNeo-Medium", size: 14)
         
         urlLabel1.text = "\(urlNum1)/20"
         urlLabel2.text = "\(urlNum2)/20"
+        detailLabel.text = "\(detailNum)/400"
     }
     
 
@@ -201,8 +208,7 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
 }
 
 
-extension StyleUploadVC: UITextFieldDelegate{
-    
+extension StyleUploadVC: UITextFieldDelegate, UITextViewDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == urlTextField[0]{
             if let textCount1 = textField.text?.count{
@@ -216,5 +222,25 @@ extension StyleUploadVC: UITextFieldDelegate{
             }
         }
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if memoTextView.textColor == UIColor.primaryBlack50{
+            memoTextView.text = nil
+            memoTextView.textColor = UIColor.black
+            memoTextView.font = UIFont.init(name: "AppleSDGothicNeo-Medium", size: 14)
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if memoTextView.text.count > 400{
+            memoTextView.deleteBackward()
+        }
+        detailNum = memoTextView.text.count
+        detailLabel.text = "\(detailNum)/400"
+        
+        return true
+    }
+    
+  
     
 }
