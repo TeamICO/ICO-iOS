@@ -133,6 +133,8 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         self.tabBarController?.tabBar.isHidden = true
         switch indexPath.section {
+        case 1 : self.tabBarController?.tabBar.isHidden = false
+            break
         case 2:
             // 서비스 이용 약관
             self.navigationPushViewController(storyboard: "ServiceTermsSB", identifier: "ServiceTermsVC")

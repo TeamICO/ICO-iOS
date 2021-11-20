@@ -9,11 +9,12 @@ import UIKit
 
 class PersonalInfoTermsVC: UIViewController {
 
-
+    @IBOutlet weak var agreeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        agreeLabel.text = Terms().personalTerm
+        
     }
     
     @IBAction func didTabpBackButton(_ sender: Any) {

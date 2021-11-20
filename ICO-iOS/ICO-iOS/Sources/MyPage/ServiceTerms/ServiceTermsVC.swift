@@ -77,7 +77,9 @@ extension ServiceTermsVC : UITableViewDelegate, UITableViewDataSource {
         case 0 :
             self.navigationPushViewController(storyboard: "PersonalInfoTermsSB", identifier: "PersonalInfoTermsVC")
             break
-        case 1 : break
+        case 1 :
+            self.navigationPushViewController(storyboard: "ServiceTermSB", identifier: "ServiceTermVC")
+            break
         default : break
         }
     }

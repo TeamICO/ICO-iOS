@@ -13,11 +13,13 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+      
         self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setTabbarConfigure()
         // Do any additional setup after loading the view.
     }
