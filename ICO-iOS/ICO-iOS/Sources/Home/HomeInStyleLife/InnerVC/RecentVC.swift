@@ -10,6 +10,7 @@ import UIKit
 class RecentVC: UIViewController {
     
     var serverData : [RecentResult] = []
+    var styleshotIdx: Int = 0
     @IBOutlet weak var postingTV: UITableView!
    
     
@@ -71,6 +72,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
         let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
         styleDetailVC.isMine = false
+        styleDetailVC.styleShotIdx = serverData[indexPath.row].styleshotIdx
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
     
