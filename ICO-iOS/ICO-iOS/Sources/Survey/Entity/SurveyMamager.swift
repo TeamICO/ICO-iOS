@@ -1,27 +1,24 @@
 //
-//  ProfileUpdateManager.swift
+//  SurveyMamager.swift
 //  ICO-iOS
 //
-//  Created by do_yun on 2021/11/17.
+//  Created by do_yun on 2021/11/20.
 //
 
 import Foundation
 import Alamofire
-final class ProfileUpdateManager{
-    static let shared = ProfileUpdateManager()
+final class SurveyMamager{
+    static let shared = SurveyMamager()
     private init() {}
     
     
-    func updateUserProfile(imageData : String?, nickname: String,description: String,activatedEcoKeyword: [String],userIdx: Int,jwtToken: String, completion: @escaping (CommonResponse)->Void) {
+    func insertUserSurveyInfo(activatedEcoKeyword: [String],userIdx: Int,jwtToken: String, completion: @escaping (CommonResponse)->Void) {
         let url = "https://dev.chuckwagon.shop/app/users/\(userIdx)"
         
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken
         ]
         let parameters: [String : Any] = [
-            "image" : "",
-            "nickname": nickname,
-            "description": description,
             "activatedEcoKeyword" : activatedEcoKeyword,
             "marketingAgree": "Y",
             "styleAgree": "Y"

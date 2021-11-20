@@ -94,10 +94,10 @@ extension String {
         }
         return self
     }
-    // 글자 취소선 긋기
-    func strikeThrough() -> NSAttributedString {
+    // 글자 언더라인
+    func underLineThrough() -> NSAttributedString {
             let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: self)
-            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+            attributeString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
             return attributeString
         }
 }
