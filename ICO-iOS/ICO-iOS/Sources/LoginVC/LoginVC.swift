@@ -70,11 +70,13 @@ class LoginVC: UIViewController {
         
     }
     @IBAction func didTapPersonalAgreeButton(_ sender: Any) {
-        
+        self.navigationController?.isNavigationBarHidden = true
+        self.navigationPushViewController(storyboard: "PersonalInfoTermsSB", identifier: "PersonalInfoTermsVC")
     }
     
     @IBAction func didTapServiceAgreeButton(_ sender: Any) {
-        
+        self.navigationController?.isNavigationBarHidden = true
+        self.navigationPushViewController(storyboard: "ServiceTermSB", identifier: "ServiceTermVC")
     }
     
    

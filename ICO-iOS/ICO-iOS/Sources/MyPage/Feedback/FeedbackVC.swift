@@ -47,6 +47,7 @@ class FeedbackVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboardWhenTappedAround()
         configure()
     }
     
