@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import SafariServices
 
 class StyleDetailVC: UIViewController {
 
     var isMine : Bool = true
     var styleShotIdx: Int = 0
     var StyleDetailData: StyleDetailResult?
+    var url: NSURL?
     
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var hashtagCV: UICollectionView!
@@ -25,6 +27,9 @@ class StyleDetailVC: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var scoreNum: UILabel!
     
+    
+    @IBOutlet weak var gradientView1: UIView!
+    @IBOutlet weak var gradientView2: UIView!
     @IBOutlet weak var productDetail: UILabel!
     @IBOutlet weak var lineView1: UIView!
     @IBOutlet weak var lineView2: UIView!
@@ -37,13 +42,16 @@ class StyleDetailVC: UIViewController {
 
         StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
         setUI()
+        categoryCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")
+        hashtagCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")
         // Do any additional setup after loading the view.
     }
     
 
     func setUI(){
-        productName.text = "톤 28 유기농 손 바를거리"
-        productDetail.text = "유기농이라서 착한 성분들로만 구성된 핸드크림이에요. 패키지도 환경을 생각한 게 느껴져서 더 좋았어요. 다만 향기가 호불호가 강하게 들 수 있는 향이라서 만족도 1점 뺍니다 ㅠㅠ"
+        gradientView1.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
+        gradientView2.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
+        
         productDetail.textColor = UIColor.primaryBlack80
         
         navigationTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 20)
@@ -55,6 +63,7 @@ class StyleDetailVC: UIViewController {
         heartNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16)
         heartNum.textColor = UIColor.primaryBlack60
         productName.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16)
+        scoreLabel.text = "만족도"
         scoreLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         scoreNum.font = UIFont.init(name: "AppleSDGothicNeo-Bold", size: 12)
         scoreNum.textColor = UIColor.coGreen
@@ -124,7 +133,64 @@ class StyleDetailVC: UIViewController {
         self.present(alert, animated: false, completion: nil)
     }
     
+    
+    @IBAction func toProductUrl(_ sender: Any) {
+        let serviceSafriView: SFSafariViewController = SFSafariViewController(url: url! as URL)
+        self.present(serviceSafriView, animated: true, completion: nil)
+    }
+    
+    
 }
+
+extension StyleDetailVC: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == categoryCV{
+            return StyleDetailData?.category.count ?? 0
+        }else{
+            return StyleDetailData?.hashtag.count ?? 0
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCVC", for: indexPath)as? TagCVC else {return UICollectionViewCell()}
+        if collectionView == categoryCV{
+            cell.categoryLabel.text = StyleDetailData?.category[indexPath.row]
+            cell.categoryLabel.setLabelConfigure(label: cell.categoryLabel, styleShotCategoryType: StyleDetailData?.category[indexPath.row] ?? "")
+        }else{
+            cell.categoryLabel.text = "#" + (StyleDetailData?.hashtag[indexPath.row])!
+            cell.backgroundColor = UIColor.backGround1
+            cell.categoryLabel.textColor = UIColor.coGreen70
+            cell.categoryLabel.font = UIFont.init(name: "AppleSDGothicNeo-Medium", size: 14)
+            cell.cornerRadius = 8
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == categoryCV{
+            var size = StyleDetailData?.category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 0
+            let entireSize = size + 12
+            return CGSize(width: entireSize, height: 25)
+        }else{
+            var size2 = StyleDetailData?.hashtag[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ?? 0
+            let entireSize2 = size2 + 16
+            return CGSize(width: entireSize2, height: 28)
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == categoryCV{
+            return 4
+        }else{
+            return 8
+        }
+    }
+}
+
+
 
 extension StyleDetailVC{
     func didSuccessStyleDetail(message: String){
@@ -147,6 +213,15 @@ extension StyleDetailVC{
         }
         self.productDetail.text = StyleDetailData?.resultDescription
         self.urlProduct.text = StyleDetailData?.productName
+        self.url = NSURL(string: StyleDetailData!.productURL ?? "")
+        
+        categoryCV.delegate = self
+        categoryCV.dataSource = self
+        categoryCV.reloadData()
+        
+        hashtagCV.delegate = self
+        hashtagCV.dataSource = self
+        hashtagCV.reloadData()
         
         print(message)
     }
