@@ -38,3 +38,9 @@ struct StyleDetailResult: Codable {
     }
 }
 
+// MARK: - StyleChangeResponse
+struct StyleChangeResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+}

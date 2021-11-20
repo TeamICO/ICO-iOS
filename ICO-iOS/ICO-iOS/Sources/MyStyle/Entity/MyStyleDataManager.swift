@@ -11,7 +11,7 @@ import Alamofire
 class MyStyleDataManager{
     func getMyStyleInfo(_ viewcontroller: MyStyleVC, userIdx: Int){
         
-        AF.request("\(Constant.BASE_URL)/app/users/\(userIdx)/styleshots",method: .get, parameters: nil, headers: Constant.header)
+        AF.request("\(Constant.BASE_URL)/app/users/\(userIdx)/styleshots",method: .get, parameters: nil, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: MyStyleResponse.self){ response in
                 switch response.result{
