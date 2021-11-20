@@ -14,6 +14,11 @@ class StyleUploadVC: UIViewController {
     var urlNum2: Int = 0
     var detailNum: Int = 0
     
+    //에코 키워드 관련, 선택된 경우: 1 / 선택되지 않은 경우: 0
+    var numberList : [Int] = [0,0,0,0,0,0,0]
+    @IBOutlet var ecoView: [UIView]!
+    
+    @IBOutlet var ecoButton: [UIButton]!
     
     @IBOutlet var ecoLevel: [UIButton]!
     @IBOutlet weak var ecoLevelScore: UILabel!
@@ -29,9 +34,6 @@ class StyleUploadVC: UIViewController {
     
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var imgNumLabel: UILabel!
-    
-    @IBOutlet var keywordView: [UIView]!
-    @IBOutlet var keywordName: [UILabel]!
     
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var newImageView: UIImageView!
@@ -50,6 +52,52 @@ class StyleUploadVC: UIViewController {
     @IBOutlet weak var uploadBtn: UIButton!
     
     
+    
+    //에코 키워드를 누르면
+    @objc func selectEcoKeywordClicked(_ sender: UIButton){
+        if numberList[sender.tag] == 0{
+            numberList[sender.tag] = 1
+        }else{
+            numberList[sender.tag] = 0
+        }
+        print(numberList)
+        setButton(select: numberList)
+    }
+    
+    func setButton(select: [Int]){
+        for i in 0...6{
+            if select[i] == 1 {
+                ecoButton[i].setTitleColor(UIColor.white, for: .normal)
+                ecoButton[i].backgroundColor = UIColor.gradient012
+            }else{
+                if i == 0{
+                    ecoButton[i].backgroundColor = UIColor.lightWarning
+                    ecoButton[i].setTitleColor(UIColor.alertWarning, for: .normal)
+                }else if i == 1{
+                    ecoButton[i].backgroundColor = UIColor.lightSuccess
+                    ecoButton[i].setTitleColor(UIColor.alertsSuccess, for: .normal)
+                }else if i == 2{
+                    ecoButton[i].backgroundColor = UIColor.lightInfo
+                    ecoButton[i].setTitleColor(UIColor.alertsInfo, for: .normal)
+                }else if i == 3 {
+                    ecoButton[i].backgroundColor = UIColor.lightPoint
+                    ecoButton[i].setTitleColor(UIColor.point, for: .normal)
+                }else if i == 4{
+                    ecoButton[i].backgroundColor = UIColor.primaryigreen5
+                    ecoButton[i].setTitleColor(UIColor.coGreen90, for: .normal)
+                }else if i == 5 {
+                    ecoButton[i].backgroundColor = UIColor.lightShadow
+                    ecoButton[i].setTitleColor(UIColor.primaryBlack50, for: .normal)
+                }else{
+                    ecoButton[i].backgroundColor = UIColor.lightError
+                    ecoButton[i].setTitleColor(UIColor.alertsError, for: .normal)
+                }
+            }
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,6 +106,9 @@ class StyleUploadVC: UIViewController {
         urlTextField[0].delegate = self
         urlTextField[1].delegate = self
         memoTextView.delegate = self
+        for i in 0...6{
+            ecoButton[i].addTarget(self, action: #selector(selectEcoKeywordClicked(_:)), for: .touchUpInside)
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -81,25 +132,22 @@ class StyleUploadVC: UIViewController {
         }
         
         for i in 0...6{
-            keywordView[i].cornerRadius = 8
-            keywordName[i].font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
+            ecoButton[i].layer.cornerRadius = 8
         }
-        
-        keywordView[0].backgroundColor = UIColor.lightWarning
-        keywordName[0].textColor = UIColor.alertWarning
-        keywordView[1].backgroundColor = UIColor.lightSuccess
-        keywordName[1].textColor = UIColor.alertsSuccess
-        keywordView[2].backgroundColor = UIColor.lightInfo
-        keywordName[2].textColor = UIColor.alertsInfo
-        keywordView[3].backgroundColor = UIColor.lightPoint
-        keywordName[3].textColor = UIColor.point
-        keywordView[4].backgroundColor = UIColor.primaryigreen5
-        keywordName[4].textColor = UIColor.coGreen60
-        
-        keywordView[6].backgroundColor = UIColor.lightShadow
-        keywordName[5].textColor = UIColor.primaryBlack80
-        keywordView[5].backgroundColor = UIColor.lightError
-        keywordName[6].textColor = UIColor.alertsError
+        ecoButton[0].backgroundColor = UIColor.lightWarning
+        ecoButton[1].backgroundColor = UIColor.lightSuccess
+        ecoButton[2].backgroundColor = UIColor.lightInfo
+        ecoButton[3].backgroundColor = UIColor.lightPoint
+        ecoButton[4].backgroundColor = UIColor.primaryigreen5
+        ecoButton[5].backgroundColor = UIColor.lightShadow
+        ecoButton[6].backgroundColor = UIColor.lightError
+        ecoButton[0].setTitleColor(UIColor.alertWarning, for: .normal)
+        ecoButton[1].setTitleColor(UIColor.alertsSuccess, for: .normal)
+        ecoButton[2].setTitleColor(UIColor.alertsInfo, for: .normal)
+        ecoButton[3].setTitleColor(UIColor.point, for: .normal)
+        ecoButton[4].setTitleColor(UIColor.coGreen90, for: .normal)
+        ecoButton[5].setTitleColor(UIColor.primaryBlack50, for: .normal)
+        ecoButton[6].setTitleColor(UIColor.alertsError, for: .normal)
         
         for i in 0...3{
             essentialView[i].cornerRadius = 8
@@ -315,7 +363,4 @@ extension StyleUploadVC: UITextFieldDelegate, UITextViewDelegate{
         
         return true
     }
-    
-  
-    
 }

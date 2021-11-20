@@ -730,7 +730,7 @@
         <image name="illust-product-plastic" width="80" height="80"/>
         <image name="illust-product-trade" width="80" height="80"/>
         <image name="illust-product-upcycling" width="80" height="80"/>
-        <image name="illust-product-vegan" width="161" height="160"/>
+        <image name="illust-product-vegan" width="80.5" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
