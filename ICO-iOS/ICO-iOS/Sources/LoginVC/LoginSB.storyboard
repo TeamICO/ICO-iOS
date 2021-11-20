@@ -36,7 +36,7 @@
                                 <color key="currentPageIndicatorTintColor" red="0.090196078431372548" green="0.66666666666666663" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3h-iW-Diu">
-                                <rect key="frame" x="16" y="494" width="382" height="54"/>
+                                <rect key="frame" x="16" y="472" width="382" height="54"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_naver_24px" translatesAutoresizingMaskIntoConstraints="NO" id="NGb-jS-awq">
                                         <rect key="frame" x="101" y="15" width="24" height="24"/>
@@ -71,7 +71,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6F0-bT-K1h">
-                                <rect key="frame" x="16" y="564" width="382" height="54"/>
+                                <rect key="frame" x="16" y="542" width="382" height="54"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_kakao_24px" translatesAutoresizingMaskIntoConstraints="NO" id="j2f-8R-chd">
                                         <rect key="frame" x="84.5" y="15" width="24" height="24"/>
@@ -102,21 +102,71 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-ly-eQc">
+                                <rect key="frame" x="0.0" y="835.5" width="194.5" height="26.5"/>
+                                <color key="tintColor" red="0.48627450980392156" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="개인정보처리방침 보기">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="didTapPersonalAgreeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sou-YD-vfw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gxb-tW-l5g">
+                                <rect key="frame" x="210.5" y="835.5" width="203.5" height="26.5"/>
+                                <color key="tintColor" red="0.48627450980392156" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="서비스 이용 약관 보기">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="didTapServiceAgreeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ovV-P5-EDC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입시 아이코의 이용약관에 동의한 것으로 간주합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LU-Bb-oXY">
+                                <rect key="frame" x="68" y="821" width="278" height="14.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="0.48627450979999998" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Gxb-tW-l5g" firstAttribute="leading" secondItem="qN2-ly-eQc" secondAttribute="trailing" constant="16" id="8V0-5y-Nj4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6F0-bT-K1h" secondAttribute="trailing" constant="16" id="9Nr-NV-ZPe"/>
                             <constraint firstItem="6F0-bT-K1h" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="EBd-XW-Km2"/>
+                            <constraint firstItem="qN2-ly-eQc" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="LAZ-hZ-DUt"/>
                             <constraint firstItem="cjh-SV-6Dr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Ohr-AD-qk3"/>
-                            <constraint firstItem="m3h-iW-Diu" firstAttribute="top" secondItem="ypW-iA-iAx" secondAttribute="bottom" constant="52" id="S6D-xU-acd"/>
+                            <constraint firstItem="m3h-iW-Diu" firstAttribute="top" secondItem="ypW-iA-iAx" secondAttribute="bottom" constant="30" id="S6D-xU-acd"/>
+                            <constraint firstItem="4LU-Bb-oXY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="TSg-Nc-Huq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ypW-iA-iAx" secondAttribute="trailing" id="UQT-wo-00G"/>
+                            <constraint firstItem="qN2-ly-eQc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="V24-AF-7MD"/>
                             <constraint firstItem="cjh-SV-6Dr" firstAttribute="top" secondItem="ypW-iA-iAx" secondAttribute="bottom" constant="-20" id="Z4K-sz-E52"/>
                             <constraint firstItem="6F0-bT-K1h" firstAttribute="top" secondItem="m3h-iW-Diu" secondAttribute="bottom" constant="16" id="bgU-0L-fwU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="m3h-iW-Diu" secondAttribute="trailing" constant="16" id="cQk-r3-2CH"/>
                             <constraint firstItem="m3h-iW-Diu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="dOt-eQ-RdD"/>
+                            <constraint firstItem="qN2-ly-eQc" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.47" id="hfp-V0-uma"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gxb-tW-l5g" secondAttribute="trailing" id="jYe-C7-dkr"/>
                             <constraint firstItem="ypW-iA-iAx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nBK-j2-1ex"/>
+                            <constraint firstItem="qN2-ly-eQc" firstAttribute="top" secondItem="4LU-Bb-oXY" secondAttribute="bottom" id="pz2-Nv-4VQ"/>
                             <constraint firstItem="ypW-iA-iAx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xML-99-PP3"/>
+                            <constraint firstItem="Gxb-tW-l5g" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="xTx-QI-dBF"/>
                         </constraints>
                     </view>
                     <connections>
@@ -124,6 +174,8 @@
                         <outlet property="kakaoLoginView" destination="6F0-bT-K1h" id="Ows-kN-1Cw"/>
                         <outlet property="naverLoignView" destination="m3h-iW-Diu" id="7an-hq-wKh"/>
                         <outlet property="pageControl" destination="cjh-SV-6Dr" id="auj-kL-mIa"/>
+                        <outlet property="personalAgreeButton" destination="qN2-ly-eQc" id="EBv-6I-FvF"/>
+                        <outlet property="serviceAgreeButton" destination="Gxb-tW-l5g" id="Hqi-Zd-OeA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

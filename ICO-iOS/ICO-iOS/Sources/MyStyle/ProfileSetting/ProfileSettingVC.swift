@@ -15,7 +15,7 @@ class ProfileSettingVC: BaseViewController {
     private var nickname = ""
     private var isCheckedNickname = false
     private var profileDescription = ""
-    private var selectedContentImage : UIImage?
+    private var selectedContentImage : String?
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -52,8 +52,8 @@ class ProfileSettingVC: BaseViewController {
             return
         }
         let ecokeywords = self.seletedKeywords.map{String($0+1)}
+        
         if let image = self.selectedContentImage{
-            print(image)
             ProfileUpdateManager.shared.updateUserProfile(imageData: image,
                                                           nickname: self.nickname,
                                                           description: self.profileDescription,
@@ -213,30 +213,37 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
 extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
     func tapDonationView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+        
     }
     
     func tapAnimalView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+        
     }
     
     func tapTradeView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+        
     }
     
     func tapVeganView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+        
     }
     
     func tapLactoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+   
     }
     
     func tapLactovoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+
     }
     
     func tapFescoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+
     }
     
     func tapPlasticFreeView(seletedKeywords: [Int]) {
@@ -245,26 +252,32 @@ extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
     
     func tapEcoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+       
     }
     
     func tapUpcyclingView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+    
     }
     
     func tapPackageView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+       
     }
     
     func tapGmoFreeView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+ 
     }
     
     func tapChemicalView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+      
     }
     
     func tapFdaView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+        
     }
 
     
@@ -343,7 +356,7 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
         guard let image = info[.editedImage] as? UIImage else{
             return
         }
-        self.selectedContentImage = image
+        
         let imageId = UUID().uuidString
         BaseManager.shared.uploadImage(image: image, imageId: imageId) { success in
             guard success else{
@@ -353,6 +366,7 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
                 guard let url = url else{
                     return
                 }
+                self.selectedContentImage = "\(url)"
                 print(url)
             }
         }

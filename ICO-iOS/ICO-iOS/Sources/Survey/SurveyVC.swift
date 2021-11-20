@@ -7,9 +7,10 @@
 
 import UIKit
 
-class SurveyVC: UIViewController {
+class SurveyVC: ViewController {
     
     var name: String = ""
+    var userIdx : Int = 0
     
    
   
@@ -121,7 +122,17 @@ class SurveyVC: UIViewController {
     }
     
     @IBAction func didTapCompletButton(_ sender: Any) {
-        print(seletedKeywords)
+        guard let jwtToken = UserDefaults.standard.string(forKey: "jwtToken") else{
+            return
+        }
+        let keywords = self.seletedKeywords.map{String($0 + 1)}
+        SurveyMamager.shared.insertUserSurveyInfo(activatedEcoKeyword: keywords,
+                                                      userIdx: self.userIdx,
+                                                      jwtToken: jwtToken) { response in
+            guard response.isSuccess else{
+                return
+            }
+        }
        
     }
 
