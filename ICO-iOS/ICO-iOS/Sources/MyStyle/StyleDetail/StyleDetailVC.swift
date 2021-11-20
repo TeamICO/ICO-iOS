@@ -88,7 +88,11 @@ class StyleDetailVC: UIViewController {
         if isMine == true{
             let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default, handler: nil)
             fixAction.setValue(UIColor.coGreen, forKey: "titleTextColor")
-            let deleteAction = UIAlertAction(title: "스타일 삭제", style: UIAlertAction.Style.default, handler: nil)
+            let deleteAction = UIAlertAction(title: "스타일 삭제", style: UIAlertAction.Style.default){ action in
+                let deleteRequest = StyleDeleteRequest(status: "N")
+                StyleDetailDataManager().deleteStyleDetail(deleteRequest, self, styleshotIdx: self.styleShotIdx)
+                self.navigationController?.popViewController(animated: true)
+            }
             deleteAction.setValue(UIColor.alertsError, forKey: "titleTextColor")
             let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
             cancelAction.setValue(UIColor.primaryBlack70, forKey: "titleTextColor")
@@ -245,6 +249,10 @@ extension StyleDetailVC{
         if message == "성공"{
             self.presentAlert(title: "신고 접수가 완료되었습니다.")
         }
+        print(message)
+    }
+    
+    func didSuccessDelete(message: String){
         print(message)
     }
 }

@@ -11,3 +11,7 @@ struct StyleReportRequest: Codable {
     let reason: String
     let styleshotIdx: Int
 }
+
+struct StyleDeleteRequest: Codable {
+    let status: String
+}

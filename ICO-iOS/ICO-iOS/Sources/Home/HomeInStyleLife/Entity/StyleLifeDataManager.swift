@@ -11,7 +11,7 @@ import Alamofire
 class StyleLifeDataManager{
     func getStyleLifeTop(_ viewcontroller: PopularVC){
         
-        AF.request("\(Constant.BASE_URL)/app/lifestyle/popular", method: .get, parameters: nil, headers: Constant.header)
+        AF.request("\(Constant.BASE_URL)/app/lifestyle/popular", method: .get, parameters: nil, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleLifeResponse.self){ response in
                 switch response.result{
@@ -27,7 +27,8 @@ class StyleLifeDataManager{
     }
     
     func getPopularIcoInfo(_ viewcontroller: PopularIcoVC, userIdx: Int){
-        AF.request("\(Constant.BASE_URL)/app/users/\(userIdx)/styleshots",method: .get, parameters: nil, headers: Constant.header)
+        
+        AF.request("\(Constant.BASE_URL)/app/users/\(userIdx)/styleshots",method: .get, parameters: nil, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: MyStyleResponse.self){ response in
                 switch response.result{
@@ -42,7 +43,8 @@ class StyleLifeDataManager{
     }
     
     func getRecentInfo(_ viewcontroller: RecentVC){
-        AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=1",method: .get,parameters: nil,headers: Constant.header)
+        
+        AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=1",method: .get,parameters: nil,headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleLifeRecent.self){ response in
                 switch response.result{
@@ -60,7 +62,8 @@ class StyleLifeDataManager{
     }
     
     func getPopularInfo(_ viewcontroller: PopularVC){
-        AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=2",method: .get, parameters: nil,headers: Constant.header)
+        
+        AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=2",method: .get, parameters: nil,headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleLifeRecent.self){ response in
                 switch response.result{
