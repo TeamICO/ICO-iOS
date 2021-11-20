@@ -23,13 +23,13 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         let homesb = UIStoryboard(name: "HomeSB", bundle: nil)
-        let mystlyesb = UIStoryboard(name: "StyleUpload", bundle: nil)
+        let mystlyesb = UIStoryboard(name: "MyStyleSB", bundle: nil)
         let mypagesb = UIStoryboard(name: "MyPageSB", bundle: nil)
 
         
         
         guard let homeVC = homesb.instantiateViewController(identifier: "HomeVC") as? HomeVC else {return}
-        guard let mystlyVC = mystlyesb.instantiateViewController(identifier: "StyleUploadVC")as? StyleUploadVC else {return }
+        guard let mystlyVC = mystlyesb.instantiateViewController(identifier: "MyStyleVC")as? MyStyleVC else {return }
         guard let mypageVC = mypagesb.instantiateViewController(identifier: "MyPageVC") as? MyPageVC else {return}
 
         

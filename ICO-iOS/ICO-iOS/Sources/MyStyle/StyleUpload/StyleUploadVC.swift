@@ -49,6 +49,10 @@ class StyleUploadVC: UIViewController {
     @IBOutlet weak var memoView: UIView!
     @IBOutlet weak var memoTextView: UITextView!
     
+    @IBOutlet weak var hashTagTextField: UITextField!
+    @IBOutlet weak var hashTagCV: UICollectionView!
+    var hashTagCnt: Int = 0
+    
     @IBOutlet weak var uploadBtn: UIButton!
     
     
@@ -109,8 +113,22 @@ class StyleUploadVC: UIViewController {
         for i in 0...6{
             ecoButton[i].addTarget(self, action: #selector(selectEcoKeywordClicked(_:)), for: .touchUpInside)
         }
+        setCV()
         // Do any additional setup after loading the view.
     }
+    
+    func setCV(){
+        hashTagCV.delegate = self
+        hashTagCV.dataSource = self
+        hashTagCV.register(UINib(nibName: "hashTagCVC", bundle: nil), forCellWithReuseIdentifier: "hashTagCVC")
+    }
+    
+    @IBAction func addHashTag(_ sender: Any) {
+        hashTagCnt = hashTagCnt + 1
+        hashTagCV.reloadData()
+    }
+    
+    
     
     func setUI(){
         navigationTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 20)
@@ -215,6 +233,9 @@ class StyleUploadVC: UIViewController {
         detailLabel.text = "\(detailNum)/400"
         
         ecoLevelScore.text = "\(0.0)"
+        
+        hashTagTextField.backgroundColor = UIColor.backGround1
+        
     }
     
 
@@ -363,4 +384,28 @@ extension StyleUploadVC: UITextFieldDelegate, UITextViewDelegate{
         
         return true
     }
+}
+
+extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return hashTagCnt
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: "hashTagCVC", for: indexPath)as? hashTagCVC else {return UICollectionViewCell()}
+        
+        tagCell.tagTitle.text = hashTagTextField.text
+        
+        return tagCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: 28)
+    }
+
+    
 }

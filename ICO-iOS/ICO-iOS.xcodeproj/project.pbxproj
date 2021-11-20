@@ -43,6 +43,8 @@
 		71DFD39C2746A864003BEFE8 /* ecoKeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */; };
 		71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */; };
 		71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */; };
+		71F8686F2749615400321DD1 /* hashTagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8686D2749615400321DD1 /* hashTagCVC.swift */; };
+		71F868702749615400321DD1 /* hashTagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F8686E2749615400321DD1 /* hashTagCVC.xib */; };
 		E9161CF7273CB953009A9CA7 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161CF6273CB953009A9CA7 /* AlarmVC.swift */; };
 		E9161CF9273CB95A009A9CA7 /* AlarmSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */; };
 		E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */; };
@@ -262,6 +264,8 @@
 		71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ecoKeywordCVC.xib; sourceTree = "<group>"; };
 		71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoVC.swift; sourceTree = "<group>"; };
 		71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularIco.storyboard; sourceTree = "<group>"; };
+		71F8686D2749615400321DD1 /* hashTagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashTagCVC.swift; sourceTree = "<group>"; };
+		71F8686E2749615400321DD1 /* hashTagCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = hashTagCVC.xib; sourceTree = "<group>"; };
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9161CF6273CB953009A9CA7 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmSB.storyboard; sourceTree = "<group>"; };
@@ -473,6 +477,7 @@
 		714F32B7273BE79B007324BC /* StyleUpload */ = {
 			isa = PBXGroup;
 			children = (
+				71F8686C2749613100321DD1 /* Cell */,
 				714F32B8273BE7C0007324BC /* StyleUploadVC.swift */,
 				714F32BA273BE7D0007324BC /* StyleUpload.storyboard */,
 			);
@@ -563,6 +568,15 @@
 			children = (
 				71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */,
 				71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		71F8686C2749613100321DD1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				71F8686D2749615400321DD1 /* hashTagCVC.swift */,
+				71F8686E2749615400321DD1 /* hashTagCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1567,6 +1581,7 @@
 				71DFD3972746730F003BEFE8 /* TagCVC.xib in Resources */,
 				71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */,
 				E9CAF1CB27316C73008F749B /* HomeInStyleLifeSB.storyboard in Resources */,
+				71F868702749615400321DD1 /* hashTagCVC.xib in Resources */,
 				E9E4991E273BABFA0001ACFB /* SettingAlarmSB.storyboard in Resources */,
 				E9378D8F2738032500C589A1 /* ResponsiveStyleShotTVC.xib in Resources */,
 				71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */,
@@ -1745,6 +1760,7 @@
 				E97D436D273D2C7800BB374F /* ProfileUserInfoTVC.swift in Sources */,
 				E9AF83EC273B60F600D77D5F /* ResultSortCVC.swift in Sources */,
 				E9E49926273BAC220001ACFB /* LevelUpVC.swift in Sources */,
+				71F8686F2749615400321DD1 /* hashTagCVC.swift in Sources */,
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
 				71A870ED274507830069239A /* MyStyleResponse.swift in Sources */,
 				E9CAF1C127316A10008F749B /* Constant.swift in Sources */,
