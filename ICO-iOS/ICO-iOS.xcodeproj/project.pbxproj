@@ -55,6 +55,7 @@
 		E9161D1C273D0134009A9CA7 /* LikeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D1A273D0134009A9CA7 /* LikeCVC.swift */; };
 		E9161D1D273D0134009A9CA7 /* LikeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D1B273D0134009A9CA7 /* LikeCVC.xib */; };
 		E91788132748B37B008B621B /* SurveyMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788122748B37B008B621B /* SurveyMamager.swift */; };
+		E91788162748B94E008B621B /* AgreeMent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788152748B94E008B621B /* AgreeMent.swift */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
 		E9378D692737BD4700C589A1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D682737BD4700C589A1 /* SearchVC.swift */; };
 		E9378D6B2737BD5300C589A1 /* SearchSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */; };
@@ -269,6 +270,7 @@
 		E9161D1A273D0134009A9CA7 /* LikeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCVC.swift; sourceTree = "<group>"; };
 		E9161D1B273D0134009A9CA7 /* LikeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCVC.xib; sourceTree = "<group>"; };
 		E91788122748B37B008B621B /* SurveyMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyMamager.swift; sourceTree = "<group>"; };
+		E91788152748B94E008B621B /* AgreeMent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeMent.swift; sourceTree = "<group>"; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E9378D662737ADB500C589A1 /* UserRatingsSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRatingsSV.swift; sourceTree = "<group>"; };
 		E9378D682737BD4700C589A1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -659,6 +661,14 @@
 				E91788122748B37B008B621B /* SurveyMamager.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		E91788142748B935008B621B /* AgreeMent */ = {
+			isa = PBXGroup;
+			children = (
+				E91788152748B94E008B621B /* AgreeMent.swift */,
+			);
+			path = AgreeMent;
 			sourceTree = "<group>";
 		};
 		E9378D652737ACED00C589A1 /* UserRatingsSV */ = {
@@ -1060,8 +1070,7 @@
 			isa = PBXGroup;
 			children = (
 				E9CAF1C027316A10008F749B /* Constant.swift */,
-				E9CAF1A1273166E5008F749B /* Certificate */,
-				E9CAF1A2273166F0008F749B /* Secret */,
+				E91788142748B935008B621B /* AgreeMent */,
 				E9CAF1A3273166F5008F749B /* Font */,
 				E9CAF1A4273166F8008F749B /* Extenstion */,
 				E9CAF1A5273166FF008F749B /* CommonClass */,
@@ -1147,20 +1156,6 @@
 				E96DB2FF2744A9BF00659256 /* BaseEntity */,
 			);
 			path = BaseTBC;
-			sourceTree = "<group>";
-		};
-		E9CAF1A1273166E5008F749B /* Certificate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Certificate;
-			sourceTree = "<group>";
-		};
-		E9CAF1A2273166F0008F749B /* Secret */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Secret;
 			sourceTree = "<group>";
 		};
 		E9CAF1A3273166F5008F749B /* Font */ = {
@@ -1736,6 +1731,7 @@
 				E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */,
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
+				E91788162748B94E008B621B /* AgreeMent.swift in Sources */,
 				E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */,
 				E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */,
 				E9161D03273CF28D009A9CA7 /* TodayAlarmTVC.swift in Sources */,
