@@ -22,4 +22,18 @@ class StyleDetailDataManager{
                 }
             }
     }
+    
+    func reportStyleDetail(_ parameters: StyleReportRequest,_ viewcontroller: StyleDetailVC){
+        AF.request("\(Constant.BASE_URL)/app/reports",method: .post, parameters: parameters, headers: Constant.header)
+            .validate()
+            .responseDecodable(of: StyleReportResponse.self){ response in
+                switch response.result{
+                    case .success(let response):
+                        viewcontroller.didSuccessReport(message: response.message)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                }
+                
+            }
+    }
 }
