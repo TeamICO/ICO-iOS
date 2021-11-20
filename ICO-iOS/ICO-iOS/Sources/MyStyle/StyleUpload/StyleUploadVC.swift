@@ -14,6 +14,9 @@ class StyleUploadVC: UIViewController {
     var urlNum2: Int = 0
     var detailNum: Int = 0
     
+    
+    @IBOutlet var ecoLevel: [UIButton]!
+    @IBOutlet weak var ecoLevelScore: UILabel!
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet var levelTitle: [UILabel]!
     @IBOutlet var mainTitle: [UILabel]!
@@ -105,6 +108,7 @@ class StyleUploadVC: UIViewController {
             essentialLabel[i].font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         }
         
+        
         imageView.backgroundColor = UIColor.primaryBlack10
         imageView.cornerRadius = 16
         newImageView.cornerRadius = 16
@@ -161,13 +165,14 @@ class StyleUploadVC: UIViewController {
         urlLabel1.text = "\(urlNum1)/20"
         urlLabel2.text = "\(urlNum2)/20"
         detailLabel.text = "\(detailNum)/400"
+        
+        ecoLevelScore.text = "\(0.0)"
     }
     
 
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
     
     @IBAction func removeBtn1Clicked(_ sender: Any) {
         urlTextField[0].text = ""
@@ -178,6 +183,77 @@ class StyleUploadVC: UIViewController {
     }
     
     
+    @IBAction func ecoLevel1Btn(_ sender: Any) {
+        ecoLevel[0].isSelected = !ecoLevel[0].isSelected
+        if ecoLevel[0].isSelected{
+            ecoLevelScore.text = "\(1.0)"
+        }else{
+            ecoLevelScore.text = "\(0.0)"
+            ecoLevel[0].isSelected = false
+            ecoLevel[1].isSelected = false
+            ecoLevel[2].isSelected = false
+            ecoLevel[3].isSelected = false
+            ecoLevel[4].isSelected = false
+        }
+    }
+    
+    @IBAction func ecoLevel2Btn(_ sender: Any) {
+        ecoLevel[1].isSelected = !ecoLevel[1].isSelected
+        if ecoLevel[1].isSelected{
+            ecoLevelScore.text = "\(2.0)"
+            ecoLevel[0].isSelected = true
+        }else{
+            ecoLevelScore.text = "\(1.0)"
+            ecoLevel[1].isSelected = false
+            ecoLevel[2].isSelected = false
+            ecoLevel[3].isSelected = false
+            ecoLevel[4].isSelected = false
+        }
+    }
+    
+    @IBAction func ecoLevel3Btn(_ sender: Any) {
+        ecoLevel[2].isSelected = !ecoLevel[2].isSelected
+        if ecoLevel[2].isSelected{
+            ecoLevelScore.text = "\(3.0)"
+            ecoLevel[1].isSelected = true
+            ecoLevel[0].isSelected = true
+        }else{
+            ecoLevelScore.text = "\(2.0)"
+            ecoLevel[2].isSelected = false
+            ecoLevel[3].isSelected = false
+            ecoLevel[4].isSelected = false
+        }
+    }
+    
+    @IBAction func ecoLevel4Btn(_ sender: Any) {
+        ecoLevel[3].isSelected = !ecoLevel[3].isSelected
+        if ecoLevel[3].isSelected{
+            ecoLevelScore.text = "\(4.0)"
+            ecoLevel[2].isSelected = true
+            ecoLevel[1].isSelected = true
+            ecoLevel[0].isSelected = true
+        }else{
+            ecoLevelScore.text = "\(3.0)"
+            ecoLevel[3].isSelected = false
+            ecoLevel[4].isSelected = false
+        }
+    }
+    
+    
+    @IBAction func ecoLevel5Btn(_ sender: Any) {
+        ecoLevel[4].isSelected = !ecoLevel[4].isSelected
+        if ecoLevel[4].isSelected{
+            ecoLevelScore.text = "\(5.0)"
+            ecoLevel[3].isSelected = true
+            ecoLevel[2].isSelected = true
+            ecoLevel[1].isSelected = true
+            ecoLevel[0].isSelected = true
+        }else{
+            ecoLevelScore.text = "\(4.0)"
+            ecoLevel[4].isSelected = false
+        }
+    }
+    
     
     @IBAction func uploadBtn(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -185,7 +261,6 @@ class StyleUploadVC: UIViewController {
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
-    
     
 }
 
