@@ -100,15 +100,30 @@ class StyleDetailVC: UIViewController {
             let reportAction = UIAlertAction(title: "신고하기", style: UIAlertAction.Style.default){ (_) in
                 let alertController = UIAlertController(title: nil, message: "신고사유를 선택해주세요",preferredStyle: .actionSheet)
                 
-                let reason1Action = UIAlertAction(title: "욕설 및 비하", style: UIAlertAction.Style.default, handler: nil)
+                let reason1Action = UIAlertAction(title: "욕설 및 비하", style: UIAlertAction.Style.default){ action in
+                    let request1 = StyleReportRequest(reason: "욕설 및 비하", styleshotIdx: self.styleShotIdx)
+                    StyleDetailDataManager().reportStyleDetail(request1, self)
+                }
                 reason1Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
-                let reason2Action = UIAlertAction(title: "음란물 및 성적 불쾌감", style: UIAlertAction.Style.default, handler: nil)
+                let reason2Action = UIAlertAction(title: "음란물 및 성적 불쾌감", style: UIAlertAction.Style.default){ action in
+                    let request2 = StyleReportRequest(reason: "음란물 및 성적 불쾌감", styleshotIdx: self.styleShotIdx)
+                    StyleDetailDataManager().reportStyleDetail(request2, self)
+                }
                 reason2Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
-                let reason3Action = UIAlertAction(title: "사기 및 거짓 정보", style: UIAlertAction.Style.default, handler: nil)
+                let reason3Action = UIAlertAction(title: "사기 및 거짓 정보", style: UIAlertAction.Style.default){ action in
+                    let request3 = StyleReportRequest(reason: "사기 및 거짓 정보", styleshotIdx: self.styleShotIdx)
+                    StyleDetailDataManager().reportStyleDetail(request3, self)
+                }
                 reason3Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
-                let reason4Action = UIAlertAction(title: "상업적 광고", style: UIAlertAction.Style.default, handler: nil)
+                let reason4Action = UIAlertAction(title: "상업적 광고", style: UIAlertAction.Style.default){ action in
+                    let request4 = StyleReportRequest(reason: "상업적 광고", styleshotIdx: self.styleShotIdx)
+                    StyleDetailDataManager().reportStyleDetail(request4, self)
+                }
                 reason4Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
-                let reason5Action = UIAlertAction(title: "지적재산권 및 저작권 침해", style: UIAlertAction.Style.default, handler: nil)
+                let reason5Action = UIAlertAction(title: "지적재산권 및 저작권 침해", style: UIAlertAction.Style.default){ action in
+                    let request5 = StyleReportRequest(reason: "지적재산권 및 저작권 침해", styleshotIdx: self.styleShotIdx)
+                    StyleDetailDataManager().reportStyleDetail(request5, self)
+                }
                 reason5Action.setValue(UIColor.coGreen, forKey: "titleTextColor")
                 let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
                 cancelAction.setValue(UIColor.primaryBlack70, forKey: "titleTextColor")
@@ -223,6 +238,13 @@ extension StyleDetailVC{
         hashtagCV.dataSource = self
         hashtagCV.reloadData()
         
+        print(message)
+    }
+    
+    func didSuccessReport(message: String){
+        if message == "성공"{
+            self.presentAlert(title: "신고 접수가 완료되었습니다.")
+        }
         print(message)
     }
 }

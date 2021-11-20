@@ -74,3 +74,10 @@ struct RecentResult: Codable {
         case point, time, isLike
     }
 }
+
+
+struct StyleReportResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+}

@@ -34,6 +34,7 @@
 		71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71A9688C273C283C003AF0A9 /* KeywordCVC.xib */; };
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
+		71DB5CA92748BDC60073D76F /* StyleReportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DB5CA82748BDC60073D76F /* StyleReportRequest.swift */; };
 		71DD7DF92747F95B00D64236 /* StyleDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */; };
 		71DD7DFB2747F96D00D64236 /* StyleDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */; };
 		71DFD3962746730F003BEFE8 /* TagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFD3942746730F003BEFE8 /* TagCVC.swift */; };
@@ -252,6 +253,7 @@
 		71A9688C273C283C003AF0A9 /* KeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCVC.xib; sourceTree = "<group>"; };
 		71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoCVC.swift; sourceTree = "<group>"; };
 		71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularIcoCVC.xib; sourceTree = "<group>"; };
+		71DB5CA82748BDC60073D76F /* StyleReportRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleReportRequest.swift; sourceTree = "<group>"; };
 		71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailResponse.swift; sourceTree = "<group>"; };
 		71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailDataManager.swift; sourceTree = "<group>"; };
 		71DFD3942746730F003BEFE8 /* TagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCVC.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 			children = (
 				71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */,
 				71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */,
+				71DB5CA82748BDC60073D76F /* StyleReportRequest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1699,6 +1702,7 @@
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
 				E96DB30A2745301000659256 /* SearchManager.swift in Sources */,
 				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
+				71DB5CA92748BDC60073D76F /* StyleReportRequest.swift in Sources */,
 				E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
 				717CB51B2743DDAF0044E227 /* StyleLifeResponse.swift in Sources */,
