@@ -92,6 +92,8 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
         let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = false
+        styleDetailVC.styleShotIdx = popularServerData[indexPath.row].styleshotIdx
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
     
