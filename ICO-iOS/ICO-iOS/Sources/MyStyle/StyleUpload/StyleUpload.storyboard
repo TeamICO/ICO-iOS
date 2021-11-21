@@ -728,6 +728,15 @@
                                                     <constraint firstAttribute="width" constant="29" id="wqY-7S-qWv"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czo-9z-CNz">
+                                                <rect key="frame" x="24" y="1136" width="11" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="11" id="e0v-as-62l"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -784,6 +793,7 @@
                                             <constraint firstItem="3o9-oF-NpD" firstAttribute="leading" secondItem="QoW-GC-jy2" secondAttribute="leading" constant="16" id="UfG-B4-BvF"/>
                                             <constraint firstItem="WTS-sV-dqd" firstAttribute="leading" secondItem="QoW-GC-jy2" secondAttribute="leading" constant="16" id="VmV-ua-Pil"/>
                                             <constraint firstItem="TQe-Bj-26T" firstAttribute="top" secondItem="KZm-94-jT3" secondAttribute="bottom" constant="16" id="WCJ-Qo-UOD"/>
+                                            <constraint firstItem="Czo-9z-CNz" firstAttribute="top" secondItem="8hd-Ng-S3K" secondAttribute="top" constant="5" id="WeV-WO-uOq"/>
                                             <constraint firstItem="phg-5y-cLy" firstAttribute="leading" secondItem="QoW-GC-jy2" secondAttribute="leading" constant="16" id="Wqx-hH-R9V"/>
                                             <constraint firstItem="fgt-rv-qft" firstAttribute="top" secondItem="sws-Fg-MVq" secondAttribute="bottom" constant="24" id="X7b-SF-Ybd"/>
                                             <constraint firstItem="fyD-pP-IkA" firstAttribute="top" secondItem="yKf-r3-h30" secondAttribute="top" constant="8" id="XBv-ia-vNN"/>
@@ -811,6 +821,7 @@
                                             <constraint firstAttribute="trailing" secondItem="yrr-xO-hym" secondAttribute="trailing" id="lu9-4V-hRS"/>
                                             <constraint firstAttribute="height" constant="1300" id="nB9-rV-baT"/>
                                             <constraint firstItem="KZm-94-jT3" firstAttribute="top" secondItem="RcA-k3-7dH" secondAttribute="bottom" constant="16" id="nr5-Bo-Cpd"/>
+                                            <constraint firstItem="Czo-9z-CNz" firstAttribute="leading" secondItem="8hd-Ng-S3K" secondAttribute="leading" constant="8" id="nvD-Sy-yab"/>
                                             <constraint firstItem="X1E-6l-1x0" firstAttribute="top" secondItem="tBC-yt-aXZ" secondAttribute="bottom" constant="8" id="nzC-lx-Bu5"/>
                                             <constraint firstItem="bWn-r3-mfw" firstAttribute="leading" secondItem="QoW-GC-jy2" secondAttribute="leading" constant="16" id="oq6-cU-yzm"/>
                                             <constraint firstAttribute="trailing" secondItem="yKf-r3-h30" secondAttribute="trailing" constant="16" id="pis-AQ-059"/>
@@ -887,6 +898,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="TagLabel" destination="Czo-9z-CNz" id="3W5-iG-Dl2"/>
                         <outlet property="detailLabel" destination="iWq-At-ByL" id="Dca-eK-OOk"/>
                         <outlet property="ecoLevelScore" destination="k1I-18-t7o" id="WaS-z4-uMG"/>
                         <outlet property="hashTagCV" destination="tcd-nz-pHx" id="LmT-oK-Vhl"/>

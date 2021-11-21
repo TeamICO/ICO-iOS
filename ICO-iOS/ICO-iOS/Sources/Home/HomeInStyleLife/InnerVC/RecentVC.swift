@@ -88,7 +88,6 @@ extension RecentVC{
     func didSuccessGetRecentInfo(message: String){
         setTV()
         postingTV.reloadData()
-        print("최신탭이 언제 호출되나요??")
         print(message)
     }
 }

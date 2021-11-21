@@ -52,6 +52,7 @@ class StyleUploadVC: UIViewController {
     @IBOutlet weak var hashTagCV: UICollectionView!
     @IBOutlet weak var hashTagView: UIView!
     @IBOutlet weak var hashTagText: UILabel!
+    @IBOutlet weak var TagLabel: UILabel!
     var hashTagCnt: Int = 0
     var hashTagArr: [String] = []
     
@@ -243,6 +244,7 @@ class StyleUploadVC: UIViewController {
         hashTagView.backgroundColor = UIColor.primaryBlack40
         hashTagView.layer.cornerRadius = 8
         hashTagText.text = "\(hashTagCnt)/5"
+        TagLabel.textColor = UIColor.coGreen70
         
     }
     
