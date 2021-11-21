@@ -11,6 +11,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import NaverThirdPartyLogin
 import Alamofire
+import DeviceKit
 
 class LoginVC: UIViewController {
     var nowPage = 0
@@ -38,6 +39,7 @@ class LoginVC: UIViewController {
                             "illust-earth"
     
     ]
+    @IBOutlet weak var onboardingHeight: NSLayoutConstraint!
     @IBOutlet weak var personalAgreeButton: UIButton!
     @IBOutlet weak var serviceAgreeButton: UIButton!
     
@@ -59,7 +61,7 @@ class LoginVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        setHeightOnboarding()
         self.navigationController?.navigationBar.isTransparent = true
         
         collectionViewConfigure()
@@ -81,6 +83,16 @@ class LoginVC: UIViewController {
     
    
 
+}
+// MARK: - OnBoarding Configure
+extension LoginVC {
+    func setHeightOnboarding(){
+        if Device.current.isOneOf(IPhoneDeviceGroup.groupOfAllowedDevices) {
+            onboardingHeight.constant = 328
+        }else{
+            onboardingHeight.constant = 398
+        }
+    }
 }
 // MARK: - CollectionView Configure
 extension LoginVC {
@@ -124,7 +136,12 @@ extension LoginVC : UICollectionViewDelegate, UICollectionViewDataSource,UIColle
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 398)
+        if Device.current.isOneOf(IPhoneDeviceGroup.groupOfAllowedDevices) {
+            return CGSize(width: view.frame.size.width, height: 328)
+        }else{
+            return CGSize(width: view.frame.size.width, height: 398)
+        }
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 

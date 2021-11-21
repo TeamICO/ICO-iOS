@@ -6,11 +6,13 @@
 //
 
 import UIKit
-
+import DeviceKit
 class LoginCVC: UICollectionViewCell {
     static let identifier = "LoginCVC"
     
- 
+    @IBOutlet weak var onboardingImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var onboardingImageWeidth: NSLayoutConstraint!
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
@@ -20,7 +22,13 @@ class LoginCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Initialization code
+        if Device.current.isOneOf(IPhoneDeviceGroup.groupOfAllowedDevices) {
+            onboardingImageHeight.constant = 153
+            onboardingImageWeidth.constant = 153
+        }else{
+            onboardingImageHeight.constant = 196
+            onboardingImageWeidth.constant = 196
+        }
     }
 
 }

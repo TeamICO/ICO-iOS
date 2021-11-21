@@ -223,6 +223,7 @@
 		E9E4993E273BD5530001ACFB /* SettingAlarmTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E4993C273BD5530001ACFB /* SettingAlarmTVC.xib */; };
 		E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4993F273BD5920001ACFB /* UserAlarmSettingTVC.swift */; };
 		E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E49940273BD5920001ACFB /* UserAlarmSettingTVC.xib */; };
+		E9EE0DB8274A717700567FCE /* IPhoneDeviceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EE0DB7274A717600567FCE /* IPhoneDeviceGroup.swift */; };
 		FFC18CD75DFBE3EC9DC15E91 /* Pods_ICO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -450,6 +451,7 @@
 		E9E4993C273BD5530001ACFB /* SettingAlarmTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAlarmTVC.xib; sourceTree = "<group>"; };
 		E9E4993F273BD5920001ACFB /* UserAlarmSettingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlarmSettingTVC.swift; sourceTree = "<group>"; };
 		E9E49940273BD5920001ACFB /* UserAlarmSettingTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAlarmSettingTVC.xib; sourceTree = "<group>"; };
+		E9EE0DB7274A717600567FCE /* IPhoneDeviceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneDeviceGroup.swift; sourceTree = "<group>"; };
 		EDC49EEA6B3B2D2042155EA1 /* Pods-ICO-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO-iOS.release.xcconfig"; path = "Target Support Files/Pods-ICO-iOS/Pods-ICO-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		F6EEB41943D2FE2EA154A6F6 /* Pods-ICO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO.release.xcconfig"; path = "Target Support Files/Pods-ICO/Pods-ICO.release.xcconfig"; sourceTree = "<group>"; };
 		FD30DB705D8ECE28814C57A1 /* Pods-ICO_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO_iOS.release.xcconfig"; path = "Target Support Files/Pods-ICO_iOS/Pods-ICO_iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -1237,6 +1239,7 @@
 				E9CAF1AC273167F3008F749B /* IndicatorView.swift */,
 				E99A3B70274147410073ED09 /* EcoKeyWordType.swift */,
 				E94613A32743B7A700A5F7C2 /* CommonResponse.swift */,
+				E9EE0DB7274A717600567FCE /* IPhoneDeviceGroup.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -1714,6 +1717,7 @@
 				E946139F2743B07000A5F7C2 /* FeedbackResponse.swift in Sources */,
 				E94613A42743B7A700A5F7C2 /* CommonResponse.swift in Sources */,
 				E9378D7A2737FC1300C589A1 /* TopCVC.swift in Sources */,
+				E9EE0DB8274A717700567FCE /* IPhoneDeviceGroup.swift in Sources */,
 				717CB5192743DD9B0044E227 /* StyleLifeDataManager.swift in Sources */,
 				E96DB30C274530CB00659256 /* SearchResponse.swift in Sources */,
 				E9C30E022746319C000B1592 /* LikeResponse.swift in Sources */,
