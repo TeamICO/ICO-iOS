@@ -51,6 +51,8 @@
             <size key="customSize" width="370" height="398"/>
             <connections>
                 <outlet property="imageView" destination="dIF-Kk-B01" id="iRi-Yh-NzJ"/>
+                <outlet property="onboardingImageHeight" destination="l70-6i-Gbb" id="P07-ve-Gsh"/>
+                <outlet property="onboardingImageWeidth" destination="GUP-r0-cog" id="hba-ir-Ghm"/>
                 <outlet property="subTitleLabel" destination="E7g-eF-uGV" id="yjD-z5-3Ra"/>
                 <outlet property="titleLabel" destination="Hda-p4-gVO" id="QGL-nU-VV5"/>
             </connections>
