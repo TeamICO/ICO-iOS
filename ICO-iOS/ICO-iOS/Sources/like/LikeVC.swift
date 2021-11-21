@@ -10,7 +10,7 @@ import UIKit
 class LikeVC: BaseViewController {
 
     private var likeResult = [LikeResult]()
-   
+    private var nickname = ""
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -29,9 +29,10 @@ class LikeVC: BaseViewController {
 // MARK: - FetchData
 extension LikeVC{
     func fetchData(){
-        guard let jwtToken = self.jwtToken else{
+        guard let jwtToken = self.jwtToken, let nickName = self.nickName else{
             return
         }
+        self.nickname = nickName
         LikeManger.shared.getUserLikes(jwtToken: jwtToken) { [weak self] response in
             guard let response = response else {
                 return
@@ -83,7 +84,11 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         collectionView.deselectItem(at: indexPath, animated: true)
-      
+        if self.nickName == likeResult[indexPath.row].nickname {
+            pushToStyleShot(isMine: true, styleShotIdx: likeResult[indexPath.row].styleshotIdx)
+        }else{
+            pushToStyleShot(isMine: false, styleShotIdx: likeResult[indexPath.row].styleshotIdx)
+        }
         
     }
     
@@ -109,5 +114,15 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+ 
+    
+   
+    func pushToStyleShot(isMine : Bool,styleShotIdx : Int){
+        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = isMine
+        styleDetailVC.styleShotIdx = styleShotIdx
+        self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
 }

@@ -44,23 +44,8 @@ class EcoTopicTVC: UITableViewCell {
     func getData(data : HomeInHomeEcoTopic){
         self.ecoTopicModel = data
         topicTitle.text = data.name
-        
-        guard let url = URL(string: data.imageURL) else{
-                return
-            }
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self?.productImage.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
-        
+        self.productImage.setImage(with: data.imageURL)
+
         collectionView.reloadData()
     }
     
