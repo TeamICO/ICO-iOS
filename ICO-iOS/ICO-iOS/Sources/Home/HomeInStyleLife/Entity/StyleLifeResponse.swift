@@ -45,7 +45,7 @@ struct TopBanner: Codable {
     }
 }
 
-// MARK: - Empty
+// MARK: - StyleLifeRecent
 struct StyleLifeRecent: Codable {
     let isSuccess: Bool
     let code: Int

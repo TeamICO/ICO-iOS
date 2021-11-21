@@ -9,20 +9,20 @@ import UIKit
 
 class KeywordVC: UIViewController {
     
+    var keywordServerData: [RecentResult] = []
     @IBOutlet weak var keywordCV: UICollectionView!
     @IBOutlet weak var postTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       setCV()
        registerXib()
+        keywordCV.delegate = self
+        keywordCV.dataSource = self
        //setUI()
     }
 
-    func setCV(){
-        keywordCV.delegate = self
-        keywordCV.dataSource = self
+    func setCVTV(){
         postTV.delegate = self
         postTV.dataSource = self
     }
@@ -113,6 +113,11 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        StyleLifeDataManager().getKeywordInfo(self, indexPath.row)
+    }
 
     /*
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -133,18 +138,35 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
 extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return keywordServerData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTVC", for: indexPath)as? RecentTVC else {return UITableViewCell()}
         
         cell.selectionStyle = .none
+        cell.mainImage.setImage(with: keywordServerData[indexPath.row].imageURL)
+        cell.nameLabel.text = keywordServerData[indexPath.row].nickname
+        cell.userImage.setImage(with: keywordServerData[indexPath.row].profileURL)
+        cell.detailLabel.text = keywordServerData[indexPath.row].resultDescription
+        cell.heartNum.text = "\(keywordServerData[indexPath.row].likeCnt)"
+        cell.productName.text = keywordServerData[indexPath.row].productName
+        cell.score.text = "\(keywordServerData[indexPath.row].likeCnt)"
+        cell.time.text = keywordServerData[indexPath.row].time
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 616
+    }
+}
+
+
+extension KeywordVC{
+    func didSuccessGetKeyword(message: String){
+        setCVTV()
+        postTV.reloadData()
+        print(message)
     }
 }

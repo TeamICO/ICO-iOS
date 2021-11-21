@@ -62,7 +62,6 @@ class StyleLifeDataManager{
     }
     
     func getPopularInfo(_ viewcontroller: PopularVC){
-        
         AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=2",method: .get, parameters: nil,headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleLifeRecent.self){ response in
@@ -78,8 +77,21 @@ class StyleLifeDataManager{
             }
     }
     
-    
-    
-    
-    
+    func getKeywordInfo(_ viewcontroller: KeywordVC,_ categoryIdx: Int){
+        AF.request("\(Constant.BASE_URL)/app/styleshots/lifestyle?filter=3&categoryIdx=\(categoryIdx)",method: .get, parameters: nil,headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: StyleLifeRecent.self){ response in
+                switch response.result{
+                    case .success(let response):
+                        viewcontroller.keywordServerData = response.result
+                        viewcontroller.didSuccessGetKeyword(message: response.message)
+                        
+                    
+                    
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                }
+            }
+
+    }
 }
