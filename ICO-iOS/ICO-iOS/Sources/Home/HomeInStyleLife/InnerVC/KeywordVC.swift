@@ -12,6 +12,7 @@ class KeywordVC: UIViewController {
     var keywordServerData: [RecentResult] = []
     @IBOutlet weak var keywordCV: UICollectionView!
     @IBOutlet weak var postTV: UITableView!
+    @IBOutlet weak var entireHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +117,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        StyleLifeDataManager().getKeywordInfo(self, indexPath.row)
+        StyleLifeDataManager().getKeywordInfo(self, indexPath.row+1)
     }
 
     /*
@@ -151,10 +152,30 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
         cell.detailLabel.text = keywordServerData[indexPath.row].resultDescription
         cell.heartNum.text = "\(keywordServerData[indexPath.row].likeCnt)"
         cell.productName.text = keywordServerData[indexPath.row].productName
-        cell.score.text = "\(keywordServerData[indexPath.row].likeCnt)"
+        cell.score.text = "\(keywordServerData[indexPath.row].point)"
+        if cell.score.text == "5"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-5")
+        }else if cell.score.text == "4"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-4")
+        }else if cell.score.text == "3"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-3")
+        }else if cell.score.text == "2"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-2")
+        }else if cell.score.text == "1"{
+            cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
+        }
         cell.time.text = keywordServerData[indexPath.row].time
+        cell.setData(category: keywordServerData[indexPath.row].category)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = false
+        styleDetailVC.styleShotIdx = keywordServerData[indexPath.row].styleshotIdx
+        self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -165,6 +186,8 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
 
 extension KeywordVC{
     func didSuccessGetKeyword(message: String){
+        let cnt :Int = keywordServerData.count
+        entireHeight.constant = CGFloat(136 + (cnt * 616))
         setCVTV()
         postTV.reloadData()
         print(message)
