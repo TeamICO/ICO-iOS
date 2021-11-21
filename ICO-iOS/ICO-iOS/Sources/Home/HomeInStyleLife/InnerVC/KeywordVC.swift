@@ -9,6 +9,8 @@ import UIKit
 
 class KeywordVC: UIViewController {
     
+  
+    
     var keywordServerData: [RecentResult] = []
     @IBOutlet weak var keywordCV: UICollectionView!
     @IBOutlet weak var postTV: UITableView!
@@ -118,16 +120,30 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         StyleLifeDataManager().getKeywordInfo(self, indexPath.row+1)
+        for i in 0...6{
+           let keywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeywordCVC", for: indexPath)as? KeywordCVC
+            if keywordCell?.isSelected == false{
+                postTV.isHidden = true
+                //hidden.isHidden = false
+            }else{
+                postTV.isHidden = false
+                //hidden.isHidden = true
+            }
+        }
+        
     }
 
-    /*
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath)as? KeywordCVC{
-            cell.colorView.setGradient(color1: UIColor.gradient01, color2: UIColor.gradient012)
-            cell.keywordTitle.textColor = UIColor.white
-        }
-    }
     
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        var cell = collectionView.cellForItem(at: indexPath)as? KeywordCVC
+        if ((cell?.isSelected) != nil){
+            cell?.colorView.backgroundColor = UIColor.coGreen70
+            cell?.keywordTitle.textColor = UIColor.white
+        }
+        //print(cell?.isSelected)
+        
+    }
+    /*
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath)as? KeywordCVC{
             cell.colorView.backgroundColor = UIColor.clear
