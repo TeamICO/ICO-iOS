@@ -173,6 +173,7 @@
                         <outlet property="collectionView" destination="ypW-iA-iAx" id="wMl-ah-bJS"/>
                         <outlet property="kakaoLoginView" destination="6F0-bT-K1h" id="Ows-kN-1Cw"/>
                         <outlet property="naverLoignView" destination="m3h-iW-Diu" id="7an-hq-wKh"/>
+                        <outlet property="onboardingHeight" destination="cxd-FL-2r5" id="zuo-K9-xWn"/>
                         <outlet property="pageControl" destination="cjh-SV-6Dr" id="auj-kL-mIa"/>
                         <outlet property="personalAgreeButton" destination="qN2-ly-eQc" id="EBv-6I-FvF"/>
                         <outlet property="serviceAgreeButton" destination="Gxb-tW-l5g" id="Hqi-Zd-OeA"/>
