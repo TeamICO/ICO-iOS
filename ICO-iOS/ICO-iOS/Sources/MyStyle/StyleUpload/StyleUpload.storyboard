@@ -704,6 +704,30 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tks-3I-gil">
+                                                <rect key="frame" x="16" y="1221" width="29" height="25"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kS-Pl-PaW">
+                                                        <rect key="frame" x="6" y="5.5" width="27" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Label">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="12" name="AppleSDGothicNeo-Medium"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                                <constraints>
+                                                    <constraint firstItem="1kS-Pl-PaW" firstAttribute="leading" secondItem="tks-3I-gil" secondAttribute="leading" constant="6" id="CGY-YS-tnE"/>
+                                                    <constraint firstAttribute="height" constant="25" id="GdI-nK-hhS"/>
+                                                    <constraint firstItem="1kS-Pl-PaW" firstAttribute="centerY" secondItem="tks-3I-gil" secondAttribute="centerY" id="biY-Es-cq4"/>
+                                                    <constraint firstAttribute="width" constant="29" id="wqY-7S-qWv"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -753,6 +777,7 @@
                                             <constraint firstItem="RT1-PR-kNE" firstAttribute="leading" secondItem="bWn-r3-mfw" secondAttribute="trailing" constant="6" id="Qvj-Fq-aEw"/>
                                             <constraint firstItem="4M7-ju-VnV" firstAttribute="leading" secondItem="js2-W5-a3k" secondAttribute="trailing" constant="12" id="RWO-iy-1H6"/>
                                             <constraint firstItem="sws-Fg-MVq" firstAttribute="leading" secondItem="WTS-sV-dqd" secondAttribute="trailing" constant="12" id="S24-j2-MWu"/>
+                                            <constraint firstItem="tks-3I-gil" firstAttribute="top" secondItem="tcd-nz-pHx" secondAttribute="bottom" constant="12" id="SH2-rN-0J0"/>
                                             <constraint firstItem="ZRb-PF-6pI" firstAttribute="leading" secondItem="tBC-yt-aXZ" secondAttribute="trailing" constant="12" id="Sj3-GY-izj"/>
                                             <constraint firstItem="QWr-dH-PUr" firstAttribute="leading" secondItem="8hd-Ng-S3K" secondAttribute="trailing" constant="16" id="Sla-EP-2vI"/>
                                             <constraint firstItem="TQe-Bj-26T" firstAttribute="leading" secondItem="4M7-ju-VnV" secondAttribute="trailing" constant="4" id="UMe-ww-6pZ"/>
@@ -781,6 +806,7 @@
                                             <constraint firstItem="ZRb-PF-6pI" firstAttribute="top" secondItem="BnK-Ub-dN0" secondAttribute="bottom" constant="24" id="g8I-Kd-gzG"/>
                                             <constraint firstAttribute="trailing" secondItem="fgt-rv-qft" secondAttribute="trailing" constant="16" id="hSn-h1-RLg"/>
                                             <constraint firstItem="js2-W5-a3k" firstAttribute="top" secondItem="KZm-94-jT3" secondAttribute="bottom" constant="16" id="kRS-9a-Nvb"/>
+                                            <constraint firstItem="tks-3I-gil" firstAttribute="leading" secondItem="QoW-GC-jy2" secondAttribute="leading" constant="16" id="kxB-mu-VNn"/>
                                             <constraint firstItem="tcd-nz-pHx" firstAttribute="top" secondItem="8hd-Ng-S3K" secondAttribute="bottom" constant="16" id="lgy-wn-9uj"/>
                                             <constraint firstAttribute="trailing" secondItem="yrr-xO-hym" secondAttribute="trailing" id="lu9-4V-hRS"/>
                                             <constraint firstAttribute="height" constant="1300" id="nB9-rV-baT"/>
@@ -864,7 +890,9 @@
                         <outlet property="detailLabel" destination="iWq-At-ByL" id="Dca-eK-OOk"/>
                         <outlet property="ecoLevelScore" destination="k1I-18-t7o" id="WaS-z4-uMG"/>
                         <outlet property="hashTagCV" destination="tcd-nz-pHx" id="LmT-oK-Vhl"/>
+                        <outlet property="hashTagText" destination="1kS-Pl-PaW" id="cqT-uT-MSh"/>
                         <outlet property="hashTagTextField" destination="8hd-Ng-S3K" id="A7Q-AQ-tww"/>
+                        <outlet property="hashTagView" destination="tks-3I-gil" id="k5S-Tm-BLD"/>
                         <outlet property="imageNumView" destination="X1E-6l-1x0" id="6eK-hQ-cYV"/>
                         <outlet property="imageView" destination="tBC-yt-aXZ" id="dCO-vd-TlI"/>
                         <outlet property="imgNumLabel" destination="pnN-bJ-aWm" id="KSj-vi-inP"/>

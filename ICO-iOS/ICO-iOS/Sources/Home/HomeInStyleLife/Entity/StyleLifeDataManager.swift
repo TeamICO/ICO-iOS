@@ -18,6 +18,7 @@ class StyleLifeDataManager{
                 case .success(let response):
                     viewcontroller.serverData = response.result
                     viewcontroller.didSuccessGetTop(message: response.message)
+                    print("최신탭이 언제 호출되나요??")
                     
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -35,6 +36,7 @@ class StyleLifeDataManager{
                     case .success(let response):
                         viewcontroller.serverData = response.result
                         viewcontroller.didSuccessGetPopularIco(message: response.message)
+                        print("인기탭이 언제 호출되나요??")
                     
                      case .failure(let error):
                         print(error.localizedDescription)
