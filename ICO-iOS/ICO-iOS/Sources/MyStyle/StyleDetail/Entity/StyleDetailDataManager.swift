@@ -50,4 +50,19 @@ class StyleDetailDataManager{
                 
             }
     }
+    
+    func likeStyle(_ parameters: LikeRequest, _ viewcontroller: StyleDetailVC){
+        AF.request("\(Constant.BASE_URL)/app/likes", method: .post, parameters: parameters, headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: LikeResponse.self){ response in
+                switch response.result{
+                case .success(let response):
+                    viewcontroller.didSuccessLikeStyle(message: response.message)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+
+            }
+    }
 }

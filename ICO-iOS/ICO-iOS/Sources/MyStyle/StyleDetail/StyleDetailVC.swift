@@ -22,6 +22,7 @@ class StyleDetailVC: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var heartNum: UILabel!
+    @IBOutlet weak var heartBtn: UIButton!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var ecoLevelImg: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -36,6 +37,10 @@ class StyleDetailVC: UIViewController {
     @IBOutlet weak var urlBackView: UIView!
     @IBOutlet weak var urlProduct: UILabel!
     @IBOutlet weak var moveUrl: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,6 +164,18 @@ class StyleDetailVC: UIViewController {
     }
     
     
+    @IBAction func likeBtn(_ sender: Any) {
+        let likeRequest = LikeRequest(styleshotIdx: styleShotIdx)
+        heartBtn.isSelected = !heartBtn.isSelected
+        if heartBtn.isSelected == true{
+            StyleDetailDataManager().likeStyle(likeRequest, self)
+            var cnt = StyleDetailData?.likeCnt ?? 0
+            cnt = cnt + 1
+            heartNum.text = "\(cnt)"
+        }
+    }
+    
+    
 }
 
 extension StyleDetailVC: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -253,6 +270,10 @@ extension StyleDetailVC{
     }
     
     func didSuccessDelete(message: String){
+        print(message)
+    }
+    
+    func didSuccessLikeStyle(message: String){
         print(message)
     }
 }
