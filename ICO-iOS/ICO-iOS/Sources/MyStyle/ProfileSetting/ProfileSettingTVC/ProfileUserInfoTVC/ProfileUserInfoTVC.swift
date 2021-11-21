@@ -43,21 +43,8 @@ class ProfileUserInfoTVC: UITableViewCell {
     }
     func configure(with viewModel : ProfileUserInfoTVCViewModel){
         self.nickNameTextField.text = viewModel.nickName
-        guard let url = URL(string: viewModel.profileImage) else{
-                return
-            }
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self?.userImage.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
+        self.userImage.setImage(with: viewModel.profileImage)
+    
     }
     func textfieldConfigure(){
         nickNameTextField.leftViewMode = .always

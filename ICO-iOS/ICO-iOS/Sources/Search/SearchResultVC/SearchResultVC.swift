@@ -10,6 +10,7 @@ import UIKit
 class SearchResultVC: BaseViewController {
     // MARK: - Properties
     var searchword = ""
+    private var sortedIdx = 1
     private var searchResultModel : SearchResultResult?
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
@@ -19,7 +20,7 @@ class SearchResultVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.text = searchword
-        fetchData(sortedIdx: 1)
+        fetchData(sortedIdx: self.sortedIdx)
         collectionViewConfigure()
         searchTextField.delegate = self
         
@@ -33,6 +34,17 @@ class SearchResultVC: BaseViewController {
             self.presentAlert(title: "검색어를 입력해주세요.")
             return
         }
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx)", jwtToken: jwtToken) { [weak self] response in
+            guard let response = response else {
+                return
+            }
+            self?.searchResultModel = response
+            self?.collectionView.reloadData()
+        }
+        
     }
     
 
@@ -112,7 +124,21 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-    
+        if indexPath.section == 2{
+            if let searchResultModel = self.searchResultModel?.seachResult{
+                if self.nickName == searchResultModel[indexPath.row].nickname {
+
+                    pushToStyleShot(isMine: true, styleShotIdx: searchResultModel[indexPath.row].styleshotIdx)
+                }else{
+              
+                    pushToStyleShot(isMine: false, styleShotIdx: searchResultModel[indexPath.row].styleshotIdx)
+                }
+            }
+        }
+       
+        
+       
+       
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -141,7 +167,13 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
         return -15
     }
     
-    
+    func pushToStyleShot(isMine : Bool,styleShotIdx : Int){
+        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = isMine
+        styleDetailVC.styleShotIdx = styleShotIdx
+        self.navigationController?.pushViewController(styleDetailVC, animated: true)
+    }
 }
 // MARK: - TextField Delegate
 extension SearchResultVC : UITextFieldDelegate {
@@ -150,7 +182,15 @@ extension SearchResultVC : UITextFieldDelegate {
             if text == ""{
                 self.presentAlert(title: "검색어를 입력해주세요.")
             }else{
-  
+                if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken"){
+                    SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx)", jwtToken: jwtToken) { [weak self] response in
+                        guard let response = response else {
+                            return
+                        }
+                        self?.searchResultModel = response
+                        self?.collectionView.reloadData()
+                    }
+                }
             }
         }
         
@@ -162,6 +202,7 @@ extension SearchResultVC : UITextFieldDelegate {
 }
 extension SearchResultVC : ResultSortCVCDelegate{
     func didTapSort(sortedIdx: Int) {
+        self.sortedIdx = sortedIdx
         self.fetchData(sortedIdx: sortedIdx+1)
     }
     

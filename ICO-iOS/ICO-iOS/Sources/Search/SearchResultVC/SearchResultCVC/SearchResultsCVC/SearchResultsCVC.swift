@@ -7,8 +7,10 @@
 
 import UIKit
 
+
 class SearchResultsCVC: UICollectionViewCell {
     static let identifier = "SearchResultsCVC"
+
 
     var category = [String]()
     
@@ -46,35 +48,16 @@ extension SearchResultsCVC {
     }
     func configure(with viewModel : SearchResultsCVCViewModel){
         self.userNameLabel.text = viewModel.nicName
-        
+        self.userContentImage.setImage(with: viewModel.userContentImage)
+        self.userImage.setImage(with: viewModel.userImage)
         if viewModel.isLike == 1{
             likeImage.image = UIImage(named: "ic-heart-click")
         }else{
             likeImage.image = UIImage(named: "icHeartUnclick1")
         }
+        
+    }
 
-        guard let productUrl = URL(string: viewModel.userContentImage), let userUrl = URL(string: viewModel.userImage) else{
-                return
-            }
-        setImage(url: productUrl, imageV: self.userContentImage)
-        setImage(url: userUrl, imageV: self.userImage)
-        
-        
-    }
-    func setImage(url : URL,imageV : UIImageView){
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        imageV.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
-    }
 }
 extension SearchResultsCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -89,6 +72,10 @@ extension SearchResultsCVC : UICollectionViewDelegate, UICollectionViewDataSourc
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: category[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 12, height: 25)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 4

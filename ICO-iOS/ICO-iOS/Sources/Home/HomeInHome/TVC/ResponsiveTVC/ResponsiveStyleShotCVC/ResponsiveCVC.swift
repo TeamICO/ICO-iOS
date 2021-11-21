@@ -20,10 +20,10 @@ class ResponsiveCVC: UICollectionViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var userRatingLabel: UILabel!
     
+    @IBOutlet weak var ratingImageView: UIImageView!
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var gradientView2: UIView!
-    @IBOutlet weak var userSatisfactionStack: UIStackView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -51,16 +51,9 @@ class ResponsiveCVC: UICollectionViewCell {
         self.category = data
         self.rating = rating
         collectionView.reloadData()
-        userSatisfactionStack.subviews.forEach{$0.removeFromSuperview()}
-        for _ in 0..<self.rating{
-            let stack = UserRatingsSV()
-            userSatisfactionStack.addArrangedSubview(stack)
-        }
         
     }
-    func setUserSatisfactionStack(){
-        
-    }
+    
     //MARK : Cell Configure
     func setCellShadow(){
         content.layer.shadowColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 0.1).cgColor
@@ -86,29 +79,14 @@ extension ResponsiveCVC {
         self.nicNameLabel.text = viewModel.nicName
         self.productNameLabel.text = viewModel.productName
         self.userRatingLabel.text = "\(viewModel.userRating).0"
+        self.ratingImageView.image = UIImage(named: "ic-styleshot-upload-ecolevel-\(viewModel.userRating)")
+        self.userImage.setImage(with: viewModel.userImage)
+        self.userContentImage.setImage(with: viewModel.userContentImage)
+     
+        
+        
+    }
 
-        guard let userUrl = URL(string: viewModel.userImage), let contentImage = URL(string: viewModel.userContentImage) else{
-                return
-            }
-        setImage(url: contentImage, imageV: self.userContentImage)
-        setImage(url: userUrl, imageV: self.userImage)
-        
-        
-    }
-    func setImage(url : URL,imageV : UIImageView){
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        imageV.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
-    }
 }
 extension ResponsiveCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
