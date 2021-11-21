@@ -35,7 +35,6 @@ class HomeVC: BaseViewController {
             case .lifeStyle:
                 homeButton.tintColor = .lightGray
                 lifeStyleButton.tintColor  = UIColor.appColor(.customGreen)
-                
                 break
             }
         }

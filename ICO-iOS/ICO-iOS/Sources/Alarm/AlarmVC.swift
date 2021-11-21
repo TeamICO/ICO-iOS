@@ -70,7 +70,11 @@ extension AlarmVC {
 // MARK: - TableView Delegate, DataSource
 extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        if todayAlarms.isEmpty && previouseAlarms.isEmpty{
+            return 1
+        }else{
+            return  sections.count
+        }
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -149,7 +153,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
-            return view.height
+            return 500
         }else{
             return 90
         }

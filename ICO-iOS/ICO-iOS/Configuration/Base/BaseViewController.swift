@@ -10,6 +10,7 @@ import UIKit
 class BaseViewController: UIViewController {
     let jwtToken = UserDefaults.standard.string(forKey: "jwtToken")
     let userIdx = UserDefaults.standard.integer(forKey: "userIdx")
+    let nickName = UserDefaults.standard.string(forKey: "nickname")
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

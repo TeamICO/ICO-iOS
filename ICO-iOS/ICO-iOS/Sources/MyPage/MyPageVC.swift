@@ -71,6 +71,7 @@ extension MyPageVC {
         let mypageMyRecentStyleShotTVCNib = UINib(nibName: MypageMyRecentStyleShotTVC.identifier, bundle: nil)
         tableView.register(mypageMyRecentStyleShotTVCNib, forCellReuseIdentifier: MypageMyRecentStyleShotTVC.identifier)
         
+        
         let mypageTVCNib = UINib(nibName: MypageTVC.identifier, bundle: nil)
         tableView.register(mypageTVCNib, forCellReuseIdentifier: MypageTVC.identifier)
         
@@ -109,6 +110,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: MypageMyRecentStyleShotTVC.identifier, for: indexPath) as! MypageMyRecentStyleShotTVC
+            cell.delegate = self
             cell.selectionStyle = .none
             if let model = self.mypageModel?.styleshot{
                 cell.getData(data: model)
@@ -133,6 +135,8 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         self.tabBarController?.tabBar.isHidden = true
         switch indexPath.section {
+        case 0 : self.tabBarController?.tabBar.isHidden = false
+            break
         case 1 : self.tabBarController?.tabBar.isHidden = false
             break
         case 2:
@@ -277,4 +281,17 @@ extension MyPageVC {
     @objc func didTapAlarmView(){
         self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
     }
+}
+extension MyPageVC: MypageMyRecentStyleShotTVCDelegate{
+    func didTapEachCells(styleShotIdx: Int) {
+        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = true
+        styleDetailVC.styleShotIdx = styleShotIdx
+        self.navigationController?.pushViewController(styleDetailVC, animated: true)
+    }
+  
+    
+    
+    
 }

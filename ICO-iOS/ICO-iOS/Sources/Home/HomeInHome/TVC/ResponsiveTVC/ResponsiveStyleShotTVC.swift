@@ -7,8 +7,16 @@
 
 import UIKit
 
+protocol ResponsiveStyleShotTVCDelegate : AnyObject{
+    func didTapEachCells(styleShotIdx : Int, userNickName : String)
+}
+
+
 class ResponsiveStyleShotTVC: UITableViewCell {
     static let identifier = "ResponsiveStyleShotTVC"
+    
+    weak var delegate : ResponsiveStyleShotTVCDelegate?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
 
@@ -58,7 +66,8 @@ extension ResponsiveStyleShotTVC : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         collectionView.deselectItem(at: indexPath, animated: true)
-      
+        
+        delegate?.didTapEachCells(styleShotIdx: responsiveStyleShotModel[indexPath.row].styleshotIdx,userNickName: responsiveStyleShotModel[indexPath.row].nickname)
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

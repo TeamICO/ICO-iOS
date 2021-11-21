@@ -10,6 +10,8 @@ import UIKit
 class LikeVC: BaseViewController {
 
     private var likeResult = [LikeResult]()
+   
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -88,7 +90,7 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.likeResult.isEmpty {
             collectionView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
-            return CGSize(width: view.width, height: view.height)
+            return CGSize(width: view.width, height: 500)
         }else{
             collectionView.contentInset = UIEdgeInsets(top: 70, left: 16, bottom: 0, right: 16)
             return CGSize(width: view.width/2-28, height: 238)
