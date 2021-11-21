@@ -100,6 +100,10 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="icHeartUnclick1"/>
+                                                <state key="selected" image="ic-heart-click"/>
+                                                <connections>
+                                                    <action selector="likeBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="va9-aL-TMl"/>
+                                                </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZPt-34-1bg">
                                                 <rect key="frame" x="15" y="446" width="399" height="25"/>
@@ -342,6 +346,7 @@
                         <outlet property="gradientView1" destination="EUg-vQ-VME" id="Im8-RW-DGm"/>
                         <outlet property="gradientView2" destination="TIw-BF-z8J" id="RXs-86-LUI"/>
                         <outlet property="hashtagCV" destination="0Ug-nQ-ngT" id="vFz-ZW-vTl"/>
+                        <outlet property="heartBtn" destination="ij8-aK-oXF" id="vvD-Mz-llj"/>
                         <outlet property="heartNum" destination="Oqy-we-hgU" id="iw3-ux-79Q"/>
                         <outlet property="lineView1" destination="bph-rA-XnV" id="kxh-a3-e0M"/>
                         <outlet property="lineView2" destination="ZB8-yS-q7S" id="fRb-oS-weM"/>
@@ -364,6 +369,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic-heart-click" width="96" height="96"/>
         <image name="ic-styleshot-upload-ecolevel-4" width="1408" height="256"/>
         <image name="icArrowLeft" width="24" height="24"/>
         <image name="icArrowRight1" width="12" height="12"/>
