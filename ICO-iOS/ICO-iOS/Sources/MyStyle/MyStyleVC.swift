@@ -215,17 +215,15 @@ extension MyStyleVC{
         detailLabel.text = serverData?.resultDescription
         likeNum.text = "\(serverData?.likeCnt ?? 0)"
         styleNum.text = "\(serverData?.styleshotCnt ?? 0)"
-        
+        //389
         var item = (serverData?.styleshotCnt)!
         if item % 2 == 0 {
-            entireHeight.constant = CGFloat(389 + 180*(item/2))
+            entireHeight.constant = CGFloat(500 + 180*(item/2))
         }else{
-            entireHeight.constant = CGFloat(389 + 180*((item+1)/2))
+            entireHeight.constant = CGFloat(500 + 180*((item+1)/2))
         }
         setCV()
         styleCV.reloadData()
-        
-        print(message)
     }
 
 }

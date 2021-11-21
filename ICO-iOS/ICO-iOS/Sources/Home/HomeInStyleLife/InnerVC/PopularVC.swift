@@ -178,6 +178,7 @@ extension PopularVC{
         postTV.dataSource = self
         postTV.reloadData()
         entireHeight.constant = CGFloat(443 + (616 * popularServerData.count))
+        print("인기탭이 언제 호출되나요??")
       
         print(message)
     }

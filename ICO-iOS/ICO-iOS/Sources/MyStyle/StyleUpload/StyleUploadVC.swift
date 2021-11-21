@@ -17,7 +17,6 @@ class StyleUploadVC: UIViewController {
     //에코 키워드 관련, 선택된 경우: 1 / 선택되지 않은 경우: 0
     var numberList : [Int] = [0,0,0,0,0,0,0]
     @IBOutlet var ecoView: [UIView]!
-    
     @IBOutlet var ecoButton: [UIButton]!
     
     @IBOutlet var ecoLevel: [UIButton]!
@@ -51,11 +50,12 @@ class StyleUploadVC: UIViewController {
     
     @IBOutlet weak var hashTagTextField: UITextField!
     @IBOutlet weak var hashTagCV: UICollectionView!
+    @IBOutlet weak var hashTagView: UIView!
+    @IBOutlet weak var hashTagText: UILabel!
     var hashTagCnt: Int = 0
+    var hashTagArr: [String] = []
     
     @IBOutlet weak var uploadBtn: UIButton!
-    
-    
     
     //에코 키워드를 누르면
     @objc func selectEcoKeywordClicked(_ sender: UIButton){
@@ -125,6 +125,8 @@ class StyleUploadVC: UIViewController {
     
     @IBAction func addHashTag(_ sender: Any) {
         hashTagCnt = hashTagCnt + 1
+        hashTagText.text = "\(hashTagCnt)/5"
+        hashTagArr.append(hashTagTextField.text!)
         hashTagCV.reloadData()
     }
     
@@ -147,6 +149,8 @@ class StyleUploadVC: UIViewController {
             urlTitle[i].textColor = UIColor.primaryBlack60
             urlTextField[i].backgroundColor = UIColor.backGround1
             urlTextField[i].cornerRadius = 8
+            urlTextField[i].leftViewMode = .always
+            urlTextField[i].leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         }
         
         for i in 0...6{
@@ -231,10 +235,14 @@ class StyleUploadVC: UIViewController {
         urlLabel1.text = "\(urlNum1)/20"
         urlLabel2.text = "\(urlNum2)/20"
         detailLabel.text = "\(detailNum)/400"
-        
         ecoLevelScore.text = "\(0.0)"
         
         hashTagTextField.backgroundColor = UIColor.backGround1
+        hashTagTextField.leftViewMode = .always
+        hashTagTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
+        hashTagView.backgroundColor = UIColor.primaryBlack40
+        hashTagView.layer.cornerRadius = 8
+        hashTagText.text = "\(hashTagCnt)/5"
         
     }
     
@@ -394,7 +402,11 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: "hashTagCVC", for: indexPath)as? hashTagCVC else {return UICollectionViewCell()}
         
-        tagCell.tagTitle.text = hashTagTextField.text
+        tagCell.backgroundColor = UIColor.backGround1
+        tagCell.tagTitle.textColor = UIColor.coGreen70
+        tagCell.layer.cornerRadius = 8
+        //tagCell.tagTitle.text = "#" + (hashTagTextField.text)!
+        tagCell.tagTitle.text = "#" + hashTagArr[indexPath.row]
         
         return tagCell
     }
@@ -404,7 +416,11 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 28)
+    
+        var size = hashTagArr[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ?? 0
+        let entireSize = size + 18
+        return CGSize(width: entireSize, height: 28)
+        
     }
 
     
