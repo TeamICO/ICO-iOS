@@ -51,29 +51,12 @@ extension EcoTopicCVC {
     }
     func configure(with viewModel : EcoTopicCVCViewModel){
         self.nickName.text = viewModel.nickName
-
-        guard let productUrl = URL(string: viewModel.userContentImage), let userUrl = URL(string: viewModel.userImage) else{
-                return
-            }
-        setImage(url: productUrl, imageV: self.userContentImage)
-        setImage(url: userUrl, imageV: self.userImage)
-        
+        self.userContentImage.setImage(with: viewModel.userContentImage)
+        self.userImage.setImage(with: viewModel.userImage)
+      
         
     }
-    func setImage(url : URL,imageV : UIImageView){
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        imageV.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
-    }
+    
 }
 extension EcoTopicCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
