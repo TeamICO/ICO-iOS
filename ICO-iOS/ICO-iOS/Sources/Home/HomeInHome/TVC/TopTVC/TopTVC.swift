@@ -111,7 +111,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             return cell
         case self.bannerCollectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCVC.identifier, for: indexPath) as! TopBannerCVC
-            cell.setImage(url: topBannerModel[indexPath.row].imageURL)
+            cell.bannerImage.setImage(with: topBannerModel[indexPath.row].imageURL)
             return cell
         default : return UICollectionViewCell()
         }

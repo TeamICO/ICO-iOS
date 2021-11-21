@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol EcoTopicTVCDelegate : AnyObject{
+    func didTapEachCells(styleShotIdx : Int, userNickName : String)
+}
+
+
 class EcoTopicTVC: UITableViewCell {
     static let identifier = "EcoTopicTVC"
+    
+    weak var delegate : EcoTopicTVCDelegate?
     
     var ecoTopicModel : HomeInHomeEcoTopic?
     
@@ -86,7 +93,11 @@ extension EcoTopicTVC : UICollectionViewDelegate, UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         collectionView.deselectItem(at: indexPath, animated: true)
-      
+        if let product = ecoTopicModel?.product{
+            delegate?.didTapEachCells(styleShotIdx: product[indexPath.row].styleshotIdx,userNickName: product[indexPath.row].nickname)
+        }
+       
+        
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

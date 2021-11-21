@@ -5,9 +5,17 @@
 //  Created by do_yun on 2021/11/07.
 import UIKit
 
+protocol SensibleStyleShotTVCDelegate : AnyObject{
+    func didTapEachCells(styleShotIdx : Int, userNickName : String)
+}
+
 class SensibleStyleShotTVC: UITableViewCell {
     static let identifier = "SensibleStyleShotTVC"
+    
+    weak var delegate : SensibleStyleShotTVCDelegate?
+    
     private var senseStyleShotModel = [HomeInHomeSenseStyleshot]()
+
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,9 +31,10 @@ class SensibleStyleShotTVC: UITableViewCell {
     }
     func getData(data : [HomeInHomeSenseStyleshot],nickname : String){
         self.senseStyleShotModel = data
-        var name = nickname
+        let name = nickname
         
         self.userNameLabel.text = "\(name) 님을 위한"
+
         
         collectionView.reloadData()
     }
@@ -55,9 +64,8 @@ extension SensibleStyleShotTVC : UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         collectionView.deselectItem(at: indexPath, animated: true)
-      
+        delegate?.didTapEachCells(styleShotIdx: senseStyleShotModel[indexPath.row].styleshotIdx,userNickName: senseStyleShotModel[indexPath.row].nickname)
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

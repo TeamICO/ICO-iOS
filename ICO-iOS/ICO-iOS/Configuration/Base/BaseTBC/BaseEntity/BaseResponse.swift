@@ -17,4 +17,5 @@ struct BaseResponse: Codable {
 // MARK: - Result
 struct BaseResult: Codable {
     let userIdx: Int
+    let nickname : String
 }

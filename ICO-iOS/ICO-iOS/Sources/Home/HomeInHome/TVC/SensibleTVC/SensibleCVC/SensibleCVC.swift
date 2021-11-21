@@ -46,27 +46,8 @@ class SensibleCVC: UICollectionViewCell {
     func configure(with viewModel : SensibleCVCViewModel){
         
         self.userId.text = viewModel.nicName
-        
-        guard let styleShotUrl = URL(string: viewModel.styleShotImage), let userImageUrl = URL(string: viewModel.userImage) else{
-                return
-            }
-        setImage(url: styleShotUrl, imageV: self.styleShotImage)
-        setImage(url: userImageUrl, imageV: self.userImage)
-        
-    }
-    func setImage(url : URL,imageV : UIImageView){
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        imageV.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
+        self.styleShotImage.setImage(with: viewModel.styleShotImage)
+        self.userImage.setImage(with: viewModel.userImage)
     }
 }
 // MARK: - CollectionView Configure

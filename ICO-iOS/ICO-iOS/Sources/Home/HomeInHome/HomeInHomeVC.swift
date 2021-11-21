@@ -17,31 +17,34 @@ class HomeInHomeVC: BaseViewController {
     private var brandModel : HomeInHomeBrand?
     private var responsiveStyleShotModel = [HomeInHomePopularStyleshot]()
     private var ecoTopicModel : HomeInHomeEcoTopic?
+    private var bottomBanner : HomeInHomeBottomBanner?
     private var nickname = ""
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchData()
         self.tableviewConfigure()
+       
     }
     
-
-
+  
+  
 
 }
 // MARK: - FetchData
 extension HomeInHomeVC{
     func fetchData(){
-        guard let jwtToken = self.jwtToken else{
+        guard let jwtToken = self.jwtToken, let nickname = self.nickName else{
             return
         }
+        self.nickname = nickname
         HomeInHomeManager.shared.getHomeInHomeData(jwtToken: jwtToken) { [weak self] response in
             guard let topBanner = response.topBanner,
                   let senseStyleShot = response.senseStyleshot,
                   let brandRco = response.brand,
                   let responsiveStyleShot = response.popularStyleshot,
                   let ecotopic = response.ecoTopic,
-                  let nickname = response.nickname else{
+                  let bottom = response.bottomBanner else{
                 return
             }
             self?.topBannerModel = topBanner
@@ -49,7 +52,7 @@ extension HomeInHomeVC{
             self?.brandModel = brandRco
             self?.responsiveStyleShotModel = responsiveStyleShot
             self?.ecoTopicModel = ecotopic
-            self?.nickname = nickname
+            self?.bottomBanner = bottom
             self?.tableView.reloadData()
         }
         
@@ -104,6 +107,7 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: SensibleStyleShotTVC.identifier, for: indexPath) as! SensibleStyleShotTVC
             cell.selectionStyle = .none
+            cell.delegate = self
             cell.getData(data: self.senseStyleShotModel,nickname: self.nickname)
             return cell
 //        case 2 :
@@ -121,12 +125,14 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         case 3 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ResponsiveStyleShotTVC.identifier, for: indexPath) as! ResponsiveStyleShotTVC
+            cell.delegate = self
             cell.getData(data: self.responsiveStyleShotModel)
             cell.selectionStyle = .none
             return cell
         case 4 :
             let cell = tableView.dequeueReusableCell(withIdentifier: EcoTopicTVC.identifier, for: indexPath) as! EcoTopicTVC
             cell.selectionStyle = .none
+            cell.delegate = self
             if let ecoTopic = self.ecoTopicModel{
                 cell.getData(data: ecoTopic)
             }
@@ -159,8 +165,15 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
         switch section {
         case 3 :
             // 광고 배너 높이 조절
-            let footer = UIImageView(frame: CGRect(x: 0, y: 0, width: view.width, height: 70))
-            footer.image = UIImage(named: "img_home_adbanner")
+            let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 70))
+            let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: footer.width, height: 70))
+            if let bottomBanner = self.bottomBanner {
+                imageview.setImage(with: bottomBanner.imageURL)
+            }
+            let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapBottomBannerView))
+            viewTap.cancelsTouchesInView = false
+            footer.addGestureRecognizer(viewTap)
+            footer.addSubview(imageview)
             return footer
         case 4:
             return UIView()
@@ -175,8 +188,13 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
 //        let offset = scrollView.contentOffset.y
 //        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
- 
-    
+    @objc func didTapBottomBannerView(){
+        if let bottomBanner = self.bottomBanner{
+            UIApplication.shared.open(URL(string: bottomBanner.contentURL)! as URL, options: [:], completionHandler: nil)
+        }
+        
+    }
+  
 }
 extension HomeInHomeVC : TopTVCDelegate {
     func didTapSearchView() {
@@ -194,5 +212,27 @@ extension HomeInHomeVC : BrandRecommendTVCDelegate{
         UIApplication.shared.open(URL(string: brandModel.contentURL )! as URL, options: [:], completionHandler: nil)
     }
     
+    
+}
+
+extension HomeInHomeVC : SensibleStyleShotTVCDelegate, ResponsiveStyleShotTVCDelegate , EcoTopicTVCDelegate{
+    func didTapEachCells(styleShotIdx: Int, userNickName: String) {
+        if self.nickName == userNickName {
+
+            pushToStyleShot(isMine: true, styleShotIdx: styleShotIdx)
+        }else{
+      
+            pushToStyleShot(isMine: false, styleShotIdx: styleShotIdx)
+        }
+    }
+    
+   
+    func pushToStyleShot(isMine : Bool,styleShotIdx : Int){
+        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = isMine
+        styleDetailVC.styleShotIdx = styleShotIdx
+        self.navigationController?.pushViewController(styleDetailVC, animated: true)
+    }
     
 }
