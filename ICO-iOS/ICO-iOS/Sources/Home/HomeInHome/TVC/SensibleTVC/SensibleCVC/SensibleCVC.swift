@@ -53,7 +53,7 @@ class SensibleCVC: UICollectionViewCell {
 // MARK: - CollectionView Configure
 extension SensibleCVC {
     func collectionViewConfigure(){
-
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: SensibleCollectionViewCellCVC.identifier, bundle: nil)

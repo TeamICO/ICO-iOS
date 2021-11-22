@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +35,7 @@
                                                                 </connections>
                                                             </containerView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="57L-JQ-050" secondAttribute="bottom" id="1LI-QD-p5k"/>
                                                             <constraint firstItem="57L-JQ-050" firstAttribute="top" secondItem="Ba7-6S-dIJ" secondAttribute="top" id="6CW-SM-4cO"/>
@@ -55,7 +54,7 @@
                                                                 </connections>
                                                             </containerView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="OC5-nl-Ii7" firstAttribute="top" secondItem="6El-jO-ecJ" secondAttribute="top" id="Bxc-On-FVY"/>
                                                             <constraint firstAttribute="bottom" secondItem="OC5-nl-Ii7" secondAttribute="bottom" id="C5l-aD-8I1"/>
@@ -64,9 +63,10 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="1he-dM-Eqg" firstAttribute="leading" secondItem="SN4-5k-RW5" secondAttribute="leading" id="Vi1-RN-gyA"/>
                                             <constraint firstAttribute="bottom" secondItem="1he-dM-Eqg" secondAttribute="bottom" id="Yrq-Uy-C0G"/>
@@ -75,6 +75,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="SN4-5k-RW5" firstAttribute="height" secondItem="vZE-CB-iZR" secondAttribute="height" id="BIQ-a6-Enz"/>
                                     <constraint firstItem="SN4-5k-RW5" firstAttribute="leading" secondItem="vZE-CB-iZR" secondAttribute="leading" id="HJe-fo-HuM"/>
@@ -127,7 +128,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="cdx-hw-ddG" firstAttribute="centerX" secondItem="i2B-08-uKD" secondAttribute="centerX" id="VXS-at-LcW"/>
                                             <constraint firstAttribute="width" constant="40" id="kSM-9G-pu7"/>
@@ -146,7 +147,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Tcv-nj-S3O"/>
                                             <constraint firstItem="I8U-TS-HrJ" firstAttribute="centerY" secondItem="tdS-Kr-x74" secondAttribute="centerY" id="Yug-AX-jjz"/>
@@ -237,8 +238,5 @@
     <resources>
         <image name="icAlram1" width="24" height="24"/>
         <image name="icHeart1" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

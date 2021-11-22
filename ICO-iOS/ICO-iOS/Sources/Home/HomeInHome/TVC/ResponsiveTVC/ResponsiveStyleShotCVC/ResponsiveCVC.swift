@@ -68,7 +68,7 @@ class ResponsiveCVC: UICollectionViewCell {
 // MARK: - CollectionView Configure
 extension ResponsiveCVC {
     func collectionViewConfigure(){
-
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: ResponsiveCollectionViewCellCVC.identifier, bundle: nil)

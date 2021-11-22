@@ -44,7 +44,7 @@ class ResponsiveStyleShotTVC: UITableViewCell {
 extension ResponsiveStyleShotTVC {
     func collectionViewConfigure(){
 
-        
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: ResponsiveCVC.identifier, bundle: nil)

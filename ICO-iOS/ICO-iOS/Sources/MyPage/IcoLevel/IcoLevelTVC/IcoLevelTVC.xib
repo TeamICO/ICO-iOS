@@ -57,6 +57,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="skU-0l-pN9" firstAttribute="leading" secondItem="gnr-XR-La3" secondAttribute="trailing" constant="16" id="GU8-5i-J7f"/>
                     <constraint firstItem="gnr-XR-La3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Yxk-RH-J3f"/>
@@ -68,6 +69,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="icoLevelImage" destination="mLT-nY-uBr" id="34X-5v-Xr6"/>
                 <outlet property="levelDes" destination="skU-0l-pN9" id="YBU-T0-FG3"/>

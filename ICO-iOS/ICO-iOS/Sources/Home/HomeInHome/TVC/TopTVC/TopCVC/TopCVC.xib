@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -37,11 +36,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="을 위한 뷰티" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfk-za-Vuu">
                                 <rect key="frame" x="60.5" y="7.5" width="68" height="17"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nWO-ax-3yT" firstAttribute="centerY" secondItem="AXz-qm-CLu" secondAttribute="centerY" id="0Oj-qn-xmk"/>
                             <constraint firstItem="Pfk-za-Vuu" firstAttribute="leading" secondItem="6BP-Y1-x7R" secondAttribute="trailing" id="2dh-2Z-FPS"/>
@@ -66,6 +65,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="AXz-qm-CLu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="M0d-pk-0I9"/>
                 <constraint firstAttribute="trailing" secondItem="AXz-qm-CLu" secondAttribute="trailing" id="OCg-Xu-oGu"/>
@@ -83,8 +83,5 @@
     </objects>
     <resources>
         <image name="illust-product-vegan" width="80.5" height="80"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

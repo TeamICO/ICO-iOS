@@ -60,6 +60,7 @@ class ProfileMyEcoKeywordTVC: UITableViewCell {
     
     @IBOutlet weak var chemicalLabel: UILabel!
     
+    @IBOutlet weak var chemicalScrollView: UIScrollView!
     var isEcoKeywordState = Array(repeating: false, count: 14)
     var seletedKeywords = [Int]()
     

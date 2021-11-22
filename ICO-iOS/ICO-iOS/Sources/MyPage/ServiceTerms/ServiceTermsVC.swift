@@ -40,7 +40,7 @@ extension ServiceTermsVC {
         tableView.register(IcoLevelTopTVCNib, forCellReuseIdentifier: ServiceTermsTVC.identifier)
 
    
-        
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = nil
@@ -64,9 +64,12 @@ extension ServiceTermsVC : UITableViewDelegate, UITableViewDataSource {
             // 하단 여백 셀
             return UITableViewCell()
         default :
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: ServiceTermsTVC.identifier, for: indexPath) as! ServiceTermsTVC
             cell.titleLabel.text = models[indexPath.section]
-            
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.appColor(.tableViewCellColor)
+            cell.selectedBackgroundView =  bgColorView
             return cell
         }
       

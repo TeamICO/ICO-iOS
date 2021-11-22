@@ -78,7 +78,7 @@ class TopTVC: UITableViewCell {
 // MARK: - CollectionView Configure
 extension TopTVC {
     func collectionViewConfigure(){
-        
+        collectionView.backgroundColor = .white
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -86,7 +86,7 @@ extension TopTVC {
         collectionView.register(nib, forCellWithReuseIdentifier: TopCVC.identifier)
         let bannerNib = UINib(nibName: TopBannerCVC.identifier, bundle: nil)
         bannerCollectionView.register(bannerNib, forCellWithReuseIdentifier: TopBannerCVC.identifier)
-        
+        bannerCollectionView.backgroundColor = .white
         bannerCollectionView.delegate = self
         bannerCollectionView.dataSource = self
     }

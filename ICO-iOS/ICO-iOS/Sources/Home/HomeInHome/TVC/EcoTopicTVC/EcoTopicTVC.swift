@@ -53,7 +53,7 @@ class EcoTopicTVC: UITableViewCell {
 // MARK: - CollectionView Configure
 extension EcoTopicTVC {
     func collectionViewConfigure(){
-        
+        collectionView.backgroundColor = .white
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 17, bottom: 0, right: 17)
         collectionView.delegate = self
         collectionView.dataSource = self
