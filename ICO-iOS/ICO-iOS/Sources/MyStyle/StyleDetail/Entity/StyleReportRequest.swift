@@ -20,4 +20,7 @@ struct LikeRequest: Codable {
     let styleshotIdx: Int
 }
 
+struct disLikeRequest: Codable{
+    let status: String
+}
 
