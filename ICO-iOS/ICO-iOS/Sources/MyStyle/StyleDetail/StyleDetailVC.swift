@@ -172,6 +172,12 @@ class StyleDetailVC: UIViewController {
             var cnt = StyleDetailData?.likeCnt ?? 0
             cnt = cnt + 1
             heartNum.text = "\(cnt)"
+        }else if heartBtn.isSelected == false{
+            let dislikeRequest = disLikeRequest(status: "N")
+            StyleDetailDataManager().disLikeStyle(dislikeRequest, self, styleshotIdx: styleShotIdx)
+            var cnt = StyleDetailData?.likeCnt ?? 0
+            cnt = cnt - 1
+            heartNum.text = "\(cnt)"
         }
     }
     
@@ -274,6 +280,10 @@ extension StyleDetailVC{
     }
     
     func didSuccessLikeStyle(message: String){
+        print(message)
+    }
+    
+    func didSuccessDisLikeStyle(message: String){
         print(message)
     }
 }
