@@ -29,7 +29,7 @@ class ResultSortCVC: UICollectionViewCell {
 // MARK: - CollectionView Configure
 extension ResultSortCVC {
     func collectionViewConfigure(){
-        
+        collectionView.backgroundColor = .white
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.delegate = self
         collectionView.dataSource = self

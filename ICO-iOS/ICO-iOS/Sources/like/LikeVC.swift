@@ -47,7 +47,7 @@ extension LikeVC{
 extension LikeVC {
     func collectionViewConfigure(){
       
-
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: LikeCVC.identifier, bundle: nil)
@@ -98,7 +98,7 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             return CGSize(width: view.width, height: 500)
         }else{
             collectionView.contentInset = UIEdgeInsets(top: 70, left: 16, bottom: 0, right: 16)
-            return CGSize(width: view.width/2-28, height: 238)
+            return CGSize(width: view.width/2-28, height: 248)
         }
        
     }

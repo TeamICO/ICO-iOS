@@ -97,7 +97,7 @@ extension LoginVC {
 // MARK: - CollectionView Configure
 extension LoginVC {
     func collectionViewConfigure(){
-        
+        collectionView.backgroundColor = .white
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self

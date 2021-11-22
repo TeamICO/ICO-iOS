@@ -58,7 +58,7 @@ extension AlarmVC {
         
         let noneAlarmNib = UINib(nibName: NoneAlarmTVC.identifier, bundle: nil)
         tableView.register(noneAlarmNib, forCellReuseIdentifier: NoneAlarmTVC.identifier)
-        
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = nil

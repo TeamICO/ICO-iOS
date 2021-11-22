@@ -44,7 +44,7 @@ class LikeCVC: UICollectionViewCell {
 // MARK: - CollectionView Configure
 extension LikeCVC {
     func collectionViewConfigure(){
-
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: EcoTopicCollectionViewCellCVC.identifier, bundle: nil)
@@ -54,28 +54,13 @@ extension LikeCVC {
     func configure(with viewModel : LikeCVCViewModel){
         self.userNameLabel.text = viewModel.nickName
         self.styleshotIdx = viewModel.styleshotIdx
-        guard let productUrl = URL(string: viewModel.userContentImage), let userUrl = URL(string: viewModel.userImage) else{
-                return
-            }
-        setImage(url: productUrl, imageV: self.contentImage)
-        setImage(url: userUrl, imageV: self.userImage)
+        self.contentImage.setImage(with: viewModel.userContentImage)
+        self.userImage.setImage(with: viewModel.userImage)
+      
         
         
     }
-    func setImage(url : URL,imageV : UIImageView){
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        imageV.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
-    }
+
 }
 extension LikeCVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

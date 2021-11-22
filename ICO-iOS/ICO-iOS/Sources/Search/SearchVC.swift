@@ -74,7 +74,7 @@ extension SearchVC {
         let sensitiveNib = UINib(nibName: HotKeywordTVC.identifier, bundle: nil)
         tableView.register(sensitiveNib, forCellReuseIdentifier: HotKeywordTVC.identifier)
    
-        
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = nil
@@ -86,7 +86,7 @@ extension SearchVC {
 // MARK: - TableView Delegate, DataSource
 extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
         
     
     }
@@ -134,9 +134,9 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 
             switch section {
-            case 2 :
+            case 1 :
                 // 광고 배너 높이 조절
-                return 70
+                return 94
             default:
                 return 12
             }
@@ -147,27 +147,15 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
    
             
             switch section {
-            case 2 :
+            case 1 :
                 // 광고 배너 높이 조절
-                let footer = UIImageView(frame: CGRect(x: 0, y: 24, width: view.width, height: 70))
+                let footer =  UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 94))
+                let imageview = UIImageView(frame: CGRect(x: 0, y: 24, width: footer.width, height: 70))
                 if let url = self.searchModel?.bannerImageURL{
-                    DispatchQueue.global().async {
-                        guard let url = URL(string: url)  else{
-                            return
-                        }
-                            let task = URLSession.shared.dataTask(with: url) {data, _, _ in
-                                guard let data = data else{
-                                    return
-                                }
-                                
-                                DispatchQueue.main.async {
-                                    footer.image = UIImage(data: data)
-                                }
-                            }
-                            task.resume()
-                    }
+                    imageview.setImage(with: url)
                 }
-               
+                footer.backgroundColor = .white
+                footer.addSubview(imageview)
                 return footer
             default:
                 let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))

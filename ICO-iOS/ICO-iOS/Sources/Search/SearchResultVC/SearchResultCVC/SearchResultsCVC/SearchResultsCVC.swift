@@ -39,7 +39,7 @@ class SearchResultsCVC: UICollectionViewCell {
 // MARK: - CollectionView Configure
 extension SearchResultsCVC {
     func collectionViewConfigure(){
-
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: SearchResultCollectionViewCellCVC.identifier, bundle: nil)
