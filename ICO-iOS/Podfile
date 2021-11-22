@@ -21,6 +21,7 @@ target 'ICO-iOS' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
   pod 'Firebase/Crashlytics'
+  pod 'Firebase/Messaging'
   
   pod 'DeviceKit'
 end

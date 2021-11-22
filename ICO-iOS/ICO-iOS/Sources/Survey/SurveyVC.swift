@@ -56,6 +56,7 @@ class SurveyVC: ViewController {
     @IBOutlet weak var chemicalLabel: UILabel!
     @IBOutlet weak var fdaLabel: UILabel!
     
+    @IBOutlet weak var userNameLabel: UILabel!
     var isEcoKeywordState = Array(repeating: false, count: 14)
     var seletedKeywords = [Int]()
     
@@ -83,20 +84,8 @@ class SurveyVC: ViewController {
         passButton.layer.borderWidth = 1
         
         
-        
-        mainLabel.text = "\(self.name)님의 관심 키워드를\n선택해주세요."
-        mainLabel.font = UIFont.init(name: "AppleSDGothicNeo-Light", size: 24)
-        
-        /*
-        let font = UIFont.init(name: "AppleSDGothicNeo-SemiBol", size: 24)
-        let attributedStr = NSMutableAttributedString(string: mainLabel.text!)
-        //let paragraphStyle = NSMutableParagraphStyle()
-        //paragraphStyle.lineSpacing = 8
-        attributedStr.addAttribute(.font, value: font, range: (mainLabel.text! as NSString).range(of: "\(name)"))
-       // attributedStr.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMaxRange(0, attributedStr.length))
-        mainLabel.attributedText = attributedStr*/
-        
-        
+        userNameLabel.text = "\(self.name) 님의"
+
         for i in 0...3{
             titleLabel[i].font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16)
         }
@@ -131,6 +120,14 @@ class SurveyVC: ViewController {
                                                       jwtToken: jwtToken) { response in
             guard response.isSuccess else{
                 return
+            }
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
+         
+                let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
+                let vc = baseTBC
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
             }
         }
        

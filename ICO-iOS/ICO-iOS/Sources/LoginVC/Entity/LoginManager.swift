@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import KakaoSDKAuth
 import KakaoSDKUser
-
+import FirebaseMessaging
 class LoginManager {
     static let shared = LoginManager()
     
@@ -40,16 +40,21 @@ class LoginManager {
        
     }
    
-    public func registerID(name : String?,snsToken : String,snsType: String, completion: @escaping (LoginResponse?)->Void) {
-
+    public func registerID(name : String?,snsToken : String,snsType: String,deviceToken: String?, completion: @escaping (LoginResponse?)->Void) {
+      
         let url = "https://dev.chuckwagon.shop/app/login"
+       
         var userName = ""
         if let name = name {
             userName = name
         }
+        
+       
+        print("디바이스 토근",deviceToken)
         let param = [
             "snsToken" : snsToken,
             "snsType" : snsType,
+            "pushToken" : deviceToken ?? "",
             "name" : userName
         ]
        
@@ -64,6 +69,7 @@ class LoginManager {
                 switch response.result {
                 
                 case .success(let response):
+                    print(response)
                     completion(response)
                     
                     
