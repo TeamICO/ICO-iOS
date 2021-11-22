@@ -15,7 +15,23 @@ class LoginManager {
     
     public func KakaoSignIn(completion: @escaping (String) -> Void){
         if !AuthApi.hasToken(){
-            
+            if UserApi.isKakaoTalkLoginAvailable(){
+                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                        if let error = error {
+                            print("로그인 실패 에러 : \(error)")
+
+                        }
+                        else {
+                            print("로그인 성공")
+                            
+                            _ = oauthToken
+                            if let accessToken = oauthToken?.accessToken{
+                                completion(accessToken)
+                            }
+                           
+                        }
+                }
+            }else{
                 UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                         if let error = error {
                             print("로그인 실패 에러 : \(error)")
@@ -31,6 +47,7 @@ class LoginManager {
                            
                         }
                 }
+            }
             
         }else{
             print("로그아웃 필요")
