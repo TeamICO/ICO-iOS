@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo3LCJpYXQiOjE2MzY2NTA1MjIsImV4cCI6MTY2ODE4NjUyMiwic3ViIjoidXNlckluZm8ifQ.jLgh0f3iW_2y4RzSQzLFEXKlXJSHyD7cCb4czAWGnVo",forKey: "jwtToken")
+//        UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo3LCJpYXQiOjE2MzY2NTA1MjIsImV4cCI6MTY2ODE4NjUyMiwic3ViIjoidXNlckluZm8ifQ.jLgh0f3iW_2y4RzSQzLFEXKlXJSHyD7cCb4czAWGnVo",forKey: "jwtToken")
         FirebaseApp.configure()
         registerRemoteNotification()
         setKakaoSDK()
@@ -143,9 +143,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
 
     private func routeToThirdScene(with promotinoCode: String) {
-        // 타겟 화면인 ViewController3 초기화
+        // 타겟 화면인 BaseTBC 초기화
         let storyboard = UIStoryboard(name: "MainSB", bundle: Bundle.main)
-        guard let viewController3 = storyboard.instantiateViewController(withIdentifier: "BaseTBC") as? BaseTBC else { return }
+        guard let basetbc = storyboard.instantiateViewController(withIdentifier: "BaseTBC") as? BaseTBC else { return }
         
 
         /// 이미 로그인 이 된 경우, 바로 present
@@ -153,7 +153,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             // 타겟 화면을 띄울 window의 rootViewController 참조
             let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
             let rootViewController = sceneDelegate.window?.rootViewController
-            rootViewController?.present(viewController3, animated: true, completion: nil)
+            rootViewController?.present(basetbc, animated: true, completion: nil)
         } else {
             /// 로그인이 안되어 있는 경우, 로그인 완료 시 나오는 페이지에 타겟 화면이 표출되도록 예약
         }

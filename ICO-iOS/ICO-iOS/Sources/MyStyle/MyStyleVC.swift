@@ -124,8 +124,13 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == styleCV{
             guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+            if let styleshot = serverData?.styleshot{
+                if !styleshot.isEmpty{
+                    styleCell.styleImage.setImage(with: styleshot[indexPath.row].imageURL)
+                }
+                
+            }
             
-            styleCell.styleImage.setImage(with: serverData?.styleshot[indexPath.row].imageURL ?? "")
             
             return styleCell
         }else{

@@ -93,12 +93,12 @@ extension ProfileSettingVC{
             return
         }
         ProfileManager.shared.getUserProfile(userIdx: self.userIdx, jwtToken: jwtToken) { [weak self] response in
-            guard let response = response else {
+            guard let response = response,let des = response.resultDescription else {
                 return
             }
             self?.profileModel = response
             self?.nickname = response.nickname
-            self?.profileDescription = response.resultDescription
+            self?.profileDescription = des
             let keywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
             self?.ecokeywords = keywords
             for i in 0..<keywords.count{
@@ -163,6 +163,7 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserIntroductionTVC.identifier, for: indexPath) as! ProfileUserIntroductionTVC
+            cell.delegate = self
             cell.selectionStyle = .none
             if let profileModel = self.profileModel{
                 cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
@@ -353,12 +354,13 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.editedImage] as? UIImage else{
+        guard let image = info[.editedImage] as? UIImage,
+        let newImage = resizeImage(image: image, newWidth: 100) else{
             return
         }
         
         let imageId = UUID().uuidString
-        BaseManager.shared.uploadImage(image: image, imageId: imageId) { success in
+        BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
             guard success else{
                 return
             }
@@ -371,7 +373,22 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
             }
         }
     }
+   func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage
+    }
+
+}
+extension ProfileSettingVC : ProfileUserIntroductionTVCDelegate{
+    func getTextViewText(text: String) {
+        self.profileDescription = text
+    }
     
     
 }
-

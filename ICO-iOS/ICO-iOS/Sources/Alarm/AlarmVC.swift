@@ -98,7 +98,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
             let cell = tableView.dequeueReusableCell(withIdentifier: NoneAlarmTVC.identifier, for: indexPath) as! NoneAlarmTVC
             cell.selectionStyle = .none
-           
+            tableView.isScrollEnabled = false
             return cell
         }else{
             switch indexPath.section{
@@ -163,7 +163,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
-            return 0
+            return 54
         }else{
             return 54
         }
@@ -171,7 +171,9 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
-            return UIView()
+            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 54))
+            header.backgroundColor = .red
+            return header
         }else{
             // 섹션 뷰 셋팅
             let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))

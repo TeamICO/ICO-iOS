@@ -19,13 +19,14 @@ final class ProfileUpdateManager{
             "X-ACCESS-TOKEN" : jwtToken
         ]
         let parameters: [String : Any] = [
-            "image" : "",
+            "image" : imageData ?? "",
             "nickname": nickname,
             "description": description,
             "activatedEcoKeyword" : activatedEcoKeyword,
             "marketingAgree": "Y",
             "styleAgree": "Y"
         ]
+   
         AF.request(url,
                    method: .patch,
                    parameters: parameters,

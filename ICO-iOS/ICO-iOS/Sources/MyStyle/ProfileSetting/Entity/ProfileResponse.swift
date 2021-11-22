@@ -17,8 +17,9 @@ struct ProfileResponse: Codable {
 
 // MARK: - Result
 struct ProfileResult: Codable {
-    let profileURL: String
-    let nickname, resultDescription: String
+    let profileURL: String?
+    let nickname : String
+    let resultDescription: String?
     let ecoKeyword: [ProfileEcoKeyword]
 
     enum CodingKeys: String, CodingKey {

@@ -84,11 +84,14 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         collectionView.deselectItem(at: indexPath, animated: true)
-        if self.nickName == likeResult[indexPath.row].nickname {
-            pushToStyleShot(isMine: true, styleShotIdx: likeResult[indexPath.row].styleshotIdx)
-        }else{
-            pushToStyleShot(isMine: false, styleShotIdx: likeResult[indexPath.row].styleshotIdx)
+        if !self.likeResult.isEmpty {
+            if self.nickName == likeResult[indexPath.row].nickname {
+                pushToStyleShot(isMine: true, styleShotIdx: likeResult[indexPath.row].styleshotIdx)
+            }else{
+                pushToStyleShot(isMine: false, styleShotIdx: likeResult[indexPath.row].styleshotIdx)
+            }
         }
+       
         
     }
     

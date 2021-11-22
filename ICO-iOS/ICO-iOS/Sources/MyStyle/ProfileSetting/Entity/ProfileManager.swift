@@ -32,9 +32,10 @@ final class ProfileManager{
                 switch response.result {
                 
                 case .success(let response):
-                    guard response.isSuccess == true else{
+                    guard response.isSuccess else{
                         return
                     }
+    
                     completion(response.result)
                     
                     

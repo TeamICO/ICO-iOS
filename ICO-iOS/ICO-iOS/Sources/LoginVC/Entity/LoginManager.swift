@@ -32,8 +32,6 @@ class LoginManager {
                         }
                 }
             
-         
-            
         }else{
             print("로그아웃 필요")
         }
@@ -49,8 +47,6 @@ class LoginManager {
             userName = name
         }
         
-       
-        print("디바이스 토근",deviceToken)
         let param = [
             "snsToken" : snsToken,
             "snsType" : snsType,
@@ -58,7 +54,6 @@ class LoginManager {
             "name" : userName
         ]
        
-
         AF.request(url,
                    method: .post,
                    parameters: param,
