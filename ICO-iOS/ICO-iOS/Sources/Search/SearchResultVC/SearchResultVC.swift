@@ -67,7 +67,7 @@ extension SearchResultVC{
 // MARK: - Configure CollecctionView
 extension SearchResultVC {
     func collectionViewConfigure(){
-        
+        collectionView.backgroundColor = .white
         let resultCountCVCNib = UINib(nibName: ResultCountCVC.identifier, bundle: nil)
         collectionView.register(resultCountCVCNib, forCellWithReuseIdentifier: ResultCountCVC.identifier)
         
@@ -151,7 +151,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             return CGSize(width: view.width, height: 64)
         case 2:
             
-            return CGSize(width: view.width/2, height: 238)
+            return CGSize(width: view.width/2, height: 248)
         default :
             return CGSize()
         }

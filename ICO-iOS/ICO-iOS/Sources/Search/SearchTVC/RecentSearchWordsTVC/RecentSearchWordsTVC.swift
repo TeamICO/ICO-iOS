@@ -55,6 +55,7 @@ class RecentSearchWordsTVC: UITableViewCell {
 // MARK: - CollectionView Configure
 extension RecentSearchWordsTVC {
     func collectionViewConfigure(){
+        collectionView.backgroundColor = .white
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.delegate = self
         collectionView.dataSource = self

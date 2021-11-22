@@ -25,7 +25,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 스타일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA7-L2-j82" customClass="BasePaddingLabel" customModule="ICO_iOS" customModuleProvider="target">
-                        <rect key="frame" x="56" y="12" width="67.5" height="22.5"/>
+                        <rect key="frame" x="56" y="12" width="55.5" height="14.5"/>
                         <color key="backgroundColor" red="0.92941176470588238" green="0.9882352941176471" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                         <color key="textColor" red="0.019607843137254902" green="0.53725490196078429" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,9 +37,9 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지으니 님외 4명이 내 게시물에 좋아요로 반응했습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9K-Rg-xw7">
-                        <rect key="frame" x="52" y="44.5" width="222" height="17"/>
+                        <rect key="frame" x="52" y="36.5" width="222" height="17"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-arrow-right" translatesAutoresizingMaskIntoConstraints="NO" id="ZJn-bw-WI2">
@@ -50,12 +50,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5분 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4V-7G-dai">
-                        <rect key="frame" x="52" y="67.5" width="30" height="14.5"/>
+                        <rect key="frame" x="52" y="59.5" width="30" height="14.5"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                         <color key="textColor" red="0.61960784313725492" green="0.62352941176470589" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="D4V-7G-dai" firstAttribute="leading" secondItem="sOA-ma-RFk" secondAttribute="trailing" constant="12" id="NUp-RS-dDb"/>
                     <constraint firstItem="sOA-ma-RFk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Wgx-rI-Ouq"/>
@@ -82,7 +83,7 @@
     </objects>
     <designables>
         <designable name="hA7-L2-j82">
-            <size key="intrinsicContentSize" width="67.5" height="22.5"/>
+            <size key="intrinsicContentSize" width="55.5" height="14.5"/>
         </designable>
     </designables>
     <resources>

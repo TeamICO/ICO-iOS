@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SearchResultsCVC" customModule="ICO_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="198" height="281"/>
+            <rect key="frame" x="0.0" y="0.0" width="198" height="258"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="198" height="281"/>
+                <rect key="frame" x="0.0" y="0.0" width="198" height="258"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Af2-1w-WcG">
@@ -89,12 +89,13 @@
                 <constraint firstItem="GBb-Fq-mMb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="a7j-hF-qKG"/>
                 <constraint firstItem="Af2-1w-WcG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bqQ-WG-LrR"/>
                 <constraint firstItem="SJL-xJ-13o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="c90-li-a5R"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="L6n-XB-zos" secondAttribute="bottom" constant="20" id="e3Z-pR-d8Q"/>
                 <constraint firstItem="L6n-XB-zos" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="e79-8c-YVh"/>
                 <constraint firstItem="SJL-xJ-13o" firstAttribute="top" secondItem="Af2-1w-WcG" secondAttribute="bottom" constant="7" id="hvf-Ch-rK8"/>
                 <constraint firstItem="CYL-MM-zWx" firstAttribute="leading" secondItem="SJL-xJ-13o" secondAttribute="trailing" constant="8" id="vLN-vf-Zxu"/>
                 <constraint firstItem="L6n-XB-zos" firstAttribute="top" secondItem="SJL-xJ-13o" secondAttribute="bottom" constant="10" id="yTq-CI-gMP"/>
             </constraints>
-            <size key="customSize" width="198" height="281"/>
+            <size key="customSize" width="198" height="258"/>
             <connections>
                 <outlet property="collectionView" destination="L6n-XB-zos" id="txO-w1-ecA"/>
                 <outlet property="gradientView" destination="78G-ih-HdR" id="5Wn-Po-a7H"/>
@@ -103,7 +104,7 @@
                 <outlet property="userImage" destination="SJL-xJ-13o" id="x6Y-D3-WRG"/>
                 <outlet property="userNameLabel" destination="CYL-MM-zWx" id="o9l-Yl-YaY"/>
             </connections>
-            <point key="canvasLocation" x="239.13043478260872" y="201.89732142857142"/>
+            <point key="canvasLocation" x="239.13043478260872" y="194.19642857142856"/>
         </collectionViewCell>
     </objects>
     <resources>
