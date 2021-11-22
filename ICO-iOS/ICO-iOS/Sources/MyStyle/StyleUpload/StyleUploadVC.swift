@@ -265,6 +265,8 @@ class StyleUploadVC: UIViewController {
 
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+        checkEco(select: numberList)
+        print(ecoList)
     }
     
     @IBAction func removeBtn1Clicked(_ sender: Any) {
@@ -279,9 +281,9 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel1Btn(_ sender: Any) {
         ecoLevel[0].isSelected = !ecoLevel[0].isSelected
         if ecoLevel[0].isSelected{
-            ecoLevelScore.text = "\(1.0)"
+            ecoLevelScore.text = "\(1)"
         }else{
-            ecoLevelScore.text = "\(0.0)"
+            ecoLevelScore.text = "\(0)"
             ecoLevel[0].isSelected = false
             ecoLevel[1].isSelected = false
             ecoLevel[2].isSelected = false
@@ -293,10 +295,10 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel2Btn(_ sender: Any) {
         ecoLevel[1].isSelected = !ecoLevel[1].isSelected
         if ecoLevel[1].isSelected{
-            ecoLevelScore.text = "\(2.0)"
+            ecoLevelScore.text = "\(2)"
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(1.0)"
+            ecoLevelScore.text = "\(1)"
             ecoLevel[1].isSelected = false
             ecoLevel[2].isSelected = false
             ecoLevel[3].isSelected = false
@@ -307,11 +309,11 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel3Btn(_ sender: Any) {
         ecoLevel[2].isSelected = !ecoLevel[2].isSelected
         if ecoLevel[2].isSelected{
-            ecoLevelScore.text = "\(3.0)"
+            ecoLevelScore.text = "\(3)"
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(2.0)"
+            ecoLevelScore.text = "\(2)"
             ecoLevel[2].isSelected = false
             ecoLevel[3].isSelected = false
             ecoLevel[4].isSelected = false
@@ -321,12 +323,12 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel4Btn(_ sender: Any) {
         ecoLevel[3].isSelected = !ecoLevel[3].isSelected
         if ecoLevel[3].isSelected{
-            ecoLevelScore.text = "\(4.0)"
+            ecoLevelScore.text = "\(4)"
             ecoLevel[2].isSelected = true
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(3.0)"
+            ecoLevelScore.text = "\(3)"
             ecoLevel[3].isSelected = false
             ecoLevel[4].isSelected = false
         }
@@ -336,13 +338,13 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel5Btn(_ sender: Any) {
         ecoLevel[4].isSelected = !ecoLevel[4].isSelected
         if ecoLevel[4].isSelected{
-            ecoLevelScore.text = "\(5.0)"
+            ecoLevelScore.text = "\(5)"
             ecoLevel[3].isSelected = true
             ecoLevel[2].isSelected = true
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(4.0)"
+            ecoLevelScore.text = "\(4)"
             ecoLevel[4].isSelected = false
         }
     }
@@ -352,6 +354,7 @@ class StyleUploadVC: UIViewController {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
+        imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -359,10 +362,13 @@ class StyleUploadVC: UIViewController {
     @IBAction func styleUploadBtn(_ sender: Any) {
         checkEco(select: numberList)
         print(ecoList)
-        let ecoScore = Int(self.ecoLevelScore.text!)
-        let styleUploadRequest = StyleUploadRequest(image: "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: ecoScore ?? 0, purpleDescription: memoTextView.text!, hashtag: hashTagArr)
+        let ecoScore = UInt(self.ecoLevelScore.text!)
+        let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: Int(ecoScore ?? 0), purpleDescription: memoTextView.text!, hashtag: hashTagArr)
         print(hashTagArr)
+        print(ecoScore)
+        print(Int(ecoScore ?? 0))
         StyleUploadDataManager().styleUpload(styleUploadRequest, self)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
@@ -370,19 +376,14 @@ class StyleUploadVC: UIViewController {
 extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        /*
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            newImageView.contentMode = .scaleAspectFill
-            newImageView.image = pickedImage
-            photoNum = 1
-            imgNumLabel.text = "\(photoNum)/1"
-            
-        }*/
         dismiss(animated: true, completion: nil)
         guard let image = info[.editedImage] as? UIImage else{
             return
         }
-        print(image)
+        newImageView.image = image
+        newImageView.contentMode = .scaleAspectFill
+        photoNum = 1
+        imgNumLabel.text = "\(photoNum)/1"
         
         let imageId = UUID().uuidString
         BaseManager.shared.uploadImage(image: image, imageId: imageId) { success in
@@ -398,7 +399,6 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
             }
         }
         
-        //dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -475,6 +475,5 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
 extension StyleUploadVC{
     func didSuccessStyleUpload(message: String,code: Int){
         print(message)
-        print(code)
     }
 }
