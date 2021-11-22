@@ -53,7 +53,7 @@ extension IcoLevelVC {
 
         let IcoLevelTVCNib = UINib(nibName: IcoLevelTVC.identifier, bundle: nil)
         tableView.register(IcoLevelTVCNib, forCellReuseIdentifier: IcoLevelTVC.identifier)
-        
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = nil

@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,11 +25,11 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5C-kW-VmY">
                                                 <rect key="frame" x="16" y="70" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="C5C-kW-VmY" firstAttribute="top" secondItem="KH8-PK-fWt" secondAttribute="top" constant="70" id="8he-he-LJ4"/>
                                             <constraint firstAttribute="bottom" secondItem="C5C-kW-VmY" secondAttribute="bottom" constant="16" id="QhP-FR-rcB"/>
@@ -39,6 +38,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="KH8-PK-fWt" firstAttribute="trailing" secondItem="eyf-a5-sVG" secondAttribute="trailing" id="S0o-jo-qI1"/>
                                     <constraint firstItem="KH8-PK-fWt" firstAttribute="top" secondItem="eyf-a5-sVG" secondAttribute="top" id="XuJ-Jc-SpP"/>
@@ -92,7 +92,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="lhs-St-Tdu" firstAttribute="leading" secondItem="Y9c-1M-1aO" secondAttribute="trailing" constant="10" id="1jr-fw-qNb"/>
                                     <constraint firstItem="1ss-rC-ttV" firstAttribute="centerY" secondItem="r7H-RV-CBl" secondAttribute="centerY" id="48c-h9-BaU"/>
@@ -105,7 +105,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iVt-5P-hcJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="01c-D8-3AU"/>
                             <constraint firstItem="r7H-RV-CBl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9jA-ZQ-eWs"/>
@@ -128,8 +128,5 @@
     <resources>
         <image name="icArrowLeft" width="24" height="24"/>
         <image name="icNavigationHomeClick1" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

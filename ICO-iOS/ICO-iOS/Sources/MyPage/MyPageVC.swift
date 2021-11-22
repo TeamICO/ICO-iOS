@@ -209,7 +209,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         // 각 섹션 별 높이
         switch indexPath.section {
         case 0 :
-            return 322
+            return 342
         case 1:
             return 178
         default:

@@ -131,7 +131,7 @@ extension ProfileSettingVC {
         
         let ecoKeywordNib = UINib(nibName: ProfileMyEcoKeywordTVC.identifier, bundle: nil)
         tableView.register(ecoKeywordNib, forCellReuseIdentifier: ProfileMyEcoKeywordTVC.identifier)
-        
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = nil

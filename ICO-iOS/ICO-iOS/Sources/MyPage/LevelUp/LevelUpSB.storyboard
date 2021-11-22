@@ -102,7 +102,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0DO-Td-eLg" firstAttribute="top" secondItem="y4w-Ab-YFG" secondAttribute="bottom" constant="24" id="336-ak-qK7"/>
                             <constraint firstItem="y4w-Ab-YFG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3rv-X1-JfY"/>

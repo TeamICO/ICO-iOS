@@ -34,6 +34,7 @@
                         </constraints>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="LBH-xd-LC9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fhs-40-aGR"/>
                     <constraint firstItem="LBH-xd-LC9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="blq-iO-lSk"/>
@@ -42,6 +43,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="featureLabel" destination="LBH-xd-LC9" id="dfp-hz-7E9"/>
             </connections>

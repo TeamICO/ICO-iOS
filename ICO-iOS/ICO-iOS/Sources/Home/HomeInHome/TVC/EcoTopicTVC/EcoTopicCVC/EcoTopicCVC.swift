@@ -42,7 +42,7 @@ class EcoTopicCVC: UICollectionViewCell {
 // MARK: - CollectionView Configure
 extension EcoTopicCVC {
     func collectionViewConfigure(){
-
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: EcoTopicCollectionViewCellCVC.identifier, bundle: nil)

@@ -45,6 +45,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Twp-PY-7IC" secondAttribute="trailing" constant="16" id="2cQ-jL-fdz"/>
                     <constraint firstAttribute="bottom" secondItem="1rU-Ms-6RU" secondAttribute="bottom" constant="16" id="HVU-ZH-AL7"/>
@@ -57,6 +58,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="collectionView" destination="1rU-Ms-6RU" id="1AB-37-F8k"/>
             </connections>

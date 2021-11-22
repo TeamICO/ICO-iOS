@@ -30,6 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Ic1-dY-0kI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GQC-1i-Vjz"/>
                     <constraint firstItem="Ic1-dY-0kI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IO0-vg-EZh"/>

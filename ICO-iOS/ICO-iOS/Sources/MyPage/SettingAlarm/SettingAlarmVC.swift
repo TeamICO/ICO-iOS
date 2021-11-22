@@ -45,7 +45,7 @@ extension SettingAlarmVC {
         tableView.register(settingAlarmTVCNib, forCellReuseIdentifier: SettingAlarmTVC.identifier)
 
 
-        
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = nil
@@ -92,7 +92,7 @@ extension SettingAlarmVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0 : return 110 // 앱 알림 설정 높이 78 + 탑 바텀 패딩 32
+        case 0 : return 164 // 앱 알림 설정 높이 78 + 탑 바텀 패딩 32 + 탑 54
         default : return 70
         }
      

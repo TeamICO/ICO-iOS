@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-0S-kD4">
-                        <rect key="frame" x="0.0" y="13" width="320" height="309"/>
+                        <rect key="frame" x="0.0" y="33" width="320" height="309"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cns-dp-ty8">
                                 <rect key="frame" x="16" y="16" width="54" height="54"/>
@@ -44,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RGJ-b1-TI2"/>
                                     <constraint firstItem="imF-mW-tlq" firstAttribute="centerY" secondItem="4g9-Ge-2Hx" secondAttribute="centerY" id="bXV-y6-y9X"/>
@@ -137,7 +136,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="yzB-3C-Wk9" firstAttribute="top" secondItem="xAN-Yk-bu5" secondAttribute="bottom" constant="3" id="3PU-b5-Bx1"/>
                                     <constraint firstItem="crK-pG-MWZ" firstAttribute="top" secondItem="PO8-dw-P8k" secondAttribute="bottom" constant="16" id="5ae-So-nxD"/>
@@ -207,11 +206,11 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="gxa-0S-kD4" secondAttribute="trailing" id="dhg-Iu-5Fs"/>
                     <constraint firstItem="gxa-0S-kD4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wbY-7W-DuY"/>
-                    <constraint firstItem="gxa-0S-kD4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="xIO-SR-0RW"/>
+                    <constraint firstItem="gxa-0S-kD4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="33" id="xIO-SR-0RW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" red="0.95294117647058818" green="0.97254901960784312" blue="0.96862745098039216" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="earthLabel" destination="ks3-YA-AzP" id="igR-8W-bW2"/>
                 <outlet property="secondUserNameLabel" destination="SUO-hk-mvI" id="3OR-7w-LzV"/>
@@ -229,8 +228,5 @@
         <image name="emoji-mypage-earth" width="165" height="165"/>
         <image name="emoji-mypage-tree" width="165" height="165"/>
         <image name="illust-character" width="400" height="400"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
