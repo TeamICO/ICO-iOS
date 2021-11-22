@@ -16,6 +16,9 @@ PODS:
   - Firebase/Crashlytics (7.7.0):
     - Firebase/CoreOnly
     - FirebaseCrashlytics (~> 7.7.0)
+  - Firebase/Messaging (7.7.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 7.7.0)
   - Firebase/Storage (7.7.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 7.7.0)
@@ -53,6 +56,18 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (7.11.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
+  - FirebaseMessaging (7.7.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstanceID (~> 7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Reachability (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
   - FirebaseStorage (7.7.0):
     - FirebaseCore (~> 7.0)
     - GTMSessionFetcher/Core (~> 1.4)
@@ -140,6 +155,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Crashlytics
+  - Firebase/Messaging
   - Firebase/Storage
   - KakaoSDK
   - Kingfisher (~> 7.0)
@@ -160,6 +176,8 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCrashlytics
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -194,6 +212,8 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 179bf3831213451c8addd036aca7fcf5492ec154
   FirebaseCrashlytics: 47af228115805e190b566db12c028263531b8ce0
   FirebaseInstallations: 42c86e7b02ff75b7f27f85833bf5dcb5f38a9774
+  FirebaseInstanceID: ad5135045a498d7775903efd39762d2cdfa1be27
+  FirebaseMessaging: ce33c2537fdda1d1a4bc82b2245e3c3bf9107684
   FirebaseStorage: 9b940765fa33494258fab6131b6180fc7c2d80f5
   GoogleAppMeasurement: 0c3b134b2c0a90c4c24833873894bfe0e42a0384
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
@@ -217,6 +237,6 @@ SPEC CHECKSUMS:
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: f71e3118a9a3c7125a51d6dd166083b8fd300081
+PODFILE CHECKSUM: 77559f937141b3921306de062638bf2c9cd91822
 
 COCOAPODS: 1.10.1

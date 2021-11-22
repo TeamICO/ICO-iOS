@@ -38,7 +38,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가치있는 기업이었으면 좋겠어요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzS-ub-Kmd">
                                                         <rect key="frame" x="25" y="0.0" width="207" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -56,7 +56,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비건을 실천하고 있어요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjy-gS-jK4">
                                                         <rect key="frame" x="33" y="0.0" width="152" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -208,7 +208,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지속가능한 사회를 만들고 싶어요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo9-Fz-Mvr">
                                                         <rect key="frame" x="33" y="0.0" width="211" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -360,7 +360,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성분을 꼼꼼하게 보는 편이에요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLp-yI-A30">
                                                         <rect key="frame" x="33.5" y="0.0" width="198.5" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -593,16 +593,44 @@
                                                 <viewLayoutGuide key="contentLayoutGuide" id="nfu-9g-1b4"/>
                                                 <viewLayoutGuide key="frameLayoutGuide" id="z3Z-7R-3Wb"/>
                                             </scrollView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqY-Vm-pBd">
+                                                <rect key="frame" x="16" y="66" width="53" height="29"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 키워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OE1-XT-QdP">
+                                                <rect key="frame" x="74" y="66" width="110.5" height="29"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="를" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-u4-eCf">
+                                                <rect key="frame" x="184.5" y="66" width="21" height="29"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-AS-dXt">
+                                                <rect key="frame" x="16" y="95" width="130" height="29"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="OE1-XT-QdP" firstAttribute="leading" secondItem="xqY-Vm-pBd" secondAttribute="trailing" constant="5" id="2Hy-fT-j1G"/>
                                             <constraint firstItem="ghz-9P-mG8" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="3kc-uP-Z6M"/>
                                             <constraint firstItem="mym-MJ-tTf" firstAttribute="top" secondItem="oX9-BT-YrV" secondAttribute="bottom" constant="24" id="6Ln-Mk-Axe"/>
                                             <constraint firstItem="y0E-Vt-QnZ" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="AQv-ks-bx8"/>
                                             <constraint firstItem="t97-Yo-ceV" firstAttribute="top" secondItem="pLp-yI-A30" secondAttribute="bottom" constant="12" id="ATD-Ys-VXC"/>
+                                            <constraint firstItem="pi7-AS-dXt" firstAttribute="top" secondItem="xqY-Vm-pBd" secondAttribute="bottom" id="DOO-yf-bZ3"/>
+                                            <constraint firstItem="pi7-AS-dXt" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="Dr3-gS-n7U"/>
                                             <constraint firstItem="T13-ja-Yec" firstAttribute="top" secondItem="qzS-ub-Kmd" secondAttribute="bottom" constant="12" id="F0u-4q-dKY"/>
                                             <constraint firstAttribute="trailing" secondItem="y0E-Vt-QnZ" secondAttribute="trailing" id="G2l-tc-uhK"/>
                                             <constraint firstItem="mym-MJ-tTf" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="Gg9-iY-8vo"/>
+                                            <constraint firstItem="KTv-u4-eCf" firstAttribute="leading" secondItem="OE1-XT-QdP" secondAttribute="trailing" id="PWT-Jv-Nni"/>
                                             <constraint firstItem="oX9-BT-YrV" firstAttribute="top" secondItem="ghz-9P-mG8" secondAttribute="bottom" constant="12" id="QnP-Oz-Wek"/>
                                             <constraint firstItem="NCe-mi-x6F" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="RIW-rL-9ZG"/>
                                             <constraint firstAttribute="height" constant="850" id="SS7-2I-ZK5"/>
@@ -610,6 +638,7 @@
                                             <constraint firstAttribute="trailing" secondItem="oX9-BT-YrV" secondAttribute="trailing" id="XNb-gQ-6jS"/>
                                             <constraint firstItem="kjy-gS-jK4" firstAttribute="top" secondItem="T13-ja-Yec" secondAttribute="bottom" constant="24" id="Y2a-Ar-5EZ"/>
                                             <constraint firstItem="eQp-xE-Fvk" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="Zt4-Sb-bNz"/>
+                                            <constraint firstItem="xqY-Vm-pBd" firstAttribute="leading" secondItem="KCp-e9-U85" secondAttribute="leading" constant="16" id="fvu-FT-qgZ"/>
                                             <constraint firstItem="NCe-mi-x6F" firstAttribute="top" secondItem="y0E-Vt-QnZ" secondAttribute="bottom" constant="24" id="iC9-gz-ghZ"/>
                                             <constraint firstAttribute="trailing" secondItem="T13-ja-Yec" secondAttribute="trailing" constant="16" id="iJ7-xr-h14"/>
                                             <constraint firstItem="PWF-h4-BLu" firstAttribute="top" secondItem="KCp-e9-U85" secondAttribute="top" constant="150" id="kaK-cc-zb7"/>
@@ -691,7 +720,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="1Fk-jb-YSu"/>
                                     <constraint firstItem="ic5-vM-urW" firstAttribute="leading" secondItem="ASm-Lh-Qko" secondAttribute="leading" id="lFh-Fp-gZz"/>
@@ -702,9 +731,12 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xqY-Vm-pBd" firstAttribute="top" secondItem="ASm-Lh-Qko" secondAttribute="bottom" constant="12" id="6if-2E-9S1"/>
                             <constraint firstItem="ASm-Lh-Qko" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="86c-Hf-i6U"/>
                             <constraint firstItem="FyS-Wb-KnY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="P8H-Vj-lNt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7NH-Hf-zvh" secondAttribute="bottom" id="UNb-2O-3oj"/>
+                            <constraint firstItem="OE1-XT-QdP" firstAttribute="top" secondItem="ASm-Lh-Qko" secondAttribute="bottom" constant="12" id="XRe-z6-O92"/>
+                            <constraint firstItem="KTv-u4-eCf" firstAttribute="top" secondItem="ASm-Lh-Qko" secondAttribute="bottom" constant="12" id="YQH-j0-Eh8"/>
                             <constraint firstItem="hpe-mm-GP7" firstAttribute="leading" secondItem="7NH-Hf-zvh" secondAttribute="trailing" constant="17" id="YfN-5C-6id"/>
                             <constraint firstItem="7NH-Hf-zvh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="aDC-IJ-4mY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ASm-Lh-Qko" secondAttribute="trailing" id="bbb-tT-JiF"/>
@@ -747,6 +779,7 @@
                         <outlet property="tradeView" destination="M2P-CT-qeh" id="6Ve-7O-QFd"/>
                         <outlet property="upCyclingLabel" destination="zdD-5X-a3S" id="Mwd-TU-RZM"/>
                         <outlet property="upCyclingView" destination="Vof-Q8-hfe" id="FjC-L0-D7C"/>
+                        <outlet property="userNameLabel" destination="xqY-Vm-pBd" id="5ty-R6-mJO"/>
                         <outlet property="veganLabel" destination="kUD-4a-Ebi" id="C0C-1B-ZLY"/>
                         <outlet property="veganView" destination="vb3-Ss-duO" id="fTW-5a-vGx"/>
                         <outletCollection property="titleLabel" destination="qzS-ub-Kmd" collectionClass="NSMutableArray" id="Ysk-0f-RcB"/>

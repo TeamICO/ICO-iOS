@@ -12,7 +12,7 @@ import KakaoSDKUser
 import NaverThirdPartyLogin
 import Alamofire
 import DeviceKit
-
+import FirebaseMessaging
 class LoginVC: UIViewController {
     var nowPage = 0
     
@@ -184,10 +184,16 @@ extension LoginVC {
                
              return
            }
-           
-           guard let tokenType = loginInstance?.tokenType else { return }
-           guard let accessToken = loginInstance?.accessToken else { return }
-            LoginManager.shared.registerID(name: nil,snsToken: accessToken, snsType: "naver") { response in
+        
+        guard let tokenType = loginInstance?.tokenType else { return }
+        guard let accessToken = loginInstance?.accessToken else { return }
+        var deviceToken = ""
+        Messaging.messaging().token { token, error in
+            guard let token = token else{
+                return
+            }
+            deviceToken = token
+            LoginManager.shared.registerID(name: nil,snsToken: accessToken, snsType: "naver",deviceToken: deviceToken) { response in
                 guard let jwt = response?.result.jwt,
                       let message = response?.message,
                       let name = response?.result.nickname,
@@ -217,6 +223,8 @@ extension LoginVC {
                             
                         }
                   }
+        }
+        
          
     }
 }
@@ -259,40 +267,44 @@ extension LoginVC {
         kakaoLoginView.addGestureRecognizer(viewTap)
     }
     @objc func didTapKakaoView(){
-        
+        var decviceToken = ""
         LoginManager.shared.KakaoSignIn { response in
-            LoginManager.shared.registerID(name : nil,snsToken: response, snsType: "kakao") { response in
-                guard let jwt = response?.result.jwt,
-                          let message = response?.message,
-                          let name = response?.result.nickname,
-                          let userIdx = response?.result.userIdx else{
+            Messaging.messaging().token { token, error in
+                guard let token = token else{
                     return
                 }
-                UserDefaults.standard.set(jwt, forKey: "jwtToken")
-                DispatchQueue.main.async {
-                    if message == "회원가입 성공"{
-                        let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-                        guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-                        surveyVC.name = name
-                        surveyVC.userIdx = userIdx
-                        self.navigationController?.pushViewController(surveyVC, animated: true)
-                    }else if message == "로그인 성공"{
-                        let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
-                 
-                        let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
-                        let vc = baseTBC
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: true, completion: nil)
+                decviceToken = token
+                LoginManager.shared.registerID(name : nil,snsToken: response, snsType: "kakao",deviceToken: decviceToken) { response in
+                    guard let jwt = response?.result.jwt,
+                              let message = response?.message,
+                              let name = response?.result.nickname,
+                              let userIdx = response?.result.userIdx else{
+                        return
                     }
-                    
-                }
+                    UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                    DispatchQueue.main.async {
+                        if message == "회원가입 성공"{
+                            let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                            guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                            surveyVC.name = name
+                            surveyVC.userIdx = userIdx
+                            self.navigationController?.pushViewController(surveyVC, animated: true)
+                        }else if message == "로그인 성공"{
+                            let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
+                     
+                            let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
+                            let vc = baseTBC
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: true, completion: nil)
+                        }
+                        
+                    }
 
+                }
+                self.setUserInfo()
             }
-            self.setUserInfo()
+              
         }
-        
-        
-       
     }
     func setUserInfo(){
         UserApi.shared.me { user, error in
@@ -335,34 +347,38 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
                 let identityToken = appleIDCredential.identityToken,
                let authString = String(data: authorizationCode, encoding: .utf8),
                 let tokenString = String(data: identityToken, encoding: .utf8) {
-                print("authorizationCode: \(authorizationCode)")
-                print("identityToken: \(identityToken)")
-                print("authString: \(authString)")
-                print("tokenString: \(tokenString)")
-                LoginManager.shared.registerID(name :fullName ,snsToken: tokenString, snsType: "apple") { response in
-                    guard let jwt = response?.result.jwt,
-                          let message = response?.message,
-                          let name = response?.result.nickname,
-                          let userIdx = response?.result.userIdx  else{
+
+                var deviceToken = ""
+                Messaging.messaging().token { token, error in
+                    guard let token = token else{
                         return
                     }
-                    UserDefaults.standard.set(jwt, forKey: "jwtToken")
-                    DispatchQueue.main.async {
-                        if message == "회원가입 성공"{
-                            let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-                            guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-                            surveyVC.name = name
-                            surveyVC.userIdx = userIdx
-                            self.navigationController?.pushViewController(surveyVC, animated: true)
-                        }else if message == "로그인 성공"{
-                            let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
-                     
-                            let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
-                            let vc = baseTBC
-                            vc.modalPresentationStyle = .fullScreen
-                            self.present(vc, animated: true, completion: nil)
+                    deviceToken = token
+                    LoginManager.shared.registerID(name :fullName ,snsToken: tokenString, snsType: "apple",deviceToken: deviceToken) { response in
+                        guard let jwt = response?.result.jwt,
+                              let message = response?.message,
+                              let name = response?.result.nickname,
+                              let userIdx = response?.result.userIdx  else{
+                            return
                         }
+                        UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                        DispatchQueue.main.async {
+                            if message == "회원가입 성공"{
+                                let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                                guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                                surveyVC.name = name
+                                surveyVC.userIdx = userIdx
+                                self.navigationController?.pushViewController(surveyVC, animated: true)
+                            }else if message == "로그인 성공"{
+                                let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
+                         
+                                let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
+                                let vc = baseTBC
+                                vc.modalPresentationStyle = .fullScreen
+                                self.present(vc, animated: true, completion: nil)
+                            }
 
+                        }
                     }
                 }
             }
@@ -370,12 +386,7 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
             print("fullName: \(fullName)")
             print("email: \(email)")
            
-        case let passwordCredential as ASPasswordCredential:
-            // Sign in using an existing iCloud Keychain credential.
-            let username = passwordCredential.user
-            let password = passwordCredential.password
-            print("username: \(username)")
-            print("password: \(password)") default: break
+        default: break
             
         }
         
