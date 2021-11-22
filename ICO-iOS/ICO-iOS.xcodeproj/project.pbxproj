@@ -41,6 +41,9 @@
 		71DFD3972746730F003BEFE8 /* TagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DFD3952746730F003BEFE8 /* TagCVC.xib */; };
 		71DFD39B2746A864003BEFE8 /* ecoKeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */; };
 		71DFD39C2746A864003BEFE8 /* ecoKeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */; };
+		71E26729274B870800E99E1A /* StyleUploadDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E26728274B870800E99E1A /* StyleUploadDataManager.swift */; };
+		71E2672B274B872200E99E1A /* StyleUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2672A274B872200E99E1A /* StyleUploadRequest.swift */; };
+		71E2672D274B876100E99E1A /* StyleUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E2672C274B876100E99E1A /* StyleUploadResponse.swift */; };
 		71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */; };
 		71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */; };
 		71F8686F2749615400321DD1 /* hashTagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8686D2749615400321DD1 /* hashTagCVC.swift */; };
@@ -265,6 +268,9 @@
 		71DFD3952746730F003BEFE8 /* TagCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCVC.xib; sourceTree = "<group>"; };
 		71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoKeywordCVC.swift; sourceTree = "<group>"; };
 		71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ecoKeywordCVC.xib; sourceTree = "<group>"; };
+		71E26728274B870800E99E1A /* StyleUploadDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleUploadDataManager.swift; sourceTree = "<group>"; };
+		71E2672A274B872200E99E1A /* StyleUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleUploadRequest.swift; sourceTree = "<group>"; };
+		71E2672C274B876100E99E1A /* StyleUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleUploadResponse.swift; sourceTree = "<group>"; };
 		71E6E289273A6EFB00DB9E0B /* PopularIcoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoVC.swift; sourceTree = "<group>"; };
 		71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularIco.storyboard; sourceTree = "<group>"; };
 		71F8686D2749615400321DD1 /* hashTagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashTagCVC.swift; sourceTree = "<group>"; };
@@ -483,6 +489,7 @@
 		714F32B7273BE79B007324BC /* StyleUpload */ = {
 			isa = PBXGroup;
 			children = (
+				71E26727274B86E200E99E1A /* Entity */,
 				71F8686C2749613100321DD1 /* Cell */,
 				714F32B8273BE7C0007324BC /* StyleUploadVC.swift */,
 				714F32BA273BE7D0007324BC /* StyleUpload.storyboard */,
@@ -576,6 +583,16 @@
 				71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		71E26727274B86E200E99E1A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				71E26728274B870800E99E1A /* StyleUploadDataManager.swift */,
+				71E2672A274B872200E99E1A /* StyleUploadRequest.swift */,
+				71E2672C274B876100E99E1A /* StyleUploadResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		71F8686C2749613100321DD1 /* Cell */ = {
@@ -1740,10 +1757,12 @@
 				71DB5CA92748BDC60073D76F /* StyleReportRequest.swift in Sources */,
 				E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */,
 				714F32AF273BA635007324BC /* StyleCVC.swift in Sources */,
+				71E26729274B870800E99E1A /* StyleUploadDataManager.swift in Sources */,
 				717CB51B2743DDAF0044E227 /* StyleLifeResponse.swift in Sources */,
 				E94613A62743B7CF00A5F7C2 /* LoginResponse.swift in Sources */,
 				714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */,
 				E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */,
+				71E2672B274B872200E99E1A /* StyleUploadRequest.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
 				71E6E28A273A6EFB00DB9E0B /* PopularIcoVC.swift in Sources */,
@@ -1761,6 +1780,7 @@
 				E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */,
 				E9AF83DF273B5C9000D77D5F /* SearchResultVC.swift in Sources */,
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
+				71E2672D274B876100E99E1A /* StyleUploadResponse.swift in Sources */,
 				E9AF8407273B82DE00D77D5F /* MyPageUserInfoTVC.swift in Sources */,
 				E9C30DF7274604A5000B1592 /* SearchResultManager.swift in Sources */,
 				E9CAF1B527316981008F749B /* Date.swift in Sources */,
@@ -1968,7 +1988,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KWX544766F;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ICO-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1998,7 +2018,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ICO-iOS/ICO-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KWX544766F;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ICO-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
