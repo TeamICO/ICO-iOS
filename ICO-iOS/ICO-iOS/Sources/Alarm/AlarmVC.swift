@@ -163,7 +163,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
-            return 54
+            return 60
         }else{
             return 54
         }
@@ -171,8 +171,8 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
-            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 54))
-            header.backgroundColor = .red
+            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 60))
+            
             return header
         }else{
             // 섹션 뷰 셋팅
