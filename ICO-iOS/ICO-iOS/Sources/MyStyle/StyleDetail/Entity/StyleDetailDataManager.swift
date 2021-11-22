@@ -65,4 +65,18 @@ class StyleDetailDataManager{
 
             }
     }
+    
+    func disLikeStyle(_ paramter: disLikeRequest, _ viewcontroller: StyleDetailVC, styleshotIdx:Int){
+        AF.request("\(Constant.BASE_URL)/app/likes/\(styleshotIdx)",method: .patch,parameters: paramter,headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: StyleChangeResponse.self){ response in
+                switch response.result{
+                case .success(let response):
+                    viewcontroller.didSuccessDisLikeStyle(message: response.message)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
 }
