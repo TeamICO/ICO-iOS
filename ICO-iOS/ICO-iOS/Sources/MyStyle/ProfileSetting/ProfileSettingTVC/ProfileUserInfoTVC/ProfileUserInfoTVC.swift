@@ -43,7 +43,10 @@ class ProfileUserInfoTVC: UITableViewCell {
     }
     func configure(with viewModel : ProfileUserInfoTVCViewModel){
         self.nickNameTextField.text = viewModel.nickName
-        self.userImage.setImage(with: viewModel.profileImage)
+        if let profileImage = viewModel.profileImage{
+            self.userImage.setImage(with: profileImage )
+        }
+       
     
     }
     func textfieldConfigure(){
@@ -97,9 +100,9 @@ extension ProfileUserInfoTVC : UITextFieldDelegate {
     }
 }
 struct ProfileUserInfoTVCViewModel {
-    let profileImage : String
+    let profileImage : String?
     let nickName : String
-    let description : String
+    let description : String?
     init(with model : ProfileResult){
         self.profileImage = model.profileURL
         self.nickName = model.nickname

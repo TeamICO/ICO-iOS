@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol ProfileUserIntroductionTVCDelegate : AnyObject{
+    func getTextViewText(text: String)
+}
+ 
 class ProfileUserIntroductionTVC: UITableViewCell {
     static let identifier = "ProfileUserIntroductionTVC"
+    weak var delegate :  ProfileUserIntroductionTVCDelegate?
+    
     @IBOutlet weak var profileTextView: UITextView!
     @IBOutlet weak var profileTextCountLabel: UILabel!
     override func awakeFromNib() {
@@ -20,8 +26,15 @@ class ProfileUserIntroductionTVC: UITableViewCell {
         profileTextView.text = nil
     }
     func configure(with viewModel : ProfileUserInfoTVCViewModel){
-        self.profileTextView.text = viewModel.description
-        self.profileTextCountLabel.text = "\(viewModel.description.count)"
+        
+        self.profileTextView.text =  viewModel.description
+        if let text = viewModel.description{
+            
+            self.profileTextCountLabel.text = "\(text.count)"
+       
+        }
+       
+        
         
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -59,6 +72,10 @@ extension ProfileUserIntroductionTVC : UITextViewDelegate {
             profileTextView.deleteBackward()
         }
         profileTextCountLabel.text = "\(profileTextView.text.count)"
+        guard let text = profileTextView.text, text.isExists else{
+            return true
+        }
+        delegate?.getTextViewText(text: text)
         return true
     }
 }

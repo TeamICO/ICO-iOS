@@ -41,12 +41,12 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-i6-Hah">
-                        <rect key="frame" x="34" y="138" width="78" height="17"/>
+                        <rect key="frame" x="34" y="134" width="78" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="k7p-ps-Phm"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BAX-d0-IJp">
@@ -77,13 +77,13 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="BAX-d0-IJp" secondAttribute="bottom" id="2Sd-V7-voH"/>
                 <constraint firstItem="BAX-d0-IJp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="85Y-27-IK2"/>
-                <constraint firstItem="Xi5-i6-Hah" firstAttribute="top" secondItem="CFm-oY-eHW" secondAttribute="bottom" constant="18" id="Ftk-3x-lz5"/>
+                <constraint firstItem="Xi5-i6-Hah" firstAttribute="top" secondItem="CFm-oY-eHW" secondAttribute="bottom" constant="14" id="Ftk-3x-lz5"/>
+                <constraint firstItem="BAX-d0-IJp" firstAttribute="top" secondItem="rpD-4g-kHr" secondAttribute="bottom" constant="8" symbolic="YES" id="Jdf-yM-btH"/>
                 <constraint firstItem="rpD-4g-kHr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="L8b-9m-q2Q"/>
                 <constraint firstItem="CFm-oY-eHW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OaK-5Y-IpI"/>
                 <constraint firstAttribute="trailing" secondItem="Xi5-i6-Hah" secondAttribute="trailing" constant="8" id="PJ6-Rv-DTl"/>
                 <constraint firstItem="Xi5-i6-Hah" firstAttribute="leading" secondItem="rpD-4g-kHr" secondAttribute="trailing" constant="8" id="QW6-mn-6n8"/>
                 <constraint firstAttribute="trailing" secondItem="BAX-d0-IJp" secondAttribute="trailing" id="Uw0-de-P4q"/>
-                <constraint firstItem="BAX-d0-IJp" firstAttribute="top" secondItem="Xi5-i6-Hah" secondAttribute="bottom" constant="7" id="WY2-ZO-pZc"/>
                 <constraint firstItem="CFm-oY-eHW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YKZ-ic-My5"/>
                 <constraint firstItem="Xi5-i6-Hah" firstAttribute="leading" secondItem="rpD-4g-kHr" secondAttribute="trailing" constant="8" id="bVt-m9-tqo"/>
                 <constraint firstAttribute="trailing" secondItem="CFm-oY-eHW" secondAttribute="trailing" id="kFj-rh-bvI"/>

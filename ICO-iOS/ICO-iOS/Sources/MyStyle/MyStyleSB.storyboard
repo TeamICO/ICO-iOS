@@ -30,7 +30,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh8-dj-90E">
                                                         <rect key="frame" x="16" y="77" width="382" height="166"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_brand_sample02" translatesAutoresizingMaskIntoConstraints="NO" id="Ha8-eq-cRY">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ha8-eq-cRY">
                                                                 <rect key="frame" x="12" y="14" width="82" height="82"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="82" id="3Qj-8V-GYd"/>
@@ -383,7 +383,6 @@
         <image name="icAlram1" width="24" height="24"/>
         <image name="icHeart1" width="24" height="24"/>
         <image name="icProfileSetting1" width="20" height="20"/>
-        <image name="img_brand_sample02" width="1088" height="1050"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
