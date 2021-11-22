@@ -95,9 +95,9 @@ extension ServiceTermsVC : UITableViewDelegate, UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
-        footer.backgroundColor = UIColor.appColor(.tableViewFooterColor)
-        return footer
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
+        header.backgroundColor = UIColor.appColor(.tableViewFooterColor)
+        return header
        
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

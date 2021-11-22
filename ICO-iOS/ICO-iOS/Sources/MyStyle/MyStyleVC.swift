@@ -11,6 +11,8 @@ class MyStyleVC: BaseViewController {
     
     var serverData : MyStyleResult?
     var category: [String] = []
+    @IBOutlet weak var alarmView: UIView!
+    @IBOutlet weak var likeView: UIView!
     
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
     @IBOutlet weak var styleCV: UICollectionView!
@@ -231,4 +233,27 @@ extension MyStyleVC{
         styleCV.reloadData()
     }
 
+}
+//MARK : 좋아요 뷰
+extension MyStyleVC {
+    func setLikeViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLikeView))
+        viewTap.cancelsTouchesInView = false
+        likeView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapLikeView(){
+        self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
+    }
+}
+
+//MARK : 알림 뷰
+extension MyStyleVC {
+    func setAlarmViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapAlarmView))
+        viewTap.cancelsTouchesInView = false
+        alarmView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapAlarmView(){
+        self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
+    }
 }
