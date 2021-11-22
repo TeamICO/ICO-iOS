@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class StyleUploadVC: UIViewController {
+    
+    var selectedContentImage : String?
     
     var photoNum : Int = 0
     var urlNum1: Int = 0
@@ -16,6 +19,7 @@ class StyleUploadVC: UIViewController {
     
     //에코 키워드 관련, 선택된 경우: 1 / 선택되지 않은 경우: 0
     var numberList : [Int] = [0,0,0,0,0,0,0]
+    var ecoList : [Int] = []
     @IBOutlet var ecoView: [UIView]!
     @IBOutlet var ecoButton: [UIButton]!
     
@@ -65,8 +69,18 @@ class StyleUploadVC: UIViewController {
         }else{
             numberList[sender.tag] = 0
         }
-        print(numberList)
         setButton(select: numberList)
+        print(numberList)
+    }
+   
+    
+    
+    func checkEco(select: [Int]){
+        for i in 0...6{
+            if numberList[i] == 1{
+                ecoList.append(i+1)
+            }
+        }
     }
     
     func setButton(select: [Int]){
@@ -341,18 +355,50 @@ class StyleUploadVC: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    
+    @IBAction func styleUploadBtn(_ sender: Any) {
+        checkEco(select: numberList)
+        print(ecoList)
+        let ecoScore = Int(self.ecoLevelScore.text!)
+        let styleUploadRequest = StyleUploadRequest(image: "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: ecoScore ?? 0, purpleDescription: memoTextView.text!, hashtag: hashTagArr)
+        print(hashTagArr)
+        StyleUploadDataManager().styleUpload(styleUploadRequest, self)
+    }
+    
 }
 
 extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        /*
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             newImageView.contentMode = .scaleAspectFill
             newImageView.image = pickedImage
             photoNum = 1
             imgNumLabel.text = "\(photoNum)/1"
-        }
+            
+        }*/
         dismiss(animated: true, completion: nil)
+        guard let image = info[.editedImage] as? UIImage else{
+            return
+        }
+        print(image)
+        
+        let imageId = UUID().uuidString
+        BaseManager.shared.uploadImage(image: image, imageId: imageId) { success in
+            guard success else{
+                return
+            }
+            BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { url in
+                guard let url = url else{
+                    return
+                }
+                self.selectedContentImage = "\(url)"
+                print(url)
+            }
+        }
+        
+        //dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -418,12 +464,17 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    
         var size = hashTagArr[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ?? 0
         let entireSize = size + 18
         return CGSize(width: entireSize, height: 28)
         
     }
+}
 
-    
+
+extension StyleUploadVC{
+    func didSuccessStyleUpload(message: String,code: Int){
+        print(message)
+        print(code)
+    }
 }

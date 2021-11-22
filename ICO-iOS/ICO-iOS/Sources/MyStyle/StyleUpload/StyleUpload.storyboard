@@ -25,6 +25,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="업로드"/>
+                                <connections>
+                                    <action selector="styleUploadBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="alU-Hg-qI6"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xh-CW-7v0">
                                 <rect key="frame" x="0.0" y="44" width="414" height="758"/>
