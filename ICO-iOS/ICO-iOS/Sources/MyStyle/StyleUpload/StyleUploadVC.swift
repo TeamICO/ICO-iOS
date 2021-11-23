@@ -11,6 +11,7 @@ import FirebaseStorage
 class StyleUploadVC: UIViewController {
     
     var selectedContentImage : String?
+    var isFix: Bool?
     
     var photoNum : Int = 0
     var urlNum1: Int = 0

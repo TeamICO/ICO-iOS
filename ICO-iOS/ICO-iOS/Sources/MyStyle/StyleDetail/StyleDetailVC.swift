@@ -94,6 +94,7 @@ class StyleDetailVC: UIViewController {
             let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default){ action in
                 let uploadSB = UIStoryboard(name: "StyleUpload", bundle: nil)
                 let uploadVC = uploadSB.instantiateViewController(withIdentifier: "StyleUploadVC")as? StyleUploadVC
+                uploadVC?.isFix = true
                 self.navigationController?.pushViewController(uploadVC!, animated: true)
             }
             fixAction.setValue(UIColor.coGreen, forKey: "titleTextColor")
