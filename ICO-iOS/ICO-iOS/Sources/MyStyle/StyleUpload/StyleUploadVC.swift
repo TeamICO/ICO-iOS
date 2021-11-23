@@ -33,6 +33,8 @@ class StyleUploadVC: UIViewController {
     @IBOutlet var lineView: [UIView]!
     
     @IBOutlet var urlTextField: [UITextField]!
+    @IBOutlet weak var noURL: UILabel!
+    @IBOutlet weak var urlBtn: UIButton!
     @IBOutlet weak var removeBtn1: UIButton!
     @IBOutlet weak var removeBtn2: UIButton!
     
@@ -47,7 +49,6 @@ class StyleUploadVC: UIViewController {
     @IBOutlet var essentialLabel: [UILabel]!
     
     @IBOutlet weak var urlLabel1: UILabel!
-    @IBOutlet weak var urlLabel2: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     
     @IBOutlet weak var memoView: UIView!
@@ -249,7 +250,6 @@ class StyleUploadVC: UIViewController {
         memoTextView.font = UIFont.init(name: "AppleSDGothicNeo-Medium", size: 14)
         
         urlLabel1.text = "\(urlNum1)/20"
-        urlLabel2.text = "\(urlNum2)/20"
         detailLabel.text = "\(detailNum)/400"
         ecoLevelScore.text = "\(0.0)"
         
@@ -261,6 +261,7 @@ class StyleUploadVC: UIViewController {
         hashTagText.text = "\(hashTagCnt)/5"
         TagLabel.textColor = UIColor.coGreen70
         
+        noURL.textColor = UIColor.primaryBlack60
     }
     
 
@@ -269,6 +270,11 @@ class StyleUploadVC: UIViewController {
         checkEco(select: numberList)
         print(ecoList)
     }
+    
+    @IBAction func urlBtn(_ sender: Any) {
+        urlBtn.isSelected = !urlBtn.isSelected
+    }
+    
     
     @IBAction func removeBtn1Clicked(_ sender: Any) {
         urlTextField[0].text = ""
@@ -426,11 +432,6 @@ extension StyleUploadVC: UITextFieldDelegate, UITextViewDelegate{
             if let textCount1 = textField.text?.count{
                 urlNum1 = textCount1
                 urlLabel1.text = "\(urlNum1)/20"
-            }
-        }else{
-            if let textCount2 = textField.text?.count{
-                urlNum2 = textCount2
-                urlLabel2.text = "\(urlNum2)/20"
             }
         }
     }
