@@ -37,10 +37,12 @@ class SearchResultVC: BaseViewController {
             self.presentAlert(title: "검색어를 입력해주세요.")
             return
         }
+        self.searchword = text
         guard let jwtToken = self.jwtToken else{
             return
         }
-        SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx)", jwtToken: jwtToken) { [weak self] response in
+        
+        SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx+1)", jwtToken: jwtToken) { [weak self] response in
             guard let response = response else {
                 return
             }
@@ -107,7 +109,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultSortCVC.identifier, for: indexPath) as! ResultSortCVC
-     
+            cell.delegate = self
             
             return cell
         case 2:
@@ -148,27 +150,19 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
         switch indexPath.section{
         case 0:
             
-            return CGSize(width: view.width, height: 46)
+            return CGSize(width: view.width-32, height: 46)
         case 1:
             
-            return CGSize(width: view.width, height: 64)
+            return CGSize(width: view.width-32, height: 64)
         case 2:
             
-            return CGSize(width: view.width/2, height: 248)
+            return CGSize(width: 164, height: 248)
         default :
             return CGSize()
         }
         
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-      
-        return 24
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-
-        return -15
-    }
+ 
     
     func pushToStyleShot(isMine : Bool,styleShotIdx : Int){
         let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
@@ -185,8 +179,9 @@ extension SearchResultVC : UITextFieldDelegate {
             if text == ""{
                 self.presentAlert(title: "검색어를 입력해주세요.")
             }else{
+                self.searchword = text
                 if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken"){
-                    SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx)", jwtToken: jwtToken) { [weak self] response in
+                    SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx+1)", jwtToken: jwtToken) { [weak self] response in
                         guard let response = response else {
                             return
                         }

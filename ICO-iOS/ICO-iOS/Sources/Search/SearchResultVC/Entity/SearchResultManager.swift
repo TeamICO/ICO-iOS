@@ -15,7 +15,7 @@ final class SearchResultManager{
     func getSearchResult(keyword : String,filter : String,jwtToken: String, completion: @escaping (SearchResultResult?)->Void) {
 
         let url = "https://dev.chuckwagon.shop/app/styleshots/search?"
-
+        
    
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken

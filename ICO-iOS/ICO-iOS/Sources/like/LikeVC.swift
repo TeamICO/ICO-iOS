@@ -46,7 +46,7 @@ extension LikeVC{
 // MARK: - CollectionView Configure
 extension LikeVC {
     func collectionViewConfigure(){
-      
+        collectionView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -97,11 +97,10 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.likeResult.isEmpty {
-            collectionView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
-            return CGSize(width: view.width, height: 500)
+            
+            return CGSize(width: view.width-32, height: 500)
         }else{
-            collectionView.contentInset = UIEdgeInsets(top: 70, left: 16, bottom: 0, right: 16)
-            return CGSize(width: view.width/2-30, height: 248)
+            return CGSize(width: 164, height: 248)
         }
        
     }

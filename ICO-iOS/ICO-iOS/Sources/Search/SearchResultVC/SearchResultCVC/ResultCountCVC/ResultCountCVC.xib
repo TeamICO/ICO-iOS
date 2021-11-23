@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9I-Ls-RQY">
-                        <rect key="frame" x="17" y="51.5" width="60" height="19.5"/>
+                        <rect key="frame" x="0.0" y="51.5" width="60" height="19.5"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2건" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JR-Aa-7S1">
-                        <rect key="frame" x="80" y="51.5" width="22.5" height="19.5"/>
+                        <rect key="frame" x="63" y="51.5" width="22.5" height="19.5"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                 <constraint firstAttribute="bottom" secondItem="5JR-Aa-7S1" secondAttribute="bottom" id="IYD-je-2IT"/>
                 <constraint firstItem="5JR-Aa-7S1" firstAttribute="leading" secondItem="m9I-Ls-RQY" secondAttribute="trailing" constant="3" id="dci-BZ-RSr"/>
                 <constraint firstAttribute="bottom" secondItem="m9I-Ls-RQY" secondAttribute="bottom" id="gaU-Nv-taf"/>
-                <constraint firstItem="m9I-Ls-RQY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="i1C-Zi-woH"/>
+                <constraint firstItem="m9I-Ls-RQY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="i1C-Zi-woH"/>
             </constraints>
             <size key="customSize" width="232" height="71"/>
             <connections>
