@@ -45,6 +45,7 @@ class MyStyleVC: BaseViewController {
         MyStyleDataManager().getMyStyleInfo(self, userIdx: self.userIdx)
         setUI()
         registerNib()
+        print(Constant.HEADER)
         // Do any additional setup after loading the view.
     }
     
@@ -105,9 +106,7 @@ class MyStyleVC: BaseViewController {
     
     @IBAction func toStyleUpload(_ sender: Any) {
         let styleUploadSB = UIStoryboard(name: "StyleUpload", bundle: nil)
-        
         guard let styleUploadVC = styleUploadSB.instantiateViewController(withIdentifier: "StyleUploadVC")as? StyleUploadVC else {return}
-     
         self.navigationController?.pushViewController(styleUploadVC, animated: true)
     }
     
@@ -125,49 +124,64 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == styleCV{
-            guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
-            if let styleshot = serverData?.styleshot{
-                if !styleshot.isEmpty{
-                    styleCell.styleImage.setImage(with: styleshot[indexPath.row].imageURL)
+            if serverData?.styleshot.count != 0 {
+                guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+                if let styleshot = serverData?.styleshot{
+                    if !styleshot.isEmpty{
+                        styleCell.styleImage.setImage(with: styleshot[indexPath.row].imageURL)
+                    }
+                }
+                return styleCell
+            }else{
+                guard let styleEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStyleShotCVC", for: indexPath)as? emptyStyleShotCVC else {return UICollectionViewCell()}
+                
+                return styleEmptyCell
+            }
+        }else{
+            if serverData?.ecoKeyword.count != 0{
+                guard let ecoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath)as? ecoKeywordCVC else {return UICollectionViewCell()}
+                
+                ecoKeywordCell.ecoTitle.text = serverData?.ecoKeyword[indexPath.row]
+                if serverData?.ecoKeyword[indexPath.row] == "수익기부"{
+                  ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-donation")
+                }else if serverData?.ecoKeyword[indexPath.row] == "동물실험 반대"{
+                  ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-animal")
+                }else if serverData?.ecoKeyword[indexPath.row] == "공정무역"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-trade")
+                }else if serverData?.ecoKeyword[indexPath.row] == "비건"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-vegan")
+                }else if serverData?.ecoKeyword[indexPath.row] == "락토"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lacto")
+                }else if serverData?.ecoKeyword[indexPath.row] == "락토오보"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lactovo")
+                }else if serverData?.ecoKeyword[indexPath.row] == "페스코"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fesco")
+                }else if serverData?.ecoKeyword[indexPath.row] == "플라스틱 프리"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-plastic")
+                }else if serverData?.ecoKeyword[indexPath.row] == "친환경"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-eco")
+                }else if serverData?.ecoKeyword[indexPath.row] == "업사이클링"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-upcycling")
+                }else if serverData?.ecoKeyword[indexPath.row] == "비건을 위한 뷰티"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-package")
+                }else if serverData?.ecoKeyword[indexPath.row] == "GMO프리"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-gmo")
+                }else if serverData?.ecoKeyword[indexPath.row] == "무향료"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-chemical")
+                }else if serverData?.ecoKeyword[indexPath.row] == "FDA 승인"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fda")
                 }
                 
-            }
-            return styleCell
-        }else{
-            guard let ecoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath)as? ecoKeywordCVC else {return UICollectionViewCell()}
-            
-            ecoKeywordCell.ecoTitle.text = serverData?.ecoKeyword[indexPath.row]
-            if serverData?.ecoKeyword[indexPath.row] == "수익기부"{
-              ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-donation")
-            }else if serverData?.ecoKeyword[indexPath.row] == "동물실험 반대"{
-              ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-animal")
-            }else if serverData?.ecoKeyword[indexPath.row] == "공정무역"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-trade")
-            }else if serverData?.ecoKeyword[indexPath.row] == "비건"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-vegan")
-            }else if serverData?.ecoKeyword[indexPath.row] == "락토"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lacto")
-            }else if serverData?.ecoKeyword[indexPath.row] == "락토오보"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lactovo")
-            }else if serverData?.ecoKeyword[indexPath.row] == "페스코"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fesco")
-            }else if serverData?.ecoKeyword[indexPath.row] == "플라스틱 프리"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-plastic")
-            }else if serverData?.ecoKeyword[indexPath.row] == "친환경"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-eco")
-            }else if serverData?.ecoKeyword[indexPath.row] == "업사이클링"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-upcycling")
-            }else if serverData?.ecoKeyword[indexPath.row] == "비건을 위한 뷰티"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-package")
-            }else if serverData?.ecoKeyword[indexPath.row] == "GMO프리"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-gmo")
-            }else if serverData?.ecoKeyword[indexPath.row] == "무향료"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-chemical")
-            }else if serverData?.ecoKeyword[indexPath.row] == "FDA 승인"{
-                ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fda")
+                return ecoKeywordCell
+            }else{
+                guard let emptyEcoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyEcoKeywordCVC", for: indexPath)as?emptyEcoKeywordCVC else {return UICollectionViewCell()}
+                
+                emptyEcoKeywordCell.emptyLabel.text = "에코 관심 키워드를 등록하지 않았습니다."
+                
+                return emptyEcoKeywordCell
             }
             
-            return ecoKeywordCell
+
         }
     }
     
@@ -181,15 +195,29 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == styleCV{
-            let cellWidth = 166
-            let cellHeight = 166
-            
-            return CGSize(width: cellWidth, height: cellHeight)
+            if serverData?.styleshot.count != 0 {
+                let cellWidth = 166
+                let cellHeight = 166
+                
+                return CGSize(width: cellWidth, height: cellHeight)
+            }else{
+                let cellWidth2 = 400
+                let cellHeight2 = 300
+                
+                return CGSize(width: cellWidth2, height: cellHeight2)
+            }
         }else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath) as! ecoKeywordCVC
-            var size = serverData?.ecoKeyword[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 0
-            let totalWidth = size + cell.ecoIcon.frame.size.width + 16
-            return CGSize(width: totalWidth, height: 25)
+            if serverData?.ecoKeyword.count != 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath) as! ecoKeywordCVC
+                var size = serverData?.ecoKeyword[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 0
+                let totalWidth = size + cell.ecoIcon.frame.size.width + 16
+                return CGSize(width: totalWidth, height: 25)
+            }else{
+                let cellWidth = 237
+                let cellHeight = 17
+                
+                return CGSize(width: cellWidth, height: cellHeight)
+            }
         }
         
     }
@@ -216,7 +244,13 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
 extension MyStyleVC{
     func didSuccessGetMyStyle(message: String){
         name.text = serverData?.nickname
-        profileImage.setImage(with: serverData?.profileURL ?? "")
+        
+        if serverData?.profileURL == ""{
+            profileImage.image = UIImage(named: "img_profile_default")
+        }else{
+            profileImage.setImage(with: serverData?.profileURL ?? "")
+        }
+        
         if serverData?.resultDescription == ""{
             detailLabel.text = "아직 프로필 한마디를 작성하지 않았습니다"
             detailLabel.textColor = UIColor.primaryBlack40
