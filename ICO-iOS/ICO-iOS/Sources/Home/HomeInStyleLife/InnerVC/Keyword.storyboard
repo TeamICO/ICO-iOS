@@ -51,11 +51,6 @@
                                                 <rect key="frame" x="0.0" y="136" width="414" height="864"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
-                                            <view contentMode="scaleToFill" id="6Ux-xh-8oi">
-                                                <rect key="frame" x="0.0" y="484" width="396" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>

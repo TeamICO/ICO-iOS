@@ -133,15 +133,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="noQ-gZ-shO">
-                        <rect key="frame" x="240" y="416" width="55" height="22"/>
+                        <rect key="frame" x="238" y="416" width="57" height="22"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ7-n8-V1G">
-                                <rect key="frame" x="0.0" y="0.0" width="23" height="22"/>
+                                <rect key="frame" x="0.0" y="0.0" width="24" height="22"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="icHeartUnclick1"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0Y-pE-VhB">
-                                <rect key="frame" x="32" y="0.0" width="23" height="22"/>
+                                <rect key="frame" x="33" y="0.0" width="24" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -149,7 +149,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="ecu-9c-Lir"/>
-                            <constraint firstAttribute="width" constant="55" id="gQg-sy-uA2"/>
+                            <constraint firstAttribute="width" constant="57" id="gQg-sy-uA2"/>
                         </constraints>
                     </stackView>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kEY-A8-KQi">
