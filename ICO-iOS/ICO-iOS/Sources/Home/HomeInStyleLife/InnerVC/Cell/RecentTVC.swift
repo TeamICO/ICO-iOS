@@ -14,6 +14,7 @@ class RecentTVC: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var heartNum: UILabel!
+    @IBOutlet weak var heartBtn: UIButton!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var ecoLevelImg: UIImageView!

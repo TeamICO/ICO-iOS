@@ -21,6 +21,10 @@ class PopularVC: UIViewController {
     @IBOutlet weak var popularIcoCV: UICollectionView!
     @IBOutlet weak var topBanner: UIImageView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        StyleLifeDataManager().getPopularInfo(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,8 +87,14 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
         cell.productName.text = popularServerData[indexPath.row].productName
         cell.detailLabel.text = popularServerData[indexPath.row].resultDescription
         cell.heartNum.text = "\(popularServerData[indexPath.row].likeCnt)"
+        if popularServerData[indexPath.row].isLike == 1{
+            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+        }else{
+            cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+        }
         cell.time.text = popularServerData[indexPath.row].time
         cell.setData(category: popularServerData[indexPath.row].category)
+        
         
         return cell
     }

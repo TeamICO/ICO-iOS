@@ -368,6 +368,7 @@ class StyleUploadVC: UIViewController {
                             imagePicker.sourceType = .photoLibrary
                             imagePicker.delegate = self
                             imagePicker.allowsEditing = true
+                          
                             self?.present(imagePicker, animated: true, completion: nil)
                         
                         }
