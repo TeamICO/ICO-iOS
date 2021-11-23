@@ -132,8 +132,6 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
                 }
                 
             }
-            
-            
             return styleCell
         }else{
             guard let ecoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath)as? ecoKeywordCVC else {return UICollectionViewCell()}
@@ -219,7 +217,12 @@ extension MyStyleVC{
     func didSuccessGetMyStyle(message: String){
         name.text = serverData?.nickname
         profileImage.setImage(with: serverData?.profileURL ?? "")
-        detailLabel.text = serverData?.resultDescription
+        if serverData?.resultDescription == ""{
+            detailLabel.text = "아직 프로필 한마디를 작성하지 않았습니다"
+            detailLabel.textColor = UIColor.primaryBlack40
+        }else{
+            detailLabel.text = serverData?.resultDescription
+        }
         likeNum.text = "\(serverData?.likeCnt ?? 0)"
         styleNum.text = "\(serverData?.styleshotCnt ?? 0)"
         //389
