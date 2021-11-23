@@ -9,7 +9,7 @@ import UIKit
 
 class AlarmVC: BaseViewController {
     // MARK: - Propertices
-    private let sections = ["오늘","이전 알림"]
+    private let sections = ["","오늘","이전 알림"]
     
     private var todayAlarms = [Alarms]()
     private var previouseAlarms = [Alarms]()
@@ -86,8 +86,8 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
             return 1
         }else{
             switch section{
-            case 0 : return todayAlarms.count
-            case 1 : return previouseAlarms.count
+            case 1 : return todayAlarms.count
+            case 2 : return previouseAlarms.count
             default :
                 return 0
             }
@@ -106,12 +106,12 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         }else{
             switch indexPath.section{
-            case 0 :
+            case 1 :
                 let cell = tableView.dequeueReusableCell(withIdentifier: TodayAlarmTVC.identifier, for: indexPath) as! TodayAlarmTVC
                 cell.selectedBackgroundView =  bgColorView
                 cell.configure(with: AlarmViewModel(with: todayAlarms[indexPath.row]))
                 return cell
-            case 1 :
+            case 2 :
                 let cell = tableView.dequeueReusableCell(withIdentifier: BeforeAlarmTVC.identifier, for: indexPath) as! BeforeAlarmTVC
                 cell.selectedBackgroundView =  bgColorView
                 cell.configure(with: AlarmViewModel(with: previouseAlarms[indexPath.row]))
@@ -125,29 +125,45 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if !todayAlarms.isEmpty && !previouseAlarms.isEmpty{
+        if !todayAlarms.isEmpty || !previouseAlarms.isEmpty{
             guard let jwtToken = self.jwtToken else{
                 return
             }
             
             switch indexPath.section{
-            case 0:
-                AlarmManager.shared.readAlarm(type: todayAlarms[indexPath.row].type,
-                                              notificationIdx: todayAlarms[indexPath.row].notificationIdx,
-                                              jwtToken: jwtToken) { success in
-                    guard success else{
-                        return
-                    }
-                }
-                break
             case 1:
-                AlarmManager.shared.readAlarm(type: previouseAlarms[indexPath.row].type,
-                                              notificationIdx: previouseAlarms[indexPath.row].notificationIdx,
-                                              jwtToken: jwtToken) { success in
-                    guard success else{
-                        return
+                let alarm = todayAlarms[indexPath.row]
+                if alarm.isNew == 1 {
+                    AlarmManager.shared.readAlarm(type: alarm.type,
+                                                  notificationIdx: alarm.notificationIdx,
+                                                  jwtToken: jwtToken) { [weak self] success in
+                        guard success else{
+                            return
+                        }
+                   
+                        DispatchQueue.main.async {
+                            self?.fetchData()
+                        }
                     }
                 }
+                
+                break
+            case 2:
+                let alarm = previouseAlarms[indexPath.row]
+                if alarm.isNew == 1 {
+                    AlarmManager.shared.readAlarm(type: alarm.type,
+                                                  notificationIdx: alarm.notificationIdx,
+                                                  jwtToken: jwtToken) { [weak self]success in
+                        guard success else{
+                            return
+                        }
+             
+                        DispatchQueue.main.async {
+                            self?.fetchData()
+                        }
+                    }
+                }
+             
                 break
             default :
                 break
@@ -159,7 +175,11 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
             return 500
         }else{
-            return 90
+            if indexPath.section == 0 {
+                return 0
+            }else{
+                return 90
+            }
         }
        
         
@@ -179,8 +199,9 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
             
             return header
         }else{
+            
             // 섹션 뷰 셋팅
-            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 12))
+            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 54))
             let label = UILabel(frame: CGRect(x: 16, y: 16, width: view.width-32, height: 28))
             label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
             label.text = sections[section]

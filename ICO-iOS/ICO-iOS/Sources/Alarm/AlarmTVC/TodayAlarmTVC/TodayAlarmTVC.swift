@@ -27,8 +27,9 @@ class TodayAlarmTVC: UITableViewCell {
     func configure(with viewModel : AlarmViewModel){
         self.alarmedLabel.text = viewModel.time
         self.contentLabel.text = viewModel.description
+    
         if viewModel.isNew == 1{
-            contentView.backgroundColor = UIColor.primaryigreen5.withAlphaComponent(0.7)
+            contentView.backgroundColor = UIColor.primaryigreen5
             
         }else{
             contentView.backgroundColor = .white
@@ -37,7 +38,6 @@ class TodayAlarmTVC: UITableViewCell {
         switch viewModel.type{
         case "url":
             categoryLabel.text = "프로모션"
-            categoryLabel
             categoryIconImage.image = UIImage(named: "icAlramStyleshotRecent1")
             
             break

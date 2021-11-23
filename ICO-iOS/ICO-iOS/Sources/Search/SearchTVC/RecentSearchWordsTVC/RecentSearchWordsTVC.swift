@@ -39,7 +39,6 @@ class RecentSearchWordsTVC: UITableViewCell {
         }
         SearchManager.shared.removeAllKeywordHistory(jwtToken: jwtToken) { deleted in
             guard deleted else{
-                print("삭제 실패")
                 return
             }
             SearchManager.shared.getKeywordHistory(jwtToken: jwtToken) { keywords in
@@ -99,7 +98,6 @@ extension RecentSearchWordsTVC : RecentCVCDelegate{
         }
         SearchManager.shared.removeKeywordHistory(keywordIdx: keywordIdx, jwtToken: jwtToken) { deleted in
             guard deleted else{
-                print("삭제 실패")
                 return
             }
             SearchManager.shared.getKeywordHistory(jwtToken: jwtToken) { keywords in

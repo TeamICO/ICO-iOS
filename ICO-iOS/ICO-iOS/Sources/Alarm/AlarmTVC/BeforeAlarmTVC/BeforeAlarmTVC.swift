@@ -28,6 +28,7 @@ class BeforeAlarmTVC: UITableViewCell {
     func configure(with viewModel : AlarmViewModel){
         self.alarmedLabel.text = viewModel.time
         self.contentLabel.text = viewModel.description
+ 
         switch viewModel.type{
         case "url":
             categoryLabel.text = "프로모션"

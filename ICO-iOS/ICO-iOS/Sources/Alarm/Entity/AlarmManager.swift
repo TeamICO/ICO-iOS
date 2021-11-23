@@ -48,7 +48,7 @@ final class AlarmManager{
         
     }
     func readAlarm(type: String,notificationIdx : Int,jwtToken: String, completion: @escaping (Bool)->Void) {
-
+  
         let url = "https://dev.chuckwagon.shop/app/notifications/\(notificationIdx)"
 
    
@@ -69,7 +69,8 @@ final class AlarmManager{
                 
                 switch response.result {
                 
-                case .success(let response):                    
+                case .success(let response):
+
                     completion(response.isSuccess)
                     
                     
