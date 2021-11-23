@@ -156,9 +156,14 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserInfoTVC.identifier, for: indexPath) as! ProfileUserInfoTVC
             cell.selectionStyle = .none
             cell.delegate = self
-            if let profileModel = self.profileModel{
-                cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
+            if let imageurl =  self.selectedContentImage {
+                cell.userImage.setImage(with: imageurl)
+            }else{
+                if let profileModel = self.profileModel{
+                    cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
+                }
             }
+           
             
             return cell
         case 1 :
@@ -286,37 +291,7 @@ extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
 }
 //MARK : Iamge PIcker
 extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
-    func checkNicNameState(nickname: String) {
-        self.nickname = nickname
-    }
-    
-    func checkName(nickname: String, textField: UITextField, label: UILabel) {
-        guard let jwtToken = self.jwtToken else{
-            return
-        }
-        NickNameManager.shared.checkNickName(nickname: nickname, jwtToken: jwtToken) { result in
-            guard result.isSuccess else{
-                textField.layer.borderWidth = 0.5
-                textField.layer.borderColor = UIColor.alertsError.cgColor
-                label.textColor = UIColor.alertsError
-                label.text = result.message
-                self.nickname = nickname
-                return
-            }
-            textField.layer.borderWidth = 0.5
-            textField.layer.borderColor = UIColor.alertsSuccess.cgColor
-            label.textColor = UIColor.alertsSuccess
-            label.text = result.message
-            self.nickname = nickname
-            self.isCheckedNickname = true
-        }
-    }
-    
-
-    
-   
-    
-    func didTapUserImageView() {
+    func didTapUserImageView(image: UIImageView) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let action = UIAlertAction(title: "프로필 사진 바꾸기", style: .default, handler:{ [weak self]_ in
@@ -344,7 +319,32 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
         
         self.present(actionSheet, animated: true)
 
-       
+    }
+    
+    func checkNicNameState(nickname: String) {
+        self.nickname = nickname
+    }
+    
+    func checkName(nickname: String, textField: UITextField, label: UILabel) {
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        NickNameManager.shared.checkNickName(nickname: nickname, jwtToken: jwtToken) { result in
+            guard result.isSuccess else{
+                textField.layer.borderWidth = 0.5
+                textField.layer.borderColor = UIColor.alertsError.cgColor
+                label.textColor = UIColor.alertsError
+                label.text = result.message
+                self.nickname = nickname
+                return
+            }
+            textField.layer.borderWidth = 0.5
+            textField.layer.borderColor = UIColor.alertsSuccess.cgColor
+            label.textColor = UIColor.alertsSuccess
+            label.text = result.message
+            self.nickname = nickname
+            self.isCheckedNickname = true
+        }
     }
 }
 //MARK : Iamge PIcker Delegate
@@ -364,14 +364,18 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
             guard success else{
                 return
             }
-            BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { url in
+            BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { [weak self] url in
                 guard let url = url else{
                     return
                 }
-                self.selectedContentImage = "\(url)"
-                print(url)
+                self?.selectedContentImage = "\(url)"
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+                
             }
         }
+        
     }
    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
         let scale = newWidth / image.size.width

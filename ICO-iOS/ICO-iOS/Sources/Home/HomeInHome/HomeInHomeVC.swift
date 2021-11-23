@@ -197,6 +197,13 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
   
 }
 extension HomeInHomeVC : TopTVCDelegate {
+    func didTapKeywordContents(index: Int) {
+        let sb = UIStoryboard(name: "KeywordContentsSB", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "KeywordContentsVC")as! KeywordContentsVC
+        vc.index = index
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func didTapSearchView() {
         self.navigationPushViewController(storyboard: "SearchSB", identifier: "SearchVC")
 
