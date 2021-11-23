@@ -171,17 +171,19 @@ class StyleDetailVC: UIViewController {
     
     @IBAction func likeBtn(_ sender: Any) {
         let likeRequest = LikeRequest(styleshotIdx: styleShotIdx)
-        heartBtn.isSelected = !heartBtn.isSelected
-        if heartBtn.isSelected == true{
-            StyleDetailDataManager().likeStyle(likeRequest, self)
-            var cnt = StyleDetailData?.likeCnt ?? 0
-            cnt = cnt + 1
-            heartNum.text = "\(cnt)"
-        }else if heartBtn.isSelected == false{
+        
+        if StyleDetailData?.isLike == 1{
+            heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
             let dislikeRequest = disLikeRequest(status: "N")
             StyleDetailDataManager().disLikeStyle(dislikeRequest, self, styleshotIdx: styleShotIdx)
             var cnt = StyleDetailData?.likeCnt ?? 0
             cnt = cnt - 1
+            heartNum.text = "\(cnt)"
+        }else{
+            heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+            StyleDetailDataManager().likeStyle(likeRequest, self)
+            var cnt = StyleDetailData?.likeCnt ?? 0
+            cnt = cnt + 1
             heartNum.text = "\(cnt)"
         }
     }
@@ -258,6 +260,13 @@ extension StyleDetailVC{
         }else if scoreNum.text == "1"{
            ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
+        
+        if StyleDetailData?.isLike == 1{
+            heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+        }else{
+            heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+        }
+        
         self.productDetail.text = StyleDetailData?.resultDescription
         self.urlProduct.text = StyleDetailData?.productName
         self.url = NSURL(string: StyleDetailData!.productURL ?? "")

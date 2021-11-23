@@ -9,8 +9,6 @@ import UIKit
 
 class KeywordVC: UIViewController {
     
-  
-    
     var keywordServerData: [RecentResult] = []
     @IBOutlet weak var keywordCV: UICollectionView!
     @IBOutlet weak var postTV: UITableView!
@@ -19,7 +17,7 @@ class KeywordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       registerXib()
+        registerXib()
         keywordCV.delegate = self
         keywordCV.dataSource = self
        //setUI()
