@@ -15,7 +15,7 @@ class SortCVC: UICollectionViewCell {
     static let identifier = "SortCVC"
     weak var delegate : SortCVCDelagate?
     
-   
+    var sortedIdx = 0
     
     
     @IBOutlet weak var sortView: UIView!
@@ -25,7 +25,7 @@ class SortCVC: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-    var sortedIdx = 0
+
     override var isSelected: Bool{
         didSet{
             if isSelected{
