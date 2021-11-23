@@ -32,7 +32,6 @@ final class AlarmManager{
                 switch response.result {
                 
                 case .success(let response):
-                    print(response)
                     guard response.isSuccess == true else{
                         return
                     }
