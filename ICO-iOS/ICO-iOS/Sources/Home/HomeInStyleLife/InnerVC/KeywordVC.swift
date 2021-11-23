@@ -14,6 +14,7 @@ class KeywordVC: UIViewController {
     @IBOutlet weak var postTV: UITableView!
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -180,6 +181,12 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
         }
         cell.time.text = keywordServerData[indexPath.row].time
         cell.setData(category: keywordServerData[indexPath.row].category)
+        
+        if keywordServerData[indexPath.row].isLike == 1{
+            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+        }else{
+            cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+        }
         
         return cell
     }

@@ -234,6 +234,7 @@
                 <outlet property="ecoLevelImg" destination="l0n-7p-o1V" id="kBY-rH-lqa"/>
                 <outlet property="gradientView" destination="mjK-8j-ieB" id="rWb-nw-rPY"/>
                 <outlet property="gradientView2" destination="jfT-WN-GZx" id="Jmk-2J-axU"/>
+                <outlet property="heartBtn" destination="mQ7-n8-V1G" id="h6H-VH-21D"/>
                 <outlet property="heartNum" destination="m0Y-pE-VhB" id="aNq-bn-ZLb"/>
                 <outlet property="lineView" destination="ohd-tX-y0A" id="p29-gl-UCE"/>
                 <outlet property="mainImage" destination="1aS-8V-qOJ" id="DdT-LZ-5bK"/>
