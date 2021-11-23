@@ -277,7 +277,6 @@ extension StyleDetailVC{
         if message == "성공"{
             self.presentAlert(title: "신고 접수가 완료되었습니다.")
         }
-        print(message)
     }
     
     func didSuccessDelete(message: String){
