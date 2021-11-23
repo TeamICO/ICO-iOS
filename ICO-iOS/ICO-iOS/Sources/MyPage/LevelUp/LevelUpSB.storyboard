@@ -20,11 +20,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4w-Ab-YFG">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMI-BD-yQH">
-                                        <rect key="frame" x="16" y="11" width="32" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMI-BD-yQH">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Y1t-J0-Nya"/>
-                                            <constraint firstAttribute="width" constant="32" id="yai-Ha-slW"/>
+                                            <constraint firstAttribute="height" constant="54" id="Y1t-J0-Nya"/>
+                                            <constraint firstAttribute="width" constant="60" id="yai-Ha-slW"/>
                                         </constraints>
                                         <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -47,7 +47,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="oMI-BD-yQH" firstAttribute="leading" secondItem="y4w-Ab-YFG" secondAttribute="leading" constant="16" id="3XQ-Wp-rzy"/>
+                                    <constraint firstItem="oMI-BD-yQH" firstAttribute="leading" secondItem="y4w-Ab-YFG" secondAttribute="leading" id="3XQ-Wp-rzy"/>
                                     <constraint firstItem="oMI-BD-yQH" firstAttribute="centerY" secondItem="y4w-Ab-YFG" secondAttribute="centerY" id="LAX-M1-F8L"/>
                                     <constraint firstAttribute="height" constant="54" id="ZJq-wT-w01"/>
                                     <constraint firstItem="TSX-gx-cHI" firstAttribute="centerX" secondItem="y4w-Ab-YFG" secondAttribute="centerX" id="fQE-ho-qOZ"/>

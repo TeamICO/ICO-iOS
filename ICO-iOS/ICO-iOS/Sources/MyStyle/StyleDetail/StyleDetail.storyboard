@@ -28,10 +28,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmb-eP-1nq">
-                                        <rect key="frame" x="16" y="15" width="24" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="PNA-Ti-SKX"/>
-                                            <constraint firstAttribute="height" constant="24" id="Rqr-Rd-ntu"/>
+                                            <constraint firstAttribute="width" constant="60" id="PNA-Ti-SKX"/>
+                                            <constraint firstAttribute="height" constant="54" id="Rqr-Rd-ntu"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="icArrowLeft"/>
@@ -43,8 +43,8 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Smv-sF-uwo"/>
-                                    <constraint firstItem="vmb-eP-1nq" firstAttribute="leading" secondItem="6Ej-Oo-DI6" secondAttribute="leading" constant="16" id="Way-xi-8Tj"/>
-                                    <constraint firstItem="vmb-eP-1nq" firstAttribute="top" secondItem="6Ej-Oo-DI6" secondAttribute="top" constant="15" id="bgt-9w-mXB"/>
+                                    <constraint firstItem="vmb-eP-1nq" firstAttribute="leading" secondItem="6Ej-Oo-DI6" secondAttribute="leading" id="Way-xi-8Tj"/>
+                                    <constraint firstItem="vmb-eP-1nq" firstAttribute="centerY" secondItem="6Ej-Oo-DI6" secondAttribute="centerY" id="hTZ-96-GHG"/>
                                     <constraint firstItem="uMn-AA-uRa" firstAttribute="centerX" secondItem="6Ej-Oo-DI6" secondAttribute="centerX" id="jdV-iw-JZe"/>
                                     <constraint firstItem="uMn-AA-uRa" firstAttribute="top" secondItem="6Ej-Oo-DI6" secondAttribute="top" constant="13" id="qTK-cm-fcl"/>
                                 </constraints>

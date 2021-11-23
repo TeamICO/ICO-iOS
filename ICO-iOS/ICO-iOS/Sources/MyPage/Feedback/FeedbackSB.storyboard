@@ -19,11 +19,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-XC-96s">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sn9-ND-efc">
-                                        <rect key="frame" x="16" y="11" width="32" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sn9-ND-efc">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="R3C-hH-e39"/>
-                                            <constraint firstAttribute="width" constant="32" id="V6U-P9-cpE"/>
+                                            <constraint firstAttribute="height" constant="54" id="R3C-hH-e39"/>
+                                            <constraint firstAttribute="width" constant="60" id="V6U-P9-cpE"/>
                                         </constraints>
                                         <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -44,7 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-ky-LHE">
-                                        <rect key="frame" x="58" y="11" width="32" height="32"/>
+                                        <rect key="frame" x="70" y="11" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="69m-7n-F03"/>
                                             <constraint firstAttribute="height" constant="32" id="EVO-Up-8J0"/>
@@ -67,7 +67,7 @@
                                     <constraint firstItem="b6v-ky-LHE" firstAttribute="centerY" secondItem="ezR-XC-96s" secondAttribute="centerY" id="aWy-1c-pD0"/>
                                     <constraint firstItem="b6v-ky-LHE" firstAttribute="leading" secondItem="Sn9-ND-efc" secondAttribute="trailing" constant="10" id="cfa-Pb-prT"/>
                                     <constraint firstItem="Sn9-ND-efc" firstAttribute="centerY" secondItem="ezR-XC-96s" secondAttribute="centerY" id="h6Z-UN-wmE"/>
-                                    <constraint firstItem="Sn9-ND-efc" firstAttribute="leading" secondItem="ezR-XC-96s" secondAttribute="leading" constant="16" id="odG-CN-dkx"/>
+                                    <constraint firstItem="Sn9-ND-efc" firstAttribute="leading" secondItem="ezR-XC-96s" secondAttribute="leading" id="odG-CN-dkx"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqv-a1-8jl">

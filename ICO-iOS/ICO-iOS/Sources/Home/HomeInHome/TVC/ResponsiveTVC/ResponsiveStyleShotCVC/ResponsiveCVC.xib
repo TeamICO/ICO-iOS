@@ -105,10 +105,10 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kh0-SA-pcQ">
-                                <rect key="frame" x="352" y="66" width="41" height="25"/>
+                                <rect key="frame" x="339" y="66" width="54" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="KfY-SR-4vp"/>
+                                    <constraint firstAttribute="width" constant="54" id="KfY-SR-4vp"/>
                                     <constraint firstAttribute="height" constant="25" id="z2J-00-XrT"/>
                                 </constraints>
                             </view>

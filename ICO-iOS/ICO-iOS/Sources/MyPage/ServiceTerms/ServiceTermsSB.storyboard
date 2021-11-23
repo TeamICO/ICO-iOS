@@ -20,7 +20,7 @@
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-0x-V26">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1b-qB-k40">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1b-qB-k40">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="GxQ-hW-rYC"/>

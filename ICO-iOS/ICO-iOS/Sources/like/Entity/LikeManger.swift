@@ -47,4 +47,40 @@ final class LikeManger{
             }
         
     }
+    func getMoreLikes(lastIndex : Int, jwtToken: String, completion: @escaping ([LikeResult]?)->Void) {
+
+        let url = "https://dev.chuckwagon.shop/app/likes?"
+
+   
+        let header : HTTPHeaders = [
+            "X-ACCESS-TOKEN" : jwtToken
+        ]
+        let param = [
+            "no" : lastIndex
+        ]
+        AF.request(url,
+                   method: .get,
+                   parameters: param,
+                   encoding: JSONEncoding.default,
+                   headers: header)
+            .responseDecodable(of: LikeResponse.self) { response in
+                
+                switch response.result {
+                
+                case .success(let response):
+                    guard response.isSuccess == true else{
+                        return
+                    }
+                    
+                    completion(response.result)
+                    
+                    
+                    
+                case .failure(let error):
+                    print("DEBUG>> getMoreLikes Get Error : \(error.localizedDescription)")
+                    
+                }
+            }
+        
+    }
 }

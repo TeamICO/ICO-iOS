@@ -30,6 +30,8 @@ class ServiceTermsVC: UIViewController {
     }
     
     @IBAction func didTapHomeButton(_ sender: Any) {
+       
+
     }
     
 }
