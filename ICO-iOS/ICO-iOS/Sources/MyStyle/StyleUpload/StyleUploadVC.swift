@@ -359,7 +359,7 @@ class StyleUploadVC: UIViewController {
     
     
     @IBAction func uploadBtn(_ sender: Any) {
-        PHPhotoLibrary.requestAuthorization( { status in
+        PHPhotoLibrary.requestAuthorization( { [weak self]status in
                     switch status{
                     case .authorized:
                         print("Album: 권한 허용")
@@ -368,7 +368,7 @@ class StyleUploadVC: UIViewController {
                             imagePicker.sourceType = .photoLibrary
                             imagePicker.delegate = self
                             imagePicker.allowsEditing = true
-                            present(imagePicker, animated: true, completion: nil)
+                            self?.present(imagePicker, animated: true, completion: nil)
                         
                         }
                     case .denied:
