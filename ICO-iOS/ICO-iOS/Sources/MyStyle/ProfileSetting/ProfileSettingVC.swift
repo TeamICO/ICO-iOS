@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class ProfileSettingVC: BaseViewController {
     // MARK: - Properties
@@ -300,11 +301,27 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let action = UIAlertAction(title: "프로필 사진 바꾸기", style: .default, handler:{ [weak self]_ in
-            let picker = UIImagePickerController()
-            picker.sourceType = .photoLibrary
-            picker.delegate = self
-            picker.allowsEditing = true
-            self?.present(picker, animated: true, completion: nil)
+            PHPhotoLibrary.requestAuthorization( { status in
+                        switch status{
+                        case .authorized:
+                            print("Album: 권한 허용")
+                            DispatchQueue.main.async {
+                                let picker = UIImagePickerController()
+                                picker.sourceType = .photoLibrary
+                                picker.delegate = self
+                                picker.allowsEditing = true
+                                self?.present(picker, animated: true, completion: nil)
+                            
+                            }
+                        case .denied:
+                            print("Album: 권한 거부")
+                        case .restricted, .notDetermined:
+                            print("Album: 선택하지 않음")
+                        default:
+                            break
+                        }
+                    })
+            
         })
         let action2 = UIAlertAction(title: "기본 이미지로 설정", style: .default, handler:nil)
         action.setValue(UIColor.coGreen, forKey: "titleTextColor")

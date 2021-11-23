@@ -16,6 +16,7 @@ class AlarmVC: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var refreshControl = UIRefreshControl()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,9 @@ extension AlarmVC{
 // MARK: - TableView Configure
 extension AlarmVC {
     func tableviewConfigure(){
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
         let todayNib = UINib(nibName: TodayAlarmTVC.identifier, bundle: nil)
         tableView.register(todayNib, forCellReuseIdentifier: TodayAlarmTVC.identifier)
         
@@ -190,4 +194,18 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
 
     
     
+}
+extension AlarmVC{
+    @objc func refresh(){
+            
+
+    }
+    
+     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            if (refreshControl.isRefreshing) {
+                self.fetchData()
+                self.refreshControl.endRefreshing()
+                
+            }
+    }
 }
