@@ -7,7 +7,7 @@
 
 import UIKit
 protocol ProfileUserInfoTVCDelegate: AnyObject {
-    func didTapUserImageView()
+    func didTapUserImageView(image: UIImageView)
     func checkName(nickname: String,textField : UITextField,label: UILabel)
     func checkNicNameState(nickname : String)
 }
@@ -61,7 +61,7 @@ class ProfileUserInfoTVC: UITableViewCell {
         userImageView.addGestureRecognizer(viewTap)
     }
     @objc func didTapUserImageView(){
-        delegate?.didTapUserImageView()
+        delegate?.didTapUserImageView(image : self.userImage)
     }
 
     @IBAction func didTapRemoveNicNameButton(_ sender: Any) {

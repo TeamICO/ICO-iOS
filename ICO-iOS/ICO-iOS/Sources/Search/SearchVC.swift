@@ -24,6 +24,7 @@ class SearchVC: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "검색할 스타일샷의 키워드를 입력해 주세요.", attributes: [.foregroundColor: UIColor.primaryBlack50])
         self.dismissKeyboardWhenTappedAround()
         self.tableviewConfigure()
         
@@ -39,7 +40,10 @@ class SearchVC: BaseViewController {
             self.presentAlert(title: "검색어를 입력해주세요.")
             return
         }
-   
+        guard text.count <= 20 else{
+            self.presentAlert(title: "글자 수를 초과하였습니다.")
+            return
+        }
         let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
         vc.searchword = text
@@ -176,6 +180,10 @@ extension SearchVC : UITextFieldDelegate {
             if text == ""{
                 self.presentAlert(title: "검색어를 입력해주세요.")
             }else{
+                guard text.count <= 20 else{
+                    self.presentAlert(title: "글자 수를 초과하였습니다.")
+                    return true
+                }
                 let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
                 vc.searchword = text

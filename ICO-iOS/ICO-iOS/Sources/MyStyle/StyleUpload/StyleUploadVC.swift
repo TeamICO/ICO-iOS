@@ -378,16 +378,17 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
-        guard let image = info[.editedImage] as? UIImage else{
+        guard let image = info[.editedImage] as? UIImage,
+              let newImage = resizeImage(image: image, newWidth: 100) else{
             return
         }
-        newImageView.image = image
+        newImageView.image = newImage
         newImageView.contentMode = .scaleAspectFill
         photoNum = 1
         imgNumLabel.text = "\(photoNum)/1"
         
         let imageId = UUID().uuidString
-        BaseManager.shared.uploadImage(image: image, imageId: imageId) { success in
+        BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
             guard success else{
                 return
             }
@@ -405,7 +406,17 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+         let scale = newWidth / image.size.width
+         let newHeight = image.size.height * scale
+         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+         let newImage = UIGraphicsGetImageFromCurrentImageContext()
+         UIGraphicsEndImageContext()
+
+         return newImage
+     }
+
 }
 
 

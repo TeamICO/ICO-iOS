@@ -81,7 +81,6 @@ class LoginManager {
                 switch response.result {
                 
                 case .success(let response):
-                    print(response)
                     completion(response)
                     
                     
