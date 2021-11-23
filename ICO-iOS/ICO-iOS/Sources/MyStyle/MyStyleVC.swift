@@ -46,6 +46,8 @@ class MyStyleVC: BaseViewController {
         setUI()
         registerNib()
         print(Constant.HEADER)
+        setAlarmViewTapGesture()
+        setLikeViewTapGesture()
         // Do any additional setup after loading the view.
     }
     
@@ -186,11 +188,13 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
-        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
-        styleDetailVC.isMine = true
-        styleDetailVC.styleShotIdx = serverData?.styleshot[indexPath.row].styleshotIdx ?? 0
-        self.navigationController?.pushViewController(styleDetailVC, animated: true)
+        if collectionView == styleCV {
+            let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+            let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+            styleDetailVC.isMine = true
+            styleDetailVC.styleShotIdx = serverData?.styleshot[indexPath.row].styleshotIdx ?? 0
+            self.navigationController?.pushViewController(styleDetailVC, animated: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

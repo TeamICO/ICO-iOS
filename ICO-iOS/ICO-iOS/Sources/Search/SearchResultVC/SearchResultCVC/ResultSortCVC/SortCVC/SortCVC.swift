@@ -15,7 +15,7 @@ class SortCVC: UICollectionViewCell {
     static let identifier = "SortCVC"
     weak var delegate : SortCVCDelagate?
     
-    var sortedIdx = 0
+   
     
     
     @IBOutlet weak var sortView: UIView!
@@ -25,12 +25,14 @@ class SortCVC: UICollectionViewCell {
         super.awakeFromNib()
         
     }
+    var sortedIdx = 0
     override var isSelected: Bool{
         didSet{
             if isSelected{
                 sortView.backgroundColor = UIColor.gradient012
                 sortTitleLabel.textColor = .white
                 sortTitleLabel.font = UIFont.init(name: "AppleSDGothicNeo-Semibold", size: 14)
+                delegate?.didTapSort(sortedIdx: sortedIdx)
             }else{
                 sortView.backgroundColor = UIColor.primaryBlack10
                 sortTitleLabel.textColor = UIColor.primaryBlack80
