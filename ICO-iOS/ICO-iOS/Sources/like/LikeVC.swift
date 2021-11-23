@@ -11,7 +11,7 @@ class LikeVC: BaseViewController {
 
     private var likeResult = [LikeResult]()
     private var nickname = ""
-    
+    private var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -46,6 +46,9 @@ extension LikeVC{
 // MARK: - CollectionView Configure
 extension LikeVC {
     func collectionViewConfigure(){
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
         collectionView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
         collectionView.backgroundColor = .white
         collectionView.delegate = self
@@ -126,5 +129,19 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         styleDetailVC.isMine = isMine
         styleDetailVC.styleShotIdx = styleShotIdx
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
+    }
+}
+extension LikeVC{
+    @objc func refresh(){
+            
+
+    }
+    
+     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            if (refreshControl.isRefreshing) {
+                self.fetchData()
+                self.refreshControl.endRefreshing()
+                
+            }
     }
 }

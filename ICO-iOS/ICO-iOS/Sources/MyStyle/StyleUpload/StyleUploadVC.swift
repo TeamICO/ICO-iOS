@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import Photos
 
 class StyleUploadVC: UIViewController {
     
@@ -358,11 +359,27 @@ class StyleUploadVC: UIViewController {
     
     
     @IBAction func uploadBtn(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        present(imagePicker, animated: true, completion: nil)
+        PHPhotoLibrary.requestAuthorization( { status in
+                    switch status{
+                    case .authorized:
+                        print("Album: 권한 허용")
+                        DispatchQueue.main.async {
+                            let imagePicker = UIImagePickerController()
+                            imagePicker.sourceType = .photoLibrary
+                            imagePicker.delegate = self
+                            imagePicker.allowsEditing = true
+                            present(imagePicker, animated: true, completion: nil)
+                        
+                        }
+                    case .denied:
+                        print("Album: 권한 거부")
+                    case .restricted, .notDetermined:
+                        print("Album: 선택하지 않음")
+                    default:
+                        break
+                    }
+                })
+
     }
     
     
