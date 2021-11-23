@@ -19,6 +19,8 @@ class HomeInHomeVC: BaseViewController {
     private var ecoTopicModel : HomeInHomeEcoTopic?
     private var bottomBanner : HomeInHomeBottomBanner?
     private var nickname = ""
+
+    private var refreshControl = UIRefreshControl()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,9 @@ extension HomeInHomeVC{
 // MARK: - TableView Configure
 extension HomeInHomeVC {
     func tableviewConfigure(){
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
         let topNib = UINib(nibName: TopTVC.identifier, bundle: nil)
         tableView.register(topNib, forCellReuseIdentifier: TopTVC.identifier)
         
@@ -242,4 +247,18 @@ extension HomeInHomeVC : SensibleStyleShotTVCDelegate, ResponsiveStyleShotTVCDel
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
     
+}
+extension HomeInHomeVC{
+    @objc func refresh(){
+            
+
+    }
+    
+     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            if (refreshControl.isRefreshing) {
+                self.fetchData()
+                self.refreshControl.endRefreshing()
+                
+            }
+    }
 }

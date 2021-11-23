@@ -101,7 +101,7 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             return CGSize(width: view.width, height: 500)
         }else{
             collectionView.contentInset = UIEdgeInsets(top: 70, left: 16, bottom: 0, right: 16)
-            return CGSize(width: view.width/2-28, height: 248)
+            return CGSize(width: view.width/2-30, height: 248)
         }
        
     }
