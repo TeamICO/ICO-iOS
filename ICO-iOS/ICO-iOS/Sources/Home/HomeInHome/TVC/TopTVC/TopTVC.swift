@@ -9,6 +9,7 @@ import UIKit
 
 protocol TopTVCDelegate : AnyObject {
     func didTapSearchView()
+    func didTapKeywordContents(index : Int)
 }
 
 class TopTVC: UITableViewCell {
@@ -120,7 +121,9 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         collectionView.deselectItem(at: indexPath, animated: true)
-        
+        if collectionView == self.collectionView{
+            delegate?.didTapKeywordContents(index: indexPath.row)
+        }
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
