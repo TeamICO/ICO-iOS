@@ -97,7 +97,6 @@ final class SearchManager{
                 switch response.result {
                 case .success(let value):
                     let response = value as! NSDictionary
-                    print(response)
                     let isSuccess = response.object(forKey: "isSuccess") as! Bool
                     completion(isSuccess)
                     
@@ -129,7 +128,6 @@ final class SearchManager{
                 switch response.result {
                 case .success(let value):
                     let response = value as! NSDictionary
-                    print(response)
                     let isSuccess = response.object(forKey: "isSuccess") as! Bool
                     completion(isSuccess)
                     

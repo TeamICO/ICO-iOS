@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeedbackVC: UIViewController {
+class FeedbackVC: BaseViewController {
     // MARK: - Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var FeedbackButton: UIButton!
@@ -84,10 +84,10 @@ class FeedbackVC: UIViewController {
     }
     
     @IBAction func didTapFeedbackButton(_ sender: Any) {
-        guard let feedback = self.contentTextView.text, feedback.isExists else{
+        guard let feedback = self.contentTextView.text, feedback.isExists, let jwtToken = self.jwtToken else{
             return
         }
-        FeedbackManager.shared.sendFeedback(feedbackText: feedback) { success in
+        FeedbackManager.shared.sendFeedback(jwtToken : jwtToken,feedbackText: feedback) { success in
             guard success else{
                 return
             }

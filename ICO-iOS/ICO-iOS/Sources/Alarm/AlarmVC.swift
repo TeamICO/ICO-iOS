@@ -140,7 +140,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
                         guard success else{
                             return
                         }
-                        print("읽음")
+                   
                         DispatchQueue.main.async {
                             self?.fetchData()
                         }
@@ -157,7 +157,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
                         guard success else{
                             return
                         }
-                        print("읽음")
+             
                         DispatchQueue.main.async {
                             self?.fetchData()
                         }
