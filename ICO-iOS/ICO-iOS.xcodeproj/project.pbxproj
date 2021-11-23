@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		712AF457274CFFBA004530B2 /* emptyStyleShotCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AF455274CFFBA004530B2 /* emptyStyleShotCVC.swift */; };
+		712AF458274CFFBA004530B2 /* emptyStyleShotCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712AF456274CFFBA004530B2 /* emptyStyleShotCVC.xib */; };
+		712AF45B274D028E004530B2 /* emptyEcoKeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AF459274D028E004530B2 /* emptyEcoKeywordCVC.swift */; };
+		712AF45C274D028E004530B2 /* emptyEcoKeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712AF45A274D028E004530B2 /* emptyEcoKeywordCVC.xib */; };
 		714F32AF273BA635007324BC /* StyleCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F32AD273BA634007324BC /* StyleCVC.swift */; };
 		714F32B0273BA635007324BC /* StyleCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714F32AE273BA635007324BC /* StyleCVC.xib */; };
 		714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714F32B3273BE775007324BC /* ProfileSettingVC.swift */; };
@@ -241,6 +245,10 @@
 		32B3B3D2CAD1AFBDEA9615E4 /* Pods-ICO-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ICO-iOS/Pods-ICO-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		46783D072573FDEF48465096 /* Pods-ICO_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO_iOS.debug.xcconfig"; path = "Target Support Files/Pods-ICO_iOS/Pods-ICO_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6A72A8927A341C9DF5C0BD48 /* Pods-ICO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICO.debug.xcconfig"; path = "Target Support Files/Pods-ICO/Pods-ICO.debug.xcconfig"; sourceTree = "<group>"; };
+		712AF455274CFFBA004530B2 /* emptyStyleShotCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emptyStyleShotCVC.swift; sourceTree = "<group>"; };
+		712AF456274CFFBA004530B2 /* emptyStyleShotCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = emptyStyleShotCVC.xib; sourceTree = "<group>"; };
+		712AF459274D028E004530B2 /* emptyEcoKeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emptyEcoKeywordCVC.swift; sourceTree = "<group>"; };
+		712AF45A274D028E004530B2 /* emptyEcoKeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = emptyEcoKeywordCVC.xib; sourceTree = "<group>"; };
 		714F32AD273BA634007324BC /* StyleCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCVC.swift; sourceTree = "<group>"; };
 		714F32AE273BA635007324BC /* StyleCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StyleCVC.xib; sourceTree = "<group>"; };
 		714F32B3273BE775007324BC /* ProfileSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingVC.swift; sourceTree = "<group>"; };
@@ -595,6 +603,10 @@
 			children = (
 				71DFD3992746A864003BEFE8 /* ecoKeywordCVC.swift */,
 				71DFD39A2746A864003BEFE8 /* ecoKeywordCVC.xib */,
+				712AF455274CFFBA004530B2 /* emptyStyleShotCVC.swift */,
+				712AF456274CFFBA004530B2 /* emptyStyleShotCVC.xib */,
+				712AF459274D028E004530B2 /* emptyEcoKeywordCVC.swift */,
+				712AF45A274D028E004530B2 /* emptyEcoKeywordCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1628,6 +1640,7 @@
 				E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */,
 				714F32B6273BE788007324BC /* ProfileSetting.storyboard in Resources */,
 				E9CAF17F2731635D008F749B /* LaunchScreen.storyboard in Resources */,
+				712AF45C274D028E004530B2 /* emptyEcoKeywordCVC.xib in Resources */,
 				E9CAF17C2731635D008F749B /* Assets.xcassets in Resources */,
 				717CB5162743B5900044E227 /* StyleDetail.storyboard in Resources */,
 				E9378DA32738099B00C589A1 /* HotKeywordTVC.xib in Resources */,
@@ -1672,6 +1685,7 @@
 				E9378D8B2738017400C589A1 /* EcoTopicTVC.xib in Resources */,
 				E9AF8412273B9AE400D77D5F /* IcoVerTVC.xib in Resources */,
 				E97D437F273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib in Resources */,
+				712AF458274CFFBA004530B2 /* emptyStyleShotCVC.xib in Resources */,
 				E9378D7B2737FC1300C589A1 /* TopCVC.xib in Resources */,
 				E9B835A12747D99200215FB6 /* GoogleService-Info.plist in Resources */,
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
@@ -1755,6 +1769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712AF457274CFFBA004530B2 /* emptyStyleShotCVC.swift in Sources */,
 				E9341FF2274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift in Sources */,
 				E9944BCF2735746200DB9279 /* ResponsiveCVC.swift in Sources */,
 				E9CAF1772731635B008F749B /* ViewController.swift in Sources */,
@@ -1880,6 +1895,7 @@
 				E9161CFD273CB96E009A9CA7 /* LikeVC.swift in Sources */,
 				E9C30E0B27466219000B1592 /* AlarmResponse.swift in Sources */,
 				E943BC602738FB6400619C74 /* LoginCVC.swift in Sources */,
+				712AF45B274D028E004530B2 /* emptyEcoKeywordCVC.swift in Sources */,
 				E9C30E092746615D000B1592 /* AlarmManager.swift in Sources */,
 				E9378D862737FE9F00C589A1 /* SensibleCVC.swift in Sources */,
 				71A870EF2745079B0069239A /* MyStyleDataManager.swift in Sources */,

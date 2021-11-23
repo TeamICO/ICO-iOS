@@ -138,8 +138,19 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
 extension PopularIcoVC{
     func didSuccessGetPopularIco(message: String){
         name.text = serverData?.nickname
-        detailLabel.text = serverData?.resultDescription
-        profileImage.setImage(with: serverData?.profileURL ?? "")
+        
+        if serverData?.resultDescription == ""{
+            detailLabel.text = "아직 프로필 한마디를 작성하지 않았습니다."
+        }else{
+            detailLabel.text = serverData?.resultDescription
+        }
+        
+        if serverData?.profileURL == ""{
+            profileImage.image = UIImage(named: "img_profile_default")
+        }else{
+           profileImage.setImage(with: serverData?.profileURL ?? "")
+        }
+    
         likeNum.text = "\(serverData?.likeCnt ?? 0)"
         styleNum.text = "\(serverData?.styleshotCnt ?? 0) "
         
