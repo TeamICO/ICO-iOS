@@ -22,6 +22,8 @@ class HomeVC: BaseViewController {
     @IBOutlet weak var alarmView: UIView!
     
     @IBOutlet weak var topView: UIView!
+    
+    
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     
     // 버튼 클릭시 폰트 색상 변경을 위한 상태 변수
@@ -50,6 +52,13 @@ class HomeVC: BaseViewController {
         configure()
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = topView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        topView.addSubview(blurEffectView)
+        topView.sendSubviewToBack(blurEffectView)
     }
     
     

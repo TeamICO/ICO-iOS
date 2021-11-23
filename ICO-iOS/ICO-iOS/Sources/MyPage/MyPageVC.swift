@@ -28,6 +28,8 @@ class MyPageVC: BaseViewController {
     @IBOutlet weak var likeView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    private var refreshControl = UIRefreshControl()
+    
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,6 +67,9 @@ extension MyPageVC{
 // MARK: - TableView Configure
 extension MyPageVC {
     func tableviewConfigure(){
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
         let myPageUserInfoTVCNib = UINib(nibName: MyPageUserInfoTVC.identifier, bundle: nil)
         tableView.register(myPageUserInfoTVCNib, forCellReuseIdentifier: MyPageUserInfoTVC.identifier)
         
@@ -209,7 +214,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         // 각 섹션 별 높이
         switch indexPath.section {
         case 0 :
-            return 342
+            return 327
         case 1:
             return 178
         default:
@@ -294,4 +299,18 @@ extension MyPageVC: MypageMyRecentStyleShotTVCDelegate{
     
     
     
+}
+extension MyPageVC{
+    @objc func refresh(){
+        self.fetchData()
+
+    }
+    
+     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            if (refreshControl.isRefreshing) {
+                self.fetchData()
+                self.refreshControl.endRefreshing()
+                
+            }
+    }
 }

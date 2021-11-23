@@ -12,6 +12,7 @@ class ProfileSettingVC: BaseViewController {
     private var profileModel : ProfileResult?
     private var ecokeywords = [ProfileEcoKeyword]()
     private var seletedKeywords = [Int]()
+    private var userNickname = ""
     private var nickname = ""
     private var isCheckedNickname = false
     private var profileDescription = ""
@@ -43,6 +44,9 @@ class ProfileSettingVC: BaseViewController {
         guard !self.nickname.isEmpty else{
             self.presentAlert(title: "닉네임을 입력해주세요.")
             return
+        }
+        if self.userNickname == self.nickname{
+            isCheckedNickname = true
         }
         guard isCheckedNickname else{
             self.presentAlert(title: "닉네임을 조건에 맞게입력해주세요.")
@@ -97,6 +101,7 @@ extension ProfileSettingVC{
                 return
             }
             self?.profileModel = response
+            self?.userNickname = response.nickname
             self?.nickname = response.nickname
             self?.profileDescription = des
             let keywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
