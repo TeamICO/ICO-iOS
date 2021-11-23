@@ -43,11 +43,15 @@ class ProfileUserInfoTVC: UITableViewCell {
     }
     func configure(with viewModel : ProfileUserInfoTVCViewModel){
         self.nickNameTextField.text = viewModel.nickName
-        if let profileImage = viewModel.profileImage{
-            self.userImage.setImage(with: profileImage )
+        guard let image = viewModel.profileImage else{
+            return
         }
-       
-    
+        if image == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: image)
+        }
+
     }
     func textfieldConfigure(){
         nickNameTextField.leftViewMode = .always

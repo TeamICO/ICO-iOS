@@ -52,13 +52,7 @@ class HomeVC: BaseViewController {
         configure()
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = topView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        topView.addSubview(blurEffectView)
-        topView.sendSubviewToBack(blurEffectView)
+
     }
     
     

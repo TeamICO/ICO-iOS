@@ -53,23 +53,13 @@ class MyPageUserInfoTVC: UITableViewCell {
         self.earthLabel.text = "지속가능한 지구를 위한 실천을 위해 \(viewModel.earth)번 노력하였어요."
         self.togetherLabel.text = "나와 환경 모두를 지킬 수 있는 행동을 \(viewModel.together)번째 지속하고 있어요."
         self.userIcoLevelImage.image = UIImage(named: icolevleImages[viewModel.userIcoLevel-1])
-        
-        guard let userimage = viewModel.userImage,let userName = viewModel.userName, let url = URL(string: userimage) else{
+        guard let image = viewModel.userImage else{
             return
         }
-        
-
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self?.userImage.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
+        if image == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: image)
         }
         
     }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo3LCJpYXQiOjE2MzY2NTA1MjIsImV4cCI6MTY2ODE4NjUyMiwic3ViIjoidXNlckluZm8ifQ.jLgh0f3iW_2y4RzSQzLFEXKlXJSHyD7cCb4czAWGnVo",forKey: "jwtToken")
+        UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo3LCJpYXQiOjE2MzY2NTA1MjIsImV4cCI6MTY2ODE4NjUyMiwic3ViIjoidXNlckluZm8ifQ.jLgh0f3iW_2y4RzSQzLFEXKlXJSHyD7cCb4czAWGnVo",forKey: "jwtToken")
         FirebaseApp.configure()
         registerRemoteNotification()
         setKakaoSDK()
