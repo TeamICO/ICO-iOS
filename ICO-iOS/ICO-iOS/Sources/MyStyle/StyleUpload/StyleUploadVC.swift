@@ -122,7 +122,7 @@ class StyleUploadVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.dismissKeyboardWhenTappedAround()
         self.tabBarController?.tabBar.isHidden = true
         setUI()
         urlTextField[0].delegate = self
@@ -403,7 +403,7 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         guard let image = info[.editedImage] as? UIImage,
-              let newImage = resizeImage(image: image, newWidth: 100) else{
+              let newImage = resizeImage(image: image, newWidth: 200) else{
             return
         }
         newImageView.image = newImage

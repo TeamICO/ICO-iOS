@@ -80,9 +80,12 @@ extension ResponsiveCVC {
         self.productNameLabel.text = viewModel.productName
         self.userRatingLabel.text = "\(viewModel.userRating).0"
         self.ratingImageView.image = UIImage(named: "ic-styleshot-upload-ecolevel-\(viewModel.userRating)")
-        self.userImage.setImage(with: viewModel.userImage)
         self.userContentImage.setImage(with: viewModel.userContentImage)
-     
+        if viewModel.userImage == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: viewModel.userImage)
+        }
         
         
     }

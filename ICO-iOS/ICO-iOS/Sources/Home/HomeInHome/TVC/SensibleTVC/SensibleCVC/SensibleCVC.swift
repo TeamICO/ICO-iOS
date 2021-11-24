@@ -47,7 +47,11 @@ class SensibleCVC: UICollectionViewCell {
         
         self.userId.text = viewModel.nicName
         self.styleShotImage.setImage(with: viewModel.styleShotImage)
-        self.userImage.setImage(with: viewModel.userImage)
+        if viewModel.userImage == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: viewModel.userImage)
+        }
     }
 }
 // MARK: - CollectionView Configure

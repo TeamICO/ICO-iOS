@@ -373,6 +373,7 @@
 		E97D4370273D2C8200BB374F /* ProfileUserIntroductionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserIntroductionTVC.xib; sourceTree = "<group>"; };
 		E97D437C273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMyEcoKeywordTVC.swift; sourceTree = "<group>"; };
 		E97D437D273D2DE800BB374F /* ProfileMyEcoKeywordTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMyEcoKeywordTVC.xib; sourceTree = "<group>"; };
+		E989654A274E40F200721060 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E9944BC627353E0D00DB9279 /* TopBannerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCVC.swift; sourceTree = "<group>"; };
 		E9944BC727353E0D00DB9279 /* TopBannerCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBannerCVC.xib; sourceTree = "<group>"; };
 		E9944BCA2735550A00DB9279 /* BasePageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageControl.swift; sourceTree = "<group>"; };
@@ -1597,6 +1598,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = E9CAF1662731635B008F749B;
 			productRefGroup = E9CAF1702731635B008F749B /* Products */;
@@ -1923,6 +1925,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9CAF17E2731635D008F749B /* Base */,
+				E989654A274E40F200721060 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1934,6 +1937,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1995,6 +1999,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
