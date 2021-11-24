@@ -54,7 +54,7 @@ class TodayAlarmTVC: UITableViewCell {
             break
             
         case "like" :
-            categoryLabel.text = "마이페이지"
+            categoryLabel.text = "좋아요"
             categoryIconImage.image = UIImage(named: "ic-alram-mypage-recent")
           
             break

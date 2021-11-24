@@ -16,6 +16,7 @@ struct LikeResponse: Codable {
 
 // MARK: - Result
 struct LikeResult: Codable {
+    let no : Int?
     let styleshotIdx: Int
     let imageURL, profileURL: String
     let nickname: String
@@ -23,6 +24,7 @@ struct LikeResult: Codable {
     let isLike: Int
 
     enum CodingKeys: String, CodingKey {
+        case no
         case styleshotIdx
         case imageURL = "imageUrl"
         case profileURL = "profileUrl"

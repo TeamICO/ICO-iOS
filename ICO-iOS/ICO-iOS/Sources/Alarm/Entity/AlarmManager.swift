@@ -32,6 +32,7 @@ final class AlarmManager{
                 switch response.result {
                 
                 case .success(let response):
+       
                     guard response.isSuccess == true else{
                         return
                     }
@@ -51,7 +52,7 @@ final class AlarmManager{
   
         let url = "https://dev.chuckwagon.shop/app/notifications/\(notificationIdx)"
 
-   
+        
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken
         ]
