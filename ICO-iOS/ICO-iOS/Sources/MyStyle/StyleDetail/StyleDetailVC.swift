@@ -180,12 +180,14 @@ class StyleDetailVC: UIViewController {
             var cnt = StyleDetailData?.likeCnt ?? 0
             cnt = cnt - 1
             heartNum.text = "\(cnt)"
+            StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
         }else{
             heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
             StyleDetailDataManager().likeStyle(likeRequest, self)
             var cnt = StyleDetailData?.likeCnt ?? 0
             cnt = cnt + 1
             heartNum.text = "\(cnt)"
+            StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
         }
     }
     
@@ -277,10 +279,7 @@ extension StyleDetailVC{
             moveUrl.text = "아이코가 url을 등록하지 않았습니다."
             moveUrlBtn.isHidden = true
         }
-        
-        print(StyleDetailData!.productURL)
-        
-        
+
         categoryCV.delegate = self
         categoryCV.dataSource = self
         categoryCV.reloadData()
