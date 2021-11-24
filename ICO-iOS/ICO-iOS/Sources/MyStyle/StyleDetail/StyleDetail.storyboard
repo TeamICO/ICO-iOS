@@ -350,6 +350,7 @@
                         <outlet property="lineView1" destination="bph-rA-XnV" id="kxh-a3-e0M"/>
                         <outlet property="lineView2" destination="ZB8-yS-q7S" id="fRb-oS-weM"/>
                         <outlet property="moveUrl" destination="U8P-Ww-Ltk" id="lPd-cM-9Ok"/>
+                        <outlet property="moveUrlBtn" destination="ypI-gP-j8E" id="YUo-GE-xS1"/>
                         <outlet property="navigationTitle" destination="uMn-AA-uRa" id="AhN-Ej-1jQ"/>
                         <outlet property="productDetail" destination="R83-N1-YoI" id="29i-OE-gMe"/>
                         <outlet property="productImage" destination="3NE-QP-Avy" id="T83-lk-NK4"/>

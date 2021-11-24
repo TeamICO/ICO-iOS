@@ -37,6 +37,7 @@ class StyleDetailVC: UIViewController {
     @IBOutlet weak var urlBackView: UIView!
     @IBOutlet weak var urlProduct: UILabel!
     @IBOutlet weak var moveUrl: UILabel!
+    @IBOutlet weak var moveUrlBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
@@ -269,7 +270,16 @@ extension StyleDetailVC{
         
         self.productDetail.text = StyleDetailData?.resultDescription
         self.urlProduct.text = StyleDetailData?.productName
-        self.url = NSURL(string: StyleDetailData!.productURL ?? "")
+        
+        if StyleDetailData!.productURL != ""{
+            self.url = NSURL(string: StyleDetailData!.productURL ?? "")
+        }else{
+            moveUrl.text = "아이코가 url을 등록하지 않았습니다."
+            moveUrlBtn.isHidden = true
+        }
+        
+        print(StyleDetailData!.productURL)
+        
         
         categoryCV.delegate = self
         categoryCV.dataSource = self
@@ -279,7 +289,7 @@ extension StyleDetailVC{
         hashtagCV.dataSource = self
         hashtagCV.reloadData()
         
-        print(message)
+        
     }
     
     func didSuccessReport(message: String){
@@ -289,14 +299,14 @@ extension StyleDetailVC{
     }
     
     func didSuccessDelete(message: String){
-        print(message)
+        
     }
     
     func didSuccessLikeStyle(message: String){
-        print(message)
+        
     }
     
     func didSuccessDisLikeStyle(message: String){
-        print(message)
+        
     }
 }
