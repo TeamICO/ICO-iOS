@@ -50,6 +50,7 @@ final class SearchResultManager{
     }
     
     func getMoreSearchResult(pagination : Bool = false,lastIndex : Int,filter: String,keyword : String, jwtToken: String, completion: @escaping ([SeachResultData]?)->Void) {
+   
         if pagination {
             isLikePaginating = true
         }
@@ -64,7 +65,7 @@ final class SearchResultManager{
             "filter" : filter,
             "no" : "\(lastIndex)"
         ]
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1,execute: {
+        DispatchQueue.global().asyncAfter(deadline: .now(),execute: {
             AF.request(url,
                        method: .get,
                        parameters: param,
@@ -73,7 +74,7 @@ final class SearchResultManager{
                 .responseDecodable(of: SearchResultResponse.self) { response in
                     
                     switch response.result {
-                    
+        
                     case .success(let response):
                         
                         guard response.isSuccess == true else{

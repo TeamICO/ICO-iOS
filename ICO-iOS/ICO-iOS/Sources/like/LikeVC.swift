@@ -35,7 +35,7 @@ extension LikeVC{
             return
         }
         self.nickname = nickName
-        LikeManger.shared.getUserLikes(jwtToken: jwtToken) { [weak self] response in
+        LikeManger.shared.getMoreLikes(pagination: false, lastIndex: 0, jwtToken: jwtToken) { [weak self] response in
             guard let response = response else {
                 return
             }

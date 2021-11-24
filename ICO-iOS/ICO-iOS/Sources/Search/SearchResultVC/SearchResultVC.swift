@@ -66,12 +66,12 @@ extension SearchResultVC{
         guard let jwtToken = self.jwtToken else{
             return
         }
-        SearchResultManager.shared.getSearchResult(keyword: self.searchword, filter: "\(sortedIdx)", jwtToken: jwtToken) { [weak self] response in
-            guard let response = response, let result = response.seachResult else {
-                return 
+        SearchResultManager.shared.getMoreSearchResult(pagination: false, lastIndex: 0, filter: "\(sortedIdx)", keyword: self.searchword, jwtToken: jwtToken) { [weak self] response in
+            guard let response = response else {
+                return
             }
-            self?.searchResultModel = response
-            self?.searchResultData = result
+            
+            self?.searchResultData = response
             self?.collectionView.reloadData()
             self?.isStart = true
         }
@@ -187,7 +187,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             guard !SearchResultManager.shared.isLikePaginating else{
                 return
             }
-            
+            print("call")
             SearchResultManager.shared.getMoreSearchResult(pagination: true, lastIndex: self.searchResultData.count, filter: "\(self.sortedIdx+1)", keyword: self.searchword , jwtToken: jwtToken) { [weak self] response in
                 guard let response = response else {
                     return
