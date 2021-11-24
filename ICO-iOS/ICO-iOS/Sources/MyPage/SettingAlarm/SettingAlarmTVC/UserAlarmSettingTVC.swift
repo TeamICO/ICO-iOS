@@ -10,15 +10,27 @@ import UIKit
 class UserAlarmSettingTVC: UITableViewCell {
     static let identifier = "UserAlarmSettingTVC"
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var alarmSwitch: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+     
+    
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
+       
     }
     
+    @IBAction func didChangeSwitch(_ sender: Any) {
+        if alarmSwitch.isOn {
+            alarmSwitch.thumbTintColor = .gradient012
+        } else {
+            alarmSwitch.thumbTintColor = .primaryBlack40
+        }
+
+    }
 }

@@ -11,10 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LikeCVC" customModule="ICO_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="166" height="251"/>
+            <rect key="frame" x="0.0" y="0.0" width="164" height="251"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="166" height="251"/>
+                <rect key="frame" x="0.0" y="0.0" width="164" height="251"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j0P-2b-gtk">
@@ -39,10 +39,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bMT-XD-dv7">
-                        <rect key="frame" x="1" y="0.0" width="164" height="164"/>
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="164" id="7E7-gR-XdF"/>
-                            <constraint firstAttribute="width" constant="164" id="F0w-V8-uJC"/>
+                            <constraint firstAttribute="width" constant="164" id="8Es-On-9zP"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -51,14 +51,14 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-heart-click" translatesAutoresizingMaskIntoConstraints="NO" id="wG6-RJ-zZl">
-                        <rect key="frame" x="132" y="10" width="24" height="24"/>
+                        <rect key="frame" x="130" y="10" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="idg-jQ-AKu"/>
                             <constraint firstAttribute="height" constant="24" id="jNc-dR-Wbk"/>
                         </constraints>
                     </imageView>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="le0-ru-Mcu">
-                        <rect key="frame" x="0.0" y="213" width="166" height="25"/>
+                        <rect key="frame" x="0.0" y="213" width="164" height="25"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Uir-Ze-TFh"/>
@@ -71,7 +71,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dn-aw-sTc">
-                        <rect key="frame" x="126" y="212" width="40" height="28"/>
+                        <rect key="frame" x="124" y="212" width="40" height="28"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="iDd-ci-Sx2"/>
@@ -83,22 +83,22 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="bMT-XD-dv7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0XG-8U-HTS"/>
                 <constraint firstAttribute="trailing" secondItem="le0-ru-Mcu" secondAttribute="trailing" id="70h-js-3v7"/>
                 <constraint firstItem="le0-ru-Mcu" firstAttribute="top" secondItem="j0P-2b-gtk" secondAttribute="bottom" constant="10" id="Cua-l4-cuW"/>
                 <constraint firstItem="9dn-aw-sTc" firstAttribute="top" secondItem="le0-ru-Mcu" secondAttribute="bottom" constant="-26" id="DqO-GG-CVQ"/>
                 <constraint firstItem="wG6-RJ-zZl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="FYY-cq-IUx"/>
-                <constraint firstItem="j0P-2b-gtk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="171" id="GVg-qW-W0m"/>
                 <constraint firstItem="bMT-XD-dv7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oqv-bp-QTK"/>
                 <constraint firstItem="D93-5u-hzV" firstAttribute="leading" secondItem="j0P-2b-gtk" secondAttribute="trailing" constant="8" id="VOG-tQ-5lz"/>
                 <constraint firstItem="D93-5u-hzV" firstAttribute="top" secondItem="bMT-XD-dv7" secondAttribute="bottom" constant="13" id="VjL-QC-hvV"/>
                 <constraint firstItem="le0-ru-Mcu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dMz-Bg-v4u"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="le0-ru-Mcu" secondAttribute="bottom" constant="13" id="hHR-fG-1Kn"/>
                 <constraint firstItem="j0P-2b-gtk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="j1N-Fo-JOo"/>
                 <constraint firstAttribute="trailing" secondItem="wG6-RJ-zZl" secondAttribute="trailing" constant="10" id="pzM-yK-7Tu"/>
-                <constraint firstItem="bMT-XD-dv7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qEr-id-Xpt"/>
+                <constraint firstItem="j0P-2b-gtk" firstAttribute="top" secondItem="bMT-XD-dv7" secondAttribute="bottom" constant="7" id="sLZ-5I-spJ"/>
                 <constraint firstAttribute="trailing" secondItem="9dn-aw-sTc" secondAttribute="trailing" id="uA8-fh-XzP"/>
+                <constraint firstAttribute="trailing" secondItem="bMT-XD-dv7" secondAttribute="trailing" id="w2S-OT-8lq"/>
             </constraints>
-            <size key="customSize" width="166" height="251"/>
+            <size key="customSize" width="164" height="251"/>
             <connections>
                 <outlet property="collectionView" destination="le0-ru-Mcu" id="ap7-9y-6M1"/>
                 <outlet property="contentImage" destination="bMT-XD-dv7" id="sdK-fu-F1V"/>
@@ -106,7 +106,7 @@
                 <outlet property="userImage" destination="j0P-2b-gtk" id="yOj-kZ-R8r"/>
                 <outlet property="userNameLabel" destination="D93-5u-hzV" id="6I9-PH-P4J"/>
             </connections>
-            <point key="canvasLocation" x="217.39130434782609" y="204.57589285714286"/>
+            <point key="canvasLocation" x="215.94202898550725" y="204.57589285714286"/>
         </collectionViewCell>
     </objects>
     <resources>

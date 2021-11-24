@@ -9,6 +9,8 @@ import UIKit
 
 class LikeVC: BaseViewController {
 
+    var isStart = false
+    
     private var likeResult = [LikeResult]()
     private var nickname = ""
     private var refreshControl = UIRefreshControl()
@@ -39,6 +41,7 @@ extension LikeVC{
             }
             self?.likeResult = response
             self?.collectionView.reloadData()
+            self?.isStart = true
         }
     }
 }
@@ -130,6 +133,29 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         styleDetailVC.styleShotIdx = styleShotIdx
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffY = scrollView.contentOffset.y
+        
+        if contentOffY >= (collectionView.contentSize.height+50-scrollView.frame.size.height){
+            guard let jwtToken = self.jwtToken, isStart else{
+                return
+            }
+            guard !LikeManger.shared.isLikePaginating else{
+                return
+            }
+            
+            LikeManger.shared.getMoreLikes(pagination: true,lastIndex: 0, jwtToken: jwtToken) { [weak self] response in
+                guard let response = response else {
+                    return
+                }
+                self?.likeResult.append(contentsOf: response)
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
 }
 extension LikeVC{
     @objc func refresh(){
@@ -145,3 +171,4 @@ extension LikeVC{
             }
     }
 }
+

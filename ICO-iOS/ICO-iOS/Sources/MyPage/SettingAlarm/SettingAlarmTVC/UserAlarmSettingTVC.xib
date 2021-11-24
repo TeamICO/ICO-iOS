@@ -23,15 +23,26 @@
                         <color key="textColor" red="0.0039215686274509803" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKW-sh-iH8">
+                        <rect key="frame" x="255" y="19.5" width="51" height="31"/>
+                        <color key="onTintColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="thumbTintColor" red="0.39215686274509803" green="0.88235294117647056" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <action selector="didChangeSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="fPh-Yg-Tj3"/>
+                        </connections>
+                    </switch>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DKW-sh-iH8" secondAttribute="trailing" constant="16" id="7c1-uW-fPO"/>
                     <constraint firstItem="Y5J-02-iKV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iKA-lw-SD3"/>
                     <constraint firstItem="Y5J-02-iKV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="izo-Lw-ub9"/>
+                    <constraint firstItem="DKW-sh-iH8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tA0-Rc-WFo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="alarmSwitch" destination="DKW-sh-iH8" id="HJt-XQ-w9E"/>
                 <outlet property="titleLabel" destination="Y5J-02-iKV" id="ILL-Zg-Ppf"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="133.25892857142856"/>
