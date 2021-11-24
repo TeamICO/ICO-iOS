@@ -70,7 +70,7 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
         
         cell.selectionStyle = .none
         cell.mainImage.setImage(with: popularServerData[indexPath.row].imageURL)
-        cell.userImage.download(url: popularServerData[indexPath.row].profileURL, rounded: true)
+        cell.userImage.download(url: popularServerData[indexPath.row].profileURL ?? "", rounded: true)
         cell.nameLabel.text = "\(popularServerData[indexPath.row].nickname)"
         cell.score.text = "\(popularServerData[indexPath.row].point)"
         if cell.score.text == "5"{
@@ -122,7 +122,12 @@ extension PopularVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularIcoCVC", for: indexPath)as? PopularIcoCVC else {return UICollectionViewCell()}
         
         cell.icoName.text = serverData?.popularIco[indexPath.row].nickname
-        cell.icoImage.download(url: serverData?.popularIco[indexPath.row].profileURL ?? "", rounded: true)
+        if serverData?.popularIco[indexPath.row].profileURL != ""{
+            cell.icoImage.download(url: serverData?.popularIco[indexPath.row].profileURL ?? "", rounded: true)
+        }else{
+            cell.icoImage.image = UIImage(named: "img_profile_default")
+        }
+
         if serverData?.popularIco[indexPath.row].latestCategory == "업사이클링"{
             cell.iconImage.image = UIImage(named: "illust-styleshot-upcycling")
         }else if serverData?.popularIco[indexPath.row].latestCategory == "비건"{
