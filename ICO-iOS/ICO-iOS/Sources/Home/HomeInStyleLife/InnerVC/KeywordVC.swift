@@ -10,6 +10,7 @@ import UIKit
 class KeywordVC: UIViewController {
     
     var keywordServerData: [RecentResult] = []
+    var sortedIdx: Int = 1
     @IBOutlet weak var keywordCV: UICollectionView!
     @IBOutlet weak var postTV: UITableView!
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
@@ -45,6 +46,9 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let keywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeywordCVC", for: indexPath)as? KeywordCVC else {return UICollectionViewCell()}
+        
+        keywordCell.delegate = self
+        keywordCell.sortedIdx = indexPath.row
         
         if indexPath.row == 0{
             keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-vegan")
@@ -132,7 +136,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
     }
 
-    
+    /*
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         var cell = collectionView.cellForItem(at: indexPath)as? KeywordCVC
         if ((cell?.isSelected) != nil){
@@ -142,6 +146,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         //print(cell?.isSelected)
         
     }
+     */
     /*
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath)as? KeywordCVC{
@@ -159,7 +164,7 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTVC", for: indexPath)as? RecentTVC else {return UITableViewCell()}
-        
+       
         cell.selectionStyle = .none
         cell.mainImage.setImage(with: keywordServerData[indexPath.row].imageURL)
         cell.nameLabel.text = keywordServerData[indexPath.row].nickname
@@ -213,4 +218,13 @@ extension KeywordVC{
         postTV.reloadData()
         print(message)
     }
+}
+
+
+extension KeywordVC : KeywordCVCDelagate{
+    func didTapSort(sortedIdx: Int) {
+        self.sortedIdx = sortedIdx
+    }
+    
+    
 }
