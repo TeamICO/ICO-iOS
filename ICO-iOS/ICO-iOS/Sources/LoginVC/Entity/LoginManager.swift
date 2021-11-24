@@ -59,16 +59,12 @@ class LoginManager {
       
         let url = "https://dev.chuckwagon.shop/app/login"
        
-        var userName = ""
-        if let name = name {
-            userName = name
-        }
-        
+ 
         let param = [
             "snsToken" : snsToken,
             "snsType" : snsType,
             "pushToken" : deviceToken ?? "",
-            "name" : userName
+            "name" : name ?? ""
         ]
        
         AF.request(url,
@@ -81,6 +77,7 @@ class LoginManager {
                 switch response.result {
                 
                 case .success(let response):
+                    print(response)
                     completion(response)
                     
                     

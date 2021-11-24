@@ -67,7 +67,8 @@ struct HomeInHomeEcoTopic: Codable {
 // MARK: - SenseStyleshot
 struct HomeInHomeSenseStyleshot: Codable {
     let styleshotIdx: Int
-    let imageURL, profileURL: String
+    let imageURL : String
+    let profileURL: String
     let nickname: String
     let category: [String]
 

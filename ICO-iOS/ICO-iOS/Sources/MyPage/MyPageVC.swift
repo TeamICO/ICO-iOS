@@ -163,6 +163,8 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             let action = UIAlertAction(title: "로그아웃", style: .default, handler:{ [weak self]_ in
                 
                 UserDefaults.standard.set(nil, forKey: "jwtToken")
+                UserDefaults.standard.set(nil, forKey: "userIdx")
+                UserDefaults.standard.set(nil, forKey: "nickname")
                 if ((self?.loginInstance?.isValidAccessTokenExpireTimeNow()) != nil){
                     self?.loginInstance?.requestDeleteToken()
                     let loginStoryboard = UIStoryboard(name: "LoginSB", bundle: nil)

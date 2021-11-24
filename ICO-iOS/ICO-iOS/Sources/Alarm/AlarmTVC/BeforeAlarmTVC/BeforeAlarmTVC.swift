@@ -15,7 +15,8 @@ class BeforeAlarmTVC: UITableViewCell {
     @IBOutlet weak var alarmedLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        categoryLabel.layer.cornerRadius = 8
+        categoryLabel.layer.masksToBounds = true
     }
 
     override func prepareForReuse() {

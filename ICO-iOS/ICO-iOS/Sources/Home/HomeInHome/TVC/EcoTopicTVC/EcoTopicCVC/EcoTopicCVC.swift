@@ -52,7 +52,11 @@ extension EcoTopicCVC {
     func configure(with viewModel : EcoTopicCVCViewModel){
         self.nickName.text = viewModel.nickName
         self.userContentImage.setImage(with: viewModel.userContentImage)
-        self.userImage.setImage(with: viewModel.userImage)
+        if viewModel.userImage == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: viewModel.userImage)
+        }
       
         
     }
