@@ -18,11 +18,12 @@ struct SearchResultResponse: Codable {
 // MARK: - Result
 struct SearchResultResult: Codable {
     let resultCnt: Int
-    let seachResult: [SeachResultData]
+    let seachResult: [SeachResultData]?
 }
 
 // MARK: - SeachResult
 struct SeachResultData: Codable {
+    let no : Int?
     let styleshotIdx: Int
     let imageURL: String
     let profileURL: String
@@ -31,6 +32,7 @@ struct SeachResultData: Codable {
     let isLike: Int
 
     enum CodingKeys: String, CodingKey {
+        case no
         case styleshotIdx
         case imageURL = "imageUrl"
         case profileURL = "profileUrl"

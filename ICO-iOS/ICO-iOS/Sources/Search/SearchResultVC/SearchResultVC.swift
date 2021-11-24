@@ -10,8 +10,10 @@ import UIKit
 class SearchResultVC: BaseViewController {
     // MARK: - Properties
     var searchword = ""
+    var isStart = false
     private var sortedIdx = 1
     private var searchResultModel : SearchResultResult?
+    private var searchResultData = [SeachResultData]()
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -43,11 +45,15 @@ class SearchResultVC: BaseViewController {
         }
         
         SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx+1)", jwtToken: jwtToken) { [weak self] response in
-            guard let response = response else {
+            guard let response = response, let result = response.seachResult else {
                 return
             }
+            print(result)
             self?.searchResultModel = response
+            self?.searchResultData = result
+            self?.isStart = false
             self?.collectionView.reloadData()
+            self?.isStart = true
         }
         
     }
@@ -61,11 +67,13 @@ extension SearchResultVC{
             return
         }
         SearchResultManager.shared.getSearchResult(keyword: self.searchword, filter: "\(sortedIdx)", jwtToken: jwtToken) { [weak self] response in
-            guard let response = response else {
+            guard let response = response, let result = response.seachResult else {
                 return 
             }
             self?.searchResultModel = response
+            self?.searchResultData = result
             self?.collectionView.reloadData()
+            self?.isStart = true
         }
     }
 }
@@ -93,7 +101,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 2 {
-            return searchResultModel?.resultCnt ?? 0
+            return searchResultData.count
         }
         return 1
     }
@@ -102,9 +110,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
         switch indexPath.section{
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCountCVC.identifier, for: indexPath) as! ResultCountCVC
-            if let resultCount = self.searchResultModel?.resultCnt{
-                cell.searchResultCountLabel.text = "\(resultCount)건"
-            }
+                cell.searchResultCountLabel.text = "\(searchResultData.count)건"
             return cell
             
         case 1:
@@ -114,10 +120,9 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultsCVC.identifier, for: indexPath) as! SearchResultsCVC
-            if let searchResult = self.searchResultModel?.seachResult{
-                cell.getData(data: searchResult[indexPath.row].category)
-                cell.configure(with: SearchResultsCVCViewModel(with: searchResult[indexPath.row]))
-            }
+                cell.getData(data: searchResultData[indexPath.row].category)
+                cell.configure(with: SearchResultsCVCViewModel(with: searchResultData[indexPath.row]))
+
             
             return cell
             
@@ -171,6 +176,32 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
         styleDetailVC.styleShotIdx = styleShotIdx
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
+    // 페이징
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffY = scrollView.contentOffset.y
+        
+        if contentOffY >= (collectionView.contentSize.height+30-scrollView.frame.size.height){
+            guard let jwtToken = self.jwtToken, isStart else{
+                return
+            }
+            guard !SearchResultManager.shared.isLikePaginating else{
+                return
+            }
+            
+            SearchResultManager.shared.getMoreSearchResult(pagination: true, lastIndex: self.searchResultData.count, filter: "\(self.sortedIdx+1)", keyword: self.searchword , jwtToken: jwtToken) { [weak self] response in
+                guard let response = response else {
+                    return
+                }
+                self?.searchResultData.append(contentsOf: response)
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                    
+                }
+            }
+        }
+    }
+    
+    
 }
 // MARK: - TextField Delegate
 extension SearchResultVC : UITextFieldDelegate {
@@ -182,11 +213,14 @@ extension SearchResultVC : UITextFieldDelegate {
                 self.searchword = text
                 if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken"){
                     SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx+1)", jwtToken: jwtToken) { [weak self] response in
-                        guard let response = response else {
+                        guard let response = response, let result = response.seachResult else {
                             return
                         }
                         self?.searchResultModel = response
+                        self?.searchResultData = result
+                        self?.isStart = false
                         self?.collectionView.reloadData()
+                        self?.isStart = true
                     }
                 }
             }

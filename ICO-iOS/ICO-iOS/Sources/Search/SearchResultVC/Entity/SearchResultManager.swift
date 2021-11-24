@@ -10,7 +10,7 @@ import Alamofire
 final class SearchResultManager{
     static let shared = SearchResultManager()
     private init() {}
-    
+    var isLikePaginating = false
     
     func getSearchResult(keyword : String,filter : String,jwtToken: String, completion: @escaping (SearchResultResult?)->Void) {
 
@@ -35,6 +35,7 @@ final class SearchResultManager{
                 switch response.result {
                 
                 case .success(let response):
+
                     guard response.isSuccess else{
                         return
                     }
@@ -45,6 +46,51 @@ final class SearchResultManager{
                     
                 }
             }
+        
+    }
+    
+    func getMoreSearchResult(pagination : Bool = false,lastIndex : Int,filter: String,keyword : String, jwtToken: String, completion: @escaping ([SeachResultData]?)->Void) {
+        if pagination {
+            isLikePaginating = true
+        }
+        let url = "https://prod.chuckwagon.shop/app/styleshots/search?"
+
+   
+        let header : HTTPHeaders = [
+            "X-ACCESS-TOKEN" : jwtToken
+        ]
+        let param = [
+            "keyword" : keyword,
+            "filter" : filter,
+            "no" : "\(lastIndex)"
+        ]
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1,execute: {
+            AF.request(url,
+                       method: .get,
+                       parameters: param,
+                       encoding: URLEncoding.default,
+                       headers: header)
+                .responseDecodable(of: SearchResultResponse.self) { response in
+                    
+                    switch response.result {
+                    
+                    case .success(let response):
+                        
+                        guard response.isSuccess == true else{
+                            return
+                        }
+                        
+                        completion(response.result.seachResult)
+                        if pagination {
+                            self.isLikePaginating = false
+                        }
+                    case .failure(let error):
+                        print("DEBUG>> getMoreSearchResult Get Error : \(error.localizedDescription)")
+                        
+                    }
+                }
+        })
+
         
     }
 }

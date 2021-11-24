@@ -133,6 +133,7 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         styleDetailVC.styleShotIdx = styleShotIdx
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
+    // 페이징
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffY = scrollView.contentOffset.y
         
@@ -144,7 +145,7 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
                 return
             }
             
-            LikeManger.shared.getMoreLikes(pagination: true,lastIndex: 0, jwtToken: jwtToken) { [weak self] response in
+            LikeManger.shared.getMoreLikes(pagination: true,lastIndex: self.likeResult.count, jwtToken: jwtToken) { [weak self] response in
                 guard let response = response else {
                     return
                 }
