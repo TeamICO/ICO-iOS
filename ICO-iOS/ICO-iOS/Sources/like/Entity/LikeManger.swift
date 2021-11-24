@@ -63,7 +63,7 @@ final class LikeManger{
         let param = [
             "no" : "\(lastIndex)"
         ]
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1,execute: {
+        DispatchQueue.global().asyncAfter(deadline: .now(),execute: {
             AF.request(url,
                        method: .get,
                        parameters: param,
