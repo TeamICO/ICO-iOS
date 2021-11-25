@@ -188,7 +188,6 @@ extension PopularVC{
         popularIcoCV.reloadData()
         topBanner.setImage(with: serverData?.topBanner.imageURL ?? "")
         
-        print(message)
     }
     
     func didSuccessGetPopularInfo(message: String){
@@ -197,6 +196,5 @@ extension PopularVC{
         postTV.reloadData()
         entireHeight.constant = CGFloat(575 + (616 * popularServerData.count))
       
-        print(message)
     }
 }

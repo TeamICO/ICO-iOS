@@ -219,7 +219,7 @@ extension KeywordVC{
         entireHeight.constant = CGFloat(136 + (cnt * 616))
         setCVTV()
         postTV.reloadData()
-        print(message)
+
     }
 }
 

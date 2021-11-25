@@ -172,6 +172,10 @@ class StyleDetailVC: UIViewController {
     }
     
     
+    @objc func toDetailProfile(){
+        
+    }
+    
     @IBAction func likeBtn(_ sender: Any) {
 
 
