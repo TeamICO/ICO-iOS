@@ -99,6 +99,5 @@ extension RecentVC{
     func didSuccessGetRecentInfo(message: String){
         setTV()
         postingTV.reloadData()
-        print(message)
     }
 }

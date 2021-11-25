@@ -166,6 +166,5 @@ extension PopularIcoVC{
         setCV()
         styleCV.reloadData()
         
-        print(message)
     }
 }

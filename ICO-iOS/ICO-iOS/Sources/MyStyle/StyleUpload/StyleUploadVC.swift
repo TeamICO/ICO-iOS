@@ -505,6 +505,6 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
 
 extension StyleUploadVC{
     func didSuccessStyleUpload(message: String,code: Int){
-        print(message)
+
     }
 }
