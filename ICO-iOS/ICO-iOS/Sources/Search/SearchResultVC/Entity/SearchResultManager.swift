@@ -10,7 +10,7 @@ import Alamofire
 final class SearchResultManager{
     static let shared = SearchResultManager()
     private init() {}
-    var isLikePaginating = false
+    var isPaginating = false
     
     func getSearchResult(keyword : String,filter : String,jwtToken: String, completion: @escaping (SearchResultResult?)->Void) {
 
@@ -50,13 +50,13 @@ final class SearchResultManager{
     }
     
     func getMoreSearchResult(pagination : Bool = false,lastIndex : Int,filter: String,keyword : String, jwtToken: String, completion: @escaping ([SeachResultData]?)->Void) {
-   
+      
         if pagination {
-            isLikePaginating = true
+            isPaginating = true
         }
         let url = "https://prod.chuckwagon.shop/app/styleshots/search?"
 
-   
+     
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken
         ]
@@ -83,7 +83,7 @@ final class SearchResultManager{
                         
                         completion(response.result.seachResult)
                         if pagination {
-                            self.isLikePaginating = false
+                            self.isPaginating = false
                         }
                     case .failure(let error):
                         print("DEBUG>> getMoreSearchResult Get Error : \(error.localizedDescription)")

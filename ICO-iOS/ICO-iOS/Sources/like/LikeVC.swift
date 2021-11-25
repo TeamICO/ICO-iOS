@@ -49,6 +49,10 @@ extension LikeVC{
 // MARK: - CollectionView Configure
 extension LikeVC {
     func collectionViewConfigure(){
+        if self.likeResult.isEmpty{
+            collectionView.isScrollEnabled = false
+        }
+        
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
@@ -137,7 +141,7 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffY = scrollView.contentOffset.y
         
-        if contentOffY >= (collectionView.contentSize.height+50-scrollView.frame.size.height){
+        if contentOffY >= (collectionView.contentSize.height+70-scrollView.frame.size.height){
             guard let jwtToken = self.jwtToken, isStart else{
                 return
             }
@@ -150,9 +154,9 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
                     return
                 }
                 self?.likeResult.append(contentsOf: response)
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self?.collectionView.reloadData()
-                }
+                })
             }
         }
     }

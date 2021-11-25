@@ -52,6 +52,8 @@
 		71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E6E28B273A6F0B00DB9E0B /* PopularIco.storyboard */; };
 		71F8686F2749615400321DD1 /* hashTagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8686D2749615400321DD1 /* hashTagCVC.swift */; };
 		71F868702749615400321DD1 /* hashTagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F8686E2749615400321DD1 /* hashTagCVC.xib */; };
+		E90511F4274F3C99002B1574 /* CustomPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90511F3274F3C99002B1574 /* CustomPopupVC.swift */; };
+		E90511F6274F3CA6002B1574 /* CustomPopupSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */; };
 		E9161CF7273CB953009A9CA7 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161CF6273CB953009A9CA7 /* AlarmVC.swift */; };
 		E9161CF9273CB95A009A9CA7 /* AlarmSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */; };
 		E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */; };
@@ -291,6 +293,8 @@
 		71F8686D2749615400321DD1 /* hashTagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashTagCVC.swift; sourceTree = "<group>"; };
 		71F8686E2749615400321DD1 /* hashTagCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = hashTagCVC.xib; sourceTree = "<group>"; };
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90511F3274F3C99002B1574 /* CustomPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupVC.swift; sourceTree = "<group>"; };
+		E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomPopupSB.storyboard; sourceTree = "<group>"; };
 		E9161CF6273CB953009A9CA7 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmSB.storyboard; sourceTree = "<group>"; };
 		E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
@@ -650,6 +654,15 @@
 				E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E90511F2274F3C70002B1574 /* CustomPopup */ = {
+			isa = PBXGroup;
+			children = (
+				E90511F3274F3C99002B1574 /* CustomPopupVC.swift */,
+				E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */,
+			);
+			path = CustomPopup;
 			sourceTree = "<group>";
 		};
 		E9161CF4273CB911009A9CA7 /* Alarm */ = {
@@ -1315,6 +1328,7 @@
 				E99A3B70274147410073ED09 /* EcoKeyWordType.swift */,
 				E94613A32743B7A700A5F7C2 /* CommonResponse.swift */,
 				E9EE0DB7274A717600567FCE /* IPhoneDeviceGroup.swift */,
+				E90511F2274F3C70002B1574 /* CustomPopup */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -1618,6 +1632,7 @@
 				E9E49924273BAC140001ACFB /* FeedbackSB.storyboard in Resources */,
 				E9E49914273BABAC0001ACFB /* IcoLevelSB.storyboard in Resources */,
 				E9378D9F2738098700C589A1 /* RecentSearchWordsTVC.xib in Resources */,
+				E90511F6274F3CA6002B1574 /* CustomPopupSB.storyboard in Resources */,
 				E9E49928273BAC290001ACFB /* LevelUpSB.storyboard in Resources */,
 				E9341FF3274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib in Resources */,
 				E9AF83E1273B5CA300D77D5F /* SearchResultSB.storyboard in Resources */,
@@ -1829,6 +1844,7 @@
 				E94613A62743B7CF00A5F7C2 /* LoginResponse.swift in Sources */,
 				714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */,
 				E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */,
+				E90511F4274F3C99002B1574 /* CustomPopupVC.swift in Sources */,
 				71E2672B274B872200E99E1A /* StyleUploadRequest.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
 				E9AF83F5273B769600D77D5F /* SortCVC.swift in Sources */,
@@ -2062,7 +2078,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KWX544766F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ICO-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2094,7 +2110,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KWX544766F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ICO-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -180,23 +180,22 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffY = scrollView.contentOffset.y
         
-        if contentOffY >= (collectionView.contentSize.height+30-scrollView.frame.size.height){
+        if contentOffY >= (collectionView.contentSize.height+70-scrollView.frame.size.height){
             guard let jwtToken = self.jwtToken, isStart else{
                 return
             }
-            guard !SearchResultManager.shared.isLikePaginating else{
+            guard !SearchResultManager.shared.isPaginating else{
                 return
             }
-            print("call")
+           
             SearchResultManager.shared.getMoreSearchResult(pagination: true, lastIndex: self.searchResultData.count, filter: "\(self.sortedIdx+1)", keyword: self.searchword , jwtToken: jwtToken) { [weak self] response in
                 guard let response = response else {
                     return
                 }
                 self?.searchResultData.append(contentsOf: response)
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self?.collectionView.reloadData()
-                    
-                }
+                })
             }
         }
     }
