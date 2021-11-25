@@ -282,16 +282,17 @@ extension StyleDetailVC{
         self.userName.text = StyleDetailData?.nickname
         self.productName.text = StyleDetailData?.productName
         self.heartNum.text = "\(StyleDetailData?.likeCnt ?? 0)"
-        self.scoreNum.text = "\(StyleDetailData?.point ?? 0)"
-        if scoreNum.text == "5"{
+        let score1 = StyleDetailData?.point ?? 0
+        self.scoreNum.text = "\(score1).0"
+        if scoreNum.text == "5.0"{
            ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-5")
-        }else if scoreNum.text == "4"{
+        }else if scoreNum.text == "4.0"{
            ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-4")
-        }else if scoreNum.text == "3"{
+        }else if scoreNum.text == "3.0"{
            ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-3")
-        }else if scoreNum.text == "2"{
+        }else if scoreNum.text == "2.0"{
            ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-2")
-        }else if scoreNum.text == "1"{
+        }else if scoreNum.text == "1.0"{
            ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
         
