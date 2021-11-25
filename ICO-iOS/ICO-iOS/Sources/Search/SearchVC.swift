@@ -81,7 +81,7 @@ extension SearchVC {
         let topNib = UINib(nibName: SearchKeywordTVC.identifier, bundle: nil)
         searchKeywordTableView.register(topNib, forCellReuseIdentifier: SearchKeywordTVC.identifier)
    
-        searchKeywordTableView.backgroundColor = .black.withAlphaComponent(0.2)
+        searchKeywordTableView.backgroundColor = .white
         searchKeywordTableView.delegate = self
         searchKeywordTableView.dataSource = self
         searchKeywordTableView.tableFooterView = nil
