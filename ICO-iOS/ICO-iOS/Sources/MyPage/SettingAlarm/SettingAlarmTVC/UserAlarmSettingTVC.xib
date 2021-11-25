@@ -26,7 +26,7 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKW-sh-iH8">
                         <rect key="frame" x="255" y="19.5" width="51" height="31"/>
                         <color key="onTintColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="thumbTintColor" red="0.39215686274509803" green="0.88235294117647056" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="thumbTintColor" red="0.41960784313725491" green="0.76470588235294112" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="didChangeSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="fPh-Yg-Tj3"/>
                         </connections>

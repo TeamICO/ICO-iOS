@@ -48,8 +48,8 @@ class BeforeAlarmTVC: UITableViewCell {
             break
             
         case "like" :
-            categoryLabel.text = "좋아요"
-            categoryIconImage.image = UIImage(named: "icNavigationMypage1")
+            categoryLabel.text = "나의 스타일"
+            categoryIconImage.image = UIImage(named: "icNavigationStyleshot1")
            
             break
         default :

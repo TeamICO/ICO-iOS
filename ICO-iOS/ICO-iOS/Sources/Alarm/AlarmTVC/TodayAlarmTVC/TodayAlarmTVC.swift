@@ -30,7 +30,7 @@ class TodayAlarmTVC: UITableViewCell {
         self.contentLabel.text = viewModel.description
     
         if viewModel.isNew == 1{
-            contentView.backgroundColor = UIColor.primaryigreen5
+            contentView.backgroundColor = UIColor.primaryigreen5.withAlphaComponent(0.3)
             
         }else{
             contentView.backgroundColor = .white
@@ -55,8 +55,8 @@ class TodayAlarmTVC: UITableViewCell {
             break
             
         case "like" :
-            categoryLabel.text = "좋아요"
-            categoryIconImage.image = UIImage(named: "ic-alram-mypage-recent")
+            categoryLabel.text = "나의 스타일"
+            categoryIconImage.image = UIImage(named: "ic-alram-styleshot-recent")
           
             break
         default :

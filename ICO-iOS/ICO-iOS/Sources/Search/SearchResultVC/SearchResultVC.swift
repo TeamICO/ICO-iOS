@@ -93,7 +93,7 @@ extension SearchResultVC {
         
         let searchResultsCVCNib = UINib(nibName: SearchResultsCVC.identifier, bundle: nil)
         collectionView.register(searchResultsCVCNib, forCellWithReuseIdentifier: SearchResultsCVC.identifier)
-
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -184,7 +184,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffY = scrollView.contentOffset.y
         
-        if contentOffY >= (collectionView.contentSize.height+70-scrollView.frame.size.height){
+        if contentOffY >= (collectionView.contentSize.height+150-scrollView.frame.size.height){
             guard let jwtToken = self.jwtToken, isStart else{
                 return
             }
@@ -197,9 +197,9 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
                     return
                 }
                 self?.searchResultData.append(contentsOf: response)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.async {
                     self?.collectionView.reloadData()
-                })
+                }
             }
         }
     }

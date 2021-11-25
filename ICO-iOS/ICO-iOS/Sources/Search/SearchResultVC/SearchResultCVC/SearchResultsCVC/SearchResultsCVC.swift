@@ -49,7 +49,11 @@ extension SearchResultsCVC {
     func configure(with viewModel : SearchResultsCVCViewModel){
         self.userNameLabel.text = viewModel.nicName
         self.userContentImage.setImage(with: viewModel.userContentImage)
-        self.userImage.setImage(with: viewModel.userImage)
+        if viewModel.userImage == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: viewModel.userImage)
+        }
         if viewModel.isLike == 1{
             likeImage.image = UIImage(named: "ic-heart-click")
         }else{

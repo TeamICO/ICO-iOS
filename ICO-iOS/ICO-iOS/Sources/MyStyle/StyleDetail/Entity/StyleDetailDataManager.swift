@@ -22,6 +22,22 @@ class StyleDetailDataManager{
                 }
             }
     }
+    func getStyleDetail(styleShotIdx: Int,completion : @escaping (StyleDetailResult?)->Void){
+        AF.request("\(Constant.BASE_URL)/app/styleshots/\(styleShotIdx)", method: .get, parameters: nil,headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of:StyleDetailResponse.self){ response in
+                switch response.result{
+                case .success(let response):
+                 
+                    guard response.isSuccess else{
+                        return
+                    }
+                    completion(response.result)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
     
     func reportStyleDetail(_ parameters: StyleReportRequest,_ viewcontroller: StyleDetailVC){
         AF.request("\(Constant.BASE_URL)/app/reports",method: .post, parameters: parameters, headers: Constant.HEADER)
@@ -51,14 +67,19 @@ class StyleDetailDataManager{
             }
     }
     
-    func likeStyle(_ parameters: LikeRequest, _ viewcontroller: StyleDetailVC){
-        AF.request("\(Constant.BASE_URL)/app/likes", method: .post, parameters: parameters, headers: Constant.HEADER)
+    func likeStyle(_ styleIdx: Int,completion : @escaping(Bool)->Void){
+        let param = [
+            "styleshotIdx" : styleIdx
+        ]
+        AF.request("\(Constant.BASE_URL)/app/likes", method: .post, parameters: param, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: LikeResponse.self){ response in
                 switch response.result{
                 case .success(let response):
-                    viewcontroller.didSuccessLikeStyle(message: response.message)
-                    
+                    guard response.isSuccess else{
+                        return
+                    }
+                    completion(true)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -66,14 +87,16 @@ class StyleDetailDataManager{
             }
     }
     
-    func disLikeStyle(_ paramter: disLikeRequest, _ viewcontroller: StyleDetailVC, styleshotIdx:Int){
+    func disLikeStyle(_ paramter: disLikeRequest, styleshotIdx:Int,completion : @escaping(Bool)->Void){
         AF.request("\(Constant.BASE_URL)/app/likes/\(styleshotIdx)",method: .patch,parameters: paramter,headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleChangeResponse.self){ response in
                 switch response.result{
                 case .success(let response):
-                    viewcontroller.didSuccessDisLikeStyle(message: response.message)
-                    
+                    guard response.isSuccess else{
+                        return
+                    }
+                    completion(true)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

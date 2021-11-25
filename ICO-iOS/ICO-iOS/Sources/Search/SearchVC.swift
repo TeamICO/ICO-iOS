@@ -277,10 +277,6 @@ extension SearchVC : UITextFieldDelegate {
                 searchTextField.text = ""
             }
         }
-        
-        
-        
-        
         return true
     }
 }
