@@ -17,6 +17,7 @@ class SearchResultVC: BaseViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var deleteButton: UIButton!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -56,6 +57,9 @@ class SearchResultVC: BaseViewController {
             self?.isStart = true
         }
         
+    }
+    @IBAction func didTapDeleteButton(_ sender: Any) {
+        searchTextField.text = ""
     }
     
 
@@ -204,6 +208,13 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
 }
 // MARK: - TextField Delegate
 extension SearchResultVC : UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        self.deleteButton.isHidden = false
+        guard let text = textField.text, text.isExists else{
+            self.deleteButton.isHidden = true
+            return
+        }
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text{
             if text == ""{

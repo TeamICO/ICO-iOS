@@ -54,6 +54,8 @@
 		71F868702749615400321DD1 /* hashTagCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F8686E2749615400321DD1 /* hashTagCVC.xib */; };
 		E90511F4274F3C99002B1574 /* CustomPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90511F3274F3C99002B1574 /* CustomPopupVC.swift */; };
 		E90511F6274F3CA6002B1574 /* CustomPopupSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */; };
+		E90511FA274F56F2002B1574 /* SearchKeywordTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90511F8274F56F2002B1574 /* SearchKeywordTVC.swift */; };
+		E90511FB274F56F2002B1574 /* SearchKeywordTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90511F9274F56F2002B1574 /* SearchKeywordTVC.xib */; };
 		E9161CF7273CB953009A9CA7 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161CF6273CB953009A9CA7 /* AlarmVC.swift */; };
 		E9161CF9273CB95A009A9CA7 /* AlarmSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */; };
 		E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */; };
@@ -295,6 +297,8 @@
 		E813E21CC14B3A2BC6AE3E41 /* Pods_ICO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90511F3274F3C99002B1574 /* CustomPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupVC.swift; sourceTree = "<group>"; };
 		E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomPopupSB.storyboard; sourceTree = "<group>"; };
+		E90511F8274F56F2002B1574 /* SearchKeywordTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordTVC.swift; sourceTree = "<group>"; };
+		E90511F9274F56F2002B1574 /* SearchKeywordTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchKeywordTVC.xib; sourceTree = "<group>"; };
 		E9161CF6273CB953009A9CA7 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmSB.storyboard; sourceTree = "<group>"; };
 		E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
@@ -663,6 +667,15 @@
 				E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */,
 			);
 			path = CustomPopup;
+			sourceTree = "<group>";
+		};
+		E90511F7274F56C2002B1574 /* SearchKeywordTVC */ = {
+			isa = PBXGroup;
+			children = (
+				E90511F8274F56F2002B1574 /* SearchKeywordTVC.swift */,
+				E90511F9274F56F2002B1574 /* SearchKeywordTVC.xib */,
+			);
+			path = SearchKeywordTVC;
 			sourceTree = "<group>";
 		};
 		E9161CF4273CB911009A9CA7 /* Alarm */ = {
@@ -1351,6 +1364,7 @@
 				E9378D6A2737BD5300C589A1 /* SearchSB.storyboard */,
 				E96DB30827452FFE00659256 /* Entity */,
 				E9378D90273808AD00C589A1 /* SearchTVC */,
+				E90511F7274F56C2002B1574 /* SearchKeywordTVC */,
 				E9AF83DD273B5C6D00D77D5F /* SearchResultVC */,
 			);
 			path = Search;
@@ -1708,6 +1722,7 @@
 				E9378D772737FAE200C589A1 /* TopTVC.xib in Resources */,
 				71DFD39C2746A864003BEFE8 /* ecoKeywordCVC.xib in Resources */,
 				E9161D04273CF28D009A9CA7 /* TodayAlarmTVC.xib in Resources */,
+				E90511FB274F56F2002B1574 /* SearchKeywordTVC.xib in Resources */,
 				E9E49916273BABCB0001ACFB /* ServiceTermsSB.storyboard in Resources */,
 				E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */,
 				E9C30E0627465A90000B1592 /* LikeCollectionViewCellCVC.xib in Resources */,
@@ -1861,6 +1876,7 @@
 				E943BC5A2738F4E000619C74 /* LoginVC.swift in Sources */,
 				E9378D822737FE0400C589A1 /* SensibleStyleShotTVC.swift in Sources */,
 				E97D437E273D2DE800BB374F /* ProfileMyEcoKeywordTVC.swift in Sources */,
+				E90511FA274F56F2002B1574 /* SearchKeywordTVC.swift in Sources */,
 				E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */,
 				E9AF83DF273B5C9000D77D5F /* SearchResultVC.swift in Sources */,
 				E951CE6A273A6BBB002799D6 /* RecentCVC.swift in Sources */,
