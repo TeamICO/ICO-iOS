@@ -59,7 +59,6 @@ class LoginManager {
       
         let url = "https://dev.chuckwagon.shop/app/login"
        
- 
         let param = [
             "snsToken" : snsToken,
             "snsType" : snsType,

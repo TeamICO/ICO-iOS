@@ -187,7 +187,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
-            return 60
+            return 70
         }else{
             return 54
         }
@@ -195,7 +195,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if todayAlarms.isEmpty && previouseAlarms.isEmpty{
-            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 60))
+            let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 70))
             
             return header
         }else{

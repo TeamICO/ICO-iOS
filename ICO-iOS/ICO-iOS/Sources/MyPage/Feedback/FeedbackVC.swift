@@ -91,8 +91,21 @@ class FeedbackVC: BaseViewController {
             guard success else{
                 return
             }
-            self.presentAlert(title: "소중한 의견 보내주셔서 감사드립니다.")
-            self.navigationController?.popViewController(animated: true)
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "CustomPopupSB", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "CustomPopupVC") as! CustomPopupVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                vc.text = "소중한 의견을 보내주셔서\n감사드립니다."
+                self.present(vc, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                    vc.dismiss(animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+            
+           
         }
     }
 }
