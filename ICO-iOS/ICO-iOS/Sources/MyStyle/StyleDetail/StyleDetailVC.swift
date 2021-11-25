@@ -216,28 +216,9 @@ class StyleDetailVC: UIViewController {
                     }
                 }
              
-               
+            }
             }
 
-        let likeRequest = LikeRequest(styleshotIdx: styleShotIdx)
-        
-        if StyleDetailData?.isLike == 1{
-            heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
-            let dislikeRequest = disLikeRequest(status: "N")
-            StyleDetailDataManager().disLikeStyle(dislikeRequest, self, styleshotIdx: styleShotIdx)
-            var cnt = StyleDetailData?.likeCnt ?? 0
-            cnt = cnt - 1
-            heartNum.text = "\(cnt)"
-            StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
-        }else if StyleDetailData?.isLike == 0{
-            heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
-            StyleDetailDataManager().likeStyle(likeRequest, self)
-            var cnt = StyleDetailData?.likeCnt ?? 0
-            cnt = cnt + 1
-            heartNum.text = "\(cnt)"
-            StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
-
-        }
     }
  
    
@@ -364,3 +345,4 @@ extension StyleDetailVC{
         
     }
 }
+
