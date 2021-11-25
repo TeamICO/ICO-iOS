@@ -173,16 +173,17 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
         cell.detailLabel.text = keywordServerData[indexPath.row].resultDescription
         cell.heartNum.text = "\(keywordServerData[indexPath.row].likeCnt)"
         cell.productName.text = keywordServerData[indexPath.row].productName
-        cell.score.text = "\(keywordServerData[indexPath.row].point)"
-        if cell.score.text == "5"{
+        var score1  = keywordServerData[indexPath.row].point
+        cell.score.text = "\(score1).0"
+        if cell.score.text == "5.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-5")
-        }else if cell.score.text == "4"{
+        }else if cell.score.text == "4.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-4")
-        }else if cell.score.text == "3"{
+        }else if cell.score.text == "3.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-3")
-        }else if cell.score.text == "2"{
+        }else if cell.score.text == "2.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-2")
-        }else if cell.score.text == "1"{
+        }else if cell.score.text == "1.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
         cell.time.text = keywordServerData[indexPath.row].time

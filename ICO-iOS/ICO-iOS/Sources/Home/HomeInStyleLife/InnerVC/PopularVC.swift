@@ -70,18 +70,19 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
         
         cell.selectionStyle = .none
         cell.mainImage.setImage(with: popularServerData[indexPath.row].imageURL)
-        cell.userImage.download(url: popularServerData[indexPath.row].profileURL ?? "", rounded: true)
+        cell.userImage.setImage(with: popularServerData[indexPath.row].profileURL)
         cell.nameLabel.text = "\(popularServerData[indexPath.row].nickname)"
-        cell.score.text = "\(popularServerData[indexPath.row].point)"
-        if cell.score.text == "5"{
+        var score1  = popularServerData[indexPath.row].point
+        cell.score.text = "\(score1).0"
+        if cell.score.text == "5.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-5")
-        }else if cell.score.text == "4"{
+        }else if cell.score.text == "4.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-4")
-        }else if cell.score.text == "3"{
+        }else if cell.score.text == "3.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-3")
-        }else if cell.score.text == "2"{
+        }else if cell.score.text == "2.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-2")
-        }else if cell.score.text == "1"{
+        }else if cell.score.text == "1.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
         cell.productName.text = popularServerData[indexPath.row].productName
