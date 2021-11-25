@@ -28,7 +28,6 @@ class StyleDetailVC: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var scoreNum: UILabel!
     
-    
     @IBOutlet weak var gradientView1: UIView!
     @IBOutlet weak var gradientView2: UIView!
     @IBOutlet weak var productDetail: UILabel!
@@ -50,7 +49,7 @@ class StyleDetailVC: UIViewController {
         setUI()
         categoryCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")
         hashtagCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")
-        // Do any additional setup after loading the view.
+        
     }
     
 
@@ -181,7 +180,7 @@ class StyleDetailVC: UIViewController {
             cnt = cnt - 1
             heartNum.text = "\(cnt)"
             StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
-        }else{
+        }else if StyleDetailData?.isLike == 0{
             heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
             StyleDetailDataManager().likeStyle(likeRequest, self)
             var cnt = StyleDetailData?.likeCnt ?? 0
@@ -278,6 +277,12 @@ extension StyleDetailVC{
         }else{
             moveUrl.text = "아이코가 url을 등록하지 않았습니다."
             moveUrlBtn.isHidden = true
+        }
+        
+        if StyleDetailData?.isMe == 1{
+            isMine = true
+        }else{
+            isMine = false
         }
 
         categoryCV.delegate = self

@@ -61,6 +61,7 @@ class MyStyleVC: BaseViewController {
     func registerNib(){
         styleCV.register(UINib(nibName: "StyleCVC", bundle: nil), forCellWithReuseIdentifier: "StyleCVC")
         categoryCV.register(UINib(nibName: "ecoKeywordCVC", bundle: nil), forCellWithReuseIdentifier: "ecoKeywordCVC")
+        styleCV.register(UINib(nibName: "emptyStyleShotCVC", bundle: nil), forCellWithReuseIdentifier: "emptyStyleShotCVC")
     }
     
     func setUI(){
