@@ -140,4 +140,35 @@ final class SearchManager{
             }
         
     }
+    func getSearchAutocompleteWords(keyword: String,jwtToken: String, completion: @escaping (AutocompleteResult)->Void) {
+      
+        let url = "https://dev.chuckwagon.shop/app/auto-keyword?"
+        let header : HTTPHeaders = [
+            "X-ACCESS-TOKEN" : jwtToken
+        ]
+        let param = [
+            "keyword" : keyword
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: param,
+                   encoding: URLEncoding.default,
+                   headers: header)
+            .responseDecodable(of: AutocompleteResult.self) { response in
+                
+                switch response.result {
+                
+                case .success(let response):
+                    guard response.isSuccess else{
+                        return
+                    }
+                    completion(response)
+                    
+                case .failure(let error):
+                    print("DEBUG>> getSearchKeywordHistory Get Error : \(error.localizedDescription)")
+                    
+                }
+            }
+    }
 }

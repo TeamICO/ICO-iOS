@@ -56,13 +56,27 @@
                                             <action selector="didTapSearchButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WDY-fc-ouu"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4t-ow-UCs">
+                                        <rect key="frame" x="264" y="14" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="XtC-JP-BfO"/>
+                                            <constraint firstAttribute="width" constant="20" id="fId-Kq-byI"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icXBtnLightgreen1"/>
+                                        <connections>
+                                            <action selector="didTapDeleteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e26-BV-Deb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.97254901960784312" blue="0.96862745098039216" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="blB-mf-GiD" secondAttribute="trailing" constant="14" id="Ng9-eA-kvI"/>
                                     <constraint firstItem="7ls-53-Rfb" firstAttribute="top" secondItem="ecC-An-jIS" secondAttribute="top" id="Phd-Kl-ecY"/>
+                                    <constraint firstItem="R4t-ow-UCs" firstAttribute="centerY" secondItem="ecC-An-jIS" secondAttribute="centerY" id="at8-Xv-CR8"/>
                                     <constraint firstAttribute="bottom" secondItem="7ls-53-Rfb" secondAttribute="bottom" id="bfn-h0-VId"/>
                                     <constraint firstAttribute="height" constant="48" id="c1Y-kf-WVd"/>
+                                    <constraint firstItem="blB-mf-GiD" firstAttribute="leading" secondItem="R4t-ow-UCs" secondAttribute="trailing" constant="14" id="klG-5Z-u6S"/>
                                     <constraint firstItem="7ls-53-Rfb" firstAttribute="leading" secondItem="ecC-An-jIS" secondAttribute="leading" constant="12" id="sfi-Jf-1Cq"/>
                                     <constraint firstItem="blB-mf-GiD" firstAttribute="leading" secondItem="7ls-53-Rfb" secondAttribute="trailing" constant="4" id="vBV-Gg-32b"/>
                                     <constraint firstItem="blB-mf-GiD" firstAttribute="top" secondItem="ecC-An-jIS" secondAttribute="top" constant="14" id="wQk-dH-pMJ"/>
@@ -78,6 +92,10 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="o1G-gl-w9A">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,12 +108,18 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IO7-CM-IMi" secondAttribute="trailing" id="WdG-GK-TcE"/>
                             <constraint firstItem="49q-5V-tzf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YSZ-mW-kTu"/>
                             <constraint firstItem="ecC-An-jIS" firstAttribute="leading" secondItem="49q-5V-tzf" secondAttribute="trailing" constant="6" id="Zzm-Fd-4Cg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="o1G-gl-w9A" secondAttribute="bottom" id="aUT-b9-Tme"/>
+                            <constraint firstItem="o1G-gl-w9A" firstAttribute="top" secondItem="ecC-An-jIS" secondAttribute="bottom" id="gFx-dA-SQX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o1G-gl-w9A" secondAttribute="trailing" id="l4d-Va-NHa"/>
                             <constraint firstItem="IO7-CM-IMi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="u7J-NJ-Nes"/>
+                            <constraint firstItem="o1G-gl-w9A" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xbj-ZC-zpr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DNg-BS-Q5k"/>
                     <connections>
                         <outlet property="backButton" destination="49q-5V-tzf" id="pwW-PX-u5N"/>
+                        <outlet property="deleteButton" destination="R4t-ow-UCs" id="9uE-MN-9yl"/>
+                        <outlet property="searchKeywordTableView" destination="o1G-gl-w9A" id="F1d-iJ-nmb"/>
                         <outlet property="searchTextField" destination="7ls-53-Rfb" id="kqo-Lo-DRu"/>
                         <outlet property="tableView" destination="IO7-CM-IMi" id="chG-Yh-LGP"/>
                     </connections>
@@ -108,5 +132,6 @@
     <resources>
         <image name="icArrowLeft" width="24" height="24"/>
         <image name="icSearchGreen2" width="20" height="20"/>
+        <image name="icXBtnLightgreen1" width="20" height="20"/>
     </resources>
 </document>

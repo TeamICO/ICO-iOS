@@ -10,8 +10,10 @@ import UIKit
 class SearchVC: BaseViewController {
     // MARK: - Properties
     private var searchModel : SearchResult?
+    private var searchKeywords = [String]()
     
-    
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var searchKeywordTableView: UITableView!
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
@@ -27,6 +29,7 @@ class SearchVC: BaseViewController {
         searchTextField.attributedPlaceholder = NSAttributedString(string: "검색할 스타일샷의 키워드를 입력해 주세요.", attributes: [.foregroundColor: UIColor.primaryBlack50])
         self.dismissKeyboardWhenTappedAround()
         self.tableviewConfigure()
+        self.searchKeywordTableviewConfigure()
         
         searchTextField.delegate = self
     }
@@ -51,6 +54,9 @@ class SearchVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         searchTextField.text = ""
     }
+    @IBAction func didTapDeleteButton(_ sender: Any) {
+        searchTextField.text = ""
+    }
     
 
 }
@@ -67,6 +73,21 @@ extension SearchVC {
             self?.searchModel = response
             self?.tableView.reloadData()
         }
+    }
+}
+// MARK: - TableView Configure
+extension SearchVC {
+    func searchKeywordTableviewConfigure(){
+        let topNib = UINib(nibName: SearchKeywordTVC.identifier, bundle: nil)
+        searchKeywordTableView.register(topNib, forCellReuseIdentifier: SearchKeywordTVC.identifier)
+   
+        searchKeywordTableView.backgroundColor = .black.withAlphaComponent(0.2)
+        searchKeywordTableView.delegate = self
+        searchKeywordTableView.dataSource = self
+        searchKeywordTableView.tableFooterView = nil
+        searchKeywordTableView.sectionFooterHeight = 0
+        searchKeywordTableView.separatorStyle = .none
+
     }
 }
 // MARK: - TableView Configure
@@ -90,16 +111,38 @@ extension SearchVC {
 // MARK: - TableView Delegate, DataSource
 extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        switch tableView {
+        case searchKeywordTableView:
+            return 1
+        case self.tableView:
+            return 2
+        default:
+            return 0
+        }
+        
         
     
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 1
+        switch tableView {
+        case searchKeywordTableView:
+            return searchKeywords.count
+        case self.tableView:
+            return 1
+        default:
+            return 0
+        }
+      
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
+        switch tableView {
+        case searchKeywordTableView:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchKeywordTVC.identifier, for: indexPath) as! SearchKeywordTVC
+            cell.keywordLabel.text = searchKeywords[indexPath.row]
+            return cell
+        case self.tableView:
             switch indexPath.section{
             case 0 :
                 let cell = tableView.dequeueReusableCell(withIdentifier: RecentSearchWordsTVC.identifier, for: indexPath) as! RecentSearchWordsTVC
@@ -120,23 +163,38 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
                 
                 return UITableViewCell()
             }
+        default:
+            return UITableViewCell()
+        }
+            
         
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-            
+        switch tableView {
+        case searchKeywordTableView:
+            return 38
+        case self.tableView:
             switch indexPath.section {
             case 1 :  return 264
             default:
                 return UITableView.automaticDimension
             }
+        default:
+            return 0
+        }
+            
+           
         
         
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 
+        switch tableView {
+        case searchKeywordTableView:
+            return 0
+        case self.tableView:
             switch section {
             case 1 :
                 // 광고 배너 높이 조절
@@ -144,12 +202,18 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
             default:
                 return 12
             }
-          
+        default:
+            return 0
+        }
+           
         
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-   
-            
+        
+        switch tableView {
+        case searchKeywordTableView:
+            return UIView()
+        case self.tableView:
             switch section {
             case 1 :
                 // 광고 배너 높이 조절
@@ -166,6 +230,10 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
                 footer.backgroundColor = UIColor.appColor(.tableViewFooterColor)
                 return footer
             }
+        default:
+            return UIView()
+        }
+           
         
         
     }
@@ -175,7 +243,24 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
 }
 // MARK: - TextField Delegate
 extension SearchVC : UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        self.deleteButton.isHidden = false
+        self.searchKeywordTableView.isHidden = false
+        guard let jwtToken = self.jwtToken, let keyword = textField.text, keyword.isExists else{
+            self.deleteButton.isHidden = true
+            self.searchKeywordTableView.isHidden = true
+            return
+        }
+        SearchManager.shared.getSearchAutocompleteWords(keyword: keyword, jwtToken: jwtToken) { [weak self] response in
+            guard let result = response.result else{
+                return
+            }
+            self?.searchKeywords = result
+            self?.searchKeywordTableView.reloadData()
+        }
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.searchKeywordTableView.isHidden = true
         if let text = textField.text{
             if text == ""{
                 self.presentAlert(title: "검색어를 입력해주세요.")

@@ -31,3 +31,10 @@ struct KeywordHistory: Codable {
     let keyword: String
     let keywordIdx: Int
 }
+
+struct AutocompleteResult : Codable{
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [String]?
+}
