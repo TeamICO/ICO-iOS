@@ -195,7 +195,7 @@ extension PopularVC{
         postTV.delegate = self
         postTV.dataSource = self
         postTV.reloadData()
-        entireHeight.constant = CGFloat(443 + (616 * popularServerData.count))
+        entireHeight.constant = CGFloat(575 + (616 * popularServerData.count))
       
         print(message)
     }
