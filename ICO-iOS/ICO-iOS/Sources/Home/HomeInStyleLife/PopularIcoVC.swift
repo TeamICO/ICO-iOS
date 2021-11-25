@@ -114,6 +114,8 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
         let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.isMine = false
+        styleDetailVC.styleShotIdx = serverData?.styleshot[indexPath.row].styleshotIdx ?? 0
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
     
