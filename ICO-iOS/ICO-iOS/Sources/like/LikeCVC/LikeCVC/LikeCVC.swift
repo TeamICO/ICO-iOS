@@ -55,7 +55,11 @@ extension LikeCVC {
         self.userNameLabel.text = viewModel.nickName
         self.styleshotIdx = viewModel.styleshotIdx
         self.contentImage.setImage(with: viewModel.userContentImage)
-        self.userImage.setImage(with: viewModel.userImage)
+        if viewModel.userImage == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: viewModel.userImage)
+        }
       
         
         

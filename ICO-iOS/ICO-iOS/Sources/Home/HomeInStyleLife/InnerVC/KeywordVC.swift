@@ -186,6 +186,7 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
         }else if cell.score.text == "1.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
+        
         cell.time.text = keywordServerData[indexPath.row].time
         cell.setData(category: keywordServerData[indexPath.row].category)
         

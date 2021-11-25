@@ -357,6 +357,7 @@
                         <outlet property="productName" destination="jHF-7a-MhH" id="C8M-rX-6HC"/>
                         <outlet property="scoreLabel" destination="2SV-bk-R74" id="fuV-xL-GWx"/>
                         <outlet property="scoreNum" destination="nAy-bG-Z8a" id="thK-aA-PMe"/>
+                        <outlet property="scrollView" destination="wcY-Jy-rP7" id="nVi-9G-kxB"/>
                         <outlet property="urlBackView" destination="vrA-jx-3MV" id="lau-GT-dei"/>
                         <outlet property="urlProduct" destination="x3N-RV-b7q" id="WLE-Kh-nLx"/>
                         <outlet property="userImage" destination="GvH-8C-NFs" id="6tU-Ku-VKT"/>

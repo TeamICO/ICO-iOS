@@ -28,6 +28,9 @@ class StyleDetailVC: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var scoreNum: UILabel!
     
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+
     @IBOutlet weak var gradientView1: UIView!
     @IBOutlet weak var gradientView2: UIView!
     @IBOutlet weak var productDetail: UILabel!
@@ -170,6 +173,52 @@ class StyleDetailVC: UIViewController {
     
     
     @IBAction func likeBtn(_ sender: Any) {
+
+
+        if let isLike = StyleDetailData?.isLike,
+           var likeCnt = StyleDetailData?.likeCnt{
+            if isLike == 1{
+                let dislikeRequest = disLikeRequest(status: "N")
+                StyleDetailDataManager().disLikeStyle(dislikeRequest, styleshotIdx: styleShotIdx) { response in
+                    guard response else{
+                        return
+                    }
+                    StyleDetailDataManager().getStyleDetail(styleShotIdx: self.styleShotIdx) { result in
+                        guard let result = result else{
+                            return
+                        }
+                        self.StyleDetailData = result
+                        DispatchQueue.main.async {
+                            self.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+                            likeCnt -=  1
+                            self.heartNum.text = "\(likeCnt)"
+                            self.didSuccessStyleDetail(message: nil)
+                        }
+                    }
+                  
+                }
+            }else if isLike == 0 {
+                StyleDetailDataManager().likeStyle(self.styleShotIdx){ response in
+                    guard response else{
+                        return
+                    }
+                    StyleDetailDataManager().getStyleDetail(styleShotIdx: self.styleShotIdx) { result in
+                        guard let result = result else{
+                            return
+                        }
+                        self.StyleDetailData = result
+                        DispatchQueue.main.async {
+                            self.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+                            likeCnt += 1
+                            self.heartNum.text = "\(likeCnt)"
+                            self.didSuccessStyleDetail(message: nil)
+                        }
+                    }
+                }
+             
+               
+            }
+
         let likeRequest = LikeRequest(styleshotIdx: styleShotIdx)
         
         if StyleDetailData?.isLike == 1{
@@ -187,9 +236,11 @@ class StyleDetailVC: UIViewController {
             cnt = cnt + 1
             heartNum.text = "\(cnt)"
             StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
+
         }
     }
-    
+ 
+   
     
 }
 
@@ -244,7 +295,7 @@ extension StyleDetailVC: UICollectionViewDelegate,UICollectionViewDataSource, UI
 
 
 extension StyleDetailVC{
-    func didSuccessStyleDetail(message: String){
+    func didSuccessStyleDetail(message: String?){
         self.productImage.setImage(with: StyleDetailData?.imageURL ?? "")
         self.userImage.setImage(with: StyleDetailData?.profileURL ?? "")
         self.userName.text = StyleDetailData?.nickname
@@ -287,11 +338,10 @@ extension StyleDetailVC{
 
         categoryCV.delegate = self
         categoryCV.dataSource = self
-        categoryCV.reloadData()
-        
+
         hashtagCV.delegate = self
         hashtagCV.dataSource = self
-        hashtagCV.reloadData()
+        
         
         
     }
