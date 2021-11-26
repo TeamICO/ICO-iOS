@@ -43,11 +43,13 @@ class StyleDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tabBarController?.tabBar.isHidden = true
         StyleDetailDataManager().getStyleDetail(self, styleShotIdx: styleShotIdx)
         setUI()
         categoryCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")

@@ -46,6 +46,11 @@ class HomeVC: BaseViewController {
 
     
     // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
