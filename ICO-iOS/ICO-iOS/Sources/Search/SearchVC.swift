@@ -26,7 +26,7 @@ class SearchVC: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.attributedPlaceholder = NSAttributedString(string: "검색할 스타일샷의 키워드를 입력해 주세요.", attributes: [.foregroundColor: UIColor.primaryBlack50])
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "검색할 스타일샷의 키워드를 입력해 주세요.", attributes: [.foregroundColor: UIColor.primaryBlack50,.font : UIFont(name: "AppleSDGothicNeo-Medium", size: 14)])
         self.dismissKeyboardWhenTappedAround()
         self.tableviewConfigure()
         self.searchKeywordTableviewConfigure()
@@ -158,6 +158,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
             case 1 :
                 let cell = tableView.dequeueReusableCell(withIdentifier: HotKeywordTVC.identifier, for: indexPath) as! HotKeywordTVC
                 cell.selectionStyle = .none
+                cell.delegate = self
                 return cell
                 
             default:
@@ -301,6 +302,19 @@ extension SearchVC : SearchKeywordTVCDelegate{
         vc.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+}
+extension SearchVC : HotKeywordTVCDelegate{
+    func didTapHotKeyword(keyword: String) {
+        let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
+        vc.searchword = keyword
+        vc.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
     
 }

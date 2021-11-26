@@ -65,7 +65,7 @@ class LoginManager {
             "pushToken" : deviceToken ?? "",
             "name" : name ?? ""
         ]
-       
+        
         AF.request(url,
                    method: .post,
                    parameters: param,
@@ -73,10 +73,10 @@ class LoginManager {
                    headers: nil)
             .responseDecodable(of: LoginResponse.self) { response in
                 
-                switch response.result {
+                switch response.result  {
                 
                 case .success(let response):
-                    print(response)
+
                     completion(response)
                     
                     

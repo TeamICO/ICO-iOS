@@ -22,7 +22,7 @@ class SearchResultVC: BaseViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.attributedPlaceholder = NSAttributedString(string: "검색할 스타일샷의 키워드를 입력해 주세요.", attributes: [.foregroundColor: UIColor.primaryBlack50])
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "검색할 스타일샷의 키워드를 입력해 주세요.", attributes: [.foregroundColor: UIColor.primaryBlack50,.font : UIFont(name: "AppleSDGothicNeo-Medium", size: 14)])
         
         searchTextField.text = searchword
         
