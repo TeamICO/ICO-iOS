@@ -67,6 +67,7 @@ extension MyPageVC{
 // MARK: - TableView Configure
 extension MyPageVC {
     func tableviewConfigure(){
+        refreshControl.alpha = 0
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
