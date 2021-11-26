@@ -10,6 +10,7 @@ import UIKit
 class MyStyleVC: BaseViewController {
     
     var serverData : MyStyleResult?
+    var styleshot = [Styleshot]()
     var category: [String] = []
     @IBOutlet weak var alarmView: UIView!
     @IBOutlet weak var likeView: UIView!
@@ -118,7 +119,7 @@ class MyStyleVC: BaseViewController {
 extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == styleCV{
-            return serverData?.styleshotCnt ?? 0
+            return self.styleshot.count == 0 ? 1 : self.styleshot.count
         }else{
             return serverData?.ecoKeyword.count ?? 0
         }
@@ -126,13 +127,15 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var myStyleShot: Int = serverData?.styleshot.count ?? 0
-        
-        print(myStyleShot)
-        
+        print(self.styleshot.count)
         if collectionView == styleCV{
-            if myStyleShot == 0 {
-                guard let styleEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStyleShotCVC", for: indexPath)as? emptyStyleShotCVC else {return UICollectionViewCell()}
+            if self.styleshot.isEmpty {
+                
+                guard let styleEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStyleShotCVC", for: indexPath)as? emptyStyleShotCVC else {
+                    print("여기")
+                    return UICollectionViewCell()
+                    
+                }
                 
                 return styleEmptyCell
             }else {
@@ -144,7 +147,7 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
                 }
                 return styleCell
             }
-        }else{
+        }else if collectionView == categoryCV{
             if serverData?.ecoKeyword.count != 0{
                 guard let ecoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath)as? ecoKeywordCVC else {return UICollectionViewCell()}
                 
@@ -190,11 +193,12 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
             
 
         }
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == styleCV {
-            if serverData?.styleshot.count != 0{
+            if self.styleshot.count != 0{
                 let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
                 let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
                 styleDetailVC.isMine = true

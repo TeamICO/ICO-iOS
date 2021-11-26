@@ -17,6 +17,7 @@ class MyStyleDataManager{
                 switch response.result{
                     case .success(let response):
                         viewcontroller.serverData = response.result
+                        viewcontroller.styleshot = response.result.styleshot
                         viewcontroller.didSuccessGetMyStyle(message: response.message)
                     
                      case .failure(let error):
