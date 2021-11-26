@@ -51,6 +51,7 @@ class RecentTVC: UITableViewCell {
         gradientView2.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
         
         nameLabel.textColor = UIColor.primaryBlack80
+        heartNum.textColor = UIColor.primaryBlack60
         score.textColor = .coGreen
         time.textColor = UIColor.tabBarGray
         time.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
