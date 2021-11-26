@@ -190,11 +190,13 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == styleCV {
-            let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
-            let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
-            styleDetailVC.isMine = true
-            styleDetailVC.styleShotIdx = serverData?.styleshot[indexPath.row].styleshotIdx ?? 0
-            self.navigationController?.pushViewController(styleDetailVC, animated: true)
+            if serverData?.styleshot.count != 0{
+                let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+                let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+                styleDetailVC.isMine = true
+                styleDetailVC.styleShotIdx = serverData?.styleshot[indexPath.row].styleshotIdx ?? 0
+                self.navigationController?.pushViewController(styleDetailVC, animated: true)
+            }
         }
     }
     
