@@ -19,10 +19,8 @@ class PopularIcoVC: UIViewController {
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var categoryCV: UICollectionView!
     
-    @IBOutlet var keywordView: [UIView]!
-    @IBOutlet var keywordImage: [UIImageView]!
-    @IBOutlet var keywordName: [UILabel]!
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -48,10 +46,13 @@ class PopularIcoVC: UIViewController {
     func setCV(){
         styleCV.delegate = self
         styleCV.dataSource = self
+        categoryCV.delegate = self
+        categoryCV.dataSource = self
     }
     
     func registerNib(){
         styleCV.register(UINib(nibName: "StyleCVC", bundle: nil), forCellWithReuseIdentifier: "StyleCVC")
+        categoryCV.register(UINib(nibName: "ecoKeywordCVC", bundle: nil), forCellWithReuseIdentifier: "ecoKeywordCVC")
     }
     
     func setUI(){
@@ -74,14 +75,6 @@ class PopularIcoVC: UIViewController {
         detailLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         detailLabel.textColor = UIColor.primaryBlack60
         
-        keywordName[0].text = "업사이클링"
-        keywordName[1].text = "수익기부"
-        keywordName[2].text = "무향료"
-        for i in 0...2{
-            keywordView[i].backgroundColor = UIColor.primaryigreen5
-            keywordView[i].cornerRadius = 8
-            keywordName[i].textColor = UIColor.coGreen
-        }
         likeLabel.text = "누적 좋아요"
         styleLabel.text = "누적 스타일 샷"
         likeNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
@@ -100,15 +93,66 @@ class PopularIcoVC: UIViewController {
 
 extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return serverData?.styleshotCnt ?? 0
+        if collectionView == styleCV{
+            return serverData?.styleshotCnt ?? 0
+        }else{
+            return serverData?.ecoKeyword.count ?? 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
-        
-        styleCell.styleImage.setImage(with: serverData?.styleshot[indexPath.row].imageURL ?? "")
-        
-        return styleCell
+        if collectionView == styleCV{
+            guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+            
+            styleCell.styleImage.setImage(with: serverData?.styleshot[indexPath.row].imageURL ?? "")
+            
+            return styleCell
+        }else{
+            if serverData?.ecoKeyword.count != 0{
+                guard let ecoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath)as? ecoKeywordCVC else {return UICollectionViewCell()}
+                
+                ecoKeywordCell.ecoTitle.text = serverData?.ecoKeyword[indexPath.row]
+                if serverData?.ecoKeyword[indexPath.row] == "수익기부"{
+                  ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-donation")
+                }else if serverData?.ecoKeyword[indexPath.row] == "동물실험 반대"{
+                  ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-animal")
+                }else if serverData?.ecoKeyword[indexPath.row] == "공정무역"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-trade")
+                }else if serverData?.ecoKeyword[indexPath.row] == "비건"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-vegan")
+                }else if serverData?.ecoKeyword[indexPath.row] == "락토"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lacto")
+                }else if serverData?.ecoKeyword[indexPath.row] == "락토오보"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-lactovo")
+                }else if serverData?.ecoKeyword[indexPath.row] == "페스코"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fesco")
+                }else if serverData?.ecoKeyword[indexPath.row] == "플라스틱 프리"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-plastic")
+                }else if serverData?.ecoKeyword[indexPath.row] == "친환경"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-eco")
+                }else if serverData?.ecoKeyword[indexPath.row] == "업사이클링"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-upcycling")
+                }else if serverData?.ecoKeyword[indexPath.row] == "비건을 위한 뷰티"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-package")
+                }else if serverData?.ecoKeyword[indexPath.row] == "GMO프리"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-gmo")
+                }else if serverData?.ecoKeyword[indexPath.row] == "무향료"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-chemical")
+                }else if serverData?.ecoKeyword[indexPath.row] == "FDA 승인"{
+                    ecoKeywordCell.ecoIcon.image = UIImage(named: "illust-product-fda")
+                }
+                
+                return ecoKeywordCell
+            }else{
+                guard let emptyEcoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyEcoKeywordCVC", for: indexPath)as?emptyEcoKeywordCVC else {return UICollectionViewCell()}
+                
+                emptyEcoKeywordCell.emptyLabel.text = "에코 관심 키워드를 등록하지 않았습니다."
+                
+                return emptyEcoKeywordCell
+            }
+        }
+      
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

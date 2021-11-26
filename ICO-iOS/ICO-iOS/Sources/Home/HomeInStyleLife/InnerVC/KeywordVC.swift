@@ -22,12 +22,14 @@ class KeywordVC: UIViewController {
         registerXib()
         keywordCV.delegate = self
         keywordCV.dataSource = self
+        keywordCV.contentInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
        //setUI()
     }
 
     func setCVTV(){
         postTV.delegate = self
         postTV.dataSource = self
+        
     }
     
     func registerXib(){
