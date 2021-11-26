@@ -260,6 +260,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
 //MARK : MyPageUserInfoTVC Delegate
 extension MyPageVC : MyPageUserInfoTVCDelegate{
     func didTapIcoButton() {
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationPushViewController(storyboard: "IcoLevelSB", identifier: "IcoLevelVC")
     }
     

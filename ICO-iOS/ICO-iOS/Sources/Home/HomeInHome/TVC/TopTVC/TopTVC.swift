@@ -10,6 +10,7 @@ import UIKit
 protocol TopTVCDelegate : AnyObject {
     func didTapSearchView()
     func didTapKeywordContents(index : Int)
+    func didTapBannerView(index : String)
 }
 
 class TopTVC: UITableViewCell {
@@ -113,6 +114,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         case self.bannerCollectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCVC.identifier, for: indexPath) as! TopBannerCVC
             cell.bannerImage.setImage(with: topBannerModel[indexPath.row].imageURL)
+//            cell.delegate = self
             return cell
         default : return UICollectionViewCell()
         }
@@ -123,6 +125,8 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         collectionView.deselectItem(at: indexPath, animated: true)
         if collectionView == self.collectionView{
             delegate?.didTapKeywordContents(index: indexPath.row)
+        }else if collectionView == self.bannerCollectionView{
+            delegate?.didTapBannerView(index: topBannerModel[indexPath.row].content)
         }
         
     }

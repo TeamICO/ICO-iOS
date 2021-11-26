@@ -7,9 +7,11 @@
 
 import UIKit
 
+
 class TopBannerCVC: UICollectionViewCell {
     static let identifier = "TopBannerCVC"
     
+    @IBOutlet weak var bannerView: UIView!
     @IBOutlet weak var bannerImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,6 +20,8 @@ class TopBannerCVC: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         bannerImage.image = nil
+        
     }
- 
+    
+   
 }

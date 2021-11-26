@@ -92,7 +92,7 @@ extension SettingAlarmVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0 : return 164 // 앱 알림 설정 높이 78 + 탑 바텀 패딩 32 + 탑 54
+        case 0 : return UITableView.automaticDimension
         default : return 70
         }
      

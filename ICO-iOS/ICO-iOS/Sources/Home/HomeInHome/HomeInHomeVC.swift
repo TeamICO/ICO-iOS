@@ -202,6 +202,17 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
   
 }
 extension HomeInHomeVC : TopTVCDelegate {
+    func didTapBannerView(index: String) {
+        guard let index = Int(index) else{
+            return
+        }
+        print(index)
+        let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
+        let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
+        styleDetailVC.styleShotIdx = index
+        self.navigationController?.pushViewController(styleDetailVC, animated: true)
+    }
+    
     func didTapKeywordContents(index: Int) {
         let sb = UIStoryboard(name: "KeywordContentsSB", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "KeywordContentsVC")as! KeywordContentsVC
@@ -217,6 +228,8 @@ extension HomeInHomeVC : TopTVCDelegate {
     
 }
 extension HomeInHomeVC : BrandRecommendTVCDelegate{
+  
+    
     func didTapBrandView() {
         guard let brandModel = self.brandModel else{
             return
