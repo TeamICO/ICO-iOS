@@ -7,11 +7,20 @@
 
 import UIKit
 
+protocol SearchKeywordTVCDelegate : AnyObject{
+    func didTapSearchResultView(resultkeyword : String)
+}
+
 class SearchKeywordTVC: UITableViewCell {
     static let identifier = "SearchKeywordTVC"
+    
+    weak var delegate : SearchKeywordTVCDelegate?
+    
     @IBOutlet weak var keywordLabel: UILabel!
+    @IBOutlet weak var searchResultView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        setViewTapGesture()
         
     }
 
@@ -19,6 +28,18 @@ class SearchKeywordTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         
+    }
+    
+    func setViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapResultView))
+        viewTap.cancelsTouchesInView = false
+        searchResultView.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapResultView(){
+        guard let keyword = keywordLabel.text, keyword.isExists else{
+            return
+        }
+        delegate?.didTapSearchResultView(resultkeyword: keyword)
     }
     
 }

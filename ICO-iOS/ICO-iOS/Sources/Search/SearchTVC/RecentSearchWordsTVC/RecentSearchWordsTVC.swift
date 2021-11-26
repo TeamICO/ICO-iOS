@@ -72,7 +72,7 @@ extension RecentSearchWordsTVC : UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentCVC.identifier, for: indexPath) as! RecentCVC
-        cell.wordLabel.text = keywordHistory[indexPath.row].keyword
+        cell.configure(with: keywordHistory[indexPath.row])
         cell.keywordIdx = keywordHistory[indexPath.row].keywordIdx
         cell.delegate = self
         return cell
@@ -81,7 +81,9 @@ extension RecentSearchWordsTVC : UICollectionViewDelegate, UICollectionViewDataS
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: RecentCVC.identifier, for: indexPath) as! RecentCVC
-        return CGSize(width: keywordHistory[indexPath.row].keyword.size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width+cell.deleteButton.frame.size.width + 28, height: 28)
+        let wordWidth = keywordHistory[indexPath.row].keyword.size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15)]).width
+        let buttonWidth = cell.deleteButton.frame.size.width
+        return CGSize(width: wordWidth + buttonWidth + 20, height: 28)
     }
    
 }

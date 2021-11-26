@@ -140,6 +140,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case searchKeywordTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchKeywordTVC.identifier, for: indexPath) as! SearchKeywordTVC
+            cell.delegate = self
             cell.keywordLabel.text = searchKeywords[indexPath.row]
             return cell
         case self.tableView:
@@ -188,7 +189,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
         
         
     }
-    
+
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 
         switch tableView {
@@ -290,4 +291,16 @@ extension SearchVC : RecentSearchWordsTVCDelegate{
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+}
+
+extension SearchVC : SearchKeywordTVCDelegate{
+    func didTapSearchResultView(resultkeyword: String) {
+        let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
+        vc.searchword = resultkeyword
+        vc.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
