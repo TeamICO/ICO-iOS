@@ -53,7 +53,7 @@ extension LikeVC{
 extension LikeVC {
     func collectionViewConfigure(){
       
-        
+        refreshControl.alpha = 0
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
