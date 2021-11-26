@@ -126,8 +126,16 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var myStyleShot: Int = serverData?.styleshot.count ?? 0
+        
+        print(myStyleShot)
+        
         if collectionView == styleCV{
-            if serverData?.styleshot.count != 0 {
+            if myStyleShot == 0 {
+                guard let styleEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStyleShotCVC", for: indexPath)as? emptyStyleShotCVC else {return UICollectionViewCell()}
+                
+                return styleEmptyCell
+            }else {
                 guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
                 if let styleshot = serverData?.styleshot{
                     if !styleshot.isEmpty{
@@ -135,10 +143,6 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
                     }
                 }
                 return styleCell
-            }else{
-                guard let styleEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStyleShotCVC", for: indexPath)as? emptyStyleShotCVC else {return UICollectionViewCell()}
-                
-                return styleEmptyCell
             }
         }else{
             if serverData?.ecoKeyword.count != 0{
