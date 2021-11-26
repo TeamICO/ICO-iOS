@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,37 +18,53 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-search" translatesAutoresizingMaskIntoConstraints="NO" id="eP2-p4-S8H">
-                        <rect key="frame" x="16" y="9" width="20" height="20"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqL-sP-XRi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-search" translatesAutoresizingMaskIntoConstraints="NO" id="eP2-p4-S8H">
+                                <rect key="frame" x="16" y="9" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="gpt-C2-v6i"/>
+                                    <constraint firstAttribute="height" constant="20" id="scp-W6-ed6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW4-bI-snJ">
+                                <rect key="frame" x="52" y="19" width="252" height="0.0"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="gpt-C2-v6i"/>
-                            <constraint firstAttribute="height" constant="20" id="scp-W6-ed6"/>
+                            <constraint firstItem="eP2-p4-S8H" firstAttribute="leading" secondItem="YqL-sP-XRi" secondAttribute="leading" constant="16" id="Hrf-2a-F49"/>
+                            <constraint firstItem="fW4-bI-snJ" firstAttribute="centerY" secondItem="YqL-sP-XRi" secondAttribute="centerY" id="PpK-Z5-erl"/>
+                            <constraint firstItem="fW4-bI-snJ" firstAttribute="leading" secondItem="eP2-p4-S8H" secondAttribute="trailing" constant="16" id="hga-g0-aXm"/>
+                            <constraint firstItem="eP2-p4-S8H" firstAttribute="centerY" secondItem="YqL-sP-XRi" secondAttribute="centerY" id="p0w-wF-NaP"/>
+                            <constraint firstAttribute="trailing" secondItem="fW4-bI-snJ" secondAttribute="trailing" constant="16" id="wKt-fy-YUL"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW4-bI-snJ">
-                        <rect key="frame" x="52" y="19" width="252" height="0.0"/>
-                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="eP2-p4-S8H" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2Vu-XT-cvP"/>
-                    <constraint firstItem="eP2-p4-S8H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="501-bB-Lzu"/>
-                    <constraint firstItem="fW4-bI-snJ" firstAttribute="leading" secondItem="eP2-p4-S8H" secondAttribute="trailing" constant="16" id="Vqr-Lf-MYa"/>
-                    <constraint firstItem="fW4-bI-snJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YTO-wf-laT"/>
-                    <constraint firstAttribute="trailing" secondItem="fW4-bI-snJ" secondAttribute="trailing" constant="16" id="ksG-Av-PhX"/>
+                    <constraint firstItem="YqL-sP-XRi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2i4-Vd-nQR"/>
+                    <constraint firstItem="YqL-sP-XRi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dYB-hl-LOo"/>
+                    <constraint firstAttribute="bottom" secondItem="YqL-sP-XRi" secondAttribute="bottom" id="jVg-BR-bAz"/>
+                    <constraint firstAttribute="trailing" secondItem="YqL-sP-XRi" secondAttribute="trailing" id="sOM-Ly-4pa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="keywordLabel" destination="fW4-bI-snJ" id="kSn-Ni-SDN"/>
+                <outlet property="searchResultView" destination="YqL-sP-XRi" id="Ivj-Ya-nfe"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="137.27678571428569"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="ic-search" width="96" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

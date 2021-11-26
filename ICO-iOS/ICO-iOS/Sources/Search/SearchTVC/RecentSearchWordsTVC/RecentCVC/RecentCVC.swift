@@ -17,6 +17,7 @@ class RecentCVC: UICollectionViewCell {
     weak var delegate : RecentCVCDelegate?
     var keywordIdx = 0
     
+    @IBOutlet weak var wordlabelWidth: NSLayoutConstraint!
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
@@ -32,6 +33,11 @@ class RecentCVC: UICollectionViewCell {
         self.wordLabel.text = nil
         
     }
+    
+    func configure(with model : KeywordHistory){
+        self.wordLabel.text = model.keyword
+    }
+    
     func setTapGesture() {
         let tap: UITapGestureRecognizer =
             UITapGestureRecognizer(target: self, action: #selector(didtapView))
@@ -45,10 +51,10 @@ class RecentCVC: UICollectionViewCell {
         }
         delegate?.didtapKeywordView(keyword: keyword)
     }
-    
-    
+
 
     @IBAction func didTapDeleteButton(_ sender: Any) {
         delegate?.didTapDeleteWordButton(keywordIdx: self.keywordIdx)
     }
 }
+
