@@ -50,6 +50,7 @@ extension AlarmVC{
 // MARK: - TableView Configure
 extension AlarmVC {
     func tableviewConfigure(){
+        refreshControl.alpha = 0
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
