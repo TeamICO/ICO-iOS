@@ -127,7 +127,7 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print(self.styleshot.count)
+        
         if collectionView == styleCV{
             if self.styleshot.isEmpty {
                 
