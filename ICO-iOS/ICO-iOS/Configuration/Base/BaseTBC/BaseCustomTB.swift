@@ -24,8 +24,8 @@ import UIKit
         shapeLayer.strokeColor = UIColor.gray.withAlphaComponent(0.1).cgColor
         shapeLayer.fillColor = color?.cgColor ?? UIColor.white.cgColor
         shapeLayer.lineWidth = 2
-        shapeLayer.shadowColor = UIColor.black.cgColor
-        shapeLayer.shadowOffset = CGSize(width: 0   , height: -2);
+        shapeLayer.shadowColor = UIColor.black.withAlphaComponent(0.1).cgColor
+        shapeLayer.shadowOffset = CGSize(width: 0   , height: -10);
         shapeLayer.shadowOpacity = 0.2
         shapeLayer.shadowPath =  UIBezierPath(roundedRect: bounds, cornerRadius: radii).cgPath
         

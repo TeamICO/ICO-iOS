@@ -143,8 +143,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
     private func routeToThirdScene(with promotinoCode: String) {
         // 타겟 화면인 BaseTBC 초기화
-        let storyboard = UIStoryboard(name: "MainSB", bundle: Bundle.main)
-        guard let basetbc = storyboard.instantiateViewController(withIdentifier: "BaseTBC") as? BaseTBC else { return }
+        let storyboard = UIStoryboard(name: "AlarmSB", bundle: Bundle.main)
+        guard let basetbc = storyboard.instantiateViewController(withIdentifier: "AlarmVC") as? AlarmVC else { return }
         
 
         /// 이미 로그인 이 된 경우, 바로 present
