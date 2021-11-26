@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol HotKeywordTVCDelegate : AnyObject{
+    func didTapHotKeyword(keyword : String)
+}
+
 class HotKeywordTVC: UITableViewCell {
     static let identifier = "HotKeywordTVC"
+    
+    weak var delegate : HotKeywordTVCDelegate?
+    
     @IBOutlet weak var leftStackView: UIStackView!
     @IBOutlet weak var rightStackView: UIStackView!
     
@@ -21,6 +28,7 @@ class HotKeywordTVC: UITableViewCell {
         
         for i in 1...5{
             let stack = HokeywordSV()
+            stack.delegate = self
             stack.rankLabel.text = "\(i)"
             stack.rankTitleLabel.text = leftHotKeywords[i-1]
             leftStackView.addArrangedSubview(stack)
@@ -28,6 +36,7 @@ class HotKeywordTVC: UITableViewCell {
         }
         for i in 1...5{
             let stack = HokeywordSV()
+            stack.delegate = self
             stack.rankLabel.text = "\(i+5)"
             stack.rankTitleLabel.text = rightHotKeywords[i-1]
             rightStackView.addArrangedSubview(stack)
@@ -39,6 +48,13 @@ class HotKeywordTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+  
+    
+}
+extension HotKeywordTVC : HokeywordSVDelegate{
+    func didTapHotkeyword(keyword: String) {
+        delegate?.didTapHotKeyword(keyword: keyword)
     }
     
     

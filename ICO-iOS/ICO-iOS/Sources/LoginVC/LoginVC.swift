@@ -271,24 +271,29 @@ extension LoginVC {
     }
     @objc func didTapKakaoView(){
         var deviceToken = ""
+       
         Messaging.messaging().token { token, error in
             guard let token = token else{
                 return
             }
             deviceToken = token
+            self.showIndicator()
             LoginManager.shared.KakaoSignIn { response in
+               
                     LoginManager.shared.registerID(name : nil,snsToken: response, snsType: "kakao",deviceToken: deviceToken) { response in
+                      
                         guard let jwt = response?.result.jwt,
                                   let code = response?.code,
                                   let name = response?.result.nickname,
                                   let userIdx = response?.result.userIdx else{
                             return
                         }
-                        
+                        self.dismissIndicator()
                         UserDefaults.standard.set(jwt, forKey: "jwtToken")
                         UserDefaults.standard.set(userIdx, forKey: "userIdx")
                         UserDefaults.standard.set(name, forKey: "nickname")
                         DispatchQueue.main.async {
+                            self.dismissIndicator()
                             if code == 1001{
                                 let surveySB = UIStoryboard(name: "Survey", bundle: nil)
                                 guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}

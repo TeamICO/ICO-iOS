@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol HokeywordSVDelegate : AnyObject {
+    func didTapHotkeyword(keyword : String)
+}
+
 class HokeywordSV: UIView {
+    
+    weak var delegate : HokeywordSVDelegate?
     
     private let content = UIView()
     
@@ -31,6 +37,7 @@ class HokeywordSV: UIView {
         self.addSubview(content)
         
         configure()
+        setViewTapGesture()
     }
     func configure(){
         content.translatesAutoresizingMaskIntoConstraints = false
@@ -56,5 +63,15 @@ class HokeywordSV: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    func setViewTapGesture(){
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapHotKeywordView))
+        viewTap.cancelsTouchesInView = false
+        content.addGestureRecognizer(viewTap)
+    }
+    @objc func didTapHotKeywordView(){
+        guard let keyword = rankTitleLabel.text, keyword.isExists else{
+            return
+        }
+        delegate?.didTapHotkeyword(keyword: keyword)
+    }
 }
