@@ -216,8 +216,8 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
                 
                 return CGSize(width: cellWidth, height: cellHeight)
             }else{
-                let cellWidth2 = 400
-                let cellHeight2 = 300
+                let cellWidth2 = 414
+                let cellHeight2 = 700
                 
                 return CGSize(width: cellWidth2, height: cellHeight2)
             }
@@ -276,8 +276,13 @@ extension MyStyleVC{
         styleNum.text = "\(serverData?.styleshotCnt ?? 0)"
         //389
         var item = (serverData?.styleshotCnt)!
+    
+        
         if item % 2 == 0 {
             entireHeight.constant = CGFloat(500 + 180*(item/2))
+            if item == 0 {
+                entireHeight.constant = CGFloat(800)
+            }
         }else{
             entireHeight.constant = CGFloat(500 + 180*((item+1)/2))
         }
