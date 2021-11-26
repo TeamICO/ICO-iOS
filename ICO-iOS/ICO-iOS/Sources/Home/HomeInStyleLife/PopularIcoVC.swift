@@ -20,6 +20,7 @@ class PopularIcoVC: UIViewController {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var categoryCV: UICollectionView!
+    @IBOutlet weak var gradientView1: UIView!
     
     
     @IBOutlet weak var profileImage: UIImageView!
@@ -53,6 +54,7 @@ class PopularIcoVC: UIViewController {
     func registerNib(){
         styleCV.register(UINib(nibName: "StyleCVC", bundle: nil), forCellWithReuseIdentifier: "StyleCVC")
         categoryCV.register(UINib(nibName: "ecoKeywordCVC", bundle: nil), forCellWithReuseIdentifier: "ecoKeywordCVC")
+        categoryCV.register(UINib(nibName: "emptyEcoKeywordCVC", bundle: nil), forCellWithReuseIdentifier: "emptyEcoKeywordCVC")
     }
     
     func setUI(){
@@ -83,6 +85,8 @@ class PopularIcoVC: UIViewController {
         styleNum.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
         styleLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         styleLabel.textColor = UIColor.primaryBlack60
+        
+        gradientView1.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: UIColor.white)
     }
     
     @IBAction func toBack(_ sender: Any) {
@@ -165,10 +169,31 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellWidth = 166
-        let cellHeight = 166
-        
-        return CGSize(width: cellWidth, height: cellHeight)
+        if collectionView == styleCV{
+            if serverData?.styleshot.count != 0 {
+                let cellWidth = 166
+                let cellHeight = 166
+                
+                return CGSize(width: cellWidth, height: cellHeight)
+            }else{
+                let cellWidth2 = 400
+                let cellHeight2 = 300
+                
+                return CGSize(width: cellWidth2, height: cellHeight2)
+            }
+        }else{
+            if serverData?.ecoKeyword.count != 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath) as! ecoKeywordCVC
+                var size = serverData?.ecoKeyword[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 0
+                let totalWidth = size + cell.ecoIcon.frame.size.width + 16
+                return CGSize(width: totalWidth, height: 25)
+            }else{
+                let cellWidth = 237
+                let cellHeight = 17
+                
+                return CGSize(width: cellWidth, height: cellHeight)
+            }
+        }
     }
     
     

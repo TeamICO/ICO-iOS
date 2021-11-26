@@ -11,6 +11,7 @@ class RecentVC: UIViewController {
     
     var serverData : [RecentResult] = []
     var styleshotIdx: Int = 0
+    var isStart = false
     @IBOutlet weak var postingTV: UITableView!
    
     override func viewWillAppear(_ animated: Bool) {
@@ -91,6 +92,33 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         return 630
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffY = scrollView.contentOffset.y
+        
+        if contentOffY >= (postingTV.contentSize.height+150-scrollView.frame.size.height){
+         
+            if isStart == true{
+                print("11111")
+                print("55555")
+                print("66666")
+
+            }
+            /*
+            guard !SearchResultManager.shared.isPaginating else{
+                return
+            }
+           
+            SearchResultManager.shared.getMoreSearchResult(pagination: true, lastIndex: self.searchResultData.count, filter: "\(self.sortedIdx+1)", keyword: self.searchword , jwtToken: jwtToken) { [weak self] response in
+                guard let response = response else {
+                    return
+                }
+                self?.searchResultData.append(contentsOf: response)
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            }*/
+        }
+    }
     
 }
 
@@ -99,5 +127,6 @@ extension RecentVC{
     func didSuccessGetRecentInfo(message: String){
         setTV()
         postingTV.reloadData()
+        self.isStart = true
     }
 }
