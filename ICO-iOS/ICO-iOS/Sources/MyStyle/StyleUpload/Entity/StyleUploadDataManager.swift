@@ -20,9 +20,24 @@ class StyleUploadDataManager{
                     case .failure(let error):
                         print(error.localizedDescription)
                        
-                
                 }
             }
         
     }
+    /*
+    func styleEdit(_ viewcontroller: StyleUploadVC){
+        AF.request("",method: .get, headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: StyleUploadResponse.self){ response in
+                switch response.result{
+                    case .success(let response):
+                        
+                    
+                    
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                }
+            }
+
+    }*/
 }

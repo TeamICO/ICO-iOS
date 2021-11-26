@@ -151,6 +151,20 @@ class StyleUploadVC: UIViewController {
     
     
     func setUI(){
+        if isEditing == true{
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
         navigationTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 20)
         for i in 0...5{
             levelTitle[i].font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16)
@@ -389,9 +403,6 @@ class StyleUploadVC: UIViewController {
         print(ecoList)
         let ecoScore = UInt(self.ecoLevelScore.text!)
         let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: Int(ecoScore ?? 0), purpleDescription: memoTextView.text!, hashtag: hashTagArr)
-        print(hashTagArr)
-        print(ecoScore)
-        print(Int(ecoScore ?? 0))
         StyleUploadDataManager().styleUpload(styleUploadRequest, self)
         self.navigationController?.popViewController(animated: true)
     }
@@ -501,8 +512,6 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
         
     }
 }
-
-
 extension StyleUploadVC{
     func didSuccessStyleUpload(message: String,code: Int){
 
