@@ -132,7 +132,7 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
             if self.styleshot.isEmpty {
                 
                 guard let styleEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStyleShotCVC", for: indexPath)as? emptyStyleShotCVC else {
-                    print("여기")
+                    
                     return UICollectionViewCell()
                     
                 }
