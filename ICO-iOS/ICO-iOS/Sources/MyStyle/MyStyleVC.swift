@@ -49,6 +49,7 @@ class MyStyleVC: BaseViewController {
         print(Constant.HEADER)
         setAlarmViewTapGesture()
         setLikeViewTapGesture()
+        categoryCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
         // Do any additional setup after loading the view.
     }
     

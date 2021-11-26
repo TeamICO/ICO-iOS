@@ -22,6 +22,8 @@ class StyleUploadVC: UIViewController {
     //에코 키워드 관련, 선택된 경우: 1 / 선택되지 않은 경우: 0
     var numberList : [Int] = [0,0,0,0,0,0,0]
     var ecoList : [Int] = []
+    
+    @IBOutlet weak var bottom: NSLayoutConstraint!
     @IBOutlet var ecoView: [UIView]!
     @IBOutlet var ecoButton: [UIButton]!
     
@@ -132,7 +134,17 @@ class StyleUploadVC: UIViewController {
             ecoButton[i].addTarget(self, action: #selector(selectEcoKeywordClicked(_:)), for: .touchUpInside)
         }
         setCV()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow2(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func keyboardWillShow2(notification: NSNotification){
+        let userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        //self.bottom.constant = keyboardFrame.size.height + 20
+        //print(keyboardFrame.size.height)
     }
     
     func setCV(){
@@ -495,7 +507,6 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
         tagCell.backgroundColor = UIColor.backGround1
         tagCell.tagTitle.textColor = UIColor.coGreen70
         tagCell.layer.cornerRadius = 8
-        //tagCell.tagTitle.text = "#" + (hashTagTextField.text)!
         tagCell.tagTitle.text = "#" + hashTagArr[indexPath.row]
         
         return tagCell
