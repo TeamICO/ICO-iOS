@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AppTrackingTransparency
+
 enum State {
     case home
     case lifeStyle
@@ -53,7 +55,7 @@ class HomeVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        requestTrackingAuthoriztion()
         configure()
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
@@ -110,5 +112,26 @@ extension HomeVC {
     }
     @objc func didTapAlarmView(){
         self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
+    }
+}
+//MAKR : 광고 식별자(IDFA)
+extension HomeVC {
+    func requestTrackingAuthoriztion(){
+        if #available(iOS 14, *){
+            ATTrackingManager.requestTrackingAuthorization { (status) in
+                switch status{
+                case .notDetermined:
+                    print("notDetermined")
+                case .restricted:
+                    print("restricted")
+                case .denied:
+                    print("denied")
+                case .authorized:
+                    print("authorized")
+                @unknown default:
+                    print("error")
+                }
+            }
+        }
     }
 }
