@@ -39,7 +39,7 @@ class HomeInStyleLifeVC: BaseViewController {
         animateView.layer.shadowOffset = CGSize(width: 8, height: 8)
         
         categoryBtn[0].setTitle("최신", for: .normal)
-        
+        categoryBtn[0].setTitleColor(UIColor.black, for: .normal)
         categoryBtn[1].setTitle("인기", for: .normal)
         categoryBtn[1].setTitleColor(UIColor.tabBarGray, for: .normal)
         categoryBtn[2].setTitle("키워드별", for: .normal)
