@@ -53,6 +53,9 @@ class StyleDetailVC: UIViewController {
         categoryCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")
         hashtagCV.register(UINib(nibName: "TagCVC", bundle: nil), forCellWithReuseIdentifier: "TagCVC")
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toDetailProfile))
+        userImage.addGestureRecognizer(tapGesture)
+        userImage.isUserInteractionEnabled =  true
     }
     
 
@@ -173,7 +176,9 @@ class StyleDetailVC: UIViewController {
     
     
     @objc func toDetailProfile(){
-        
+        let profileSB = UIStoryboard(name: "PopularIco", bundle: nil)
+        let profileVC = profileSB.instantiateViewController(withIdentifier: "PopularIco")as! PopularIcoVC
+        self.navigationController?.pushViewController(profileVC, animated: true)
     }
     
     @IBAction func likeBtn(_ sender: Any) {

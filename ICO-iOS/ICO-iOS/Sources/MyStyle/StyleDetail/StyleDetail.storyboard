@@ -220,18 +220,18 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIw-BF-z8J">
-                                                <rect key="frame" x="362" y="635" width="52" height="28"/>
+                                                <rect key="frame" x="361" y="635" width="53" height="28"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="3UW-Js-jdV"/>
-                                                    <constraint firstAttribute="width" constant="52" id="7tf-9e-fc5"/>
+                                                    <constraint firstAttribute="width" constant="53" id="7tf-9e-fc5"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUg-vQ-VME">
-                                                <rect key="frame" x="362" y="502" width="52" height="25"/>
+                                                <rect key="frame" x="361" y="502" width="53" height="25"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="52" id="DmT-XD-BF4"/>
+                                                    <constraint firstAttribute="width" constant="53" id="DmT-XD-BF4"/>
                                                     <constraint firstAttribute="height" constant="25" id="yaE-ot-oNQ"/>
                                                 </constraints>
                                             </view>
