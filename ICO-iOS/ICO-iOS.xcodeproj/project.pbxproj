@@ -155,6 +155,8 @@
 		E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A3B70274147410073ED09 /* EcoKeyWordType.swift */; };
 		E9A0CD5F2752054D00D50ECD /* NoneSearchResultCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A0CD5D2752054D00D50ECD /* NoneSearchResultCVC.swift */; };
 		E9A0CD602752054D00D50ECD /* NoneSearchResultCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A0CD5E2752054D00D50ECD /* NoneSearchResultCVC.xib */; };
+		E9A0CD622752144800D50ECD /* PersonalTerms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9A0CD612752144800D50ECD /* PersonalTerms.pdf */; };
+		E9A0CD642752144F00D50ECD /* ServiceTerms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9A0CD632752144F00D50ECD /* ServiceTerms.pdf */; };
 		E9AF83DF273B5C9000D77D5F /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83DE273B5C9000D77D5F /* SearchResultVC.swift */; };
 		E9AF83E1273B5CA300D77D5F /* SearchResultSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83E0273B5CA300D77D5F /* SearchResultSB.storyboard */; };
 		E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83E6273B60DC00D77D5F /* ResultCountCVC.swift */; };
@@ -402,6 +404,8 @@
 		E99A3B70274147410073ED09 /* EcoKeyWordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoKeyWordType.swift; sourceTree = "<group>"; };
 		E9A0CD5D2752054D00D50ECD /* NoneSearchResultCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneSearchResultCVC.swift; sourceTree = "<group>"; };
 		E9A0CD5E2752054D00D50ECD /* NoneSearchResultCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneSearchResultCVC.xib; sourceTree = "<group>"; };
+		E9A0CD612752144800D50ECD /* PersonalTerms.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PersonalTerms.pdf; sourceTree = "<group>"; };
+		E9A0CD632752144F00D50ECD /* ServiceTerms.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ServiceTerms.pdf; sourceTree = "<group>"; };
 		E9AF83DE273B5C9000D77D5F /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		E9AF83E0273B5CA300D77D5F /* SearchResultSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResultSB.storyboard; sourceTree = "<group>"; };
 		E9AF83E6273B60DC00D77D5F /* ResultCountCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCountCVC.swift; sourceTree = "<group>"; };
@@ -781,6 +785,8 @@
 		E91788142748B935008B621B /* Terms */ = {
 			isa = PBXGroup;
 			children = (
+				E9A0CD612752144800D50ECD /* PersonalTerms.pdf */,
+				E9A0CD632752144F00D50ECD /* ServiceTerms.pdf */,
 				E91788152748B94E008B621B /* Terms.swift */,
 			);
 			path = Terms;
@@ -1692,10 +1698,12 @@
 				E9378DA32738099B00C589A1 /* HotKeywordTVC.xib in Resources */,
 				E9AF8404273B82CD00D77D5F /* MypageMyRecentStyleShotTVC.xib in Resources */,
 				E946138427435A5E00A5F7C2 /* EcoTopicCollectionViewCellCVC.xib in Resources */,
+				E9A0CD622752144800D50ECD /* PersonalTerms.pdf in Resources */,
 				714F32C0273BE84D007324BC /* Survey.storyboard in Resources */,
 				E9AF83ED273B60F600D77D5F /* ResultSortCVC.xib in Resources */,
 				E9E49938273BD50B0001ACFB /* ServiceTermsTVC.xib in Resources */,
 				E9161D12273CFFDF009A9CA7 /* NoneAlarmTVC.xib in Resources */,
+				E9A0CD642752144F00D50ECD /* ServiceTerms.pdf in Resources */,
 				7190EA4B273819D6008BA6C0 /* Popular.storyboard in Resources */,
 				E9944BC927353E0D00DB9279 /* TopBannerCVC.xib in Resources */,
 				E943BC612738FB6400619C74 /* LoginCVC.xib in Resources */,

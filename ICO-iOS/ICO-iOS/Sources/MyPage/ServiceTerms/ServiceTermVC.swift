@@ -9,16 +9,17 @@ import UIKit
 import PDFKit
 class ServiceTermVC: UIViewController {
 
-    @IBOutlet weak var termsLabel: UILabel!
     @IBOutlet weak var PDFView: PDFView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = ""
-
-        if let url = URL(string: url),
-            let document = PDFDocument(url: url) {
-            loadPdfView(document: document)
+        guard let url = Bundle.main.url(forResource: "ServiceTerms", withExtension: "pdf") else{
+            return
         }
+        guard let document = PDFDocument(url: url) else{
+            return
+        }
+        loadPdfView(document: document)
+        
         
     }
     
