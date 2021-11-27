@@ -31,8 +31,11 @@ class MyPageUserInfoTVC: UITableViewCell {
     @IBOutlet weak var secondUserNameLabel: UILabel!
     
     @IBOutlet weak var treeLabel: UILabel!
+    @IBOutlet weak var treeCountLabel: UILabel!
     @IBOutlet weak var earthLabel: UILabel!
+    @IBOutlet weak var earthCountLabel: UILabel!
     @IBOutlet weak var togetherLabel: UILabel!
+    @IBOutlet weak var togetherCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,9 +52,9 @@ class MyPageUserInfoTVC: UITableViewCell {
         
         self.userNameLabel.text = viewModel.userName
         self.secondUserNameLabel.text = viewModel.userName
-        self.treeLabel.text = "나무를 지킬 수 있는 행동을 \(viewModel.tree)번 실천했어요."
-        self.earthLabel.text = "지속가능한 지구를 위한 실천을 위해 \(viewModel.earth)번 노력하였어요."
-        self.togetherLabel.text = "나와 환경 모두를 지킬 수 있는 행동을 \(viewModel.together)번째 지속하고 있어요."
+        self.treeCountLabel.text = "\(viewModel.tree)번"
+        self.earthCountLabel.text = "\(viewModel.earth)번"
+        self.togetherCountLabel.text = "\(viewModel.together)번째"
         self.userIcoLevelImage.image = UIImage(named: icolevleImages[viewModel.userIcoLevel-1])
         guard let image = viewModel.userImage else{
             return

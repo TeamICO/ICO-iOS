@@ -85,6 +85,9 @@ extension SearchResultVC{
 extension SearchResultVC {
     func collectionViewConfigure(){
         collectionView.backgroundColor = .white
+        let noneNib = UINib(nibName: NoneSearchResultCVC.identifier, bundle: nil)
+        collectionView.register(noneNib, forCellWithReuseIdentifier: NoneSearchResultCVC.identifier)
+        
         let resultCountCVCNib = UINib(nibName: ResultCountCVC.identifier, bundle: nil)
         collectionView.register(resultCountCVCNib, forCellWithReuseIdentifier: ResultCountCVC.identifier)
         
@@ -105,7 +108,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 2 {
-            return searchResultData.count
+            return searchResultData.count == 0 ? 1 : searchResultData.count
         }
         return 1
     }
@@ -123,14 +126,18 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             
             return cell
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultsCVC.identifier, for: indexPath) as! SearchResultsCVC
-                cell.getData(data: searchResultData[indexPath.row].category)
-                cell.configure(with: SearchResultsCVCViewModel(with: searchResultData[indexPath.row]))
+            if searchResultData.isEmpty {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoneSearchResultCVC.identifier, for: indexPath) as! NoneSearchResultCVC
+                    
+                return cell
+            }else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultsCVC.identifier, for: indexPath) as! SearchResultsCVC
+                    cell.getData(data: searchResultData[indexPath.row].category)
+                    cell.configure(with: SearchResultsCVCViewModel(with: searchResultData[indexPath.row]))
 
-            
-            return cell
-            
-            
+                
+                return cell
+            }
         default:
             return UICollectionViewCell()
         }
@@ -164,8 +171,11 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             
             return CGSize(width: view.width-32, height: 64)
         case 2:
-            
-            return CGSize(width: 164, height: 248)
+            if searchResultData.isEmpty {
+                return CGSize(width: view.width-32, height: 500)
+            }else{
+                return CGSize(width: 164, height: 248)
+            }
         default :
             return CGSize()
         }

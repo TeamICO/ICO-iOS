@@ -14,7 +14,7 @@ struct KeywordContentsModel{
         ]
     let title = [
         "비건을 위한 뷰티",
-        "업사이틀링 패션",
+        "업사이클링 패션",
         "지구를 살리는 패키지"
         ]
     let titleImage = [
@@ -35,9 +35,9 @@ struct KeywordContentsModel{
 }
 struct ContentsBrand1{
     let brandTitle = [
-        "세계적으로 인기있는\n업사이클링 브랜드, 프라이탁",
-        "예술을 업사이클링으로\n승화시키다, 얼킨",
-        "소방관의 가치를 알리는\n브랜드, 119REO"
+        "모두에게 사랑받는\n세계적인 브랜드, 러쉬",
+        "완전 채식주의만을 추구하는\n착한 브랜드, 멜릭서",
+        "럭셔리 비건 뷰티 브랜드,\n디어달리아"
     ]
     let brandImage = [
         "img-contents-lush",
@@ -76,10 +76,11 @@ struct ContentsBrand1{
         ]
 }
 struct ContentsBrand2{
+
     let brandTitle = [
-        "모두에게 사랑받는\n세계적인 브랜드, 러쉬",
-        "완전 채식주의만을 추구하는\n착한 브랜드, 멜릭서",
-        "럭셔리 비건 뷰티 브랜드,\n디어달리아"
+        "세계적으로 인기있는\n업사이클링 브랜드, 프라이탁",
+        "예술을 업사이클링으로\n승화시키다, 얼킨",
+        "소방관의 가치를 알리는\n브랜드, 119REO"
     ]
     let brandImage = [
         "img-contents-freitag",

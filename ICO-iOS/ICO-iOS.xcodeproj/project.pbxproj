@@ -153,6 +153,8 @@
 		E998C25C2732955A00E1F8D0 /* EcoTopicCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E998C25A2732955A00E1F8D0 /* EcoTopicCVC.xib */; };
 		E998C25F273298F200E1F8D0 /* BestTagSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998C25E273298F200E1F8D0 /* BestTagSV.swift */; };
 		E99A3B71274147410073ED09 /* EcoKeyWordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A3B70274147410073ED09 /* EcoKeyWordType.swift */; };
+		E9A0CD5F2752054D00D50ECD /* NoneSearchResultCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A0CD5D2752054D00D50ECD /* NoneSearchResultCVC.swift */; };
+		E9A0CD602752054D00D50ECD /* NoneSearchResultCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A0CD5E2752054D00D50ECD /* NoneSearchResultCVC.xib */; };
 		E9AF83DF273B5C9000D77D5F /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83DE273B5C9000D77D5F /* SearchResultVC.swift */; };
 		E9AF83E1273B5CA300D77D5F /* SearchResultSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9AF83E0273B5CA300D77D5F /* SearchResultSB.storyboard */; };
 		E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF83E6273B60DC00D77D5F /* ResultCountCVC.swift */; };
@@ -398,6 +400,8 @@
 		E998C25A2732955A00E1F8D0 /* EcoTopicCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EcoTopicCVC.xib; sourceTree = "<group>"; };
 		E998C25E273298F200E1F8D0 /* BestTagSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTagSV.swift; sourceTree = "<group>"; };
 		E99A3B70274147410073ED09 /* EcoKeyWordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoKeyWordType.swift; sourceTree = "<group>"; };
+		E9A0CD5D2752054D00D50ECD /* NoneSearchResultCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneSearchResultCVC.swift; sourceTree = "<group>"; };
+		E9A0CD5E2752054D00D50ECD /* NoneSearchResultCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneSearchResultCVC.xib; sourceTree = "<group>"; };
 		E9AF83DE273B5C9000D77D5F /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		E9AF83E0273B5CA300D77D5F /* SearchResultSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResultSB.storyboard; sourceTree = "<group>"; };
 		E9AF83E6273B60DC00D77D5F /* ResultCountCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCountCVC.swift; sourceTree = "<group>"; };
@@ -1006,6 +1010,15 @@
 			path = BestTagSV;
 			sourceTree = "<group>";
 		};
+		E9A0CD5C2752052B00D50ECD /* NoneSearchResultCVC */ = {
+			isa = PBXGroup;
+			children = (
+				E9A0CD5D2752054D00D50ECD /* NoneSearchResultCVC.swift */,
+				E9A0CD5E2752054D00D50ECD /* NoneSearchResultCVC.xib */,
+			);
+			path = NoneSearchResultCVC;
+			sourceTree = "<group>";
+		};
 		E9AF83DD273B5C6D00D77D5F /* SearchResultVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1020,6 +1033,7 @@
 		E9AF83E2273B606900D77D5F /* SearchResultCVC */ = {
 			isa = PBXGroup;
 			children = (
+				E9A0CD5C2752052B00D50ECD /* NoneSearchResultCVC */,
 				E9AF83E3273B607F00D77D5F /* ResultCountCVC */,
 				E9AF83E4273B608D00D77D5F /* ResultSortCVC */,
 				E9AF83E5273B60AA00D77D5F /* SearchResultsCVC */,
@@ -1644,6 +1658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E49924273BAC140001ACFB /* FeedbackSB.storyboard in Resources */,
+				E9A0CD602752054D00D50ECD /* NoneSearchResultCVC.xib in Resources */,
 				E9E49914273BABAC0001ACFB /* IcoLevelSB.storyboard in Resources */,
 				E9378D9F2738098700C589A1 /* RecentSearchWordsTVC.xib in Resources */,
 				E90511F6274F3CA6002B1574 /* CustomPopupSB.storyboard in Resources */,
@@ -1908,6 +1923,7 @@
 				E91788182748BECB008B621B /* ServiceTermVC.swift in Sources */,
 				717CB5142743B57C0044E227 /* StyleDetailVC.swift in Sources */,
 				E998C24C2732813C00E1F8D0 /* BestTagCVC.swift in Sources */,
+				E9A0CD5F2752054D00D50ECD /* NoneSearchResultCVC.swift in Sources */,
 				E9161D0C273CF74E009A9CA7 /* BeforeAlarmTVC.swift in Sources */,
 				717B76D62732CC3300FBA1AF /* RecentVC.swift in Sources */,
 				E9378D8E2738032500C589A1 /* ResponsiveStyleShotTVC.swift in Sources */,
