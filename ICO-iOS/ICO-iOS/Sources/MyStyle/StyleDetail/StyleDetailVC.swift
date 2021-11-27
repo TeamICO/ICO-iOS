@@ -334,14 +334,21 @@ extension StyleDetailVC{
 
         hashtagCV.delegate = self
         hashtagCV.dataSource = self
-        
-        
-        
     }
     
     func didSuccessReport(message: String){
         if message == "성공"{
-            self.presentAlert(title: "신고 접수가 완료되었습니다.")
+            let SB = UIStoryboard(name: "CustomPopupSB", bundle: nil)
+            let vc = SB.instantiateViewController(withIdentifier: "CustomPopupVC") as! CustomPopupVC
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.text = "신고 접수가 완료되었습니다."
+            self.present(vc, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5){
+                vc.dismiss(animated: true) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
     
