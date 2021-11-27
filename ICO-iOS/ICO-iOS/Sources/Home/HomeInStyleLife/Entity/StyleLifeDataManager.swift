@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 class StyleLifeDataManager{
     func getStyleLifeTop(_ viewcontroller: PopularVC){
@@ -78,14 +79,20 @@ class StyleLifeDataManager{
     }
     
     func getKeywordInfo(_ viewcontroller: KeywordVC,_ categoryIdx: Int){
-        AF.request("\(Constant.BASE_URL)/app/styleshots/lifestyle?filter=3&categoryIdx=\(categoryIdx)",method: .get, parameters: nil,headers: Constant.HEADER)
+        let url = "\(Constant.BASE_URL)/app/styleshots/lifestyle?"
+        
+        let param = [
+            "filter" : 3,
+            "categoryIdx[]" : categoryIdx
+        ]
+       
+        AF.request(url, method: .get, parameters: param, encoding: URLEncoding.default, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleLifeRecent.self){ response in
                 switch response.result{
                     case .success(let response):
                         viewcontroller.keywordServerData = response.result
                         viewcontroller.didSuccessGetKeyword(message: response.message)
-                        
                     
                     
                     case .failure(let error):

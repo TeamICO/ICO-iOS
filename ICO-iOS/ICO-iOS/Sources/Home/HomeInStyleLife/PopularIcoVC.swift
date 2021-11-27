@@ -41,6 +41,7 @@ class PopularIcoVC: UIViewController {
         StyleLifeDataManager().getPopularIcoInfo(self, userIdx: id)
         setUI()
         registerNib()
+        categoryCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
         // Do any additional setup after loading the view.
     }
     
