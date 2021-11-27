@@ -165,16 +165,6 @@ class StyleUploadVC: UIViewController {
     func setUI(){
         if isEditing == true{
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         }
         
         navigationTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 20)
@@ -295,7 +285,6 @@ class StyleUploadVC: UIViewController {
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
         checkEco(select: numberList)
-        print(ecoList)
     }
     
     @IBAction func urlBtn(_ sender: Any) {
@@ -315,9 +304,9 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel1Btn(_ sender: Any) {
         ecoLevel[0].isSelected = !ecoLevel[0].isSelected
         if ecoLevel[0].isSelected{
-            ecoLevelScore.text = "\(1)"
+            ecoLevelScore.text = "\(1).0"
         }else{
-            ecoLevelScore.text = "\(0)"
+            ecoLevelScore.text = "\(0).0"
             ecoLevel[0].isSelected = false
             ecoLevel[1].isSelected = false
             ecoLevel[2].isSelected = false
@@ -329,10 +318,10 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel2Btn(_ sender: Any) {
         ecoLevel[1].isSelected = !ecoLevel[1].isSelected
         if ecoLevel[1].isSelected{
-            ecoLevelScore.text = "\(2)"
+            ecoLevelScore.text = "\(2).0"
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(1)"
+            ecoLevelScore.text = "\(1).0"
             ecoLevel[1].isSelected = false
             ecoLevel[2].isSelected = false
             ecoLevel[3].isSelected = false
@@ -343,11 +332,11 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel3Btn(_ sender: Any) {
         ecoLevel[2].isSelected = !ecoLevel[2].isSelected
         if ecoLevel[2].isSelected{
-            ecoLevelScore.text = "\(3)"
+            ecoLevelScore.text = "\(3).0"
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(2)"
+            ecoLevelScore.text = "\(2).0"
             ecoLevel[2].isSelected = false
             ecoLevel[3].isSelected = false
             ecoLevel[4].isSelected = false
@@ -357,12 +346,12 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel4Btn(_ sender: Any) {
         ecoLevel[3].isSelected = !ecoLevel[3].isSelected
         if ecoLevel[3].isSelected{
-            ecoLevelScore.text = "\(4)"
+            ecoLevelScore.text = "\(4).0"
             ecoLevel[2].isSelected = true
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(3)"
+            ecoLevelScore.text = "\(3).0"
             ecoLevel[3].isSelected = false
             ecoLevel[4].isSelected = false
         }
@@ -372,13 +361,13 @@ class StyleUploadVC: UIViewController {
     @IBAction func ecoLevel5Btn(_ sender: Any) {
         ecoLevel[4].isSelected = !ecoLevel[4].isSelected
         if ecoLevel[4].isSelected{
-            ecoLevelScore.text = "\(5)"
+            ecoLevelScore.text = "\(5).0"
             ecoLevel[3].isSelected = true
             ecoLevel[2].isSelected = true
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
         }else{
-            ecoLevelScore.text = "\(4)"
+            ecoLevelScore.text = "\(4).0"
             ecoLevel[4].isSelected = false
         }
     }
