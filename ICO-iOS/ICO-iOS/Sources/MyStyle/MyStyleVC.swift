@@ -294,12 +294,14 @@ extension MyStyleVC{
 }
 //MARK : 좋아요 뷰
 extension MyStyleVC {
+    
     func setLikeViewTapGesture(){
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLikeView))
         viewTap.cancelsTouchesInView = false
         likeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapLikeView(){
+        
         self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
     }
 }
@@ -312,6 +314,7 @@ extension MyStyleVC {
         alarmView.addGestureRecognizer(viewTap)
     }
     @objc func didTapAlarmView(){
+    
         self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
     }
 }

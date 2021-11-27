@@ -101,9 +101,11 @@ extension ProfileSettingVC{
             guard let response = response,let des = response.resultDescription else {
                 return
             }
+            
             self?.profileModel = response
             self?.userNickname = response.nickname
             self?.nickname = response.nickname
+            self?.selectedContentImage = response.profileURL
             self?.profileDescription = des
             let keywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
             self?.ecokeywords = keywords
@@ -162,12 +164,8 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserInfoTVC.identifier, for: indexPath) as! ProfileUserInfoTVC
             cell.selectionStyle = .none
             cell.delegate = self
-            if let imageurl =  self.selectedContentImage {
-                cell.userImage.setImage(with: imageurl)
-            }else{
-                if let profileModel = self.profileModel{
-                    cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
-                }
+            if let profileModel = self.profileModel{
+                cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
             }
            
             

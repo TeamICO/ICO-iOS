@@ -55,7 +55,7 @@ class HomeVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestTrackingAuthoriztion()
+//        requestTrackingAuthoriztion()
         configure()
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
@@ -94,6 +94,7 @@ class HomeVC: BaseViewController {
 //MARK : 좋아요 뷰
 extension HomeVC {
     func setLikeViewTapGesture(){
+        
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLikeView))
         viewTap.cancelsTouchesInView = false
         likeView.addGestureRecognizer(viewTap)
@@ -106,6 +107,7 @@ extension HomeVC {
 //MARK : 알림 뷰
 extension HomeVC {
     func setAlarmViewTapGesture(){
+        
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapAlarmView))
         viewTap.cancelsTouchesInView = false
         alarmView.addGestureRecognizer(viewTap)
