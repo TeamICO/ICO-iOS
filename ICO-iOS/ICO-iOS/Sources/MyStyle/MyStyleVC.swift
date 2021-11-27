@@ -46,7 +46,6 @@ class MyStyleVC: BaseViewController {
         MyStyleDataManager().getMyStyleInfo(self, userIdx: self.userIdx)
         setUI()
         registerNib()
-        print(Constant.HEADER)
         setAlarmViewTapGesture()
         setLikeViewTapGesture()
         categoryCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
@@ -85,7 +84,6 @@ class MyStyleVC: BaseViewController {
         keywordLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
         profileline.backgroundColor = UIColor.primaryBlack50
         detailLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
-        detailLabel.textColor = UIColor.primaryBlack60
             
         likeLabel.text = "누적 좋아요"
         styleLabel.text = "누적 스타일 샷"
@@ -272,6 +270,7 @@ extension MyStyleVC{
             detailLabel.textColor = UIColor.primaryBlack40
         }else{
             detailLabel.text = serverData?.resultDescription
+            detailLabel.textColor = UIColor.primaryBlack80
         }
         likeNum.text = "\(serverData?.likeCnt ?? 0)"
         styleNum.text = "\(serverData?.styleshotCnt ?? 0)"
