@@ -174,7 +174,7 @@ extension TopTVC {
     func pageControlConfigure(){
         contentView.addSubview(pageControl)
         
-        pageControl.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: -5).isActive = true
+        pageControl.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: -12).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: searchView.topAnchor,constant: -20).isActive = true
         
     }

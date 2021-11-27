@@ -26,6 +26,7 @@ class LevelUpVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func didTapCheckMyLevelButton(_ sender: Any) {
+        
     }
     
 }

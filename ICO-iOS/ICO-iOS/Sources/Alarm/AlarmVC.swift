@@ -153,6 +153,14 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
                     }
                 }
                 
+                switch alarm.type{
+                case "mypage":
+                    self.navigationPushViewController(storyboard: "LevelUpSB", identifier: "LevelUpVC")
+                    break
+                default:
+                    break
+                }
+                
                 break
             case 2:
                 let alarm = previouseAlarms[indexPath.row]
@@ -168,6 +176,13 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
                             self?.fetchData()
                         }
                     }
+                }
+                switch alarm.type{
+                case "mypage":
+                    self.navigationPushViewController(storyboard: "LevelUpSB", identifier: "LevelUpVC")
+                    break
+                default:
+                    break
                 }
              
                 break
