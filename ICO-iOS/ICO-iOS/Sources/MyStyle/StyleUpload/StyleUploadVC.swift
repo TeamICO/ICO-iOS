@@ -412,7 +412,6 @@ class StyleUploadVC: UIViewController {
     
     @IBAction func styleUploadBtn(_ sender: Any) {
         checkEco(select: numberList)
-        print(ecoList)
         let ecoScore = UInt(self.ecoLevelScore.text!)
         let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: Int(ecoScore ?? 0), purpleDescription: memoTextView.text!, hashtag: hashTagArr)
         StyleUploadDataManager().styleUpload(styleUploadRequest, self)
@@ -474,6 +473,13 @@ extension StyleUploadVC: UITextFieldDelegate, UITextViewDelegate{
                 urlNum1 = textCount1
                 urlLabel1.text = "\(urlNum1)/20"
             }
+            checkMaxLength(textField: textField, maxLength: 20)
+        }
+    }
+    
+    func checkMaxLength(textField: UITextField!, maxLength: Int) {
+        if (textField.text!.count > maxLength) {
+            textField.deleteBackward()
         }
     }
     
