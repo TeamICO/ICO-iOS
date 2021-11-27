@@ -6,14 +6,19 @@
 //
 
 import UIKit
-
+import PDFKit
 class PersonalInfoTermsVC: UIViewController {
-
-    @IBOutlet weak var agreeLabel: UILabel!
     
+    @IBOutlet weak var PDFView: PDFView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        agreeLabel.text = Terms().personalTerm
+        guard let url = Bundle.main.url(forResource: "PersonalTerms", withExtension: "pdf") else{
+            return
+        }
+        guard let document = PDFDocument(url: url) else{
+            return
+        }
+        loadPdfView(document: document)
         
     }
     
@@ -22,5 +27,11 @@ class PersonalInfoTermsVC: UIViewController {
     }
     
     @IBAction func didTapHomeButton(_ sender: Any) {
+    }
+    func loadPdfView(document: PDFDocument) {
+        PDFView.autoScales = true
+        PDFView.displayMode = .singlePageContinuous
+        PDFView.displayDirection = .vertical
+        PDFView.document = document
     }
 }

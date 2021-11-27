@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,38 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d07-lo-wZh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ic-nb-XQN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="106.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-8P-pFW">
-                                                <rect key="frame" x="16" y="70" width="382" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="iM5-8P-pFW" firstAttribute="leading" secondItem="9Ic-nb-XQN" secondAttribute="leading" constant="16" id="NUU-iE-DOp"/>
-                                            <constraint firstAttribute="bottom" secondItem="iM5-8P-pFW" secondAttribute="bottom" constant="16" id="OZ5-Ym-Zo5"/>
-                                            <constraint firstItem="iM5-8P-pFW" firstAttribute="top" secondItem="9Ic-nb-XQN" secondAttribute="top" constant="70" id="OhS-dX-SxB"/>
-                                            <constraint firstAttribute="trailing" secondItem="iM5-8P-pFW" secondAttribute="trailing" constant="16" id="nCI-kN-Xm5"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="9Ic-nb-XQN" firstAttribute="trailing" secondItem="Fa6-Ar-08f" secondAttribute="trailing" id="UXC-EI-4sk"/>
-                                    <constraint firstItem="9Ic-nb-XQN" firstAttribute="bottom" secondItem="Fa6-Ar-08f" secondAttribute="bottom" id="bDo-aZ-fbh"/>
-                                    <constraint firstItem="9Ic-nb-XQN" firstAttribute="top" secondItem="Fa6-Ar-08f" secondAttribute="top" id="eu6-Te-Nnb"/>
-                                    <constraint firstItem="Fa6-Ar-08f" firstAttribute="leading" secondItem="9Ic-nb-XQN" secondAttribute="leading" id="mAX-wD-aoX"/>
-                                    <constraint firstItem="9Ic-nb-XQN" firstAttribute="width" secondItem="dKv-6W-MhY" secondAttribute="width" id="mO0-Ks-Kgf"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Fa6-Ar-08f"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="dKv-6W-MhY"/>
-                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAy-DC-bOo" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="98" width="414" height="764"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcE-M2-wuX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
@@ -103,17 +76,17 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="d07-lo-wZh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="24i-Eg-YLs"/>
-                            <constraint firstItem="d07-lo-wZh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="84n-J2-Tgs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mAy-DC-bOo" secondAttribute="trailing" id="4c4-iB-coq"/>
                             <constraint firstItem="XcE-M2-wuX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ADS-Vg-Ja9"/>
-                            <constraint firstAttribute="trailing" secondItem="d07-lo-wZh" secondAttribute="trailing" id="GFe-Vc-31x"/>
+                            <constraint firstItem="mAy-DC-bOo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="54" id="Mi3-Pw-pUG"/>
+                            <constraint firstItem="mAy-DC-bOo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ucc-w2-EIV"/>
                             <constraint firstItem="XcE-M2-wuX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bY5-eY-KdE"/>
-                            <constraint firstAttribute="bottom" secondItem="d07-lo-wZh" secondAttribute="bottom" id="es8-fP-bYL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mAy-DC-bOo" secondAttribute="bottom" id="d1p-rK-E4a"/>
                             <constraint firstItem="XcE-M2-wuX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wBa-DD-ped"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="termsLabel" destination="iM5-8P-pFW" id="W33-Nz-bPO"/>
+                        <outlet property="PDFView" destination="mAy-DC-bOo" id="cg6-Lf-lyE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,5 +97,8 @@
     <resources>
         <image name="icArrowLeft" width="24" height="24"/>
         <image name="icNavigationHomeClick1" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
