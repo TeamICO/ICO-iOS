@@ -16,7 +16,7 @@ class ProfileUserInfoTVC: UITableViewCell {
     static let identifier = "ProfileUserInfoTVC"
     
     weak var delegate : ProfileUserInfoTVCDelegate?
-    
+    var nickname = ""
     @IBOutlet weak var userImageView: UIView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nickNameTextField: UITextField!
@@ -39,10 +39,13 @@ class ProfileUserInfoTVC: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         userImage.image = nil
-        nickNameTextField.text = nil
+        
     }
     func configure(with viewModel : ProfileUserInfoTVCViewModel){
+        self.nickname = viewModel.nickName
+        
         self.nickNameTextField.text = viewModel.nickName
+        
         guard let image = viewModel.profileImage else{
             return
         }
@@ -51,7 +54,7 @@ class ProfileUserInfoTVC: UITableViewCell {
         }else{
             self.userImage.setImage(with: image)
         }
-
+        
     }
     func textfieldConfigure(){
         nickNameTextField.leftViewMode = .always
@@ -92,14 +95,14 @@ extension ProfileUserInfoTVC : UITextFieldDelegate {
         }
         if let nickname = textField.text {
             delegate?.checkNicNameState(nickname: nickname)
+            if self.nickname != nickname {
+                delegate?.checkName(nickname: nickname,textField : self.nickNameTextField,label: self.nicknameStateLabel)
+            }
+            
         }
        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nickname = textField.text {
-            
-            delegate?.checkName(nickname: nickname,textField : self.nickNameTextField,label: self.nicknameStateLabel)
-        }
         return true
     }
 }

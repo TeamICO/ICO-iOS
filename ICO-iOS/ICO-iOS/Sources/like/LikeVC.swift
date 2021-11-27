@@ -16,6 +16,11 @@ class LikeVC: BaseViewController {
     private var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewConfigure()

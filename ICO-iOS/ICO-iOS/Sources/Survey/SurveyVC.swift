@@ -94,7 +94,7 @@ class SurveyVC: ViewController {
             emojiLabel[j].font = UIFont.init(name: "AppleSDGothicNeo-Medium", size: 14)
             emojiLabel[j].textColor = UIColor.primaryBlack60
             emojiView[j].cornerRadius = 16
-            emojiView[j].backgroundColor = UIColor.lightShadow
+            emojiView[j].backgroundColor = UIColor.lightShadow.withAlphaComponent(0.6)
         }
         
     
@@ -163,12 +163,14 @@ extension SurveyVC{
         if !isEcoKeywordState[index] {
             view.layer.borderWidth = 1
             view.layer.borderColor = UIColor.iGreen.cgColor
+            view.backgroundColor = .white
             label.textColor = UIColor.coGreen
             seletedKeywords.append(index+1)
             
         
         }else if isEcoKeywordState[index] {
             view.layer.borderWidth = 0
+            view.backgroundColor = UIColor.lightShadow.withAlphaComponent(0.6)
             label.textColor = UIColor.primaryBlack80
             seletedKeywords = seletedKeywords.filter{$0 != index+1}
         }

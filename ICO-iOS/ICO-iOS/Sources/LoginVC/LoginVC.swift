@@ -301,12 +301,12 @@ extension LoginVC {
                                 surveyVC.userIdx = userIdx
                                 self.navigationController?.pushViewController(surveyVC, animated: true)
                             }else if code == 1002{
-                                let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
-                         
-                                let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
-                                let vc = baseTBC
-                                vc.modalPresentationStyle = .fullScreen
-                                self.present(vc, animated: true, completion: nil)
+                                let surveySB = UIStoryboard(name: "Survey", bundle: nil)
+                                guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
+                                surveyVC.name = name
+                                surveyVC.userIdx = userIdx
+                                self.navigationController?.pushViewController(surveyVC, animated: true)
+                                
                             }
                             
                         }

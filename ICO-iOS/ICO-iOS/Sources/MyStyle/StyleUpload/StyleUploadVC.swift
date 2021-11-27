@@ -426,7 +426,7 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         guard let image = info[.editedImage] as? UIImage,
-              let newImage = resizeImage(image: image, newWidth: 200) else{
+              let newImage = resizeImage(image: image, newWidth: 380) else{
             return
         }
         newImageView.image = newImage

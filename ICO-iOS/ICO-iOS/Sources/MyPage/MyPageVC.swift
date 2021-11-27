@@ -276,6 +276,7 @@ extension MyPageVC {
         likeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapLikeView(){
+        
         self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
     }
 }
@@ -288,6 +289,7 @@ extension MyPageVC {
         alarmView.addGestureRecognizer(viewTap)
     }
     @objc func didTapAlarmView(){
+        
         self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
     }
 }
