@@ -10,6 +10,9 @@ import Alamofire
 import SwiftUI
 
 class StyleLifeDataManager{
+    static let shared = StyleLifeDataManager()
+    var isRecentPaginating = false
+    
     func getStyleLifeTop(_ viewcontroller: PopularVC){
         
         AF.request("\(Constant.BASE_URL)/app/lifestyle/popular", method: .get, parameters: nil, headers: Constant.HEADER)
@@ -43,16 +46,28 @@ class StyleLifeDataManager{
             }
     }
     
-    func getRecentInfo(_ viewcontroller: RecentVC){
+    func getRecentInfo(pagination: Bool = false, lastIndex: Int, _ viewcontroller: RecentVC , completion: @escaping([RecentResult]?) -> Void){
+        if pagination{
+            isRecentPaginating = true
+        }
         
-        AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=1",method: .get,parameters: nil,headers: Constant.HEADER)
+        let param = [
+            "filter" : "1",
+            "no": "\(lastIndex)"
+        ]
+    
+        AF.request("https://prod.chuckwagon.shop/app/styleshots/lifestyle?",method: .get,parameters: param,encoding: URLEncoding.default, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleLifeRecent.self){ response in
                 switch response.result{
                 case .success(let response):
-                    viewcontroller.serverData = response.result
-                    viewcontroller.didSuccessGetRecentInfo(message: response.message)
-                    
+                    guard response.isSuccess == true else{
+                        return
+                    }
+                    completion(response.result)
+                    if pagination{
+                        self.isRecentPaginating = false
+                    }
                     
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -81,10 +96,12 @@ class StyleLifeDataManager{
     func getKeywordInfo(_ viewcontroller: KeywordVC,_ categoryIdx: Int){
         let url = "\(Constant.BASE_URL)/app/styleshots/lifestyle?"
         
-        let param = [
+        var param = [
             "filter" : 3,
-            "categoryIdx[]" : categoryIdx
+            //"categoryIdx[]" : categoryIdx
         ]
+        param.updateValue(categoryIdx, forKey: "categoryIdx[]")
+        
        
         AF.request(url, method: .get, parameters: param, encoding: URLEncoding.default, headers: Constant.HEADER)
             .validate()
@@ -93,7 +110,7 @@ class StyleLifeDataManager{
                     case .success(let response):
                         viewcontroller.keywordServerData = response.result
                         viewcontroller.didSuccessGetKeyword(message: response.message)
-                    
+                        print(param)
                     
                     case .failure(let error):
                         print(error.localizedDescription)

@@ -126,6 +126,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         StyleLifeDataManager().getKeywordInfo(self, indexPath.row+1)
+        
         for i in 0...6{
            let keywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeywordCVC", for: indexPath)as? KeywordCVC
             if keywordCell?.isSelected == false{
