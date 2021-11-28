@@ -9,21 +9,23 @@ import UIKit
 
 class RecentVC: UIViewController {
     
+    var isStart = false
+    
     var serverData : [RecentResult] = []
     var styleshotIdx: Int = 0
-    var isStart = false
     @IBOutlet weak var postingTV: UITableView!
-   
+   /*
     override func viewWillAppear(_ animated: Bool) {
         StyleLifeDataManager().getRecentInfo(self)
-    }
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 68))
         postingTV.tableHeaderView = header
-        StyleLifeDataManager().getRecentInfo(self)
+       // StyleLifeDataManager().getRecentInfo(pagination: false, lastIndex: 0, self)
+        fetchData()
         registerXib()
     }
 
@@ -34,6 +36,26 @@ class RecentVC: UIViewController {
     func setTV(){
         postingTV.delegate = self
         postingTV.dataSource = self
+    }
+}
+
+
+extension RecentVC{
+    func fetchData(){
+        StyleLifeDataManager.shared.getRecentInfo(pagination: false, lastIndex: 0, self){[weak self] response in
+            guard let response = response else {
+                return
+            }
+            self?.serverData = response
+            self?.postingTV.reloadData()
+            self?.setTV()
+            if response.isEmpty{
+                self?.postingTV.isScrollEnabled = false
+            }
+            self?.isStart = true
+        }
+
+      
     }
 }
 
@@ -66,12 +88,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
         cell.heartNum.text = "\(serverData[indexPath.row].likeCnt)"
-        /*
-        if serverData[indexPath.row].isLike == 1{
-            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
-        }else{
-            cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
-        }*/
+     
         
         cell.detailLabel.text = serverData[indexPath.row].resultDescription
         cell.time.text = serverData[indexPath.row].time
@@ -97,26 +114,22 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         
         if contentOffY >= (postingTV.contentSize.height+150-scrollView.frame.size.height){
          
-            if isStart == true{
-                print("11111")
-                print("55555")
-                print("66666")
-
-            }
-            /*
-            guard !SearchResultManager.shared.isPaginating else{
+            guard isStart != nil else{
                 return
             }
-           
-            SearchResultManager.shared.getMoreSearchResult(pagination: true, lastIndex: self.searchResultData.count, filter: "\(self.sortedIdx+1)", keyword: self.searchword , jwtToken: jwtToken) { [weak self] response in
-                guard let response = response else {
+            
+            guard !StyleLifeDataManager.shared.isRecentPaginating else{
+                return
+            }
+            
+            StyleLifeDataManager.shared.getRecentInfo(pagination: true, lastIndex: self.serverData.count, self){ [weak self] response in
+                guard let response = response else{
                     return
                 }
-                self?.searchResultData.append(contentsOf: response)
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
-                }
-            }*/
+                self?.serverData.append(contentsOf: response)
+                self?.postingTV.reloadData()
+            }
+            
         }
     }
     
@@ -125,7 +138,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
 
 extension RecentVC{
     func didSuccessGetRecentInfo(message: String){
-        setTV()
+        //setTV()
         postingTV.reloadData()
         self.isStart = true
     }
