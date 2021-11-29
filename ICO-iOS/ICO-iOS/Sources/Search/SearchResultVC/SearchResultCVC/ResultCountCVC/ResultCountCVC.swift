@@ -13,7 +13,7 @@ class ResultCountCVC: UICollectionViewCell {
     @IBOutlet weak var searchResultCountLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }

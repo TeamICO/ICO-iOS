@@ -22,10 +22,11 @@ class SearchResultVC: BaseViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboardWhenTappedAround()
         searchTextField.attributedPlaceholder = NSAttributedString(string: "검색할 스타일샷의 키워드를 입력해 주세요.", attributes: [.foregroundColor: UIColor.primaryBlack50,.font : UIFont(name: "AppleSDGothicNeo-Medium", size: 14)])
         
         searchTextField.text = searchword
-        self.dismissKeyboardWhenTappedAround()
+        
         fetchData(sortedIdx: self.sortedIdx)
         collectionViewConfigure()
         searchTextField.delegate = self
@@ -49,7 +50,6 @@ class SearchResultVC: BaseViewController {
             guard let response = response, let result = response.seachResult else {
                 return
             }
-            print(result)
             self?.searchResultModel = response
             self?.searchResultData = result
             self?.isStart = false
@@ -99,6 +99,7 @@ extension SearchResultVC {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         collectionView.delegate = self
         collectionView.dataSource = self
+
     }
 }
 // MARK: - CollectionView Delegate, DataSource
@@ -121,6 +122,7 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             return cell
             
         case 1:
+        
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultSortCVC.identifier, for: indexPath) as! ResultSortCVC
             cell.delegate = self
             
@@ -138,6 +140,8 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
                 
                 return cell
             }
+
+        
         default:
             return UICollectionViewCell()
         }
@@ -146,21 +150,15 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         if indexPath.section == 2{
-            if let searchResultModel = self.searchResultModel?.seachResult{
-                if self.nickName == searchResultModel[indexPath.row].nickname {
-
-                    pushToStyleShot(isMine: true, styleShotIdx: searchResultModel[indexPath.row].styleshotIdx)
+            if !self.searchResultData.isEmpty{
+                if self.nickName == self.searchResultData[indexPath.row].nickname {
+                    pushToStyleShot(isMine: true, styleShotIdx: self.searchResultData[indexPath.row].styleshotIdx)
                 }else{
-              
-                    pushToStyleShot(isMine: false, styleShotIdx: searchResultModel[indexPath.row].styleshotIdx)
+                    pushToStyleShot(isMine: false, styleShotIdx: self.searchResultData[indexPath.row].styleshotIdx)
                 }
             }
         }
-       
-        
-       
-       
-        
+
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section{
