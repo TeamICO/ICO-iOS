@@ -127,7 +127,9 @@ extension SettingAlarmVC : UITableViewDelegate, UITableViewDataSource {
 //MARK : SettingAlarmTVC Delegate
 extension SettingAlarmVC : SettingAlarmTVCDelegate{
     func setUserAlarm() {
-      print("알람설정")
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     
