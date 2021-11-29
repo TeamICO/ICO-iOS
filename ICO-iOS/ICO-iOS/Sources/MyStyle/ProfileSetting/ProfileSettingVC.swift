@@ -128,7 +128,12 @@ extension ProfileSettingVC{
         updateView.setVerticalGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
         updateButton.layer.cornerRadius = 12
         updateButton.layer.masksToBounds = true
-        updateButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            updateButton.backgroundColor = .gradient01
+        }else{
+            updateButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+           
+        }
     }
 }
 // MARK: - TableView Configure

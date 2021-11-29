@@ -100,7 +100,7 @@ class StyleDetailVC: UIViewController {
     }
     
     @IBAction func detailBtn(_ sender: Any) {
-        let alert = UIAlertController()
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         if isMine == true{
             let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default){ action in
@@ -161,7 +161,21 @@ class StyleDetailVC: UIViewController {
                 alertController.addAction(reason5Action)
                 alertController.addAction(cancelAction)
                 
-                self.present(alertController, animated: false, completion: nil)
+                alertController.popoverPresentationController?.sourceView = self.view
+                
+                if UIDevice.current.userInterfaceIdiom == .pad { //디바이스 타입이 iPad일때
+                  
+                      // ActionSheet가 표현되는 위치를 저장해줍니다.
+
+                     
+                    alertController.popoverPresentationController?.sourceRect =  CGRect(x: self.view.bounds.midX, y: self.view.bottom, width: 0, height: 0)
+                    alertController.popoverPresentationController?.permittedArrowDirections = []
+                      self.present(alertController, animated: true, completion: nil)
+                  
+                } else {
+                    alertController.popoverPresentationController?.sourceRect = self.view.bounds
+                  self.present(alertController, animated: true, completion: nil)
+                }
             }
             reportAction.setValue(UIColor.alertsError, forKey: "titleTextColor")
             
@@ -171,14 +185,28 @@ class StyleDetailVC: UIViewController {
             alert.addAction(reportAction)
             alert.addAction(cancelAction)
         }
-        self.present(alert, animated: false, completion: nil)
+        alert.popoverPresentationController?.sourceView = view
+        
+        if UIDevice.current.userInterfaceIdiom == .pad { //디바이스 타입이 iPad일때
+          
+              // ActionSheet가 표현되는 위치를 저장해줍니다.
+
+             
+            alert.popoverPresentationController?.sourceRect =  CGRect(x: self.view.bounds.midX, y: self.view.bottom, width: 0, height: 0)
+            alert.popoverPresentationController?.permittedArrowDirections = []
+              self.present(alert, animated: true, completion: nil)
+          
+        } else {
+            alert.popoverPresentationController?.sourceRect = view.bounds
+          self.present(alert, animated: true, completion: nil)
+        }
     }
     
     
     @IBAction func toProductUrl(_ sender: Any) {
         let serviceSafriView: SFSafariViewController = SFSafariViewController(url: url! as URL)
         self.present(serviceSafriView, animated: true, completion: nil)
-    }
+    }   
     
     
     @objc func toDetailProfile(){

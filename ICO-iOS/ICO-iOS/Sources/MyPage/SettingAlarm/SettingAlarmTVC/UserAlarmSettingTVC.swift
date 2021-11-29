@@ -27,7 +27,7 @@ class UserAlarmSettingTVC: UITableViewCell {
     
     @IBAction func didChangeSwitch(_ sender: Any) {
         if alarmSwitch.isOn {
-            alarmSwitch.thumbTintColor = .gradient012
+            alarmSwitch.thumbTintColor = .coGreen30
         } else {
             alarmSwitch.thumbTintColor = .primaryBlack40
         }

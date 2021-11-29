@@ -229,13 +229,30 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             actionSheet.addAction(cancel)
             
             actionSheet.popoverPresentationController?.sourceView = view
-            actionSheet.popoverPresentationController?.sourceRect = view.bounds
             
-            self.present(actionSheet, animated: true)
+            if UIDevice.current.userInterfaceIdiom == .pad { //디바이스 타입이 iPad일때
+              
+                  // ActionSheet가 표현되는 위치를 저장해줍니다.
+
+                 
+                  actionSheet.popoverPresentationController?.sourceRect =  CGRect(x: self.view.bounds.midX, y: self.view.bottom, width: 0, height: 0)
+                actionSheet.popoverPresentationController?.permittedArrowDirections = []
+                  self.present(actionSheet, animated: true, completion: nil)
+              
+            } else {
+                actionSheet.popoverPresentationController?.sourceRect = view.bounds
+              self.present(actionSheet, animated: true, completion: nil)
+            }
+
+
+       
+          
     
 
             break
-        default : break
+        default :
+            self.tabBarController?.tabBar.isHidden = false
+            break
         }
     }
     
@@ -303,7 +320,7 @@ extension MyPageVC {
     }
     @objc func didTapLikeView(){
         
-        self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
+        self.navigationPushViewController(storyboard: "LevelUpSB", identifier: "LevelUpVC")
     }
 }
 

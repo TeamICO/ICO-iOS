@@ -13,11 +13,17 @@ class LevelUpVC: UIViewController {
     @IBOutlet weak var checkMyLevelButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController?.tabBar.isHidden = true
         subTitleLabel.text = "축하드려요!\n나의 에코 레벨이 상승했어요."
         checkMyLevelButton.layer.cornerRadius = 12
         checkMyLevelButton.layer.masksToBounds = true
-        checkMyLevelButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            checkMyLevelButton.backgroundColor = .gradient01
+        }else{
+            checkMyLevelButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+           
+        }
+       
     }
     
 

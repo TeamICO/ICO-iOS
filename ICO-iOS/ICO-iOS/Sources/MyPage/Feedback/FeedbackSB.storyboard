@@ -105,6 +105,14 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                                        <color key="value" red="0.41960784313725491" green="0.76470588235294112" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                                        <color key="value" red="0.39215686274509803" green="0.88235294117647056" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapFeedbackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="x2y-k3-03W"/>
                                 </connections>
