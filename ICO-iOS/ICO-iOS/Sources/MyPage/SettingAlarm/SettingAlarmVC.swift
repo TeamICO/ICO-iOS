@@ -14,7 +14,7 @@ class SettingAlarmVC: UIViewController {
                 "마케팅 수신 알림",
                 "나의 스타일샷 알림"
     ]
-    
+    public var complition : ((Bool)->Void)?
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -31,6 +31,10 @@ class SettingAlarmVC: UIViewController {
     }
     
     @IBAction func didTapHomeButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
+            self.complition?(true)
+        }
     }
     
 }

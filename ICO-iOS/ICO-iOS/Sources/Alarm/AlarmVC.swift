@@ -11,6 +11,8 @@ class AlarmVC: BaseViewController {
     // MARK: - Propertices
     private let sections = ["","오늘","이전 알림"]
     
+    public var complition : ((Bool)->Void)?
+    
     private var todayAlarms = [Alarms]()
     private var previouseAlarms = [Alarms]()
     
@@ -153,13 +155,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
                     }
                 }
                 
-                switch alarm.type{
-                case "mypage":
-                    self.navigationPushViewController(storyboard: "LevelUpSB", identifier: "LevelUpVC")
-                    break
-                default:
-                    break
-                }
+                self.didTapAlarm(type: alarm.type)
                 
                 break
             case 2:
@@ -177,13 +173,7 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
                         }
                     }
                 }
-                switch alarm.type{
-                case "mypage":
-                    self.navigationPushViewController(storyboard: "LevelUpSB", identifier: "LevelUpVC")
-                    break
-                default:
-                    break
-                }
+                self.didTapAlarm(type: alarm.type)
              
                 break
             default :
@@ -233,7 +223,29 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
        
     }
 
-
+    func didTapAlarm(type : String){
+        switch type{
+        case "url" :
+            break
+        case "styleshotIdx" :
+            self.navigationController?.popViewController(animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.05) {
+                self.complition?(true)
+            }
+            break
+        case "like" :
+            self.navigationController?.popViewController(animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.05) {
+                self.complition?(true)
+            }
+            break
+        case "mypage":
+            self.navigationPushViewController(storyboard: "LevelUpSB", identifier: "LevelUpVC")
+            break
+        default:
+            break
+        }
+    }
     
     
 }

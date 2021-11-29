@@ -9,8 +9,12 @@ import UIKit
 
 class FeedbackVC: BaseViewController {
     // MARK: - Properties
+    
+    public var complition : ((Bool)->Void)?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var FeedbackButton: UIButton!
+    
     
     private let contentTextView : UITextView = {
         let view = UITextView(frame: CGRect(x: 0, y: 0, width: 0, height: 180))
@@ -81,6 +85,10 @@ class FeedbackVC: BaseViewController {
     }
     
     @IBAction func didTapHomeButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
+            self.complition?(true)
+        }
     }
     
     @IBAction func didTapFeedbackButton(_ sender: Any) {

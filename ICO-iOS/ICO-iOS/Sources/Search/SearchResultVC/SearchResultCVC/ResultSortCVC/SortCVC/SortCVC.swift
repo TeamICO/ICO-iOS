@@ -29,7 +29,6 @@ class SortCVC: UICollectionViewCell {
     override var isSelected: Bool{
         didSet{
             if isSelected{
-                print(sortedIdx)
                 sortView.backgroundColor = UIColor.gradient012
                 sortTitleLabel.textColor = .white
                 sortTitleLabel.font = UIFont.init(name: "AppleSDGothicNeo-Semibold", size: 14)
