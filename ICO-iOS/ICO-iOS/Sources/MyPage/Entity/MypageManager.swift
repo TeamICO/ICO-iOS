@@ -14,7 +14,7 @@ final class MypageManager{
     
     func getMypageData(jwtToken: String, completion: @escaping (MypageResult?)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/mypage"
+        let url = "https://prod.chuckwagon.shop/app/mypage"
 
    
         let header : HTTPHeaders = [

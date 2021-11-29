@@ -13,7 +13,7 @@ final class SurveyMamager{
     
     
     func insertUserSurveyInfo(activatedEcoKeyword: [String],userIdx: Int,jwtToken: String, completion: @escaping (CommonResponse)->Void) {
-        let url = "https://dev.chuckwagon.shop/app/users/\(userIdx)"
+        let url = "https://prod.chuckwagon.shop/app/users/\(userIdx)"
         
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken

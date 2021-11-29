@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bOc-fF-BmW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpy-B5-1fu">
@@ -66,7 +66,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vpy-B5-1fu" secondAttribute="trailing" id="J3l-hO-rd0"/>
                             <constraint firstItem="vpy-B5-1fu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YGP-AK-sbT"/>
                             <constraint firstItem="vpy-B5-1fu" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="chc-wU-q1M"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bOc-fF-BmW" secondAttribute="bottom" id="nfZ-yI-Mtw"/>
+                            <constraint firstAttribute="bottom" secondItem="bOc-fF-BmW" secondAttribute="bottom" id="nfZ-yI-Mtw"/>
                             <constraint firstItem="bOc-fF-BmW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="skk-GY-r28"/>
                         </constraints>
                     </view>

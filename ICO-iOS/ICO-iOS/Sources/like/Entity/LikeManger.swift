@@ -14,7 +14,7 @@ final class LikeManger{
     
     func getUserLikes(jwtToken: String, completion: @escaping ([LikeResult]?)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/likes"
+        let url = "https://prod.chuckwagon.shop/app/likes"
 
    
         let header : HTTPHeaders = [

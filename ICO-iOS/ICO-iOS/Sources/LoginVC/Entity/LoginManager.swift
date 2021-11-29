@@ -57,7 +57,7 @@ class LoginManager {
    
     public func registerID(name : String?,snsToken : String,snsType: String,deviceToken: String?, completion: @escaping (LoginResponse?)->Void) {
       
-        let url = "https://dev.chuckwagon.shop/app/login"
+        let url = "https://prod.chuckwagon.shop/app/login"
        
         let param = [
             "snsToken" : snsToken,

@@ -222,6 +222,7 @@ extension HomeInHomeVC : TopTVCDelegate {
     }
     
     func didTapSearchView() {
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationPushViewController(storyboard: "SearchSB", identifier: "SearchVC")
 
     }

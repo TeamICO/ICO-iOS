@@ -14,7 +14,7 @@ final class SearchManager{
     
     func getSearchKeywordHistory(jwtToken: String, completion: @escaping (SearchResult?)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/keywords"
+        let url = "https://prod.chuckwagon.shop/app/keywords"
 
    
         let header : HTTPHeaders = [
@@ -47,7 +47,7 @@ final class SearchManager{
     
     func getKeywordHistory(jwtToken: String, completion: @escaping ([KeywordHistory]?)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/keywords"
+        let url = "https://prod.chuckwagon.shop/app/keywords"
 
    
         let header : HTTPHeaders = [
@@ -80,7 +80,7 @@ final class SearchManager{
     
     func removeAllKeywordHistory(jwtToken: String, completion: @escaping (Bool)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/keywords"
+        let url = "https://prod.chuckwagon.shop/app/keywords"
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken
         ]
@@ -111,7 +111,7 @@ final class SearchManager{
     }
     func removeKeywordHistory(keywordIdx: Int,jwtToken: String, completion: @escaping (Bool)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/keywords/\(keywordIdx)"
+        let url = "https://prod.chuckwagon.shop/app/keywords/\(keywordIdx)"
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken
         ]
@@ -142,7 +142,7 @@ final class SearchManager{
     }
     func getSearchAutocompleteWords(keyword: String,jwtToken: String, completion: @escaping (AutocompleteResult)->Void) {
       
-        let url = "https://dev.chuckwagon.shop/app/auto-keyword?"
+        let url = "https://prod.chuckwagon.shop/app/auto-keyword?"
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN" : jwtToken
         ]
