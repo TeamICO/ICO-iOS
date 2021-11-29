@@ -143,19 +143,41 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0 : self.tabBarController?.tabBar.isHidden = false
             break
-        case 1 : self.tabBarController?.tabBar.isHidden = false
+        case 1 :
+            self.tabBarController?.tabBar.isHidden = false
+            self.tabBarController?.selectedIndex = 1
             break
         case 2:
             // 서비스 이용 약관
-            self.navigationPushViewController(storyboard: "ServiceTermsSB", identifier: "ServiceTermsVC")
+            let storyboard = UIStoryboard(name: "ServiceTermsSB", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ServiceTermsVC") as! ServiceTermsVC
+            vc.navigationItem.largeTitleDisplayMode = .never
+            vc.complition = { taped in
+                self.tabBarController?.selectedIndex = 0
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+            
             break
         case 3:
             // 알림 설정
-            self.navigationPushViewController(storyboard: "SettingAlarmSB", identifier: "SettingAlarmVC")
+            let storyboard = UIStoryboard(name: "SettingAlarmSB", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "SettingAlarmVC") as! SettingAlarmVC
+            vc.navigationItem.largeTitleDisplayMode = .never
+            vc.complition = { taped in
+                self.tabBarController?.selectedIndex = 0
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+      
             break
         case 4:
             // 의견 보내기
-            self.navigationPushViewController(storyboard: "FeedbackSB", identifier: "FeedbackVC")
+            let storyboard = UIStoryboard(name: "FeedbackSB", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "FeedbackVC") as! FeedbackVC
+            vc.navigationItem.largeTitleDisplayMode = .never
+            vc.complition = { taped in
+                self.tabBarController?.selectedIndex = 0
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 5:
             // 로그아웃
@@ -289,8 +311,13 @@ extension MyPageVC {
         alarmView.addGestureRecognizer(viewTap)
     }
     @objc func didTapAlarmView(){
-        
-        self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
+        let storyboard = UIStoryboard(name: "AlarmSB", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "AlarmVC") as! AlarmVC
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.complition = { taped in
+            self.tabBarController?.selectedIndex = 1
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 extension MyPageVC: MypageMyRecentStyleShotTVCDelegate{

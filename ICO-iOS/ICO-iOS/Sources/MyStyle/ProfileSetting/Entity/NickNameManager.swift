@@ -14,7 +14,7 @@ final class NickNameManager{
     
     func checkNickName(nickname: String,jwtToken: String, completion: @escaping (CommonResponse)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/users?"
+        let url = "https://prod.chuckwagon.shop/app/users?"
         
 
 

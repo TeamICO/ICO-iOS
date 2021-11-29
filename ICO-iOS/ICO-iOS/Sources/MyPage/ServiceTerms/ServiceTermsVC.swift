@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ServiceTermsVC: UIViewController {
+class ServiceTermsVC: BaseViewController {
 
     private let models = [
             "개인정보처리방침",
             "서비스 이용 약관",
             ""
     ]
+    public var complition : ((Bool)->Void)?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,8 +31,10 @@ class ServiceTermsVC: UIViewController {
     }
     
     @IBAction func didTapHomeButton(_ sender: Any) {
-       
-
+        self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
+            self.complition?(true)
+        }
     }
     
 }

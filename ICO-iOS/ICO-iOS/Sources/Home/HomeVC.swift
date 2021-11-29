@@ -113,7 +113,14 @@ extension HomeVC {
         alarmView.addGestureRecognizer(viewTap)
     }
     @objc func didTapAlarmView(){
-        self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
+        let storyboard = UIStoryboard(name: "AlarmSB", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "AlarmVC") as! AlarmVC
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.complition = { taped in
+            self.tabBarController?.selectedIndex = 1
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 //MAKR : 광고 식별자(IDFA)

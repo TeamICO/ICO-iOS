@@ -14,7 +14,7 @@ final class ProfileManager{
     
     func getUserProfile(userIdx: Int,jwtToken: String, completion: @escaping (ProfileResult?)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/users/\(userIdx)"
+        let url = "https://prod.chuckwagon.shop/app/users/\(userIdx)"
 
    
         let header : HTTPHeaders = [
