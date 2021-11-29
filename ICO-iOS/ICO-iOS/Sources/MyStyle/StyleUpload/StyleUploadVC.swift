@@ -161,6 +161,7 @@ class StyleUploadVC: UIViewController {
         hashTagCnt = hashTagCnt + 1
         hashTagText.text = "\(hashTagCnt)/5"
         hashTagArr.append(hashTagTextField.text!)
+        hashTagTextField.text = ""
         hashTagCV.reloadData()
     }
     

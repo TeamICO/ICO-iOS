@@ -154,7 +154,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfT-WN-GZx">
-                        <rect key="frame" x="233" y="462" width="75" height="22"/>
+                        <rect key="frame" x="233" y="456" width="75" height="28"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="nbg-Ok-4v6"/>
@@ -224,7 +224,7 @@
                     <constraint firstItem="YbY-Je-qaS" firstAttribute="top" secondItem="1aS-8V-qOJ" secondAttribute="bottom" constant="25" id="rGs-yj-JRN"/>
                     <constraint firstItem="RUV-DQ-zbv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rgv-jT-HL4"/>
                     <constraint firstItem="cAJ-Zq-B3P" firstAttribute="top" secondItem="jfT-WN-GZx" secondAttribute="bottom" constant="63.5" id="sdk-uI-cSh"/>
-                    <constraint firstItem="jfT-WN-GZx" firstAttribute="top" secondItem="dJC-i1-PaQ" secondAttribute="bottom" constant="16" id="u07-NX-vFU"/>
+                    <constraint firstItem="jfT-WN-GZx" firstAttribute="top" secondItem="dJC-i1-PaQ" secondAttribute="bottom" constant="10" id="u07-NX-vFU"/>
                     <constraint firstAttribute="trailing" secondItem="mjK-8j-ieB" secondAttribute="trailing" constant="15" id="vPw-1h-ZT1"/>
                     <constraint firstItem="dJC-i1-PaQ" firstAttribute="top" secondItem="1aS-8V-qOJ" secondAttribute="bottom" constant="15" id="yZk-ad-0Le"/>
                 </constraints>
