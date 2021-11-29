@@ -7,38 +7,44 @@
 
 import Foundation
 
-// MARK: - MyStyleResponse
-struct MyStyleResponse: Codable {
+// MARK: - MyStyleUser
+struct MyStyleUser: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: MyStyleResult
+    let result: UserInfoResult
 }
 
-// MARK: - Result
-struct MyStyleResult: Codable {
-    let nickname: String
-    let profileURL: String
-    let resultDescription: String
+// MARK: - UserInfoResult
+struct UserInfoResult: Codable {
+    let nickname, profileURL, resultDescription: String
     let styleshotCnt, likeCnt, isMe: Int
     let ecoKeyword: [String]
-    let styleshot: [Styleshot]
 
     enum CodingKeys: String, CodingKey {
         case nickname
         case profileURL = "profileUrl"
         case resultDescription = "description"
-        case styleshotCnt, likeCnt, isMe, ecoKeyword, styleshot
+        case styleshotCnt, likeCnt, isMe, ecoKeyword
     }
 }
 
-// MARK: - Styleshot
-struct Styleshot: Codable {
-    let styleshotIdx: Int
+// MARK: - MyStyleShot
+struct MyStyleShot: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [StyleShotResult]
+}
+
+// MARK: - StyleShotResult
+struct StyleShotResult: Codable {
+    let no, styleshotIdx: Int
     let imageURL: String
 
     enum CodingKeys: String, CodingKey {
-        case styleshotIdx
+        case no, styleshotIdx
         case imageURL = "imageUrl"
     }
 }
+

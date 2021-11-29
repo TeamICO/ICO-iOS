@@ -9,7 +9,10 @@ import UIKit
 
 class PopularIcoVC: UIViewController {
     
-    var serverData : MyStyleResult?
+    var isStart = false
+    
+    var styleShotResult  = [StyleShotResult]()
+    var serverData : UserInfoResult?
     var id: Int = 0
     
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
@@ -38,10 +41,11 @@ class PopularIcoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        StyleLifeDataManager().getPopularIcoInfo(self, userIdx: id)
+        StyleLifeDataManager().getPopularIcoUser(self, userIdx: id)
         setUI()
         registerNib()
         categoryCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
+        fetchData()
         // Do any additional setup after loading the view.
     }
     
@@ -95,6 +99,54 @@ class PopularIcoVC: UIViewController {
     }
 }
 
+extension PopularIcoVC{
+    func fetchData(){
+        
+        StyleLifeDataManager.shared.getPopularIcoStyleShot(pagination: false, lastIndex: 0, userIdx: id, self){ [weak self] response in
+            guard let response = response else {
+                return
+            }
+            self?.styleShotResult = response
+            self?.styleCV.reloadData()
+            if response.isEmpty {
+                self?.styleCV.isScrollEnabled = false
+            }
+            self?.isStart = true
+        }
+    }
+    
+    // 페이징
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffY = scrollView.contentOffset.y
+        
+        if contentOffY >= (styleCV.contentSize.height+150-scrollView.frame.size.height){
+            guard isStart != nil else{
+                return
+            }
+            guard !StyleLifeDataManager.shared.isIcoStylePaginating else{
+                return
+            }
+            
+            
+            StyleLifeDataManager.shared.getPopularIcoStyleShot(pagination: true, lastIndex: self.styleShotResult.count, userIdx: id, self){[weak self] response in
+                guard let response = response else{
+                    return
+                }
+                self?.styleShotResult.append(contentsOf: response)
+                self?.styleCV.reloadData()
+            }
+        }
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
 
 extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -110,7 +162,7 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
         if collectionView == styleCV{
             guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
             
-            styleCell.styleImage.setImage(with: serverData?.styleshot[indexPath.row].imageURL ?? "")
+            styleCell.styleImage.setImage(with: styleShotResult[indexPath.row].imageURL ?? "")
             
             return styleCell
         }else{
@@ -164,14 +216,14 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
         let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
         let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
         styleDetailVC.isMine = false
-        styleDetailVC.styleShotIdx = serverData?.styleshot[indexPath.row].styleshotIdx ?? 0
+        styleDetailVC.styleShotIdx = styleShotResult[indexPath.row].styleshotIdx ?? 0
         self.navigationController?.pushViewController(styleDetailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == styleCV{
-            if serverData?.styleshot.count != 0 {
+            if styleShotResult.count != 0 {
                 let cellWidth = 166
                 let cellHeight = 166
                 
@@ -208,7 +260,7 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
 }
 
 extension PopularIcoVC{
-    func didSuccessGetPopularIco(message: String){
+    func didSuccessGetPopularIcoUser(message: String){
         name.text = serverData?.nickname
         
         if serverData?.resultDescription == ""{
