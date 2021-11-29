@@ -256,7 +256,13 @@ class StyleUploadVC: UIViewController {
         imgNumLabel.textColor = UIColor.white
         imgNumLabel.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
     
-        uploadBtn.setGradient(color1: UIColor.gradient01, color2: UIColor.gradient012)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            uploadBtn.backgroundColor = .gradient01
+        }else{
+            uploadBtn.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+           
+        }
+        
         uploadBtn.setTitleColor(UIColor.white, for: .normal)
         uploadBtn.layer.cornerRadius = 12
         uploadBtn.clipsToBounds = true

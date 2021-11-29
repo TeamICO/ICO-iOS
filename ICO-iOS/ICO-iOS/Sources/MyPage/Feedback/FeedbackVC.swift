@@ -65,8 +65,12 @@ class FeedbackVC: BaseViewController {
         titleLabel.text = "아이코가 더 나은 서비스로 \n발전하기 위해 의견을 보내주세요."
         FeedbackButton.layer.cornerRadius = 12
         FeedbackButton.layer.masksToBounds = true
-        FeedbackButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
-        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            FeedbackButton.backgroundColor = .gradient01
+        }else{
+            FeedbackButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+           
+        }
         
         view.addSubview(contentTextView)
         contentTextView.delegate = self
@@ -97,7 +101,7 @@ class FeedbackVC: BaseViewController {
     }
     
     @IBAction func didTapFeedbackButton(_ sender: Any) {
-        guard let feedback = self.contentTextView.text, feedback.isExists, let jwtToken = self.jwtToken else{
+        guard let feedback = self.contentTextView.text, feedback.isExists, feedback != "", let jwtToken = self.jwtToken else{
             return
         }
         FeedbackManager.shared.sendFeedback(jwtToken : jwtToken,feedbackText: feedback) { success in
