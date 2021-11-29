@@ -24,6 +24,7 @@ class SurveyVC: ViewController {
     @IBOutlet weak var passButton: UIButton!
     
     @IBOutlet weak var completButton: UIButton!
+    @IBOutlet weak var topView: UIView!
     
     
     @IBOutlet weak var donationView: UIView!
@@ -68,7 +69,10 @@ class SurveyVC: ViewController {
         self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
 
     @IBAction func toBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

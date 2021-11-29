@@ -9,6 +9,7 @@ import UIKit
 import PDFKit
 class PersonalInfoTermsVC: UIViewController {
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var PDFView: PDFView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,11 @@ class PersonalInfoTermsVC: UIViewController {
         loadPdfView(document: document)
         
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
+    
     
     @IBAction func didTabpBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

@@ -17,6 +17,7 @@ class AlarmVC: BaseViewController {
     private var previouseAlarms = [Alarms]()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topView: UIView!
     
     private var refreshControl = UIRefreshControl()
     // MARK: - Life Cycle
@@ -31,8 +32,10 @@ class AlarmVC: BaseViewController {
         tableviewConfigure()
         fetchData()
     }
-    
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

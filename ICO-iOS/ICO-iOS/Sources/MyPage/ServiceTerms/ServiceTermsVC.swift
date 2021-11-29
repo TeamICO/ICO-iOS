@@ -17,6 +17,7 @@ class ServiceTermsVC: BaseViewController {
     public var complition : ((Bool)->Void)?
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topView: UIView!
     
     
     override func viewDidLoad() {
@@ -24,7 +25,10 @@ class ServiceTermsVC: BaseViewController {
 
         tableviewConfigure()
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
 
     @IBAction func didTabpBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

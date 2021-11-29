@@ -295,7 +295,20 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="kzG-X3-wfd"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="QC3-pp-d3r"/>
                             </scrollView>
-                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ej-Oo-DI6">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC3-Mv-GZg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="59p-WW-EWO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="usj-xx-j5B"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ej-Oo-DI6">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스타일샷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMn-AA-uRa">
@@ -317,7 +330,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Smv-sF-uwo"/>
                                     <constraint firstItem="vmb-eP-1nq" firstAttribute="leading" secondItem="6Ej-Oo-DI6" secondAttribute="leading" id="Way-xi-8Tj"/>
@@ -333,8 +346,11 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wcY-Jy-rP7" secondAttribute="trailing" id="2TL-W3-wvc"/>
                             <constraint firstItem="wcY-Jy-rP7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ea6-cJ-6sB"/>
                             <constraint firstItem="6Ej-Oo-DI6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Kvf-j3-Rr2"/>
+                            <constraint firstItem="tC3-Mv-GZg" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="MkF-yx-HaN"/>
                             <constraint firstAttribute="bottom" secondItem="wcY-Jy-rP7" secondAttribute="bottom" id="N0S-6m-1ui"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tC3-Mv-GZg" secondAttribute="trailing" id="ZB7-AN-YaZ"/>
                             <constraint firstItem="6Ej-Oo-DI6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="pQ3-qk-TB9"/>
+                            <constraint firstItem="tC3-Mv-GZg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="scz-Pt-cbD"/>
                             <constraint firstItem="6Ej-Oo-DI6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tM1-Aj-ZBD"/>
                             <constraint firstItem="wcY-Jy-rP7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xDP-li-n0y"/>
                         </constraints>
@@ -358,6 +374,7 @@
                         <outlet property="scoreLabel" destination="2SV-bk-R74" id="fuV-xL-GWx"/>
                         <outlet property="scoreNum" destination="nAy-bG-Z8a" id="thK-aA-PMe"/>
                         <outlet property="scrollView" destination="wcY-Jy-rP7" id="nVi-9G-kxB"/>
+                        <outlet property="topView" destination="6Ej-Oo-DI6" id="5PE-0H-NGr"/>
                         <outlet property="urlBackView" destination="vrA-jx-3MV" id="lau-GT-dei"/>
                         <outlet property="urlProduct" destination="x3N-RV-b7q" id="WLE-Kh-nLx"/>
                         <outlet property="userImage" destination="GvH-8C-NFs" id="6tU-Ku-VKT"/>

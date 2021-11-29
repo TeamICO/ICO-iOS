@@ -20,7 +20,20 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlZ-AO-FHs">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6z-nv-7Kf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Cwc-cc-68E">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="mdP-Bq-4zM"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlZ-AO-FHs">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-LI-ljY">
@@ -48,7 +61,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="uZP-LI-ljY" firstAttribute="leading" secondItem="dlZ-AO-FHs" secondAttribute="leading" id="4T7-zg-rIE"/>
                                     <constraint firstItem="U1G-Z5-OEu" firstAttribute="centerX" secondItem="dlZ-AO-FHs" secondAttribute="centerX" id="9ac-tF-Nrq"/>
@@ -63,15 +76,19 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="heN-80-8bl" secondAttribute="bottom" id="Fmw-Ou-jr2"/>
                             <constraint firstItem="heN-80-8bl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Mdw-0v-yHu"/>
+                            <constraint firstItem="i6z-nv-7Kf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QfZ-10-93v"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dlZ-AO-FHs" secondAttribute="trailing" id="XCg-CA-uBw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="heN-80-8bl" secondAttribute="trailing" id="egv-JT-Ide"/>
                             <constraint firstItem="dlZ-AO-FHs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iy9-xa-vSF"/>
                             <constraint firstItem="dlZ-AO-FHs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ocz-NS-hc7"/>
+                            <constraint firstItem="i6z-nv-7Kf" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="p8s-oX-YY9"/>
                             <constraint firstItem="heN-80-8bl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yOH-69-AmN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i6z-nv-7Kf" secondAttribute="trailing" id="ydF-mf-MAp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="heN-80-8bl" id="AfV-AV-dnN"/>
+                        <outlet property="topView" destination="dlZ-AO-FHs" id="XKX-WT-1tb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,7 @@ import UIKit
 import PDFKit
 class ServiceTermVC: UIViewController {
 
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var PDFView: PDFView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,11 @@ class ServiceTermVC: UIViewController {
         
         
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
+    
     
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

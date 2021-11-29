@@ -21,7 +21,20 @@
                                 <rect key="frame" x="0.0" y="98" width="414" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcE-M2-wuX">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zg9-wS-7yC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eo1-N3-In1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="LkU-2u-Npk"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcE-M2-wuX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cm-Tp-ySE">
@@ -61,7 +74,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6KL-PA-Ne3" firstAttribute="centerY" secondItem="XcE-M2-wuX" secondAttribute="centerY" id="9mf-NE-0oz"/>
                                     <constraint firstItem="3cm-Tp-ySE" firstAttribute="leading" secondItem="XcE-M2-wuX" secondAttribute="leading" id="Ndq-wc-ib6"/>
@@ -81,12 +94,16 @@
                             <constraint firstItem="mAy-DC-bOo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="54" id="Mi3-Pw-pUG"/>
                             <constraint firstItem="mAy-DC-bOo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ucc-w2-EIV"/>
                             <constraint firstItem="XcE-M2-wuX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bY5-eY-KdE"/>
+                            <constraint firstItem="Zg9-wS-7yC" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="cYI-zd-fwh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mAy-DC-bOo" secondAttribute="bottom" id="d1p-rK-E4a"/>
+                            <constraint firstItem="Zg9-wS-7yC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="mek-hE-k4F"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zg9-wS-7yC" secondAttribute="trailing" id="mqE-eu-b34"/>
                             <constraint firstItem="XcE-M2-wuX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wBa-DD-ped"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="PDFView" destination="mAy-DC-bOo" id="cg6-Lf-lyE"/>
+                        <outlet property="topView" destination="XcE-M2-wuX" id="20A-Fc-Dmi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

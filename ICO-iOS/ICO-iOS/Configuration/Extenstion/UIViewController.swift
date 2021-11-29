@@ -123,4 +123,12 @@ extension UIViewController {
         vc.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    func setBlurEffect(view : UIView){
+        let blur = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = view.bounds
+        view.addSubview(blurView)
+        view.sendSubviewToBack(blurView)
+    }
+   
 }

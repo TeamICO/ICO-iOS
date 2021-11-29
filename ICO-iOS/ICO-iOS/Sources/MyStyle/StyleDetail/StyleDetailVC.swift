@@ -15,6 +15,7 @@ class StyleDetailVC: UIViewController {
     var StyleDetailData: StyleDetailResult?
     var url: NSURL?
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var hashtagCV: UICollectionView!
     @IBOutlet weak var navigationTitle: UILabel!
@@ -59,7 +60,10 @@ class StyleDetailVC: UIViewController {
         userImage.addGestureRecognizer(tapGesture)
         userImage.isUserInteractionEnabled =  true
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
 
     func setUI(){
         gradientView1.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)

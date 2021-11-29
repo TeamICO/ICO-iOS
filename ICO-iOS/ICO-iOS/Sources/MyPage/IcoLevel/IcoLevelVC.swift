@@ -32,13 +32,21 @@ class IcoLevelVC: UIViewController {
                     "illust-ico05"
     ]
 
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableviewConfigure()
         
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let blur = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = topView.bounds
+        topView.addSubview(blurView)
+        topView.sendSubviewToBack(blurView)
+    }
 
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

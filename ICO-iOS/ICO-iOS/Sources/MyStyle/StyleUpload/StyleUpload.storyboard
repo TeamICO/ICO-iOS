@@ -872,7 +872,20 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="cO0-3f-iR1"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Suj-3l-S4e"/>
                             </scrollView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4He-CS-neu">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9b-ME-MlA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Brr-UQ-PyE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Xts-FX-Bfn"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4He-CS-neu">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bp-jS-969">
@@ -894,7 +907,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="2Bp-jS-969" firstAttribute="centerY" secondItem="4He-CS-neu" secondAttribute="centerY" id="9Sv-MW-bmp"/>
                                     <constraint firstItem="3yg-rT-yuS" firstAttribute="top" secondItem="4He-CS-neu" secondAttribute="top" constant="13" id="AWi-tD-gvP"/>
@@ -908,9 +921,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Xh-CW-7v0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Ga-Zx-pq6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="v9b-ME-MlA" secondAttribute="trailing" id="4KJ-no-kjX"/>
+                            <constraint firstItem="v9b-ME-MlA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="5QL-Xk-ZFW"/>
                             <constraint firstItem="7Xh-CW-7v0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="6TG-Vb-kv0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="edU-lp-qEU" secondAttribute="trailing" constant="16" id="CwR-5U-3C9"/>
                             <constraint firstItem="4He-CS-neu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="RDx-Xn-RQ4"/>
+                            <constraint firstItem="v9b-ME-MlA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="c1u-rv-6ZG"/>
                             <constraint firstItem="edU-lp-qEU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="dFX-ky-mGC"/>
                             <constraint firstItem="4He-CS-neu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fdh-9b-RnQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="edU-lp-qEU" secondAttribute="bottom" id="lsz-QM-w8p"/>
@@ -938,6 +954,7 @@
                         <outlet property="plusBtn" destination="enc-q3-CPK" id="6pD-cs-vbg"/>
                         <outlet property="removeBtn1" destination="QKa-jh-gJZ" id="8Nq-sR-C9h"/>
                         <outlet property="removeBtn2" destination="fyD-pP-IkA" id="1bZ-3A-SFd"/>
+                        <outlet property="topView" destination="4He-CS-neu" id="7MK-2l-Vgc"/>
                         <outlet property="uploadBtn" destination="edU-lp-qEU" id="K4I-Is-K7f"/>
                         <outlet property="urlBtn" destination="oT2-Pt-weZ" id="GgL-l4-IIW"/>
                         <outlet property="urlLabel1" destination="ppU-n0-cPa" id="bNb-b4-xU6"/>
