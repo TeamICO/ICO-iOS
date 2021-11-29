@@ -279,7 +279,9 @@ extension LoginVC {
             deviceToken = token
             self.showIndicator()
             LoginManager.shared.KakaoSignIn { response in
-               
+                guard let response = response else{
+                    return
+                }
                     LoginManager.shared.registerID(name : nil,snsToken: response, snsType: "kakao",deviceToken: deviceToken) { response in
                       
                         guard let jwt = response?.result.jwt,
@@ -301,11 +303,12 @@ extension LoginVC {
                                 surveyVC.userIdx = userIdx
                                 self.navigationController?.pushViewController(surveyVC, animated: true)
                             }else if code == 1002{
-                                let surveySB = UIStoryboard(name: "Survey", bundle: nil)
-                                guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
-                                surveyVC.name = name
-                                surveyVC.userIdx = userIdx
-                                self.navigationController?.pushViewController(surveyVC, animated: true)
+                                let storyboard = UIStoryboard(name: "MainSB", bundle: nil)
+                         
+                                let baseTBC = storyboard.instantiateViewController(identifier: "BaseTBC")
+                                let vc = baseTBC
+                                vc.modalPresentationStyle = .fullScreen
+                                self.present(vc, animated: true, completion: nil)
                                 
                             }
                             
@@ -317,6 +320,7 @@ extension LoginVC {
         }
 
     }
+
     func setUserInfo(){
         UserApi.shared.me { user, error in
             guard let user = user, error == nil else{

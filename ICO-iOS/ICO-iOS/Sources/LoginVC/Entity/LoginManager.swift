@@ -13,7 +13,7 @@ import FirebaseMessaging
 class LoginManager {
     static let shared = LoginManager()
     
-    public func KakaoSignIn(completion: @escaping (String) -> Void){
+    public func KakaoSignIn(completion: @escaping (String?) -> Void){
         if !AuthApi.hasToken(){
             if UserApi.isKakaoTalkLoginAvailable(){
                 UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
@@ -30,7 +30,9 @@ class LoginManager {
                             }
                            
                         }
+                    
                 }
+         
             }else{
                 UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                         if let error = error {
@@ -48,13 +50,21 @@ class LoginManager {
                         }
                 }
             }
-            
+
         }else{
             print("로그아웃 필요")
+            LoginManager.shared.signOut { success in
+                guard success else{
+                    return
+                }
+                completion(nil)
+                
+            }
+           
         }
        
     }
-   
+
     public func registerID(name : String?,snsToken : String,snsType: String,deviceToken: String?, completion: @escaping (LoginResponse?)->Void) {
       
         let url = "https://prod.chuckwagon.shop/app/login"
