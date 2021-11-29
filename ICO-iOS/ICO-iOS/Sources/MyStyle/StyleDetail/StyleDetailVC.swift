@@ -212,6 +212,10 @@ class StyleDetailVC: UIViewController {
     @objc func toDetailProfile(){
         let profileSB = UIStoryboard(name: "PopularIco", bundle: nil)
         let profileVC = profileSB.instantiateViewController(withIdentifier: "PopularIco")as! PopularIcoVC
+        guard let ID = StyleDetailData?.userIdx else{
+            return
+        }
+        profileVC.id = ID
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
     
