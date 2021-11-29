@@ -16,6 +16,7 @@ struct StyleDetailResponse: Codable {
 
 // MARK: - StyleDetailResult
 struct StyleDetailResult: Codable {
+    let userIdx: Int
     let imageURL, profileURL: String
     let nickname: String
     let likeCnt, isLike: Int
@@ -28,6 +29,7 @@ struct StyleDetailResult: Codable {
     let isMe: Int
 
     enum CodingKeys: String, CodingKey {
+        case userIdx
         case imageURL = "imageUrl"
         case profileURL = "profileUrl"
         case nickname, likeCnt, isLike, category, productName, point

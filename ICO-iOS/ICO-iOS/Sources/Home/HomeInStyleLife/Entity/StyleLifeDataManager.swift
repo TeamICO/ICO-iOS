@@ -12,6 +12,7 @@ import SwiftUI
 class StyleLifeDataManager{
     static let shared = StyleLifeDataManager()
     var isRecentPaginating = false
+    var isPopularPaginating = false
     var isIcoStylePaginating = false
     
     func getStyleLifeTop(_ viewcontroller: PopularVC){
@@ -109,6 +110,39 @@ class StyleLifeDataManager{
             }
     }
     
+    func getPopularInfo(pagination: Bool = false, lastIndex: Int, _ viewcontroller: PopularVC , completion: @escaping([RecentResult]?) -> Void){
+        if pagination{
+            isPopularPaginating = true
+        }
+        
+        let param = [
+            "filter" : "2",
+            "no": "\(lastIndex)"
+        ]
+    
+        AF.request("https://prod.chuckwagon.shop/app/styleshots/lifestyle?",method: .get,parameters: param,encoding: URLEncoding.default, headers: Constant.HEADER)
+            .validate()
+            .responseDecodable(of: StyleLifeRecent.self){ response in
+                switch response.result{
+                case .success(let response):
+                    guard response.isSuccess == true else{
+                        return
+                    }
+                    completion(response.result)
+                    if pagination{
+                        self.isPopularPaginating = false
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
+                }
+ 
+            }
+    }
+    
+    
+    /*
     func getPopularInfo(_ viewcontroller: PopularVC){
         AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=2",method: .get, parameters: nil,headers: Constant.HEADER)
             .validate()
@@ -123,7 +157,7 @@ class StyleLifeDataManager{
                     
                 }
             }
-    }
+    }*/
     
     func getKeywordInfo(_ viewcontroller: KeywordVC,_ categoryIdx: Int){
         let url = "\(Constant.BASE_URL)/app/styleshots/lifestyle?"

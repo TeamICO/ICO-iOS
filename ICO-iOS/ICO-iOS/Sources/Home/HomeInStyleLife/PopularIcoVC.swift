@@ -159,10 +159,7 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
             if styleShotResult.count != 0 {
                 guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
                 
-            
                 styleCell.styleImage.setImage(with: styleShotResult[indexPath.row].imageURL)
-                print("---------")
-                print(styleShotResult[indexPath.row].imageURL)
                 
                 return styleCell
             }else{
