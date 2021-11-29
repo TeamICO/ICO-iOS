@@ -21,6 +21,7 @@ class ProfileSettingVC: BaseViewController {
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topView: UIView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -31,7 +32,10 @@ class ProfileSettingVC: BaseViewController {
         fetchData()
         
     }
-   
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
     
     // MARK: - Selectors
     @IBAction func didTapBackButton(_ sender: Any) {

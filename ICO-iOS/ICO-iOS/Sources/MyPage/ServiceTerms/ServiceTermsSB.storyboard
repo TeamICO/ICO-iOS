@@ -17,7 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-0x-V26">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rn-Dg-LTQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CKp-uK-x7W">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="sRi-u6-ZfP"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-0x-V26">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1b-qB-k40">
@@ -60,7 +73,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="p1b-qB-k40" firstAttribute="centerY" secondItem="cQh-0x-V26" secondAttribute="centerY" id="4pE-Dg-U4T"/>
                                     <constraint firstItem="g0v-fE-wMF" firstAttribute="centerX" secondItem="cQh-0x-V26" secondAttribute="centerX" id="A1Q-uy-2xN"/>
@@ -80,16 +93,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cQh-0x-V26" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7HR-s4-evp"/>
+                            <constraint firstItem="0rn-Dg-LTQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8rY-pc-U1h"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0rn-Dg-LTQ" secondAttribute="trailing" id="C49-0o-lIR"/>
                             <constraint firstItem="cQh-0x-V26" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DWq-dC-o7P"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JgT-1o-l6o" secondAttribute="bottom" id="EG6-Ww-Ovc"/>
                             <constraint firstItem="JgT-1o-l6o" firstAttribute="top" secondItem="cQh-0x-V26" secondAttribute="bottom" id="Ne2-hc-kTR"/>
                             <constraint firstItem="cQh-0x-V26" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="SsY-T9-zfN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JgT-1o-l6o" secondAttribute="trailing" id="bd8-uV-wWY"/>
+                            <constraint firstItem="0rn-Dg-LTQ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="gUa-Ko-UsA"/>
                             <constraint firstItem="JgT-1o-l6o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hOO-Oo-4HE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="JgT-1o-l6o" id="DsN-Cu-byQ"/>
+                        <outlet property="topView" destination="cQh-0x-V26" id="PMb-5b-vKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

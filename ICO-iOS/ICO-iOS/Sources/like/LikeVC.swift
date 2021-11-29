@@ -15,6 +15,7 @@ class LikeVC: BaseViewController {
     private var nickname = ""
     private var refreshControl = UIRefreshControl()
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +26,10 @@ class LikeVC: BaseViewController {
         super.viewDidLoad()
         collectionViewConfigure()
         fetchData()
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
     }
     
     @IBAction func didTapBackButton(_ sender: Any) {

@@ -27,7 +27,20 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSP-nI-LQs">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQe-Td-RNy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FY0-on-Y9b">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="PN6-ax-SIB"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSP-nI-LQs">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8d-Th-sTt">
@@ -55,7 +68,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="U8d-Th-sTt" firstAttribute="leading" secondItem="PSP-nI-LQs" secondAttribute="leading" id="4JA-1X-UEX"/>
                                     <constraint firstItem="4OW-Zk-BvL" firstAttribute="centerY" secondItem="PSP-nI-LQs" secondAttribute="centerY" id="J8L-Pg-MZ9"/>
@@ -70,15 +83,19 @@
                         <constraints>
                             <constraint firstItem="5rE-SR-y0A" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7XQ-ny-WaY"/>
                             <constraint firstAttribute="bottom" secondItem="5rE-SR-y0A" secondAttribute="bottom" id="89H-yt-d6l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TQe-Td-RNy" secondAttribute="trailing" id="9Th-W9-AKR"/>
                             <constraint firstAttribute="trailing" secondItem="PSP-nI-LQs" secondAttribute="trailing" id="HKo-k8-q36"/>
+                            <constraint firstItem="TQe-Td-RNy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="RQA-Re-bCL"/>
                             <constraint firstItem="PSP-nI-LQs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ani-qc-bV9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5rE-SR-y0A" secondAttribute="trailing" constant="16" id="klZ-AE-beH"/>
+                            <constraint firstItem="TQe-Td-RNy" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="q0I-7t-fCr"/>
                             <constraint firstItem="PSP-nI-LQs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tHD-bH-1OE"/>
                             <constraint firstItem="5rE-SR-y0A" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="u4d-bK-AsP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="5rE-SR-y0A" id="mLi-PB-Cep"/>
+                        <outlet property="topView" destination="PSP-nI-LQs" id="Ovc-AU-fvb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

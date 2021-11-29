@@ -16,6 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9d-7M-UPu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="u40-Lf-7AG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="h5u-TM-Niw"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-XC-96s">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
@@ -59,7 +72,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="1QE-Ut-nSv"/>
                                     <constraint firstItem="U8E-hq-jwj" firstAttribute="centerX" secondItem="ezR-XC-96s" secondAttribute="centerX" id="DVv-RV-j0H"/>
@@ -100,12 +113,15 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="P9d-7M-UPu" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="1eC-nu-7Fg"/>
                             <constraint firstItem="bNA-VO-TUI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Ioy-vQ-C55"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ezR-XC-96s" secondAttribute="trailing" id="Jzf-vH-noY"/>
                             <constraint firstItem="gqv-a1-8jl" firstAttribute="top" secondItem="ezR-XC-96s" secondAttribute="bottom" constant="12" id="K2j-cr-Wec"/>
                             <constraint firstItem="ezR-XC-96s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Val-m2-6VC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P9d-7M-UPu" secondAttribute="trailing" id="Wdh-8w-cKm"/>
                             <constraint firstItem="bNA-VO-TUI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ypb-oF-U3W"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bNA-VO-TUI" secondAttribute="trailing" constant="17" id="eUn-5b-pZq"/>
+                            <constraint firstItem="P9d-7M-UPu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gGV-kW-ldE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gqv-a1-8jl" secondAttribute="trailing" constant="94" id="iqH-UW-5gK"/>
                             <constraint firstItem="gqv-a1-8jl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ixS-IB-ufU"/>
                             <constraint firstItem="ezR-XC-96s" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="m8n-HC-X8y"/>
@@ -114,6 +130,7 @@
                     <connections>
                         <outlet property="FeedbackButton" destination="bNA-VO-TUI" id="GXO-HD-ZCD"/>
                         <outlet property="titleLabel" destination="gqv-a1-8jl" id="7Uh-le-7KQ"/>
+                        <outlet property="topView" destination="ezR-XC-96s" id="zbP-mQ-y1W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -60,6 +60,7 @@ class SearchResultVC: BaseViewController {
     }
     @IBAction func didTapDeleteButton(_ sender: Any) {
         searchTextField.text = ""
+        self.deleteButton.isHidden = true
     }
     
 

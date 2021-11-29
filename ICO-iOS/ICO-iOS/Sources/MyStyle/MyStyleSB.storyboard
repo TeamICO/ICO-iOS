@@ -284,7 +284,20 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="yBE-NR-nKF"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="E2d-op-bPc"/>
                             </scrollView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ma9-z1-Cjb">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ee4-4x-RJ4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bXg-88-JlG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Gak-Os-bMk"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ma9-z1-Cjb">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-Mh-qCm">
@@ -304,7 +317,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ulT-x4-osO" firstAttribute="centerX" secondItem="MFw-Wf-3gE" secondAttribute="centerX" id="Mf8-hl-trz"/>
                                             <constraint firstItem="ulT-x4-osO" firstAttribute="centerY" secondItem="MFw-Wf-3gE" secondAttribute="centerY" id="t13-8d-Rbc"/>
@@ -323,7 +336,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="fD4-Dq-myR" firstAttribute="centerY" secondItem="PSv-Am-0RD" secondAttribute="centerY" id="W8k-bm-WjH"/>
                                             <constraint firstAttribute="height" constant="40" id="m2s-K5-dfP"/>
@@ -332,7 +345,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="MFw-Wf-3gE" firstAttribute="leading" secondItem="PSv-Am-0RD" secondAttribute="trailing" constant="6" id="5QO-p9-bct"/>
                                     <constraint firstAttribute="trailing" secondItem="MFw-Wf-3gE" secondAttribute="trailing" constant="14" id="Ck2-jD-3PW"/>
@@ -348,11 +361,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ee4-4x-RJ4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3Ur-ao-XiW"/>
                             <constraint firstItem="Y0K-fL-sif" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BP4-2G-ieQ"/>
                             <constraint firstItem="Y0K-fL-sif" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="MYd-29-TMi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ee4-4x-RJ4" secondAttribute="trailing" id="cw8-Tv-sZw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Y0K-fL-sif" secondAttribute="bottom" id="dB9-u8-p9d"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Y0K-fL-sif" secondAttribute="trailing" id="dGL-eL-EKL"/>
                             <constraint firstItem="Ma9-z1-Cjb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fl7-P0-HpB"/>
+                            <constraint firstItem="ee4-4x-RJ4" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="hef-mC-3FR"/>
                             <constraint firstItem="x6h-2M-hOq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="580" id="na6-Ns-cFK"/>
                             <constraint firstItem="Ma9-z1-Cjb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="p5Q-jr-r74"/>
                             <constraint firstItem="Ma9-z1-Cjb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rgx-Dx-SuO"/>
@@ -379,6 +395,7 @@
                         <outlet property="styleCV" destination="qxw-O5-OVU" id="QbI-IU-gnJ"/>
                         <outlet property="styleLabel" destination="Mc3-Ws-PJY" id="cTe-cS-cNC"/>
                         <outlet property="styleNum" destination="1Dm-yH-8OC" id="2Dh-3G-yBa"/>
+                        <outlet property="topView" destination="Ma9-z1-Cjb" id="98M-rd-2VA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

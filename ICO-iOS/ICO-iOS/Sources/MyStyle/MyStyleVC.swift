@@ -37,6 +37,7 @@ class MyStyleVC: BaseViewController {
     @IBOutlet weak var styleLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     
+    @IBOutlet weak var topView: UIView!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
@@ -55,7 +56,10 @@ class MyStyleVC: BaseViewController {
         fetchData()
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
     func setCV(){
         styleCV.delegate = self
         styleCV.dataSource = self

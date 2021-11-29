@@ -707,7 +707,20 @@
                                     <action selector="didTapCompletButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LTG-sg-QNo"/>
                                 </connections>
                             </button>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASm-Lh-Qko">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NM-ul-IQy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ssM-wg-yQl">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="6SY-Xn-pcw"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASm-Lh-Qko">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ic5-vM-urW">
@@ -723,7 +736,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="1Fk-jb-YSu"/>
                                     <constraint firstItem="ic5-vM-urW" firstAttribute="leading" secondItem="ASm-Lh-Qko" secondAttribute="leading" id="lFh-Fp-gZz"/>
@@ -734,7 +747,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5NM-ul-IQy" secondAttribute="trailing" id="6xc-C7-ddZ"/>
                             <constraint firstItem="ASm-Lh-Qko" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="86c-Hf-i6U"/>
+                            <constraint firstItem="5NM-ul-IQy" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="NiP-fK-Hau"/>
                             <constraint firstItem="FyS-Wb-KnY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="P8H-Vj-lNt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7NH-Hf-zvh" secondAttribute="bottom" id="UNb-2O-3oj"/>
                             <constraint firstItem="hpe-mm-GP7" firstAttribute="leading" secondItem="7NH-Hf-zvh" secondAttribute="trailing" constant="17" id="YfN-5C-6id"/>
@@ -744,6 +759,7 @@
                             <constraint firstItem="FyS-Wb-KnY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ghE-h1-QLD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FyS-Wb-KnY" secondAttribute="bottom" id="j39-Be-wHg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FyS-Wb-KnY" secondAttribute="trailing" id="qTC-AA-nCE"/>
+                            <constraint firstItem="5NM-ul-IQy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tWK-xJ-Eld"/>
                             <constraint firstItem="7NH-Hf-zvh" firstAttribute="width" secondItem="KCp-e9-U85" secondAttribute="width" multiplier="0.435" id="tvS-sL-6D1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hpe-mm-GP7" secondAttribute="trailing" constant="16" id="xan-UQ-F3U"/>
                             <constraint firstItem="ASm-Lh-Qko" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yka-v9-HMe"/>
@@ -775,6 +791,7 @@
                         <outlet property="passButton" destination="7NH-Hf-zvh" id="Bck-XL-dg6"/>
                         <outlet property="plasticFreeLabel" destination="Lx0-pK-bBN" id="fJd-3x-BzX"/>
                         <outlet property="plasticfreeView" destination="p50-ZK-pyG" id="qr5-7L-whO"/>
+                        <outlet property="topView" destination="ASm-Lh-Qko" id="htu-YB-Al7"/>
                         <outlet property="tradeLabel" destination="Rj9-8A-M0n" id="4uM-l8-Otk"/>
                         <outlet property="tradeView" destination="M2P-CT-qeh" id="6Ve-7O-QFd"/>
                         <outlet property="upCyclingLabel" destination="zdD-5X-a3S" id="Mwd-TU-RZM"/>

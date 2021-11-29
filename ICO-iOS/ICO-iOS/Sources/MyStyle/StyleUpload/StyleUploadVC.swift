@@ -23,6 +23,7 @@ class StyleUploadVC: UIViewController {
     var numberList : [Int] = [0,0,0,0,0,0,0]
     var ecoList : [Int] = []
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottom: NSLayoutConstraint!
     @IBOutlet var ecoView: [UIView]!
     @IBOutlet var ecoButton: [UIButton]!
@@ -138,7 +139,10 @@ class StyleUploadVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow2(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
     @objc func keyboardWillShow2(notification: NSNotification){
         let userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue

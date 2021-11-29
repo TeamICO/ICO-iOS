@@ -17,13 +17,17 @@ class SettingAlarmVC: UIViewController {
     public var complition : ((Bool)->Void)?
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var topView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableviewConfigure()
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
 
 
     @IBAction func didTabpBackButton(_ sender: Any) {

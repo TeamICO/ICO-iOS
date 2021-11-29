@@ -12,6 +12,7 @@ class FeedbackVC: BaseViewController {
     
     public var complition : ((Bool)->Void)?
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var FeedbackButton: UIButton!
     
@@ -55,6 +56,10 @@ class FeedbackVC: BaseViewController {
         configure()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
     // MARK: - Configure
     func configure(){
         titleLabel.text = "아이코가 더 나은 서비스로 \n발전하기 위해 의견을 보내주세요."

@@ -24,6 +24,7 @@ class MyPageVC: BaseViewController {
             
     ]
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var alarmView: UIView!
     @IBOutlet weak var likeView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -43,7 +44,10 @@ class MyPageVC: BaseViewController {
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setBlurEffect(view: topView)
+    }
 
    
 

@@ -20,7 +20,20 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpy-B5-1fu">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofT-he-5lA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QF5-m4-25g">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="1wY-tO-z35"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpy-B5-1fu">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-pR-ZBx">
@@ -48,7 +61,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="fOr-pR-ZBx" firstAttribute="leading" secondItem="vpy-B5-1fu" secondAttribute="leading" id="6eo-52-uiQ"/>
                                     <constraint firstItem="fOr-pR-ZBx" firstAttribute="centerY" secondItem="vpy-B5-1fu" secondAttribute="centerY" id="7tM-0N-lNU"/>
@@ -61,17 +74,21 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ofT-he-5lA" secondAttribute="trailing" id="BNZ-7V-Nha"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bOc-fF-BmW" secondAttribute="trailing" id="Edf-sp-DkB"/>
                             <constraint firstItem="bOc-fF-BmW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="F23-pb-GMp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vpy-B5-1fu" secondAttribute="trailing" id="J3l-hO-rd0"/>
                             <constraint firstItem="vpy-B5-1fu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YGP-AK-sbT"/>
+                            <constraint firstItem="ofT-he-5lA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="YfA-Cg-8ti"/>
                             <constraint firstItem="vpy-B5-1fu" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="chc-wU-q1M"/>
                             <constraint firstAttribute="bottom" secondItem="bOc-fF-BmW" secondAttribute="bottom" id="nfZ-yI-Mtw"/>
+                            <constraint firstItem="ofT-he-5lA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="piX-fw-EEm"/>
                             <constraint firstItem="bOc-fF-BmW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="skk-GY-r28"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="bOc-fF-BmW" id="FgI-Yb-duZ"/>
+                        <outlet property="topView" destination="vpy-B5-1fu" id="GOS-RI-dC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
