@@ -91,7 +91,7 @@ class ProfileSettingVC: BaseViewController {
                 }
             }
         }
- 
+        UserDefaults.standard.set(self.nickname, forKey: "nickname")
     }
     
 }

@@ -36,7 +36,7 @@ class HomeInHomeVC: BaseViewController {
 // MARK: - FetchData
 extension HomeInHomeVC{
     func fetchData(){
-        guard let jwtToken = self.jwtToken, let nickname = self.nickName else{
+        guard let jwtToken = self.jwtToken, let nickname = UserDefaults.standard.string(forKey: "nickname") else{
             return
         }
         self.nickname = nickname
