@@ -138,20 +138,16 @@ extension PopularIcoVC{
         }
     }
     
-    
-    
-    
 }
-
-
-
-
-
 
 extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == styleCV{
-            return serverData?.styleshotCnt ?? 0
+            if let cnt = serverData?.styleshotCnt{
+                return cnt
+            }else{
+                return 1
+            }
         }else{
             return serverData?.ecoKeyword.count ?? 0
         }
@@ -160,11 +156,20 @@ extension PopularIcoVC:UICollectionViewDelegate, UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == styleCV{
-            guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+            if styleShotResult.count != 0 {
+                guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+                
             
-            styleCell.styleImage.setImage(with: styleShotResult[indexPath.row].imageURL ?? "")
-            
-            return styleCell
+                styleCell.styleImage.setImage(with: styleShotResult[indexPath.row].imageURL)
+                print("---------")
+                print(styleShotResult[indexPath.row].imageURL)
+                
+                return styleCell
+            }else{
+                guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
+                
+                return styleCell
+            }
         }else{
             if serverData?.ecoKeyword.count != 0{
                 guard let ecoKeywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ecoKeywordCVC", for: indexPath)as? ecoKeywordCVC else {return UICollectionViewCell()}
