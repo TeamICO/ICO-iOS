@@ -101,7 +101,7 @@ class FeedbackVC: BaseViewController {
     }
     
     @IBAction func didTapFeedbackButton(_ sender: Any) {
-        guard let feedback = self.contentTextView.text, feedback.isExists, feedback != "", let jwtToken = self.jwtToken else{
+        guard let feedback = self.contentTextView.text, feedback.isExists, feedback == "", let jwtToken = self.jwtToken else{
             return
         }
         FeedbackManager.shared.sendFeedback(jwtToken : jwtToken,feedbackText: feedback) { success in
