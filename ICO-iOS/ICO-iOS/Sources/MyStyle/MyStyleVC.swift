@@ -9,8 +9,11 @@ import UIKit
 
 class MyStyleVC: BaseViewController {
     
-    var serverData : MyStyleResult?
-    var styleshot = [Styleshot]()
+    var isStart = false
+    
+    var styleShotResult  = [StyleShotResult]()
+    var serverData : UserInfoResult?
+   // var styleshot = [Styleshot]()
     var category: [String] = []
     @IBOutlet weak var alarmView: UIView!
     @IBOutlet weak var likeView: UIView!
@@ -36,19 +39,20 @@ class MyStyleVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        MyStyleDataManager().getMyStyleInfo(self, userIdx: self.userIdx)
+        MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
         self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        MyStyleDataManager().getMyStyleInfo(self, userIdx: self.userIdx)
+        MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
         setUI()
         registerNib()
         setAlarmViewTapGesture()
         setLikeViewTapGesture()
         categoryCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
+        fetchData()
         // Do any additional setup after loading the view.
     }
     
@@ -115,10 +119,50 @@ class MyStyleVC: BaseViewController {
     
 }
 
+extension MyStyleVC{
+    func fetchData(){
+        
+        MyStyleDataManager.shared.getMyStyleShot(pagination: false, lastIndex: 0, userIdx: userIdx, self){ [weak self] response in
+            guard let response = response else {
+                return
+            }
+            self?.styleShotResult = response
+            self?.styleCV.reloadData()
+            if response.isEmpty {
+                self?.styleCV.isScrollEnabled = false
+            }
+            self?.isStart = true
+        }
+    }
+    
+    // 페이징
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffY = scrollView.contentOffset.y
+        
+        if contentOffY >= (styleCV.contentSize.height+150-scrollView.frame.size.height){
+            guard isStart != nil else{
+                return
+            }
+            guard !MyStyleDataManager.shared.isStyleShotPaginating else{
+                return
+            }
+            
+            MyStyleDataManager.shared.getMyStyleShot(pagination: true, lastIndex: self.styleShotResult.count, userIdx: userIdx, self){ [weak self] response in
+                guard let response = response else{
+                    return
+                }
+                self?.styleShotResult.append(contentsOf: response)
+                self?.styleCV.reloadData()
+            }
+        }
+    }
+
+}
+
 extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == styleCV{
-            return self.styleshot.count == 0 ? 1 : self.styleshot.count
+            return self.styleShotResult.count == 0 ? 1 : self.styleShotResult.count
         }else{
             return serverData?.ecoKeyword.count ?? 0
         }
@@ -128,7 +172,7 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == styleCV{
-            if self.styleshot.isEmpty {
+            if self.styleShotResult.isEmpty {
                 
                 guard let styleEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStyleShotCVC", for: indexPath)as? emptyStyleShotCVC else {
                     
@@ -139,10 +183,14 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
                 return styleEmptyCell
             }else {
                 guard let styleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleCVC", for: indexPath)as? StyleCVC else {return UICollectionViewCell()}
-                if let styleshot = serverData?.styleshot{
+                /*
+                if let styleshot = styleShotResult{
                     if !styleshot.isEmpty{
                         styleCell.styleImage.setImage(with: styleshot[indexPath.row].imageURL)
                     }
+                }*/
+                if !styleShotResult.isEmpty{
+                    styleCell.styleImage.setImage(with: styleShotResult[indexPath.row].imageURL)
                 }
                 return styleCell
             }
@@ -197,11 +245,11 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == styleCV {
-            if self.styleshot.count != 0{
+            if self.styleShotResult.count != 0{
                 let styleDetailSB = UIStoryboard(name: "StyleDetail", bundle: nil)
                 let styleDetailVC = styleDetailSB.instantiateViewController(withIdentifier: "StyleDetailVC")as! StyleDetailVC
                 styleDetailVC.isMine = true
-                styleDetailVC.styleShotIdx = serverData?.styleshot[indexPath.row].styleshotIdx ?? 0
+                styleDetailVC.styleShotIdx = styleShotResult[indexPath.row].styleshotIdx ?? 0
                 self.navigationController?.pushViewController(styleDetailVC, animated: true)
             }
         }
@@ -209,7 +257,7 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == styleCV{
-            if serverData?.styleshot.count != 0 {
+            if styleShotResult.count != 0 {
                 let cellWidth = 166
                 let cellHeight = 166
                 
@@ -256,7 +304,7 @@ extension MyStyleVC:UICollectionViewDelegate, UICollectionViewDataSource,UIColle
 
 
 extension MyStyleVC{
-    func didSuccessGetMyStyle(message: String){
+    func didSuccessGetMyStyleUser(message: String){
         name.text = serverData?.nickname
         
         if serverData?.profileURL == ""{
