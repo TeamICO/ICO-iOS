@@ -14,7 +14,7 @@ final class HomeInHomeManager{
     
     func getHomeInHomeData(jwtToken: String, completion: @escaping (HomeInHomeResult)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/home"
+        let url = "https://prod.chuckwagon.shop/app/home"
 
    
         let header : HTTPHeaders = [

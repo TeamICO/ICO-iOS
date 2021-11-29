@@ -71,7 +71,6 @@
 		E9161D1C273D0134009A9CA7 /* LikeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161D1A273D0134009A9CA7 /* LikeCVC.swift */; };
 		E9161D1D273D0134009A9CA7 /* LikeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9161D1B273D0134009A9CA7 /* LikeCVC.xib */; };
 		E91788132748B37B008B621B /* SurveyMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788122748B37B008B621B /* SurveyMamager.swift */; };
-		E91788162748B94E008B621B /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788152748B94E008B621B /* Terms.swift */; };
 		E91788182748BECB008B621B /* ServiceTermVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788172748BECB008B621B /* ServiceTermVC.swift */; };
 		E917881A2748BEDB008B621B /* ServiceTermSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91788192748BEDB008B621B /* ServiceTermSB.storyboard */; };
 		E9341FF2274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9341FF0274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift */; };
@@ -318,7 +317,6 @@
 		E9161D1A273D0134009A9CA7 /* LikeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCVC.swift; sourceTree = "<group>"; };
 		E9161D1B273D0134009A9CA7 /* LikeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCVC.xib; sourceTree = "<group>"; };
 		E91788122748B37B008B621B /* SurveyMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyMamager.swift; sourceTree = "<group>"; };
-		E91788152748B94E008B621B /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
 		E91788172748BECB008B621B /* ServiceTermVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermVC.swift; sourceTree = "<group>"; };
 		E91788192748BEDB008B621B /* ServiceTermSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceTermSB.storyboard; sourceTree = "<group>"; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
@@ -787,7 +785,6 @@
 			children = (
 				E9A0CD612752144800D50ECD /* PersonalTerms.pdf */,
 				E9A0CD632752144F00D50ECD /* ServiceTerms.pdf */,
-				E91788152748B94E008B621B /* Terms.swift */,
 			);
 			path = Terms;
 			sourceTree = "<group>";
@@ -1940,7 +1937,6 @@
 				E9B5D39D274C9ECD002D965B /* KeywordContentsVC.swift in Sources */,
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
-				E91788162748B94E008B621B /* Terms.swift in Sources */,
 				E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */,
 				E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */,
 				E9161D03273CF28D009A9CA7 /* TodayAlarmTVC.swift in Sources */,

@@ -14,7 +14,7 @@ final class AlarmManager{
   
     func getUserAlarms(jwtToken: String, completion: @escaping (AlarmResult)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/notifications"
+        let url = "https://prod.chuckwagon.shop/app/notifications"
 
    
         let header : HTTPHeaders = [
@@ -50,7 +50,7 @@ final class AlarmManager{
     }
     func readAlarm(type: String,notificationIdx : Int,jwtToken: String, completion: @escaping (Bool)->Void) {
   
-        let url = "https://dev.chuckwagon.shop/app/notifications/\(notificationIdx)"
+        let url = "https://prod.chuckwagon.shop/app/notifications/\(notificationIdx)"
 
         
         let header : HTTPHeaders = [

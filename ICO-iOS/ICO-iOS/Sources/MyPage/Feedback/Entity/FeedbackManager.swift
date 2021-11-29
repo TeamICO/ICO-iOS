@@ -14,7 +14,7 @@ final class FeedbackManager{
     
     func sendFeedback(jwtToken : String,feedbackText : String, completion: @escaping (Bool)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/feedback"
+        let url = "https://prod.chuckwagon.shop/app/feedback"
 
    
         let header : HTTPHeaders = [

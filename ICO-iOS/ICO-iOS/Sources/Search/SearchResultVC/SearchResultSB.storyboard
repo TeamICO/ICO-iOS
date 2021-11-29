@@ -88,7 +88,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wvA-hp-sma">
-                                <rect key="frame" x="16" y="92" width="382" height="770"/>
+                                <rect key="frame" x="16" y="92" width="382" height="804"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEE-mN-T1R">
                                     <size key="itemSize" width="128" height="128"/>
@@ -102,7 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="wvA-hp-sma" secondAttribute="bottom" id="3Rm-vd-pMU"/>
+                            <constraint firstAttribute="bottom" secondItem="wvA-hp-sma" secondAttribute="bottom" id="3Rm-vd-pMU"/>
                             <constraint firstItem="dIu-4I-t4i" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="XTp-jD-9XC"/>
                             <constraint firstItem="wvA-hp-sma" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="d0F-iA-kV9"/>
                             <constraint firstItem="rj5-0n-l3d" firstAttribute="leading" secondItem="dIu-4I-t4i" secondAttribute="trailing" constant="6" id="jfn-He-2Gh"/>
