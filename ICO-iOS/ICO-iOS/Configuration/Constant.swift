@@ -9,6 +9,6 @@ import Foundation
 import Alamofire
 
 struct Constant {
-    static let BASE_URL = "https://dev.chuckwagon.shop"
+    static let BASE_URL = "https://prod.chuckwagon.shop"
     static var HEADER: HTTPHeaders = ["X-ACCESS-TOKEN" : UserDefaults.standard.value(forKey: "jwtToken") as! String]
 }
