@@ -28,6 +28,7 @@ class PopularVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(serverData)
         StyleLifeDataManager().getStyleLifeTop(self)
         StyleLifeDataManager().getPopularInfo(self)
         setUI()
@@ -47,8 +48,6 @@ class PopularVC: UIViewController {
         //popularIcoCV.delegate = self
         //popularIcoCV.dataSource = self
     }
-    
-    
     
     func setUI(){
         stackView.backgroundColor = UIColor.backGround1

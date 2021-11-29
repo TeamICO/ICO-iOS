@@ -78,7 +78,6 @@ class StyleLifeDataManager{
             }
     }
     
-
     func getRecentInfo(pagination: Bool = false, lastIndex: Int, _ viewcontroller: RecentVC , completion: @escaping([RecentResult]?) -> Void){
         if pagination{
             isRecentPaginating = true
