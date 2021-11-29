@@ -14,7 +14,7 @@ enum State {
 }
 
 
-class HomeVC: BaseViewController {
+class HomeVC: BaseViewController{
     // MARK: - Properties
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var lifeStyleButton: UIButton!
@@ -50,11 +50,13 @@ class HomeVC: BaseViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+      
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.delegate = self
 //        requestTrackingAuthoriztion()
         configure()
         setLikeViewTapGesture()
@@ -143,4 +145,13 @@ extension HomeVC {
             }
         }
     }
+}
+extension HomeVC : UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if tabBarController.selectedIndex == 0 {
+            scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+            isState = .home
+        }
+    }
+    
 }
