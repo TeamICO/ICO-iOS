@@ -757,6 +757,15 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo5-fz-8Wf">
+                                                <rect key="frame" x="209" y="110.5" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="xTc-kK-2bK"/>
+                                                    <constraint firstAttribute="width" constant="24" id="yvX-ai-Vc8"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="icXBtn"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -828,6 +837,7 @@
                                             <constraint firstItem="tBC-yt-aXZ" firstAttribute="top" secondItem="dBm-Bb-9Nh" secondAttribute="bottom" constant="24" id="alm-nd-FF4"/>
                                             <constraint firstItem="bOk-TT-O06" firstAttribute="leading" secondItem="QoW-GC-jy2" secondAttribute="leading" constant="16" id="ap8-lo-zFA"/>
                                             <constraint firstItem="tcd-nz-pHx" firstAttribute="top" secondItem="8hd-Ng-S3K" secondAttribute="bottom" constant="16" id="ayC-Wj-Qpb"/>
+                                            <constraint firstItem="Vo5-fz-8Wf" firstAttribute="leading" secondItem="tBC-yt-aXZ" secondAttribute="trailing" constant="93" id="cUn-88-hdq"/>
                                             <constraint firstItem="yKf-r3-h30" firstAttribute="top" secondItem="qkW-LZ-Mpc" secondAttribute="bottom" constant="31" id="d6n-Tp-ytt"/>
                                             <constraint firstItem="bOk-TT-O06" firstAttribute="top" secondItem="yrr-xO-hym" secondAttribute="bottom" constant="16" id="dWq-lg-wZy"/>
                                             <constraint firstItem="k1I-18-t7o" firstAttribute="top" secondItem="js2-W5-a3k" secondAttribute="bottom" constant="24" id="dfG-yG-Dfr"/>
@@ -859,6 +869,7 @@
                                             <constraint firstItem="ppU-n0-cPa" firstAttribute="trailing" secondItem="qkW-LZ-Mpc" secondAttribute="trailing" id="vB3-dj-G3Y"/>
                                             <constraint firstItem="8hd-Ng-S3K" firstAttribute="top" secondItem="XHK-hw-CzI" secondAttribute="bottom" constant="24" id="wXE-Bm-nLk"/>
                                             <constraint firstItem="muP-mg-0H0" firstAttribute="leading" secondItem="RT1-PR-kNE" secondAttribute="trailing" constant="4" id="zcI-gu-A7m"/>
+                                            <constraint firstItem="Vo5-fz-8Wf" firstAttribute="top" secondItem="BnK-Ub-dN0" secondAttribute="bottom" constant="20" id="zpp-Nm-yWj"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -945,6 +956,7 @@
                         <outlet property="hashTagView" destination="tks-3I-gil" id="k5S-Tm-BLD"/>
                         <outlet property="imageNumView" destination="X1E-6l-1x0" id="6eK-hQ-cYV"/>
                         <outlet property="imageView" destination="tBC-yt-aXZ" id="dCO-vd-TlI"/>
+                        <outlet property="imgDelBtn" destination="Vo5-fz-8Wf" id="ktj-8b-Lr9"/>
                         <outlet property="imgNumLabel" destination="pnN-bJ-aWm" id="KSj-vi-inP"/>
                         <outlet property="memoTextView" destination="BZu-Ur-tyL" id="loB-JM-8yr"/>
                         <outlet property="memoView" destination="fgt-rv-qft" id="VJK-XX-W63"/>
@@ -1019,6 +1031,7 @@
         <image name="icArrowLeft" width="24" height="24"/>
         <image name="icPlus1" width="24" height="24"/>
         <image name="icStyleshotUploadPlusBtn1" width="24" height="24"/>
+        <image name="icXBtn" width="24" height="24"/>
         <image name="icXBtnLightgreen1" width="20" height="20"/>
         <image name="illust-ecolevel-click" width="120" height="120"/>
         <image name="illust-ecolevel-unclick" width="60" height="60"/>

@@ -26,7 +26,6 @@ class StyleUploadVC: UIViewController {
     var ecoList : [Int] = []
     
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var bottom: NSLayoutConstraint!
     @IBOutlet var ecoView: [UIView]!
     @IBOutlet var ecoButton: [UIButton]!
     
@@ -40,6 +39,7 @@ class StyleUploadVC: UIViewController {
     
     @IBOutlet var urlTextField: [UITextField]!
     @IBOutlet weak var noURL: UILabel!
+    
     @IBOutlet weak var urlBtn: UIButton!
     @IBOutlet weak var removeBtn1: UIButton!
     @IBOutlet weak var removeBtn2: UIButton!
@@ -50,6 +50,7 @@ class StyleUploadVC: UIViewController {
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var newImageView: UIImageView!
     @IBOutlet weak var imageNumView: UIView!
+    @IBOutlet weak var imgDelBtn: UIButton!
     
     @IBOutlet var essentialView: [UIView]!
     @IBOutlet var essentialLabel: [UILabel]!
@@ -175,6 +176,7 @@ class StyleUploadVC: UIViewController {
     
     func setUI(){
         navigationTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 20)
+        
         for i in 0...5{
             levelTitle[i].font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16)
         }
@@ -225,6 +227,7 @@ class StyleUploadVC: UIViewController {
         newImageView.cornerRadius = 16
         imageNumView.backgroundColor = UIColor.primaryBlack40
         imageNumView.cornerRadius = 8
+        imgDelBtn.isHidden = true
         
         let font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16)
         let attributedStr1 = NSMutableAttributedString(string: mainTitle[0].text!)
@@ -302,6 +305,9 @@ class StyleUploadVC: UIViewController {
     
     @IBAction func urlBtn(_ sender: Any) {
         urlBtn.isSelected = !urlBtn.isSelected
+        if urlBtn.isSelected{
+            urlTextField[1].text = ""
+        }
     }
     
     
@@ -435,6 +441,7 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
         newImageView.contentMode = .scaleAspectFill
         photoNum = 1
         imgNumLabel.text = "\(photoNum)/1"
+        imgDelBtn.isHidden = false
         
         let imageId = UUID().uuidString
         BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
@@ -528,7 +535,8 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size = hashTagArr[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ?? 0
-        let entireSize = size + 18
+        //let entireSize = size + 18
+        let entireSize = size + 50
         return CGSize(width: entireSize, height: 28)
         
     }
@@ -537,18 +545,53 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
 extension StyleUploadVC{
     func setFix(){
         setUI()
-        print(styleIndex)
-        print(StyleDetailData)
+        
     }
 }
 
 
 extension StyleUploadVC{
     func didSuccessStyleUpload(message: String,code: Int){
-
+        
     }
     
     func didSuccessEditStyle(message: String){
-        print(message)
+        self.newImageView.setImage(with: StyleDetailData!.imageURL ?? "")
+        self.memoTextView.text = StyleDetailData?.resultDescription
+        self.urlTextField[0].text = StyleDetailData?.productName
+        self.urlTextField[1].text = StyleDetailData?.productURL
+        self.ecoLevelScore.text = "\(StyleDetailData?.point ?? 0).0"
+        uploadSetEcoLevel()
+        setFixStyleShot()
+        print(StyleDetailData?.category)
+        print(StyleDetailData?.hashtag)
+    }
+    
+    func setFixStyleShot(){
+        if self.newImageView.image != nil{
+            imgDelBtn.isHidden = false
+        }
+    }
+    
+    func uploadSetEcoLevel(){
+        if ecoLevelScore.text == "5.0"{
+            for i in 0...4{
+                ecoLevel[i].isSelected = true
+            }
+        }else if ecoLevelScore.text == "4.0"{
+            for i in 0...3{
+                ecoLevel[i].isSelected = true
+            }
+        }else if ecoLevelScore.text == "3.0"{
+            for i in 0...2{
+                ecoLevel[i].isSelected = true
+            }
+        }else if ecoLevelScore.text == "2.0"{
+            for i in 0...1{
+                ecoLevel[i].isSelected = true
+            }
+        }else if ecoLevelScore.text == "1.0"{
+            ecoLevel[0].isSelected = true
+        }
     }
 }
