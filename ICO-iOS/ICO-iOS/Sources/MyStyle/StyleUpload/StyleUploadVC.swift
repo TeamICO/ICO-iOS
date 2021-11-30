@@ -535,7 +535,6 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size = hashTagArr[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ?? 0
-        //let entireSize = size + 18
         let entireSize = size + 50
         return CGSize(width: entireSize, height: 28)
         
@@ -570,6 +569,8 @@ extension StyleUploadVC{
     func setFixStyleShot(){
         if self.newImageView.image != nil{
             imgDelBtn.isHidden = false
+            photoNum = 1
+            imgNumLabel.text = "\(photoNum)/1"
         }
     }
     
