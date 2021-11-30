@@ -76,7 +76,6 @@ class StyleUploadVC: UIViewController {
             numberList[sender.tag] = 0
         }
         setButton(select: numberList)
-        print(numberList)
     }
    
     
@@ -137,6 +136,10 @@ class StyleUploadVC: UIViewController {
         setCV()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow2(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        if isFix == true{
+            setFix()
+        }
         // Do any additional setup after loading the view.
     }
     override func viewDidLayoutSubviews() {
@@ -159,19 +162,15 @@ class StyleUploadVC: UIViewController {
     
     @IBAction func addHashTag(_ sender: Any) {
         hashTagCnt = hashTagCnt + 1
-        hashTagText.text = "\(hashTagCnt)/5"
-        hashTagArr.append(hashTagTextField.text!)
-        hashTagTextField.text = ""
-        hashTagCV.reloadData()
+        if hashTagCnt <= 5{
+            hashTagText.text = "\(hashTagCnt)/5"
+            hashTagArr.append(hashTagTextField.text!)
+            hashTagTextField.text = ""
+            hashTagCV.reloadData()
+        }
     }
     
-    
-    
     func setUI(){
-        if isEditing == true{
-            
-        }
-        
         navigationTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 20)
         for i in 0...5{
             levelTitle[i].font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16)
@@ -420,6 +419,7 @@ class StyleUploadVC: UIViewController {
     
 }
 
+//Mark : - 사진 업로드 관련
 extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -465,7 +465,7 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
 
 }
 
-
+// 스타일샷 텍스트 필드, 텍스트 뷰 관련
 extension StyleUploadVC: UITextFieldDelegate, UITextViewDelegate{
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == urlTextField[0]{
@@ -502,6 +502,7 @@ extension StyleUploadVC: UITextFieldDelegate, UITextViewDelegate{
     }
 }
 
+//스타일샷 해시태그 컬렉션 뷰 관련
 extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return hashTagCnt
@@ -529,6 +530,15 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
         
     }
 }
+
+extension StyleUploadVC{
+    
+    func setFix(){
+        print("이 메서드를 실행합니다...!!")
+    }
+}
+
+
 extension StyleUploadVC{
     func didSuccessStyleUpload(message: String,code: Int){
 
