@@ -170,7 +170,7 @@ class StyleLifeDataManager{
         
         var param = [
             "filter" : "3",
-            "categoryIdx[]" : "\(categoryIdx)",
+            "categoryIdx" : "\(categoryIdx)",
             "no": "\(lastIndex)"
         ]
         

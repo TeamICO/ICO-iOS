@@ -152,7 +152,7 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource, UIScrollViewDe
                  self?.popularServerData.append(contentsOf: response)
                  self?.postTV.reloadData()
              }
-             entireHeight.constant = CGFloat(575 + (616 * popularServerData.count))
+             entireHeight.constant = CGFloat(700 + (616 * popularServerData.count))
             }
         
     }

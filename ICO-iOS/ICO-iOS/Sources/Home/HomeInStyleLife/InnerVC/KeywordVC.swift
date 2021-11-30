@@ -183,12 +183,11 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("이것이???")
         let contentOffY = scrollView.contentOffset.y
         
-        if contentOffY >= (postTV.contentSize.height+150-scrollView.frame.size.height){
-            print("이것은!!")
-            guard isStart != nil else{
+        if contentOffY >= (postTV.contentSize.height-3800-scrollView.frame.size.height){
+         
+            guard isStart == true else{
                 return
             }
             
@@ -196,14 +195,15 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
                 return
             }
             
-            StyleLifeDataManager.shared.getKeywordInfo(lastIndex: keywordServerData.count, self, clickIdx){[weak self] response in
+            StyleLifeDataManager.shared.getKeywordInfo(pagination: true, lastIndex: self.keywordServerData.count, self, clickIdx){[weak self] response in
                 guard let response = response else {
                     return
                 }
                 self?.keywordServerData.append(contentsOf: response)
                 self?.postTV.reloadData()
             }
-            
+            let cnt :Int = keywordServerData.count
+           entireHeight.constant = CGFloat(200 + (cnt * 616))
         }
     }
     
