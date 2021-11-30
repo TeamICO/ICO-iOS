@@ -14,6 +14,8 @@ open class IndicatorView {
         
     let containerView = UIView()
     let activityIndicator = UIActivityIndicatorView()
+    var container = UIView()
+    var indicator =  UIImageView()
     
     open func show() {
         let window = UIWindow(frame: UIScreen.main.bounds)
@@ -41,4 +43,31 @@ open class IndicatorView {
         self.activityIndicator.stopAnimating()
         self.containerView.removeFromSuperview()
     }
+    open func showgif(){
+        container = UIView(frame: UIScreen.main.bounds)
+        indicator = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 300)))
+        let images: [UIImage] = Array(1...6).map{ UIImage(named: "gif_\($0)")! }
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        container.frame = window.frame
+        container.center = window.center
+        container.backgroundColor = .clear
+        container.addSubview(indicator)
+        UIApplication.shared.windows.first?.addSubview(container)
+        
+        container.backgroundColor = UIColor(hex: 0x000000, alpha: 0.2)
+        indicator.center = container.center
+        indicator.animationImages = images
+        indicator.animationDuration = Double(indicator.animationImages?.count ?? 0) / 12
+        indicator.animationRepeatCount = 0
+        indicator.startAnimating()
+        
+       
+    }
+    open func hidegif() {
+        self.indicator.stopAnimating()
+        self.container.removeFromSuperview()
+        
+    }
 }
+

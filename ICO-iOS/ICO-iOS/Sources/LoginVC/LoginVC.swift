@@ -200,7 +200,7 @@ extension LoginVC {
                       let userIdx = response?.result.userIdx else{
                           return
                       }
-                    
+                IndicatorView.shared.hidegif()
                 UserDefaults.standard.set(jwt, forKey: "jwtToken")
                 UserDefaults.standard.set(userIdx, forKey: "userIdx")
                 UserDefaults.standard.set(name, forKey: "nickname")
@@ -277,7 +277,7 @@ extension LoginVC {
                 return
             }
             deviceToken = token
-            self.showIndicator()
+            
             LoginManager.shared.KakaoSignIn { response in
                 guard let response = response else{
                     return
@@ -290,12 +290,11 @@ extension LoginVC {
                                   let userIdx = response?.result.userIdx else{
                             return
                         }
-                        self.dismissIndicator()
+                        IndicatorView.shared.hidegif()
                         UserDefaults.standard.set(jwt, forKey: "jwtToken")
                         UserDefaults.standard.set(userIdx, forKey: "userIdx")
                         UserDefaults.standard.set(name, forKey: "nickname")
                         DispatchQueue.main.async {
-                            self.dismissIndicator()
                             if code == 1001{
                                 let surveySB = UIStoryboard(name: "Survey", bundle: nil)
                                 guard let surveyVC = surveySB.instantiateViewController(withIdentifier: "SurveyVC")as? SurveyVC else {return}
@@ -379,6 +378,7 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
                               let userIdx = response?.result.userIdx  else{
                             return
                         }
+                        IndicatorView.shared.hidegif()
                         UserDefaults.standard.set(jwt, forKey: "jwtToken")
                         UserDefaults.standard.set(userIdx, forKey: "userIdx")
                         UserDefaults.standard.set(name, forKey: "nickname")

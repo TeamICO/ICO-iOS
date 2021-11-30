@@ -297,7 +297,11 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
 
        
     }
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == tableView {
+            
+        }
+    }
  
     
 }
@@ -320,7 +324,7 @@ extension MyPageVC {
     }
     @objc func didTapLikeView(){
         
-        self.navigationPushViewController(storyboard: "LevelUpSB", identifier: "LevelUpVC")
+        self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
     }
 }
 
