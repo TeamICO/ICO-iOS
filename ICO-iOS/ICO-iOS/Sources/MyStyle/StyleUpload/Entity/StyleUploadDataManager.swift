@@ -24,14 +24,15 @@ class StyleUploadDataManager{
             }
         
     }
-    /*
-    func styleEdit(_ viewcontroller: StyleUploadVC){
-        AF.request("",method: .get, headers: Constant.HEADER)
+    
+    func styleEdit(_ viewcontroller: StyleUploadVC, styleShotIdx: Int){
+        AF.request("\(Constant.BASE_URL)/app/styleshots/\(styleShotIdx)",method: .get, headers: Constant.HEADER)
             .validate()
-            .responseDecodable(of: StyleUploadResponse.self){ response in
+            .responseDecodable(of: StyleDetailResponse.self){ response in
                 switch response.result{
                     case .success(let response):
-                        
+                        viewcontroller.StyleDetailData = response.result
+                        viewcontroller.didSuccessEditStyle(message: response.message)
                     
                     
                     case .failure(let error):
@@ -39,5 +40,5 @@ class StyleUploadDataManager{
                 }
             }
 
-    }*/
+    }
 }
