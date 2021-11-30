@@ -21,6 +21,7 @@ class PopularVC: UIViewController {
     @IBOutlet weak var popularLabel: UILabel!
     @IBOutlet weak var postTV: UITableView!
     @IBOutlet weak var popularIcoCV: UICollectionView!
+    @IBOutlet weak var popularScrollView: UIScrollView!
     @IBOutlet weak var topBanner: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,11 +32,10 @@ class PopularVC: UIViewController {
         super.viewDidLoad()
 
         StyleLifeDataManager().getStyleLifeTop(self)
-        //StyleLifeDataManager().getPopularInfo(self)
         setUI()
         registerXib()
         fetchData()
-        //setTVCV()
+        popularScrollView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -44,11 +44,9 @@ class PopularVC: UIViewController {
         popularIcoCV.register(UINib(nibName: "PopularIcoCVC", bundle: nil), forCellWithReuseIdentifier: "PopularIcoCVC")
     }
     
-    func setTVCV(){
+    func setTV(){
         postTV.delegate = self
         postTV.dataSource = self
-        //popularIcoCV.delegate = self
-        //popularIcoCV.dataSource = self
     }
     
     func setUI(){
@@ -61,58 +59,9 @@ class PopularVC: UIViewController {
 
 }
 
-extension PopularVC{
-    
-    func fetchData(){
-        StyleLifeDataManager.shared.getPopularInfo(pagination: false, lastIndex: 0, self){ [weak self] response in
-            guard let response = response else {
-                return
-            }
-            self?.popularServerData = response
-            self?.postTV.reloadData()
-            self?.setTVCV()
-            if response.isEmpty{
-                self?.postTV.isScrollEnabled = false
-            }
-            self?.isStart = true
-        }
-      
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == postTV{
-            
-        print("9999999999999 이것이 과연 호출되나요??9999999999999999999999999999999")
-        let contentOffY = scrollView.contentOffset.y
-        
-        if contentOffY >= (postTV.contentSize.height+150-scrollView.frame.size.height){
-         
-            guard isStart != nil else{
-                return
-            }
-            
-            guard !StyleLifeDataManager.shared.isPopularPaginating else{
-                return
-            }
-            
-            StyleLifeDataManager.shared.getPopularInfo(pagination: true, lastIndex: self.popularServerData.count, self){[weak self] response in
-                guard let response = response else{
-                    return
-                }
-                self?.popularServerData.append(contentsOf: response)
-                self?.postTV.reloadData()
-                
-            }
-        }
-        }
-    }
-    
-    
-}
 
+extension PopularVC: UITableViewDelegate , UITableViewDataSource, UIScrollViewDelegate{
 
-
-extension PopularVC: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return popularServerData.count
     }
@@ -162,6 +111,50 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 630
+    }
+    
+    
+    func fetchData(){
+        StyleLifeDataManager.shared.getPopularInfo(pagination: false, lastIndex: 0, self){ [weak self] response in
+            guard let response = response else {
+                return
+            }
+            self?.popularServerData = response
+            self?.postTV.reloadData()
+            self?.setTV()
+            
+            if response.isEmpty{
+                self?.postTV.isScrollEnabled = false
+            }
+            self?.isStart = true
+        }
+      
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+         let contentOffY = scrollView.contentOffset.y
+
+         if contentOffY >= (postTV.contentSize.height-scrollView.frame.size.height-3100){
+         
+             guard isStart == true else{
+                 return
+             }
+             
+             guard !StyleLifeDataManager.shared.isPopularPaginating else{
+                 return
+             }
+            
+             StyleLifeDataManager.shared.getPopularInfo(pagination: true, lastIndex: self.popularServerData.count, self){[weak self] response in
+                 guard let response = response else{
+                     return
+                 }
+                 self?.popularServerData.append(contentsOf: response)
+                 self?.postTV.reloadData()
+             }
+             entireHeight.constant = CGFloat(575 + (616 * popularServerData.count))
+            }
+        
     }
 
 }
@@ -239,14 +232,13 @@ extension PopularVC{
         popularIcoCV.dataSource = self
         popularIcoCV.reloadData()
         topBanner.setImage(with: serverData?.topBanner.imageURL ?? "")
-        
     }
-    
+    /*
     func didSuccessGetPopularInfo(message: String){
         postTV.delegate = self
         postTV.dataSource = self
         postTV.reloadData()
         entireHeight.constant = CGFloat(575 + (616 * popularServerData.count))
       
-    }
+    }*/
 }

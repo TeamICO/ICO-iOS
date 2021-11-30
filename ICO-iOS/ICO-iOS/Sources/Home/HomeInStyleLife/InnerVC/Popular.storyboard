@@ -135,6 +135,7 @@
                         <outlet property="entireHeight" destination="XoD-T4-6lM" id="Ki4-he-IhO"/>
                         <outlet property="popularIcoCV" destination="6yE-pF-VGc" id="4GI-Yf-LTW"/>
                         <outlet property="popularLabel" destination="Moy-Te-mvd" id="iuh-x5-3M5"/>
+                        <outlet property="popularScrollView" destination="JLI-Tv-Ys4" id="o9W-3h-myX"/>
                         <outlet property="postTV" destination="2wc-rA-JcA" id="IsI-ph-eEs"/>
                         <outlet property="stackView" destination="Pci-cJ-LCJ" id="8Vi-j0-gLY"/>
                         <outlet property="stackView2" destination="NtY-TD-QdB" id="jB3-A7-whC"/>
