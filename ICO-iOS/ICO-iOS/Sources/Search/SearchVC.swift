@@ -178,11 +178,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
         case searchKeywordTableView:
             return 38
         case self.tableView:
-            switch indexPath.section {
-            case 1 :  return 276
-            default:
-                return UITableView.automaticDimension
-            }
+            return UITableView.automaticDimension
         default:
             return 0
         }

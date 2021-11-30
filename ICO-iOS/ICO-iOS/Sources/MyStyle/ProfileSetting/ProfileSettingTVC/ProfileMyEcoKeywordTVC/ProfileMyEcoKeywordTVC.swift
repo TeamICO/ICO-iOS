@@ -120,7 +120,7 @@ class ProfileMyEcoKeywordTVC: UITableViewCell {
             case "무향료":
                 setColor(view: chemicalView, label: chemicalLabel)
                 isEcoKeywordState[12] = true
-            case "FDA승인":
+            case "FDA 승인":
                 setColor(view: fdaView, label: fdaLabel)
                 isEcoKeywordState[13] = true
 

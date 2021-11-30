@@ -23,8 +23,6 @@ final class ProfileUpdateManager{
             "nickname": nickname,
             "description": description,
             "activatedEcoKeyword" : activatedEcoKeyword,
-            "marketingAgree": "Y",
-            "styleAgree": "Y"
         ]
    
         AF.request(url,

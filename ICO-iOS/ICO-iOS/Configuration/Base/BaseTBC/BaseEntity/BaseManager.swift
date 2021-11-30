@@ -19,7 +19,7 @@ final class BaseManager{
     
     func getUserIdx(jwtToken: String, completion: @escaping (BaseResult)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/auto-login"
+        let url = "https://prod.chuckwagon.shop/app/auto-login"
 
         
    

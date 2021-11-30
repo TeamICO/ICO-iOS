@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingAlarmVC: UIViewController {
+class SettingAlarmVC: BaseViewController {
 
     private let models = [
                 "",
@@ -83,7 +83,8 @@ extension SettingAlarmVC : UITableViewDelegate, UITableViewDataSource {
         default :
             let cell = tableView.dequeueReusableCell(withIdentifier: UserAlarmSettingTVC.identifier, for: indexPath) as! UserAlarmSettingTVC
             cell.titleLabel.text = models[indexPath.section]
-            
+            cell.delegate = self
+            cell.index = indexPath.section
             return cell
            
         }
@@ -129,6 +130,26 @@ extension SettingAlarmVC : SettingAlarmTVCDelegate{
     func setUserAlarm() {
         if let url = URL(string: UIApplication.openSettingsURLString) {
             UIApplication.shared.openURL(url)
+        }
+    }
+    
+    
+}
+extension SettingAlarmVC : UserAlarmSettingTVCDelelgate{
+    func changeAlarm(index: Int, state: String) {
+        print(index)
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        switch index {
+        case 1 :
+            
+            SettingAlarmManger.shared.updateUserAlarm(marketingAgree: state, styleAgree: nil, userIdx: self.userIdx, jwtToken: jwtToken)
+            break
+        case 2 :
+            SettingAlarmManger.shared.updateUserAlarm(marketingAgree: nil, styleAgree: state, userIdx: self.userIdx, jwtToken: jwtToken)
+            break
+        default : break
         }
     }
     
