@@ -24,6 +24,8 @@ class RecentVC: UIViewController {
 
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 68))
         postingTV.tableHeaderView = header
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+        postingTV.tableFooterView = footer
        // StyleLifeDataManager().getRecentInfo(pagination: false, lastIndex: 0, self)
         fetchData()
         registerXib()
