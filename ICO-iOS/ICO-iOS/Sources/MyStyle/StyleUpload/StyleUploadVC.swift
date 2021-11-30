@@ -11,8 +11,10 @@ import Photos
 
 class StyleUploadVC: UIViewController {
     
+    var StyleDetailData: StyleDetailResult?
     var selectedContentImage : String?
     var isFix: Bool?
+    var styleIndex: Int?
     
     var photoNum : Int = 0
     var urlNum1: Int = 0
@@ -138,6 +140,7 @@ class StyleUploadVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow2(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         if isFix == true{
+            StyleUploadDataManager().styleEdit(self, styleShotIdx: styleIndex!)
             setFix()
         }
         // Do any additional setup after loading the view.
@@ -532,9 +535,10 @@ extension StyleUploadVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
 }
 
 extension StyleUploadVC{
-    
     func setFix(){
-        print("이 메서드를 실행합니다...!!")
+        setUI()
+        print(styleIndex)
+        print(StyleDetailData)
     }
 }
 
@@ -542,5 +546,9 @@ extension StyleUploadVC{
 extension StyleUploadVC{
     func didSuccessStyleUpload(message: String,code: Int){
 
+    }
+    
+    func didSuccessEditStyle(message: String){
+        print(message)
     }
 }

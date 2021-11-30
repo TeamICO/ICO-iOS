@@ -103,10 +103,11 @@ class StyleDetailVC: UIViewController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         if isMine == true{
-            let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default){ action in
+            let fixAction = UIAlertAction(title: "스타일 수정", style: UIAlertAction.Style.default){ [self] action in
                 let uploadSB = UIStoryboard(name: "StyleUpload", bundle: nil)
                 let uploadVC = uploadSB.instantiateViewController(withIdentifier: "StyleUploadVC")as? StyleUploadVC
                 uploadVC?.isFix = true
+                uploadVC?.styleIndex = self.styleShotIdx
                 self.navigationController?.pushViewController(uploadVC!, animated: true)
             }
             fixAction.setValue(UIColor.coGreen, forKey: "titleTextColor")

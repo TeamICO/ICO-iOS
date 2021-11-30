@@ -41,6 +41,7 @@ class MyStyleVC: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
+        fetchData()
         self.tabBarController?.tabBar.isHidden = false
     }
     
