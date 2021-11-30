@@ -14,6 +14,7 @@ class StyleLifeDataManager{
     var isRecentPaginating = false
     var isPopularPaginating = false
     var isIcoStylePaginating = false
+    var isKeywordPaginating = false
     
     func getStyleLifeTop(_ viewcontroller: PopularVC){
         
@@ -159,14 +160,19 @@ class StyleLifeDataManager{
             }
     }*/
     
-    func getKeywordInfo(_ viewcontroller: KeywordVC,_ categoryIdx: Int){
+    func getKeywordInfo(pagination: Bool = false, lastIndex: Int,_ viewcontroller: KeywordVC,_ categoryIdx: Int, completion: @escaping([RecentResult]?) -> Void){
+        //let url = "https://dev.chuckwagon.shop/app/styleshots/lifestyle?"
         let url = "\(Constant.BASE_URL)/app/styleshots/lifestyle?"
         
+        if pagination{
+            isKeywordPaginating = true
+        }
+        
         var param = [
-            "filter" : 3,
-            //"categoryIdx[]" : categoryIdx
+            "filter" : "3",
+            "categoryIdx[]" : "\(categoryIdx)",
+            "no": "\(lastIndex)"
         ]
-        param.updateValue(categoryIdx, forKey: "categoryIdx[]")
         
        
         AF.request(url, method: .get, parameters: param, encoding: URLEncoding.default, headers: Constant.HEADER)
@@ -174,10 +180,15 @@ class StyleLifeDataManager{
             .responseDecodable(of: StyleLifeRecent.self){ response in
                 switch response.result{
                     case .success(let response):
-                        viewcontroller.keywordServerData = response.result
-                        viewcontroller.didSuccessGetKeyword(message: response.message)
-                        print(param)
-                    
+                        guard response.isSuccess == true else{
+                            return
+                        }
+                        completion(response.result)
+                        if pagination{
+                            self.isKeywordPaginating = false
+                        }
+                        
+                        
                     case .failure(let error):
                         print(error.localizedDescription)
                 }

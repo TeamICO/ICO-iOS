@@ -9,10 +9,14 @@ import UIKit
 
 class KeywordVC: UIViewController {
     
+    var isStart = false
+    
+    var clickIdx: Int = 0
     var keywordServerData: [RecentResult] = []
     var sortedIdx: Int = 1
     @IBOutlet weak var keywordCV: UICollectionView!
     @IBOutlet weak var postTV: UITableView!
+    @IBOutlet weak var keywordScrollView: UIScrollView!
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
     
     
@@ -23,13 +27,13 @@ class KeywordVC: UIViewController {
         keywordCV.delegate = self
         keywordCV.dataSource = self
         keywordCV.contentInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        keywordScrollView.delegate = self
        //setUI()
     }
 
-    func setCVTV(){
+    func setTV(){
         postTV.delegate = self
         postTV.dataSource = self
-        
     }
     
     func registerXib(){
@@ -125,8 +129,8 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        StyleLifeDataManager().getKeywordInfo(self, indexPath.row+1)
-        
+        fetchData(Index: indexPath.row + 1)
+        clickIdx = indexPath.row + 1
         for i in 0...6{
            let keywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeywordCVC", for: indexPath)as? KeywordCVC
             if keywordCell?.isSelected == false{
@@ -157,11 +161,53 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             cell.colorView.backgroundColor = UIColor.clear
         }
     }*/
-    
-    
 }
+
     
-extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
+extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDelegate{
+    
+    func fetchData(Index:Int){
+        StyleLifeDataManager.shared.getKeywordInfo(pagination: false,lastIndex: 0, self, Index){ [weak self] response in
+            guard let response = response else{
+                return
+            }
+            self?.keywordServerData = response
+            self?.postTV.reloadData()
+            self?.setTV()
+            if response.isEmpty{
+                self?.postTV.isScrollEnabled = false
+            }
+            
+            self?.isStart = true
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("이것이???")
+        let contentOffY = scrollView.contentOffset.y
+        
+        if contentOffY >= (postTV.contentSize.height+150-scrollView.frame.size.height){
+            print("이것은!!")
+            guard isStart != nil else{
+                return
+            }
+            
+            guard !StyleLifeDataManager.shared.isKeywordPaginating else{
+                return
+            }
+            
+            StyleLifeDataManager.shared.getKeywordInfo(lastIndex: keywordServerData.count, self, clickIdx){[weak self] response in
+                guard let response = response else {
+                    return
+                }
+                self?.keywordServerData.append(contentsOf: response)
+                self?.postTV.reloadData()
+            }
+            
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return keywordServerData.count
     }
@@ -217,13 +263,13 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource{
 
 
 extension KeywordVC{
+    /*
     func didSuccessGetKeyword(message: String){
         let cnt :Int = keywordServerData.count
         entireHeight.constant = CGFloat(136 + (cnt * 616))
-        setCVTV()
+        //setCVTV()
         postTV.reloadData()
-
-    }
+    }*/
 }
 
 

@@ -88,6 +88,7 @@
                     <connections>
                         <outlet property="entireHeight" destination="d2g-Zy-OK6" id="QKU-7S-U5H"/>
                         <outlet property="keywordCV" destination="6Lr-rL-qTo" id="uV3-tZ-jsu"/>
+                        <outlet property="keywordScrollView" destination="pwh-dv-X41" id="gpl-JT-ToZ"/>
                         <outlet property="postTV" destination="uEr-Pw-USt" id="mFU-s0-d2b"/>
                     </connections>
                 </viewController>
