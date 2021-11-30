@@ -18,14 +18,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji-search" translatesAutoresizingMaskIntoConstraints="NO" id="3wi-Wu-i8k">
-                        <rect key="frame" x="16" y="4" width="20" height="20"/>
+                        <rect key="frame" x="16" y="20" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="MaN-I7-pRw"/>
                             <constraint firstAttribute="height" constant="20" id="Ukh-Kf-etF"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 핫한 키워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZx-E2-w4G">
-                        <rect key="frame" x="44" y="0.0" width="132" height="28"/>
+                        <rect key="frame" x="44" y="16" width="132" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="lep-XC-Wyv"/>
                         </constraints>
@@ -34,10 +34,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-VR-NHa">
-                        <rect key="frame" x="0.0" y="44" width="160" height="249"/>
+                        <rect key="frame" x="0.0" y="60" width="160" height="233"/>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8p1-F2-g5a">
-                        <rect key="frame" x="160" y="44" width="160" height="249"/>
+                        <rect key="frame" x="160" y="60" width="160" height="233"/>
                     </stackView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,11 +46,11 @@
                     <constraint firstItem="ba5-VR-NHa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="38U-xJ-gCk"/>
                     <constraint firstItem="8p1-F2-g5a" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="DqU-Em-cmO"/>
                     <constraint firstItem="ba5-VR-NHa" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="S4F-FB-EsK"/>
-                    <constraint firstItem="PZx-E2-w4G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="W1Y-6V-VGK"/>
+                    <constraint firstItem="PZx-E2-w4G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="W1Y-6V-VGK"/>
                     <constraint firstAttribute="bottom" secondItem="ba5-VR-NHa" secondAttribute="bottom" constant="16" id="YHe-vp-u4C"/>
                     <constraint firstItem="PZx-E2-w4G" firstAttribute="leading" secondItem="3wi-Wu-i8k" secondAttribute="trailing" constant="8" id="hxg-Eu-zT9"/>
                     <constraint firstItem="ba5-VR-NHa" firstAttribute="top" secondItem="PZx-E2-w4G" secondAttribute="bottom" constant="16" id="inZ-Y1-VaO"/>
-                    <constraint firstItem="3wi-Wu-i8k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="ize-1d-jHI"/>
+                    <constraint firstItem="3wi-Wu-i8k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ize-1d-jHI"/>
                     <constraint firstItem="3wi-Wu-i8k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="neL-IA-ul4"/>
                     <constraint firstItem="8p1-F2-g5a" firstAttribute="top" secondItem="3wi-Wu-i8k" secondAttribute="bottom" constant="20" id="nk4-Pa-Uaj"/>
                     <constraint firstAttribute="trailing" secondItem="8p1-F2-g5a" secondAttribute="trailing" id="yqe-50-mwN"/>

@@ -83,6 +83,7 @@ class HomeVC: BaseViewController{
     
     // MARK: - Selectors
     @objc func didTapHomeButton(sender: UIButton){
+        
         scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
         isState = .home
     }
@@ -96,13 +97,14 @@ class HomeVC: BaseViewController{
 //MARK : 좋아요 뷰
 extension HomeVC {
     func setLikeViewTapGesture(){
-        
+      
         let viewTap = UITapGestureRecognizer(target: self, action: #selector(didTapLikeView))
         viewTap.cancelsTouchesInView = false
         likeView.addGestureRecognizer(viewTap)
     }
     @objc func didTapLikeView(){
         self.navigationPushViewController(storyboard: "LikeSB", identifier: "LikeVC")
+        
     }
 }
 

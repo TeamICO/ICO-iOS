@@ -8,7 +8,7 @@
 import UIKit
 
 class LevelUpVC: UIViewController {
-
+    public var completion : ((Bool)->Void)?
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var checkMyLevelButton: UIButton!
     override func viewDidLoad() {
@@ -32,7 +32,10 @@ class LevelUpVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func didTapCheckMyLevelButton(_ sender: Any) {
-        
+        self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.01) {
+            self.completion?(true)
+        }
     }
     
 }
