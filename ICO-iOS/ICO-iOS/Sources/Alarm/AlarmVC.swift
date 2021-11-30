@@ -244,9 +244,9 @@ extension AlarmVC : UITableViewDelegate, UITableViewDataSource {
             break
         case "mypage":
             let storyboard = UIStoryboard(name: "LevelUpSB", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "LevelUpVC") as! AlarmVC
+            let vc = storyboard.instantiateViewController(identifier: "LevelUpVC") as! LevelUpVC
             vc.navigationItem.largeTitleDisplayMode = .never
-            vc.complition = { taped in
+            vc.completion = { taped in
                 self.tabBarController?.selectedIndex = 2
             }
             self.navigationController?.pushViewController(vc, animated: true)

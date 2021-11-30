@@ -28,6 +28,13 @@ class SearchResultsCVC: UICollectionViewCell {
         gradientView.setGradient(color1: UIColor.white.withAlphaComponent(0.01), color2: .white)
         collectionViewConfigure()
     }
+    override func prepareForReuse() {
+        self.userContentImage.image = nil
+        self.userImage.image = nil
+        self.userNameLabel.text = nil
+        self.likeImage.image = nil
+    }
+    
     func getData(data : [String]){
         self.category = data
         

@@ -46,15 +46,18 @@ class SearchResultVC: BaseViewController {
             return
         }
         
-        SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx+1)", jwtToken: jwtToken) { [weak self] response in
-            guard let response = response, let result = response.seachResult else {
+        SearchResultManager.shared.getMoreSearchResult(pagination: false, lastIndex: 0, filter: "\(self.sortedIdx+1)", keyword: text, jwtToken: jwtToken){ [weak self] response in
+            guard let response = response else {
                 return
             }
-            self?.searchResultModel = response
-            self?.searchResultData = result
-            self?.isStart = false
-            self?.collectionView.reloadData()
-            self?.isStart = true
+            DispatchQueue.main.async {
+                self?.searchResultData = response
+                self?.isStart = false
+                self?.collectionView.reloadData()
+                self?.isStart = true
+            }
+
+            
         }
         
     }
@@ -230,16 +233,20 @@ extension SearchResultVC : UITextFieldDelegate {
                 self.presentAlert(title: "검색어를 입력해주세요.")
             }else{
                 self.searchword = text
+                
                 if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken"){
-                    SearchResultManager.shared.getSearchResult(keyword: text, filter: "\(self.sortedIdx+1)", jwtToken: jwtToken) { [weak self] response in
-                        guard let response = response, let result = response.seachResult else {
+                    SearchResultManager.shared.getMoreSearchResult(pagination: false, lastIndex: 0, filter: "\(self.sortedIdx+1)", keyword: text, jwtToken: jwtToken){ [weak self] response in
+                        guard let response = response else {
                             return
                         }
-                        self?.searchResultModel = response
-                        self?.searchResultData = result
-                        self?.isStart = false
-                        self?.collectionView.reloadData()
-                        self?.isStart = true
+                        DispatchQueue.main.async {
+                            self?.searchResultData = response
+                            self?.isStart = false
+                            self?.collectionView.reloadData()
+                            self?.isStart = true
+                        }
+
+                        
                     }
                 }
             }
