@@ -45,7 +45,7 @@ open class IndicatorView {
     }
     open func showgif(){
         container = UIView(frame: UIScreen.main.bounds)
-        indicator = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 300)))
+        indicator = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 375, height: 750)))
         let images: [UIImage] = Array(1...6).map{ UIImage(named: "gif_\($0)")! }
         
         let window = UIWindow(frame: UIScreen.main.bounds)

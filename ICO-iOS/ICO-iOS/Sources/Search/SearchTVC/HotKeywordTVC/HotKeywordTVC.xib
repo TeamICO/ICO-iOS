@@ -42,6 +42,7 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ba5-VR-NHa" secondAttribute="bottom" constant="16" id="2t1-ki-n9K"/>
                     <constraint firstAttribute="bottom" secondItem="8p1-F2-g5a" secondAttribute="bottom" constant="16" id="2up-sg-JBK"/>
                     <constraint firstItem="ba5-VR-NHa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="38U-xJ-gCk"/>
                     <constraint firstItem="8p1-F2-g5a" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="DqU-Em-cmO"/>
@@ -51,8 +52,9 @@
                     <constraint firstItem="PZx-E2-w4G" firstAttribute="leading" secondItem="3wi-Wu-i8k" secondAttribute="trailing" constant="8" id="hxg-Eu-zT9"/>
                     <constraint firstItem="ba5-VR-NHa" firstAttribute="top" secondItem="PZx-E2-w4G" secondAttribute="bottom" constant="16" id="inZ-Y1-VaO"/>
                     <constraint firstItem="3wi-Wu-i8k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ize-1d-jHI"/>
+                    <constraint firstAttribute="bottom" secondItem="8p1-F2-g5a" secondAttribute="bottom" constant="16" id="kvY-ai-lRp"/>
                     <constraint firstItem="3wi-Wu-i8k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="neL-IA-ul4"/>
-                    <constraint firstItem="8p1-F2-g5a" firstAttribute="top" secondItem="3wi-Wu-i8k" secondAttribute="bottom" constant="20" id="nk4-Pa-Uaj"/>
+                    <constraint firstItem="8p1-F2-g5a" firstAttribute="top" secondItem="PZx-E2-w4G" secondAttribute="bottom" constant="16" id="p08-h2-GFh"/>
                     <constraint firstAttribute="trailing" secondItem="8p1-F2-g5a" secondAttribute="trailing" id="yqe-50-mwN"/>
                 </constraints>
             </tableViewCellContentView>

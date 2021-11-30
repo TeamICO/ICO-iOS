@@ -29,10 +29,11 @@ class LoginVC: UIViewController {
     ]
     private let subTitleLabels = [
         "가치있는 사람들의 가치있는\n라이프스타일을 함께 나눠봐요!",
-        "여러 에코 리뷰들을 찾아보고, 쇼핑 꿀정보 획득!",
+        "여러 에코 리뷰들을 찾아보고,\n쇼핑 꿀정보 획득!",
         "나의 프로필에서 나만의 에코\n라이프의 스타일샷을 기록해요!",
-        "스타일샷을 등록하면 내가 환경에 끼친 영향력이 자동 업데이트돼요!"
+        "스타일샷을 등록하면 내가 환경에 끼친\n영향력이 자동 업데이트돼요!"
     ]
+    
     private let images  = [ "illust-character",
                             "illust-onboarding-info",
                             "illust-onboarding-shots",

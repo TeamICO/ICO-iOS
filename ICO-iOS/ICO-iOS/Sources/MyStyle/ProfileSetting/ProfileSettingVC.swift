@@ -16,6 +16,7 @@ class ProfileSettingVC: BaseViewController {
     private var userNickname = ""
     private var nickname = ""
     private var isCheckedNickname = false
+    private var isCategory = false
     private var profileDescription = ""
     private var selectedContentImage : String?
     @IBOutlet weak var updateView: UIView!
@@ -105,7 +106,7 @@ extension ProfileSettingVC{
             guard let response = response,let des = response.resultDescription else {
                 return
             }
-            
+
             self?.profileModel = response
             self?.userNickname = response.nickname
             self?.nickname = response.nickname
@@ -131,8 +132,7 @@ extension ProfileSettingVC{
         if UIDevice.current.userInterfaceIdiom == .pad {
             updateButton.backgroundColor = .gradient01
         }else{
-            updateButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
-           
+            updateButton.setGradient(color1: .gradient01, color2: .gradient012)
         }
     }
 }
@@ -232,73 +232,81 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
 extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
     func tapDonationView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-        
+        checkkeywords()
     }
     
     func tapAnimalView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-        
+        checkkeywords()
     }
     
     func tapTradeView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-        
+        checkkeywords()
     }
     
     func tapVeganView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-        
+        checkkeywords()
     }
     
     func tapLactoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-   
+        checkkeywords()
     }
     
     func tapLactovoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-
+        checkkeywords()
     }
     
     func tapFescoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-
+        checkkeywords()
     }
     
     func tapPlasticFreeView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+        checkkeywords()
     }
     
     func tapEcoView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-       
+        checkkeywords()
     }
     
     func tapUpcyclingView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-    
+        checkkeywords()
     }
     
     func tapPackageView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-       
+        checkkeywords()
     }
     
     func tapGmoFreeView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
- 
+        checkkeywords()
     }
     
     func tapChemicalView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
-      
+        checkkeywords()
     }
     
     func tapFdaView(seletedKeywords: [Int]) {
         self.seletedKeywords = seletedKeywords
+        checkkeywords()
+    }
+    func checkkeywords(){
+        if self.seletedKeywords.isEmpty{
+            isCategory = false
+        }else{
+            isCategory = true
+        }
         
     }
-
     
     
 }
@@ -367,12 +375,16 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                 self.nickname = nickname
                 return
             }
-            textField.layer.borderWidth = 0.5
-            textField.layer.borderColor = UIColor.alertsSuccess.cgColor
-            label.textColor = UIColor.alertsSuccess
+            
             label.text = result.message
             self.nickname = nickname
             self.isCheckedNickname = true
+            DispatchQueue.main.async {
+                textField.layer.borderWidth = 0.5
+                textField.layer.borderColor = UIColor.alertsSuccess.cgColor
+                label.textColor = UIColor.alertsSuccess
+                
+            }
         }
     }
 }
