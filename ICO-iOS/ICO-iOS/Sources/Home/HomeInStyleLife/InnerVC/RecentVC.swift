@@ -14,10 +14,10 @@ class RecentVC: UIViewController {
     var serverData : [RecentResult] = []
     var styleshotIdx: Int = 0
     @IBOutlet weak var postingTV: UITableView!
-   /*
+   
     override func viewWillAppear(_ animated: Bool) {
-        StyleLifeDataManager().getRecentInfo(self)
-    }*/
+        fetchData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,11 +90,15 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
         cell.heartNum.text = "\(serverData[indexPath.row].likeCnt)"
-     
-        
         cell.detailLabel.text = serverData[indexPath.row].resultDescription
         cell.time.text = serverData[indexPath.row].time
         cell.setData(category: serverData[indexPath.row].category)
+        
+        if serverData[indexPath.row].isLike == 1{
+            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+        }else{
+            cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+        }
         
         return cell
     }
