@@ -75,6 +75,7 @@
 		E91788132748B37B008B621B /* SurveyMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788122748B37B008B621B /* SurveyMamager.swift */; };
 		E91788182748BECB008B621B /* ServiceTermVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788172748BECB008B621B /* ServiceTermVC.swift */; };
 		E917881A2748BEDB008B621B /* ServiceTermSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91788192748BEDB008B621B /* ServiceTermSB.storyboard */; };
+		E9258F6C275765BE00F3113E /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9258F6B275765BE00F3113E /* CustomAlert.swift */; };
 		E9341FF2274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9341FF0274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift */; };
 		E9341FF3274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9341FF1274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
@@ -324,6 +325,7 @@
 		E91788122748B37B008B621B /* SurveyMamager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyMamager.swift; sourceTree = "<group>"; };
 		E91788172748BECB008B621B /* ServiceTermVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermVC.swift; sourceTree = "<group>"; };
 		E91788192748BEDB008B621B /* ServiceTermSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceTermSB.storyboard; sourceTree = "<group>"; };
+		E9258F6B275765BE00F3113E /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E9341FF0274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNoneMyRecentStyleShotCVC.swift; sourceTree = "<group>"; };
 		E9341FF1274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageNoneMyRecentStyleShotCVC.xib; sourceTree = "<group>"; };
@@ -1374,6 +1376,7 @@
 				E99A3B70274147410073ED09 /* EcoKeyWordType.swift */,
 				E94613A32743B7A700A5F7C2 /* CommonResponse.swift */,
 				E9EE0DB7274A717600567FCE /* IPhoneDeviceGroup.swift */,
+				E9258F6B275765BE00F3113E /* CustomAlert.swift */,
 				E90511F2274F3C70002B1574 /* CustomPopup */,
 			);
 			path = CommonClass;
@@ -1882,6 +1885,7 @@
 				E9B5D3AB274CC9E2002D965B /* KeywordContentsModel.swift in Sources */,
 				E96DB3012744A9CF00659256 /* BaseManager.swift in Sources */,
 				E998C25627328A8700E1F8D0 /* BrandCVC.swift in Sources */,
+				E9258F6C275765BE00F3113E /* CustomAlert.swift in Sources */,
 				E9CAF194273163EC008F749B /* HomeVC.swift in Sources */,
 				714F5A172733C06E00692A13 /* RecentTVC.swift in Sources */,
 				E946137F2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift in Sources */,

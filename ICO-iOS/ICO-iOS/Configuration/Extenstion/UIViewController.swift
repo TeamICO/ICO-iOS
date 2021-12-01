@@ -130,5 +130,30 @@ extension UIViewController {
         view.addSubview(blurView)
         view.sendSubviewToBack(blurView)
     }
+    func showCustomAlert(alert : CustomAlert,button : UIButton){
+        let textwidth : CGFloat = 258
+        alert.frame = CGRect(x: view.width/2-textwidth/2, y: button.top+10, width: textwidth, height: 38)
+        view.addSubview(alert)
+        view.bringSubviewToFront(button)
+        UIView.animate(withDuration: 0.5) {
+            alert.frame = CGRect(x: self.view.width/2-textwidth/2, y: button.top-50, width: textwidth, height: 38)
+        } completion: { done in
+            if done {
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                    UIView.animate(withDuration: 0.5) {
+                        alert.frame = CGRect(x: self.view.width/2-textwidth/2, y: button.top+10, width: textwidth, height: 38)
+                    } completion: { done in
+                        if done {
+                            alert.removeFromSuperview()
+                        }
+                    }
+
+                }
+            }
+       
+        }
+
+        
+    }
    
 }

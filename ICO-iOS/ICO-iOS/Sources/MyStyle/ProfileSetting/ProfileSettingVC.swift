@@ -16,7 +16,7 @@ class ProfileSettingVC: BaseViewController {
     private var userNickname = ""
     private var nickname = ""
     private var isCheckedNickname = false
-    private var isCategory = false
+    private var isCategory = true
     private var profileDescription = ""
     private var selectedContentImage : String?
     @IBOutlet weak var updateView: UIView!
@@ -43,19 +43,21 @@ class ProfileSettingVC: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func didTapUpdateButton(_ sender: Any) {
+        let frame = CGRect(x: 0, y: 0, width: view.width/1.5, height: 38)
         guard !self.seletedKeywords.isEmpty else{
-            self.presentAlert(title: "관심 키워드를 선택해주세요.")
+            self.showCustomAlert(alert: CustomAlert(viewModel: CustomAlerViewmoel(text: "관심 키워드를 선택해주세요."), frame: frame),button: self.updateButton)
             return
         }
         guard !self.nickname.isEmpty else{
-            self.presentAlert(title: "닉네임을 입력해주세요.")
+            self.showCustomAlert(alert: CustomAlert(viewModel: CustomAlerViewmoel(text: "닉네임을 입력해주세요."), frame: frame),button: self.updateButton)
             return
         }
         if self.userNickname == self.nickname{
             isCheckedNickname = true
         }
         guard isCheckedNickname else{
-            self.presentAlert(title: "닉네임을 조건에 맞게입력해주세요.")
+            self.showCustomAlert(alert: CustomAlert(viewModel: CustomAlerViewmoel(text: "닉네임을 조건에 맞게입력해주세요."), frame: frame),button: self.updateButton)
+            
             return
         }
         guard let jwtToken = self.jwtToken else{
@@ -305,6 +307,7 @@ extension ProfileSettingVC : ProfileMyEcoKeywordTVCDelegate {
         }else{
             isCategory = true
         }
+      
         
     }
     
@@ -366,24 +369,24 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
         guard let jwtToken = self.jwtToken else{
             return
         }
-        NickNameManager.shared.checkNickName(nickname: nickname, jwtToken: jwtToken) { result in
+        NickNameManager.shared.checkNickName(nickname: nickname, jwtToken: jwtToken) { [weak self]result in
             guard result.isSuccess else{
                 textField.layer.borderWidth = 0.5
                 textField.layer.borderColor = UIColor.alertsError.cgColor
                 label.textColor = UIColor.alertsError
                 label.text = result.message
-                self.nickname = nickname
+                self?.nickname = nickname
+                self?.isCheckedNickname = false
                 return
             }
             
             label.text = result.message
-            self.nickname = nickname
-            self.isCheckedNickname = true
+            self?.nickname = nickname
+            self?.isCheckedNickname = true
             DispatchQueue.main.async {
                 textField.layer.borderWidth = 0.5
                 textField.layer.borderColor = UIColor.alertsSuccess.cgColor
                 label.textColor = UIColor.alertsSuccess
-                
             }
         }
     }
