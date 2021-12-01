@@ -186,6 +186,9 @@
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="icHeartUnclick1"/>
+                        <connections>
+                            <action selector="didTapLikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nK9-ZK-5D8"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
