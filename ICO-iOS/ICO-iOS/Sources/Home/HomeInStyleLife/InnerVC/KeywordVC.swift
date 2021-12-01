@@ -244,11 +244,14 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
         
         cell.time.text = keywordServerData[indexPath.row].time
         cell.setData(category: keywordServerData[indexPath.row].category)
-        
-        if keywordServerData[indexPath.row].isLike == 1{
-            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
-        }else{
+        cell.heartCnt = keywordServerData[indexPath.row].likeCnt
+        cell.styleShotIdx = keywordServerData[indexPath.row].styleshotIdx
+        if keywordServerData[indexPath.row].isLike == 0{
             cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+            cell.isliked = false
+        }else{
+            cell.heartBtn.setImage(UIImage(named: "ic-heart-click"), for: .normal)
+            cell.isliked = true
         }
         
         /*
@@ -257,6 +260,9 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
         return emptyCell*/
         
         
+
+        cell.delegate = self
+
         return cell
     }
     
@@ -291,4 +297,30 @@ extension KeywordVC : KeywordCVCDelagate{
     }
     
     
+}
+extension KeywordVC : RecentTVCDelegate{
+    func didTapLike(isLiked: Bool, styleShotIdx: Int, heartButton: UIButton, heartCnt: Int, heartNumLabel: UILabel) {
+        if !isLiked{
+            StyleDetailDataManager().likeStyle(styleShotIdx) { success in
+                guard success else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    heartButton.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+                    heartNumLabel.text = "\(heartCnt+1)"
+                }
+            }
+        }else{
+            let dislikeRequest = disLikeRequest(status: "N")
+            StyleDetailDataManager().disLikeStyle(dislikeRequest, styleshotIdx: styleShotIdx) { success in
+                guard success else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    heartButton.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+                    heartNumLabel.text = "\(heartCnt-1)"
+                }
+            }
+        }
+    }
 }

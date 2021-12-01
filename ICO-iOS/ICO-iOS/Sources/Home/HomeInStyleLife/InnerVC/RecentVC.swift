@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecentVC: UIViewController {
+class RecentVC: BaseViewController {
     
     var isStart = false
     
@@ -72,6 +72,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTVC", for: indexPath)as? RecentTVC else {return UITableViewCell()}
         
         cell.selectionStyle = .none
+        
         cell.mainImage.setImage(with: serverData[indexPath.row].imageURL)
         cell.userImage.setImage(with: serverData[indexPath.row].profileURL)
         cell.productName.text = serverData[indexPath.row].productName
@@ -89,17 +90,21 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         }else if cell.score.text == "1.0"{
             cell.ecoLevelImg.image = UIImage(named: "ic-styleshot-upload-ecolevel-1")
         }
+        cell.heartCnt = serverData[indexPath.row].likeCnt
         cell.heartNum.text = "\(serverData[indexPath.row].likeCnt)"
+        cell.styleShotIdx = serverData[indexPath.row].styleshotIdx
+        if serverData[indexPath.row].isLike == 0{
+            cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+            cell.isliked = false
+        }else{
+            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+            cell.isliked = true
+        }
         cell.detailLabel.text = serverData[indexPath.row].resultDescription
         cell.time.text = serverData[indexPath.row].time
         cell.setData(category: serverData[indexPath.row].category)
-        
-        if serverData[indexPath.row].isLike == 1{
-            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
-        }else{
-            cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
-        }
-        
+        cell.delegate = self
+
         return cell
     }
     
@@ -148,4 +153,34 @@ extension RecentVC{
         postingTV.reloadData()
         self.isStart = true
     }
+}
+
+extension RecentVC : RecentTVCDelegate{
+    func didTapLike(isLiked: Bool, styleShotIdx: Int, heartButton: UIButton, heartCnt: Int, heartNumLabel: UILabel) {
+        if !isLiked{
+            StyleDetailDataManager().likeStyle(styleShotIdx) { success in
+                guard success else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    heartButton.setImage(UIImage(named: "icHeartClick1"), for: .normal)
+                    
+                    heartNumLabel.text = "\(heartCnt+1)"
+                }
+            }
+        }else{
+            let dislikeRequest = disLikeRequest(status: "N")
+            StyleDetailDataManager().disLikeStyle(dislikeRequest, styleshotIdx: styleShotIdx) { success in
+                guard success else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    heartButton.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
+                    heartNumLabel.text = "\(heartCnt-1)"
+                }
+            }
+        }
+    }
+    
+  
 }

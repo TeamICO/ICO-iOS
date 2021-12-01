@@ -7,9 +7,19 @@
 
 import UIKit
 
+protocol RecentTVCDelegate : AnyObject{
+    func didTapLike(isLiked : Bool,styleShotIdx : Int,heartButton : UIButton,heartCnt: Int,heartNumLabel : UILabel)
+}
+
 class RecentTVC: UITableViewCell {
     
+    weak var delegate : RecentTVCDelegate?
+    
     var category: [String] = []
+    
+    var isliked = false
+    var styleShotIdx = 0
+    var heartCnt = 0
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mainImage: UIImageView!
@@ -60,6 +70,22 @@ class RecentTVC: UITableViewCell {
         userImage.layer.cornerRadius = 20
         userImage.translatesAutoresizingMaskIntoConstraints = false
         lineView.backgroundColor = UIColor.backGround1
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
+    @IBAction func didTapLikeButton(_ sender: Any) {
+        if !isliked{
+            delegate?.didTapLike(isLiked: self.isliked, styleShotIdx: self.styleShotIdx,heartButton: self.heartBtn,heartCnt :heartCnt,heartNumLabel: self.heartNum)
+            self.heartCnt += 1
+        }else{
+            delegate?.didTapLike(isLiked: self.isliked, styleShotIdx: self.styleShotIdx,heartButton: self.heartBtn,heartCnt :heartCnt,heartNumLabel: self.heartNum)
+            self.heartCnt -= 1
+        }
+        
+        isliked = !isliked
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
