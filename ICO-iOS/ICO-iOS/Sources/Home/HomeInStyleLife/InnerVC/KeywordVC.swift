@@ -189,9 +189,9 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffY = scrollView.contentOffset.y
-        //3800
-        if contentOffY >= (postTV.contentSize.height-3700-scrollView.frame.size.height){
+        let contentOffY = scrollView.contentOffset.y   
+        
+        if contentOffY >= (postTV.contentSize.height-3400-scrollView.frame.size.height){
          
             guard isStart == true else{
                 return
