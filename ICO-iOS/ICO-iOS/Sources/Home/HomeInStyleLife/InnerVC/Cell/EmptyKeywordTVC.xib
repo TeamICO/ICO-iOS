@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyKeywordTVC" id="KGk-i7-Jjw" customClass="EmptyKeywordTVC" customModule="ICO_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wq2-H9-9Jv">
+                        <rect key="frame" x="16" y="0.0" width="288" height="67"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLifestyleInfo1" translatesAutoresizingMaskIntoConstraints="NO" id="wAJ-hv-hir">
+                                <rect key="frame" x="134" y="10" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Jxb-Mg-Bum"/>
+                                    <constraint firstAttribute="width" constant="20" id="eO2-2F-Nwj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드를 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX2-NJ-y2z">
+                                <rect key="frame" x="88.5" y="38" width="111" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wAJ-hv-hir" firstAttribute="centerX" secondItem="wq2-H9-9Jv" secondAttribute="centerX" id="1OI-LV-lWd"/>
+                            <constraint firstAttribute="height" constant="67" id="ExI-N6-Ti2"/>
+                            <constraint firstItem="qX2-NJ-y2z" firstAttribute="top" secondItem="wAJ-hv-hir" secondAttribute="bottom" constant="8" id="GyI-7W-hCC"/>
+                            <constraint firstItem="qX2-NJ-y2z" firstAttribute="centerX" secondItem="wq2-H9-9Jv" secondAttribute="centerX" id="OoX-hx-uPA"/>
+                            <constraint firstItem="wAJ-hv-hir" firstAttribute="top" secondItem="wq2-H9-9Jv" secondAttribute="top" constant="10" id="nuL-d9-o8D"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wq2-H9-9Jv" secondAttribute="trailing" constant="16" id="14Q-GJ-K0C"/>
+                    <constraint firstItem="wq2-H9-9Jv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1mG-DM-SGj"/>
+                    <constraint firstItem="wq2-H9-9Jv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="adc-6G-YdI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="alertTitle" destination="qX2-NJ-y2z" id="UE0-cL-28v"/>
+                <outlet property="alertView" destination="wq2-H9-9Jv" id="S1x-SP-IHk"/>
+            </connections>
+            <point key="canvasLocation" x="8.6956521739130448" y="29.464285714285712"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icLifestyleInfo1" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

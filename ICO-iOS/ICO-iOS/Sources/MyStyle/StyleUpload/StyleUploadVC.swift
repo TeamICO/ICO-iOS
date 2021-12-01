@@ -95,6 +95,7 @@ class StyleUploadVC: UIViewController {
         for i in 0...6{
             if select[i] == 1 {
                 ecoButton[i].setTitleColor(UIColor.white, for: .normal)
+                //ecoButton[i].applyGradient(colors: [UIColor.iGreen20.cgColor, UIColor.coGreen60.cgColor])
                 ecoButton[i].backgroundColor = UIColor.gradient012
             }else{
                 if i == 0{

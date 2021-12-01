@@ -103,6 +103,7 @@ class StyleLifeDataManager{
                         self.isRecentPaginating = false
                     }
                     
+                    
                 case .failure(let error):
                     print(error.localizedDescription)
                     
@@ -133,6 +134,7 @@ class StyleLifeDataManager{
                     if pagination{
                         self.isPopularPaginating = false
                     }
+                   
                     
                 case .failure(let error):
                     print(error.localizedDescription)

@@ -25,7 +25,7 @@ class PopularVC: UIViewController {
     @IBOutlet weak var topBanner: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
-        //StyleLifeDataManager().getPopularInfo(self)
+        fetchData()
     }
     
     override func viewDidLoad() {

@@ -14,10 +14,10 @@ class RecentVC: BaseViewController {
     var serverData : [RecentResult] = []
     var styleshotIdx: Int = 0
     @IBOutlet weak var postingTV: UITableView!
-   /*
+   
     override func viewWillAppear(_ animated: Bool) {
-        StyleLifeDataManager().getRecentInfo(self)
-    }*/
+        fetchData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +104,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         cell.time.text = serverData[indexPath.row].time
         cell.setData(category: serverData[indexPath.row].category)
         cell.delegate = self
+
         return cell
     }
     

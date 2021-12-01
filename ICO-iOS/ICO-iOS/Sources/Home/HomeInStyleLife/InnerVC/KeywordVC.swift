@@ -18,7 +18,11 @@ class KeywordVC: UIViewController {
     @IBOutlet weak var postTV: UITableView!
     @IBOutlet weak var keywordScrollView: UIScrollView!
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
+    var serverArray: [Int] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData(Index: clickIdx)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,7 @@ class KeywordVC: UIViewController {
     func registerXib(){
         keywordCV.register(UINib(nibName: "KeywordCVC", bundle: nil), forCellWithReuseIdentifier: "KeywordCVC")
         postTV.register(UINib(nibName: "RecentTVC", bundle: nil), forCellReuseIdentifier: "RecentTVC")
+        postTV.register(UINib(nibName: "EmptyKeywordTVC", bundle: nil), forCellReuseIdentifier: "EmptyKeywordTVC")
     }
     
 
@@ -57,40 +62,40 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         keywordCell.sortedIdx = indexPath.row
         
         if indexPath.row == 0{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-vegan")
-            keywordCell.colorView.backgroundColor = UIColor.lightSuccess
-            keywordCell.keywordTitle.textColor = UIColor.alertsSuccess
-            keywordCell.keywordTitle.text = "비건"
-        }else if indexPath.row == 1{
             keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-upcycling")
             keywordCell.colorView.backgroundColor = UIColor.coGreen5
             keywordCell.keywordTitle.textColor = UIColor.upcyclingGreen
             keywordCell.keywordTitle.text = "업사이클링"
+        }else if indexPath.row == 1{
+            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-vegan")
+            keywordCell.colorView.backgroundColor = UIColor.lightSuccess
+            keywordCell.keywordTitle.textColor = UIColor.alertsSuccess
+            keywordCell.keywordTitle.text = "비건"
         }else if indexPath.row == 2{
-            keywordCell.keywordImg.image = UIImage(named: "illust-product-package")
-            keywordCell.colorView.backgroundColor = UIColor.lightWarning
-            keywordCell.keywordTitle.textColor = UIColor.alertWarning
-            keywordCell.keywordTitle.text = "제로웨이스트"
-        }else if indexPath.row == 3{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-value")
-            keywordCell.colorView.backgroundColor = UIColor.lightPoint
-            keywordCell.keywordTitle.textColor = UIColor.point
-            keywordCell.keywordTitle.text = "가치"
-        }else if indexPath.row == 4{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-organic")
-            keywordCell.colorView.backgroundColor = UIColor.lightError
-            keywordCell.keywordTitle.textColor = UIColor.alertsError
-            keywordCell.keywordTitle.text = "유기농"
-        }else if indexPath.row == 5{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-cleanbeauty")
-            keywordCell.colorView.backgroundColor = UIColor.lightShadow
-            keywordCell.keywordTitle.textColor = UIColor.coGreen
-            keywordCell.keywordTitle.text = "클린뷰티"
-        }else {
             keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-energy")
             keywordCell.colorView.backgroundColor = UIColor.lightInfo
             keywordCell.keywordTitle.textColor = UIColor.alertsInfo
             keywordCell.keywordTitle.text = "에너지절약"
+        }else if indexPath.row == 3{
+            keywordCell.keywordImg.image = UIImage(named: "illust-product-package")
+            keywordCell.colorView.backgroundColor = UIColor.lightWarning
+            keywordCell.keywordTitle.textColor = UIColor.alertWarning
+            keywordCell.keywordTitle.text = "제로웨이스트"
+        }else if indexPath.row == 4{
+            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-cleanbeauty")
+            keywordCell.colorView.backgroundColor = UIColor.lightShadow
+            keywordCell.keywordTitle.textColor = UIColor.coGreen
+            keywordCell.keywordTitle.text = "클린뷰티"
+        }else if indexPath.row == 5{
+            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-organic")
+            keywordCell.colorView.backgroundColor = UIColor.lightError
+            keywordCell.keywordTitle.textColor = UIColor.alertsError
+            keywordCell.keywordTitle.text = "유기농"
+        }else {
+            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-value")
+            keywordCell.colorView.backgroundColor = UIColor.lightPoint
+            keywordCell.keywordTitle.textColor = UIColor.point
+            keywordCell.keywordTitle.text = "가치"
         }
         keywordCell.colorView.cornerRadius = 12
         
@@ -98,24 +103,22 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         let height = 32
         var width = 0
         
-        if indexPath.row == 0 || indexPath.row == 3{
+        if indexPath.row == 1 || indexPath.row == 6{
            width = 69
-        }else if indexPath.row == 1 || indexPath.row == 6{
+        }else if indexPath.row == 0 || indexPath.row == 2{
            width = 105
-        }else if indexPath.row == 2{
+        }else if indexPath.row == 3{
             width = 118
-        }else if indexPath.row == 4{
+        }else if indexPath.row == 5{
             width = 85
         }else{
             width = 100
         }
         
         return CGSize(width: width, height: height)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -129,6 +132,9 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //serverArray.append(indexPath.row)
+        //var stringArray = serverArray.map { String($0) }
+        //var string = stringArray.split(separator: ",")
         fetchData(Index: indexPath.row + 1)
         clickIdx = indexPath.row + 1
         for i in 0...6{
@@ -184,8 +190,8 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffY = scrollView.contentOffset.y
-        
-        if contentOffY >= (postTV.contentSize.height-3800-scrollView.frame.size.height){
+        //3800
+        if contentOffY >= (postTV.contentSize.height-3700-scrollView.frame.size.height){
          
             guard isStart == true else{
                 return
@@ -247,7 +253,16 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
             cell.heartBtn.setImage(UIImage(named: "ic-heart-click"), for: .normal)
             cell.isliked = true
         }
+        
+        /*
+        guard let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyKeywordTVC", for: indexPath) as? EmptyKeywordTVC else {return}
+        
+        return emptyCell*/
+        
+        
+
         cell.delegate = self
+
         return cell
     }
     
