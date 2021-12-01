@@ -32,7 +32,7 @@ class StyleLifeDataManager{
   
             }
     }
-    
+    //인기있는 아이코 상단 부분
     func getPopularIcoUser(_ viewcontroller: PopularIcoVC,userIdx: Int){
         AF.request("https://prod.chuckwagon.shop/app/users/\(userIdx)/mystyle",method: .get, parameters: nil, headers: Constant.HEADER)
             .validate()
@@ -49,7 +49,7 @@ class StyleLifeDataManager{
 
             }
     }
-    
+    //인기 있는 아이코 스타일샷 부분
     func getPopularIcoStyleShot(pagination: Bool = false, lastIndex: Int,userIdx:Int, _ viewcontroller: PopularIcoVC, completion: @escaping( [StyleShotResult]?) -> Void){
         if pagination{
             isIcoStylePaginating = true
@@ -79,7 +79,7 @@ class StyleLifeDataManager{
                 }
             }
     }
-    
+    //라이프스타일 카테고리 최근
     func getRecentInfo(pagination: Bool = false, lastIndex: Int, _ viewcontroller: RecentVC , completion: @escaping([RecentResult]?) -> Void){
         if pagination{
             isRecentPaginating = true
@@ -111,7 +111,7 @@ class StyleLifeDataManager{
  
             }
     }
-    
+    //라이프스타일 카테고리 인기
     func getPopularInfo(pagination: Bool = false, lastIndex: Int, _ viewcontroller: PopularVC , completion: @escaping([RecentResult]?) -> Void){
         if pagination{
             isPopularPaginating = true
@@ -143,32 +143,15 @@ class StyleLifeDataManager{
  
             }
     }
-    
-    
-    /*
-    func getPopularInfo(_ viewcontroller: PopularVC){
-        AF.request("https://dev.chuckwagon.shop/app/styleshots/lifestyle?filter=2",method: .get, parameters: nil,headers: Constant.HEADER)
-            .validate()
-            .responseDecodable(of: StyleLifeRecent.self){ response in
-                switch response.result{
-                    case .success(let response):
-                        viewcontroller.popularServerData = response.result
-                        viewcontroller.didSuccessGetPopularInfo(message: response.message)
-                
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    
-                }
-            }
-    }*/
-    
+
+    //라이프스타일 카테고리 키워드
     func getKeywordInfo(pagination: Bool = false, lastIndex: Int,_ viewcontroller: KeywordVC,_ categoryIdx: Int, completion: @escaping([RecentResult]?) -> Void){
-        //let url = "https://dev.chuckwagon.shop/app/styleshots/lifestyle?"
-        let url = "\(Constant.BASE_URL)/app/styleshots/lifestyle?"
         
         if pagination{
             isKeywordPaginating = true
         }
+        
+        let url = "\(Constant.BASE_URL)/app/styleshots/lifestyle?"
         
         var param = [
             "filter" : "3",
@@ -189,7 +172,7 @@ class StyleLifeDataManager{
                         if pagination{
                             self.isKeywordPaginating = false
                         }
-                        
+                    
                         
                     case .failure(let error):
                         print(error.localizedDescription)

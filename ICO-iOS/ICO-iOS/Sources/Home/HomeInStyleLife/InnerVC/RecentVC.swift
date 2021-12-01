@@ -26,7 +26,7 @@ class RecentVC: BaseViewController {
         postingTV.tableHeaderView = header
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
         postingTV.tableFooterView = footer
-       // StyleLifeDataManager().getRecentInfo(pagination: false, lastIndex: 0, self)
+       
         fetchData()
         registerXib()
     }
@@ -125,7 +125,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         
         if contentOffY >= (postingTV.contentSize.height+150-scrollView.frame.size.height){
          
-            guard isStart != nil else{
+            guard isStart == true else{
                 return
             }
             
