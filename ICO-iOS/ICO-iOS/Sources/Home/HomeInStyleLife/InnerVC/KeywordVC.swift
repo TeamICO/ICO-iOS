@@ -150,16 +150,19 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         //var string = stringArray.split(separator: ",")
         fetchData(Index: indexPath.row + 1)
         clickIdx = indexPath.row + 1
-        for i in 0...6{
+        for _ in 0...6{
            let keywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeywordCVC", for: indexPath)as? KeywordCVC
-            if keywordCell?.isSelected == false{
+            
+            guard let keywordCell = keywordCell else {return}
+            
+            
+            if keywordCell.isSelected == false{
                 postTV.isHidden = true
-                //hidden.isHidden = false
             }else{
                 postTV.isHidden = false
                 emptyView.isHidden = true
-                //hidden.isHidden = true
             }
+            keywordCell.isSelected = !keywordCell.isSelected
         }
         
     }
