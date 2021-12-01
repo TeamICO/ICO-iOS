@@ -250,7 +250,7 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
             cell.heartBtn.setImage(UIImage(named: "icHeartUnclick1"), for: .normal)
             cell.isliked = false
         }else{
-            cell.heartBtn.setImage(UIImage(named: "ic-heart-click"), for: .normal)
+            cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
             cell.isliked = true
         }
         
@@ -258,9 +258,6 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
         guard let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyKeywordTVC", for: indexPath) as? EmptyKeywordTVC else {return}
         
         return emptyCell*/
-        
-        
-
         cell.delegate = self
 
         return cell
