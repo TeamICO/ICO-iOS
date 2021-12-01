@@ -47,7 +47,33 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uEr-Pw-USt">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsi-NK-nzl">
+                                                <rect key="frame" x="16" y="136" width="382" height="67"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLifestyleInfo1" translatesAutoresizingMaskIntoConstraints="NO" id="ndf-h5-n4Z">
+                                                        <rect key="frame" x="181" y="10" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="Jjw-2W-QQ5"/>
+                                                            <constraint firstAttribute="height" constant="20" id="e7t-no-gpm"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드를 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-c9-9Fl">
+                                                        <rect key="frame" x="135.5" y="38" width="111" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ymf-c9-9Fl" firstAttribute="centerX" secondItem="zsi-NK-nzl" secondAttribute="centerX" id="IaR-cn-nmk"/>
+                                                    <constraint firstItem="ndf-h5-n4Z" firstAttribute="top" secondItem="zsi-NK-nzl" secondAttribute="top" constant="10" id="L9R-Je-7mx"/>
+                                                    <constraint firstItem="ymf-c9-9Fl" firstAttribute="top" secondItem="ndf-h5-n4Z" secondAttribute="bottom" constant="8" id="MeS-VT-hsT"/>
+                                                    <constraint firstItem="ndf-h5-n4Z" firstAttribute="centerX" secondItem="zsi-NK-nzl" secondAttribute="centerX" id="YGX-Zf-nMW"/>
+                                                    <constraint firstAttribute="height" constant="67" id="qYv-Du-K3g"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="J30-Zm-Qnz">
                                                 <rect key="frame" x="0.0" y="136" width="414" height="864"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
@@ -55,13 +81,16 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="6Lr-rL-qTo" firstAttribute="top" secondItem="Xso-be-45W" secondAttribute="top" constant="88" id="49g-29-cap"/>
-                                            <constraint firstAttribute="trailing" secondItem="uEr-Pw-USt" secondAttribute="trailing" id="A4a-8T-y80"/>
                                             <constraint firstItem="6Lr-rL-qTo" firstAttribute="leading" secondItem="Xso-be-45W" secondAttribute="leading" id="MEa-dm-6sR"/>
-                                            <constraint firstAttribute="bottom" secondItem="uEr-Pw-USt" secondAttribute="bottom" id="ULf-Fq-vQL"/>
+                                            <constraint firstAttribute="trailing" secondItem="J30-Zm-Qnz" secondAttribute="trailing" id="PD9-ww-Leh"/>
+                                            <constraint firstAttribute="bottom" secondItem="J30-Zm-Qnz" secondAttribute="bottom" id="Qa5-7u-eDF"/>
+                                            <constraint firstAttribute="trailing" secondItem="zsi-NK-nzl" secondAttribute="trailing" constant="16" id="S1S-8G-k5i"/>
+                                            <constraint firstItem="J30-Zm-Qnz" firstAttribute="top" secondItem="6Lr-rL-qTo" secondAttribute="bottom" constant="16" id="TqR-PX-cx8"/>
+                                            <constraint firstItem="zsi-NK-nzl" firstAttribute="leading" secondItem="Xso-be-45W" secondAttribute="leading" constant="16" id="UOi-Y3-FeM"/>
                                             <constraint firstAttribute="trailing" secondItem="6Lr-rL-qTo" secondAttribute="trailing" id="c9X-Y6-nJk"/>
                                             <constraint firstAttribute="height" constant="1000" id="d2g-Zy-OK6"/>
-                                            <constraint firstItem="uEr-Pw-USt" firstAttribute="leading" secondItem="Xso-be-45W" secondAttribute="leading" id="msF-NN-rrW"/>
-                                            <constraint firstItem="uEr-Pw-USt" firstAttribute="top" secondItem="6Lr-rL-qTo" secondAttribute="bottom" constant="16" id="uKm-nM-csj"/>
+                                            <constraint firstItem="J30-Zm-Qnz" firstAttribute="leading" secondItem="Xso-be-45W" secondAttribute="leading" id="iag-oB-Vrw"/>
+                                            <constraint firstItem="zsi-NK-nzl" firstAttribute="top" secondItem="6Lr-rL-qTo" secondAttribute="bottom" constant="16" id="t2M-5I-Vow"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -86,10 +115,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertTitle" destination="ymf-c9-9Fl" id="nCU-dD-ZaO"/>
+                        <outlet property="emptyView" destination="zsi-NK-nzl" id="re0-mh-hhq"/>
                         <outlet property="entireHeight" destination="d2g-Zy-OK6" id="QKU-7S-U5H"/>
                         <outlet property="keywordCV" destination="6Lr-rL-qTo" id="uV3-tZ-jsu"/>
                         <outlet property="keywordScrollView" destination="pwh-dv-X41" id="gpl-JT-ToZ"/>
-                        <outlet property="postTV" destination="uEr-Pw-USt" id="mFU-s0-d2b"/>
+                        <outlet property="postTV" destination="J30-Zm-Qnz" id="ylo-1m-SUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,6 +129,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icLifestyleInfo1" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

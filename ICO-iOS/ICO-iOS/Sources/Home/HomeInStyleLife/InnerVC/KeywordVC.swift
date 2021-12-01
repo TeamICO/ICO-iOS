@@ -20,6 +20,9 @@ class KeywordVC: UIViewController {
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
     var serverArray: [Int] = []
     
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var alertTitle: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
         fetchData(Index: clickIdx)
     }
@@ -32,7 +35,9 @@ class KeywordVC: UIViewController {
         keywordCV.dataSource = self
         keywordCV.contentInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         keywordScrollView.delegate = self
-       //setUI()
+        emptyView.isHidden = false
+        postTV.isHidden = true
+        setEmpty()
     }
 
     func setTV(){
@@ -44,6 +49,14 @@ class KeywordVC: UIViewController {
         keywordCV.register(UINib(nibName: "KeywordCVC", bundle: nil), forCellWithReuseIdentifier: "KeywordCVC")
         postTV.register(UINib(nibName: "RecentTVC", bundle: nil), forCellReuseIdentifier: "RecentTVC")
         postTV.register(UINib(nibName: "EmptyKeywordTVC", bundle: nil), forCellReuseIdentifier: "EmptyKeywordTVC")
+    }
+    
+    func setEmpty(){
+        alertTitle.textColor = UIColor.alertsInfo
+        alertTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 12)
+        emptyView.layer.cornerRadius = 8
+        emptyView.layer.borderWidth = 1
+        emptyView.layer.borderColor = UIColor.primaryBlack20.cgColor
     }
     
 
@@ -144,6 +157,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
                 //hidden.isHidden = false
             }else{
                 postTV.isHidden = false
+                emptyView.isHidden = true
                 //hidden.isHidden = true
             }
         }

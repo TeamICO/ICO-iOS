@@ -36,6 +36,7 @@ class PopularVC: UIViewController {
         registerXib()
         fetchData()
         popularScrollView.delegate = self
+        popularIcoCV.contentInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 5)
         // Do any additional setup after loading the view.
     }
     
