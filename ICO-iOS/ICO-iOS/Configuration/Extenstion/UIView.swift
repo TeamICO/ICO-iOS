@@ -36,6 +36,7 @@ extension UIView {
         gradient.endPoint = CGPoint(x: 0.7, y: 0.0)
         gradient.frame = self.bounds
         self.layer.addSublayer(gradient)
+        
     }
     func setVerticalGradient(color1 : UIColor, color2 : UIColor){
         let gradient : CAGradientLayer = CAGradientLayer()
