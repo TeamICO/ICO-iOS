@@ -19,14 +19,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_styleshot_sample03" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-eU-ID6">
-                        <rect key="frame" x="11" y="0.0" width="85" height="85"/>
+                        <rect key="frame" x="13" y="0.0" width="83" height="83"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="85" id="1PZ-cy-xKW"/>
-                            <constraint firstAttribute="width" constant="85" id="63b-DR-LQ5"/>
+                            <constraint firstAttribute="height" constant="83" id="1PZ-cy-xKW"/>
+                            <constraint firstAttribute="width" constant="83" id="63b-DR-LQ5"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mU-ME-PVR">
-                        <rect key="frame" x="38" y="95" width="31.5" height="17"/>
+                        <rect key="frame" x="39" y="93" width="31.5" height="17"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
