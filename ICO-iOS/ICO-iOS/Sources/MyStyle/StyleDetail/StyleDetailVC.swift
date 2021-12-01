@@ -59,6 +59,8 @@ class StyleDetailVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toDetailProfile))
         userImage.addGestureRecognizer(tapGesture)
         userImage.isUserInteractionEnabled =  true
+        
+        setUpGesture()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -203,12 +205,20 @@ class StyleDetailVC: UIViewController {
         }
     }
     
+    @objc func viewDidTap(_ sender: UITapGestureRecognizer){
+        if let mainurl = url{
+            let serviceSafriView: SFSafariViewController = SFSafariViewController(url: mainurl as! URL)
+            self.present(serviceSafriView, animated: true, completion: nil)
+        }else{
+            urlBackView.isUserInteractionEnabled = false
+        }
+    }
     
-    @IBAction func toProductUrl(_ sender: Any) {
-        let serviceSafriView: SFSafariViewController = SFSafariViewController(url: url! as URL)
-        self.present(serviceSafriView, animated: true, completion: nil)
-    }   
-    
+    func setUpGesture(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewDidTap(_:)))
+        urlBackView.addGestureRecognizer(tapGesture)
+        urlBackView.isUserInteractionEnabled = true
+    }
     
     @objc func toDetailProfile(){
         let profileSB = UIStoryboard(name: "PopularIco", bundle: nil)
