@@ -36,6 +36,7 @@ class KeywordCVC: UICollectionViewCell {
         didSet{
             if isSelected{
                 colorView.backgroundColor = UIColor.gradient012
+                //colorView.addGradientBackground(firstColor: UIColor.gradient01, secondColor: UIColor.gradient012)
                 keywordTitle.textColor = UIColor.white
                 keywordTitle.font = UIFont.init(name: "AppleSDGothicNeo-Semibold", size: 14)
                 delegate?.didTapSort(sortedIdx: sortedIdx)

@@ -34,7 +34,9 @@ class KeywordVC: UIViewController {
         keywordCV.delegate = self
         keywordCV.dataSource = self
         keywordCV.contentInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        keywordCV.allowsMultipleSelection = true
         keywordScrollView.delegate = self
+        //처음 초기 세팅, 안내창 나오게 하고 키워드별 게시물 안나오도록
         emptyView.isHidden = false
         postTV.isHidden = true
         setEmpty()
@@ -73,6 +75,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         keywordCell.delegate = self
         keywordCell.sortedIdx = indexPath.row
+        
         
         if indexPath.row == 0{
             keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-upcycling")
@@ -143,47 +146,42 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //serverArray.append(indexPath.row)
         //var stringArray = serverArray.map { String($0) }
         //var string = stringArray.split(separator: ",")
         fetchData(Index: indexPath.row + 1)
         clickIdx = indexPath.row + 1
-        for _ in 0...6{
-           let keywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeywordCVC", for: indexPath)as? KeywordCVC
+
+        guard var keywordCell = collectionView.cellForItem(at: indexPath) as? KeywordCVC else{
+            fatalError()
+        }
             
-            guard let keywordCell = keywordCell else {return}
+        if keywordCell.isSelected == false{
+            postTV.isHidden = true
+            emptyView.isHidden = false
+        }else{
+            postTV.isHidden = false
+            emptyView.isHidden = true
+        }
             
-            
-            if keywordCell.isSelected == false{
-                postTV.isHidden = true
-            }else{
-                postTV.isHidden = false
-                emptyView.isHidden = true
-            }
-            keywordCell.isSelected = !keywordCell.isSelected
+        print("키워드 셀 선택")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        guard var keywordCell = collectionView.cellForItem(at: indexPath) as? KeywordCVC else{
+                   fatalError()
         }
         
+        for indexPath in 0...6{
+            
+        }
+      
+        print("셀 선택 해제")
     }
 
-    /*
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        var cell = collectionView.cellForItem(at: indexPath)as? KeywordCVC
-        if ((cell?.isSelected) != nil){
-            cell?.colorView.backgroundColor = UIColor.coGreen70
-            cell?.keywordTitle.textColor = UIColor.white
-        }
-        //print(cell?.isSelected)
-        
-    }
-     */
-    /*
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath)as? KeywordCVC{
-            cell.colorView.backgroundColor = UIColor.clear
-        }
-    }*/
+
 }
 
     
@@ -270,11 +268,7 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
             cell.heartBtn.setImage(UIImage(named: "icHeartClick1"), for: .normal)
             cell.isliked = true
         }
-        
-        /*
-        guard let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyKeywordTVC", for: indexPath) as? EmptyKeywordTVC else {return}
-        
-        return emptyCell*/
+
         cell.delegate = self
 
         return cell
