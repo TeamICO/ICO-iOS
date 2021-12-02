@@ -74,6 +74,7 @@
 		E91788182748BECB008B621B /* ServiceTermVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91788172748BECB008B621B /* ServiceTermVC.swift */; };
 		E917881A2748BEDB008B621B /* ServiceTermSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91788192748BEDB008B621B /* ServiceTermSB.storyboard */; };
 		E9258F6C275765BE00F3113E /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9258F6B275765BE00F3113E /* CustomAlert.swift */; };
+		E92FA5D6275903A600F1694A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92FA5D5275903A600F1694A /* NetworkManager.swift */; };
 		E9341FF2274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9341FF0274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift */; };
 		E9341FF3274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9341FF1274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib */; };
 		E9378D672737ADB500C589A1 /* UserRatingsSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9378D662737ADB500C589A1 /* UserRatingsSV.swift */; };
@@ -322,6 +323,7 @@
 		E91788172748BECB008B621B /* ServiceTermVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermVC.swift; sourceTree = "<group>"; };
 		E91788192748BEDB008B621B /* ServiceTermSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceTermSB.storyboard; sourceTree = "<group>"; };
 		E9258F6B275765BE00F3113E /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		E92FA5D5275903A600F1694A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E92FB4D1273914A200FBB420 /* ICO-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ICO-iOS.entitlements"; sourceTree = "<group>"; };
 		E9341FF0274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNoneMyRecentStyleShotCVC.swift; sourceTree = "<group>"; };
 		E9341FF1274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageNoneMyRecentStyleShotCVC.xib; sourceTree = "<group>"; };
@@ -1370,6 +1372,7 @@
 				E99A3B70274147410073ED09 /* EcoKeyWordType.swift */,
 				E94613A32743B7A700A5F7C2 /* CommonResponse.swift */,
 				E9EE0DB7274A717600567FCE /* IPhoneDeviceGroup.swift */,
+				E92FA5D5275903A600F1694A /* NetworkManager.swift */,
 				E9258F6B275765BE00F3113E /* CustomAlert.swift */,
 				E90511F2274F3C70002B1574 /* CustomPopup */,
 			);
@@ -1874,6 +1877,7 @@
 				E998C249273275D500E1F8D0 /* BasePaddingLabel.swift in Sources */,
 				E9E49920273BAC020001ACFB /* SettingAlarmVC.swift in Sources */,
 				E94613A92743DDD200A5F7C2 /* ProfileManager.swift in Sources */,
+				E92FA5D6275903A600F1694A /* NetworkManager.swift in Sources */,
 				E9C30DFC27460B54000B1592 /* SearchResultCollectionViewCellCVC.swift in Sources */,
 				E9B5D3AB274CC9E2002D965B /* KeywordContentsModel.swift in Sources */,
 				E96DB3012744A9CF00659256 /* BaseManager.swift in Sources */,
