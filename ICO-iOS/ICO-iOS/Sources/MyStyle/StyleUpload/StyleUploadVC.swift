@@ -32,6 +32,7 @@ class StyleUploadVC: UIViewController {
     @IBOutlet var ecoLevel: [UIButton]!
     @IBOutlet weak var ecoLevelScore: UILabel!
     @IBOutlet weak var navigationTitle: UILabel!
+    var serverEcoScore : Int = 0
     @IBOutlet var levelTitle: [UILabel]!
     @IBOutlet var mainTitle: [UILabel]!
     @IBOutlet var urlTitle: [UILabel]!
@@ -325,8 +326,10 @@ class StyleUploadVC: UIViewController {
         ecoLevel[0].isSelected = !ecoLevel[0].isSelected
         if ecoLevel[0].isSelected{
             ecoLevelScore.text = "\(1).0"
+            serverEcoScore = 1
         }else{
             ecoLevelScore.text = "\(0).0"
+            serverEcoScore = 0
             ecoLevel[0].isSelected = false
             ecoLevel[1].isSelected = false
             ecoLevel[2].isSelected = false
@@ -340,8 +343,10 @@ class StyleUploadVC: UIViewController {
         if ecoLevel[1].isSelected{
             ecoLevelScore.text = "\(2).0"
             ecoLevel[0].isSelected = true
+            serverEcoScore = 2
         }else{
             ecoLevelScore.text = "\(1).0"
+            serverEcoScore = 1
             ecoLevel[1].isSelected = false
             ecoLevel[2].isSelected = false
             ecoLevel[3].isSelected = false
@@ -355,11 +360,13 @@ class StyleUploadVC: UIViewController {
             ecoLevelScore.text = "\(3).0"
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
+            serverEcoScore = 3
         }else{
             ecoLevelScore.text = "\(2).0"
             ecoLevel[2].isSelected = false
             ecoLevel[3].isSelected = false
             ecoLevel[4].isSelected = false
+            serverEcoScore = 2
         }
     }
     
@@ -370,10 +377,12 @@ class StyleUploadVC: UIViewController {
             ecoLevel[2].isSelected = true
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
+            serverEcoScore = 4
         }else{
             ecoLevelScore.text = "\(3).0"
             ecoLevel[3].isSelected = false
             ecoLevel[4].isSelected = false
+            serverEcoScore = 3
         }
     }
     
@@ -386,9 +395,11 @@ class StyleUploadVC: UIViewController {
             ecoLevel[2].isSelected = true
             ecoLevel[1].isSelected = true
             ecoLevel[0].isSelected = true
+            serverEcoScore = 5
         }else{
             ecoLevelScore.text = "\(4).0"
             ecoLevel[4].isSelected = false
+            serverEcoScore = 4
         }
     }
     
@@ -421,10 +432,17 @@ class StyleUploadVC: UIViewController {
     
     @IBAction func styleUploadBtn(_ sender: Any) {
         checkEco(select: numberList)
-        let ecoScore = UInt(self.ecoLevelScore.text!)
-        let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: Int(ecoScore ?? 0), purpleDescription: memoTextView.text!, hashtag: hashTagArr)
+       
+        let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: serverEcoScore, purpleDescription: memoTextView.text!, hashtag: hashTagArr)
+        print(serverEcoScore)
         StyleUploadDataManager().styleUpload(styleUploadRequest, self)
         self.navigationController?.popViewController(animated: true)
+        if isFix == true{
+            let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: serverEcoScore, purpleDescription: memoTextView.text!, hashtag: hashTagArr)
+            StyleUploadDataManager().styleUpload(styleUploadRequest, self)
+            self.navigationController?.popViewController(animated: true)
+            print("수정 업로드 서버통신 완료!")
+        }
     }
     
 }
@@ -552,7 +570,7 @@ extension StyleUploadVC{
 
 extension StyleUploadVC{
     func didSuccessStyleUpload(message: String,code: Int){
-        
+        print(message)
     }
     
     func didSuccessEditStyle(message: String){
@@ -563,8 +581,6 @@ extension StyleUploadVC{
         self.ecoLevelScore.text = "\(StyleDetailData?.point ?? 0).0"
         uploadSetEcoLevel()
         setFixStyleShot()
-        print(StyleDetailData?.category)
-        print(StyleDetailData?.hashtag)
     }
     
     func setFixStyleShot(){
