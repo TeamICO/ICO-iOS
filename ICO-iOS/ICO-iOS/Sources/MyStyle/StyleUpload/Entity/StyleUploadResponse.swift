@@ -18,7 +18,7 @@ struct StyleUploadResponse: Codable {
 
 // MARK: - UploadResult
 struct UploadResult: Codable {
-    let styleshotIdx: Int
+    let styleshotIdx, levelUp: Int
 }
 
 

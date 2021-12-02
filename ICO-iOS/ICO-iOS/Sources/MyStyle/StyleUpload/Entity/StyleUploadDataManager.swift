@@ -16,7 +16,7 @@ class StyleUploadDataManager{
                 switch response.result{
                     case .success(let response):
                        viewcontroller.didSuccessStyleUpload(message: response.message,code: response.code)
-
+                        print("스타일샷 업로드 서버통신")
                     case .failure(let error):
                         print(error.localizedDescription)
                        
