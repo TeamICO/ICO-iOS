@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyStyleVC: BaseViewController {
+class MyStyleVC: BaseViewController{
     
     var isStart = false
     
@@ -38,11 +38,17 @@ class MyStyleVC: BaseViewController {
     @IBOutlet weak var lineView: UIView!
     
     @IBOutlet weak var topView: UIView!
+    
+    
+    @IBOutlet weak var myStyleScrollView: UIScrollView!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
         fetchData()
         self.tabBarController?.tabBar.isHidden = false
+       
     }
     
     override func viewDidLoad() {
@@ -55,7 +61,8 @@ class MyStyleVC: BaseViewController {
         setLikeViewTapGesture()
         categoryCV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
         fetchData()
-        // Do any additional setup after loading the view.
+    
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

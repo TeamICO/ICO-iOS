@@ -387,6 +387,7 @@
                         <outlet property="likeNum" destination="1O9-SH-Ejz" id="m7V-FK-luO"/>
                         <outlet property="likeView" destination="PSv-Am-0RD" id="HcY-DV-RWi"/>
                         <outlet property="lineView" destination="nOU-gL-V7i" id="CFf-qq-xaE"/>
+                        <outlet property="myStyleScrollView" destination="Y0K-fL-sif" id="nNg-qT-Rg1"/>
                         <outlet property="name" destination="luo-L3-Q4f" id="hb1-vU-8OX"/>
                         <outlet property="navigationTitle" destination="eaU-Mh-qCm" id="PrK-pC-ZIf"/>
                         <outlet property="profileImage" destination="Ha8-eq-cRY" id="abx-9V-px4"/>

@@ -434,15 +434,18 @@ class StyleUploadVC: UIViewController {
         checkEco(select: numberList)
        
         let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: serverEcoScore, purpleDescription: memoTextView.text!, hashtag: hashTagArr)
-        print(serverEcoScore)
         StyleUploadDataManager().styleUpload(styleUploadRequest, self)
         self.navigationController?.popViewController(animated: true)
+        /*
         if isFix == true{
             let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: serverEcoScore, purpleDescription: memoTextView.text!, hashtag: hashTagArr)
-            StyleUploadDataManager().styleUpload(styleUploadRequest, self)
+            StyleUploadDataManager().styleEdit(self, styleShotIdx: styleIndex ?? 0)
+            print("00000000000")
+            print(urlTextField[1].text)
+            print(selectedContentImage ?? "")
             self.navigationController?.popViewController(animated: true)
             print("수정 업로드 서버통신 완료!")
-        }
+        }*/
     }
     
 }
