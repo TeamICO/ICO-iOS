@@ -94,8 +94,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="oCS-IE-aZ0"/>
                                 </constraints>
-                                <vibrancyEffect>
-                                    <blurEffect style="light"/>
+                                <vibrancyEffect style="fill">
+                                    <blurEffect style="regular"/>
                                 </vibrancyEffect>
                             </visualEffectView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-ke-dME">
