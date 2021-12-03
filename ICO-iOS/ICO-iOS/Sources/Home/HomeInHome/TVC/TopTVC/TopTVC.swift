@@ -53,7 +53,7 @@ class TopTVC: UITableViewCell {
         
         pageControlConfigure()
         collectionViewConfigure()
-//        bannerTimer()
+        bannerTimer()
         setTapGesture()
     }
 
@@ -168,7 +168,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = (Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)) ) % 3
-        
+        nowPage = Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width))
         if isInfinity {
             if cellItemsWidth == 0.0 {
                 cellItemsWidth = floor(scrollView.contentSize.width / 3.0)
