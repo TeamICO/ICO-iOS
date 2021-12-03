@@ -161,6 +161,7 @@ extension HomeVC : UITabBarControllerDelegate{
         
         if tabBarController.selectedIndex == 0 {
             if isFirst{
+                isState = .home
                 isFirst = false
             }else{
                 isState = isState == .home ? .lifeStyle : .home
