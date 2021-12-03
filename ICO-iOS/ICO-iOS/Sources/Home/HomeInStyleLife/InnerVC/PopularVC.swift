@@ -83,6 +83,9 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource, UIScrollViewDe
         cell.selectionStyle = .none
         cell.mainImage.setImage(with: popularServerData[indexPath.row].imageURL)
         cell.userImage.setImage(with: popularServerData[indexPath.row].profileURL)
+        if popularServerData[indexPath.row].profileURL == ""{
+            cell.userImage.image = UIImage(named: "img_profile_default")
+        }
         cell.nameLabel.text = "\(popularServerData[indexPath.row].nickname)"
         var score1  = popularServerData[indexPath.row].point
         cell.score.text = "\(score1).0"

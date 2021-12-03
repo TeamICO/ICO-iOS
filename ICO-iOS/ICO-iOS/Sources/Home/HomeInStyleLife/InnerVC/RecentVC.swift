@@ -75,6 +75,9 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
         
         cell.mainImage.setImage(with: serverData[indexPath.row].imageURL)
         cell.userImage.setImage(with: serverData[indexPath.row].profileURL)
+        if serverData[indexPath.row].profileURL == ""{
+            cell.userImage.image = UIImage(named: "img_profile_default")
+        }
         cell.productName.text = serverData[indexPath.row].productName
         cell.nameLabel.text = "\(serverData[indexPath.row].nickname)"
         var score1  = serverData[indexPath.row].point
