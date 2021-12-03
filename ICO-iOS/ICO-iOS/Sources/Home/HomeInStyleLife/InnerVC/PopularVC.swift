@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class PopularVC: UIViewController {
+class PopularVC: UIViewController,UITabBarControllerDelegate {
     
     var isStart = false
     
@@ -36,8 +36,8 @@ class PopularVC: UIViewController {
         registerXib()
         fetchData()
         popularScrollView.delegate = self
-        popularIcoCV.contentInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 5)
-        // Do any additional setup after loading the view.
+        popularIcoCV.contentInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 15)
+        self.tabBarController?.delegate = self
     }
     
     func registerXib(){
@@ -56,6 +56,16 @@ class PopularVC: UIViewController {
         
         popularLabel.text = "지금 인기있는 아이코"
         popularLabel.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 20)
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+
+        let tabBarIndex = tabBarController.selectedIndex
+        print(tabBarIndex)
+
+        if tabBarIndex == 0 {
+            self.popularScrollView.setContentOffset(CGPoint.zero, animated: true)
+        }
     }
 
 }

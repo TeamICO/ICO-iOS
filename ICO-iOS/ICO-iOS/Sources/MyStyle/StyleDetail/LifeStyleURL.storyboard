@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Life Style URLVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="LifeStyleURLVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustAirplane" translatesAutoresizingMaskIntoConstraints="NO" id="YjO-w4-2WG">
+                                <rect key="frame" x="157" y="270" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="C9T-VD-Kzv"/>
+                                    <constraint firstAttribute="width" constant="100" id="UMb-e3-uNc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9g-44-W3v">
+                                <rect key="frame" x="73" y="394" width="268" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="해당 제품의 URL로 이동 중입니다.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAm-BD-rO9">
+                                <rect key="frame" x="0.0" y="468" width="414" height="116"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLifestyleInfo1" translatesAutoresizingMaskIntoConstraints="NO" id="JHu-uD-fS7">
+                                        <rect key="frame" x="197" y="12" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Zyv-dA-Niq"/>
+                                            <constraint firstAttribute="width" constant="20" id="rrO-Z2-4je"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOW-PN-ySR">
+                                        <rect key="frame" x="191.5" y="44" width="31.5" height="17"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="AppleSDGothicNeo-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647958989999994" green="0.98435252900000003" blue="0.98040050270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="xOW-PN-ySR" firstAttribute="centerX" secondItem="hAm-BD-rO9" secondAttribute="centerX" id="0is-9r-Woy"/>
+                                    <constraint firstItem="JHu-uD-fS7" firstAttribute="top" secondItem="hAm-BD-rO9" secondAttribute="top" constant="12" id="3He-AB-Owb"/>
+                                    <constraint firstAttribute="height" constant="116" id="9MF-qH-2cu"/>
+                                    <constraint firstItem="JHu-uD-fS7" firstAttribute="centerX" secondItem="hAm-BD-rO9" secondAttribute="centerX" id="9m1-Cj-AKC"/>
+                                    <constraint firstItem="xOW-PN-ySR" firstAttribute="top" secondItem="JHu-uD-fS7" secondAttribute="bottom" constant="12" id="nU6-vw-vbW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="J9g-44-W3v" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1Ys-SE-bMh"/>
+                            <constraint firstItem="YjO-w4-2WG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Ipc-qU-poa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hAm-BD-rO9" secondAttribute="trailing" id="Llz-x1-FpV"/>
+                            <constraint firstItem="J9g-44-W3v" firstAttribute="top" secondItem="YjO-w4-2WG" secondAttribute="bottom" constant="24" id="fQ0-Bg-qbf"/>
+                            <constraint firstItem="YjO-w4-2WG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="226" id="g5S-38-9MV"/>
+                            <constraint firstItem="hAm-BD-rO9" firstAttribute="top" secondItem="J9g-44-W3v" secondAttribute="bottom" constant="50" id="hOQ-oD-IFt"/>
+                            <constraint firstItem="hAm-BD-rO9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="n5u-bk-Czx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="xOW-PN-ySR" id="Wk6-ra-lyG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icLifestyleInfo1" width="20" height="20"/>
+        <image name="illustAirplane" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

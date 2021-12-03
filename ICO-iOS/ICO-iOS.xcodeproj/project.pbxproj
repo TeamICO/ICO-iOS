@@ -38,6 +38,8 @@
 		71A9688E273C283C003AF0A9 /* KeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71A9688C273C283C003AF0A9 /* KeywordCVC.xib */; };
 		71C7FA052739704C00C30BB8 /* PopularIcoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */; };
 		71C7FA062739704C00C30BB8 /* PopularIcoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */; };
+		71CC2DA92759FE13004EE24F /* LifeStyleURLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CC2DA82759FE13004EE24F /* LifeStyleURLVC.swift */; };
+		71CC2DAB2759FE2A004EE24F /* LifeStyleURL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71CC2DAA2759FE2A004EE24F /* LifeStyleURL.storyboard */; };
 		71DB5CA92748BDC60073D76F /* StyleReportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DB5CA82748BDC60073D76F /* StyleReportRequest.swift */; };
 		71DD7DF92747F95B00D64236 /* StyleDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */; };
 		71DD7DFB2747F96D00D64236 /* StyleDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */; };
@@ -286,6 +288,8 @@
 		71A9688C273C283C003AF0A9 /* KeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCVC.xib; sourceTree = "<group>"; };
 		71C7FA032739704C00C30BB8 /* PopularIcoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIcoCVC.swift; sourceTree = "<group>"; };
 		71C7FA042739704C00C30BB8 /* PopularIcoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularIcoCVC.xib; sourceTree = "<group>"; };
+		71CC2DA82759FE13004EE24F /* LifeStyleURLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStyleURLVC.swift; sourceTree = "<group>"; };
+		71CC2DAA2759FE2A004EE24F /* LifeStyleURL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LifeStyleURL.storyboard; sourceTree = "<group>"; };
 		71DB5CA82748BDC60073D76F /* StyleReportRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleReportRequest.swift; sourceTree = "<group>"; };
 		71DD7DF82747F95B00D64236 /* StyleDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailResponse.swift; sourceTree = "<group>"; };
 		71DD7DFA2747F96D00D64236 /* StyleDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDetailDataManager.swift; sourceTree = "<group>"; };
@@ -587,6 +591,8 @@
 				71DD7DF72747F92D00D64236 /* Entity */,
 				717CB5132743B57C0044E227 /* StyleDetailVC.swift */,
 				717CB5152743B5900044E227 /* StyleDetail.storyboard */,
+				71CC2DA82759FE13004EE24F /* LifeStyleURLVC.swift */,
+				71CC2DAA2759FE2A004EE24F /* LifeStyleURL.storyboard */,
 			);
 			path = StyleDetail;
 			sourceTree = "<group>";
@@ -1702,6 +1708,7 @@
 				714F32BB273BE7D0007324BC /* StyleUpload.storyboard in Resources */,
 				E97D4372273D2C8200BB374F /* ProfileUserIntroductionTVC.xib in Resources */,
 				E9E49942273BD5920001ACFB /* UserAlarmSettingTVC.xib in Resources */,
+				71CC2DAB2759FE2A004EE24F /* LifeStyleURL.storyboard in Resources */,
 				71E6E28C273A6F0B00DB9E0B /* PopularIco.storyboard in Resources */,
 				E97D436E273D2C7800BB374F /* ProfileUserInfoTVC.xib in Resources */,
 				714F32B6273BE788007324BC /* ProfileSetting.storyboard in Resources */,
@@ -1956,6 +1963,7 @@
 				E9AF840C273B831200D77D5F /* MypageMyRecentStyleShotCVC.swift in Sources */,
 				E9B5D39D274C9ECD002D965B /* KeywordContentsVC.swift in Sources */,
 				E9CAF1AF2731694E008F749B /* BaseViewController.swift in Sources */,
+				71CC2DA92759FE13004EE24F /* LifeStyleURLVC.swift in Sources */,
 				E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */,
 				E9E49941273BD5920001ACFB /* UserAlarmSettingTVC.swift in Sources */,
 				E951CE5F273A65EF002799D6 /* BaseCustomTB.swift in Sources */,
