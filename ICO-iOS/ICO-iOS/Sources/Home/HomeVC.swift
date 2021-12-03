@@ -25,7 +25,7 @@ class HomeVC: BaseViewController{
     
     @IBOutlet weak var topView: UIView!
     
-    var canScroll = false
+    var isFirst = true
     
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     
@@ -43,7 +43,7 @@ class HomeVC: BaseViewController{
                 scrollView.setContentOffset(CGPoint(x: viewSizeWidth, y: 0.0), animated: true)
                 homeButton.tintColor = .lightGray
                 lifeStyleButton.tintColor  = UIColor.appColor(.customGreen)
-                
+              
                 break
             }
         }
@@ -67,6 +67,10 @@ class HomeVC: BaseViewController{
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        isFirst = true
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -156,7 +160,14 @@ extension HomeVC : UITabBarControllerDelegate{
         
         
         if tabBarController.selectedIndex == 0 {
-            isState = isState == .home ? .lifeStyle : .home
+            if isFirst{
+                isFirst = false
+            }else{
+                isState = isState == .home ? .lifeStyle : .home
+            }
+            
+            
+            
         }
     }
     
