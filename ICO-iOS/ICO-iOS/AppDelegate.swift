@@ -57,9 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func checkUser(){
         if let jwtToken = UserDefaults.standard.string(forKey: "jwtToken"){
             
-            BaseManager.shared.getUserIdx(jwtToken: jwtToken) { response in
-                
-            }
+//            BaseManager.shared.getUserIdx(jwtToken: jwtToken) { response in
+//
+//            }
         }
     }
     
