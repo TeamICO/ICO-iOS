@@ -23,9 +23,10 @@ class TopTVC: UITableViewCell {
     weak var delegate : TopTVCDelegate?
     
     var topBannerModel = [HomeInHomeTopBanner]()
-    
+    var pageCount = 0
     var nowPage: Int = 0
-    
+    var isInfinity = true
+    var cellItemsWidth: CGFloat = 0.0
     let keywordContentsImages = ["illust-product-vegan",
                                  "illust-styleshot-upcycling",
                                  "illust-styleshot-zerowaste"]
@@ -52,9 +53,10 @@ class TopTVC: UITableViewCell {
         
         pageControlConfigure()
         collectionViewConfigure()
-        bannerTimer()
+//        bannerTimer()
         setTapGesture()
     }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -64,6 +66,7 @@ class TopTVC: UITableViewCell {
 
     func getData(data : [HomeInHomeTopBanner]){
         self.topBannerModel = data
+        pageCount = data.count
         
         bannerCollectionView.reloadData()
     }
@@ -97,7 +100,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case self.collectionView : return 3
-        case self.bannerCollectionView : return topBannerModel.count
+        case self.bannerCollectionView : return isInfinity ? pageCount * 3 : pageCount
         default : return 3
         }
         
@@ -113,7 +116,8 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             return cell
         case self.bannerCollectionView :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCVC.identifier, for: indexPath) as! TopBannerCVC
-            cell.bannerImage.setImage(with: topBannerModel[indexPath.row].imageURL)
+            let fixedIndex = isInfinity ? indexPath.row % pageCount : indexPath.row
+            cell.bannerImage.setImage(with: topBannerModel[fixedIndex].imageURL)
 //            cell.delegate = self
             return cell
         default : return UICollectionViewCell()
@@ -126,7 +130,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         if collectionView == self.collectionView{
             delegate?.didTapKeywordContents(index: indexPath.row)
         }else if collectionView == self.bannerCollectionView{
-            delegate?.didTapBannerView(index: topBannerModel[indexPath.row].content)
+            delegate?.didTapBannerView(index: topBannerModel[indexPath.row % topBannerModel.count].content)
         }
         
     }
@@ -163,11 +167,21 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = (Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)) ) % 3
         
-        pageControl.currentPage = Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width))
+        if isInfinity {
+            if cellItemsWidth == 0.0 {
+                cellItemsWidth = floor(scrollView.contentSize.width / 3.0)
+            }
+            if (scrollView.contentOffset.x <= 0.0) || (scrollView.contentOffset.x > cellItemsWidth * 2.0) {
+                scrollView.contentOffset.x = cellItemsWidth
+            }
+        }
         
-        nowPage =  Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width))
     }
+    
+    
+
 }
 // MARK: - PageControl Configure
 extension TopTVC {
@@ -190,13 +204,7 @@ extension TopTVC {
     }
     // 배너 움직이는 매서드
     func bannerMove() {
-        // 현재페이지가 마지막 페이지일 경우
-        if nowPage == topBannerModel.count-1 {
-            // 맨 처음 페이지로 돌아감
-            bannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
-            nowPage = 0
-            return
-        }
+        
         // 다음 페이지로 전환
         nowPage += 1
         bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
