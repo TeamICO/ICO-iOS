@@ -7,11 +7,15 @@
 
 import UIKit
 
+
 class HomeInHomeVC: BaseViewController {
     // MARK: - Properties
 
-    @IBOutlet weak var tableView: UITableView!
+    var canScroll = false
     
+    
+    @IBOutlet weak var tableView: UITableView!
+
     private var topBannerModel = [HomeInHomeTopBanner]()
     private var senseStyleShotModel = [HomeInHomeSenseStyleshot]()
     private var brandModel : HomeInHomeBrand?
@@ -27,6 +31,9 @@ class HomeInHomeVC: BaseViewController {
         self.fetchData()
         self.tableviewConfigure()
        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        canScroll = false
     }
     
   
@@ -191,9 +198,15 @@ extension HomeInHomeVC : UITableViewDelegate, UITableViewDataSource {
        
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offset = scrollView.contentOffset.y
-//        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+        let offset = scrollView.contentOffset.y
+        
+        if offset >= 100{
+           
+            
+           
+        }
     }
+    
     @objc func didTapBottomBannerView(){
         if let bottomBanner = self.bottomBanner{
             UIApplication.shared.open(URL(string: bottomBanner.contentURL)! as URL, options: [:], completionHandler: nil)

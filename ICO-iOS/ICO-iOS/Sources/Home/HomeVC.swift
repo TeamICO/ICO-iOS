@@ -25,6 +25,7 @@ class HomeVC: BaseViewController{
     
     @IBOutlet weak var topView: UIView!
     
+    var canScroll = false
     
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
     
@@ -33,12 +34,16 @@ class HomeVC: BaseViewController{
         didSet{
             switch isState{
             case .home:
+                scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
                 homeButton.tintColor = UIColor.appColor(.customGreen)
                 lifeStyleButton.tintColor  = .lightGray
+                
                 break
             case .lifeStyle:
+                scrollView.setContentOffset(CGPoint(x: viewSizeWidth, y: 0.0), animated: true)
                 homeButton.tintColor = .lightGray
                 lifeStyleButton.tintColor  = UIColor.appColor(.customGreen)
+                
                 break
             }
         }
@@ -50,7 +55,7 @@ class HomeVC: BaseViewController{
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-      
+    
     }
     
     
@@ -83,12 +88,10 @@ class HomeVC: BaseViewController{
     
     // MARK: - Selectors
     @objc func didTapHomeButton(sender: UIButton){
-        
-        scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
         isState = .home
+        
     }
     @objc func didTapLifeStyleButton(sender: UIButton){
-        scrollView.setContentOffset(CGPoint(x: viewSizeWidth, y: 0.0), animated: true)
         isState = .lifeStyle
     }
 
@@ -150,10 +153,12 @@ extension HomeVC {
 }
 extension HomeVC : UITabBarControllerDelegate{
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        
         if tabBarController.selectedIndex == 0 {
-            scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
-            isState = .home
+            isState = isState == .home ? .lifeStyle : .home
         }
     }
     
 }
+
