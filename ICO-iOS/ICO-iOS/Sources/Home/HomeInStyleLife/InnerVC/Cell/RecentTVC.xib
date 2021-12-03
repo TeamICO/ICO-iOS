@@ -24,7 +24,7 @@
                             <constraint firstAttribute="height" constant="375" id="zCQ-W3-GIZ"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-profile02" translatesAutoresizingMaskIntoConstraints="NO" id="p4A-Nj-lNI">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_profile_default" translatesAutoresizingMaskIntoConstraints="NO" id="p4A-Nj-lNI">
                         <rect key="frame" x="16" y="407" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="bRT-0G-au7"/>
@@ -255,7 +255,7 @@
     <resources>
         <image name="icClock" width="20" height="20"/>
         <image name="icHeartUnclick1" width="24" height="24"/>
-        <image name="img-profile02" width="320" height="320"/>
+        <image name="img_profile_default" width="120" height="120"/>
         <image name="img_styleshot_sample04" width="1440" height="1440"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

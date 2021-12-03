@@ -337,6 +337,9 @@ extension StyleDetailVC{
     func didSuccessStyleDetail(message: String?){
         self.productImage.setImage(with: StyleDetailData?.imageURL ?? "")
         self.userImage.setImage(with: StyleDetailData?.profileURL ?? "")
+        if StyleDetailData?.profileURL == ""{
+            self.userImage.image = UIImage(named: "img_profile_default")
+        }
         self.userName.text = StyleDetailData?.nickname
         self.productName.text = StyleDetailData?.productName
         self.heartNum.text = "\(StyleDetailData?.likeCnt ?? 0)"

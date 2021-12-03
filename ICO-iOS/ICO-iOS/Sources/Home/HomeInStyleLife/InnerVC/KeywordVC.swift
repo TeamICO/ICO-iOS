@@ -240,6 +240,9 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
         cell.mainImage.setImage(with: keywordServerData[indexPath.row].imageURL)
         cell.nameLabel.text = keywordServerData[indexPath.row].nickname
         cell.userImage.setImage(with: keywordServerData[indexPath.row].profileURL)
+        if keywordServerData[indexPath.row].profileURL == ""{
+            cell.userImage.image = UIImage(named: "img_profile_default")
+        }
         cell.detailLabel.text = keywordServerData[indexPath.row].resultDescription
         cell.heartNum.text = "\(keywordServerData[indexPath.row].likeCnt)"
         cell.productName.text = keywordServerData[indexPath.row].productName
