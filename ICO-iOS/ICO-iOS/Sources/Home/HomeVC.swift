@@ -24,7 +24,7 @@ class HomeVC: BaseViewController{
     @IBOutlet weak var alarmView: UIView!
     
     @IBOutlet weak var topView: UIView!
-    
+    var isStart = true
     var isFirst = true
     
     let viewSizeWidth : CGFloat = UIScreen.main.bounds.width
@@ -74,11 +74,15 @@ class HomeVC: BaseViewController{
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let blur = UIBlurEffect(style: .regular)
-        let blurView = UIVisualEffectView(effect: blur)
-        blurView.frame = topView.bounds
-        topView.addSubview(blurView)
-        topView.sendSubviewToBack(blurView)
+        if isStart {
+            let blur = UIBlurEffect(style: .regular)
+            let blurView = UIVisualEffectView(effect: blur)
+            blurView.frame = topView.bounds
+            topView.addSubview(blurView)
+            topView.sendSubviewToBack(blurView)
+            isStart = false
+        }
+
     }
     
     
