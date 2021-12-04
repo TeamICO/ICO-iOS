@@ -75,7 +75,7 @@ class LoginManager {
             "pushToken" : deviceToken ?? "",
             "name" : name ?? ""
         ]
-        IndicatorView.shared.showgif()
+  
         AF.request(url,
                    method: .post,
                    parameters: param,
@@ -86,7 +86,7 @@ class LoginManager {
                 switch response.result  {
                 
                 case .success(let response):
-
+                   
                     completion(response)
                     
                     

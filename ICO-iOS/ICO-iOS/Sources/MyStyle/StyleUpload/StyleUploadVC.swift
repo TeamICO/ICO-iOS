@@ -9,7 +9,7 @@ import UIKit
 import FirebaseStorage
 import Photos
 
-class StyleUploadVC: UIViewController {
+class StyleUploadVC: BaseViewController {
     
     var StyleDetailData: StyleDetailResult?
     var selectedContentImage : String?
