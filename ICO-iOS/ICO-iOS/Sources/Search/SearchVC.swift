@@ -54,6 +54,7 @@ class SearchVC: BaseViewController {
         vc.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.pushViewController(vc, animated: true)
         searchTextField.text = ""
+        searchKeywordTableView.isHidden = true
     }
     @IBAction func didTapDeleteButton(_ sender: Any) {
         searchTextField.text = ""
@@ -259,7 +260,7 @@ extension SearchVC : UITextFieldDelegate {
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.searchKeywordTableView.isHidden = true
+    
         if let text = textField.text{
             if text == ""{
                 self.presentAlert(title: "검색어를 입력해주세요.")
@@ -274,6 +275,7 @@ extension SearchVC : UITextFieldDelegate {
                 vc.navigationItem.largeTitleDisplayMode = .never
                 self.navigationController?.pushViewController(vc, animated: true)
                 searchTextField.text = ""
+                searchKeywordTableView.isHidden = true
             }
         }
         return true
