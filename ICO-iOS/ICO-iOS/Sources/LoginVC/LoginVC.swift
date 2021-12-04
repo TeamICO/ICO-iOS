@@ -194,6 +194,7 @@ extension LoginVC {
                 return
             }
             deviceToken = token
+            IndicatorView.shared.showgif()
             LoginManager.shared.registerID(name: nil,snsToken: accessToken, snsType: "naver",deviceToken: deviceToken) { response in
                 guard let jwt = response?.result.jwt,
                       let code = response?.code,
@@ -203,6 +204,7 @@ extension LoginVC {
                       }
                 IndicatorView.shared.hidegif()
                 UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                Constant.HEADER = ["X-ACCESS-TOKEN" : UserDefaults.standard.value(forKey: "jwtToken") as! String]
                 UserDefaults.standard.set(userIdx, forKey: "userIdx")
                 UserDefaults.standard.set(name, forKey: "nickname")
                         DispatchQueue.main.async {
@@ -278,7 +280,7 @@ extension LoginVC {
                 return
             }
             deviceToken = token
-            
+            IndicatorView.shared.showgif()
             LoginManager.shared.KakaoSignIn { response in
                 guard let response = response else{
                     return
@@ -293,6 +295,7 @@ extension LoginVC {
                         }
                         IndicatorView.shared.hidegif()
                         UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                        Constant.HEADER = ["X-ACCESS-TOKEN" : UserDefaults.standard.value(forKey: "jwtToken") as! String]
                         UserDefaults.standard.set(userIdx, forKey: "userIdx")
                         UserDefaults.standard.set(name, forKey: "nickname")
                         DispatchQueue.main.async {
@@ -372,6 +375,7 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
                     }else{
                         name = nil
                     }
+                    IndicatorView.shared.showgif()
                     LoginManager.shared.registerID(name : name,snsToken: tokenString, snsType: "apple",deviceToken: deviceToken) { response in
                         guard let jwt = response?.result.jwt,
                               let code = response?.code,
@@ -381,6 +385,7 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
                         }
                         IndicatorView.shared.hidegif()
                         UserDefaults.standard.set(jwt, forKey: "jwtToken")
+                        Constant.HEADER = ["X-ACCESS-TOKEN" : UserDefaults.standard.value(forKey: "jwtToken") as! String]
                         UserDefaults.standard.set(userIdx, forKey: "userIdx")
                         UserDefaults.standard.set(name, forKey: "nickname")
                         DispatchQueue.main.async {

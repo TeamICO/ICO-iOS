@@ -10,7 +10,9 @@ import Alamofire
 
 class StyleUploadDataManager{
     func styleUpload(_ paramters: StyleUploadRequest,_ viewcontroller: StyleUploadVC){
+
         AF.request("\(Constant.BASE_URL)/app/styleshots",method: .post, parameters: paramters, headers: Constant.HEADER)
+        
             .validate()
             .responseDecodable(of: StyleUploadResponse.self){ response in
                 switch response.result{

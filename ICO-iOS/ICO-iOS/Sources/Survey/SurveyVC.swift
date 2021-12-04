@@ -115,10 +115,11 @@ class SurveyVC: ViewController {
     }
     
     @IBAction func didTapCompletButton(_ sender: Any) {
+   
         guard let jwtToken = UserDefaults.standard.string(forKey: "jwtToken") else{
             return
         }
-        let keywords = self.seletedKeywords.map{String($0 + 1)}
+        let keywords = self.seletedKeywords.map{String($0)}
         SurveyMamager.shared.insertUserSurveyInfo(activatedEcoKeyword: keywords,
                                                       userIdx: self.userIdx,
                                                       jwtToken: jwtToken) { response in
@@ -164,13 +165,13 @@ extension SurveyVC{
     
     }
     func changeColorLabelAndView(index : Int,view : UIView, label : UILabel){
+        
         if !isEcoKeywordState[index] {
             view.layer.borderWidth = 1
             view.layer.borderColor = UIColor.iGreen.cgColor
             view.backgroundColor = .white
             label.textColor = UIColor.coGreen
             seletedKeywords.append(index+1)
-            
         
         }else if isEcoKeywordState[index] {
             view.layer.borderWidth = 0
