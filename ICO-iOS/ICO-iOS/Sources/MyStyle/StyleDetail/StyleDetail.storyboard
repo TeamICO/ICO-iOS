@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2wJ-8k-eij">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="880"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_styleshot_sample04" translatesAutoresizingMaskIntoConstraints="NO" id="3NE-QP-Avy">
                                                 <rect key="frame" x="0.0" y="54" width="414" height="375"/>
@@ -277,7 +277,7 @@
                                             <constraint firstAttribute="trailing" secondItem="0Ug-nQ-ngT" secondAttribute="trailing" id="vkh-KF-J7U"/>
                                             <constraint firstItem="TIw-BF-z8J" firstAttribute="top" secondItem="bph-rA-XnV" secondAttribute="top" constant="42" id="waZ-KF-mbB"/>
                                             <constraint firstAttribute="trailing" secondItem="TIw-BF-z8J" secondAttribute="trailing" id="xPg-SY-Kak"/>
-                                            <constraint firstAttribute="height" constant="800" id="y0d-9F-3eU"/>
+                                            <constraint firstAttribute="height" constant="880" id="y0d-9F-3eU"/>
                                             <constraint firstItem="R83-N1-YoI" firstAttribute="top" secondItem="bph-rA-XnV" secondAttribute="bottom" constant="8" id="zds-as-gTQ"/>
                                         </constraints>
                                     </view>
