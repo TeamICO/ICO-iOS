@@ -143,7 +143,11 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
         case searchKeywordTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchKeywordTVC.identifier, for: indexPath) as! SearchKeywordTVC
             cell.delegate = self
-            cell.keywordLabel.text = searchKeywords[indexPath.row]
+            cell.keywordLabel.text =  searchKeywords[indexPath.row]
+            guard let keyword = self.searchTextField.text else{
+                return cell
+            }
+            cell.configure(keyword: keyword)
             return cell
         case self.tableView:
             switch indexPath.section{

@@ -175,8 +175,10 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserInfoTVC.identifier, for: indexPath) as! ProfileUserInfoTVC
             cell.selectionStyle = .none
             cell.delegate = self
-            if let profileModel = self.profileModel{
+            if let profileModel = self.profileModel,
+                let userimage =  self.selectedContentImage{
                 cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
+                cell.userImage.setImage(with: userimage)
             }
            
             
@@ -414,6 +416,7 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
                 }
                 self?.selectedContentImage = "\(url)"
                 DispatchQueue.main.async {
+                    
                     self?.tableView.reloadData()
                 }
                 
