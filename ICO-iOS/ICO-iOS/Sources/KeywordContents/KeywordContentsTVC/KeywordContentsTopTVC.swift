@@ -19,6 +19,8 @@ class KeywordContentsTopTVC: UITableViewCell {
     @IBOutlet weak var contentLabel2: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        setLabelSpacing(label: contentLabel)
+        setLabelSpacing(label: contentLabel2)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,6 +38,12 @@ class KeywordContentsTopTVC: UITableViewCell {
         self.contentLabel.text = model.content[index]
         self.contentLabel2.text = model.content2[index]
     }
-    
+    func setLabelSpacing(label : UILabel){
+        let attrString = NSMutableAttributedString(string: label.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        label.attributedText = attrString
+    }
     
 }

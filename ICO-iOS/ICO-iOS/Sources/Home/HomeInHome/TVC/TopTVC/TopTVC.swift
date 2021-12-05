@@ -167,15 +167,18 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
         
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = (Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)) ) % 3
-        nowPage = Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width))
-        if isInfinity {
-            if cellItemsWidth == 0.0 {
-                cellItemsWidth = floor(scrollView.contentSize.width / 3.0)
+        if scrollView == self.bannerCollectionView {
+            pageControl.currentPage = (Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)) ) % 3
+            nowPage = Int(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width))
+            if isInfinity {
+                if cellItemsWidth == 0.0 {
+                    cellItemsWidth = floor(scrollView.contentSize.width / 3.0)
+                }
+                if (scrollView.contentOffset.x <= 0.0) || (scrollView.contentOffset.x > cellItemsWidth * 2.0) {
+                    scrollView.contentOffset.x = cellItemsWidth
+                }
             }
-            if (scrollView.contentOffset.x <= 0.0) || (scrollView.contentOffset.x > cellItemsWidth * 2.0) {
-                scrollView.contentOffset.x = cellItemsWidth
-            }
+
         }
         
     }

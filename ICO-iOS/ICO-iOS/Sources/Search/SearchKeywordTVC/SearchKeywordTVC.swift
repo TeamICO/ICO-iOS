@@ -21,12 +21,19 @@ class SearchKeywordTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setViewTapGesture()
-        
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        
+    }
+    func configure(keyword : String){
+        let attributedStr = NSMutableAttributedString(string: keywordLabel.text!)
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.coGreen70, range: (keywordLabel.text! as NSString).range(of: keyword))
+        keywordLabel.attributedText = attributedStr
+        
         
     }
     

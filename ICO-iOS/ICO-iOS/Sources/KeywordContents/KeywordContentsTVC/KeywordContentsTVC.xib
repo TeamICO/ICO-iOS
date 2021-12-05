@@ -35,10 +35,16 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkF-2B-CQG">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkF-2B-CQG">
                         <rect key="frame" x="16" y="210" width="288" height="19.5"/>
-                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                        <color key="textColor" red="0.14901960784313725" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" red="0.14901960784313725" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmY-Ih-Hgd">
@@ -161,13 +167,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="brandCheckLabel" destination="OXL-9c-Pw4" id="kij-FX-kzX"/>
+                <outlet property="brandCheckLabel1" destination="OXL-9c-Pw4" id="QbV-RO-i5X"/>
                 <outlet property="brandCheckLabel2" destination="V6C-ID-tR2" id="HUR-kN-anK"/>
                 <outlet property="brandCheckLabel3" destination="fh4-7i-Ie5" id="PIT-m0-hoN"/>
                 <outlet property="brandCheckView" destination="FOm-rL-IeU" id="tlU-RV-lo1"/>
                 <outlet property="brandCheckViewHeight" destination="eho-7W-xW9" id="qCV-sa-XOX"/>
                 <outlet property="brandCheckViewTop" destination="ZcJ-wO-RpH" id="niK-Db-UdU"/>
-                <outlet property="brandDesLabel" destination="JkF-2B-CQG" id="DQQ-pk-7tx"/>
+                <outlet property="brandDesLabel1" destination="JkF-2B-CQG" id="kVq-cu-XLu"/>
                 <outlet property="brandDesLabel2" destination="vmY-Ih-Hgd" id="c2x-4h-e0M"/>
                 <outlet property="brandDesLabel3" destination="xCU-O1-xlH" id="IXF-Vb-gYh"/>
                 <outlet property="brandImage" destination="0QE-aP-3dC" id="VFY-64-ZgS"/>
