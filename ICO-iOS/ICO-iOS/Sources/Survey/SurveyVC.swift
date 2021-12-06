@@ -13,7 +13,8 @@ class SurveyVC: ViewController {
     var userIdx : Int = 0
     
    
-  
+    @IBOutlet weak var passButtonWidth: NSLayoutConstraint!
+    
     @IBOutlet weak var mainLabel: UILabel!
     
     @IBOutlet var titleLabel: [UILabel]!
@@ -81,7 +82,13 @@ class SurveyVC: ViewController {
     func setUI(){
         completButton.layer.cornerRadius = 12
         completButton.layer.masksToBounds = true
-        completButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            completButton.backgroundColor = .gradient01
+            passButtonWidth.change(multiplier: 0.49)
+        }else{
+            completButton.setGradient(color1: UIColor.appColor(.feedbackButtoncolor1), color2: UIColor.appColor(.feedbackButtoncolor2))
+            passButtonWidth.change(multiplier: 0.43)
+        }
         passButton.layer.cornerRadius = 12
         passButton.layer.masksToBounds = true
         passButton.layer.borderColor = UIColor.coGreen70.cgColor
