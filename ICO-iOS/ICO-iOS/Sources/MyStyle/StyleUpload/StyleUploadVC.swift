@@ -83,7 +83,6 @@ class StyleUploadVC: BaseViewController {
     }
    
     
-    
     func checkEco(select: [Int]){
         for i in 0...6{
             if numberList[i] == 1{
@@ -585,8 +584,42 @@ extension StyleUploadVC{
         self.urlTextField[0].text = StyleDetailData?.productName
         self.urlTextField[1].text = StyleDetailData?.productURL
         self.ecoLevelScore.text = "\(StyleDetailData?.point ?? 0).0"
+        print("////////////")
+        
+        print(StyleDetailData?.category ?? [])
+        
         uploadSetEcoLevel()
         setFixStyleShot()
+        setFixCategory()
+    }
+    
+    func setFixCategory(){
+        var array = StyleDetailData?.category ?? []
+        
+        for i in array{
+            if i == "제로웨이스트"{
+                numberList[0] = 1
+            }else if i == "비건"{
+                numberList[1] = 1
+            }else if i == "에너지절약"{
+                numberList[2] = 1
+            }else if i == "가치"{
+                numberList[3] = 1
+            }else if i == "업사이클링"{
+                numberList[4] = 1
+            }else if i == "클린뷰티"{
+                numberList[5] = 1
+            }else{
+                numberList[6] = 1
+            }
+        }
+        print("*****************")
+        print(numberList)
+        
+        checkEco(select: numberList)
+        print("final")
+        print(ecoList)
+        setButton(select: numberList)
     }
     
     func setFixStyleShot(){
