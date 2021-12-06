@@ -585,12 +585,12 @@ extension StyleUploadVC{
         self.urlTextField[1].text = StyleDetailData?.productURL
         self.ecoLevelScore.text = "\(StyleDetailData?.point ?? 0).0"
         print("////////////")
-        
-        print(StyleDetailData?.category ?? [])
+        print(StyleDetailData?.hashtag ?? [])
         
         uploadSetEcoLevel()
         setFixStyleShot()
         setFixCategory()
+        setFixHashTag()
     }
     
     func setFixCategory(){
@@ -613,14 +613,22 @@ extension StyleUploadVC{
                 numberList[6] = 1
             }
         }
+        /*
         print("*****************")
-        print(numberList)
-        
-        checkEco(select: numberList)
-        print("final")
-        print(ecoList)
+        print(numberList)*/
+    
         setButton(select: numberList)
+        checkEco(select: numberList)
+        /*
+        print("final")
+        print(ecoList)*/
     }
+    
+    func setFixHashTag(){
+        let hashTagArr = StyleDetailData?.hashtag ?? []
+        print(hashTagArr.count)
+    }
+
     
     func setFixStyleShot(){
         if self.newImageView.image != nil{
