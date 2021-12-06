@@ -666,7 +666,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="ITl-k5-XUS"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NH-Hf-zvh">
-                                <rect key="frame" x="16" y="802" width="180" height="60"/>
+                                <rect key="frame" x="16" y="802" width="186.5" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="nGu-7o-WpU"/>
@@ -687,7 +687,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpe-mm-GP7">
-                                <rect key="frame" x="213" y="802" width="185" height="60"/>
+                                <rect key="frame" x="219.5" y="802" width="178.5" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="UIO-fB-gIR"/>
                                 </constraints>
@@ -760,7 +760,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FyS-Wb-KnY" secondAttribute="bottom" id="j39-Be-wHg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FyS-Wb-KnY" secondAttribute="trailing" id="qTC-AA-nCE"/>
                             <constraint firstItem="5NM-ul-IQy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tWK-xJ-Eld"/>
-                            <constraint firstItem="7NH-Hf-zvh" firstAttribute="width" secondItem="KCp-e9-U85" secondAttribute="width" multiplier="0.435" id="tvS-sL-6D1"/>
+                            <constraint firstItem="7NH-Hf-zvh" firstAttribute="width" secondItem="KCp-e9-U85" secondAttribute="width" multiplier="0.45" id="tvS-sL-6D1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hpe-mm-GP7" secondAttribute="trailing" constant="16" id="xan-UQ-F3U"/>
                             <constraint firstItem="ASm-Lh-Qko" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yka-v9-HMe"/>
                         </constraints>
@@ -789,6 +789,7 @@
                         <outlet property="packageLabel" destination="wOA-GB-9a3" id="7nR-c0-wHp"/>
                         <outlet property="packageView" destination="H2E-Ad-7Tk" id="8dH-4z-w03"/>
                         <outlet property="passButton" destination="7NH-Hf-zvh" id="Bck-XL-dg6"/>
+                        <outlet property="passButtonWidth" destination="tvS-sL-6D1" id="Trg-lK-eHA"/>
                         <outlet property="plasticFreeLabel" destination="Lx0-pK-bBN" id="fJd-3x-BzX"/>
                         <outlet property="plasticfreeView" destination="p50-ZK-pyG" id="qr5-7L-whO"/>
                         <outlet property="topView" destination="ASm-Lh-Qko" id="htu-YB-Al7"/>

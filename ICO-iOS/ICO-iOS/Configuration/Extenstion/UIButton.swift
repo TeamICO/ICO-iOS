@@ -37,5 +37,30 @@ extension UIButton {
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+
+}
+extension NSLayoutConstraint {
+/**
+ Change multiplier constraint
+
+ - parameter multiplier: CGFloat
+ - returns: NSLayoutConstraintfor
+*/
+
+    func change(multiplier: CGFloat) {
+        let newConstraint = NSLayoutConstraint(item: firstItem,
+                                               attribute: firstAttribute,
+                                               relatedBy: relation,
+                                               toItem: secondItem,
+                                               attribute: secondAttribute,
+                                               multiplier: multiplier,
+                                               constant: constant)
+
+        newConstraint.priority = self.priority
+
+        NSLayoutConstraint.deactivate([self])
+        NSLayoutConstraint.activate([newConstraint])
+    }
 
 }
