@@ -334,9 +334,12 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                             
                             }
                         case .denied:
-                            print("Album: 권한 거부")
+                            DispatchQueue.main.async {
+                                self?.presentAlert(title: "사진 접근 권한이 없습니다.\n설정 > 개인 정보 보호 > 사진에서\n권한을 추가해주세요.")
+                            }
+                            
                         case .restricted, .notDetermined:
-                            print("Album: 선택하지 않음")
+                            break
                         default:
                             break
                         }
