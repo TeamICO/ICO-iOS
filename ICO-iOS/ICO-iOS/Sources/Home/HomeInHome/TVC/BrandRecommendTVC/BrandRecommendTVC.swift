@@ -45,23 +45,8 @@ class BrandRecommendTVC: UITableViewCell {
         var name = nickname
         
         self.userNameLable.text = "\(name) 님을 위한"
-        
-        guard let url = URL(string: data.imageURL) else{
-                return
-            }
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self?.brandImage.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
-        
+        self.brandImage.setImage(with: data.imageURL)
+       
         collectionView.reloadData()
     }
     
