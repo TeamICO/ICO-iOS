@@ -29,27 +29,11 @@ class BrandCVC: UICollectionViewCell {
     func configure(with viewModel : BrandCVCViewModel){
         self.productName.text = viewModel.productName
 
-        guard let url = URL(string: viewModel.productUrl) else{
-                return
-            }
-        setImage(url: url, imageV: self.productImage)
+        self.productImage.setImage(with: viewModel.productUrl)
         
         
     }
-    func setImage(url : URL,imageV : UIImageView){
-        DispatchQueue.global().async {
-                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        imageV.image = UIImage(data: data)
-                    }
-                }
-                task.resume()
-        }
-    }
+   
 }
 
 struct BrandCVCViewModel {
