@@ -584,13 +584,15 @@ extension StyleUploadVC{
         self.urlTextField[0].text = StyleDetailData?.productName
         self.urlTextField[1].text = StyleDetailData?.productURL
         self.ecoLevelScore.text = "\(StyleDetailData?.point ?? 0).0"
-        print("////////////")
-        print(StyleDetailData?.hashtag ?? [])
-        
+  
+        hashTagArr = StyleDetailData?.hashtag ?? []
+        hashTagCnt = hashTagArr.count
+        hashTagCV.reloadData()
+       
+    
         uploadSetEcoLevel()
         setFixStyleShot()
         setFixCategory()
-        setFixHashTag()
     }
     
     func setFixCategory(){
