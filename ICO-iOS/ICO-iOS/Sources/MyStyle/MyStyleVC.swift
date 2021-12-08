@@ -54,6 +54,8 @@ class MyStyleVC: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NetworkManager.shared.startMonitoring()
+        
         MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
         setUI()
         registerNib()
