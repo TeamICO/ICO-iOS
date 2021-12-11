@@ -137,6 +137,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
             }
             
             StyleLifeDataManager.shared.getRecentInfo(pagination: true, lastIndex: self.serverData.count, self){ [weak self] response in
+               
                 guard let response = response else{
                     return
                 }
