@@ -458,8 +458,13 @@ class StyleUploadVC: BaseViewController {
             self.imgNumLabel.text = "\(self.photoNum)/1"
             self.imgDelBtn.isHidden = false
             
+            guard let image = self.newImageView.image as? UIImage,
+                  let newImage = self.resizeImage(image: image, newWidth: 380) else{
+                return
+            }
+            
             let imageId = UUID().uuidString
-            BaseManager.shared.uploadImage(image: self.newImageView.image, imageId: imageId) { success in
+            BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
                 guard success else{
                     return
                 }
@@ -500,6 +505,17 @@ class StyleUploadVC: BaseViewController {
         
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+         let scale = newWidth / image.size.width
+         let newHeight = image.size.height * scale
+         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+         let newImage = UIGraphicsGetImageFromCurrentImageContext()
+         UIGraphicsEndImageContext()
+
+         return newImage
+     }
+    
     
     
     @IBAction func styleUploadBtn(_ sender: Any) {
@@ -520,54 +536,6 @@ class StyleUploadVC: BaseViewController {
         }*/
     }
     
-}
-
-//Mark : - 사진 업로드 관련
-extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        dismiss(animated: true, completion: nil)
-        guard let image = info[.editedImage] as? UIImage,
-              let newImage = resizeImage(image: image, newWidth: 380) else{
-            return
-        }
-        /*
-        newImageView.image = newImage
-        newImageView.contentMode = .scaleAspectFill
-        photoNum = 1
-        imgNumLabel.text = "\(photoNum)/1"
-        imgDelBtn.isHidden = false*/
-        /*
-        let imageId = UUID().uuidString
-        BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
-            guard success else{
-                return
-            }
-            BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { url in
-                guard let url = url else{
-                    return
-                }
-                self.selectedContentImage = "\(url)"
-                print(url)
-            }
-        }*/
-        
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
-         let scale = newWidth / image.size.width
-         let newHeight = image.size.height * scale
-         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-         UIGraphicsEndImageContext()
-
-         return newImage
-     }
-
 }
 
 // 스타일샷 텍스트 필드, 텍스트 뷰 관련
