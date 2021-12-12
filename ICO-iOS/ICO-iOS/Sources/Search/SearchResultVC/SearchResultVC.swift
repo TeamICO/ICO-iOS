@@ -11,6 +11,7 @@ class SearchResultVC: BaseViewController {
     // MARK: - Properties
     var searchword = ""
     var isStart = false
+    var isLast = false
     private var sortedIdx = 1
     private var searchResultModel : SearchResultResult?
     private var searchResultData = [SeachResultData]()
@@ -207,10 +208,13 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             guard !SearchResultManager.shared.isPaginating else{
                 return
             }
-           
+       
             SearchResultManager.shared.getMoreSearchResult(pagination: true, lastIndex: self.searchResultData.count, filter: "\(self.sortedIdx+1)", keyword: self.searchword , jwtToken: jwtToken) { [weak self] response in
                 guard let response = response else {
                     return
+                }
+                if response.isEmpty{
+                    self?.isLast = true
                 }
                 self?.searchResultData.append(contentsOf: response)
                 DispatchQueue.main.async {
