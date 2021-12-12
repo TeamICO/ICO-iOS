@@ -164,7 +164,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             postTV.isHidden = false
             emptyView.isHidden = true
         }
-            
+        
         print("키워드 셀 선택")
     }
     
@@ -175,9 +175,15 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
         
         for indexPath in 0...6{
-            
+            if keywordCell.sortedIdx == indexPath{
+                if keywordCell.isSelected  == true{
+                    return
+                }
+            }
         }
-      
+        
+        postTV.isHidden = true
+        emptyView.isHidden = false
         print("셀 선택 해제")
     }
 

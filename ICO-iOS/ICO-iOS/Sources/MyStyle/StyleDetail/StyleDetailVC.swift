@@ -211,9 +211,12 @@ class StyleDetailVC: UIViewController {
             let SB = UIStoryboard(name: "LifeStyleURL", bundle: nil)
             let vc = SB.instantiateViewController(withIdentifier: "LifeStyleURLVC") as! LifeStyleURLVC
             vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-            self.dismiss(animated: true){
-                self.present(serviceSafriView, animated: true, completion: nil)
+            self.present(vc, animated: true){
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
+                    vc.dismiss(animated: true){
+                        self.present(serviceSafriView, animated: true, completion: nil)
+                    }
+                }
             }
            
         }else{
