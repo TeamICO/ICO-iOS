@@ -208,7 +208,14 @@ class StyleDetailVC: UIViewController {
     @objc func viewDidTap(_ sender: UITapGestureRecognizer){
         if let mainurl = url{
             let serviceSafriView: SFSafariViewController = SFSafariViewController(url: mainurl as! URL)
-            self.present(serviceSafriView, animated: true, completion: nil)
+            let SB = UIStoryboard(name: "LifeStyleURL", bundle: nil)
+            let vc = SB.instantiateViewController(withIdentifier: "LifeStyleURLVC") as! LifeStyleURLVC
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            self.dismiss(animated: true){
+                self.present(serviceSafriView, animated: true, completion: nil)
+            }
+           
         }else{
             urlBackView.isUserInteractionEnabled = false
         }
