@@ -332,12 +332,6 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                         case .authorized:
                             print("Album: 권한 허용")
                             DispatchQueue.main.async {
-                                /*
-                                let picker = UIImagePickerController()
-                                picker.sourceType = .photoLibrary
-                                picker.delegate = self
-                                picker.allowsEditing = true
-                                self?.present(picker, animated: true, completion: nil)*/
                                 let imagePicker = ImagePickerController()
                                 imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
                                 imagePicker.settings.theme.selectionFillColor = UIColor.gradient012
@@ -348,15 +342,20 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                                     
                                 }, cancel: { (assets) in
                                     
-                                }, finish: { (assets) in
+                                }, finish: { [self] (assets) in
                                     for i in assets{
                                         self?.selectedAssets.append(i)
                                     }
                                     
                                     self?.convertAssetToImages()
                                     
+                                    guard let image = self?.userSelectedImages[0],
+                                          let newImage = self?.resizeImage(image: image, newWidth: 100) else{
+                                        return
+                                    }
+                                    
                                     let imageId = UUID().uuidString
-                                    BaseManager.shared.uploadImage(image: self?.userSelectedImages[0], imageId: imageId){ success in
+                                    BaseManager.shared.uploadImage(image: newImage, imageId: imageId){ success in
                                         guard success else{
                                             return
                                         }
@@ -365,8 +364,7 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                                                 return
                                             }
                                             self?.selectedContentImage = "\(url)"
-                                            print("999999999")
-                                            print(self?.selectedContentImage)
+                                           
                                         }
                                     }
     
@@ -406,7 +404,7 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
 
     }
     
-    //Bsimagepicker형식 변화 관련
+    //Bsimagepicker형식 변환 관련 메서드
     func convertAssetToImages(){
         if selectedAssets.count != 0 {
             for i in 0..<selectedAssets.count{
@@ -428,6 +426,18 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
         }
         
     }
+    
+    // 이미지 resize
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+         let scale = newWidth / image.size.width
+         let newHeight = image.size.height * scale
+         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+         let newImage = UIGraphicsGetImageFromCurrentImageContext()
+         UIGraphicsEndImageContext()
+
+         return newImage
+     }
     
     func checkNicNameState(nickname: String) {
         self.nickname = nickname
@@ -459,49 +469,7 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
         }
     }
 }
-//MARK : Iamge PIcker Delegate
-extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }/*
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.editedImage] as? UIImage,
-        let newImage = resizeImage(image: image, newWidth: 100) else{
-            return
-        }
-        
-        let imageId = UUID().uuidString
-        BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
-            guard success else{
-                return
-            }
-            BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { [weak self] url in
-                guard let url = url else{
-                    return
-                }
-                self?.selectedContentImage = "\(url)"
-                DispatchQueue.main.async {
-                    
-                    self?.tableView.reloadData()
-                }
-                
-            }
-        }
-        
-    }*/
-   func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
-        let scale = newWidth / image.size.width
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
 
-        return newImage
-    }
-
-}
 extension ProfileSettingVC : ProfileUserIntroductionTVCDelegate{
     func getTextViewText(text: String) {
         self.profileDescription = text
