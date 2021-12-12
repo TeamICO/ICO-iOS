@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Internet PopupVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CustomInternetPopupVC" id="Y6W-OH-hqX" customClass="CustomInternetPopupVC" customModule="ICO_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-dz-2qn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="didTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iHT-nq-p8Q"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSW-tE-ke2">
+                                <rect key="frame" x="0.0" y="354" width="414" height="188"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust-offline-airplane" translatesAutoresizingMaskIntoConstraints="NO" id="pN4-eS-lXm">
+                                        <rect key="frame" x="157" y="2" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="UsS-n3-Xac"/>
+                                            <constraint firstAttribute="width" constant="100" id="ba2-Sg-TPt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인터넷 연결이 끊겼습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-qY-jIh">
+                                        <rect key="frame" x="104.5" y="114" width="205.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" red="0.2627450980392157" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nka-NX-eFF">
+                                        <rect key="frame" x="207" y="146" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <color key="textColor" red="0.48627450980392156" green="0.49019607843137253" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="EGu-qY-jIh" firstAttribute="centerX" secondItem="vSW-tE-ke2" secondAttribute="centerX" id="FGq-uk-amp"/>
+                                    <constraint firstItem="nka-NX-eFF" firstAttribute="centerX" secondItem="vSW-tE-ke2" secondAttribute="centerX" id="MJa-Jz-zQ2"/>
+                                    <constraint firstItem="pN4-eS-lXm" firstAttribute="centerX" secondItem="vSW-tE-ke2" secondAttribute="centerX" id="PVU-os-UwD"/>
+                                    <constraint firstItem="pN4-eS-lXm" firstAttribute="top" secondItem="vSW-tE-ke2" secondAttribute="top" constant="2" id="Q4e-Od-9mp"/>
+                                    <constraint firstItem="nka-NX-eFF" firstAttribute="top" secondItem="EGu-qY-jIh" secondAttribute="bottom" constant="8" id="TcT-h9-hHX"/>
+                                    <constraint firstItem="EGu-qY-jIh" firstAttribute="top" secondItem="pN4-eS-lXm" secondAttribute="bottom" constant="12" id="mhv-mU-cgE"/>
+                                    <constraint firstAttribute="height" constant="188" id="y7A-K5-EBd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fb9-dz-2qn" secondAttribute="bottom" id="32Z-r8-X5h"/>
+                            <constraint firstItem="vSW-tE-ke2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9jQ-IH-pRg"/>
+                            <constraint firstItem="fb9-dz-2qn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="J3Z-fp-i8Z"/>
+                            <constraint firstItem="fb9-dz-2qn" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Off-3q-SCB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vSW-tE-ke2" secondAttribute="trailing" id="RB3-PD-Au9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fb9-dz-2qn" secondAttribute="trailing" id="tjO-WI-krO"/>
+                            <constraint firstItem="vSW-tE-ke2" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="w2A-0N-WZK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="subTitleLabel" destination="nka-NX-eFF" id="efE-oq-T5H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="55"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="illust-offline-airplane" width="400" height="400"/>
+    </resources>
+</document>

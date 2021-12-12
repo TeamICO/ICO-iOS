@@ -58,6 +58,8 @@
 		E90511F6274F3CA6002B1574 /* CustomPopupSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */; };
 		E90511FA274F56F2002B1574 /* SearchKeywordTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90511F8274F56F2002B1574 /* SearchKeywordTVC.swift */; };
 		E90511FB274F56F2002B1574 /* SearchKeywordTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90511F9274F56F2002B1574 /* SearchKeywordTVC.xib */; };
+		E913F46E2765B5E1003C8F24 /* CustomInternetPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F46D2765B5E1003C8F24 /* CustomInternetPopupVC.swift */; };
+		E913F4702765B5FE003C8F24 /* CustomInternetCheckSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E913F46F2765B5FE003C8F24 /* CustomInternetCheckSB.storyboard */; };
 		E9161CF7273CB953009A9CA7 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9161CF6273CB953009A9CA7 /* AlarmVC.swift */; };
 		E9161CF9273CB95A009A9CA7 /* AlarmSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */; };
 		E9161CFB273CB963009A9CA7 /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */; };
@@ -309,6 +311,8 @@
 		E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomPopupSB.storyboard; sourceTree = "<group>"; };
 		E90511F8274F56F2002B1574 /* SearchKeywordTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordTVC.swift; sourceTree = "<group>"; };
 		E90511F9274F56F2002B1574 /* SearchKeywordTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchKeywordTVC.xib; sourceTree = "<group>"; };
+		E913F46D2765B5E1003C8F24 /* CustomInternetPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInternetPopupVC.swift; sourceTree = "<group>"; };
+		E913F46F2765B5FE003C8F24 /* CustomInternetCheckSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomInternetCheckSB.storyboard; sourceTree = "<group>"; };
 		E9161CF6273CB953009A9CA7 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		E9161CF8273CB95A009A9CA7 /* AlarmSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmSB.storyboard; sourceTree = "<group>"; };
 		E9161CFA273CB963009A9CA7 /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
@@ -683,6 +687,8 @@
 			children = (
 				E90511F3274F3C99002B1574 /* CustomPopupVC.swift */,
 				E90511F5274F3CA6002B1574 /* CustomPopupSB.storyboard */,
+				E913F46D2765B5E1003C8F24 /* CustomInternetPopupVC.swift */,
+				E913F46F2765B5FE003C8F24 /* CustomInternetCheckSB.storyboard */,
 			);
 			path = CustomPopup;
 			sourceTree = "<group>";
@@ -1687,6 +1693,7 @@
 				E9A0CD602752054D00D50ECD /* NoneSearchResultCVC.xib in Resources */,
 				E9E49914273BABAC0001ACFB /* IcoLevelSB.storyboard in Resources */,
 				E9378D9F2738098700C589A1 /* RecentSearchWordsTVC.xib in Resources */,
+				E913F4702765B5FE003C8F24 /* CustomInternetCheckSB.storyboard in Resources */,
 				E90511F6274F3CA6002B1574 /* CustomPopupSB.storyboard in Resources */,
 				E9E49928273BAC290001ACFB /* LevelUpSB.storyboard in Resources */,
 				E9341FF3274A28DB00F75C7A /* MypageNoneMyRecentStyleShotCVC.xib in Resources */,
@@ -1950,6 +1957,7 @@
 				71F8686F2749615400321DD1 /* hashTagCVC.swift in Sources */,
 				E9CAF1B927316990008F749B /* UITextField.swift in Sources */,
 				71A870ED274507830069239A /* MyStyleResponse.swift in Sources */,
+				E913F46E2765B5E1003C8F24 /* CustomInternetPopupVC.swift in Sources */,
 				E9CAF1C127316A10008F749B /* Constant.swift in Sources */,
 				71DD7DF92747F95B00D64236 /* StyleDetailResponse.swift in Sources */,
 				E91788182748BECB008B621B /* ServiceTermVC.swift in Sources */,

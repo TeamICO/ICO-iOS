@@ -45,6 +45,7 @@ class MyStyleVC: BaseViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.checkInternet()
         MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
         fetchData()
         self.tabBarController?.tabBar.isHidden = false
@@ -53,8 +54,6 @@ class MyStyleVC: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NetworkManager.shared.startMonitoring()
         
         MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
         setUI()

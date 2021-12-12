@@ -22,6 +22,7 @@ class SearchVC: BaseViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.checkInternet()
         self.fetchData()
     }
     override func viewDidLoad() {

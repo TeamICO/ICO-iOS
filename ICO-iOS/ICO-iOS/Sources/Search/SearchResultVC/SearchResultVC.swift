@@ -20,6 +20,10 @@ class SearchResultVC: BaseViewController {
     @IBOutlet weak var deleteButton: UIButton!
     
     // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkInternet()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedAround()

@@ -60,6 +60,10 @@ class LoginVC: UIViewController {
     
     
     // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkInternet()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setHeightOnboarding()

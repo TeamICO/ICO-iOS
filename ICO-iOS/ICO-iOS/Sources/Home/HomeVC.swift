@@ -54,6 +54,7 @@ class HomeVC: BaseViewController{
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
+        self.checkInternet()
         self.tabBarController?.tabBar.isHidden = false
     
     }
@@ -61,6 +62,7 @@ class HomeVC: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tabBarController?.delegate = self
 //        requestTrackingAuthoriztion()
         configure()

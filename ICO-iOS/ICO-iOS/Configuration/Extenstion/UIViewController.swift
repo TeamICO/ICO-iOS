@@ -155,5 +155,24 @@ extension UIViewController {
 
         
     }
+    public func checkInternet(){
+        if NetworkManager.shared.isConnected {
+            print("연결됨")
+            
+        }else{
+            print("연결이상")
+            let storyboard = UIStoryboard(name: "CustomInternetCheckSB", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "CustomInternetPopupVC") as! CustomInternetPopupVC
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true){
+                DispatchQueue.main.asyncAfter(deadline: .now()+2.0) {
+                    vc.dismiss(animated: true, completion: nil)
+                }
+            }
+       
+
+        }
+    }
    
 }
