@@ -16,12 +16,14 @@ class RecentVC: BaseViewController {
     @IBOutlet weak var postingTV: UITableView!
    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         fetchData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 68))
         postingTV.tableHeaderView = header
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
@@ -139,7 +141,7 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
                 return
             }
             StyleLifeDataManager.shared.getRecentInfo(pagination: true, lastIndex: self.serverData.count, self){ [weak self] response in
-               
+                
                 guard let response = response else{
                     return
                 }

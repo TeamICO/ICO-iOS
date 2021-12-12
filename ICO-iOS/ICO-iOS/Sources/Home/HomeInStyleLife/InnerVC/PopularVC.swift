@@ -25,6 +25,7 @@ class PopularVC: UIViewController,UITabBarControllerDelegate {
     @IBOutlet weak var topBanner: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
+        
         fetchData()
     }
     
