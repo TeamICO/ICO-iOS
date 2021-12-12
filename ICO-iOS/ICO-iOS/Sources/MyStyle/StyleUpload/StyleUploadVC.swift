@@ -77,6 +77,9 @@ class StyleUploadVC: BaseViewController {
     var selectedAssets : [PHAsset] = []
     var userSelectedImages: [UIImage] = []
     
+    
+    
+    
     //에코 키워드를 누르면
     @objc func selectEcoKeywordClicked(_ sender: UIButton){
         if numberList[sender.tag] == 0{
@@ -520,6 +523,18 @@ class StyleUploadVC: BaseViewController {
     
     @IBAction func styleUploadBtn(_ sender: Any) {
         checkEco(select: numberList)
+        
+        let frame = CGRect(x: 0, y: 0, width: view.width/1.5, height: 38)
+      
+        if selectedContentImage == nil{
+            self.showCustomAlert(alert: CustomAlert(viewModel: CustomAlerViewmoel(text: "사진을 등록해주세요."), frame: frame), button: uploadBtn)
+            return
+        }
+        
+        if urlTextField[0].text == nil || urlTextField[1].text == nil{
+            self.showCustomAlert(alert: CustomAlert(viewModel: CustomAlerViewmoel(text: "제품 정보를 등록해주세요."), frame: frame), button: uploadBtn)
+            return
+        }
        
         let styleUploadRequest = StyleUploadRequest(image: selectedContentImage ?? "", category: ecoList, productName: urlTextField[0].text ?? "", productURL: urlTextField[1].text ?? "", point: serverEcoScore, purpleDescription: memoTextView.text!, hashtag: hashTagArr)
         StyleUploadDataManager().styleUpload(styleUploadRequest, self)
