@@ -10,7 +10,7 @@ import UIKit
 class LikeVC: BaseViewController {
 
     var isStart = false
-    
+    var isLast = false
     private var likeResult = [LikeResult]()
     private var nickname = ""
     private var refreshControl = UIRefreshControl()
@@ -161,10 +161,15 @@ extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
             guard !LikeManger.shared.isLikePaginating else{
                 return
             }
-            
+            guard !isLast else{
+                return
+            }
             LikeManger.shared.getMoreLikes(pagination: true,lastIndex: self.likeResult.count, jwtToken: jwtToken) { [weak self] response in
                 guard let response = response else {
                     return
+                }
+                if response.isEmpty {
+                    self?.isLast = true
                 }
                 self?.likeResult.append(contentsOf: response)
                 DispatchQueue.main.async {

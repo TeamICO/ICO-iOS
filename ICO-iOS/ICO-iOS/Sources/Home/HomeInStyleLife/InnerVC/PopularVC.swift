@@ -11,7 +11,7 @@ import Kingfisher
 class PopularVC: UIViewController,UITabBarControllerDelegate {
     
     var isStart = false
-    
+    var isLast = false
     var serverData : Result?
     var popularServerData : [RecentResult] = []
     
@@ -162,10 +162,15 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource, UIScrollViewDe
              guard !StyleLifeDataManager.shared.isPopularPaginating else{
                  return
              }
-            
+             guard !isLast else{
+                 return
+             }
              StyleLifeDataManager.shared.getPopularInfo(pagination: true, lastIndex: self.popularServerData.count, self){[weak self] response in
                  guard let response = response else{
                      return
+                 }
+                 if response.isEmpty{
+                     self?.isLast = true
                  }
                  self?.popularServerData.append(contentsOf: response)
                  self?.postTV.reloadData()

@@ -10,7 +10,7 @@ import UIKit
 class RecentVC: BaseViewController {
     
     var isStart = false
-    
+    var isLast = false
     var serverData : [RecentResult] = []
     var styleshotIdx: Int = 0
     @IBOutlet weak var postingTV: UITableView!
@@ -135,11 +135,16 @@ extension RecentVC: UITableViewDelegate,UITableViewDataSource{
             guard !StyleLifeDataManager.shared.isRecentPaginating else{
                 return
             }
-            
+            guard !isLast else{
+                return
+            }
             StyleLifeDataManager.shared.getRecentInfo(pagination: true, lastIndex: self.serverData.count, self){ [weak self] response in
                
                 guard let response = response else{
                     return
+                }
+                if response.isEmpty{
+                    self?.isLast = true
                 }
                 self?.serverData.append(contentsOf: response)
                 self?.postingTV.reloadData()
