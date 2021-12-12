@@ -62,6 +62,11 @@ class SurveyVC: ViewController {
     var isEcoKeywordState = Array(repeating: false, count: 14)
     var seletedKeywords = [Int]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkInternet()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        

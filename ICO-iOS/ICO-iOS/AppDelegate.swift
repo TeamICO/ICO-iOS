@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        NetworkManager.shared.startMonitoring()
         FirebaseApp.configure()
         registerRemoteNotification()
         setKakaoSDK()
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkUser()
         
      
-
+      
 
     
         return true

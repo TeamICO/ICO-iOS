@@ -25,7 +25,10 @@ class AlarmVC: BaseViewController {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkInternet()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

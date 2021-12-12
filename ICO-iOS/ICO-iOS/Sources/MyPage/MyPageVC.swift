@@ -34,11 +34,13 @@ class MyPageVC: BaseViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.checkInternet()
         self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.checkInternet()
         fetchData()
         tableviewConfigure()
         setLikeViewTapGesture()

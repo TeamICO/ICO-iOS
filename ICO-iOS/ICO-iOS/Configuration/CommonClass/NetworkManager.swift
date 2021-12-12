@@ -7,30 +7,32 @@
 
 import Foundation
 import Network
+import RxSwift
 final class NetworkManager{
     static let shared = NetworkManager()
-    private init() {}
-    let monitor = NWPathMonitor()
-    func startMonitoring() {
+    
+    enum ConnectionType {
+        case wifi
+        case celluler
+        case ethernet
+        case unknown
+    }
+    
+    private let queue = DispatchQueue.global()
+    private let monitor : NWPathMonitor
+    public private(set) var isConnected : Bool = false
+    public private(set) var connectionType : ConnectionType = .unknown
+    
+    private init() {
+        monitor = NWPathMonitor()
         
-        monitor.start(queue: .global())
+    }
+    public func startMonitoring() {
+        monitor.start(queue: queue)
         monitor.pathUpdateHandler = { [weak self] path in
-            if path.status == .satisfied {
-                print("connected")
-                self?.monitor.cancel()
-            } else {
-                print("not connected")
-                self?.monitor.cancel()
-            }
-            if path.usesInterfaceType(.wifi) {
-                print("wifi mode")
-                self?.monitor.cancel()
-                
-            } else if path.usesInterfaceType(.cellular) {
-                print("cellular mode")
-                self?.monitor.cancel()
-                
-            }
+            self?.isConnected = path.status == .satisfied
+            self?.getConnectionType(path)
+            print(self?.isConnected ?? "x")
        
         }
     
@@ -39,6 +41,16 @@ final class NetworkManager{
         monitor.cancel()
         
     }
-
+    public func getConnectionType(_ path : NWPath ){
+        if path.usesInterfaceType(.wifi){
+            connectionType = .wifi
+        }else if path.usesInterfaceType(.cellular){
+            connectionType = .celluler
+        }else if path.usesInterfaceType(.wiredEthernet){
+            connectionType = .ethernet
+        }else{
+            connectionType = .unknown
+        }
+    }
     
 }
