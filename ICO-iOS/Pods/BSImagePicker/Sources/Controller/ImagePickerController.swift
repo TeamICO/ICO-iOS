@@ -28,8 +28,8 @@ import Photos
     // MARK: Public properties
     public weak var imagePickerDelegate: ImagePickerControllerDelegate?
     public var settings: Settings = Settings()
-    public var doneButton: UIBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
-    public var cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
+    public var doneButton: UIBarButtonItem = UIBarButtonItem(title: "선택", style: .plain, target: nil, action: nil)
+    public var cancelButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icArrowLeft1"), style: .plain, target: nil, action: nil)
     public var albumButton: UIButton = UIButton(type: .custom)
     public var selectedAssets: [PHAsset] {
         get {
@@ -128,6 +128,7 @@ import Photos
         firstViewController?.navigationItem.rightBarButtonItem = doneButton
 
         cancelButton.target = self
+        cancelButton.tintColor = UIColor.gray
         cancelButton.action = #selector(cancelButtonPressed(_:))
         firstViewController?.navigationItem.leftBarButtonItem = cancelButton
         
@@ -151,7 +152,9 @@ import Photos
     }
     
     func updatedDoneButton() {
-        doneButton.title = assetStore.count > 0 ? doneButtonTitle + " (\(assetStore.count))" : doneButtonTitle
+        //doneButton.title = assetStore.count > 0 ? doneButtonTitle + " (\(assetStore.count))" : doneButtonTitle
+        doneButton.title = "선택"
+        doneButton.tintColor = UIColor.init(red: 5/255, green: 137/255, blue: 84/255, alpha: 1.0)
       
         doneButton.isEnabled = assetStore.count >= settings.selection.min
     }

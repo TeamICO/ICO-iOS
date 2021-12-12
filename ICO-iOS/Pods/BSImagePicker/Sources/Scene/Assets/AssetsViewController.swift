@@ -70,7 +70,7 @@ class AssetsViewController: UIViewController {
         // Set an empty title to get < back button
         title = " "
 
-        collectionView.allowsMultipleSelection = true
+        collectionView.allowsMultipleSelection = false
         collectionView.bounces = true
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = settings.theme.backgroundColor
@@ -100,7 +100,7 @@ class AssetsViewController: UIViewController {
     }
 
     private func syncSelections(_ assets: [PHAsset]) {
-        collectionView.allowsMultipleSelection = true
+        collectionView.allowsMultipleSelection = false
 
         // Unselect all
         for indexPath in collectionView.indexPathsForSelectedItems ?? [] {
