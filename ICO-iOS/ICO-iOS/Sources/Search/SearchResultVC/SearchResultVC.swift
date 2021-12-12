@@ -208,7 +208,9 @@ extension SearchResultVC : UICollectionViewDelegate, UICollectionViewDataSource,
             guard !SearchResultManager.shared.isPaginating else{
                 return
             }
-       
+            guard !isLast else{
+                return
+            }
             SearchResultManager.shared.getMoreSearchResult(pagination: true, lastIndex: self.searchResultData.count, filter: "\(self.sortedIdx+1)", keyword: self.searchword , jwtToken: jwtToken) { [weak self] response in
                 guard let response = response else {
                     return
