@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BSImagePicker
 import Photos
 
 class ProfileSettingVC: BaseViewController {
@@ -23,6 +24,10 @@ class ProfileSettingVC: BaseViewController {
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
+    
+    //BsImagepicker관련
+    var selectedAssets : [PHAsset] = []
+    var userSelectedImages: [UIImage] = []
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -75,6 +80,7 @@ class ProfileSettingVC: BaseViewController {
                 guard response.isSuccess else{
                     return
                 }
+               
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -326,11 +332,45 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                         case .authorized:
                             print("Album: 권한 허용")
                             DispatchQueue.main.async {
+                                /*
                                 let picker = UIImagePickerController()
                                 picker.sourceType = .photoLibrary
                                 picker.delegate = self
                                 picker.allowsEditing = true
-                                self?.present(picker, animated: true, completion: nil)
+                                self?.present(picker, animated: true, completion: nil)*/
+                                let imagePicker = ImagePickerController()
+                                imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
+                                imagePicker.settings.theme.selectionFillColor = UIColor.gradient012
+                                imagePicker.modalPresentationStyle = .fullScreen
+                                self?.presentImagePicker(imagePicker, select: {
+                                    (asset) in
+                                }, deselect: { (asset) in
+                                    
+                                }, cancel: { (assets) in
+                                    
+                                }, finish: { (assets) in
+                                    for i in assets{
+                                        self?.selectedAssets.append(i)
+                                    }
+                                    
+                                    self?.convertAssetToImages()
+                                    
+                                    let imageId = UUID().uuidString
+                                    BaseManager.shared.uploadImage(image: self?.userSelectedImages[0], imageId: imageId){ success in
+                                        guard success else{
+                                            return
+                                        }
+                                        BaseManager.shared.downloadUrlForPostImage(imageId: imageId){ url in
+                                            guard let url = url else{
+                                                return
+                                            }
+                                            self?.selectedContentImage = "\(url)"
+                                            print("999999999")
+                                            print(self?.selectedContentImage)
+                                        }
+                                    }
+    
+                                })
                             
                             }
                         case .denied:
@@ -364,6 +404,29 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
         
         self.present(actionSheet, animated: true)
 
+    }
+    
+    //Bsimagepicker형식 변화 관련
+    func convertAssetToImages(){
+        if selectedAssets.count != 0 {
+            for i in 0..<selectedAssets.count{
+                let imageManager = PHImageManager.default()
+                let option = PHImageRequestOptions()
+                option.isSynchronous = true
+                var thumbnail = UIImage()
+                
+                imageManager.requestImage(for: selectedAssets[i], targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: option){ (result, info) in
+                    thumbnail = result!
+                }
+                
+                let data = thumbnail.jpegData(compressionQuality: 0.7)
+                let newImage = UIImage(data: data!)
+                                
+                self.userSelectedImages.append(newImage! as UIImage)
+            }
+
+        }
+        
     }
     
     func checkNicNameState(nickname: String) {
@@ -400,7 +463,7 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
 extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
+    }/*
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.editedImage] as? UIImage,
@@ -426,7 +489,7 @@ extension ProfileSettingVC: UIImagePickerControllerDelegate, UINavigationControl
             }
         }
         
-    }
+    }*/
    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
         let scale = newWidth / image.size.width
         let newHeight = image.size.height * scale
