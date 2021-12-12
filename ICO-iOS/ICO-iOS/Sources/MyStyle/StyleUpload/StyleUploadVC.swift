@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import BSImagePicker
 import Photos
 
 class StyleUploadVC: BaseViewController {
@@ -71,6 +72,10 @@ class StyleUploadVC: BaseViewController {
     var hashTagArr: [String] = []
     
     @IBOutlet weak var uploadBtn: UIButton!
+    
+    //BsImagepicker관련
+    var selectedAssets : [PHAsset] = []
+    var userSelectedImages: [UIImage] = []
     
     //에코 키워드를 누르면
     @objc func selectEcoKeywordClicked(_ sender: UIButton){
@@ -404,6 +409,7 @@ class StyleUploadVC: BaseViewController {
     
     
     @IBAction func uploadBtn(_ sender: Any) {
+        /*
         PHPhotoLibrary.requestAuthorization( { [weak self]status in
                     switch status{
                     case .authorized:
@@ -427,9 +433,73 @@ class StyleUploadVC: BaseViewController {
                     default:
                         break
                     }
-                })
+                })*/
+        let imagePicker = ImagePickerController()
+        imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
+        imagePicker.settings.theme.selectionFillColor = UIColor.gradient012
+        imagePicker.modalPresentationStyle = .fullScreen
+        self.presentImagePicker(imagePicker, select: { (asset) in
+            
+        }, deselect: { (asset) in
+            
+        }, cancel: { (assets) in
+            
+        }, finish: { (assets) in
+            for i in assets{
+                self.selectedAssets.append(i)
+            }
+        
+            self.convertAssetToImages()
+            print("이것이 호출이 되나여?")
+            print(self.userSelectedImages)
+            self.newImageView.image = self.userSelectedImages[0]
+            self.newImageView.contentMode = .scaleAspectFill
+            self.photoNum = 1
+            self.imgNumLabel.text = "\(self.photoNum)/1"
+            self.imgDelBtn.isHidden = false
+            
+            let imageId = UUID().uuidString
+            BaseManager.shared.uploadImage(image: self.newImageView.image, imageId: imageId) { success in
+                guard success else{
+                    return
+                }
+                BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { url in
+                    guard let url = url else{
+                        return
+                    }
+                    self.selectedContentImage = "\(url)"
+                    print(url)
+                }
+            }
+            
+            
+        })
 
     }
+
+    //Bsimagepicker형식 변화 관련
+    func convertAssetToImages(){
+        if selectedAssets.count != 0 {
+            for i in 0..<selectedAssets.count{
+                let imageManager = PHImageManager.default()
+                let option = PHImageRequestOptions()
+                option.isSynchronous = true
+                var thumbnail = UIImage()
+                
+                imageManager.requestImage(for: selectedAssets[i], targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: option){ (result, info) in
+                    thumbnail = result!
+                }
+                
+                let data = thumbnail.jpegData(compressionQuality: 0.7)
+                let newImage = UIImage(data: data!)
+                                
+                self.userSelectedImages.append(newImage! as UIImage)
+            }
+
+        }
+        
+    }
+    
     
     
     @IBAction func styleUploadBtn(_ sender: Any) {
@@ -461,12 +531,13 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
               let newImage = resizeImage(image: image, newWidth: 380) else{
             return
         }
+        /*
         newImageView.image = newImage
         newImageView.contentMode = .scaleAspectFill
         photoNum = 1
         imgNumLabel.text = "\(photoNum)/1"
-        imgDelBtn.isHidden = false
-        
+        imgDelBtn.isHidden = false*/
+        /*
         let imageId = UUID().uuidString
         BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
             guard success else{
@@ -479,7 +550,7 @@ extension StyleUploadVC: UIImagePickerControllerDelegate,UINavigationControllerD
                 self.selectedContentImage = "\(url)"
                 print(url)
             }
-        }
+        }*/
         
     }
     
