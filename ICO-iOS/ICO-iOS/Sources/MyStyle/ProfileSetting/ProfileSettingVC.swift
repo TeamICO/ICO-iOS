@@ -364,6 +364,7 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                                                 return
                                             }
                                             self?.selectedContentImage = "\(url)"
+                                            self?.tableView.reloadData()
                                            
                                         }
                                     }

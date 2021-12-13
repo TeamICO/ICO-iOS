@@ -62,7 +62,7 @@ extension MypageMyRecentStyleShotTVC : UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if !myPageStyleshotModel.isEmpty{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MypageMyRecentStyleShotCVC.identifier, for: indexPath) as! MypageMyRecentStyleShotCVC
-            cell.setImage(url: myPageStyleshotModel[indexPath.row].imageURL)
+            cell.userContentImage.setImage(with: myPageStyleshotModel[indexPath.row].imageURL)
             return cell
            
         }else{
