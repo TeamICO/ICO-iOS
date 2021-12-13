@@ -51,6 +51,8 @@ class ProfileUserInfoTVC: UITableViewCell {
         }
         if image == ""{
             self.userImage.image = UIImage(named: "img_profile_default")
+        }else{
+            self.userImage.setImage(with: image)
         }
         
     }
