@@ -35,7 +35,6 @@ final class ProfileUpdateManager{
                 switch response.result {
                 
                 case .success(let response):
-
                     completion(response)
 
                 case .failure(let error):

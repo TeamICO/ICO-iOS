@@ -19,7 +19,10 @@ class ProfileSettingVC: BaseViewController {
     private var isCheckedNickname = false
     private var isCategory = true
     private var profileDescription = ""
-    private var selectedContentImage : String?
+    private var profileImage : String = ""
+    private var selectedImage : UIImage?
+
+    
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -69,24 +72,52 @@ class ProfileSettingVC: BaseViewController {
             return
         }
         let ecokeywords = self.seletedKeywords.map{String($0+1)}
-        
-        if let image = self.selectedContentImage{
-            ProfileUpdateManager.shared.updateUserProfile(imageData: image,
-                                                          nickname: self.nickname,
-                                                          description: self.profileDescription,
-                                                          activatedEcoKeyword: ecokeywords,
-                                                          userIdx: self.userIdx,
-                                                          jwtToken: jwtToken) { response in
-                guard response.isSuccess else{
+
+        if let image = self.selectedImage{
+            IndicatorView.shared.showgif()
+            let imageId = UUID().uuidString
+            BaseManager.shared.uploadImage(image: image, imageId: imageId){  success in
+                guard success else{
                     return
                 }
-               
-                DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
+                BaseManager.shared.downloadUrlForPostImage(imageId: imageId){ url in
+                    guard let url = url else{
+                        ProfileUpdateManager.shared.updateUserProfile(imageData: self.profileImage,
+                                                                      nickname: self.nickname,
+                                                                      description: self.profileDescription,
+                                                                      activatedEcoKeyword: ecokeywords,
+                                                                      userIdx: self.userIdx,
+                                                                      jwtToken: jwtToken) { response in
+                            guard response.isSuccess else{
+                                return
+                            }
+                            DispatchQueue.main.async {
+                                IndicatorView.shared.hidegif()
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
+                        return
+                    }
+                    ProfileUpdateManager.shared.updateUserProfile(imageData: "\(url)",
+                                                                  nickname: self.nickname,
+                                                                  description: self.profileDescription,
+                                                                  activatedEcoKeyword: ecokeywords,
+                                                                  userIdx: self.userIdx,
+                                                                  jwtToken: jwtToken) { response in
+                        guard response.isSuccess else{
+                            return
+                        }
+                        
+                        DispatchQueue.main.async {
+                            IndicatorView.shared.hidegif()
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                    
                 }
             }
         }else{
-            ProfileUpdateManager.shared.updateUserProfile(imageData: nil,
+            ProfileUpdateManager.shared.updateUserProfile(imageData: profileImage,
                                                           nickname: self.nickname,
                                                           description: self.profileDescription,
                                                           activatedEcoKeyword: ecokeywords,
@@ -96,10 +127,12 @@ class ProfileSettingVC: BaseViewController {
                     return
                 }
                 DispatchQueue.main.async {
+                    IndicatorView.shared.hidegif()
                     self.navigationController?.popViewController(animated: true)
                 }
             }
         }
+  
         UserDefaults.standard.set(self.nickname, forKey: "nickname")
     }
     
@@ -111,14 +144,14 @@ extension ProfileSettingVC{
             return
         }
         ProfileManager.shared.getUserProfile(userIdx: self.userIdx, jwtToken: jwtToken) { [weak self] response in
-            guard let response = response,let des = response.resultDescription else {
+            guard let response = response,let des = response.resultDescription, let profileUrl = response.profileURL else {
                 return
             }
 
             self?.profileModel = response
             self?.userNickname = response.nickname
             self?.nickname = response.nickname
-            self?.selectedContentImage = response.profileURL
+            self?.profileImage = profileUrl
             self?.profileDescription = des
             let keywords = response.ecoKeyword.filter{$0.status.rawValue == "Y"}
             self?.ecokeywords = keywords
@@ -181,10 +214,14 @@ extension ProfileSettingVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserInfoTVC.identifier, for: indexPath) as! ProfileUserInfoTVC
             cell.selectionStyle = .none
             cell.delegate = self
-            if let profileModel = self.profileModel,
-                let userimage =  self.selectedContentImage{
+            if let profileModel = self.profileModel{
                 cell.configure(with: ProfileUserInfoTVCViewModel(with: profileModel))
-                cell.userImage.setImage(with: userimage)
+                if let imageData = self.selectedImage {
+                    cell.userImage.image = imageData
+                }else{
+                    
+                }
+                
             }
            
             
@@ -330,7 +367,6 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
             PHPhotoLibrary.requestAuthorization( { status in
                         switch status{
                         case .authorized:
-                            print("Album: 권한 허용")
                             DispatchQueue.main.async {
                                 let imagePicker = ImagePickerController()
                                 imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
@@ -354,21 +390,8 @@ extension ProfileSettingVC :ProfileUserInfoTVCDelegate{
                                         return
                                     }
                                     
-                                    let imageId = UUID().uuidString
-                                    BaseManager.shared.uploadImage(image: newImage, imageId: imageId){ success in
-                                        guard success else{
-                                            return
-                                        }
-                                        BaseManager.shared.downloadUrlForPostImage(imageId: imageId){ url in
-                                            guard let url = url else{
-                                                return
-                                            }
-                                            self?.selectedContentImage = "\(url)"
-                                            self?.tableView.reloadData()
-                                           
-                                        }
-                                    }
-                                    
+                                    self?.selectedImage = newImage
+                                    self?.tableView.reloadData()
     
                                 })
                             
