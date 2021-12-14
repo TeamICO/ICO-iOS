@@ -31,6 +31,7 @@ class AlarmVC: BaseViewController {
 
         tableviewConfigure()
         fetchData()
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -79,6 +80,10 @@ extension AlarmVC {
         tableView.tableFooterView = nil
         tableView.sectionFooterHeight = 0
         tableView.separatorStyle = .none
+        
+        // 네비게이션 pop 제스처 
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
 
     }
 }
@@ -271,5 +276,10 @@ extension AlarmVC{
                 self.refreshControl.endRefreshing()
                 
             }
+    }
+}
+extension AlarmVC: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

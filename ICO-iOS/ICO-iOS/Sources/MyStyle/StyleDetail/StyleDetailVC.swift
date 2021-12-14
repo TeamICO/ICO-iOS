@@ -61,6 +61,9 @@ class StyleDetailVC: UIViewController {
         userImage.isUserInteractionEnabled =  true
         
         setUpGesture()
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -288,8 +291,6 @@ class StyleDetailVC: UIViewController {
             }
 
     }
- 
-   
     
 }
 
@@ -425,3 +426,8 @@ extension StyleDetailVC{
     }
 }
 
+extension StyleDetailVC: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}

@@ -90,7 +90,7 @@ extension SearchVC {
         searchKeywordTableView.tableFooterView = nil
         searchKeywordTableView.sectionFooterHeight = 0
         searchKeywordTableView.separatorStyle = .none
-
+ 
     }
 }
 // MARK: - TableView Configure
@@ -108,6 +108,10 @@ extension SearchVC {
         tableView.tableHeaderView = nil
         tableView.sectionHeaderHeight = 0
         tableView.separatorStyle = .none
+        
+        // 네비게이션 pop 제스처
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
 
     }
 }
@@ -321,4 +325,9 @@ extension SearchVC : HotKeywordTVCDelegate{
     
     
     
+}
+extension SearchVC: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
