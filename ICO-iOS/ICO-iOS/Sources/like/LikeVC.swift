@@ -77,7 +77,9 @@ extension LikeVC {
         collectionView.register(nib, forCellWithReuseIdentifier: LikeCVC.identifier)
         let noneLikenib = UINib(nibName: NoneLikeCVC.identifier, bundle: nil)
         collectionView.register(noneLikenib, forCellWithReuseIdentifier: NoneLikeCVC.identifier)
-        
+        // 네비게이션 pop 제스처
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 }
 extension LikeVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -195,3 +197,8 @@ extension LikeVC{
     }
 }
 
+extension LikeVC: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
