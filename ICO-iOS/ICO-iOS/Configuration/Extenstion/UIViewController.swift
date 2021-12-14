@@ -156,11 +156,7 @@ extension UIViewController {
         
     }
     public func checkInternet(){
-        if NetworkManager.shared.isConnected {
-            print("연결됨")
-            
-        }else{
-            print("연결이상")
+        if !NetworkManager.shared.isConnected {
             let storyboard = UIStoryboard(name: "CustomInternetCheckSB", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "CustomInternetPopupVC") as! CustomInternetPopupVC
             vc.modalPresentationStyle = .overFullScreen

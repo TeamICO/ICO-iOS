@@ -87,6 +87,10 @@ class FeedbackVC: BaseViewController {
         view.addSubview(inputCountLabel)
         inputCountLabel.rightAnchor.constraint(equalTo: limitCountLabel.leftAnchor).isActive = true
         inputCountLabel.topAnchor.constraint(equalTo: contentTextView.bottomAnchor,constant: 2).isActive = true
+        // 네비게이션 pop 제스처
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
     }
     // MARK: - Selectors
     @IBAction func didTabpBackButton(_ sender: Any) {
@@ -156,5 +160,10 @@ extension FeedbackVC : UITextViewDelegate {
                
             }
         }
+    }
+}
+extension FeedbackVC: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
