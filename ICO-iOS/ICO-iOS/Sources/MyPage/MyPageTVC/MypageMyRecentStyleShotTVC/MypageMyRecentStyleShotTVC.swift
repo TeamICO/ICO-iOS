@@ -40,7 +40,7 @@ class MypageMyRecentStyleShotTVC: UITableViewCell {
 extension MypageMyRecentStyleShotTVC {
     func collectionViewConfigure(){
         collectionView.backgroundColor = .white
-       collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.delegate = self
         collectionView.dataSource = self
         let nib = UINib(nibName: MypageMyRecentStyleShotCVC.identifier, bundle: nil)

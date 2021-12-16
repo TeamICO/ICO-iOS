@@ -80,6 +80,44 @@ final class BaseManager{
             }
 
     }
+    
+    func getUserNewAlarm(jwtToken: String, completion: @escaping (Int?)->Void) {
+
+        let url = "https://dev.chuckwagon.shop/app/notifications/new"
+
+        
+   
+        let header : HTTPHeaders = [
+            "X-ACCESS-TOKEN" : jwtToken
+        ]
+
+
+        AF.request(url,
+                   method: .get,
+                   parameters: nil,
+                   encoding: JSONEncoding.default,
+                   headers: header)
+            .responseDecodable(of: NewAlarmResponse.self) { response in
+                
+                switch response.result {
+                
+                case .success(let response):
+                    guard response.isSuccess == true else{
+                        return
+                    }
+                    
+                    completion(response.result)
+                    
+                    
+                    
+                case .failure(let error):
+                    print("DEBUG>> getUserNewAlarm Get Error : \(error.localizedDescription)")
+                    
+                }
+            }
+        
+    }
+    
 }
 
 
