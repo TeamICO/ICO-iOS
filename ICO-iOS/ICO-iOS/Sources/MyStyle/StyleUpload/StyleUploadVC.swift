@@ -412,23 +412,61 @@ class StyleUploadVC: BaseViewController {
     
     
     @IBAction func uploadBtn(_ sender: Any) {
-        /*
-        PHPhotoLibrary.requestAuthorization( { [weak self]status in
+        
+        PHPhotoLibrary.requestAuthorization( { status in
                     switch status{
                     case .authorized:
                         print("Album: 권한 허용")
                         DispatchQueue.main.async {
-                            let imagePicker = UIImagePickerController()
-                            imagePicker.sourceType = .photoLibrary
-                            imagePicker.delegate = self
-                            imagePicker.allowsEditing = true
-                          
-                            self?.present(imagePicker, animated: true, completion: nil)
-                        
+                            let imagePicker = ImagePickerController()
+                            imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
+                            imagePicker.settings.theme.selectionFillColor = UIColor.gradient012
+                            imagePicker.modalPresentationStyle = .fullScreen
+                            self.presentImagePicker(imagePicker, select: { (asset) in
+                                
+                            }, deselect: { (asset) in
+                                
+                            }, cancel: { (assets) in
+                                
+                            }, finish: { [self](assets) in
+                                for i in assets{
+                                    self.selectedAssets.append(i)
+                                }
+                            
+                                self.convertAssetToImages()
+                                print("이것이 호출이 되나여?")
+                                print(self.userSelectedImages)
+                                self.newImageView.image = self.userSelectedImages[0]
+                                self.newImageView.contentMode = .scaleAspectFill
+                                self.photoNum = 1
+                                self.imgNumLabel.text = "\(self.photoNum)/1"
+                                self.imgDelBtn.isHidden = false
+                                
+                                guard let image = self.newImageView.image as? UIImage,
+                                      let newImage = self.resizeImage(image: image, newWidth: 380) else{
+                                    return
+                                }
+                                
+                                let imageId = UUID().uuidString
+                                BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
+                                    guard success else{
+                                        return
+                                    }
+                                    BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { url in
+                                        guard let url = url else{
+                                            return
+                                        }
+                                        self.selectedContentImage = "\(url)"
+                                        print(url)
+                                    }
+                                }
+                                
+                                
+                            })
                         }
                     case .denied:
                         DispatchQueue.main.async {
-                            self?.presentAlert(title: "사진 접근 권한이 없습니다.\n설정 > 개인 정보 보호 > 사진에서\n권한을 추가해주세요.")
+                            self.presentAlert(title: "사진 접근 권한이 없습니다.\n설정 > 개인 정보 보호 > 사진에서\n권한을 추가해주세요.")
                         }
                         
                     case .restricted, .notDetermined:
@@ -436,52 +474,8 @@ class StyleUploadVC: BaseViewController {
                     default:
                         break
                     }
-                })*/
-        let imagePicker = ImagePickerController()
-        imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
-        imagePicker.settings.theme.selectionFillColor = UIColor.gradient012
-        imagePicker.modalPresentationStyle = .fullScreen
-        self.presentImagePicker(imagePicker, select: { (asset) in
-            
-        }, deselect: { (asset) in
-            
-        }, cancel: { (assets) in
-            
-        }, finish: { (assets) in
-            for i in assets{
-                self.selectedAssets.append(i)
-            }
-        
-            self.convertAssetToImages()
-            print("이것이 호출이 되나여?")
-            print(self.userSelectedImages)
-            self.newImageView.image = self.userSelectedImages[0]
-            self.newImageView.contentMode = .scaleAspectFill
-            self.photoNum = 1
-            self.imgNumLabel.text = "\(self.photoNum)/1"
-            self.imgDelBtn.isHidden = false
-            
-            guard let image = self.newImageView.image as? UIImage,
-                  let newImage = self.resizeImage(image: image, newWidth: 380) else{
-                return
-            }
-            
-            let imageId = UUID().uuidString
-            BaseManager.shared.uploadImage(image: newImage, imageId: imageId) { success in
-                guard success else{
-                    return
-                }
-                BaseManager.shared.downloadUrlForPostImage(imageId: imageId) { url in
-                    guard let url = url else{
-                        return
-                    }
-                    self.selectedContentImage = "\(url)"
-                    print(url)
-                }
-            }
-            
-            
-        })
+                })
+    
 
     }
 
