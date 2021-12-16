@@ -83,7 +83,7 @@ final class BaseManager{
     
     func getUserNewAlarm(jwtToken: String, completion: @escaping (Int?)->Void) {
 
-        let url = "https://dev.chuckwagon.shop/app/notifications/new"
+        let url = "https://prod.chuckwagon.shop/app/notifications/new"
 
         
    

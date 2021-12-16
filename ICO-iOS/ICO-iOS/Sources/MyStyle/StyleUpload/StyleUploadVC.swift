@@ -434,8 +434,6 @@ class StyleUploadVC: BaseViewController {
                                 }
                             
                                 self.convertAssetToImages()
-                                print("이것이 호출이 되나여?")
-                                print(self.userSelectedImages)
                                 self.newImageView.image = self.userSelectedImages[0]
                                 self.newImageView.contentMode = .scaleAspectFill
                                 self.photoNum = 1
