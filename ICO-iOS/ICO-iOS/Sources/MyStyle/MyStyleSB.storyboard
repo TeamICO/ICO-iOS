@@ -377,6 +377,8 @@
                     <navigationItem key="navigationItem" id="8XZ-Mb-4eP"/>
                     <connections>
                         <outlet property="alarmIcon" destination="ulT-x4-osO" id="dPh-Qt-gLM"/>
+                        <outlet property="alarmIconHeight" destination="CEE-nc-rg5" id="jHB-7e-f5h"/>
+                        <outlet property="alarmIconWidth" destination="g4X-ue-rsb" id="MBU-kF-iJt"/>
                         <outlet property="alarmView" destination="MFw-Wf-3gE" id="Lwf-Dd-Fdc"/>
                         <outlet property="backView" destination="tJh-xH-N7E" id="mhh-bW-ZcK"/>
                         <outlet property="categoryCV" destination="ITe-ea-OuA" id="Ioq-Wc-LsH"/>

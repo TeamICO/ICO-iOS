@@ -111,6 +111,8 @@
                     <navigationItem key="navigationItem" id="ToN-Gp-zAf"/>
                     <connections>
                         <outlet property="alarmIcon" destination="zb1-Zp-dmC" id="U4U-Ru-pfP"/>
+                        <outlet property="alarmIconHeight" destination="pVi-Xe-zr6" id="XMZ-ir-8uB"/>
+                        <outlet property="alarmIconWidth" destination="clj-2x-Iha" id="kke-uB-8hi"/>
                         <outlet property="alarmView" destination="vUz-m6-xYi" id="cvK-nY-hZt"/>
                         <outlet property="likeView" destination="KqV-ZT-KWh" id="dN8-Dl-xH2"/>
                         <outlet property="tableView" destination="vh3-lP-iPk" id="MEU-6T-0X6"/>

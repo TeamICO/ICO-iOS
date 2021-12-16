@@ -25,6 +25,9 @@ class MyPageVC: BaseViewController {
     ]
     
     @IBOutlet weak var alarmIcon: UIImageView!
+    @IBOutlet weak var alarmIconWidth: NSLayoutConstraint!
+    @IBOutlet weak var alarmIconHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var alarmView: UIView!
     @IBOutlet weak var likeView: UIView!
@@ -36,13 +39,14 @@ class MyPageVC: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.checkInternet()
+        alarmConfigure()
         self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkInternet()
-        alarmConfigure()
+        
         fetchData()
         tableviewConfigure()
         setLikeViewTapGesture()
@@ -355,13 +359,19 @@ extension MyPageVC {
         guard let jwtToken = self.jwtToken else{
             return
         }
-        BaseManager.shared.getUserNewAlarm(jwtToken: jwtToken) { response in
+        BaseManager.shared.getUserNewAlarm(jwtToken: jwtToken) { [weak self] response in
             guard let response = response else {
                 return
             }
-            self.alarmIcon.image = response == 0 ? UIImage(named: "icAlram1") : UIImage(named: "icAlarmOn1")
-                
-            
+            if response == 0{
+                self?.alarmIcon.image = UIImage(named: "icAlram1")
+                self?.alarmIconWidth.constant = 24
+                self?.alarmIconHeight.constant = 24
+            }else if response == 1{
+                self?.alarmIcon.image = UIImage(named: "icAlarmOn1")
+                self?.alarmIconWidth.constant = 40
+                self?.alarmIconHeight.constant = 40
+            }
         }
     }
 }
