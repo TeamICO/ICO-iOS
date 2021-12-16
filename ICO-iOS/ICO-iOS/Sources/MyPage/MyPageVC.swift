@@ -24,6 +24,7 @@ class MyPageVC: BaseViewController {
             
     ]
     
+    @IBOutlet weak var alarmIcon: UIImageView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var alarmView: UIView!
     @IBOutlet weak var likeView: UIView!
@@ -41,6 +42,7 @@ class MyPageVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkInternet()
+        alarmConfigure()
         fetchData()
         tableviewConfigure()
         setLikeViewTapGesture()
@@ -348,6 +350,19 @@ extension MyPageVC {
             self.tabBarController?.selectedIndex = 1
         }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func alarmConfigure(){
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        BaseManager.shared.getUserNewAlarm(jwtToken: jwtToken) { response in
+            guard let response = response else {
+                return
+            }
+            self.alarmIcon.image = response == 0 ? UIImage(named: "icAlram1") : UIImage(named: "icAlarmOn1")
+                
+            
+        }
     }
 }
 extension MyPageVC: MypageMyRecentStyleShotTVCDelegate{

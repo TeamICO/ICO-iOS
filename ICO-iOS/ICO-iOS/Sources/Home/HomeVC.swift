@@ -16,6 +16,7 @@ enum State {
 
 class HomeVC: BaseViewController{
     // MARK: - Properties
+    @IBOutlet weak var alarmIcon: UIImageView!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var lifeStyleButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -65,6 +66,7 @@ class HomeVC: BaseViewController{
         
         self.tabBarController?.delegate = self
 //        requestTrackingAuthoriztion()
+        alarmConfigure()
         configure()
         setLikeViewTapGesture()
         setAlarmViewTapGesture()
@@ -106,6 +108,20 @@ class HomeVC: BaseViewController{
     }
 
 
+}
+// 알람 배지 세팅
+extension HomeVC {
+    func alarmConfigure(){
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        BaseManager.shared.getUserNewAlarm(jwtToken: jwtToken) { response in
+            guard let response = response else {
+                return
+            }
+            self.alarmIcon.image = response == 0 ? UIImage(named: "icAlram1") : UIImage(named: "icAlarmOn1")
+        }
+    }
 }
 //MARK : 좋아요 뷰
 extension HomeVC {

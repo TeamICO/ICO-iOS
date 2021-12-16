@@ -16,6 +16,7 @@ class MyStyleVC: BaseViewController{
    // var styleshot = [Styleshot]()
     var category: [String] = []
     @IBOutlet weak var alarmView: UIView!
+    @IBOutlet weak var alarmIcon: UIImageView!
     @IBOutlet weak var likeView: UIView!
     
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
@@ -47,6 +48,7 @@ class MyStyleVC: BaseViewController{
         super.viewWillAppear(animated)
         self.checkInternet()
         MyStyleDataManager().getMyStyleUser(self, userIdx: self.userIdx)
+        alarmConfigure()
         fetchData()
         self.tabBarController?.tabBar.isHidden = false
        
@@ -376,5 +378,18 @@ extension MyStyleVC {
     @objc func didTapAlarmView(){
     
         self.navigationPushViewController(storyboard: "AlarmSB", identifier: "AlarmVC")
+    }
+    func alarmConfigure(){
+        guard let jwtToken = self.jwtToken else{
+            return
+        }
+        BaseManager.shared.getUserNewAlarm(jwtToken: jwtToken) { response in
+            guard let response = response else {
+                return
+            }
+            self.alarmIcon.image = response == 0 ? UIImage(named: "icAlram1") : UIImage(named: "icAlarmOn1")
+                
+            
+        }
     }
 }

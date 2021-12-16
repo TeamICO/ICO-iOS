@@ -19,3 +19,10 @@ struct BaseResult: Codable {
     let userIdx: Int
     let nickname : String
 }
+// MARK: - NewAlarm
+struct NewAlarmResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: Int
+}
