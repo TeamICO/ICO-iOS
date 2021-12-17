@@ -20,7 +20,7 @@ class KeywordVC: UIViewController {
     var serverArray: [Int] = []
     var serverArrayToString = ""
     
-    var seletedArr = [false,false,false,false,false,false,false]
+    var seletedArr = Array(repeating: false, count: 7)
     
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var alertTitle: UILabel!
