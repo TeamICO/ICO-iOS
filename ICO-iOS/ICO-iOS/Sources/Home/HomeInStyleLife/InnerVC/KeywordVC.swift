@@ -114,6 +114,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             serverArray.append(indexPath.row+1)
             serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
             fetchData(Index: serverArrayToString)
+            print("서버 문자열은\(serverArrayToString)")
         }else{
             if let searchIndex = serverArray.firstIndex(of: indexPath.row+1){
                 serverArray.remove(at: searchIndex)
@@ -146,22 +147,32 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
             guard let response = response else{
                 return
             }
+           
             self?.keywordServerData = response
             self?.postTV.reloadData()
             self?.setTV()
+            
             if response.isEmpty{
                 self?.postTV.isScrollEnabled = false
             }
             
             self?.isStart = true
+            guard let cnt = self?.keywordServerData.count else{
+                return
+            }
+           // print("데이터의 개수는 \(cnt)")
+            self?.entireHeight.constant = CGFloat(200 + (cnt * 616))
+           // print("-------------------")
+            //print(self?.entireHeight.constant)
+            //print("--------------------")
         }
+       
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffY = scrollView.contentOffset.y   
-        
+        let contentOffY = scrollView.contentOffset.y
         if contentOffY >= (postTV.contentSize.height-3400-scrollView.frame.size.height){
-         
+           
             guard isStart == true else{
                 return
             }
@@ -170,9 +181,17 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
                 return
             }
            
+            guard !isLast else{
+                return
+            }
             StyleLifeDataManager.shared.getKeywordInfo(pagination: true, lastIndex: self.keywordServerData.count, self, serverArrayToString){[weak self] response in
+                print("33333")
                 guard let response = response else {
                     return
+                }
+                print(response)
+                if response.isEmpty{
+                    self?.isLast = true
                 }
             
                 self?.keywordServerData.append(contentsOf: response)
