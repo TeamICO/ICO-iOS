@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Foundation
 class KeywordVC: UIViewController {
     
     var isStart = false
@@ -19,6 +19,8 @@ class KeywordVC: UIViewController {
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
     var serverArray: [Int] = []
     var serverArrayToString = ""
+    
+    var seletedArr = [false,false,false,false,false,false,false]
     
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var alertTitle: UILabel!
@@ -73,47 +75,9 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let keywordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeywordCVC", for: indexPath)as? KeywordCVC else {return UICollectionViewCell()}
         
-        keywordCell.delegate = self
+        
         keywordCell.sortedIdx = indexPath.row
-        
-        
-        if indexPath.row == 0{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-upcycling")
-            keywordCell.colorView.backgroundColor = UIColor.coGreen5
-            keywordCell.keywordTitle.textColor = UIColor.upcyclingGreen
-            keywordCell.keywordTitle.text = "업사이클링"
-        }else if indexPath.row == 1{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-vegan")
-            keywordCell.colorView.backgroundColor = UIColor.lightSuccess
-            keywordCell.keywordTitle.textColor = UIColor.alertsSuccess
-            keywordCell.keywordTitle.text = "비건"
-        }else if indexPath.row == 2{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-energy")
-            keywordCell.colorView.backgroundColor = UIColor.lightInfo
-            keywordCell.keywordTitle.textColor = UIColor.alertsInfo
-            keywordCell.keywordTitle.text = "에너지절약"
-        }else if indexPath.row == 3{
-            keywordCell.keywordImg.image = UIImage(named: "illust-product-package")
-            keywordCell.colorView.backgroundColor = UIColor.lightWarning
-            keywordCell.keywordTitle.textColor = UIColor.alertWarning
-            keywordCell.keywordTitle.text = "제로웨이스트"
-        }else if indexPath.row == 4{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-cleanbeauty")
-            keywordCell.colorView.backgroundColor = UIColor.lightShadow
-            keywordCell.keywordTitle.textColor = UIColor.coGreen
-            keywordCell.keywordTitle.text = "클린뷰티"
-        }else if indexPath.row == 5{
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-organic")
-            keywordCell.colorView.backgroundColor = UIColor.lightError
-            keywordCell.keywordTitle.textColor = UIColor.alertsError
-            keywordCell.keywordTitle.text = "유기농"
-        }else {
-            keywordCell.keywordImg.image = UIImage(named: "illust-styleshot-value")
-            keywordCell.colorView.backgroundColor = UIColor.lightPoint
-            keywordCell.keywordTitle.textColor = UIColor.point
-            keywordCell.keywordTitle.text = "가치"
-        }
-        keywordCell.colorView.cornerRadius = 12
+        keywordCell.setUI(index: indexPath.row,isSeleted: self.seletedArr[indexPath.row])
         
         return keywordCell
     }
@@ -144,7 +108,32 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.seletedArr[indexPath.row] = !self.seletedArr[indexPath.row]
+        if self.seletedArr[indexPath.row]{
+            serverArray.append(indexPath.row+1)
+            serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
+            fetchData(Index: serverArrayToString)
+        }else{
+            if let searchIndex = serverArray.firstIndex(of: indexPath.row+1){
+                serverArray.remove(at: searchIndex)
+                serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
+                fetchData(Index: serverArrayToString)
+            }
+        }
+        
+        keywordCV.reloadData()
+        postTV.reloadData()
+        
+        
+        if serverArray.isEmpty{
+            postTV.isHidden = true
+            emptyView.isHidden = false
+        }else{
+            postTV.isHidden = false
+            emptyView.isHidden = true
+        }
+    }
 
 
 }
@@ -267,37 +256,6 @@ extension KeywordVC{
     }*/
 }
 
-
-extension KeywordVC : KeywordCVCDelagate{
-    
-    func didTapSelected(sortedIdx: Int) {
-        serverArray.append(sortedIdx+1)
-        serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
-        fetchData(Index: serverArrayToString)
-        postTV.reloadData()
-        postTV.isHidden = false
-        emptyView.isHidden = true
-        
-        guard let cell = keywordCV.cellForItem(at: IndexPath(row: sortedIdx, section: 0))as? KeywordCVC else {return}
-        cell.colorView.backgroundColor = UIColor.gradient012
-        cell.keywordTitle.textColor = UIColor.white
-        cell.keywordTitle.font = UIFont.init(name: "AppleSDGothicNeo-Semibold", size: 14)
-    }
-    
-    func didTapDeselected(sortedIdx: Int) {
-        if let searchIndex = serverArray.firstIndex(of: sortedIdx+1){
-            serverArray.remove(at: searchIndex)
-            serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
-            fetchData(Index: serverArrayToString)
-        }
-        postTV.reloadData()
-        
-        if serverArray.isEmpty{
-            postTV.isHidden = true
-            emptyView.isHidden = false
-        }
-    }
-}
 extension KeywordVC : RecentTVCDelegate{
     func didTapLike(isLiked: Bool, styleShotIdx: Int, heartButton: UIButton, heartCnt: Int, heartNumLabel: UILabel) {
         if !isLiked{
