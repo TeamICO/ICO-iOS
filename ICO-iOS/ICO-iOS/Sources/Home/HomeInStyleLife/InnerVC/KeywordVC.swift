@@ -221,16 +221,12 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
             guard !StyleLifeDataManager.shared.isKeywordPaginating else{
                 return
             }
-            guard !isLast else{
-                return
-            }
+           
             StyleLifeDataManager.shared.getKeywordInfo(pagination: true, lastIndex: self.keywordServerData.count, self, clickIdx){[weak self] response in
                 guard let response = response else {
                     return
                 }
-                if response.isEmpty{
-                    self?.isLast = true
-                }
+            
                 self?.keywordServerData.append(contentsOf: response)
                 self?.postTV.reloadData()
             }
