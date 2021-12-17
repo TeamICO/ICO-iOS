@@ -12,6 +12,7 @@ import Photos
 
 class StyleUploadVC: BaseViewController {
     
+    var isStart: Bool = true
     var StyleDetailData: StyleDetailResult?
     var selectedContentImage : String?
     var isFix: Bool?
@@ -153,11 +154,22 @@ class StyleUploadVC: BaseViewController {
             StyleUploadDataManager().styleEdit(self, styleShotIdx: styleIndex!)
             setFix()
         }
+        
+        self.navigationController?.navigationBar.isTranslucent = true
         // Do any additional setup after loading the view.
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.setBlurEffect(view: topView)
+        //self.setBlurEffect(view: topView)
+        
+        if isStart {
+            let blur = UIBlurEffect(style: .regular)
+            let blurView = UIVisualEffectView(effect: blur)
+            blurView.frame = topView.bounds
+            topView.addSubview(blurView)
+            topView.sendSubviewToBack(blurView)
+            isStart = false
+        }
     }
     @objc func keyboardWillShow2(notification: NSNotification){
         let userInfo = notification.userInfo!
