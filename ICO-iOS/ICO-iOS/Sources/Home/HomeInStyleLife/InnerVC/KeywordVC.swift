@@ -147,19 +147,16 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        serverArray.append(indexPath.row+1)
-        serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
-        fetchData(Index: serverArrayToString)
- 
-
         guard var keywordCell = collectionView.cellForItem(at: indexPath) as? KeywordCVC else{
             fatalError()
         }
-            
-        if keywordCell.isSelected == false{
-            postTV.isHidden = true
-            emptyView.isHidden = false
-        }else{
+        
+        serverArray.append(indexPath.row+1)
+        serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
+        fetchData(Index: serverArrayToString)
+        postTV.reloadData()
+   
+        if keywordCell.isSelected == true{
             postTV.isHidden = false
             emptyView.isHidden = true
         }
@@ -177,14 +174,8 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
             fetchData(Index: serverArrayToString)
         }
+        postTV.reloadData()
         
-        for indexPath in 0...6{
-            if keywordCell.sortedIdx == indexPath{
-                if keywordCell.isSelected  == true{
-                    return
-                }
-            }
-        }
         if serverArray.isEmpty{
             postTV.isHidden = true
             emptyView.isHidden = false
