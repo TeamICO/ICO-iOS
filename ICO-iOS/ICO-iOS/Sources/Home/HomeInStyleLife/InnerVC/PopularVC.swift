@@ -151,11 +151,11 @@ extension PopularVC: UITableViewDelegate , UITableViewDataSource, UIScrollViewDe
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        print("222222")
          let contentOffY = scrollView.contentOffset.y
 
          if contentOffY >= (postTV.contentSize.height-scrollView.frame.size.height-3100){
-         
+             print("33333")
              guard isStart == true else{
                  return
              }

@@ -159,7 +159,7 @@ class StyleLifeDataManager{
             "no": "\(lastIndex)"
         ]
         
-       
+       //print("api통신이 언제 되나요??")
         AF.request(url, method: .get, parameters: param, encoding: URLEncoding.default, headers: Constant.HEADER)
             .validate()
             .responseDecodable(of: StyleLifeRecent.self){ response in
