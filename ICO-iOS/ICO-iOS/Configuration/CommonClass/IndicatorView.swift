@@ -55,7 +55,7 @@ open class IndicatorView {
         container.addSubview(indicator)
         UIApplication.shared.windows.first?.addSubview(container)
         
-        container.backgroundColor = UIColor(hex: 0x000000, alpha: 0.2)
+        container.backgroundColor = UIColor(hex: 0x000000, alpha: 0.1)
         indicator.center = container.center
         indicator.animationImages = images
         indicator.animationDuration = Double(indicator.animationImages?.count ?? 0) / 12
