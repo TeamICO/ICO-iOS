@@ -145,7 +145,7 @@ class StyleLifeDataManager{
     }
 
     //라이프스타일 카테고리 키워드
-    func getKeywordInfo(pagination: Bool = false, lastIndex: Int,_ viewcontroller: KeywordVC,_ categoryIdx: Int, completion: @escaping([RecentResult]?) -> Void){
+    func getKeywordInfo(pagination: Bool = false, lastIndex: Int,_ viewcontroller: KeywordVC,_ categoryIdx: String, completion: @escaping([RecentResult]?) -> Void){
         
         if pagination{
             isKeywordPaginating = true
@@ -155,7 +155,7 @@ class StyleLifeDataManager{
         
         var param = [
             "filter" : "3",
-            "categoryIdx" : "\(categoryIdx)",
+            "categoryIdx" : categoryIdx,
             "no": "\(lastIndex)"
         ]
         

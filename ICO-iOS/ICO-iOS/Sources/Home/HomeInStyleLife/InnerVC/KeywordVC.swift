@@ -11,7 +11,7 @@ class KeywordVC: UIViewController {
     
     var isStart = false
     var isLast = false
-    var clickIdx: Int = 0
+    //var clickIdx: Int = 0
     var keywordServerData: [RecentResult] = []
     var sortedIdx: Int = 1
     @IBOutlet weak var keywordCV: UICollectionView!
@@ -19,12 +19,13 @@ class KeywordVC: UIViewController {
     @IBOutlet weak var keywordScrollView: UIScrollView!
     @IBOutlet weak var entireHeight: NSLayoutConstraint!
     var serverArray: [Int] = []
+    var serverArrayToString = ""
     
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var alertTitle: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchData(Index: clickIdx)
+        fetchData(Index: serverArrayToString)
     }
     
     override func viewDidLoad() {
@@ -147,11 +148,13 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //serverArray.append(indexPath.row)
-        //var stringArray = serverArray.map { String($0) }
-        //var string = stringArray.split(separator: ",")
-        fetchData(Index: indexPath.row + 1)
-        clickIdx = indexPath.row + 1
+        serverArray.append(indexPath.row+1)
+        print("1010101010101010")
+        print(serverArray)
+        serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
+        print(serverArrayToString)
+        fetchData(Index: serverArrayToString)
+        //clickIdx = indexPath.row + 1
 
         guard var keywordCell = collectionView.cellForItem(at: indexPath) as? KeywordCVC else{
             fatalError()
@@ -174,6 +177,15 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
                    fatalError()
         }
         
+        if let searchIndex = serverArray.firstIndex(of: indexPath.row+1){
+            print("yes,\(searchIndex+1)")
+            serverArray.remove(at: searchIndex)
+            print(serverArray)
+            serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
+            print(serverArrayToString)
+            fetchData(Index: serverArrayToString)
+        }
+        
         for indexPath in 0...6{
             if keywordCell.sortedIdx == indexPath{
                 if keywordCell.isSelected  == true{
@@ -181,10 +193,11 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
                 }
             }
         }
+        if serverArray.isEmpty{
+            postTV.isHidden = true
+            emptyView.isHidden = false
+        }
         
-        postTV.isHidden = true
-        emptyView.isHidden = false
-        print("셀 선택 해제")
     }
 
 
@@ -193,7 +206,7 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
 extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDelegate{
     
-    func fetchData(Index:Int){
+    func fetchData(Index:String){
         StyleLifeDataManager.shared.getKeywordInfo(pagination: false,lastIndex: 0, self, Index){ [weak self] response in
             guard let response = response else{
                 return
@@ -222,7 +235,7 @@ extension KeywordVC: UITableViewDelegate, UITableViewDataSource,UIScrollViewDele
                 return
             }
            
-            StyleLifeDataManager.shared.getKeywordInfo(pagination: true, lastIndex: self.keywordServerData.count, self, clickIdx){[weak self] response in
+            StyleLifeDataManager.shared.getKeywordInfo(pagination: true, lastIndex: self.keywordServerData.count, self, serverArrayToString){[weak self] response in
                 guard let response = response else {
                     return
                 }
