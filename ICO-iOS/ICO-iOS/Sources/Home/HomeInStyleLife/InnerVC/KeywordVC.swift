@@ -11,7 +11,6 @@ class KeywordVC: UIViewController {
     
     var isStart = false
     var isLast = false
-    //var clickIdx: Int = 0
     var keywordServerData: [RecentResult] = []
     var sortedIdx: Int = 1
     @IBOutlet weak var keywordCV: UICollectionView!
@@ -149,12 +148,9 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         serverArray.append(indexPath.row+1)
-        print("1010101010101010")
-        print(serverArray)
         serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
-        print(serverArrayToString)
         fetchData(Index: serverArrayToString)
-        //clickIdx = indexPath.row + 1
+ 
 
         guard var keywordCell = collectionView.cellForItem(at: indexPath) as? KeywordCVC else{
             fatalError()
@@ -168,7 +164,6 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             emptyView.isHidden = true
         }
         
-        print("키워드 셀 선택")
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -178,11 +173,8 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
         
         if let searchIndex = serverArray.firstIndex(of: indexPath.row+1){
-            print("yes,\(searchIndex+1)")
             serverArray.remove(at: searchIndex)
-            print(serverArray)
             serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
-            print(serverArrayToString)
             fetchData(Index: serverArrayToString)
         }
         
