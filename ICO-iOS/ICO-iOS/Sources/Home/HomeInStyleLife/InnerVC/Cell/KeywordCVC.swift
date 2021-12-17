@@ -8,7 +8,9 @@
 import UIKit
 
 protocol KeywordCVCDelagate : AnyObject{
-    func didTapSort(sortedIdx : Int)
+    //func didTapSort(sortedIdx : Int)
+    func didTapSelected(sortedIdx: Int)
+    func didTapDeselected(sortedIdx: Int)
 }
 
 
@@ -24,8 +26,12 @@ class KeywordCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-     
     }
+    /*
+    override func prepareForReuse() {
+        delegate?.didTapSelected(sortedIdx: sortedIdx)
+        delegate?.didTapDeselected(sortedIdx: sortedIdx)
+    }*/
     
     func setUI(){
         colorView.cornerRadius = 12
@@ -35,11 +41,11 @@ class KeywordCVC: UICollectionViewCell {
     override var isSelected: Bool{
         didSet{
             if isSelected{
+                /*
                 colorView.backgroundColor = UIColor.gradient012
-                //colorView.addGradientBackground(firstColor: UIColor.gradient01, secondColor: UIColor.gradient012)
                 keywordTitle.textColor = UIColor.white
-                keywordTitle.font = UIFont.init(name: "AppleSDGothicNeo-Semibold", size: 14)
-                delegate?.didTapSort(sortedIdx: sortedIdx)
+                keywordTitle.font = UIFont.init(name: "AppleSDGothicNeo-Semibold", size: 14)*/
+                delegate?.didTapSelected(sortedIdx: sortedIdx)
             }else{
                 keywordTitle.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 14)
                 if keywordTitle.text == "비건"{
@@ -64,6 +70,7 @@ class KeywordCVC: UICollectionViewCell {
                     colorView.backgroundColor = UIColor.lightInfo
                     keywordTitle.textColor = UIColor.alertsInfo
                 }
+                delegate?.didTapDeselected(sortedIdx: sortedIdx)
             } 
         }
     }

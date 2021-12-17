@@ -145,43 +145,6 @@ extension KeywordVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return 0
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard var keywordCell = collectionView.cellForItem(at: indexPath) as? KeywordCVC else{
-            fatalError()
-        }
-        
-        serverArray.append(indexPath.row+1)
-        serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
-        fetchData(Index: serverArrayToString)
-        postTV.reloadData()
-   
-        if keywordCell.isSelected == true{
-            postTV.isHidden = false
-            emptyView.isHidden = true
-        }
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
-        guard var keywordCell = collectionView.cellForItem(at: indexPath) as? KeywordCVC else{
-                   fatalError()
-        }
-        
-        if let searchIndex = serverArray.firstIndex(of: indexPath.row+1){
-            serverArray.remove(at: searchIndex)
-            serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
-            fetchData(Index: serverArrayToString)
-        }
-        postTV.reloadData()
-        
-        if serverArray.isEmpty{
-            postTV.isHidden = true
-            emptyView.isHidden = false
-        }
-        
-    }
 
 
 }
@@ -306,11 +269,34 @@ extension KeywordVC{
 
 
 extension KeywordVC : KeywordCVCDelagate{
-    func didTapSort(sortedIdx: Int) {
-        self.sortedIdx = sortedIdx
+    
+    func didTapSelected(sortedIdx: Int) {
+        serverArray.append(sortedIdx+1)
+        serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
+        fetchData(Index: serverArrayToString)
+        postTV.reloadData()
+        postTV.isHidden = false
+        emptyView.isHidden = true
+        
+        guard let cell = keywordCV.cellForItem(at: IndexPath(row: sortedIdx, section: 0))as? KeywordCVC else {return}
+        cell.colorView.backgroundColor = UIColor.gradient012
+        cell.keywordTitle.textColor = UIColor.white
+        cell.keywordTitle.font = UIFont.init(name: "AppleSDGothicNeo-Semibold", size: 14)
     }
     
-    
+    func didTapDeselected(sortedIdx: Int) {
+        if let searchIndex = serverArray.firstIndex(of: sortedIdx+1){
+            serverArray.remove(at: searchIndex)
+            serverArrayToString = serverArray.map({"\($0)"}).joined(separator: ",")
+            fetchData(Index: serverArrayToString)
+        }
+        postTV.reloadData()
+        
+        if serverArray.isEmpty{
+            postTV.isHidden = true
+            emptyView.isHidden = false
+        }
+    }
 }
 extension KeywordVC : RecentTVCDelegate{
     func didTapLike(isLiked: Bool, styleShotIdx: Int, heartButton: UIButton, heartCnt: Int, heartNumLabel: UILabel) {
