@@ -25,9 +25,6 @@ jobs:
         ruby-version: 2.7.2
         bundler-cache: true
         
-    - name: Install Pods
-      run: pod install
-            
     - name: Build & Distribute to Testflight 
       run: |
         bundle exec fastlane release
