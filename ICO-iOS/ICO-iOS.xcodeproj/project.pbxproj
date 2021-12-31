@@ -201,6 +201,7 @@
 		E9C30E0627465A90000B1592 /* LikeCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */; };
 		E9C30E092746615D000B1592 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E082746615D000B1592 /* AlarmManager.swift */; };
 		E9C30E0B27466219000B1592 /* AlarmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E0A27466219000B1592 /* AlarmResponse.swift */; };
+		E9C6B674277F068500172C63 /* TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6B673277F068500172C63 /* TEST.swift */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -456,6 +457,7 @@
 		E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E9C30E082746615D000B1592 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		E9C30E0A27466219000B1592 /* AlarmResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmResponse.swift; sourceTree = "<group>"; };
+		E9C6B673277F068500172C63 /* TEST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST.swift; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1055,6 +1057,7 @@
 				E9AF83E0273B5CA300D77D5F /* SearchResultSB.storyboard */,
 				E9C30DF527460481000B1592 /* Entity */,
 				E9AF83E2273B606900D77D5F /* SearchResultCVC */,
+				E9C6B673277F068500172C63 /* TEST.swift */,
 			);
 			path = SearchResultVC;
 			sourceTree = "<group>";
@@ -1890,6 +1893,7 @@
 				E9E49918273BABDC0001ACFB /* ServiceTermsVC.swift in Sources */,
 				E9CAF19827316404008F749B /* MyPageVC.swift in Sources */,
 				E998C249273275D500E1F8D0 /* BasePaddingLabel.swift in Sources */,
+				E9C6B674277F068500172C63 /* TEST.swift in Sources */,
 				E9E49920273BAC020001ACFB /* SettingAlarmVC.swift in Sources */,
 				E94613A92743DDD200A5F7C2 /* ProfileManager.swift in Sources */,
 				E92FA5D6275903A600F1694A /* NetworkManager.swift in Sources */,
