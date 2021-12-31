@@ -201,7 +201,6 @@
 		E9C30E0627465A90000B1592 /* LikeCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */; };
 		E9C30E092746615D000B1592 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E082746615D000B1592 /* AlarmManager.swift */; };
 		E9C30E0B27466219000B1592 /* AlarmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E0A27466219000B1592 /* AlarmResponse.swift */; };
-		E9C6B672277F02F300172C63 /* NewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6B671277F02F300172C63 /* NewTest.swift */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -457,7 +456,6 @@
 		E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E9C30E082746615D000B1592 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		E9C30E0A27466219000B1592 /* AlarmResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmResponse.swift; sourceTree = "<group>"; };
-		E9C6B671277F02F300172C63 /* NewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTest.swift; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1414,7 +1412,6 @@
 				E9378D90273808AD00C589A1 /* SearchTVC */,
 				E90511F7274F56C2002B1574 /* SearchKeywordTVC */,
 				E9AF83DD273B5C6D00D77D5F /* SearchResultVC */,
-				E9C6B671277F02F300172C63 /* NewTest.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1906,7 +1903,6 @@
 				E946137F2743593100A5F7C2 /* ResponsiveCollectionViewCellCVC.swift in Sources */,
 				E9AF83E8273B60DC00D77D5F /* ResultCountCVC.swift in Sources */,
 				E96DB30A2745301000659256 /* SearchManager.swift in Sources */,
-				E9C6B672277F02F300172C63 /* NewTest.swift in Sources */,
 				E9E49930273BCB350001ACFB /* IcoLevelTopTVC.swift in Sources */,
 				E9B5D3A7274CC2B3002D965B /* KeywordContentsTVC.swift in Sources */,
 				71DB5CA92748BDC60073D76F /* StyleReportRequest.swift in Sources */,
