@@ -201,6 +201,7 @@
 		E9C30E0627465A90000B1592 /* LikeCollectionViewCellCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */; };
 		E9C30E092746615D000B1592 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E082746615D000B1592 /* AlarmManager.swift */; };
 		E9C30E0B27466219000B1592 /* AlarmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C30E0A27466219000B1592 /* AlarmResponse.swift */; };
+		E9C6B676277F0A6700172C63 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6B675277F0A6700172C63 /* Test.swift */; };
 		E9CAF1732731635B008F749B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1722731635B008F749B /* AppDelegate.swift */; };
 		E9CAF1752731635B008F749B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1742731635B008F749B /* SceneDelegate.swift */; };
 		E9CAF1772731635B008F749B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAF1762731635B008F749B /* ViewController.swift */; };
@@ -456,6 +457,7 @@
 		E9C30E0427465A90000B1592 /* LikeCollectionViewCellCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCellCVC.xib; sourceTree = "<group>"; };
 		E9C30E082746615D000B1592 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		E9C30E0A27466219000B1592 /* AlarmResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmResponse.swift; sourceTree = "<group>"; };
+		E9C6B675277F0A6700172C63 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		E9CAF16F2731635B008F749B /* ICO-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICO-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAF1722731635B008F749B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CAF1742731635B008F749B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1055,6 +1057,7 @@
 				E9AF83E0273B5CA300D77D5F /* SearchResultSB.storyboard */,
 				E9C30DF527460481000B1592 /* Entity */,
 				E9AF83E2273B606900D77D5F /* SearchResultCVC */,
+				E9C6B675277F0A6700172C63 /* Test.swift */,
 			);
 			path = SearchResultVC;
 			sourceTree = "<group>";
@@ -1914,6 +1917,7 @@
 				E94613A62743B7CF00A5F7C2 /* LoginResponse.swift in Sources */,
 				714F32B4273BE775007324BC /* ProfileSettingVC.swift in Sources */,
 				E946137B27434D2C00A5F7C2 /* SensibleCollectionViewCellCVC.swift in Sources */,
+				E9C6B676277F0A6700172C63 /* Test.swift in Sources */,
 				E90511F4274F3C99002B1574 /* CustomPopupVC.swift in Sources */,
 				71E2672B274B872200E99E1A /* StyleUploadRequest.swift in Sources */,
 				E9CAF1B127316975008F749B /* Color.swift in Sources */,
