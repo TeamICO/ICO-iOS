@@ -26,8 +26,7 @@ jobs:
         bundler-cache: true
         
     - name: Build & Distribute to Testflight 
-      run: |
-        bundle exec fastlane release
+      run: fastlane release
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
