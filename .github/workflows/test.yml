@@ -10,11 +10,11 @@ on:
 jobs:
   build-and-test:
 
-    runs-on: self-hosted
+    runs-on: macos-latest
     env:
-      XCWORKSPACE: MyApp.xcworkspace
-      PROJECT: MyApp.xcodeproj
-      SCHEME: Model
+      XCWORKSPACE: ICO-iOS.xcworkspace
+      PROJECT: ICO-iOS.xcodeproj
+      SCHEME: ICO-iOS
       CONFIGURATION: Debug
       DESTINATION: platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=latest
       
