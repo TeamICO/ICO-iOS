@@ -21,4 +21,4 @@ jobs:
     - name: Start xcode build 🛠
       run: |
         pod install --repo-update --clean-install --project-directory=ICO-iOS/
-        xcodebuild build -workspace ICO-iOS/ICO-iOS.xcworkspace -scheme ICO-iOS
+        xcodebuild build -workspace ICO-iOS.xcworkspace -scheme ICO-iOS -destination "platform=iOS Simulator,name=iPhone 12,OS=14.4"
