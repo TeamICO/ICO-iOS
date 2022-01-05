@@ -13,7 +13,7 @@ jobs:
     name: Deploying to Testflight
     runs-on: macOS-latest
     env:
-     working-directory: /Users/do_yun/Desktop/programming/SSAC/ICO-iOS/ICO-iOS
+      working-directory: /Users/do_yun/Desktop/programming/SSAC/ICO-iOS/ICO-iOS
     
     steps:
       - name: Checkout repository
