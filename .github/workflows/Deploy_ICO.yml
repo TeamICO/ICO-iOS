@@ -1,9 +1,9 @@
-name: deploy
+name: Deploy
 
 on:
-  #  workflow 를 trigger 조건 설정 - release/ 로 시작하는 branch 가 push 되었을 때 
   push:
-    branches: [ release/* ]
+    tags:
+      - "v*"
 
     
 # workflow의 실행은 하나 이상의 job으로 구성 됨
