@@ -2,11 +2,9 @@
 name: Run Test
 
 on:
-  # develop 브랜치에 push 나 pull request 이벤트가 일어났을때 해당 workflow 를 trigger
   push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
+    tags:
+      - "v*"
 
 # workflow의 실행은 하나 이상의 job으로 구성 됨
 jobs:
