@@ -1,5 +1,5 @@
 # workflow 의 이름
-name: Run Test
+name: Build and Test
 
 on:
   push:
@@ -25,5 +25,4 @@ jobs:
     - name: Build and Test
       run: |
         pod install --repo-update --clean-install --project-directory=ICO-iOS/
-        working-directory: /Users/do_yun/.fastlane/bin
-        fastlane release
+        
