@@ -2,21 +2,15 @@
 name: Run Test
 
 on:
-  push:
-    tags:
-      - "v*"
+  # main 브랜치에 풀리퀘하면 workflow를 돌리겠음.
+  pull_request:
+    branches: [ main ]
 
 # workflow의 실행은 하나 이상의 job으로 구성 됨
 jobs:
   build-and-test:
 
     runs-on: macos-latest
-    env:
-      XCWORKSPACE: ICO-iOS/ICO-iOS.xcworkspace
-      PROJECT: ICO-iOS.xcodeproj
-      SCHEME: ICO-iOS
-      CONFIGURATION: Debug
-      DESTINATION: platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=latest
       
     steps:
     # step 1
