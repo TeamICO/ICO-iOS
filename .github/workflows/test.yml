@@ -12,7 +12,7 @@ jobs:
 
     runs-on: macos-latest
     env:
-      XCWORKSPACE: ICO-iOS.xcworkspace
+      XCWORKSPACE: ICO-iOS/ICO-iOS.xcworkspace
       PROJECT: ICO-iOS.xcodeproj
       SCHEME: ICO-iOS
       CONFIGURATION: Debug
