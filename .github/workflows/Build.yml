@@ -2,9 +2,9 @@
 name: Build and Test
 
 on:
-  push:
-    tags:
-      - "v*"
+  # master랑 develop 브랜치에 풀리퀘하면 workflow를 돌리겠음.
+  pull_request:
+    branches: [ main ]
 
 # workflow의 실행은 하나 이상의 job으로 구성 됨
 jobs:
