@@ -8,17 +8,34 @@ on:
 
 # workflow의 실행은 하나 이상의 job으로 구성 됨
 jobs:
-  # 이 workflow 는 "build" 라는 single job 으로 구성
-  build:
-    # job이 실행될 환경 - 최신 mac os
-    runs-on: macos-latest
+  build-and-test:
 
-    # Step은 job의 일부로 실행될 일련의 task들을 나타냄
+    runs-on: self-hosted
+    env:
+      XCWORKSPACE: MyApp.xcworkspace
+      PROJECT: MyApp.xcodeproj
+      SCHEME: Model
+      CONFIGURATION: Debug
+      DESTINATION: platform=iOS Simulator,name=iPad Pro (9.7-inch),OS=latest
+      
     steps:
-    # uses 키워드를 통해 Github Actions에서 기본으로 제공하는 액션을 사용 가능. 아래 액션은 repository 에 체크아웃하는 것
-    - uses: actions/checkout@v2
-    # shell 이용해서 하나의 command 수행
-    - name: Start xcode build 🛠
-      run: |
-        pod install --repo-update --clean-install --project-directory=ICO-iOS/
-        xcodebuild build -workspace ICO-iOS.xcworkspace -scheme ICO-iOS -destination "platform=iOS Simulator,name=iPhone 12,OS=14.4"
+    # step 1
+    - name: Checkout source code
+      uses: actions/checkout@v2
+    
+    # step 2
+    - name: CocoaPod Install
+      run: pod install
+      
+    # step 3
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
+
+    # step 4
+    - name: Build and Test
+      run: xcodebuild clean build test
+           -workspace "$XCWORKSPACE" 
+           -scheme "$SCHEME"
+           -configuration "$CONFIGURATION" 
+           -destination "$DESTINATION" 
+           -enableCodeCoverage YES | xcpretty --color
