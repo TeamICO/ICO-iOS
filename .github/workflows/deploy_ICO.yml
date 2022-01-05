@@ -2,8 +2,7 @@ name: deploy
 
 on:
   push:
-    tags:
-      - "v*"
+   
 
     
 # workflow의 실행은 하나 이상의 job으로 구성 됨
