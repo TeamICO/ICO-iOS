@@ -6,14 +6,12 @@ on:
      
 
   # Allows you to run this workflow manually from the Actions a tab
-  workflow_dispatch:
+  workflow_dispatch: /Users/do_yun/Desktop/programming/SSAC/ICO-iOS/ICO-iOS
 
 jobs:
   deploy:
     name: Deploying to Testflight
     runs-on: macOS-latest
-    env:
-      working-directory: /Users/do_yun/Desktop/programming/SSAC/ICO-iOS/ICO-iOS
     
     steps:
       - name: Checkout repository
@@ -24,7 +22,6 @@ jobs:
         with:
           lane: beta
         env:
-          SOURCE_DIR: '/Users/do_yun/Desktop/programming/SSAC/ICO-iOS/ICO-iOS'
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
           DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
           DEVELOPER_APP_IDENTIFIER: '${{ secrets.DEVELOPER_APP_IDENTIFIER }}'
