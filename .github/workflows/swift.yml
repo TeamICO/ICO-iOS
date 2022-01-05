@@ -13,4 +13,4 @@ jobs:
       run: pod install
 
     - name: Fastlane Scan # Workspace와 Scheme는, 본인의 프로젝트에 맞게 설정해야 합니다.
-      run: fastlane scan --workspace "ICO-iOS.xcworkspace" --scheme "ICO-iOS"
+      run: fastlane beta
