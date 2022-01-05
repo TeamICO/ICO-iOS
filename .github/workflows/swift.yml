@@ -14,5 +14,8 @@ jobs:
     - name: Cocoapod # 프로젝트에서 Cocoapod을 사용하지 않는다면 빼도 됩니다.
       run: pod install
 
-    - name: Fastlane Scan # Workspace와 Scheme는, 본인의 프로젝트에 맞게 설정해야 합니다.
+    - name: Fastlane Gym # Workspace와 Scheme는, 본인의 프로젝트에 맞게 설정해야 합니다.
+      run: fastlane gym --workspace "ICO-iOS.xcworkspace" --scheme "ICO-iOS" --clean
+
+    - name: Fastlane Pilot
       run: fastlane beta
