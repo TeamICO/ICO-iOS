@@ -2,9 +2,9 @@
 name: Run Test
 
 on:
-  # main 브랜치에 풀리퀘하면 workflow를 돌리겠음.
-  pull_request:
-    branches: [ main ]
+  push:
+    tags:
+      - "v*"
 
 # workflow의 실행은 하나 이상의 job으로 구성 됨
 jobs:
@@ -25,4 +25,4 @@ jobs:
     - name: Build and Test
       run: |
         pod install --repo-update --clean-install --project-directory=ICO-iOS/
-        xcodebuild clean build -workspace ICO-iOS/ICO-iOS.xcworkspace -scheme ICO-iOS -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=latest'
+        fastlane release
