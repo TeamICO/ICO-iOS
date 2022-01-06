@@ -58,7 +58,6 @@ class SearchVC: BaseViewController {
         searchKeywordTableView.isHidden = true
     }
     @IBAction func didTapDeleteButton(_ sender: Any) {
-        searchKeywordTableView.isHidden = true
         searchTextField.text = ""
     }
     
@@ -305,8 +304,6 @@ extension SearchVC : RecentSearchWordsTVCDelegate{
 
 extension SearchVC : SearchKeywordTVCDelegate{
     func didTapSearchResultView(resultkeyword: String) {
-        self.searchKeywordTableView.isHidden = true
-        self.searchTextField.text = ""
         let storyboard = UIStoryboard(name: "SearchResultSB", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SearchResultVC") as! SearchResultVC
         vc.searchword = resultkeyword
