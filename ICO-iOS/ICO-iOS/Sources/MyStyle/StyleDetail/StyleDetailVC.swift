@@ -64,6 +64,7 @@ class StyleDetailVC: UIViewController {
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
 
+        print("123")
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
