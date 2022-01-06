@@ -8,15 +8,8 @@
 	<true/>
 	<key>method</key>
 	<string>app-store</string>
-	<key>provisioningProfiles</key>
-	<dict>
-		<key>com.yun.ICO-iOS</key>
-		<string>ICO-iOS GitHub Actions</string>
-	</dict>
-	<key>signingCertificate</key>
-	<string>C9043344F797590F48CD9492AB45B2D398CFCD75</string>
 	<key>signingStyle</key>
-	<string>manual</string>
+	<string>automatic</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
