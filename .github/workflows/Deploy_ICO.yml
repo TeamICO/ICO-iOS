@@ -17,7 +17,8 @@ jobs:
       XC_WORKSPACE: ${{ 'ICO-iOS/ICO-iOS.xcworkspace' }}
       XC_SCHEME: ${{ 'ICO-iOS' }}
       XC_ARCHIVE: ${{ 'ICO-iOS.xcarchive' }}
-      
+
+
       # certificate 
       ENCRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/certification.p12.gpg' }}
       DECRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/certification.p12' }}
@@ -83,7 +84,7 @@ jobs:
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
-          app-path: 'path/to/ICO-iOS.ipa'
+          app-path: 'ICO-iOS.ipa'
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
