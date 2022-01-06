@@ -1,0 +1,28 @@
+# workflow 의 이름
+name: Build and Test
+
+on:
+  # master랑 develop 브랜치에 풀리퀘하면 workflow를 돌리겠음.
+  pull_request:
+    branches: [ main ]
+
+# workflow의 실행은 하나 이상의 job으로 구성 됨
+jobs:
+  build-and-test:
+
+    runs-on: macos-latest
+      
+    steps:
+    # step 1
+    - name: Checkout source code
+      uses: actions/checkout@v2
+    
+    # step 2
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
+
+    # step 3
+    - name: Build and Test
+      run: |
+        pod install --repo-update --clean-install --project-directory=ICO-iOS/
+        
