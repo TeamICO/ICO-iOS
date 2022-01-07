@@ -17,19 +17,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZE-CB-iZR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-5k-RW5">
-                                        <rect key="frame" x="0.0" y="0.0" width="828" height="769"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="828" height="852"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1he-dM-Eqg">
-                                                <rect key="frame" x="0.0" y="0.0" width="828" height="769"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="828" height="852"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ba7-6S-dIJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                                         <subviews>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57L-JQ-050">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                                                 <connections>
                                                                     <segue destination="3Lz-PV-Jng" kind="embed" id="Wzh-af-QRa"/>
                                                                 </connections>
@@ -45,10 +45,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6El-jO-ecJ">
-                                                        <rect key="frame" x="414" y="0.0" width="414" height="769"/>
+                                                        <rect key="frame" x="414" y="0.0" width="414" height="852"/>
                                                         <subviews>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OC5-nl-Ii7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                                                 <connections>
                                                                     <segue destination="J1Z-YJ-rbg" kind="embed" id="oCh-o3-Y87"/>
                                                                 </connections>
@@ -189,7 +189,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vZE-CB-iZR" secondAttribute="trailing" id="20q-R0-50Y"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vZE-CB-iZR" secondAttribute="bottom" id="Cg7-zv-v5y"/>
+                            <constraint firstAttribute="bottom" secondItem="vZE-CB-iZR" secondAttribute="bottom" id="Cg7-zv-v5y"/>
                             <constraint firstItem="vZE-CB-iZR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="EZ3-Ou-PJ5"/>
                             <constraint firstItem="qS5-p2-BVn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="KqO-E8-W8B"/>
                             <constraint firstItem="vZE-CB-iZR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Nib-EP-XGB"/>
