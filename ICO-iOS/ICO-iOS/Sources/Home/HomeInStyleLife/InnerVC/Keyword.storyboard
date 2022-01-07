@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwh-dv-X41">
-                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xso-be-45W">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -110,7 +110,7 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pwh-dv-X41" secondAttribute="trailing" id="FoM-wQ-7j4"/>
                             <constraint firstItem="pwh-dv-X41" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SWq-3b-raA"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pwh-dv-X41" secondAttribute="bottom" id="fGg-Fx-kBF"/>
+                            <constraint firstAttribute="bottom" secondItem="pwh-dv-X41" secondAttribute="bottom" id="fGg-Fx-kBF"/>
                             <constraint firstItem="pwh-dv-X41" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="mj7-s1-c6h"/>
                         </constraints>
                     </view>

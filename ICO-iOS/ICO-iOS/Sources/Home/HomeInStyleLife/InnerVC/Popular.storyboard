@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-Tv-Ys4">
-                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-CB-8CS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
@@ -126,7 +126,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JLI-Tv-Ys4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="HTK-a8-lGP"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JLI-Tv-Ys4" secondAttribute="bottom" id="ax8-hY-MF2"/>
+                            <constraint firstAttribute="bottom" secondItem="JLI-Tv-Ys4" secondAttribute="bottom" id="ax8-hY-MF2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JLI-Tv-Ys4" secondAttribute="trailing" id="hqU-Ta-4Og"/>
                             <constraint firstItem="JLI-Tv-Ys4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jzL-uF-uN1"/>
                         </constraints>
