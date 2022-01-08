@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setKakaoSDK()
         setNaverSDK()
         checkUser()
-        
+        print("테스트 추가")
      
       
 
