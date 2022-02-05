@@ -17,15 +17,16 @@ jobs:
       XC_WORKSPACE: ${{ 'ICO-iOS/ICO-iOS.xcworkspace' }}
       XC_SCHEME: ${{ 'ICO-iOS' }}
       XC_ARCHIVE: ${{ 'ICO-iOS.xcarchive' }}
-      
+
+
       # certificate 
       ENCRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/certification.p12.gpg' }}
       DECRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/certification.p12' }}
       CERT_ENCRYPTION_KEY: ${{ secrets.CERTS_ENCRYPTION_PWD }} # gpg로 파일 암호화할 때 사용한 암호
       
       # provisioning
-      ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/ICOiOS.mobileprovision.gpg' }}
-      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/ICOiOS.mobileprovision' }}
+      ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/test2.mobileprovision.gpg' }}
+      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/test2.mobileprovision' }}
       PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISION_ENCRYPTION_PWD }} # gpg로 파일 암호화할 때 사용한 암호
       
       # certification export key
