@@ -175,7 +175,7 @@ extension TopTVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollec
                     cellItemsWidth = floor(scrollView.contentSize.width / 3.0)
                 }
                 if (scrollView.contentOffset.x <= 0.0) || (scrollView.contentOffset.x > cellItemsWidth * 2.0) {
-                    scrollView.contentOffset.x = cellItemsWidth
+                    scrollView.contentOffset.x = cellItemsWidth+3
                 }
             }
 
@@ -211,6 +211,7 @@ extension TopTVC {
         // 다음 페이지로 전환
         nowPage += 1
         bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
+        
     }
     
 }
